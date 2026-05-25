@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Deficiencies — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);--nav-h:52px;
+  --ink2:#263028;--cream:#f4efe6;--warm:#faf7f2;
+  --gold:var(--sage);--gold-light:var(--sage-mid);--gold-pale:var(--sage-pale);
+  --mist:var(--ink-mid);--text:var(--ink-mid);--text-mid:var(--ink-mid);--text-light:var(--ink-light);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+
+/* PHASE NAV */
+.phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:rgba(44,58,46,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,150,90,0.12);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.phase-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--text-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
+.phase-nav a:hover{color:var(--mist);}
+.phase-nav a.pn-active{color:var(--gold-light);border-bottom-color:var(--gold);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+.phase-nav a.pn-active .pn-dot{opacity:1;}
+.pn-sep{width:1px;background:rgba(184,150,90,0.1);margin:9px 0;flex-shrink:0;}
+.pn-protocols{position:relative;display:flex;align-items:stretch;margin-left:auto;border-left:1px solid rgba(184,150,90,0.12);}
+.pn-protocols-btn{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--text-light);text-transform:uppercase;background:none;border:none;cursor:pointer;white-space:nowrap;transition:color 0.2s;border-bottom:2px solid transparent;}
+.pn-protocols-btn svg{width:8px;height:8px;transition:transform 0.2s;}
+.pn-drop{display:none;position:absolute;top:36px;right:0;width:220px;background:var(--ink2);border:1px solid rgba(184,150,90,0.2);border-top:2px solid var(--gold);border-radius:0 0 8px 8px;padding:8px 0;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,0.7);}
+.pn-protocols:hover .pn-drop{display:block;}
+.pn-protocols:hover .pn-protocols-btn{color:var(--gold-light);}
+.pn-protocols:hover .pn-protocols-btn svg{transform:rotate(180deg);}
+.pn-drop-label{font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);padding:6px 16px 4px;opacity:0.6;}
+.pn-drop a{display:block;padding:7px 16px;font-size:13px;color:var(--mist);text-decoration:none;transition:color 0.15s,background 0.15s;border-bottom:none;}
+.pn-drop a:hover{color:var(--gold-light);background:rgba(184,150,90,0.07);}
+.pn-drop a.pn-current{color:var(--gold-light);}
+.pn-drop-divider{height:1px;background:rgba(184,150,90,0.1);margin:6px 0;}
+.pn-drop .drop-soon{opacity:0.35;pointer-events:none;}
+.pn-drop .drop-soon::after{content:' — soon';font-size:10px;}
+.pn-drop .drop-iherb{color:var(--sage-light);}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(184,150,90,0.09) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
+.eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:580px;margin:0 auto 40px;line-height:1.75;}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:48px;}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--sage);display:block;}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+
+/* DEFICIENCY OVERVIEW CARDS */
+.def-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:0;}
+@media(max-width:768px){.def-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.def-row{grid-template-columns:1fr;}}
+.def-card{padding:28px 22px;background:var(--bg-warm);border-top:3px solid var(--sage);text-align:left;}
+.def-card-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--sage);margin-bottom:8px;display:block;}
+.def-card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.def-card-desc{font-size:12px;color:var(--ink-light);line-height:1.6;}
+
+/* SECTIONS */
+.sec-dark{background:var(--bg);padding:64px 24px;}
+.sec-warm{background:var(--warm);padding:64px 24px;}
+.sec-cream{background:var(--cream);padding:64px 24px;}
+.sec-sage{background:#1a2e20;padding:64px 24px;}
+.sec-ink2{background:var(--bg-deep);padding:64px 24px;}
+.sec-iodine{background:var(--bg-stone);padding:64px 24px;}
+.sec-baking{background:var(--bg-warm);padding:64px 24px;}
+.sec-copper{background:var(--bg-deep);padding:64px 24px;}
+.sec-zinc{background:var(--bg);padding:64px 24px;}
+
+.inner{max-width:760px;margin:0 auto;}
+.inner-wide{max-width:1000px;margin:0 auto;}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:32px;height:1px;background:var(--sage-mid);}
+.kicker-sage{color:var(--sage-light);}
+.kicker-sage::before{background:var(--sage-light);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
+.lh2-dark{color:var(--ink);}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--sage);line-height:1.3;margin:32px 0 12px;}
+.lh3-warm{color:var(--sage);}
+.lh3-phase{color:var(--cream);}
+.lp{font-size:15px;line-height:1.85;color:var(--ink-mid);margin-bottom:16px;}
+.lp-warm{color:var(--text-mid);}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp-warm strong{color:var(--ink);}
+.lp em{font-style:italic;color:var(--sage);}
+.lp-warm em{color:var(--sage);}
+
+/* PULL QUOTE */
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq-warm{border-left-color:var(--sage);background:rgba(74,122,90,0.08);}
+.pq p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,2vw,18px);line-height:1.6;color:var(--sage);margin:0;}
+.pq-warm p{color:var(--sage);}
+
+/* CALLOUT BOXES */
+.callout{border-radius:8px;padding:22px 26px;margin:28px 0;}
+.callout-gold{background:var(--sage-pale);border:1px solid var(--border);}
+.callout-sage{background:rgba(74,122,90,0.1);border:1px solid rgba(74,122,90,0.3);}
+.callout-warn{background:rgba(160,50,45,0.08);border:1px solid rgba(160,50,45,0.28);}
+.callout-info{background:rgba(50,90,160,0.08);border:1px solid rgba(50,90,160,0.25);}
+.callout-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.callout-gold .callout-title{color:var(--sage);}
+.callout-sage .callout-title{color:var(--sage-light);}
+.callout-warn .callout-title{color:#c07070;}
+.callout-info .callout-title{color:#7090c8;}
+.callout p{font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:8px;}
+.callout p:last-child{margin-bottom:0;}
+.callout a{color:var(--sage);text-decoration:underline;text-underline-offset:3px;}
+
+/* SUPPLEMENT CARDS */
+.supp-list{list-style:none;margin:16px 0 24px;}
+.supp-list li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border-s);font-size:14px;line-height:1.65;}
+.supp-list li:last-child{border-bottom:none;}
+.supp-list .sc{color:var(--sage);font-weight:700;font-size:15px;margin-top:1px;}
+.supp-list .sn{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);}
+.supp-list .sd{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);display:inline;margin:0 6px;}
+.supp-list .sm{font-size:13px;color:var(--ink-light);}
+.supp-list .sw{font-size:12px;color:var(--terra);display:block;margin-top:3px;}
+.supp-list .sl{font-size:11px;font-weight:600;color:var(--sage);text-decoration:none;margin-left:6px;letter-spacing:0.03em;}
+.supp-list .sl:hover{color:var(--sage-mid);}
+.budget-note{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);border-radius:6px;padding:12px 16px;margin:16px 0;font-size:13px;color:var(--ink-mid);}
+.budget-note strong{color:var(--honey);}
+.budget-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:var(--honey-pale);color:var(--honey);padding:2px 8px;border-radius:10px;margin-left:8px;}
+
+/* SYMPTOM GRID */
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0;}
+@media(max-width:520px){.sym-grid{grid-template-columns:1fr;}}
+.sym-item{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg-warm);border:1px solid var(--border-s);border-radius:6px;font-size:13px;color:var(--mist);}
+.sym-item::before{content:'·';color:var(--sage);font-size:18px;line-height:1;}
+.sym-grid-warm .sym-item{background:rgba(74,122,90,0.04);border-color:rgba(74,122,90,0.15);color:var(--text-mid);}
+.sym-grid-warm .sym-item::before{color:var(--sage);}
+
+/* PROTOCOL STEPS */
+.proto-steps{margin:24px 0;counter-reset:step;}
+.proto-step{counter-increment:step;display:grid;grid-template-columns:40px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--border-s);align-items:start;}
+.proto-step:last-child{border-bottom:none;}
+.proto-step-num{width:34px;height:34px;border-radius:50%;background:var(--sage-pale);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:12px;color:var(--sage);font-weight:500;flex-shrink:0;}
+.proto-step-body{}
+.proto-step-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;}
+.proto-step-desc{font-size:13px;color:var(--ink-light);line-height:1.6;}
+
+/* HALOGEN WAR TABLE */
+.hal-table{width:100%;border-collapse:collapse;margin:20px 0;}
+.hal-table th{text-align:left;padding:10px 14px;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);border-bottom:1px solid var(--border);}
+.hal-table td{padding:10px 14px;color:var(--ink-mid);border-bottom:1px solid var(--border-s);vertical-align:top;line-height:1.55;font-size:13px;}
+.hal-table tr:last-child td{border-bottom:none;}
+.hal-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+.hal-bad{color:#c07070 !important;}
+.hal-good{color:var(--sage) !important;}
+
+/* EXPAND */
+.exp-btn{display:flex;align-items:center;gap:10px;cursor:pointer;margin:24px 0 0;padding:14px 18px;border:1px solid var(--border);border-radius:6px;background:var(--sage-pale);transition:all 0.2s;width:100%;}
+.exp-btn:hover{border-color:var(--sage-mid);background:rgba(61,107,74,0.12);}
+.exp-btn-warm{border-color:rgba(74,122,90,0.3);background:rgba(74,122,90,0.05);}
+.exp-btn-warm:hover{border-color:var(--sage);background:rgba(74,122,90,0.1);}
+.exp-icon{width:22px;height:22px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.exp-icon-warm{background:var(--sage);}
+.exp-icon svg{width:10px;height:10px;transition:transform 0.3s;}
+.exp-btn.open .exp-icon svg{transform:rotate(180deg);}
+.exp-lbl{font-size:13px;font-weight:500;color:var(--sage);letter-spacing:0.04em;}
+.exp-lbl-warm{color:var(--sage-light);}
+.exp-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease;}
+.exp-body.open{max-height:9999px;}
+.exp-inner{padding-top:28px;}
+
+/* PRINT */
+.print-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;font-weight:600;color:var(--sage);background:var(--sage-pale);border:1px solid var(--border);padding:8px 16px;border-radius:4px;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.2s;text-decoration:none;}
+.print-btn:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
+
+/* SECTION DIVIDER */
+.sec-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:0;}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:48px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:var(--ink-ghost);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+
+
+
+/* TOP NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:101;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;white-space:nowrap;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);}
+@media(max-width:640px){.nav-center{display:none;}}
+@media print{.phase-nav,footer,.print-btn{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="protocols.html">All Protocols</a>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
+</nav>
+
+<!-- PHASE NAV -->
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <a href="#iodine" data-section="iodine"><span class="pn-dot"></span>Iodine</a>
+    <div class="pn-sep"></div>
+    <a href="#bakingsoda" data-section="bakingsoda"><span class="pn-dot"></span>Baking Soda</a>
+    <div class="pn-sep"></div>
+    <a href="#copper" data-section="copper"><span class="pn-dot"></span>Copper</a>
+    <div class="pn-sep"></div>
+    <a href="#zinc" data-section="zinc"><span class="pn-dot"></span>Zinc</a>
+    <div class="pn-sep"></div>
+    <a href="#magnesium" data-section="magnesium"><span class="pn-dot"></span>Magnesium</a>
+    <div class="pn-sep"></div>
+    <a href="#testing" data-section="testing"><span class="pn-dot"></span>Testing</a>
+    <div class="pn-protocols">
+      <button class="pn-protocols-btn">
+        All Protocols
+        <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="pn-drop">
+        <div class="pn-drop-label">Protocols</div>
+        <a href="Full_Body_Detox_Protocol.html">🌿 Full Body Detox</a>
+        <a href="Brain_Protocol.html">🧠 Brain Protocol</a>
+        <a href="DMSO_Oxygen_Therapy.html">⚗️ DMSO &amp; Oxygen</a>
+        <a href="Hidden_Deficiencies.html" class="pn-current">🧪 Hidden Deficiencies</a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html">🌱 Dr. Sebi — Alkaline</a>
+        <div class="pn-drop-divider"></div>
+        <div class="pn-drop-label">Coming Soon</div>
+        <a class="drop-soon">🦠 Gut System</a>
+        <a class="drop-soon">⚖️ Hormonal System</a>
+        <a class="drop-soon">🛡️ Autoimmune</a>
+        <a class="drop-soon">🌙 Mental Health</a>
+        <div class="pn-drop-divider"></div>
+        <a href="protocols.html">🏠 All Protocols</a>
+        <a href="index.html">📖 The Letter (Home)</a>
+        <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" class="drop-iherb">🛒 iHerb — GUW6132</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>The Minerals No One Is Testing For</span></div>
+  <h1>Hidden <em>Deficiencies</em></h1>
+  <p class="hero-sub">Your body is running on empty in ways your blood tests will never show. The minerals stolen by modern life, the halogens at war in your thyroid, and the ratios that govern everything.</p>
+  <div class="hero-stats">
+    <div><span class="stat-num">96%</span><span class="stat-label">Iodine Deficient</span></div>
+    <div><span class="stat-num">80%</span><span class="stat-label">Magnesium Deficient</span></div>
+    <div><span class="stat-num">75%</span><span class="stat-label">Zinc Deficient</span></div>
+    <div><span class="stat-num">0</span><span class="stat-label">Standard Tests Ordered</span></div>
+  </div>
+</section>
+
+<!-- DEFICIENCY OVERVIEW CARDS -->
+<div class="def-row">
+  <a href="#iodine" class="def-card" style="text-decoration:none;">
+    <span class="def-card-num">Deficiency 01</span>
+    <div class="def-card-name">Iodine</div>
+    <p class="def-card-desc">The most widespread deficiency in the developed world. Required by every cell. Actively displaced by fluoride, bromine, and chlorine — the halogen war your thyroid is losing.</p>
+  </a>
+  <a href="#bakingsoda" class="def-card" style="text-decoration:none;">
+    <span class="def-card-num">Deficiency 02</span>
+    <div class="def-card-name">Alkalinity</div>
+    <p class="def-card-desc">The body maintains blood pH with extraordinary precision — at the expense of your bones, muscles, and kidneys. Chronic acidity is the terrain in which disease flourishes. Baking soda costs pennies.</p>
+  </a>
+  <a href="#copper" class="def-card" style="text-decoration:none;">
+    <span class="def-card-num">Deficiency 03</span>
+    <div class="def-card-name">Copper</div>
+    <p class="def-card-desc">The mineral hiding in plain sight. Essential for iron utilization, nerve insulation, collagen synthesis, and mitochondrial function. Deficiency masquerades as anemia, fatigue, and neurological decline.</p>
+  </a>
+  <a href="#zinc" class="def-card" style="text-decoration:none;">
+    <span class="def-card-num">Deficiency 04</span>
+    <div class="def-card-name">Zinc–Copper Ratio</div>
+    <p class="def-card-desc">It is never just about one mineral. The zinc-to-copper ratio governs immunity, inflammation, mental health, and hormonal balance. Correct the ratio — not just the individual numbers.</p>
+  </a>
+</div>
+
+<!-- INTRO -->
+<section class="sec-dark">
+  <div class="inner">
+    <div class="kicker">The Hidden Architecture</div>
+    <h2 class="lh2">What Your Tests Aren't Finding</h2>
+    <p class="lp">Standard blood panels test for perhaps a dozen markers. Most of them are gross indicators — the equivalent of checking whether the engine is running, not whether it has oil. The minerals and trace elements that govern every enzymatic reaction in the body, every nerve signal, every hormonal cascade — most of them are never tested. And when they are tested, the reference ranges are set not for optimal function, but for the absence of acute disease.</p>
+    <p class="lp">You can be profoundly deficient in iodine, magnesium, copper, or zinc and receive a clean bill of health. Your doctor will not test for them. The tests that do exist — particularly for magnesium — measure the wrong compartment entirely. Serum magnesium is tightly regulated regardless of cellular stores. You can be severely depleted at the cellular level while your serum number looks normal.</p>
+
+    <div class="pq"><p>"The modern human is the most mineral-depleted organism in the history of the species. The soil is depleted. The food is processed. The medications steal what remains. And then we wonder why everyone is tired."</p></div>
+
+    <p class="lp">This guide covers the deficiencies that are both extremely common and extremely consequential — the ones where restoration produces dramatic changes in how people feel, function, and heal. Each section contains the science, the symptoms, the sources of depletion, and the restoration protocol.</p>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- IODINE -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-iodine" id="iodine">
+  <div class="inner">
+    <div class="kicker">Deficiency One</div>
+    <h2 class="lh2">Iodine — <em>The Halogen War</em></h2>
+    <p class="lp">Iodine is not just a thyroid mineral. Every cell in your body requires iodine. The breast tissue requires it. The brain requires it. The ovaries, testes, prostate, and salivary glands all concentrate iodine. Deficiency was acknowledged as a global health crisis in the early 20th century — which is why iodized salt was introduced. The introduction of iodized salt is considered one of the most effective public health interventions in history.</p>
+    <p class="lp">Then something happened. The same regulatory system that introduced iodized salt began systematically introducing iodine's chemical competitors into the water supply, the food supply, the bread supply, and the dental and medical system. The result is that even people who eat iodized salt are losing the war.</p>
+
+    <div class="pq"><p>"Iodine, fluorine, chlorine, and bromine are all halogens — they compete for the same receptors in your body. When fluoride, chlorine, and bromine are present in abundance, they displace iodine from the receptors it needs. Your thyroid is losing a chemical war it was never informed about."</p></div>
+
+    <h3 class="lh3">The Halogen Displacement Table</h3>
+    <table class="hal-table">
+      <tr><th>Halogen</th><th>Source</th><th>Effect on Iodine</th></tr>
+      <tr>
+        <td>Fluoride</td>
+        <td class="hal-bad">Tap water · Toothpaste · Dental treatments · Non-stick cookware</td>
+        <td>Directly displaces iodine from thyroid receptors. A known thyroid disruptor — documented in peer-reviewed literature. Also calcifies the pineal gland.</td>
+      </tr>
+      <tr>
+        <td>Chlorine</td>
+        <td class="hal-bad">Tap water · Swimming pools · Bleached flour · Household cleaners</td>
+        <td>Competes with iodine absorption. Destroys gut bacteria that assist in iodine transport. Absorbed through skin during showering.</td>
+      </tr>
+      <tr>
+        <td>Bromine</td>
+        <td class="hal-bad">Commercial bread · Pesticides · Flame retardants · Soft drinks (Mountain Dew, others)</td>
+        <td>Potassium bromate replaced iodine in commercial bread in the 1970s — directly removing a major dietary iodine source and replacing it with a displacer. Banned in most countries. Not in the US.</td>
+      </tr>
+      <tr>
+        <td>Iodine</td>
+        <td class="hal-good">Seaweed · Lugol's · Nascent iodine · Some fish · Iodized salt (if unprocessed)</td>
+        <td class="hal-good">The one your body actually needs. Increasingly displaced by the three above.</td>
+      </tr>
+    </table>
+
+    <h3 class="lh3">Symptoms of Iodine Deficiency</h3>
+    <div class="sym-grid">
+      <div class="sym-item">Fatigue and low energy</div>
+      <div class="sym-item">Cold hands and feet</div>
+      <div class="sym-item">Weight gain despite normal diet</div>
+      <div class="sym-item">Brain fog and slow thinking</div>
+      <div class="sym-item">Hair loss — especially outer eyebrow</div>
+      <div class="sym-item">Dry skin that doesn't respond to moisturizer</div>
+      <div class="sym-item">Depression and low mood</div>
+      <div class="sym-item">Constipation</div>
+      <div class="sym-item">Fibrocystic breast tissue</div>
+      <div class="sym-item">Irregular or heavy periods</div>
+      <div class="sym-item">Slow pulse</div>
+      <div class="sym-item">Goiter (neck swelling) — severe deficiency</div>
+    </div>
+
+    <div class="callout callout-gold" style="margin-top:28px;">
+      <div class="callout-title">🧪 The Iodine Skin Test — Free Self-Assessment</div>
+      <p>Paint a 5cm square of Lugol's iodine (or standard iodine tincture) on your inner forearm. Note how quickly the orange-brown color fades. <strong>Optimal:</strong> still visible after 24 hours. <strong>Moderately deficient:</strong> fades within 12 hours. <strong>Severely deficient:</strong> fades within 1–4 hours — the tissue is absorbing iodine rapidly because it is starving for it. This test is not laboratory-precise, but it is informative and used by practitioners worldwide as a rough screening tool.</p>
+    </div>
+
+    <h3 class="lh3">The Iodine Restoration Protocol</h3>
+    <p class="lp">There are two schools of thought on iodine dosing. The conventional medical approach uses microgram amounts (150–220mcg/day) and considers anything above 1mg to be potentially harmful. The Brownstein/Abraham/Flechas protocol — based on Japanese population studies where average iodine intake from seaweed is 12–13mg/day with better thyroid outcomes — uses milligram doses building from 6.25mg to 50mg over weeks to months.</p>
+    <p class="lp">This guide presents the moderate approach — starting low, building slowly, monitoring symptoms, and always co-supplementing with selenium, which is required for iodine metabolism and protects against the rare but possible risk of autoimmune thyroid triggered by rapid iodine restoration in already-depleted individuals.</p>
+
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🧿 Lugol's Iodine 5%</span>
+          <span class="sd">Start: 1 drop (6.25mg) in water · Build to 2–4 drops over 4–8 weeks</span>
+          <span class="sm">Each drop of 5% Lugol's = 6.25mg iodine/iodide. Take with food. In water — not directly on tongue. The classic formulation — potassium iodide + iodine — providing both forms the body needs. Used by practitioners in the Brownstein protocol. Works faster than nascent iodine. Expect detox reactions (bromide displacement symptoms) as the body releases stored halogens — this is normal and passes.</span>
+          <span class="sw">⚠️ Always co-supplement with Selenium (200mcg) when taking therapeutic iodine doses. Do not use if you have Graves' disease or hyperthyroidism without practitioner guidance.</span>
+        </div>
+      </li>
+    </ul>
+</ul>
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">⚡ Nascent Iodine</span><span class="sd">Start: 1–2 drops (400–800mcg) · Build slowly over weeks</span>
+          <span class="sm">Gentler than Lugol's. Lower dose per drop. Better for sensitive individuals or those new to iodine. · Iodine in its atomic form — claimed to be more bioavailable and gentler on the system than Lugol's. The detox/displacement reactions are milder. Takes longer to reach therapeutic levels. Preferred starting point for sensitive individuals or those with known thyroid conditions.</span>
+          <span class="sw">⚠️ Same selenium co-supplementation applies. Take in the morning — iodine can be energizing and may affect sleep if taken late in the day.</span>
+          <a href="https://www.iherb.com/search?kw=nascent+iodine&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+ <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🌊 Selenium — Essential Co-Factor</span><span class="sd">200mcg daily · Selenomethionine form preferred</span>
+          <span class="sm">Non-negotiable when taking therapeutic iodine. Do not take iodine without selenium. · Selenium is required for the conversion of T4 to T3 (active thyroid hormone) and for the production of glutathione peroxidase — the enzyme that protects thyroid tissue from oxidative damage during iodine metabolism. Taking iodine without selenium is like accelerating without brakes.</span>
+          <span class="sw">⚠️ Do not exceed 400mcg selenium daily — toxicity is possible at high doses. Selenomethionine is better absorbed than sodium selenite.</span>
+          <a href="https://www.iherb.com/search?kw=selenium+selenomethionine&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+ <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🌿 Kelp / Bladderwrack <span class="budget-tag">Budget</span></span><span class="sd">As directed on label · Typically 150–500mcg iodine equivalent</span>
+          <span class="sm">Food-based approach. Lower and more variable dose than Lugol's. Good for maintenance, not acute restoration. · Whole seaweed in capsule form — provides iodine plus co-factors naturally present in seaweed (including selenium, zinc, and tyrosine). The most gentle and food-compatible approach. Not adequate for significant deficiency correction but ideal for long-term maintenance once levels are restored. Also featured in the Dr. Sebi protocol.</span>
+          <span class="sw">Source matters: buy from clean ocean sources. Heavy metal contamination is a real risk with low-quality seaweed supplements.</span>
+          <a href="https://www.iherb.com/search?kw=bladderwrack+kelp+iodine&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+</div>
+
+    <button class="exp-btn" onclick="toggleExpand('iodine-deep',this)" data-label="The full iodine science — every system affected">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">The full iodine science — every system iodine governs</span>
+    </button>
+    <div class="exp-body" id="iodine-deep">
+      <div class="exp-inner">
+        <h3 class="lh3">Beyond the Thyroid</h3>
+        <p class="lp">The medical system has reduced iodine to a thyroid mineral. This is catastrophically incomplete. Iodine is present and required in every tissue that concentrates it — and almost every glandular tissue does.</p>
+        <p class="lp"><strong>Breast tissue</strong> is the second largest repository of iodine in the body after the thyroid. Iodine deficiency is directly linked to fibrocystic breast disease. Research by Dr. Bernard Eskin showed that iodine repletion caused regression of fibrocystic changes and that iodine-deficient breast tissue shows the same precancerous cellular changes as iodine-deficient thyroid tissue. Japanese women have among the world's lowest rates of breast cancer — and average iodine intake of 12–13mg/day from seaweed.</p>
+        <p class="lp"><strong>The brain</strong> requires iodine for the production of thyroid hormones that govern neurodevelopment, myelination (the insulation of nerve fibers), and cognitive function throughout life. Iodine deficiency is the world's leading preventable cause of intellectual disability. In adults, subclinical deficiency is associated with depression, anxiety, brain fog, and cognitive decline — symptoms typically attributed to a dozen other causes before iodine is ever considered.</p>
+        <p class="lp"><strong>The ovaries and prostate</strong> concentrate iodine and appear to require it for healthy cellular function. The link between iodine deficiency and both fibrocystic ovarian conditions and prostate enlargement is documented but rarely discussed.</p>
+        <p class="lp"><strong>The immune system</strong> — white blood cells (specifically granulocytes) use iodine as an antimicrobial agent. When pathogens are encountered, granulocytes absorb iodide and convert it to iodine for direct antimicrobial activity. This mechanism was described in the 1970s and is the basis for iodine's well-documented role in preventing and fighting infection. A chronically iodine-deficient immune system is a chronically compromised immune system.</p>
+
+        <h3 class="lh3">The Bromine Displacement Problem</h3>
+        <p class="lp">When you begin iodine supplementation, especially at therapeutic doses, your body starts displacing bromide, fluoride, and chloride from tissue receptors as iodine competitively reclaims its rightful binding sites. This produces what practitioners call a "detox reaction" — and it is real, not imagined.</p>
+        <p class="lp"><strong>Bromide detox symptoms</strong> include: acne-like skin eruptions, metallic taste, irritability, headache, brain fog, sinus congestion, and occasionally unusual emotional states. These pass — usually within days to a few weeks depending on your toxic load of stored halogens. They are a sign that the protocol is working.</p>
+        <p class="lp"><strong>To support bromide clearance:</strong> increase sea salt intake (sodium aids bromide excretion via kidney), drink more water, ensure vitamin C (1–2g/day) and magnesium are adequate, and if symptoms are severe — slow the iodine dose increase.</p>
+
+        <div class="pq"><p>"The countries that removed iodine from bread and replaced it with bromate — in the same decade they began fluoridating water — produced a generation of chronically iodine-depleted, thyroid-compromised populations. It does not require a conspiracy theory to recognize an architectural problem."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- BAKING SODA / ALKALINITY -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-warm" id="bakingsoda">
+  <div class="inner">
+    <div class="kicker kicker-sage">Deficiency Two</div>
+    <h2 class="lh2 lh2-dark">Baking Soda — <em>The Alkalinity Protocol</em></h2>
+    <p class="lp lp-warm">Sodium bicarbonate. The compound your own kidneys produce to buffer your blood pH. The compound your pancreas secretes into the small intestine to neutralize stomach acid. The compound that costs less than a dollar for a full box and is found in every kitchen in the world.</p>
+    <p class="lp lp-warm">And the compound that mainstream medicine has largely ignored as a therapeutic tool — despite extensive published research in kidney disease, cancer, athletic performance, acid reflux, urinary tract infections, and inflammation.</p>
+
+    <div class="pq pq-warm"><p>"Disease thrives in an acidic environment. Cancer cells generate lactic acid as a byproduct of their metabolism — and that acid protects them from immune attack. An alkaline terrain is simply a more hostile environment for pathology."</p></div>
+
+    <h3 class="lh3-warm" style="color:var(--sage);margin-top:28px;">Why Modern Life Is Chronically Acidic</h3>
+    <p class="lp lp-warm">The modern diet — processed foods, refined sugars, industrial seed oils, excess animal protein without adequate vegetables, alcohol — is profoundly acid-forming. Stress generates cortisol, which contributes to metabolic acidosis. Chronic infections generate acid. Pharmaceutical medications — particularly metformin, aspirin, and some antibiotics — generate acidic metabolic byproducts.</p>
+    <p class="lp lp-warm">The body maintains blood pH between 7.35–7.45 with extraordinary precision. It will do whatever it takes to hold that range — including pulling calcium from bones, leaching magnesium from muscle tissue, and taxing the kidneys. The cost of that pH maintenance, paid in depleted minerals and organ stress, is what produces chronic disease.</p>
+
+    <h3 class="lh3-warm" style="color:var(--sage);">Symptoms of Chronic Acidosis</h3>
+    <div class="sym-grid sym-grid-warm">
+      <div class="sym-item">Chronic fatigue and low stamina</div>
+      <div class="sym-item">Frequent muscle cramps</div>
+      <div class="sym-item">Acid reflux and GERD</div>
+      <div class="sym-item">Joint pain and stiffness</div>
+      <div class="sym-item">Frequent urinary tract infections</div>
+      <div class="sym-item">Kidney stone formation</div>
+      <div class="sym-item">Osteoporosis (calcium pulled from bones)</div>
+      <div class="sym-item">Dental erosion</div>
+      <div class="sym-item">Slow recovery from exercise</div>
+      <div class="sym-item">Poor immune response</div>
+    </div>
+
+    <h3 class="lh3-warm" style="color:var(--sage);margin-top:28px;">The Sodium Bicarbonate Protocol</h3>
+
+    <div class="proto-steps">
+      <div class="proto-step">
+        <div class="proto-step-num">01</div>
+        <div class="proto-step-body">
+          <div class="proto-step-title">Morning Alkaline Drink</div>
+          <p class="proto-step-desc">½ teaspoon food-grade baking soda (sodium bicarbonate — pure, no aluminium) dissolved in 250ml warm water. Add the juice of ½ lemon. The lemon is acidic but its metabolic end-product is alkaline — the combination creates a powerful morning alkalizing drink. Drink on an empty stomach, 20–30 minutes before food.</p>
+        </div>
+      </div>
+      <div class="proto-step">
+        <div class="proto-step-num">02</div>
+        <div class="proto-step-body">
+          <div class="proto-step-title">Kidney Support Drink (Optional — Afternoon)</div>
+          <p class="proto-step-desc">½ teaspoon baking soda in 250ml water with a pinch of cream of tartar (potassium bitartrate) — provides both sodium bicarbonate and potassium bicarbonate for full electrolyte alkalizing. Take 2–3 hours after a meal, not with food (which reduces stomach acid needed for digestion).</p>
+        </div>
+      </div>
+      <div class="proto-step">
+        <div class="proto-step-num">03</div>
+        <div class="proto-step-body">
+          <div class="proto-step-title">Baking Soda Bath — Detox &amp; Skin</div>
+          <p class="proto-step-desc">Add 2–4 cups of baking soda to a warm bath. Soak for 20–30 minutes. Absorbs through skin, helps neutralize acidic metabolic waste excreted through sweat, and softens the skin profoundly. The budget version of the Epsom salt detox bath — combine both for maximum effect. Repeat 2–3 times weekly.</p>
+        </div>
+      </div>
+      <div class="proto-step">
+        <div class="proto-step-num">04</div>
+        <div class="proto-step-body">
+          <div class="proto-step-title">UTI Emergency Protocol</div>
+          <p class="proto-step-desc">At the first signs of urinary discomfort: 1 teaspoon baking soda in a full glass of water, every 2–3 hours for 24 hours, while dramatically increasing water intake. Alkalinizing the urine creates a hostile environment for the bacteria responsible for most UTIs (which thrive in acid urine). This protocol has prevented countless antibiotic courses. If symptoms worsen or fever develops — seek medical attention.</p>
+        </div>
+      </div>
+      <div class="proto-step">
+        <div class="proto-step-num">05</div>
+        <div class="proto-step-body">
+          <div class="proto-step-title">Athletic Performance Protocol</div>
+          <p class="proto-step-desc">0.3g per kg body weight dissolved in water, taken 60–90 minutes before intense exercise. Reduces lactic acid accumulation, delays muscle fatigue, and accelerates recovery. Published in sports science literature. Used by elite athletes. The cheapest legal performance enhancer that exists. Note: causes stomach upset in some people — test with a low dose first.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:8px;">
+      <div class="callout-title">⚠️ Important Cautions</div>
+      <p><strong>Do not take baking soda with meals</strong> — it neutralizes stomach acid needed for digestion and B12 absorption. Always take 30 minutes before or 2 hours after food. <strong>Hypertension and kidney disease:</strong> sodium bicarbonate adds sodium load — consult a practitioner before therapeutic use if you have high blood pressure or kidney impairment. <strong>Maximum dose:</strong> do not exceed 3.5 teaspoons in 24 hours. Do not use aluminum-containing baking powder — baking soda (pure sodium bicarbonate) only.</p>
+    </div>
+
+    <button class="exp-btn exp-btn-warm" onclick="toggleExpand('baking-cancer',this)" data-label="The cancer alkalinity research — what Tullio Simoncini showed">
+      <div class="exp-icon exp-icon-warm"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl exp-lbl-warm">The cancer alkalinity research — and the pH terrain of disease</span>
+    </button>
+    <div class="exp-body" id="baking-cancer">
+      <div class="exp-inner">
+        <p class="lp lp-warm">The relationship between pH, terrain, and cancer has a long and suppressed research history. The fundamental observation — made by Otto Warburg, Nobel Prize winner in 1931 — is that cancer cells generate energy primarily through anaerobic glycolysis regardless of oxygen availability, producing lactic acid as a byproduct. This lactic acid creates an acidic microenvironment around tumors that suppresses immune activity, promotes invasion, and protects the tumor from immune attack.</p>
+        <p class="lp lp-warm">This is not fringe science. It is mainstream oncology. The Warburg effect is taught in medical schools. What is not taught — or not acted upon — is the logical implication: that modifying the pH of the tumor microenvironment toward alkalinity could make tumors more susceptible to immune attack and less able to survive.</p>
+        <p class="lp lp-warm">Dr. Tullio Simoncini, an Italian oncologist, went further — proposing and documenting clinical cases where sodium bicarbonate delivered directly to tumors (via catheter or local injection) produced regression. His work is controversial and he was stripped of his medical license in Italy. His documentation, however, has not been refuted on scientific grounds.</p>
+        <p class="lp lp-warm">What is well-established and published: systemic sodium bicarbonate supplementation in cancer patients undergoing chemotherapy reduces some chemotherapy toxicities and may improve outcomes for specific cancers sensitive to pH. This is published research. It is not used in standard oncology practice not because it doesn't work, but because it is not patentable and does not require a pharmaceutical prescription.</p>
+        <div class="pq pq-warm"><p>"Sodium bicarbonate. Pennies a gram. Your kidneys make it themselves. And the research on its therapeutic potential has sat in the published literature for 80 years, waiting to be applied."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- COPPER -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-copper" id="copper">
+  <div class="inner">
+    <div class="kicker">Deficiency Three</div>
+    <h2 class="lh2">Copper — <em>The Overlooked Mineral</em></h2>
+    <p class="lp">Copper is the most underappreciated mineral in functional medicine. It is involved in over 30 enzymatic reactions — including the final step of the electron transport chain that produces ATP (your cellular energy currency). Without adequate copper, the mitochondria cannot complete energy production efficiently. You are tired not because you lack motivation — you literally cannot make energy.</p>
+    <p class="lp">Copper is essential for: the formation of myelin (the nerve insulation sheath — its degradation produces neurological disease), collagen cross-linking (the structural integrity of connective tissue, skin, and blood vessels), iron metabolism (copper is required to mobilize iron from stores — iron-deficiency anemia that doesn't respond to iron supplementation is often actually copper deficiency), and the production of superoxide dismutase — the body's primary antioxidant enzyme.</p>
+
+    <div class="pq"><p>"Anemia that does not respond to iron. Fatigue that does not respond to B12. Connective tissue that tears and doesn't heal. Nerve symptoms with no identifiable cause. Before you conclude these are mysteries — check copper."</p></div>
+
+    <h3 class="lh3">Why Copper Deficiency Is Rising</h3>
+    <p class="lp">Several modern factors systematically deplete copper. <strong>Zinc supplementation without copper</strong> — zinc and copper compete for the same absorption pathways. The explosion in zinc supplementation (driven by immune health marketing, particularly after 2020) has created a significant subclinical copper deficiency problem. <strong>High fructose consumption</strong> — fructose impairs copper absorption directly, documented in research. <strong>Vitamin C in high doses</strong> without copper can deplete it. <strong>Antacids and acid-blocking medications</strong> reduce copper absorption. <strong>Agricultural practices</strong> have depleted soil copper — particularly in areas with heavy use of nitrogen fertilizers, which bind soil copper.</p>
+
+    <h3 class="lh3">Symptoms of Copper Deficiency</h3>
+    <div class="sym-grid">
+      <div class="sym-item">Fatigue unresponsive to iron or B12</div>
+      <div class="sym-item">Neurological symptoms — numbness, tingling</div>
+      <div class="sym-item">Poor wound healing</div>
+      <div class="sym-item">Premature greying of hair</div>
+      <div class="sym-item">Frequent illness — immune dysfunction</div>
+      <div class="sym-item">Osteoporosis (copper required for bone matrix)</div>
+      <div class="sym-item">Hypopigmentation of skin or hair</div>
+      <div class="sym-item">Varicose veins and poor vessel integrity</div>
+      <div class="sym-item">Anemia not responding to iron</div>
+      <div class="sym-item">Elevated LDL cholesterol</div>
+    </div>
+
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🟤 Copper Bisglycinate</span>
+          <span class="sd">1–2mg daily · Take separately from zinc</span>
+          <span class="sm">Take in the evening if zinc is taken in the morning — they compete for absorption. Do not exceed 3mg daily from supplements. The most bioavailable supplemental form. Bisglycinate forms are chelated with glycine — gentler on the gut and better absorbed than copper sulfate or copper oxide. The RDA for copper is 900mcg (0.9mg) — most people supplementing zinc without copper are running significantly below this.</span>
+          <span class="sw">⚠️ Copper toxicity is real — do not supplement above 3mg/day without testing. Wilson's disease (genetic copper accumulation disorder) is a contraindication.</span>
+        </div>
+      </li>
+    </ul>
+</ul>
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">💧 Copper Water <span class="budget-tag">Ancient Practice</span></span><span class="sd">Store water overnight in a copper vessel · Drink in the morning on empty stomach</span>
+          <span class="sm">Provides approx. 0.1–0.3mg copper per litre — gentle, food-safe, zero cost once the vessel is purchased. · An Ayurvedic practice with thousands of years of use and now some published supporting research. Water stored overnight in a pure copper vessel absorbs a small amount of ionic copper. The antimicrobial properties of copper vessels are documented — copper kills bacteria on contact. Used for gentle copper supplementation and as part of the morning ritual alongside the alkaline drink.</span>
+          <span class="sw">Use pure copper vessels only — not copper-plated. Clean with lemon and salt regularly. Do not store acidic beverages in copper.</span>
+          <a href="https://www.iherb.com/search?kw=copper+water+bottle&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+</div>
+
+    <div class="callout callout-sage" style="margin-top:8px;">
+      <div class="callout-title">🥩 Food Sources of Copper</div>
+      <p>The richest dietary sources: beef liver (the single most nutrient-dense food in existence — 1 serving provides the entire RDA for copper, plus B12, folate, retinol, and iron in one shot) · oysters · dark chocolate (85%+) · sesame seeds and tahini · cashews · shiitake mushrooms · spirulina · blackstrap molasses. If you are supplementing zinc daily, you need to be intentional about copper from food or supplementation — they do not naturally balance themselves.</p>
+    </div>
+
+    <button class="exp-btn" onclick="toggleExpand('copper-myelin',this)" data-label="Copper and the nervous system — the myelin connection">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">Copper and the nervous system — the myelin and Parkinson's connection</span>
+    </button>
+    <div class="exp-body" id="copper-myelin">
+      <div class="exp-inner">
+        <h3 class="lh3">The Myelin Connection</h3>
+        <p class="lp">Myelin — the fatty sheath that insulates nerve fibers and allows fast, efficient nerve signal transmission — requires copper for its synthesis. The enzyme cytochrome c oxidase, which is essential for myelin production, is a copper-dependent enzyme. When copper is deficient, myelin synthesis slows and existing myelin degrades.</p>
+        <p class="lp">This is why severe copper deficiency produces a condition called copper deficiency myelopathy — a neurological syndrome that mimics subacute combined degeneration (the nerve disease caused by B12 deficiency) and can also resemble multiple sclerosis. Symptoms include weakness, gait disturbance, sensory loss, and cognitive impairment.</p>
+        <p class="lp">The connection to Parkinson's disease is less definitive but documented: copper is required for the activity of ceruloplasmin — the copper-carrying protein in blood. Ceruloplasmin is a ferroxidase — it converts iron from its toxic Fe2+ form to the safer Fe3+ form. Low ceruloplasmin means iron accumulates in its oxidative form in brain tissue. Excessive iron accumulation in the substantia nigra — the region that degenerates in Parkinson's — is one of the consistent pathological findings in Parkinson's brains.</p>
+        <p class="lp">This does not mean copper deficiency causes Parkinson's. It means the biochemical link between copper status, iron dysregulation, and neurological disease is real, documented, and almost never discussed in the context of neurological disease management.</p>
+        <div class="pq"><p>"Before accepting that a neurological disease is irreversible — confirm that the minerals required for the nervous system's most basic maintenance functions are actually present. That step is almost never taken."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- ZINC AND THE RATIO -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-zinc" id="zinc">
+  <div class="inner">
+    <div class="kicker">Deficiency Four</div>
+    <h2 class="lh2">Zinc — <em>The Ratio Is Everything</em></h2>
+    <p class="lp">Zinc is the second most abundant trace mineral in the body after iron. It is a co-factor for over 300 enzymes. It is essential for DNA synthesis, protein production, wound healing, immune function, taste and smell, insulin signaling, testosterone production, and the development of T-cells. You cannot grow, heal, reproduce, or fight infection without adequate zinc.</p>
+    <p class="lp">But the insight that matters most is not about zinc alone. It is about the <strong>zinc-to-copper ratio.</strong> These two minerals are antagonists — they compete for absorption and oppose each other's functions. The optimal ratio in serum is approximately 8:1 to 12:1 (zinc:copper). Modern supplementation culture has pushed many people into a state of high zinc and low copper — or in people who never supplement, low both — and the consequences are systemic.</p>
+
+    <div class="pq"><p>"Testing zinc alone and calling it good is like testing one side of a seesaw. It tells you nothing about balance. The ratio is what governs the outcome."</p></div>
+
+    <h3 class="lh3">Effects of Zinc-Copper Imbalance</h3>
+    <table class="hal-table">
+      <tr><th>Imbalance</th><th>Presentation</th></tr>
+      <tr>
+        <td>High Zinc / Low Copper</td>
+        <td>Immune paradox (excessive zinc supplementation actually suppresses immunity over time) · Anemia · Neurological symptoms · Fatigue · Low ceruloplasmin · Iron dysregulation. Common in people supplementing 25–50mg zinc daily without copper.</td>
+      </tr>
+      <tr>
+        <td>Low Zinc / High Copper</td>
+        <td>Often seen in women on oral contraceptives (which raise serum copper). Depression and anxiety (copper excess is neurotoxic at elevated levels) · Histamine intolerance · Insomnia · Skin problems · Oestrogen dominance. Also associated with pyroluria.</td>
+      </tr>
+      <tr>
+        <td>Low Both</td>
+        <td>The most common pattern in people eating a processed-food diet. Broad immune dysfunction, poor wound healing, hormonal disruption, low energy, poor taste and smell, accelerated aging.</td>
+      </tr>
+    </table>
+
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">⚪ Zinc Bisglycinate</span>
+          <span class="sd">15–25mg daily · With food</span>
+          <span class="sm">Take with a meal — zinc on an empty stomach causes nausea in most people. Take away from copper supplementation if using both. Zinc bisglycinate (chelated) has superior absorption and tolerability compared to zinc sulfate or zinc gluconate. The most common deficiency symptom to track: loss of taste and smell (taste returns within days of adequate zinc). Also track wound healing, immune resilience, and skin condition — all respond visibly to zinc repletion.</span>
+          <span class="sw">⚠️ Do not exceed 40mg/day from all sources long-term. Always balance with 1–2mg copper if supplementing above 15mg zinc daily.</span>
+        </div>
+      </li>
+    </ul>
+</ul>
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🦪 Oysters <span class="budget-tag">Food First</span></span><span class="sd">1–2 canned oysters daily provides full RDA for both zinc and copper in natural ratio</span>
+          <span class="sm">The most elegant solution — zinc and copper in their natural food ratio, impossible to imbalance. · Six medium oysters provide approximately 32mg zinc and 4.7mg copper — naturally balanced. If you are trying to correct both deficiencies simultaneously, oysters (fresh or canned in water) provide them in exactly the ratio the body expects from food. Canned smoked oysters in olive oil are widely available and affordable. This is the food-first approach to the zinc-copper balance problem.</span>
+          <span class="sw">If you are sensitive to shellfish, this approach is not for you — use supplemental forms separately with attention to ratio.</span>
+        </div>
+      </li>
+    </ul>
+</div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- MAGNESIUM -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-warm" id="magnesium">
+  <div class="inner">
+    <div class="kicker kicker-sage">Deficiency Five</div>
+    <h2 class="lh2 lh2-dark">Magnesium — <em>The Master Mineral</em></h2>
+    <p class="lp lp-warm">Magnesium is a co-factor for over 800 enzymatic reactions — more than any other mineral. It is required for the production of ATP, DNA synthesis, protein synthesis, blood glucose regulation, blood pressure regulation, nerve transmission, and muscle contraction. Every single heartbeat requires magnesium. Every nerve firing requires magnesium. Every thought you have requires magnesium.</p>
+    <p class="lp lp-warm">Conservative estimates suggest 50–80% of the population is deficient. Some functional medicine practitioners put this number higher. The reason for uncertainty: serum magnesium — the standard test — is maintained within a narrow range even when cellular stores are severely depleted. The body will pull magnesium from bones and muscle tissue to maintain serum levels. <strong>Normal serum magnesium does not mean normal magnesium status.</strong> The correct test is RBC (red blood cell) magnesium — and most doctors have never ordered it.</p>
+
+    <div class="pq pq-warm"><p>"Magnesium is the first thing consumed by the stress response. Every cortisol spike depletes it. Every poor night of sleep depletes it. Every cup of coffee depletes it. Every processed meal contains none of it. The average person in the developed world is running a magnesium debt that compounds daily."</p></div>
+
+    <h3 class="lh3-warm" style="color:var(--sage);margin-top:28px;">The Right Form Matters</h3>
+    <p class="lp lp-warm">Not all magnesium is the same. The form determines where it goes and what it does. This matters enormously — particularly for neurological and sleep applications.</p>
+
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🧠 Magnesium Glycinate</span>
+          <span class="sd">300–400mg elemental magnesium · Evening</span>
+          <span class="sm">The best general-purpose form. High absorption, gentle on bowels, no laxative effect at standard doses. Best taken 1 hour before bed. Chelated with glycine — an amino acid that has its own calming effect on the nervous system. The combination produces the best results for anxiety, sleep, muscle tension, and general nervous system support. The gold standard for magnesium supplementation in most contexts. What is recommended in the Phase 4 maintenance protocol.</span>
+        </div>
+      </li>
+    </ul>
+</ul>
+    <ul class="supp-list">
+      <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🌊 Magnesium L-Threonate</span><span class="sd">144mg elemental magnesium (as 2g L-threonate) · Divided doses</span>
+          <span class="sm">The only form shown to significantly increase brain magnesium levels. More expensive. For neurological and cognitive applications specifically. · Developed at MIT specifically to cross the blood-brain barrier. Research shows it increases brain magnesium levels by 15% more than standard supplementation and improves synapse density, learning, and memory in animal models. For brain conditions — Parkinson's, Alzheimer's, cognitive decline, anxiety, depression — this form is the one to prioritize.</span>
+          <a href="https://www.iherb.com/search?kw=magnesium+threonate&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+ <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">✨ Magnesium Chloride (Topical) <span class="budget-tag">Budget</span></span><span class="sd">Magnesium oil spray or bath flakes · Apply to skin or add to bath</span>
+          <span class="sm">Bypasses the gut entirely — absorbed transdermally. Good option for those with gut issues affecting absorption. · Magnesium chloride in solution applied to skin — legs, arms, feet. Absorbs through the skin directly into muscles and tissue. Ideal for restless legs, muscle cramps, and pain. Also the basis for the Phase 1 detox bath and the DMSO + Magnesium combination protocol. Budget-friendly — 1kg of magnesium chloride flakes lasts months.</span>
+          <a href="https://www.iherb.com/search?kw=magnesium+chloride+flakes&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+ <li>
+        <span class="sc">✓</span>
+        <div>
+          <span class="sn">🏋️ Magnesium Malate</span><span class="sd">300–400mg elemental magnesium · Morning or afternoon</span>
+          <span class="sm">More energizing than glycinate — better for daytime use. Malic acid supports the Krebs cycle energy pathway. · Bound with malic acid — a compound involved in the mitochondrial energy cycle. Preferred for fibromyalgia, chronic fatigue, and people who need magnesium's benefits without the sedating effect. Use in the morning or midday. The least sedating form — ideal for those who find glycinate too relaxing during waking hours.</span>
+          <a href="https://www.iherb.com/search?kw=magnesium+malate&rcode=GUW6132" class="sl" target="_blank">→ iHerb — Code GUW6132</a>
+        </div>
+      </li>
+    </ul>
+</div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TESTING -->
+<!-- ═══════════════════════════════════════ -->
+<section class="sec-ink2" id="testing">
+  <div class="inner">
+    <div class="kicker">Know Your Numbers</div>
+    <h2 class="lh2">How to Test — What to Ask For</h2>
+    <p class="lp">Most of the deficiencies on this page will not be detected by standard blood panels. You must request specific tests — and in some cases, you must request the right version of the test. The following table gives you exactly what to ask your doctor for, with the critical note on why the standard test is often inadequate.</p>
+
+    <table class="hal-table" style="margin-top:24px;">
+      <tr><th>Deficiency</th><th>Test to Request</th><th>Why the Standard Test Fails</th></tr>
+      <tr>
+        <td>Iodine</td>
+        <td>24-hour urine iodine — or spot urine iodine/creatinine ratio</td>
+        <td>Serum iodine is not meaningful — it reflects recent intake, not body stores. Urine iodine reflects actual excretion and overall status.</td>
+      </tr>
+      <tr>
+        <td>Magnesium</td>
+        <td><strong>RBC Magnesium</strong> (Red Blood Cell Magnesium)</td>
+        <td>Serum magnesium is tightly regulated and remains normal even in severe cellular depletion. RBC magnesium reflects intracellular levels. Always specify RBC — not serum.</td>
+      </tr>
+      <tr>
+        <td>Copper</td>
+        <td>Serum copper + Ceruloplasmin (both)</td>
+        <td>Serum copper alone is misleading — it can appear normal if ceruloplasmin (the copper-carrying protein) is elevated by inflammation. Both markers together give a clearer picture.</td>
+      </tr>
+      <tr>
+        <td>Zinc</td>
+        <td>Plasma zinc (or RBC zinc for more accuracy)</td>
+        <td>Serum zinc is affected by recent meals, time of day, and inflammation. Test fasting, in the morning. Request both zinc and copper together to assess the ratio.</td>
+      </tr>
+      <tr>
+        <td>Zinc:Copper Ratio</td>
+        <td>Request both on the same panel — calculate ratio yourself</td>
+        <td>Laboratories do not typically calculate or flag the ratio. You must do this yourself: divide zinc value by copper value. Target 8–12:1.</td>
+      </tr>
+      <tr>
+        <td>Iodine Skin Test</td>
+        <td>DIY — see Iodine section above</td>
+        <td>Free, immediate, rough indicator. Not a substitute for urine testing but available to anyone with a bottle of Lugol's or standard iodine tincture.</td>
+      </tr>
+    </table>
+
+    <div class="callout callout-gold" style="margin-top:28px;">
+      <div class="callout-title">📋 How to Request These Tests</div>
+      <p>Most of these tests can be requested through your doctor with a standard referral. RBC magnesium is less commonly ordered — cite clinical symptoms to support the request. Iodine testing (24h urine) may require a specialist referral. Copper and ceruloplasmin are standard lab tests available through most general practitioners. If your doctor is resistant, a private functional medicine or naturopathic practitioner can order them directly. The full panel recommended in the main Detox Protocol blood work section covers the most important markers.</p>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+      Print Testing Guide
+    </button>
+  </div>
+</section>
+
+<!-- CLOSING / LINKS -->
+<section class="sec-dark">
+  <div class="inner">
+    <div class="pq"><p>"The most common nutrients are the most commonly deficient. Not because they are hard to find. Because the modern world has made them hard to absorb, hard to retain, and systematically replaced or displaced by cheaper, patentable alternatives that create dependence rather than health."</p></div>
+
+    <p class="lp" style="margin-top:32px;">The deficiencies on this page do not exist in isolation. Iodine deficiency worsens magnesium metabolism. Copper deficiency impairs iron status. Zinc and copper must be balanced against each other. These minerals function as a system — address them as a system, not as individual problems to be solved one at a time.</p>
+    <p class="lp">For the full context of how these deficiencies interact with parasitic load, toxic burden, and gut dysfunction, the Full Body Detox Protocol provides the complete framework.</p>
+    <p class="lp"><a href="Full_Body_Detox_Protocol.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ The Full Body Detox Protocol — where mineral restoration fits in the sequence</a></p>
+    <p class="lp"><a href="DMSO_Oxygen_Therapy.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ DMSO Protocol — using DMSO as a carrier for iodine and magnesium</a></p>
+    <p class="lp"><a href="Dr_Sebi_Alkaline_Protocol.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ Dr. Sebi — the mineral-first approach to alkaline health</a></p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="sec-ink2">
+  <div class="inner">
+    <div class="callout callout-warn">
+      <div class="callout-title">Medical Disclaimer</div>
+      <p>This information is for educational purposes only. Mineral supplementation at therapeutic doses can interact with medications and affect existing conditions. Consult a qualified healthcare practitioner before beginning any supplement protocol — particularly if you are on thyroid medication, blood pressure medication, diabetes medication, or have kidney disease. The author is not a doctor. This guide represents research and documented protocols from the naturopathic and functional medicine literature. Test before you supplement where possible. Correct the ratio, not just the number.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. Always consult a professional before beginning any protocol.</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function toggleExpand(id, btn){
+  const body = document.getElementById(id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  const lbl = btn.querySelector('.exp-lbl, .exp-lbl-warm');
+  lbl.textContent = isOpen ? btn.dataset.label : 'Show less';
+}
+
+// Phase nav active tracking
+const sections = document.querySelectorAll('[data-section]');
+const navLinks = document.querySelectorAll('.phase-nav a[data-section]');
+
+const allSections = ['iodine','bakingsoda','copper','zinc','magnesium','testing'].map(id => document.getElementById(id)).filter(Boolean);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      navLinks.forEach(a => {
+        a.classList.toggle('pn-active', a.dataset.section === id);
+      });
+    }
+  });
+}, {rootMargin:'-25% 0px -65% 0px'});
+allSections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>

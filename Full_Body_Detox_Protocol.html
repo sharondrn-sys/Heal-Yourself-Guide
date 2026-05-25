@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Full Body Detox Protocol — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;--bg-nav:#2c3a2e;--bg-footer:#263028;--ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;--sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;--terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;--honey:#a07830;--honey-pale:#f5eddb;--border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+
+/* PHASE NAV */
+.phase-nav{position:sticky;top:0;z-index:90;background:rgba(244,239,230,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
+.phase-nav a:hover{color:var(--sage);}
+.phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+.phase-nav a.pn-active .pn-dot{opacity:1;}
+.phase-nav a.pn-phase{flex-direction:column;align-items:flex-start;gap:1px;padding:4px 14px;height:38px;justify-content:center;}
+.pn-phase-label{font-size:10px;font-weight:700;letter-spacing:0.08em;line-height:1.2;}
+.pn-phase-sub{font-size:9px;font-weight:400;opacity:0.6;text-transform:none;line-height:1.2;}
+.pn-sep{width:1px;background:var(--border-s);margin:10px 0;flex-shrink:0;}
+.phase-nav a.pn-home{margin-left:auto;border-left:1px solid var(--border-s);padding-left:14px;opacity:0.7;}
+.phase-nav a.pn-home:hover{color:var(--sage);opacity:1;}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:68px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border-s);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(61,107,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.eyebrow::before{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,16px);color:var(--ink-light);font-weight:300;max-width:500px;margin:0 auto 32px;line-height:1.8;}
+.hero-stats{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;}
+.stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--sage);display:block;}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+
+/* PHASE CARDS ROW */
+.phase-hero-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+@media(max-width:768px){.phase-hero-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.phase-hero-row{grid-template-columns:1fr;}}
+.phc{padding:22px 18px;background:var(--bg-warm);border-top:3px solid var(--sage);text-decoration:none;display:block;transition:background 0.18s;}
+.phc:hover{background:var(--sage-pale);}
+.phc-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--sage);margin-bottom:5px;display:block;}
+.phc-days{font-size:11px;color:var(--ink-light);margin-bottom:7px;}
+.phc-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:5px;}
+.phc-desc{font-size:12px;color:var(--ink-light);line-height:1.6;}
+
+/* SECTIONS */
+.sec-main{background:var(--bg);padding:56px 24px;}
+.sec-warm{background:var(--bg-warm);padding:56px 24px;}
+.sec-deep{background:var(--bg-deep);padding:56px 24px;}
+.sec-sage{background:#e8f2ec;padding:56px 24px;}
+.sec-terra{background:var(--terra-pale);padding:56px 24px;}
+.sec-forest{background:#2c3a2e;padding:56px 24px;}
+.sec-stone{background:var(--bg-stone);padding:56px 24px;}
+.sec-p1{background:#f0f5ee;padding:56px 24px;}
+.sec-p2{background:#eef0f6;padding:56px 24px;}
+.sec-p3{background:#f6f0e8;padding:56px 24px;}
+.sec-p4{background:#eef5f0;padding:56px 24px;}
+.sec-p5{background:#f5eef5;padding:56px 24px;}
+
+.inner{max-width:760px;margin:0 auto;}
+.inner-wide{max-width:1000px;margin:0 auto;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.15),transparent);}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.kicker::before{content:'';width:24px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,34px);font-weight:700;color:var(--ink);line-height:1.22;margin-bottom:16px;}
+.lh2 em{color:var(--sage);font-style:italic;}
+.lh2-dark{color:#f0ece2;}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(15px,2vw,19px);font-weight:600;color:var(--sage);line-height:1.3;margin:26px 0 10px;}
+.lh3-phase{color:var(--ink);}
+.lh3-terra{color:var(--terra);}
+.lh3-dark{color:#c8e0cc;}
+.lp{font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:14px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+.lp-light{font-size:15px;line-height:1.9;color:rgba(240,236,226,0.8);margin-bottom:14px;}
+.lp-light strong{color:#f0ece2;}
+.note{font-size:12px;color:var(--ink-light);font-style:italic;margin-top:4px;line-height:1.6;}
+
+/* PULL QUOTES */
+.pq{border-left:3px solid var(--sage-mid);padding:15px 20px;margin:22px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(14px,1.9vw,17px);line-height:1.65;color:var(--sage);margin:0;}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra p{color:var(--terra);}
+.pq-dark{border-left-color:var(--sage-nav);background:rgba(138,184,154,0.08);}
+.pq-dark p{color:#a8c8b0;}
+
+/* CALLOUT BOXES */
+.callout{border-radius:8px;padding:16px 20px;margin:18px 0;}
+.callout-sage{background:var(--sage-pale);border:1px solid var(--border);}
+.callout-terra{background:var(--terra-pale);border:1px solid rgba(140,90,60,0.18);}
+.callout-honey{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);}
+.callout-warn{background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);}
+.callout-stone{background:var(--bg-stone);border:1px solid var(--border-s);}
+.callout-info{background:#eef0f6;border:1px solid rgba(80,90,140,0.18);}
+.callout-title{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.callout-sage .callout-title{color:var(--sage);}
+.callout-terra .callout-title,.callout-warn .callout-title{color:var(--terra);}
+.callout-honey .callout-title{color:var(--honey);}
+.callout-stone .callout-title{color:var(--ink-mid);}
+.callout-info .callout-title{color:#5060a0;}
+.callout p{font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:6px;}
+.callout p:last-child{margin-bottom:0;}
+.callout strong{color:var(--ink);}
+.callout a{color:var(--sage);text-decoration:underline;text-underline-offset:3px;}
+
+/* SUPPLEMENT CHECKLIST — replaces all cards */
+.supp-list{margin:14px 0 18px;border:1px solid var(--border-s);border-radius:8px;overflow:hidden;}
+.supp-item{display:grid;grid-template-columns:28px 1fr auto;gap:0 10px;padding:12px 16px;border-bottom:1px solid var(--border-s);align-items:start;background:var(--bg-warm);}
+.supp-item:last-child{border-bottom:none;}
+.supp-item:nth-child(even){background:var(--bg);}
+.supp-check{color:var(--sage);font-size:16px;line-height:1.4;font-weight:700;padding-top:1px;}
+.supp-body{min-width:0;}
+.supp-name{font-family:'Playfair Display',serif;font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;}
+.budget-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;background:var(--sage-pale);color:var(--sage);padding:1px 6px;border-radius:6px;margin-right:5px;font-family:'Jost',sans-serif;vertical-align:middle;}
+.free-tag{background:var(--honey-pale);color:var(--honey);}
+.supp-meta{font-size:12px;color:var(--ink-light);margin-top:3px;line-height:1.55;}
+.supp-meta strong{color:var(--ink-mid);font-weight:600;}
+.supp-warn{color:var(--terra);font-size:11px;display:block;margin-top:3px;}
+.supp-link{font-size:11px;font-weight:600;color:var(--sage);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--border);padding-bottom:1px;align-self:center;transition:color 0.15s;}
+.supp-link:hover{color:var(--sage-mid);}
+.supp-no-link{font-size:11px;color:var(--ink-ghost);white-space:nowrap;align-self:center;}
+
+/* BLOOD WORK TABLE */
+.bw-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.bw-table th{text-align:left;padding:9px 12px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);border-bottom:2px solid var(--border);}
+.bw-table td{padding:9px 12px;color:var(--ink-mid);border-bottom:1px solid var(--border-s);vertical-align:top;line-height:1.55;}
+.bw-table tr:nth-child(even){background:rgba(61,107,74,0.025);}
+.bw-table tr:last-child td{border-bottom:none;}
+.bw-table td:first-child{font-weight:600;color:var(--ink);}
+
+/* CHECKLIST (tasks/practices) */
+.checklist{margin:12px 0;}
+.checklist-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-s);}
+.checklist-item:last-child{border-bottom:none;}
+.check-dot{width:7px;height:7px;border-radius:50%;background:var(--sage-mid);flex-shrink:0;margin-top:6px;}
+.checklist-item span{font-size:14px;color:var(--ink-mid);line-height:1.6;}
+
+/* RECIPE BOX */
+.recipe-box{background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin:16px 0;}
+.recipe-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:12px;}
+.recipe-ing{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px;margin-bottom:14px;}
+@media(max-width:480px){.recipe-ing{grid-template-columns:1fr;}}
+.recipe-ing-item{font-size:13px;color:var(--ink-mid);display:flex;gap:7px;line-height:1.5;align-items:flex-start;}
+.recipe-ing-item::before{content:'·';color:var(--sage-mid);flex-shrink:0;}
+.recipe-steps{counter-reset:step;}
+.recipe-step{counter-increment:step;display:flex;gap:10px;margin-bottom:9px;font-size:13px;color:var(--ink-mid);line-height:1.6;}
+.recipe-step::before{content:counter(step);min-width:20px;height:20px;border-radius:50%;background:var(--sage);color:white;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+
+/* SCHEDULE */
+.schedule{margin:14px 0;border:1px solid var(--border-s);border-radius:8px;overflow:hidden;}
+.sched-row{display:grid;grid-template-columns:110px 1fr;border-bottom:1px solid var(--border-s);}
+.sched-row:last-child{border-bottom:none;}
+.sched-time{padding:10px 13px;background:var(--bg-deep);font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);font-weight:500;border-right:1px solid var(--border-s);display:flex;align-items:flex-start;padding-top:12px;}
+.sched-act{padding:10px 15px;font-size:13px;color:var(--ink-mid);background:var(--bg-warm);line-height:1.65;}
+.sched-act strong{color:var(--ink);}
+
+/* PRINT — section specific */
+.print-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);background:var(--sage-pale);border:1px solid var(--border);padding:6px 14px;border-radius:4px;cursor:pointer;text-decoration:none;transition:background 0.18s;}
+.print-btn:hover{background:rgba(61,107,74,0.15);}
+
+/* MAINTAIN GRID */
+.maintain-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:18px 0;}
+@media(max-width:640px){.maintain-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:380px){.maintain-grid{grid-template-columns:1fr;}}
+.mg-card{background:var(--bg-warm);border:1px solid var(--border-s);border-radius:8px;padding:16px 15px;}
+.mg-icon{font-size:20px;margin-bottom:7px;display:block;}
+.mg-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.mg-desc{font-size:12px;color:var(--ink-light);line-height:1.65;}
+
+/* WATER TABLE */
+.water-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px;}
+.water-table th{text-align:left;padding:9px 12px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);border-bottom:2px solid var(--border);background:var(--bg-deep);}
+.water-table td{padding:9px 12px;color:var(--ink-mid);border-bottom:1px solid var(--border-s);vertical-align:top;line-height:1.55;}
+.water-table tr:nth-child(even){background:rgba(61,107,74,0.02);}
+.water-table tr:last-child td{border-bottom:none;}
+.water-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap;}
+.water-table .good{color:var(--sage);font-weight:600;}
+.water-table .partial{color:var(--honey);}
+.water-table .no{color:var(--terra);}
+
+/* EXPAND */
+.exp-btn{display:flex;align-items:center;gap:10px;cursor:pointer;margin:20px 0 0;padding:12px 16px;border:1px solid var(--border);border-radius:6px;background:var(--sage-pale);transition:all 0.2s;width:100%;}
+.exp-btn:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
+.exp-icon{width:20px;height:20px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.exp-icon svg{width:9px;height:9px;transition:transform 0.3s;}
+.exp-btn.open .exp-icon svg{transform:rotate(180deg);}
+.exp-lbl{font-size:13px;font-weight:500;color:var(--sage);}
+.exp-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease;}
+.exp-body.open{max-height:9999px;}
+.exp-inner{padding-top:22px;}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:44px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:8px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.45);line-height:1.75;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:var(--sage-nav);}
+.ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
+
+@media print{
+  .phase-nav,footer,.print-btn,nav{display:none!important;}
+  .no-print{display:none!important;}
+  body{background:white;color:black;}
+  .printable{display:block!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- PHASE NAV — no right button, phase links only -->
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <a href="#read-first" data-section="read-first"><span class="pn-dot"></span>Read First</a>
+    <div class="pn-sep"></div>
+    <a href="#bloodwork" data-section="bloodwork"><span class="pn-dot"></span>Blood Work</a>
+    <div class="pn-sep"></div>
+    <a href="#water" data-section="water"><span class="pn-dot"></span>Clean Water</a>
+    <div class="pn-sep"></div>
+    <a href="#phase1" data-section="phase1" class="pn-phase"><span class="pn-phase-label">Phase 1</span><span class="pn-phase-sub">Days 1–14 · Prepare</span></a>
+    <div class="pn-sep"></div>
+    <a href="#phase2" data-section="phase2" class="pn-phase"><span class="pn-phase-label">Phase 2</span><span class="pn-phase-sub">Days 15–45 · Eliminate</span></a>
+    <div class="pn-sep"></div>
+    <a href="#phase3" data-section="phase3" class="pn-phase"><span class="pn-phase-label">Phase 3</span><span class="pn-phase-sub">Days 46–75 · Bind &amp; Drain</span></a>
+    <div class="pn-sep"></div>
+    <a href="#phase4" data-section="phase4" class="pn-phase"><span class="pn-phase-label">Phase 4</span><span class="pn-phase-sub">Days 76–90 · Rebuild</span></a>
+    <div class="pn-sep"></div>
+    <a href="#phase5" data-section="phase5" class="pn-phase"><span class="pn-phase-label">Phase 5</span><span class="pn-phase-sub">Day 91+ · Life After</span></a>
+    <div class="pn-sep"></div>
+    <a href="protocols.html" class="pn-home"><span class="pn-dot"></span>← Home</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>90-Day Complete Protocol</span></div>
+  <h1>The Full Body <em>Detox Protocol</em></h1>
+  <p class="hero-sub">Step by step. Day by day. The correct sequence for the correct results. Simple enough to print and put on your wall.</p>
+  <div class="hero-stats">
+    <div><span class="stat-num">90</span><span class="stat-label">Days</span></div>
+    <div><span class="stat-num">4</span><span class="stat-label">Phases</span></div>
+    <div><span class="stat-num">5</span><span class="stat-label">Drainage Doors</span></div>
+    <div><span class="stat-num">∞</span><span class="stat-label">Life After</span></div>
+  </div>
+</section>
+
+<!-- PHASE CARDS -->
+<div class="phase-hero-row">
+  <a href="#phase1" class="phc"><span class="phc-tag">Phase 01</span><span class="phc-days">Days 1–14</span><div class="phc-name">Prepare</div><p class="phc-desc">Open drainage pathways. Prepare mind and home.</p></a>
+  <a href="#phase2" class="phc"><span class="phc-tag">Phase 02</span><span class="phc-days">Days 15–45</span><div class="phc-name">Eliminate</div><p class="phc-desc">Biofilm disruption. Antiparasitic rotation.</p></a>
+  <a href="#phase3" class="phc"><span class="phc-tag">Phase 03</span><span class="phc-days">Days 46–75</span><div class="phc-name">Bind &amp; Drain</div><p class="phc-desc">Heavy metals. Microplastics. Deep tissue clearing.</p></a>
+  <a href="#phase4" class="phc"><span class="phc-tag">Phase 04</span><span class="phc-days">Days 76–90+</span><div class="phc-name">Rebuild</div><p class="phc-desc">Gut repair. Microbiome restoration. NAD+.</p></a>
+</div>
+
+<!-- READ FIRST -->
+<section class="sec-main" id="read-first">
+  <div class="inner">
+    <div class="kicker">Before You Begin</div>
+    <h2 class="lh2">Read the Entire Protocol First</h2>
+    <div class="callout callout-sage">
+      <div class="callout-title">⚠️ Read This Before You Do Anything</div>
+      <p>Before you buy a single supplement or change a single meal — read this entire protocol from beginning to end. All of it. Including Phase 5.</p>
+      <p>This is not a protocol you start on Day 1 and figure out as you go. The sequence is designed deliberately. Each phase prepares the conditions for the next. If you skip ahead, or start Phase 2 before Phase 1 is complete, you will feel terrible and you will likely quit.</p>
+      <p>Understanding the whole journey before you take the first step is not optional — it is the first step. Give yourself one hour to read everything. Then begin.</p>
+    </div>
+    <div class="callout callout-warn" style="margin-top:14px;">
+      <div class="callout-title">Medical Disclaimer</div>
+      <p>This protocol is a general wellness and detoxification framework for generally healthy adults. Consult a qualified healthcare practitioner before beginning if you are: pregnant or breastfeeding · under 18 · undergoing cancer treatment · living with kidney disease or serious autoimmune conditions · taking blood-thinning, heart, psychiatric, epilepsy, or diabetes medications. Several compounds — including nattokinase, serrapeptase, berberine, oregano oil, and milk thistle — have documented interactions with pharmaceutical medications.</p>
+    </div>
+    <h3 class="lh3">The Core Principle</h3>
+    <p class="lp">You cannot kill parasites effectively in a congested body. You cannot detox heavy metals without open drainage pathways. You cannot rebuild a gut lining while still feeding the organisms that damaged it.</p>
+    <p class="lp"><strong>The sequence matters as much as the substances.</strong> This protocol is designed in the correct order. Trust the order.</p>
+    <div class="pq"><p>"Mobilizing toxins without capturing them is not detoxification. It is redistribution."</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BLOOD WORK -->
+<section class="sec-warm" id="bloodwork">
+  <div class="inner">
+    <div class="kicker">Before You Start</div>
+    <h2 class="lh2">Blood Work — Know Your Baseline</h2>
+    <p class="lp">Before beginning this protocol, consider getting baseline blood work done. It tells you exactly where your body is starting from, and gives you a comparison point when you repeat tests after the protocol. Seeing the numbers change is one of the most motivating things you can do for yourself.</p>
+    <p class="lp">None of these tests are mandatory. But they are deeply informative. Take the list to your doctor and ask for a comprehensive panel. Many are covered by standard health insurance or can be ordered privately at reasonable cost.</p>
+    <table class="bw-table">
+      <tr><th>Test</th><th>Why It Matters</th></tr>
+      <tr><td>Complete Blood Count (CBC)</td><td>Baseline immunity, red blood cells, inflammation markers</td></tr>
+      <tr><td>Comprehensive Metabolic Panel</td><td>Liver and kidney function — critical before any detox</td></tr>
+      <tr><td>Vitamin D (25-OH)</td><td>Most people are severely deficient — affects immunity, mood, neurological function</td></tr>
+      <tr><td>Magnesium (RBC — not serum)</td><td>Serum magnesium is unreliable. RBC magnesium shows true cellular levels</td></tr>
+      <tr><td>Ferritin + Iron + TIBC</td><td>Iron deficiency affects energy, cognition, immunity</td></tr>
+      <tr><td>Vitamin B12 + Folate</td><td>B12 deficiency causes neurological damage — frequently missed</td></tr>
+      <tr><td>Thyroid Panel (TSH, Free T3, Free T4)</td><td>Thyroid affects every system — often disrupted by iodine deficiency and toxins</td></tr>
+      <tr><td>Zinc + Copper (serum)</td><td>The zinc-copper balance — critical for immune and neurological health</td></tr>
+      <tr><td>Iodine (spot urine)</td><td>WHO estimates 2 billion people are deficient worldwide</td></tr>
+      <tr><td>hs-CRP (high sensitivity)</td><td>Systemic inflammation marker — shows how inflamed your body is right now</td></tr>
+      <tr><td>Homocysteine</td><td>Elevated = B vitamin deficiency + cardiovascular and neurological risk</td></tr>
+      <tr><td>HbA1c + Fasting Glucose</td><td>Blood sugar regulation — insulin resistance affects every organ</td></tr>
+      <tr><td>Heavy Metals Panel (urine or blood)</td><td>Lead, mercury, cadmium, arsenic — shows your toxic load baseline</td></tr>
+      <tr><td>Stool Parasite Test (×3 samples)</td><td>Standard stool tests miss most parasites — request PCR-based if available</td></tr>
+    </table>
+    <div class="callout callout-info">
+      <div class="callout-title">Full Detailed Guide — Coming Soon</div>
+      <p>A complete "Before You Begin" page — including how to read your results, what optimal levels look like (not just "normal"), and what to do with what you find — is in preparation.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLEAN WATER — NEW SECTION -->
+<section class="sec-deep" id="water">
+  <div class="inner">
+    <div class="kicker">Foundation — Before Anything Else</div>
+    <h2 class="lh2">Clean Water — <em>The Most Important Step</em></h2>
+    <p class="lp">Before supplements. Before dietary changes. Before anything else in this protocol — you need to address your water. Not because water is the most dramatic intervention. Because every single thing you do in this protocol is undermined if the water you drink, cook with, and bathe in is actively working against you.</p>
+    <p class="lp">Standard municipal tap water in most countries contains a chemical cocktail that was never tested for synergistic effects on human health. The individual levels of each contaminant may be declared "safe." Their combined, cumulative, daily exposure over years — that has never been studied. And the list of what's in there is long.</p>
+
+    <h3 class="lh3">What Is Actually in Your Tap Water</h3>
+    <div class="callout callout-terra">
+      <div class="callout-title">⚠️ What Standard Water Treatment Does Not Remove</div>
+      <p><strong>Fluoride</strong> — added deliberately as a dental public health measure. Documented thyroid disruptor. Accumulates in the pineal gland. Not removed by standard carbon filters. Requires specific filtration (reverse osmosis, activated alumina, bone char).</p>
+      <p><strong>Chlorine &amp; Chloramines</strong> — used to kill pathogens in the distribution system. Continue killing microorganisms — including beneficial gut bacteria — after you drink them. Chloramines are harder to remove than chlorine and require catalytic carbon filters.</p>
+      <p><strong>Pharmaceutical residues</strong> — antibiotics, hormones (including synthetic estrogens from contraceptive pills), antidepressants, blood pressure medications, painkillers. These compounds pass through the human body and enter wastewater. Municipal treatment plants were not designed to remove them. The WHO confirmed existing treatment methods remove only 20–60% of pharmaceutical byproducts. Reverse osmosis removes up to 99%.</p>
+      <p><strong>Microplastics</strong> — a 2017 study tested bottled water from 9 countries and found microplastics in 93% of samples. Tap water contains them too. They have since been found in human blood, lungs, placentas, and brain tissue. Standard carbon pitcher filters (Brita, etc.) do not adequately remove microplastics.</p>
+      <p><strong>Heavy metals</strong> — lead from aging pipe infrastructure, arsenic from groundwater, cadmium and chromium from industrial sources. Directly compete with essential minerals in your body.</p>
+      <p><strong>PFAS ("forever chemicals")</strong> — industrial compounds used in non-stick coatings, food packaging, firefighting foam. Extremely persistent. Linked to thyroid disease, immune suppression, and certain cancers. Increasingly found in groundwater worldwide.</p>
+    </div>
+
+    <h3 class="lh3">Your Skin Absorbs Water Too</h3>
+    <p class="lp">This is the part most people miss. Drinking filtered water is essential — but if you shower in unfiltered tap water, your skin absorbs chlorine, chloramines, and other compounds directly into your bloodstream. A 10-minute hot shower exposes you to more chlorine absorption than drinking 2 litres of the same water. Hot water opens pores and increases absorption. Steam carries volatile compounds into your lungs.</p>
+    <p class="lp">For this protocol, shower filtration is not optional. It is part of the drainage door work.</p>
+
+    <h3 class="lh3">Filtration Methods — What Works for What</h3>
+    <table class="water-table">
+      <tr>
+        <th>Method</th>
+        <th>Fluoride</th>
+        <th>Chlorine</th>
+        <th>Pharma</th>
+        <th>Microplastics</th>
+        <th>Heavy Metals</th>
+        <th>Cost</th>
+      </tr>
+      <tr>
+        <td>Standard pitcher filter (Brita)</td>
+        <td class="no">✕</td>
+        <td class="partial">Partial</td>
+        <td class="no">✕</td>
+        <td class="no">✕</td>
+        <td class="partial">Partial</td>
+        <td>Low — but inadequate</td>
+      </tr>
+      <tr>
+        <td>ZeroWater pitcher</td>
+        <td class="good">✓</td>
+        <td class="good">✓</td>
+        <td class="partial">Partial</td>
+        <td class="partial">Partial</td>
+        <td class="good">✓</td>
+        <td>Low — $30–40 + filters</td>
+      </tr>
+      <tr>
+        <td>Countertop carbon block filter</td>
+        <td class="no">✕</td>
+        <td class="good">✓</td>
+        <td class="good">✓ (NSF 401)</td>
+        <td class="good">✓</td>
+        <td class="partial">Partial</td>
+        <td>Medium — $80–150</td>
+      </tr>
+      <tr>
+        <td>Gravity filter (Berkey-style)</td>
+        <td class="partial">With fluoride add-on</td>
+        <td class="good">✓</td>
+        <td class="good">✓</td>
+        <td class="good">✓</td>
+        <td class="good">✓</td>
+        <td>Medium — $150–300. No electricity.</td>
+      </tr>
+      <tr>
+        <td><strong>Reverse Osmosis (RO) — under sink</strong></td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓ up to 99%</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td>Best overall — $150–400 installed</td>
+      </tr>
+      <tr>
+        <td>Countertop RO (AquaTru)</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓ NSF 401 verified</td>
+        <td class="good">✓✓</td>
+        <td>Medium — $300–400. No plumbing.</td>
+      </tr>
+      <tr>
+        <td>Shower filter (KDF/carbon)</td>
+        <td class="no">✕</td>
+        <td class="good">✓</td>
+        <td class="partial">Partial</td>
+        <td class="partial">Partial</td>
+        <td class="partial">Partial</td>
+        <td>Low — $30–60. Essential for bathing.</td>
+      </tr>
+      <tr>
+        <td>Distillation</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td class="good">✓✓</td>
+        <td>Medium — counter-top units $100–200. Slow.</td>
+      </tr>
+    </table>
+
+    <div class="callout callout-honey">
+      <div class="callout-title">💰 If You Can Only Do One Thing</div>
+      <p><strong>Minimum effective:</strong> A ZeroWater pitcher (~$35) for drinking and cooking water + a shower filter (~$35). Total: under $70. This removes fluoride, chlorine, most heavy metals, and dramatically reduces pharmaceutical residues for the water you drink and the water your skin absorbs. This alone is a significant upgrade.</p>
+      <p><strong>Best investment:</strong> An under-sink reverse osmosis system removes up to 99% of all categories listed above and produces unlimited water at the tap. Cost ranges from $150–400 installed. Annual filter replacement: $50–100. The most thorough and cost-effective long-term solution.</p>
+      <p><strong>No electricity, no plumbing:</strong> A gravity-fed system with fluoride-specific cartridges (bone char or activated alumina) works anywhere, requires no power, and handles most contaminants. Good for renters, travel, or off-grid situations.</p>
+    </div>
+
+    <h3 class="lh3">What to Look for When Buying</h3>
+    <div class="checklist">
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>NSF/ANSI 58</strong> — covers reverse osmosis systems including fluoride and TDS reduction</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>NSF/ANSI 401</strong> — covers microplastics, pharmaceuticals, and emerging contaminants. This is the certification that matters most.</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>NSF/ANSI 53</strong> — covers lead, heavy metals, and health-related contaminants</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>NSF/ANSI 42</strong> — covers chlorine, taste, and odor. Basic but not sufficient alone.</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Ask for independent lab test reports — not just manufacturer claims. NSF listings can be verified at nsf.org.</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>For fluoride specifically: activated alumina, bone char, or reverse osmosis membrane are the only proven methods. Standard carbon does not remove fluoride.</span></div>
+    </div>
+
+    <div class="callout callout-sage" style="margin-top:8px;">
+      <div class="callout-title">🆓 Free Method — Chlorine Only</div>
+      <p>Leave tap water in an open glass container in sunlight for 6 hours. This removes chlorine through UV exposure and off-gassing. <strong>It does not remove fluoride, pharmaceuticals, microplastics, or heavy metals.</strong> Use this only when no other option is available. It is better than nothing for chlorine specifically — and not adequate as a standalone water treatment for this protocol.</p>
+    </div>
+
+    <div class="callout callout-stone" style="margin-top:8px;">
+      <div class="callout-title">⚠️ Note on Remineralisation</div>
+      <p>Reverse osmosis and distillation remove <em>all</em> dissolved minerals — including beneficial ones like calcium and magnesium. If using RO or distilled water as your main source, add minerals back: a pinch of real sea salt per litre, a remineralisation filter stage, or trace mineral drops. This is why the Morning Sole Drink (real salt in water) in Phase 1 is particularly important if you are using RO water.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASE 1 -->
+<section class="sec-p1" id="phase1">
+  <div class="inner">
+    <div class="kicker">Phase One · Days 1–14</div>
+    <h2 class="lh2">Prepare — <em>Opening the Drainage Doors</em></h2>
+
+    <div class="callout callout-sage">
+      <div class="callout-title">✅ What Phase 1 Accomplishes</div>
+      <p>By the end of Day 14 your liver is actively producing bile, your kidneys are flushing daily, your lymph is moving, your skin is sweating, and your bowels are clearing at least once — preferably twice — per day. You have removed the major toxin sources from your home and kitchen. Your body is ready to handle the clearing work that Phase 2 begins.</p>
+      <p><strong>Do not move to Phase 2 until all five drainage doors are open and functioning.</strong> This is the most important instruction in the entire protocol.</p>
+    </div>
+
+    <div class="callout callout-honey" style="margin-top:10px;">
+      <div class="callout-title">💰 Phase 1 Minimum — If Budget Is Tight</div>
+      <p>You do not need everything on the list. The three non-negotiables are: <strong>filtered water</strong> (ZeroWater pitcher at minimum), <strong>magnesium citrate</strong> before bed, and <strong>one detox bath per week</strong> using at least Epsom salt + baking soda. Start here. Everything else is an upgrade. These three alone will open the drainage doors.</p>
+    </div>
+
+    <h3 class="lh3">Mental Preparation — The Step Nobody Talks About</h3>
+    <p class="lp">Most healing protocols make the same mistake. They start with the body. Real healing requires mental preparation first — because the body follows the mind.</p>
+    <p class="lp">Healing is not comfortable. When the body begins releasing stored toxins and the die-off byproducts of dying pathogens, you will feel it. This is called the Herxheimer reaction — feeling worse before feeling better. It is not only normal; it is expected. It is evidence of biological activity.</p>
+    <p class="lp"><strong>Decide before you begin that you are committed regardless of discomfort.</strong> Write that commitment down. The people who complete this protocol are not the ones who felt the best during it. They are the ones who understood what was happening and kept going.</p>
+
+    <h3 class="lh3">Home Preparation</h3>
+    <p class="lp"><strong>Kitchen:</strong> Remove seed oils — canola, vegetable, soybean, sunflower, corn oil. Replace with cold-pressed olive oil, coconut oil, ghee, or MCT oil. Remove non-stick cookware. Replace with cast iron, stainless steel, or ceramic. Switch to filtered water for all drinking and cooking.</p>
+    <p class="lp"><strong>Bathroom:</strong> Begin replacing products containing parabens, sodium lauryl sulfate, phthalates, and aluminum compounds. Replace one product at a time as they run out.</p>
+    <p class="lp"><strong>Cleaning products:</strong> White vinegar, baking soda, and castile soap replace the entire cleaning arsenal — effectively, at a fraction of the cost.</p>
+    <p class="lp"><strong>Bedroom:</strong> Maximum darkness during sleep. Screens off or in airplane mode. WiFi router off at night if possible. Phones outside the bedroom.</p>
+
+    <div class="callout callout-honey">
+      <div class="callout-title">💰 Budget Replacements</div>
+      <p><strong>Cooking oil:</strong> A large bottle of cold-pressed extra virgin olive oil costs under $10 and lasts weeks. Use for lower-heat cooking and salads. For high heat: a block of ghee (~$8) lasts months.</p>
+      <p><strong>Cookware:</strong> A Lodge cast iron pan (~$30) lasts generations. Second-hand stainless steel pans at thrift stores cost almost nothing.</p>
+      <p><strong>Cleaning:</strong> 1 litre white vinegar (~$2) + box of baking soda (~$1) = full cleaning kit. Castile soap (~$8) for dishes and surfaces.</p>
+    </div>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">The Five Drainage Doors</h3>
+
+    <!-- DOOR 1 -->
+    <h3 class="lh3">Door 1 — The Colon</h3>
+    <p class="lp">At least one full bowel movement per day — ideally two — before beginning any cleanse. If the colon is not moving, everything mobilised during the protocol recirculates back into the bloodstream.</p>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Magnesium Citrate</div>
+          <div class="supp-meta"><strong>300–400mg before bed</strong> · Powder or capsule · Start at 150mg if elderly or under 60kg<br>Gentle osmotic laxative — draws water into the colon, softens stool, supports regularity. Also replenishes one of the most commonly depleted minerals.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=magnesium+citrate&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Psyllium Husk <span class="budget-tag">budget</span></div>
+          <div class="supp-meta"><strong>1 tablespoon in water twice daily</strong> · Always with a full glass of water<br>Soluble fibre that absorbs water and forms a gel — sweeps the colon clean. Also binds toxins and feeds beneficial bacteria.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=psyllium+husk&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Filtered Water — 2+ Litres Daily <span class="budget-tag free-tag">free</span></div>
+          <div class="supp-meta"><strong>2 litres minimum · Filtered only — see Clean Water section above</strong><br>The single most important colon-support intervention. Most people are chronically dehydrated. Adequate water is non-negotiable for everything that follows.</div>
+        </div>
+        <span class="supp-no-link">essential</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Castor Oil (oral) <span class="budget-tag">budget</span></div>
+          <div class="supp-meta"><strong>1 tablespoon in the evening if needed</strong> · Or castor oil pack over abdomen<br>Stimulates bowel motility. Use sparingly — when magnesium and psyllium are not sufficient alone.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=castor+oil+food+grade&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Movement — 20 Minutes Daily <span class="budget-tag free-tag">free</span></div>
+          <div class="supp-meta"><strong>Any movement · Walking counts</strong><br>Physical movement stimulates peristalsis — the wave-like muscular contractions that move food through the digestive tract. Without it, even perfect supplementation is less effective.</div>
+        </div>
+        <span class="supp-no-link">free</span>
+      </div>
+    </div>
+
+    <!-- DOOR 2 -->
+    <h3 class="lh3">Door 2 — The Liver &amp; Bile Flow</h3>
+    <p class="lp">The liver is the body's primary detoxification organ — responsible for over 500 identified metabolic functions. It filters the blood, processes hormones, produces bile for fat digestion, and packages toxins for removal. Open it gently before asking it to process more.</p>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Milk Thistle (Silymarin) <span class="budget-tag">essential</span></div>
+          <div class="supp-meta"><strong>Silymarin 140–420mg daily · With food</strong> · Lower dose for under 60kg or elderly<br>The most researched liver-protective herb. Silymarin stimulates liver cell regeneration and blocks toxin entry into hepatocytes (liver cells). Non-negotiable for any detox protocol.</div>
+          <div class="supp-warn">⚠️ May lower blood sugar — monitor if diabetic</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=milk+thistle+silymarin&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">NAC — N-Acetyl Cysteine</div>
+          <div class="supp-meta"><strong>600mg twice daily · Between meals</strong> · Reduce to once daily for elderly or under 55kg<br>Raises glutathione — the body's master antioxidant and primary detoxification molecule. Also one of the most researched biofilm disruptors — relevant for Phase 2 preparation.</div>
+          <div class="supp-warn">⚠️ Do not use with nitroglycerin medications</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=NAC+n-acetyl+cysteine&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Dandelion Root Tea <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>2 cups daily · Safe for all ages</strong><br>Stimulates bile production and liver detoxification. Supports kidney drainage simultaneously. Often growing freely in gardens — the most accessible liver herb that exists.</div>
+          <div class="supp-warn">Avoid if allergic to ragweed family</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=dandelion+root+tea&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Warm Lemon Water — Every Morning <span class="budget-tag free-tag">free</span></div>
+          <div class="supp-meta"><strong>Juice of ½ lemon in warm filtered water · Before anything else</strong><br>Stimulates bile production, gently alkalises the body, and activates the liver before the day's metabolic demands begin. Use a straw to protect tooth enamel.</div>
+        </div>
+        <span class="supp-no-link">free</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Castor Oil Pack — Over Liver Area <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>3–4 times per week · 45–60 minutes with warmth</strong><br>Apply cold-pressed castor oil over the right side of the abdomen (over the liver). Cover with a cloth. Apply a warm compress or hot water bottle. Documented to increase bile flow, lymphatic circulation, and liver enzyme activity.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=castor+oil+cold+pressed+hexane+free&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <!-- DOOR 3 -->
+    <h3 class="lh3">Door 3 — The Kidneys</h3>
+    <p class="lp">Your kidneys filter the entire blood volume 40 times per day. They need adequate hydration and gentle herbal support before the toxic load of a cleanse increases their workload.</p>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Filtered Water — 2+ Litres <span class="budget-tag free-tag">primary</span></div>
+          <div class="supp-meta"><strong>The most important kidney intervention</strong><br>Adequate hydration is the foundation of kidney function. Everything else on this list is secondary to drinking enough clean water.</div>
+        </div>
+        <span class="supp-no-link">essential</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Parsley Tea <span class="budget-tag free-tag">free/cheap</span></div>
+          <div class="supp-meta"><strong>1–2 cups daily · Fresh or dried</strong><br>One of the most researched kidney-supportive herbs. Stimulates urine flow and helps clear uric acid. Grow it on a windowsill for a continuous free supply.</div>
+        </div>
+        <span class="supp-no-link">grow it</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Nettle Leaf Tea <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>1–2 cups daily</strong><br>Gentle diuretic and kidney tonic. Rich in minerals including silica and magnesium. Widely available, inexpensive, and safe for daily use throughout the protocol.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=nettle+leaf+tea&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Reduce NSAIDs (ibuprofen, aspirin)</div>
+          <div class="supp-meta"><strong>Minimise or eliminate during the protocol</strong><br>NSAIDs are among the most kidney-damaging compounds in common use. They reduce blood flow to the kidneys and impair their filtration capacity. Discuss alternatives with your doctor if using regularly.</div>
+        </div>
+        <span class="supp-no-link">avoid</span>
+      </div>
+    </div>
+    <p class="note">Note: If you have existing kidney disease, consult your doctor before adding herbal kidney support — some herbs are contraindicated with impaired kidney function.</p>
+
+    <!-- DOOR 4 -->
+    <h3 class="lh3">Door 4 — The Lymphatic System</h3>
+    <p class="lp">The lymphatic system has no dedicated pump. It moves only through movement, breathing, gravity, and manual stimulation. Most people's lymph is stagnant — a swamp that needs to become a river before you begin clearing deeper layers.</p>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Rebounding — Mini Trampoline <span class="budget-tag budget">best investment</span></div>
+          <div class="supp-meta"><strong>10–20 minutes daily</strong> · A small rebounder costs $30–60<br>The single most effective lymphatic drainage practice identified. The up-down G-force of bouncing opens and closes lymphatic valves with every movement. Even gentle bouncing — feet never leaving the surface — is highly effective.</div>
+        </div>
+        <span class="supp-no-link">buy once</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Dry Skin Brushing <span class="budget-tag free-tag">almost free</span></div>
+          <div class="supp-meta"><strong>Every morning before shower · Always toward the heart · 3–5 minutes</strong><br>Long strokes from extremities toward the heart follow lymphatic flow direction. Stimulates lymph circulation under the skin and opens skin pores for better toxin excretion. A natural bristle brush costs $5–10 and lasts years.</div>
+        </div>
+        <span class="supp-no-link">$5 brush</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Hot-Cold Shower Contrast <span class="budget-tag free-tag">free</span></div>
+          <div class="supp-meta"><strong>End every shower with 30 seconds cold · Non-negotiable</strong><br>Temperature contrast causes blood vessels and lymphatic vessels to contract and expand — acting as a pump. Cold water also triggers norepinephrine release, which has documented neuroprotective and anti-inflammatory effects.</div>
+        </div>
+        <span class="supp-no-link">free</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Deep Diaphragmatic Breathing <span class="budget-tag free-tag">free</span></div>
+          <div class="supp-meta"><strong>5 minutes daily</strong><br>The diaphragm acts as a lymphatic pump for the thoracic duct — the body's largest lymphatic vessel. Deep belly breathing creates pressure changes that drive lymph flow. Simple, free, and profoundly effective.</div>
+        </div>
+        <span class="supp-no-link">free</span>
+      </div>
+    </div>
+
+    <!-- DOOR 5 -->
+    <h3 class="lh3">Door 5 — The Skin</h3>
+    <p class="lp">The skin is the body's largest organ and a significant detoxification route. Sweating excretes heavy metals, BPA, phthalates, and other toxins directly. Most modern people barely sweat at all. This needs to change.</p>
+
+    <h3 class="lh3 lh3-phase">The Healing Detox Bath</h3>
+    <p class="lp">Three times per week minimum during Phase 1. Increase to daily if experiencing strong detox symptoms.</p>
+    <p class="lp"><strong>No bath? No problem.</strong> Use a large foot basin — the same ingredients, the same transdermal absorption, the same effect through the skin of the feet and lower legs. Or purchase a portable inflatable bath tub ($20–40 online) — folds flat for storage, fills with a showerhead. Foot soaking is a legitimate and effective alternative — your feet have some of the highest skin permeability of any body surface.</p>
+
+    <div class="recipe-box">
+      <div class="recipe-title">🛁 Full Detox Bath Recipe</div>
+      <div class="recipe-ing">
+        <div class="recipe-ing-item">Epsom Salt — 2 cups (magnesium sulfate, supports liver sulfation pathway)</div>
+        <div class="recipe-ing-item">Baking Soda — 1 cup (alkalises water, neutralises chlorine)</div>
+        <div class="recipe-ing-item">Real Sea Salt — ½ cup (full-spectrum minerals)</div>
+        <div class="recipe-ing-item">Apple Cider Vinegar (ACV) — 1 cup (restores skin's acid mantle, antifungal)</div>
+        <div class="recipe-ing-item">Bentonite Clay — ½ cup (binds heavy metals transdermally — premix with water first)</div>
+        <div class="recipe-ing-item">Ground Ginger — 2 tablespoons (opens pores, stimulates sweating)</div>
+      </div>
+      <div class="recipe-steps">
+        <div class="recipe-step">Draw a warm (not hot) bath. Premix bentonite clay with a small amount of water before adding to the bath — never mix clay directly in dry form.</div>
+        <div class="recipe-step">Add all ingredients and stir well.</div>
+        <div class="recipe-step">Soak for 20–40 minutes. Drink filtered water throughout.</div>
+        <div class="recipe-step">Rest afterward — do not shower for at least one hour. Let the minerals continue absorbing.</div>
+      </div>
+      <p class="note" style="margin-top:12px;">💰 <strong>Budget version:</strong> Epsom salt + baking soda alone — under $5 per bath. This is good enough. Add the other ingredients as budget allows.<br><br>🦶 <strong>Foot soak version:</strong> Use half quantities in a large basin. Soak feet and lower legs for 30–40 minutes. Equally effective for mineral absorption and skin detoxification through one of the body's most permeable surfaces.</p>
+      <a href="#" class="print-btn no-print" onclick="printSection('bath-recipe')">🖨 Print Bath Recipe</a>
+      <div id="bath-recipe" style="display:none;"></div>
+    </div>
+
+    <h3 class="lh3">Morning Sole Drink</h3>
+    <p class="lp">Fill a glass jar one-quarter full with real sea salt (Celtic, Himalayan, or Real Salt — never table salt). Fill the rest with filtered water. Use a non-metal lid. Leave overnight. Every morning: one teaspoon of this saturated salt solution in a full glass of filtered water, before anything else.</p>
+    <p class="lp">This provides full-spectrum trace minerals, supports adrenal function, aids cellular hydration, and prepares the digestive system. It is particularly important if using reverse osmosis water, which has been stripped of minerals.</p>
+
+    <h3 class="lh3">Salt Grounding Practice</h3>
+    <p class="lp">Pour coarse sea salt onto a flat tray or plate. Stand barefoot on it for 10–15 minutes — no phone, no agenda. The texture stimulates thousands of nerve endings in the feet that correspond reflexologically to every organ. The minerals provide a mildly conductive surface. Simple, ancient, and quietly effective.</p>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:32px;">Phase 1 — Complete Daily Schedule</h3>
+    <p class="lp">Print this. Put it on your bathroom wall. Follow it for 14 days.</p>
+    <div class="schedule" id="phase1-schedule">
+      <div class="sched-row"><div class="sched-time">On waking</div><div class="sched-act"><strong>Morning Sole drink</strong> — 1 tsp saturated salt solution in a full glass of filtered water</div></div>
+      <div class="sched-row"><div class="sched-time">5 min later</div><div class="sched-act"><strong>Warm lemon water</strong> — juice of ½ lemon in warm filtered water (use straw)</div></div>
+      <div class="sched-row"><div class="sched-time">10–15 min</div><div class="sched-act"><strong>Salt grounding</strong> — stand barefoot on coarse sea salt · no phone · breathe deeply</div></div>
+      <div class="sched-row"><div class="sched-time">5 min</div><div class="sched-act"><strong>Dry skin brushing</strong> — head to toe, always toward the heart · use natural bristle brush</div></div>
+      <div class="sched-row"><div class="sched-time">Shower</div><div class="sched-act">Shower filter installed · end with <strong>30 seconds cold water</strong> — non-negotiable</div></div>
+      <div class="sched-row"><div class="sched-time">10 min</div><div class="sched-act"><strong>Morning sunlight</strong> on skin — step outside · Vitamin D synthesis + circadian regulation</div></div>
+      <div class="sched-row"><div class="sched-time">5 min</div><div class="sched-act"><strong>Deep diaphragmatic breathing</strong> — 5 full slow breaths from the belly</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>Milk thistle</strong> with food · <strong>Dandelion root tea</strong> alongside · First psyllium husk dose</div></div>
+      <div class="sched-row"><div class="sched-time">Mid-morning</div><div class="sched-act">Continue water intake · <strong>Parsley or nettle tea</strong> for kidney support</div></div>
+      <div class="sched-row"><div class="sched-time">Midday</div><div class="sched-act">NAC — N-Acetyl Cysteine (between meals) · Second psyllium husk dose with full glass water</div></div>
+      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act"><strong>20 min movement</strong> — walking, rebounding, anything · lymph needs movement</div></div>
+      <div class="sched-row"><div class="sched-time">Evening</div><div class="sched-act"><strong>Castor oil pack</strong> over liver area (3–4×/week) · warm compress · 45 min</div></div>
+      <div class="sched-row"><div class="sched-time">Before bed</div><div class="sched-act"><strong>Magnesium citrate</strong> — 300–400mg · Begin detox bath 3×/week or foot soak instead</div></div>
+      <div class="sched-row"><div class="sched-time">Water target</div><div class="sched-act">2+ litres filtered water throughout the day · track it · most people under-drink</div></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase1-schedule')">🖨 Print Phase 1 Daily Schedule</a>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 1 Shopping List</h3>
+    <div class="supp-list">
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Magnesium Citrate</div><div class="supp-meta">Powder or capsule · 300mg+ per serving</div></div><a href="https://www.iherb.com/search?kw=magnesium+citrate&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Psyllium Husk Powder</div><div class="supp-meta">Unflavoured · 500g+ for the phase</div></div><a href="https://www.iherb.com/search?kw=psyllium+husk+powder&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Milk Thistle (Silymarin standardised)</div><div class="supp-meta">80% silymarin extract · 140–175mg per capsule</div></div><a href="https://www.iherb.com/search?kw=milk+thistle+silymarin+80&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">NAC — N-Acetyl Cysteine</div><div class="supp-meta">600mg capsules</div></div><a href="https://www.iherb.com/search?kw=NAC+600mg&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Dandelion Root Tea</div><div class="supp-meta">Loose or bagged · organic</div></div><a href="https://www.iherb.com/search?kw=dandelion+root+tea&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Nettle Leaf Tea</div><div class="supp-meta">Loose or bagged</div></div><a href="https://www.iherb.com/search?kw=nettle+leaf+tea&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Epsom Salt — Large Bag</div><div class="supp-meta">2kg+ for the phase · 3 baths per week</div></div><a href="https://www.iherb.com/search?kw=epsom+salt+magnesium&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Bentonite Clay — Food Grade</div><div class="supp-meta">Food grade only</div></div><a href="https://www.iherb.com/search?kw=bentonite+clay+food+grade&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Real Sea Salt <span class="budget-tag free-tag">upgrade</span></div><div class="supp-meta">Celtic Sea Salt, Himalayan, or Real Salt — not table salt</div></div><a href="https://www.iherb.com/search?kw=celtic+sea+salt&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Cold-Pressed Castor Oil <span class="budget-tag budget">budget</span></div><div class="supp-meta">Hexane-free · for packs and oral use</div></div><a href="https://www.iherb.com/search?kw=castor+oil+cold+pressed+hexane&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Shower Filter</div><div class="supp-meta">KDF/carbon · fits standard shower head</div></div><a href="https://www.iherb.com/search?kw=shower+filter+kdf&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase1-list')">🖨 Print Phase 1 Shopping List</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASE 2 -->
+<section class="sec-p2" id="phase2">
+  <div class="inner">
+    <div class="kicker">Phase Two · Days 15–45</div>
+    <h2 class="lh2">Eliminate — <em>Biofilm Disruption &amp; Antiparasitic Rotation</em></h2>
+
+    <div class="callout callout-sage">
+      <div class="callout-title">✅ What You Just Did — and What Comes Next</div>
+      <p>For the past two weeks you have been building the infrastructure for everything that follows. Your five drainage pathways are open. Your liver is actively producing bile. Your kidneys are flushing daily. Your colon is clearing. Your skin is sweating. Your body now has the exits it needs to process what we are about to release.</p>
+      <p>Phase 2 is the active clearing phase — the part most people think of when they think of a "cleanse." But it only works because Phase 1 made it possible. If you jumped here first, go back. Open the doors. Then return.</p>
+      <p><strong>What to expect:</strong> This phase is not always comfortable. As biofilm breaks down and pathogens die, they release toxins into the system — producing what is called a Herxheimer or "die-off" reaction. Fatigue, headaches, skin breakouts, irritability, and brain fog are all normal and temporary. They are evidence the protocol is working. Increase your binders (Phase 3 section) if symptoms are strong. Slow down but do not stop.</p>
+    </div>
+
+    <div class="callout callout-honey" style="margin-top:10px;">
+      <div class="callout-title">💰 Phase 2 Minimum — What's Good Enough</div>
+      <p>If budget is limited, the minimum effective Phase 2 consists of: <strong>raw garlic daily</strong> (free or near-free), <strong>pumpkin seeds every morning</strong> (very cheap), and <strong>oregano oil in the cheapest capsule form available</strong>. This alone will significantly disrupt parasitic activity. The biofilm disruptors (serrapeptase, nattokinase) are the most impactful upgrade — prioritise those over the antiparasitic herbs if choosing where to spend.</p>
+    </div>
+
+    <h3 class="lh3">Week 3: Biofilm Disruption</h3>
+    <p class="lp">Here is why most cleanses fail. Not because the herbs are not strong enough. Because they are trying to fight an enemy hidden behind walls they do not know exist.</p>
+    <p class="lp">When pathogens sense a threat, different species cooperate — secreting a complex protective matrix of polysaccharides, proteins, DNA, and minerals that hardens around their colonies. This biofilm physically shields parasites and bacteria from your immune system and from antiparasitic herbs. It traps heavy metals within it. And it anchors to intestinal walls in a way that makes it highly resistant to simple cleansing approaches.</p>
+    <p class="lp"><strong>If you do not break biofilm first — everything else is largely ineffective.</strong> This is the single most important step that virtually every cleanse protocol on the market skips entirely.</p>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Serrapeptase</div>
+          <div class="supp-meta"><strong>120,000–250,000 SPU · Empty stomach · 45 min before food</strong> · Start low, build up · Elderly: 80,000 SPU<br>Breaks down the protein components of biofilm matrix. Produced by the Japanese silkworm — used in European clinical medicine for decades. Takes 2–3 weeks to begin visible biofilm disruption.</div>
+          <div class="supp-warn">⚠️ Do not use with blood-thinning medications without medical supervision</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=serrapeptase+120000&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Nattokinase</div>
+          <div class="supp-meta"><strong>2,000 FU twice daily · Empty stomach</strong> · Reduce to once daily over age 70 or under 55kg<br>Breaks down fibrin — a key structural component of biofilm. Derived from natto (Japanese fermented soybeans). Also supports cardiovascular health by reducing excessive clotting factors.</div>
+          <div class="supp-warn">⚠️ Do not combine with warfarin, heparin, or aspirin therapy without medical guidance</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=nattokinase+2000&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Berberine</div>
+          <div class="supp-meta"><strong>500mg twice daily · With meals</strong> · Reduce to once daily for elderly or low body weight<br>Disrupts quorum sensing — the chemical signalling system parasites use to communicate and rebuild biofilm. Also has direct antimicrobial activity against Candida and pathogenic bacteria.</div>
+          <div class="supp-warn">⚠️ Interacts with metformin, cyclosporine, and some antibiotics — check with doctor if on these</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=berberine+500mg&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Raw Garlic <span class="budget-tag free-tag">free/cheap</span></div>
+          <div class="supp-meta"><strong>2–4 raw cloves daily · Crush and wait 10 minutes before eating</strong><br>The 10-minute wait after crushing is non-negotiable — it allows allicin to form fully. Allicin directly disrupts quorum sensing and kills parasites, bacteria, and fungi. Over 5,000 years of medicinal use. The cheapest effective antimicrobial available.</div>
+        </div>
+        <span class="supp-no-link">buy fresh</span>
+      </div>
+    </div>
+
+    <h3 class="lh3" style="margin-top:28px;">Week 5 Onward: Antiparasitic Rotation</h3>
+    <p class="lp">The most effective natural antiparasitic protocol uses a rotation of herbs — not one herb alone. Parasites have life cycles of 2–3 weeks. A single herb taken continuously allows them to adapt. Rotating three to four antiparasitic herbs in cycles of 7–10 days each prevents adaptation and ensures every stage of the life cycle is addressed.</p>
+    <p class="lp">Do not attempt the antiparasitic rotation without first completing 2 full weeks of biofilm disruption. Hitting the pathogens before the biofilm is broken produces minimal effect and maximum die-off discomfort for poor results.</p>
+
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Black Walnut Hull</div>
+          <div class="supp-meta"><strong>1–2ml tincture 3× daily, or capsules · Rotate every 10 days</strong> · Elderly/low weight: 1ml twice daily<br>Contains juglone — toxic to a broad range of parasites including intestinal worms, flukes, and Candida. Part of the classic Clark Protocol triad. Rotate off after 10 days; return in the next cycle.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=black+walnut+hull&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Wormwood (Artemisia absinthium)</div>
+          <div class="supp-meta"><strong>200–300mg 3× daily · Always cycle: 2–3 weeks on, 1 week off</strong><br>One of the oldest antiparasitic herbs in recorded history. Artemisinin — from a related species — is the basis of modern antimalarial drugs. Targets roundworms, pinworms, and protozoa including Blastocystis and Giardia.</div>
+          <div class="supp-warn">⚠️ Do not use in pregnancy. Do not exceed recommended dose. Always cycle — not for continuous use.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=wormwood+artemisia+capsule&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Cloves — Essential with Wormwood</div>
+          <div class="supp-meta"><strong>500mg 3× daily · Always take alongside wormwood</strong><br>Contains eugenol — the <em>only</em> compound that effectively addresses parasite eggs and larvae. Without cloves, adult parasites are killed but the reproductive cycle continues. Black walnut + wormwood + cloves = the complete Clark triad. Non-negotiable combination.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=cloves+capsule+herb&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Oregano Oil (enteric coated)</div>
+          <div class="supp-meta"><strong>200mg 2–3× daily with meals · Cycle 2–3 weeks on, 1 week off</strong> · Must be enteric coated to reach the intestines<br>Carvacrol and thymol — the active compounds — have broad-spectrum antimicrobial activity against Giardia, Blastocystis, Candida, bacteria, and viruses. One of the most versatile tools in the rotation.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=oregano+oil+enteric+coated&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Mimosa Pudica Seed</div>
+          <div class="supp-meta"><strong>1–2 capsules twice daily · Empty stomach · With large glass of water</strong><br>Becomes extraordinarily gel-like and sticky inside the digestive tract — physically trapping parasites, eggs, and biofilm remnants like biological flypaper. Uniquely mechanical action — works differently from all other herbs and complements them without overlap.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=mimosa+pudica+seed&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Raw Pumpkin Seeds <span class="budget-tag free-tag">very cheap</span></div>
+          <div class="supp-meta"><strong>Large handful every morning · Raw, unsalted only · Empty stomach</strong><br>Cucurbitacin paralyses parasites and prevents them adhering to intestinal walls. One of the oldest antiparasitic foods across multiple traditional cultures. Inexpensive, widely available, and safe for continuous daily use throughout Phase 2.</div>
+        </div>
+        <span class="supp-no-link">grocery store</span>
+      </div>
+    </div>
+
+    <h3 class="lh3">Managing Die-Off</h3>
+    <p class="lp">When parasites die, they release toxins. This produces the Herxheimer reaction — fatigue, headaches, skin reactions, flu-like symptoms, brain fog, irritability. This is not the protocol harming you. It is evidence the protocol is working.</p>
+    <div class="callout callout-warn">
+      <div class="callout-title">Die-Off Management Protocol</div>
+      <p>· Temporarily increase binders (see Phase 3) to capture released toxins faster<br>· Detox bath or foot soak daily during peak symptoms<br>· Vitamin C to bowel tolerance<br>· Castor oil pack over the liver<br>· Rest — non-negotiable during strong reactions<br>· <strong>Reduce antiparasitic dose temporarily if symptoms are unmanageable — slow down, do not stop</strong></p>
+    </div>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 2 — Daily Schedule</h3>
+    <div class="schedule" id="phase2-schedule">
+      <div class="sched-row"><div class="sched-time">On waking</div><div class="sched-act">Morning Sole drink + warm lemon water — continue from Phase 1</div></div>
+      <div class="sched-row"><div class="sched-time">Before breakfast</div><div class="sched-act"><strong>Serrapeptase</strong> — empty stomach, 45 min before eating · <strong>Nattokinase</strong> — empty stomach</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>Raw pumpkin seeds</strong> — large handful before eating · <strong>Raw garlic</strong> (crushed 10 min prior) with or after food · Milk thistle continues</div></div>
+      <div class="sched-row"><div class="sched-time">Mid-morning</div><div class="sched-act"><strong>Berberine</strong> — with or just after a small meal or snack · Water intake continues</div></div>
+      <div class="sched-row"><div class="sched-time">Midday</div><div class="sched-act"><strong>Mimosa Pudica</strong> — empty stomach with large glass water · <strong>Wormwood + Cloves</strong> (rotation weeks)</div></div>
+      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act"><strong>Oregano oil</strong> — with afternoon meal (rotation weeks) · 20 min movement · Rebounding if available</div></div>
+      <div class="sched-row"><div class="sched-time">Evening</div><div class="sched-act"><strong>Black Walnut tincture</strong> (rotation weeks) · Castor oil pack if strong die-off symptoms · Detox bath/foot soak 3×/week</div></div>
+      <div class="sched-row"><div class="sched-time">Before bed</div><div class="sched-act">Magnesium citrate continues · Second Nattokinase dose if using twice daily · Psyllium husk · Water</div></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase2-schedule')">🖨 Print Phase 2 Daily Schedule</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASE 3 -->
+<section class="sec-p3" id="phase3">
+  <div class="inner">
+    <div class="kicker">Phase Three · Days 46–75</div>
+    <h2 class="lh2">Bind &amp; Drain — <em>Heavy Metals &amp; Deep Tissue Clearing</em></h2>
+    <div class="pq pq-terra"><p>"Mobilising toxins without capturing them is not detoxification. It is redistribution."</p></div>
+    <p class="lp">Binders are compounds that attract, bind, and carry toxins out of the body through the stool — preventing them from being reabsorbed through the gut wall. Every binder must be taken well away from food, supplements, and medications — a minimum of two hours in either direction. Every binder dose requires a full glass of filtered water and must be accompanied by adequate bowel movements.</p>
+
+    <div class="callout callout-honey">
+      <div class="callout-title">💰 Phase 3 Minimum</div>
+      <p>If choosing only one binder: <strong>activated charcoal</strong> is the cheapest and most widely available, and handles acute die-off toxins well. The most impactful upgrade is adding <strong>zeolite</strong> or <strong>chlorella + cilantro</strong> for heavy metal chelation specifically. Modified Citrus Pectin (MCP) is the most research-backed for pulling metals from blood and tissue — prioritise it if budget allows one purchase.</p>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:10px;">
+      <div class="callout-title">⚠️ Critical Safety Rule — Chlorella</div>
+      <p><strong>Never use cilantro (coriander) as a heavy metal mobiliser without simultaneously taking chlorella or zeolite.</strong> Cilantro mobilises mercury and other metals from tissue into circulation — without a binder present, these metals can redistribute to the brain. Always mobilise and bind simultaneously. Never one without the other.</p>
+    </div>
+
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Activated Charcoal <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>500–1,000mg · At least 2 hours from all food and supplements</strong> · Use in targeted cycles, not continuously long-term<br>Broad-spectrum binder for die-off toxins, mycotoxins, gases, and endotoxins. Best used at onset of die-off symptoms for rapid relief. Stool will darken — this is normal and expected.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=activated+charcoal+capsule&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Bentonite Clay — Internal</div>
+          <div class="supp-meta"><strong>1 teaspoon in full glass filtered water · Empty stomach</strong> · Use non-metal spoon<br>Binds heavy metals including lead, mercury, cadmium, aluminium — and also glyphosate and aflatoxins. The negative charge of the clay attracts positively charged toxin ions. Safe for internal use at low doses during cycling.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=bentonite+clay+food+grade&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Chlorella — Broken Cell Wall</div>
+          <div class="supp-meta"><strong>Start at 500mg · Build slowly to 2–4g daily over 2 weeks · With food</strong> · Must be broken cell wall form · Clean water source essential<br>Strong chelator of mercury specifically — and also binds microplastics. Always pair with cilantro if using cilantro as a mobiliser. Build dose very slowly — chlorella causes strong detox reactions in some people at higher doses.</div>
+          <div class="supp-warn">⚠️ Source carefully — heavy metal contamination is a real risk with low-quality algae. Buy from verified clean-water sources.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=chlorella+broken+cell+wall&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Zeolite (Clinoptilolite)</div>
+          <div class="supp-meta"><strong>1–2g daily · Away from supplements</strong><br>Crystalline cage structure traps heavy metals, microplastics, ammonia, and mycotoxins. One of the few binders that can enter the bloodstream and pull metals from tissues — not just the gut. Does not strip essential minerals. Safe for longer-term use.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=zeolite+clinoptilolite&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Modified Citrus Pectin (MCP)</div>
+          <div class="supp-meta"><strong>5g powder 3× daily · Between meals</strong><br>Small enough molecules to enter the bloodstream and pull metals from tissue — not just the gut. Research-backed for lead, arsenic, cadmium, and mercury removal. Also inhibits galectin-3, with documented anti-cancer properties. One of the most comprehensively researched natural chelation agents.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=modified+citrus+pectin+MCP&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Humic &amp; Fulvic Acids</div>
+          <div class="supp-meta"><strong>10–20 drops in water · Away from food</strong><br>Fulvic acid carries nutrients into cells while escorting toxins out. Humic acid binds heavy metals and herbicides in the gut. Ancient compounds from decomposed organic matter — used across many traditional medicine systems.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=fulvic+acid+humic&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <div class="callout callout-warn" style="margin-top:8px;">
+      <div class="callout-title">⚠️ Critical Rules for Binder Use</div>
+      <p>· All binders minimum 2 hours away from food, supplements, and medications<br>· Every binder dose with a full glass of filtered water<br>· If bowels slow while using binders — reduce dose immediately, increase water and magnesium<br>· A binder sitting in a constipated colon creates a concentrated toxic package waiting to be reabsorbed. Bowel movement regularity is non-negotiable throughout Phase 3.</p>
+    </div>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 3 — Daily Schedule</h3>
+    <div class="schedule" id="phase3-schedule">
+      <div class="sched-row"><div class="sched-time">On waking</div><div class="sched-act">Morning Sole drink · Lemon water · Continue all Phase 1 practices</div></div>
+      <div class="sched-row"><div class="sched-time">30 min before breakfast</div><div class="sched-act"><strong>Zeolite or Bentonite Clay</strong> — in water, well away from food · Serrapeptase continues (empty stomach)</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>Chlorella</strong> — with food · Milk thistle continues · Raw garlic continues</div></div>
+      <div class="sched-row"><div class="sched-time">Between meals</div><div class="sched-act"><strong>Modified Citrus Pectin</strong> — 5g between breakfast and lunch · well away from food</div></div>
+      <div class="sched-row"><div class="sched-time">Midday</div><div class="sched-act">Second MCP dose · Berberine continues · Water intake</div></div>
+      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act"><strong>Humic/Fulvic acids</strong> — in water away from food · Movement continues</div></div>
+      <div class="sched-row"><div class="sched-time">2+ hrs after dinner</div><div class="sched-act"><strong>Activated Charcoal</strong> (if die-off symptoms present) · Third MCP dose</div></div>
+      <div class="sched-row"><div class="sched-time">Before bed</div><div class="sched-act">Magnesium citrate · Psyllium husk · Detox bath/foot soak 3×/week · Water</div></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase3-schedule')">🖨 Print Phase 3 Daily Schedule</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASE 4 -->
+<section class="sec-p4" id="phase4">
+  <div class="inner">
+    <div class="kicker">Phase Four · Days 76–90+</div>
+    <h2 class="lh2">Rebuild — <em>Gut Repair &amp; Microbiome Restoration</em></h2>
+    <p class="lp">What you have after the clearing is not a healed gut. What you have is an empty one. This phase is about rebuilding the infrastructure — the gut lining, the microbial community, the digestive capacity, and the nervous system that runs through it all. In Ayurvedic medicine this phase is called Rasayana — the restoration of tissue vitality. Do not rush it.</p>
+
+    <h3 class="lh3">Stage 1 — Heal the Gut Lining</h3>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">L-Glutamine</div>
+          <div class="supp-meta"><strong>5–10g powder in water · Empty stomach every morning</strong> · Start at 3–5g if elderly or under 60kg<br>The primary fuel source for enterocytes — the cells lining the gut wall. The most researched gut-lining repair supplement. Essential in Stage 1. Take first thing before the morning drinks.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=l-glutamine+powder&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Bone Broth or Collagen <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>1–2 cups daily · Or collagen powder in warm water</strong> · Best: homemade from grass-fed bones simmered 12–24 hours<br>Rich in collagen, gelatin, glycine, and proline — the structural matrix of the gut lining. One of the most ancient healing foods across virtually every traditional food culture on earth.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=collagen+peptides+powder&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Aloe Vera Inner Leaf Gel <span class="budget-tag budget">grow it</span></div>
+          <div class="supp-meta"><strong>1–2 tablespoons in water · Empty stomach</strong> · Inner leaf only — not whole leaf<br>Contains acemannan — coats and protects the gut lining, reduces inflammation, and supports tight junction repair. Grow an aloe plant on a windowsill for a permanent free supply.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=aloe+vera+juice+inner+fillet&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Zinc Carnosine</div>
+          <div class="supp-meta"><strong>75mg twice daily · With food</strong> · Reduce to once daily for elderly<br>Stabilises the gut lining, reduces inflammation, accelerates healing, and supports the tight junctions between gut wall cells. Documented in multiple clinical trials for gut lining integrity.</div>
+          <div class="supp-warn">⚠️ Long-term zinc supplementation depletes copper — see Hidden Deficiencies guide for zinc-copper balance</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=zinc+carnosine&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <h3 class="lh3">Stage 2 — Restore Digestive Capacity</h3>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Apple Cider Vinegar (ACV) <span class="budget-tag budget">budget</span></div>
+          <div class="supp-meta"><strong>1 tablespoon in water · 10 minutes before meals</strong> · Use straw to protect enamel · Raw, unfiltered, with the "mother" only<br>Stimulates stomach acid production — most digestive problems are caused by too little acid, not too much. ACV (Apple Cider Vinegar) must be raw and unfiltered — clear distilled white vinegar has no therapeutic value here.</div>
+          <div class="supp-warn">Avoid with active stomach ulcers</div>
+        </div>
+        <span class="supp-no-link">grocery store</span>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Digestive Enzymes</div>
+          <div class="supp-meta"><strong>1–2 capsules at the start of meals</strong> · Look for: protease, lipase, amylase, cellulase<br>Supports breakdown of proteins, fats, and carbohydrates while the gut rebuilds its own enzyme production capacity. Take at the beginning of the meal — not after.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=digestive+enzymes+comprehensive&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <h3 class="lh3">Stage 3 — Reseed the Microbiome</h3>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Soil-Based Organisms (SBOs)</div>
+          <div class="supp-meta"><strong>As directed · With meals · Start low, build over 2 weeks</strong> · Look for: Bacillus subtilis, Bacillus coagulans, Bacillus clausii<br>Spore-forming bacteria that survive stomach acid intact and arrive whole in the intestines. The bacteria humans ingested for millennia through contact with soil and unwashed vegetables. More resilient than standard lactobacillus probiotics.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=soil+based+probiotic+bacillus&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Saccharomyces Boulardii</div>
+          <div class="supp-meta"><strong>500mg–1g daily · With meals</strong><br>Beneficial yeast that directly competes with pathogenic Candida and supports gut lining integrity. Studied in over 100 clinical trials. Unlike bacterial probiotics, S. boulardii is unaffected by antibiotics — making it particularly valuable post-protocol.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=saccharomyces+boulardii&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Homemade Sauerkraut <span class="budget-tag free-tag">pennies per serving</span></div>
+          <div class="supp-meta"><strong>1–2 tablespoons with every meal · Homemade only — not pasteurised</strong><br>More beneficial bacteria per serving than most commercial probiotic supplements. Costs almost nothing to make. Pasteurised commercial sauerkraut contains no live bacteria — make your own or buy from a refrigerated section only.</div>
+        </div>
+        <span class="supp-no-link">make it</span>
+      </div>
+    </div>
+
+    <div class="recipe-box">
+      <div class="recipe-title">🥬 Basic Sauerkraut Recipe</div>
+      <div class="recipe-ing">
+        <div class="recipe-ing-item">1 medium cabbage, finely shredded</div>
+        <div class="recipe-ing-item">1–2% of cabbage weight in real salt (not iodised)</div>
+      </div>
+      <div class="recipe-steps">
+        <div class="recipe-step">Shred cabbage finely. Weigh it. Calculate 1–2% of that weight in salt.</div>
+        <div class="recipe-step">Combine cabbage and salt in a large bowl. Massage firmly with hands for 5–10 minutes until liquid releases.</div>
+        <div class="recipe-step">Pack tightly into a clean glass jar. Press down firmly until liquid rises above the cabbage.</div>
+        <div class="recipe-step">Cover loosely (not airtight) and leave at room temperature, away from direct sunlight, for 3–7 days.</div>
+        <div class="recipe-step">Taste from Day 3. When pleasantly sour, seal and refrigerate. Keeps for months.</div>
+      </div>
+    </div>
+
+    <h3 class="lh3" style="margin-top:24px;">Prebiotic Foods — Feed the Good Bacteria</h3>
+    <p class="lp">Probiotics without prebiotics are like planting seeds in empty soil. These foods feed and sustain the beneficial bacteria being restored.</p>
+    <div class="checklist">
+      <div class="checklist-item"><div class="check-dot"></div><span>Raw garlic and raw onion — daily if possible</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Jerusalem artichoke — the single most potent prebiotic food</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Unripe green bananas — rich in resistant starch</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Cooked and cooled potatoes — resistant starch forms during cooling</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Asparagus, leek, dandelion greens</span></div>
+    </div>
+
+    <h3 class="lh3">Stage 4 — NAD+ Restoration</h3>
+    <div class="callout callout-sage">
+      <div class="callout-title">⚡ Why NAD+ Belongs in Phase 4</div>
+      <p>NAD+ (Nicotinamide Adenine Dinucleotide) is present in every cell in the body — required for energy production, DNA repair, cellular communication, and neurological function. Levels decline dramatically with age, toxic load, and chronic illness — studies show up to 50% decline between ages 40 and 60. During the clearing and rebuilding phases your cells are working harder than they have in years. NAD+ is the fuel for that cellular work. This is the right moment to restore it.</p>
+    </div>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">NMN — Nicotinamide Mononucleotide</div>
+          <div class="supp-meta"><strong>250–500mg daily · Morning, fasted</strong> · Under 40: 250mg · Over 40 or with health challenges: 500mg · Can be energising — take in the morning<br>The most direct NAD+ precursor. Converts rapidly to NAD+ in cells. Backed by research from Harvard's Sinclair lab. Supports mitochondrial function, energy, cognitive clarity, and DNA repair.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=NMN+nicotinamide+mononucleotide&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">NR — Nicotinamide Riboside (alternative to NMN)</div>
+          <div class="supp-meta"><strong>300mg daily · Morning</strong> · Choose one — NMN or NR, not both<br>NR (Nicotinamide Riboside) has more published human clinical trials than NMN. Both are valid NAD+ precursors — choose based on availability and cost. NMN is considered more direct; NR has the larger human study base.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=nicotinamide+riboside+NR&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <h3 class="lh3">Stage 5 — Nervous System Repair</h3>
+    <p class="lp">The gut-brain axis was disrupted long before this protocol began. Repairing it requires both targeted nutrition and physical practices that directly stimulate the vagus nerve — the highway between gut and brain.</p>
+    <div class="checklist">
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>Cold water on face and neck</strong> — activates the dive reflex, immediate vagal stimulation</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>Humming and singing</strong> — vocal cord vibration directly stimulates vagal tone</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>4:8 breathing</strong> — inhale 4 counts, exhale 8. Extended exhale activates the vagus nerve</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>Gargling with cold water</strong> — daily practice, strengthens vagal tone over time</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>Wild-caught fatty fish</strong> — sardines, mackerel, anchovies 3× per week for EPA/DHA</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span><strong>Magnesium glycinate</strong> — 200–400mg before bed for neurological repair and sleep</span></div>
+    </div>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 4 — Daily Schedule</h3>
+    <div class="schedule" id="phase4-schedule">
+      <div class="sched-row"><div class="sched-time">On waking</div><div class="sched-act"><strong>L-Glutamine</strong> — 5g in water before anything else · Morning Sole drink · Lemon water</div></div>
+      <div class="sched-row"><div class="sched-time">Before breakfast</div><div class="sched-act"><strong>NMN or NR</strong> — fasted · Aloe vera inner leaf gel in water</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>Digestive enzymes</strong> at start of meal · <strong>Zinc carnosine</strong> with food · Bone broth or collagen in warm drink</div></div>
+      <div class="sched-row"><div class="sched-time">10 min before lunch</div><div class="sched-act"><strong>ACV</strong> (Apple Cider Vinegar) — 1 tbsp in water with straw · Digestive enzymes at start of meal</div></div>
+      <div class="sched-row"><div class="sched-time">With lunch</div><div class="sched-act"><strong>Sauerkraut</strong> — 1–2 tbsp with meal · S. boulardii · SBO probiotic</div></div>
+      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act">Movement · Cold water face splash — vagal stimulation · Continue water intake</div></div>
+      <div class="sched-row"><div class="sched-time">With dinner</div><div class="sched-act">Second zinc carnosine dose · Sauerkraut · Prebiotic vegetables</div></div>
+      <div class="sched-row"><div class="sched-time">Before bed</div><div class="sched-act"><strong>Magnesium glycinate</strong> — 300mg · 4:8 breathing practice · Detox bath 2×/week</div></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase4-schedule')">🖨 Print Phase 4 Daily Schedule</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASE 5 -->
+<section class="sec-p5" id="phase5">
+  <div class="inner">
+    <div class="kicker">Phase Five · Day 91 &amp; Beyond</div>
+    <h2 class="lh2">Life After — <em>The Protocol Never Really Ends</em></h2>
+    <p class="lp">You have done something remarkable. You have given your body 90 days of targeted, intentional support. The body you are living in now is not the same body you started with. The question is: how do you keep it this way?</p>
+    <div class="pq"><p>"The goal was never to finish the protocol. The goal was to become the person who no longer needs it — because the conditions that required it no longer exist."</p></div>
+
+    <h3 class="lh3">How Often to Repeat</h3>
+    <p class="lp">The full 90-day protocol — all four phases — once per year is a reasonable maintenance rhythm for most people. The world you live in has not changed. Toxic exposure is ongoing. Parasitic exposure is ongoing. Annual deep clearing acknowledges this reality.</p>
+    <p class="lp">Many people find that a shorter 30-day version (Phases 1 and 2 only) twice a year works well for maintenance. Listen to your body. The symptom checklist at the beginning of this guide is your compass — if you start checking boxes again, it is time.</p>
+
+    <h3 class="lh3">What You Continue Every Day</h3>
+    <div class="maintain-grid">
+      <div class="mg-card"><span class="mg-icon">🌅</span><div class="mg-title">Morning Foundations</div><div class="mg-desc">Sole water. Lemon water. Morning sunlight. These cost nothing and maintain everything the protocol built.</div></div>
+      <div class="mg-card"><span class="mg-icon">💧</span><div class="mg-title">Clean Water Always</div><div class="mg-desc">Filtered water is not a protocol practice. It is a permanent life practice. The fluoride and pharmaceuticals do not stop when the protocol ends.</div></div>
+      <div class="mg-card"><span class="mg-icon">🧂</span><div class="mg-title">Real Salt Daily</div><div class="mg-desc">Replace all table salt permanently. Morning Sole drink continues. Mineral replenishment is ongoing.</div></div>
+      <div class="mg-card"><span class="mg-icon">🥗</span><div class="mg-title">Food as Medicine</div><div class="mg-desc">Seed oils never return. Processed food never returns. Fermented food daily. Every colour vegetable every day.</div></div>
+      <div class="mg-card"><span class="mg-icon">🧪</span><div class="mg-title">Daily Supplements</div><div class="mg-desc">Magnesium glycinate nightly. Vitamin D3 + K2 daily. Omega-3 daily. These three address the most universal modern deficiencies.</div></div>
+      <div class="mg-card"><span class="mg-icon">🌿</span><div class="mg-title">Gentle Ongoing Support</div><div class="mg-desc">Milk thistle 3–4×/week. Dandelion root tea daily. Sauerkraut with every meal. These maintain the terrain the protocol created.</div></div>
+    </div>
+
+    <h3 class="lh3">Maintenance Supplement Stack</h3>
+    <div class="supp-list">
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Vitamin D3 + K2</div>
+          <div class="supp-meta"><strong>D3: 2,000–5,000 IU daily · K2 (MK-7): 100–200mcg daily · With fat-containing meal</strong><br>Always D3 with K2 together — D3 alone can cause calcium to deposit in soft tissue rather than bone. Test levels first if possible. Elderly or severely deficient: up to 10,000 IU under guidance.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=vitamin+D3+K2+MK7&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Omega-3 (EPA + DHA)</div>
+          <div class="supp-meta"><strong>2–3g combined EPA+DHA daily · With meals</strong> · Wild-caught fish oil or algae-based<br>Reduces systemic inflammation, supports brain function, and maintains the cell membrane health the protocol rebuilt. One of the most evidence-backed supplements in existence. Non-negotiable for long-term maintenance.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=omega-3+EPA+DHA+fish+oil&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">Magnesium Glycinate</div>
+          <div class="supp-meta"><strong>200–400mg nightly before bed</strong> · Start at 100mg if sensitive<br>Required for over 300 enzymatic reactions. Most people remain deficient without daily supplementation — the soil is too depleted to provide adequate amounts through food alone. Glycinate form is the gentlest and best absorbed.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=magnesium+glycinate&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+      <div class="supp-item">
+        <span class="supp-check">✓</span>
+        <div class="supp-body">
+          <div class="supp-name">NAD+ Precursor (NMN or NR)</div>
+          <div class="supp-meta"><strong>250mg NMN or 300mg NR daily · Morning</strong> · Particularly important over age 40<br>NAD+ continues declining without support. Maintaining levels is one of the most impactful ongoing investments for sustained energy, cognition, and cellular health.</div>
+        </div>
+        <a href="https://www.iherb.com/search?kw=NMN+maintenance&rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+      </div>
+    </div>
+
+    <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 5 — Daily Maintenance Schedule</h3>
+    <div class="schedule" id="phase5-schedule">
+      <div class="sched-row"><div class="sched-time">On waking</div><div class="sched-act"><strong>Sole water + lemon water</strong> — permanent morning ritual</div></div>
+      <div class="sched-row"><div class="sched-time">Morning</div><div class="sched-act"><strong>Morning sunlight</strong> — 10 min outside · <strong>NMN or NR</strong> fasted</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>Omega-3</strong> with fat-containing meal · <strong>Vitamin D3 + K2</strong> with food</div></div>
+      <div class="sched-row"><div class="sched-time">With meals</div><div class="sched-act"><strong>Sauerkraut or fermented food</strong> daily · ACV before meals continues · Real food only</div></div>
+      <div class="sched-row"><div class="sched-time">Daily</div><div class="sched-act"><strong>20+ min movement</strong> · Rebounding if available · Dry skin brushing · Cold shower end</div></div>
+      <div class="sched-row"><div class="sched-time">3–4×/week</div><div class="sched-act"><strong>Milk thistle</strong> · Detox bath or foot soak · Castor oil pack over liver</div></div>
+      <div class="sched-row"><div class="sched-time">Before bed</div><div class="sched-act"><strong>Magnesium glycinate</strong> — permanent nightly practice</div></div>
+      <div class="sched-row"><div class="sched-time">Annually</div><div class="sched-act">Full 90-day protocol repeat · Or 30-day Phase 1+2 twice yearly · Retest blood work and compare</div></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('phase5-schedule')">🖨 Print Maintenance Schedule</a>
+
+    <h3 class="lh3" style="margin-top:28px;">Day 91 Checklist</h3>
+    <div class="checklist" id="day91-checklist">
+      <div class="checklist-item"><div class="check-dot"></div><span>Filtered water — permanent, not a protocol practice</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Sole water + lemon water — every morning</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Seed oils — permanently removed from kitchen</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Fermented food — daily, with every meal if possible</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Magnesium glycinate — nightly, permanent</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Vitamin D3 + K2 — daily, permanent</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Omega-3 — daily, permanent</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>NAD+ precursor — daily, especially over age 40</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Morning sunlight — 10 min, every day possible</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>20+ min movement — every day</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Shower filter installed — permanent</span></div>
+      <div class="checklist-item"><div class="check-dot"></div><span>Annual protocol repeat scheduled</span></div>
+    </div>
+    <a href="#" class="print-btn no-print" onclick="printSection('day91-checklist')">🖨 Print Day 91 Checklist</a>
+
+    <div class="pq" style="margin-top:32px;"><p>"You are not at the end of something. You are at the beginning of the version of yourself that uses everything the difficult years gave her — not to suffer any longer — but to heal, to help, and to offer the lamp she built over so long to people still stumbling in the dark around her."</p></div>
+  </div>
+</section>
+
+<!-- WHERE DO I GO FROM HERE -->
+<section class="sec-warm" id="next-steps">
+  <div class="inner">
+    <div class="kicker">What Comes Next</div>
+    <h2 class="lh2">You finished the foundation.<br><em>Here is your next layer.</em></h2>
+
+    <p class="lp">You have done something most people never do. You ran the full sequence — honestly, in order, for the full 90 days. That matters. Not because of what you took. Because of what you removed. And what you rebuilt.</p>
+    <p class="lp">By now you know things about your body that no standard blood panel has ever told you. You have seen what shifts and what resists. You have noticed what improved without targeting it — and what still asks for attention. This is not failure. This is diagnostic intelligence. Your body has been speaking. What follows is how to listen.</p>
+    <p class="lp">The protocols below are not the next chapter of the same story. They are specialised interventions — each one targeting a specific terrain. What the detox did was clear the field. What these do is go in with precision.</p>
+
+    <div class="pq pq-terra" style="margin:28px 0;"><p>"The detox is not just therapeutic. It is diagnostic. A gut that finally begins to move after decades of difficulty tells you something. An unexpected neurological improvement in Phase 3 tells you something. When something speaks — follow it deeper."</p></div>
+  </div>
+
+  <div class="inner" style="margin-top:8px;">
+    <div class="kicker" style="margin-bottom:20px;">Find your next protocol</div>
+
+    <!-- Neurological & Movement -->
+    <div style="border:1px solid var(--border-s);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--bg-deep);">
+      <div style="padding:24px 28px 16px;border-bottom:1px solid var(--border-s);">
+        <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:26px;flex-shrink:0;line-height:1.1;">🧠</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;font-family:'DM Mono',monospace;">Neurological &amp; Movement</div>
+            <div style="font-size:13px;color:var(--ink-light);line-height:1.7;">Tremor · brain fog · memory decline · movement difficulties · cognitive changes · nerve pain · tinnitus · post-viral neurological symptoms</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 28px 24px;">
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:12px;"><strong style="color:var(--ink);">What the detox already addressed for you:</strong> Phase 1 opened the lymphatic channels that aluminum, mercury, and pesticide residues depend on to exit the body. Phase 3 began deep-tissue neurotoxin removal. Phase 4 initiated gut-brain axis repair — the pathway through which toxic proteins travel from the gut to the brain, sometimes a decade before any motor symptom appears.</p>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:16px;"><strong style="color:var(--ink);">What the Brain Protocol now does:</strong> Goes deeper into aluminum removal via silica-rich water and silicon supplementation. Builds the neuroprotective stack — Lion's Mane, PQQ (Pyrroloquinoline Quinone), CoQ10 ubiquinol, NAC. Provides the complete gut-brain section — the Braak hypothesis, specific depleted bacterial strains, resistant starch protocol, and the documented clinical trial data on probiotic intervention in movement disorders. This is the research that should be in every neurologist's office. It is not.</p>
+        <a href="Brain_Protocol.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:5px;">→ Brain Protocol</a>
+      </div>
+    </div>
+
+    <!-- Chronic Pain & Inflammation -->
+    <div style="border:1px solid var(--border-s);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--bg-deep);">
+      <div style="padding:24px 28px 16px;border-bottom:1px solid var(--border-s);">
+        <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:26px;flex-shrink:0;line-height:1.1;">⚗️</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;font-family:'DM Mono',monospace;">Chronic Pain &amp; Inflammation</div>
+            <div style="font-size:13px;color:var(--ink-light);line-height:1.7;">Joint pain · arthritis · fibromyalgia · autoimmune flares · slow healing · post-surgical recovery · chronic inflammation with no clear cause</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 28px 24px;">
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:12px;"><strong style="color:var(--ink);">What the detox already addressed for you:</strong> Phases 1–3 cleared the primary drivers of your body's sustained inflammatory response. The toxic overload that kept your immune system in constant activation has been substantially reduced. The terrain is significantly cleaner than when you started.</p>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:16px;"><strong style="color:var(--ink);">What DMSO now does:</strong> Dimethyl sulfoxide — with over 3,000 peer-reviewed studies and one of the most suppressed safety records in modern medicine — penetrates deep tissue directly, carrying anti-inflammatory compounds through biological membranes that most oral supplements cannot reach. For joint pain, nerve pain, and autoimmune inflammation in particular, this is the intervention the detox has prepared your body to receive.</p>
+        <a href="DMSO_Oxygen_Therapy.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:5px;">→ DMSO &amp; Oxygen Therapy Protocol</a>
+      </div>
+    </div>
+
+    <!-- Hormonal & Thyroid -->
+    <div style="border:1px solid var(--border-s);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--bg-deep);">
+      <div style="padding:24px 28px 16px;border-bottom:1px solid var(--border-s);">
+        <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:26px;flex-shrink:0;line-height:1.1;">🧪</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;font-family:'DM Mono',monospace;">Hormonal &amp; Thyroid</div>
+            <div style="font-size:13px;color:var(--ink-light);line-height:1.7;">Thyroid dysfunction · Hashimoto's · adrenal fatigue · PCOS · hair loss · weight resistance · temperature dysregulation · low energy despite normal tests</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 28px 24px;">
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:12px;"><strong style="color:var(--ink);">What the detox already addressed for you:</strong> Phase 3 began removing endocrine disruptors — the chemicals that mimic or block hormones and are the primary driver of most hormonal conditions. This is the step most people skip, which is why supplementation so often fails: you cannot restore a system that is still being actively disrupted.</p>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:16px;"><strong style="color:var(--ink);">What Hidden Deficiencies now does:</strong> Addresses the specific minerals the thyroid and adrenal system run on — iodine, copper, zinc, and magnesium in the right ratios. The halogen war. The iodine suppression story. The zinc-copper relationship that most practitioners either miss or get wrong. Restoring these in the right sequence, now that the disruptors have been substantially cleared, is where the hormonal system finally has a chance to recalibrate.</p>
+        <a href="Hidden_Deficiencies.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:5px;">→ Hidden Deficiencies Protocol</a>
+      </div>
+    </div>
+
+    <!-- Metabolic & Immune -->
+    <div style="border:1px solid var(--border-s);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--bg-deep);">
+      <div style="padding:24px 28px 16px;border-bottom:1px solid var(--border-s);">
+        <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:26px;flex-shrink:0;line-height:1.1;">🌱</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;font-family:'DM Mono',monospace;">Metabolic &amp; Immune</div>
+            <div style="font-size:13px;color:var(--ink-light);line-height:1.7;">Diabetes · insulin resistance · high blood pressure · cardiovascular disease · frequent illness · slow recovery · systemic inflammation · obesity</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 28px 24px;">
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:12px;"><strong style="color:var(--ink);">What the detox already addressed for you:</strong> Metabolic disease is terrain disease. The 90-day protocol cleared the same toxic overload, gut dysbiosis, and mineral depletion that drive metabolic dysfunction at its root. If your blood sugar, blood pressure, or immune function has shifted over the past 90 days — notice that. It is the terrain responding.</p>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:16px;"><strong style="color:var(--ink);">What the Alkaline Protocol now does:</strong> Dr. Sebi's African Bio-Mineral Balance framework addresses metabolic disease through cellular pH, sea vegetation mineral repletion, and the elimination of hybrid, mucus-forming, and acid-forming foods. This is not a diet. It is a cellular environment intervention. Begin it as a sustained layer on top of the detox foundation.</p>
+        <a href="Dr_Sebi_Alkaline_Protocol.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:10px 26px;border-radius:5px;">→ Dr. Sebi — Alkaline Protocol</a>
+      </div>
+    </div>
+
+    <!-- Mood, Energy & Nervous System -->
+    <div style="border:1px solid var(--border-s);border-radius:12px;overflow:hidden;margin-bottom:14px;background:var(--bg-deep);">
+      <div style="padding:24px 28px 16px;border-bottom:1px solid var(--border-s);">
+        <div style="display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:26px;flex-shrink:0;line-height:1.1;">🌙</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:4px;font-family:'DM Mono',monospace;">Mood, Energy &amp; Nervous System</div>
+            <div style="font-size:13px;color:var(--ink-light);line-height:1.7;">Depression · anxiety · chronic fatigue · burnout · sleep disorders · mood instability · brain fog · emotional numbness · inability to feel joy</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 28px 24px;">
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:12px;"><strong style="color:var(--ink);">What the detox already addressed for you:</strong> 90–95% of serotonin is produced in the gut. Phase 4 began rebuilding the microbial communities that produce the neurotransmitters your nervous system tone depends on. If your mood, sleep, or energy has shifted during Phase 4 — that is the gut-brain axis responding. That is not placebo. That is the factory coming back online.</p>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.85;margin-bottom:16px;"><strong style="color:var(--ink);">What comes next:</strong> The Brain Protocol contains the most complete gut-brain research currently available in plain language — including the specific bacterial strains depleted in neurological and mood conditions, the resistant starch protocols that raise butyrate and restore the vagal signalling that governs nervous system tone, and the neuroprotective supplement stack. The Mental Health Protocol — addressing anxiety, depression, sleep, and nervous system regulation at root cause — is in development.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="Brain_Protocol.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:10px 24px;border-radius:5px;">→ Brain Protocol</a>
+          <span style="display:inline-block;background:var(--bg-stone);color:var(--ink-ghost);font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:10px 20px;border-radius:5px;">Mental Health Protocol — Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /inner -->
+
+  <div class="inner" style="margin-top:32px;text-align:center;">
+    <div class="pq" style="text-align:left;margin-bottom:28px;"><p>"The detox is where most people's healing actually begins — not because the protocol is complete, but because for the first time, the body finally has the room to speak. Listen to what it says next."</p></div>
+    <a href="index.html#your-path" style="display:inline-block;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:14px 38px;border-radius:6px;">← Return to the Full Condition Map</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DISCLAIMER -->
+<section class="sec-warm">
+  <div class="inner">
+    <div class="callout callout-warn">
+      <div class="callout-title">Medical Disclaimer</div>
+      <p>This protocol is for educational purposes only and does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. Consult a professional before beginning, especially if taking pharmaceutical medications. Several compounds in this protocol have documented drug interactions. If you experience severe symptoms at any point — stop immediately and seek medical attention.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. Always consult a professional before beginning any protocol.</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Phase nav active tracking
+const sections = ['read-first','bloodwork','water','phase1','phase2','phase3','phase4','phase5'];
+const navLinks = document.querySelectorAll('.phase-nav a[data-section]');
+function updateNav(){
+  let current = sections[0];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && el.getBoundingClientRect().top <= 80) current = id;
+  });
+  navLinks.forEach(a => a.classList.toggle('pn-active', a.dataset.section === current));
+  const active = document.querySelector('.phase-nav a.pn-active');
+  if(active) active.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+}
+window.addEventListener('scroll', updateNav, {passive:true});
+updateNav();
+
+// Section-specific printing
+function printSection(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+  const title = document.title;
+  const win = window.open('','_blank');
+  win.document.write(`<!DOCTYPE html><html><head><title>Print — Heal Yourself</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Jost',sans-serif;color:#1e1a14;padding:32px;max-width:680px;margin:0 auto;background:white;}
+    h2,h3{font-family:'Playfair Display',serif;}
+    table{width:100%;border-collapse:collapse;margin:12px 0;}
+    th{text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;border-bottom:2px solid #3d6b4a;color:#3d6b4a;}
+    td{padding:8px 10px;border-bottom:1px solid #e0dbd0;font-size:13px;vertical-align:top;}
+    .check-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#5a8c6a;margin-right:8px;vertical-align:middle;}
+    .checklist-item,.sched-row,.supp-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0dbd0;font-size:13px;align-items:flex-start;}
+    .sched-time{font-family:'DM Mono',monospace;font-size:11px;color:#3d6b4a;min-width:100px;padding-top:2px;}
+    .print-header{font-family:'Playfair Display',serif;font-size:22px;color:#1e1a14;margin-bottom:6px;}
+    .print-sub{font-size:12px;color:#7a6e5c;margin-bottom:24px;}
+    @media print{@page{margin:20mm;}}
+  </style></head><body>
+  <div class="print-header">Heal Yourself — Detox Protocol</div>
+  <div class="print-sub">healyourself.guide · iHerb affiliate code: GUW6132</div>
+  ${el.outerHTML}
+  <script>window.onload=function(){window.print();}<\/script>
+  </body></html>`);
+  win.document.close();
+}
+</script>
+</body>
+</html>

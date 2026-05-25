@@ -8,13 +8,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#12120e;--ink2:#1c1c16;--cream:#f6f2ea;--warm:#faf7f2;--gold:#b8965a;--gold-light:#d4b07a;--gold-pale:#ede0c8;--sage:#4a7a5a;--sage-light:#6a9a7a;--sage-pale:#e8f4ec;--mist:#c8c0b0;--text:#2a2820;--text-mid:#504e40;--text-light:#807868;--nav-h:60px;}
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);--nav-h:52px;
+  --ink2:#263028;--cream:#f4efe6;--warm:#faf7f2;
+  --gold:var(--sage);--gold-light:var(--sage-mid);--gold-pale:var(--sage-pale);
+  --mist:var(--ink-mid);--text:var(--ink-mid);--text-mid:var(--ink-mid);--text-light:var(--ink-light);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overflow-x:hidden;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
 
 /* PHASE NAV */
-.phase-nav{position:sticky;top:0;z-index:90;background:rgba(18,18,14,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,150,90,0.12);overflow-x:auto;scrollbar-width:none;}
+.phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:rgba(44,58,46,0.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,150,90,0.12);overflow-x:auto;scrollbar-width:none;}
 .phase-nav::-webkit-scrollbar{display:none;}
 .phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
 .phase-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--text-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
@@ -40,15 +51,15 @@ body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overf
 .pn-drop .drop-iherb{color:var(--sage-light);}
 
 /* HERO — green accent for Dr. Sebi */
-.hero{background:var(--ink);padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;}
+.hero{background:var(--bg-warm);padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(74,122,90,0.12) 0%,transparent 70%);pointer-events:none;}
 .eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
 .eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--sage-light));}
 .eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--sage-light));}
 .eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-light);}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;}
 .hero h1 em{font-style:italic;color:var(--sage-light);}
-.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--mist);font-weight:300;max-width:580px;margin:0 auto 40px;line-height:1.75;}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:580px;margin:0 auto 40px;line-height:1.75;}
 .hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:48px;}
 .stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--sage-light);display:block;}
 .stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);}
@@ -63,11 +74,11 @@ body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overf
 .pillar-desc{font-size:12px;color:var(--text-light);line-height:1.6;}
 
 /* SECTIONS */
-.sec-dark{background:var(--ink);padding:64px 24px;}
+.sec-dark{background:var(--bg);padding:64px 24px;}
 .sec-warm{background:var(--warm);padding:64px 24px;}
 .sec-sage{background:#0e1a10;padding:64px 24px;}
 .sec-sage2{background:#0a160c;padding:64px 24px;}
-.sec-ink2{background:var(--ink2);padding:64px 24px;}
+.sec-ink2{background:var(--bg-deep);padding:64px 24px;}
 .sec-sebi{background:#081008;padding:64px 24px;}
 
 .inner{max-width:760px;margin:0 auto;}
@@ -78,14 +89,14 @@ body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overf
 .kicker::before{content:'';width:32px;height:1px;background:var(--sage-light);}
 .kicker-gold{color:var(--gold);}
 .kicker-gold::before{background:var(--gold);}
-.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:20px;}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
 .lh2-dark{color:var(--ink);}
 .lh3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--sage-light);line-height:1.3;margin:32px 0 12px;}
 .lh3-gold{color:var(--gold-light);}
 .lh3-cream{color:var(--cream);}
-.lp{font-size:15px;line-height:1.85;color:var(--mist);margin-bottom:16px;}
+.lp{font-size:15px;line-height:1.85;color:var(--ink-mid);margin-bottom:16px;}
 .lp-warm{color:var(--text-mid);}
-.lp strong{color:var(--cream);font-weight:600;}
+.lp strong{color:var(--ink);font-weight:600;}
 .lp-warm strong{color:var(--ink);}
 .lp em{font-style:italic;color:var(--sage-light);}
 .lp-warm em{color:var(--sage);}
@@ -99,13 +110,13 @@ body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overf
 /* CALLOUT BOXES */
 .callout{border-radius:8px;padding:22px 26px;margin:28px 0;}
 .callout-sage{background:rgba(74,122,90,0.1);border:1px solid rgba(74,122,90,0.3);}
-.callout-gold{background:rgba(184,150,90,0.08);border:1px solid rgba(184,150,90,0.3);}
+.callout-gold{background:var(--sage-pale);border:1px solid var(--border);}
 .callout-warn{background:rgba(160,50,45,0.08);border:1px solid rgba(160,50,45,0.28);}
 .callout-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
 .callout-sage .callout-title{color:var(--sage-light);}
-.callout-gold .callout-title{color:var(--gold-light);}
+.callout-gold .callout-title{color:var(--sage);}
 .callout-warn .callout-title{color:#c07070;}
-.callout p{font-size:13px;color:var(--mist);line-height:1.75;margin-bottom:8px;}
+.callout p{font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:8px;}
 .callout p:last-child{margin-bottom:0;}
 .callout a{color:var(--sage-light);text-decoration:underline;text-underline-offset:3px;}
 .callout-warm p{color:var(--text-mid);}
@@ -185,21 +196,38 @@ body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overf
 .sec-divider{height:1px;background:linear-gradient(to right,transparent,rgba(74,122,90,0.3),transparent);margin:0;}
 
 /* FOOTER */
-footer{background:var(--ink2);border-top:1px solid rgba(184,150,90,0.15);padding:48px 24px;}
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:48px 24px;}
 .ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 @media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
-.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);margin-bottom:10px;}
-.ft-disc{font-size:12px;color:var(--text-light);line-height:1.7;}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:var(--ink-ghost);line-height:1.7;}
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
-.ft-nav a{font-size:13px;color:var(--mist);text-decoration:none;transition:color 0.2s;}
-.ft-nav a:hover{color:var(--gold-light);}
-.ft-nav a.hi{color:var(--gold);font-weight:600;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
 
+
+
+/* TOP NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:101;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;white-space:nowrap;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);}
+@media(max-width:640px){.nav-center{display:none;}}
 @media print{.phase-nav,footer,.print-btn{display:none!important;}}
 </style>
 </head>
 <body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="protocols.html">All Protocols</a>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
+</nav>
 
 <!-- PHASE NAV -->
 <div class="phase-nav">
@@ -222,7 +250,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(184,150,90,0.15);padding
       </button>
       <div class="pn-drop">
         <div class="pn-drop-label">Protocols</div>
-        <a href="Heal_Yourself_Protocol_v2.html">🌿 Full Body Detox</a>
+        <a href="Full_Body_Detox_Protocol.html">🌿 Full Body Detox</a>
         <a href="Brain_Protocol.html">🧠 Brain Protocol</a>
         <a href="DMSO_Oxygen_Therapy.html">⚗️ DMSO &amp; Oxygen</a>
         <a href="Hidden_Deficiencies.html">🧪 Hidden Deficiencies</a>
@@ -873,9 +901,9 @@ footer{background:var(--ink2);border-top:1px solid rgba(184,150,90,0.15);padding
     <div class="pq pq-gold"><p>"They will say I have no degree. This is true. The degree tells you what the institution wanted you to know. I went to the plants. The plants don't have a curriculum. They have results."</p></div>
     <p class="lp" style="margin-top:32px;">The Dr. Sebi protocol is not the only protocol in this guide. It is one lens — the most ancient, the most plant-rooted, the most holistic. The minerals in the sea vegetables are the same minerals the Hidden Deficiencies protocol addresses. The alkalinity principle overlaps with the baking soda and iodine protocols. The mucous membrane theory resonates with the gut rebuilding work of Phase 4 of the Detox Protocol.</p>
     <p class="lp">These are not competing systems. They are different traditions arriving at similar terrain. Use what resonates. Combine what serves you. The goal is the same across all of them: a body that is mineral-rich, alkaline, clean, and capable of healing itself.</p>
-    <p class="lp"><a href="Heal_Yourself_Protocol_v2.html" style="color:var(--sage-light);text-decoration:underline;text-underline-offset:3px;">→ The Full Body Detox Protocol — the sequential framework</a></p>
-    <p class="lp"><a href="Hidden_Deficiencies.html" style="color:var(--sage-light);text-decoration:underline;text-underline-offset:3px;">→ Hidden Deficiencies — the mineral science behind what Sebi taught intuitively</a></p>
-    <p class="lp"><a href="Brain_Protocol.html" style="color:var(--sage-light);text-decoration:underline;text-underline-offset:3px;">→ Brain Protocol — sea moss, soursop, and the neurological dimension</a></p>
+    <p class="lp"><a href="Full_Body_Detox_Protocol.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ The Full Body Detox Protocol — the sequential framework</a></p>
+    <p class="lp"><a href="Hidden_Deficiencies.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ Hidden Deficiencies — the mineral science behind what Sebi taught intuitively</a></p>
+    <p class="lp"><a href="Brain_Protocol.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ Brain Protocol — sea moss, soursop, and the neurological dimension</a></p>
   </div>
 </section>
 
@@ -897,14 +925,6 @@ footer{background:var(--ink2);border-top:1px solid rgba(184,150,90,0.15);padding
     </div>
     <nav class="ft-nav">
       <a href="index.html">Home</a>
-      <a href="protocols.html">All Protocols</a>
-      <a href="Heal_Yourself_Protocol_v2.html">The Full Body Detox Protocol</a>
-      <a href="Brain_Protocol.html">Brain Protocol</a>
-      <a href="DMSO_Oxygen_Therapy.html">DMSO &amp; Oxygen</a>
-      <a href="Hidden_Deficiencies.html">Hidden Deficiencies</a>
-      <a href="Dr_Sebi_Alkaline_Protocol.html">Dr. Sebi — Alkaline</a>
-      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — Code GUW6132</a>
-      <a href="landing.html#pricing" class="hi">Get Full Access — $37</a>
     </nav>
   </div>
 </footer>
