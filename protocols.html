@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Protocols — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#12120e;--ink2:#1c1c16;--cream:#f6f2ea;--warm:#faf7f2;--gold:#b8965a;--gold-light:#d4b07a;--gold-pale:#ede0c8;--sage:#4a7a5a;--sage-light:#6a9a7a;--sage-pale:#e8f4ec;--mist:#c8c0b0;--text:#2a2820;--text-mid:#504e40;--text-light:#807868;--nav-h:52px;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--ink);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--ink2);border-bottom:1px solid rgba(184,150,90,0.18);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--gold-light);text-decoration:none;letter-spacing:0.02em;white-space:nowrap;}
+.nav-center{display:flex;align-items:center;gap:4px;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:var(--mist);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--gold-light);border-bottom-color:rgba(184,150,90,0.4);}
+.nav-center a.active{color:var(--gold-light);border-bottom-color:var(--gold);}
+.nav-buy{font-size:12px;font-weight:600;letter-spacing:0.05em;background:var(--gold);color:var(--ink);text-decoration:none;padding:7px 16px;border-radius:4px;transition:background 0.2s;white-space:nowrap;flex-shrink:0;}
+.nav-buy:hover{background:var(--gold-light);}
+@media(max-width:640px){.nav-center{display:none;}}
+
+/* HERO */
+.hero{background:var(--ink);padding:80px 24px 56px;text-align:center;position:relative;overflow:hidden;margin-top:var(--nav-h);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(184,150,90,0.08) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:20px;}
+.eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--gold));}
+.eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--gold));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,52px);font-weight:700;color:var(--cream);line-height:1.1;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--gold-light);}
+.hero-sub{font-size:clamp(14px,1.8vw,16px);color:var(--mist);font-weight:300;max-width:520px;margin:0 auto;line-height:1.75;}
+
+/* PROTOCOL GRID */
+.protocols-wrap{background:var(--ink);padding:48px 24px 80px;}
+.inner{max-width:960px;margin:0 auto;}
+.proto-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;}
+@media(max-width:680px){.proto-grid{grid-template-columns:1fr;}}
+
+/* AVAILABLE CARDS */
+.proto-card{display:block;text-decoration:none;background:var(--ink2);border:1px solid rgba(184,150,90,0.12);border-radius:10px;padding:28px 28px 24px;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}
+.proto-card:hover{border-color:rgba(184,150,90,0.4);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.4);}
+.proto-card-top{display:flex;align-items:flex-start;gap:16px;margin-bottom:14px;}
+.proto-icon{font-size:32px;flex-shrink:0;margin-top:2px;}
+.proto-meta{}
+.proto-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--gold);display:block;margin-bottom:5px;}
+.proto-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--cream);line-height:1.2;}
+.proto-desc{font-size:13px;color:var(--text-light);line-height:1.7;margin-bottom:16px;}
+.proto-pills{display:flex;flex-wrap:wrap;gap:6px;}
+.proto-pill{font-size:10px;font-weight:500;letter-spacing:0.06em;color:var(--mist);background:rgba(184,150,90,0.07);border:1px solid rgba(184,150,90,0.14);padding:3px 10px;border-radius:12px;}
+.proto-pill.sage{color:var(--sage-light);background:rgba(74,122,90,0.08);border-color:rgba(74,122,90,0.2);}
+.proto-arrow{position:absolute;bottom:22px;right:22px;font-size:16px;color:var(--gold);opacity:0.4;transition:opacity 0.2s,transform 0.2s;}
+.proto-card:hover .proto-arrow{opacity:1;transform:translateX(3px);}
+.proto-free-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage-light);background:rgba(74,122,90,0.15);border:1px solid rgba(74,122,90,0.3);padding:3px 10px;border-radius:10px;}
+.proto-locked-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);background:rgba(184,150,90,0.1);border:1px solid rgba(184,150,90,0.25);padding:3px 10px;border-radius:10px;}
+
+/* COMING SOON CARDS */
+.proto-card-soon{background:rgba(255,255,255,0.02);border:1px solid rgba(184,150,90,0.07);border-radius:10px;padding:28px 28px 24px;opacity:0.55;cursor:default;}
+.proto-card-soon .proto-title{color:var(--mist);}
+.proto-card-soon .proto-tag{color:var(--text-light);}
+.proto-soon-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:3px 10px;border-radius:10px;}
+.proto-card-soon{position:relative;overflow:hidden;}
+
+/* SECTION LABEL */
+.section-label{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:0;}
+.section-label::before{content:'';width:32px;height:1px;background:var(--gold);}
+.section-label-soon{color:var(--text-light);}
+.section-label-soon::before{background:var(--text-light);}
+
+/* BUY STRIP */
+.buy-strip{background:linear-gradient(135deg,rgba(184,150,90,0.1) 0%,rgba(184,150,90,0.04) 100%);border:1px solid rgba(184,150,90,0.25);border-radius:10px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-top:48px;}
+@media(max-width:600px){.buy-strip{flex-direction:column;text-align:center;padding:28px 24px;}}
+.buy-strip-text h3{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--cream);margin-bottom:6px;}
+.buy-strip-text p{font-size:13px;color:var(--mist);line-height:1.65;max-width:440px;}
+.buy-strip-action{flex-shrink:0;text-align:center;}
+.buy-price{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--gold-light);display:block;line-height:1;}
+.buy-label{font-size:11px;color:var(--text-light);letter-spacing:0.06em;margin-bottom:14px;display:block;}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:14px 36px;border-radius:6px;transition:all 0.2s;}
+.btn:hover{background:var(--gold-light);transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--ink2);border-top:1px solid rgba(184,150,90,0.15);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);margin-bottom:10px;}
+.ft-disc{font-size:12px;color:var(--text-light);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:var(--mist);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:var(--gold-light);}
+.ft-nav a.hi{color:var(--gold);font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="protocols.html" class="active">All Protocols</a>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
+  <a href="landing.html#pricing" class="nav-buy">Get Access — $37</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>Complete Healing Guides</span></div>
+  <h1>All <em>Protocols</em></h1>
+  <p class="hero-sub">Each guide is standalone and complete — daily schedules, supplement stacks with dosages, shopping lists, and the research behind every step.</p>
+</section>
+
+<!-- PROTOCOLS -->
+<div class="protocols-wrap">
+  <div class="inner">
+
+    <div class="section-label">Available Now</div>
+
+    <div class="proto-grid" style="margin-top:20px;">
+
+      <!-- FULL BODY DETOX -->
+      <a href="Heal_Yourself_Protocol_v2.html" class="proto-card">
+        <span class="proto-free-badge">Free Preview</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🌿</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 01 · 90 Days</span>
+            <div class="proto-title">The Full Body Detox Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">The foundation of the entire guide. Five sequential phases — Prepare, Eliminate, Bind &amp; Drain, Rebuild, and Life After. Daily schedules, antiparasitic rotation, biofilm disruption, heavy metal binding, gut rebuilding, sauerkraut recipe, and the NAD+ protocol.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Phase 1 — Days 1–14</span>
+          <span class="proto-pill">Phase 2 — Days 15–45</span>
+          <span class="proto-pill">Phase 3 — Days 46–75</span>
+          <span class="proto-pill">Phase 4 — Days 76–90</span>
+          <span class="proto-pill">Phase 5 — Day 91+</span>
+        </div>
+        <span class="proto-arrow">→</span>
+      </a>
+
+      <!-- BRAIN PROTOCOL -->
+      <a href="Brain_Protocol.html" class="proto-card">
+        <span class="proto-locked-badge">Full Access</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🧠</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 02 · Neurological</span>
+            <div class="proto-title">Brain Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">The brain can heal. Covers: aluminum from dental materials and how to remove it (silica-water protocol), neuroprotective supplements, BDNF triggers, neurogenesis practices, the gut-brain axis, and a targeted dopaminergic neuroprotection stack for movement disorders.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Brain fog</span>
+          <span class="proto-pill">Cognitive decline</span>
+          <span class="proto-pill">Movement disorders</span>
+          <span class="proto-pill">Neuropathy</span>
+          <span class="proto-pill">MS</span>
+          <span class="proto-pill">Neuroinflammation</span>
+        </div>
+        <span class="proto-arrow">→</span>
+      </a>
+
+      <!-- DMSO -->
+      <a href="DMSO_Oxygen_Therapy.html" class="proto-card">
+        <span class="proto-locked-badge">Full Access</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">⚗️</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 03 · Advanced Therapy</span>
+            <div class="proto-title">DMSO &amp; Oxygen Therapy</div>
+          </div>
+        </div>
+        <p class="proto-desc">3,000+ peer-reviewed studies. Nobel Prize nomination. FDA suppression story. The carrier effect explained. Concentration guide, six application protocols, six combination protocols (DMSO + Magnesium, Curcumin, Iodine, MSM, H₂O₂, Castor Oil), and the full oxygen therapy stack.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Joint &amp; nerve pain</span>
+          <span class="proto-pill">Scar tissue</span>
+          <span class="proto-pill">Sinusitis</span>
+          <span class="proto-pill">Ozone therapy</span>
+          <span class="proto-pill">HBOT</span>
+          <span class="proto-pill">H₂O₂ protocol</span>
+        </div>
+        <span class="proto-arrow">→</span>
+      </a>
+
+      <!-- HIDDEN DEFICIENCIES -->
+      <a href="Hidden_Deficiencies.html" class="proto-card">
+        <span class="proto-locked-badge">Full Access</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🧪</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 04 · Minerals</span>
+            <div class="proto-title">Hidden Deficiencies</div>
+          </div>
+        </div>
+        <p class="proto-desc">The minerals your blood tests will never find. The halogen war your thyroid is losing. Iodine, baking soda (alkalinity), copper, zinc, and magnesium — five deficiencies, five restoration protocols, and a full testing guide that tells you exactly what to request and why standard tests fail.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Iodine — halogen war</span>
+          <span class="proto-pill">Alkalinity protocol</span>
+          <span class="proto-pill">Copper + myelin</span>
+          <span class="proto-pill">Zinc:copper ratio</span>
+          <span class="proto-pill">Magnesium L-Threonate</span>
+        </div>
+        <span class="proto-arrow">→</span>
+      </a>
+
+      <!-- DR. SEBI -->
+      <a href="Dr_Sebi_Alkaline_Protocol.html" class="proto-card">
+        <span class="proto-locked-badge">Full Access</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🌱</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 05 · Alkaline Lifestyle</span>
+            <div class="proto-title">Dr. Sebi — Alkaline Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">The African Bio-Mineral Balance. One disease — mucus and acidity. The complete approved food list across all categories. Eight key herbs with full profiles (Sea Moss, Bladderwrack, Burdock Root, Sarsaparilla, Soursop Leaf, and more). The sea moss gel recipe. A 4-week transition plan.</p>
+        <div class="proto-pills">
+          <span class="proto-pill sage">Alkaline terrain</span>
+          <span class="proto-pill sage">Sea moss — 92 minerals</span>
+          <span class="proto-pill sage">Soursop leaf</span>
+          <span class="proto-pill sage">Electric foods</span>
+          <span class="proto-pill sage">Mucus elimination</span>
+        </div>
+        <span class="proto-arrow">→</span>
+      </a>
+
+    </div>
+
+    <!-- COMING SOON -->
+    <div class="section-label section-label-soon" style="margin-top:48px;">Coming Soon</div>
+
+    <div class="proto-grid" style="margin-top:20px;">
+
+      <div class="proto-card-soon">
+        <span class="proto-soon-badge">Coming Soon</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🌙</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 06 · Mental Health</span>
+            <div class="proto-title">Mental Health Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">Anxiety, depression, chronic stress, sleep disorders. Clinically studied herbs — ashwagandha, passionflower, St. John's Wort. A 4-week nervous system rebuilding plan. The emergency grounding technique. The soul protocol.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Anxiety</span>
+          <span class="proto-pill">Depression</span>
+          <span class="proto-pill">Sleep</span>
+          <span class="proto-pill">Mood</span>
+        </div>
+      </div>
+
+      <div class="proto-card-soon">
+        <span class="proto-soon-badge">Coming Soon</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🦠</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 07 · Gut System</span>
+            <div class="proto-title">Gut System Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">The complete gut restoration guide. SIBO, leaky gut, candida overgrowth, dysbiosis. 5R framework — Remove, Replace, Reinoculate, Repair, Rebalance. The highest-priority protocol for most chronic conditions.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">SIBO</span>
+          <span class="proto-pill">Leaky gut</span>
+          <span class="proto-pill">Candida</span>
+          <span class="proto-pill">IBS</span>
+        </div>
+      </div>
+
+      <div class="proto-card-soon">
+        <span class="proto-soon-badge">Coming Soon</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">⚖️</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 08 · Hormonal</span>
+            <div class="proto-title">Hormonal System Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">Thyroid, adrenal, sex hormone, and insulin systems. Estrogen dominance, cortisol dysregulation, testosterone decline. The mineral-hormone connection. Adaptogenic herbs and targeted restoration.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Thyroid</span>
+          <span class="proto-pill">Adrenal fatigue</span>
+          <span class="proto-pill">Estrogen dominance</span>
+          <span class="proto-pill">Insulin</span>
+        </div>
+      </div>
+
+      <div class="proto-card-soon">
+        <span class="proto-soon-badge">Coming Soon</span>
+        <div class="proto-card-top">
+          <span class="proto-icon">🛡️</span>
+          <div class="proto-meta">
+            <span class="proto-tag">Protocol 09 · Autoimmune</span>
+            <div class="proto-title">Autoimmune Protocol</div>
+          </div>
+        </div>
+        <p class="proto-desc">The terrain approach to autoimmunity. Molecular mimicry, leaky gut, and the immune system that turned on itself. LDN protocol. Anti-inflammatory dietary framework. Documented natural immunomodulators.</p>
+        <div class="proto-pills">
+          <span class="proto-pill">Lupus</span>
+          <span class="proto-pill">Hashimoto's</span>
+          <span class="proto-pill">Rheumatoid</span>
+          <span class="proto-pill">MS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BUY STRIP -->
+    <div class="buy-strip">
+      <div class="buy-strip-text">
+        <h3>Everything above for one payment.</h3>
+        <p>All current protocols plus every new one added — including the six coming-soon guides above. One-time payment. Lifetime access. No subscriptions.</p>
+      </div>
+      <div class="buy-strip-action">
+        <span class="buy-price">$37</span>
+        <span class="buy-label">One-time · Lifetime access</span>
+        <a href="https://gumroad.com/l/healyourself" class="btn" target="_blank">Get Full Access</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. Always consult a professional before beginning any protocol.</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="protocols.html">All Protocols</a>
+      <a href="Heal_Yourself_Protocol_v2.html">Full Body Detox</a>
+      <a href="Brain_Protocol.html">Brain Protocol</a>
+      <a href="DMSO_Oxygen_Therapy.html">DMSO &amp; Oxygen</a>
+      <a href="Hidden_Deficiencies.html">Hidden Deficiencies</a>
+      <a href="Dr_Sebi_Alkaline_Protocol.html">Dr. Sebi — Alkaline</a>
+      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — Code GUW6132</a>
+      <a href="landing.html#pricing" class="hi">Get Full Access — $37</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

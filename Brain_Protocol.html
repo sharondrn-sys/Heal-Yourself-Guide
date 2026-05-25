@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Protocol — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);--nav-h:52px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;}
+.nav-center a:hover{color:var(--sage-nav);}
+@media(max-width:640px){.nav-center{display:none;}}
+
+.phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:rgba(244,239,230,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.phase-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
+.phase-nav a:hover{color:var(--ink-mid);}
+.phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage-mid);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+.phase-nav a.pn-active .pn-dot{opacity:1;}
+.pn-sep{width:1px;background:var(--border-s);margin:9px 0;flex-shrink:0;}
+.pn-protocols{position:relative;display:flex;align-items:stretch;margin-left:auto;border-left:1px solid var(--border-s);}
+.pn-protocols-btn{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-transform:uppercase;background:none;border:none;cursor:pointer;white-space:nowrap;transition:color 0.2s;}
+.pn-protocols-btn svg{width:8px;height:8px;transition:transform 0.2s;}
+.pn-drop{display:none;position:absolute;top:36px;right:0;width:220px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.2);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;padding:8px 0;z-index:200;box-shadow:0 16px 48px rgba(0,0,0,0.15);}
+.pn-protocols:hover .pn-drop{display:block;}
+.pn-protocols:hover .pn-protocols-btn{color:var(--sage);}
+.pn-protocols:hover .pn-protocols-btn svg{transform:rotate(180deg);}
+.pn-drop-label{font-size:9px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage-nav);padding:6px 16px 4px;opacity:0.6;}
+.pn-drop a{display:block;padding:7px 16px;font-size:13px;color:rgba(212,201,168,0.75);text-decoration:none;transition:color 0.15s,background 0.15s;border-bottom:none;}
+.pn-drop a:hover{color:#d4c9a8;background:rgba(138,184,154,0.1);}
+.pn-drop a.pn-current{color:var(--sage-nav);}
+.pn-drop-divider{height:1px;background:rgba(138,184,154,0.12);margin:6px 0;}
+.pn-drop .drop-soon{opacity:0.35;pointer-events:none;}
+.pn-drop .drop-soon::after{content:' — soon';font-size:10px;}
+.pn-drop .drop-iherb{color:var(--sage-nav);}
+
+.main{margin-top:var(--nav-h);}
+
+.hero{background:var(--bg-warm);padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border-s);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(61,107,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
+.eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:14px;max-width:760px;margin-left:auto;margin-right:auto;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:580px;margin:0 auto 40px;line-height:1.75;}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:48px;}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--sage);display:block;}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+
+.chapter-row{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;}
+@media(max-width:860px){.chapter-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:440px){.chapter-row{grid-template-columns:1fr;}}
+.chc{padding:24px 20px;background:var(--bg-deep);border-top:3px solid var(--sage);text-decoration:none;display:block;transition:background 0.2s;}
+.chc:hover{background:var(--sage-pale);}
+.chc-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--sage);display:block;margin-bottom:6px;}
+.chc-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;}
+.chc-desc{font-size:11px;color:var(--ink-light);line-height:1.5;}
+
+.sec-a{background:var(--bg);padding:64px 24px;}
+.sec-b{background:var(--bg-warm);padding:64px 24px;}
+.sec-c{background:var(--bg-deep);padding:64px 24px;}
+.sec-d{background:var(--bg-stone);padding:64px 24px;}
+
+.inner{max-width:760px;margin:0 auto;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.18),transparent);}
+
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:32px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
+.lh2 em{color:var(--sage);font-style:italic;}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--sage);line-height:1.3;margin:32px 0 12px;}
+.lh3-terra{color:var(--terra);}
+.lh3-ink{color:var(--ink);}
+
+.lp{font-size:15px;line-height:1.85;color:var(--ink-mid);margin-bottom:16px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,2vw,18px);line-height:1.6;color:var(--sage);margin:0;}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra p{color:var(--terra);}
+
+.callout{border-radius:8px;padding:22px 26px;margin:28px 0;}
+.callout-sage{background:var(--sage-pale);border:1px solid var(--border);}
+.callout-terra,.callout-warn{background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);}
+.callout-honey{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.25);}
+.callout-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;}
+.callout-sage .callout-title{color:var(--sage);}
+.callout-terra .callout-title,.callout-warn .callout-title{color:var(--terra);}
+.callout-honey .callout-title{color:var(--honey);}
+.callout p{font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:8px;}
+.callout p:last-child{margin-bottom:0;}
+.callout a{color:var(--sage);}
+
+/* SUPPLEMENT CHECKLIST */
+.supp-list{list-style:none;margin:16px 0 24px;}
+.supp-list li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border-s);font-size:14px;line-height:1.65;}
+.supp-list li:last-child{border-bottom:none;}
+.supp-list .sc{color:var(--sage);font-weight:700;font-size:15px;margin-top:1px;}
+.supp-list .sn{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);}
+.supp-list .sd{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);display:inline;margin:0 6px;}
+.supp-list .sm{font-size:13px;color:var(--ink-light);}
+.supp-list .sw{font-size:12px;color:var(--terra);display:block;margin-top:3px;}
+.supp-list .sl{font-size:11px;font-weight:600;color:var(--sage);text-decoration:none;margin-left:6px;letter-spacing:0.03em;}
+.supp-list .sl:hover{color:var(--sage-mid);}
+.budget-note{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);border-radius:6px;padding:14px 18px;margin:20px 0;font-size:13px;color:var(--ink-mid);line-height:1.8;}
+.budget-note strong{color:var(--honey);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px;}
+
+/* SOURCE TABLE */
+.src-table{width:100%;border-collapse:collapse;margin:20px 0;}
+.src-table th{text-align:left;padding:10px 14px;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);border-bottom:1px solid var(--border);}
+.src-table td{padding:10px 14px;color:var(--ink-mid);border-bottom:1px solid var(--border-s);vertical-align:top;line-height:1.55;font-size:13px;}
+.src-table tr:last-child td{border-bottom:none;}
+.src-table td:first-child{font-weight:600;color:var(--ink);}
+.td-bad{color:var(--terra) !important;}
+.td-good{color:var(--sage) !important;}
+
+/* BDNF LIST */
+.bdnf-list{list-style:none;margin:20px 0;}
+.bdnf-list li{padding:14px 0;border-bottom:1px solid var(--border-s);display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:baseline;}
+.bdnf-list li:last-child{border-bottom:none;}
+.bdnf-list .bi{font-size:20px;line-height:1;}
+.bdnf-list .bt{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px;}
+.bdnf-list .bd{font-size:13px;color:var(--ink-light);line-height:1.7;}
+.bdnf-list .btime{font-family:'DM Mono',monospace;font-size:10px;color:var(--sage);margin-top:4px;display:block;}
+
+/* DAILY SCHEDULE */
+.schedule{margin:20px 0;}
+.sched-row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-s);align-items:start;}
+.sched-row:last-child{border-bottom:none;}
+.sched-time{font-family:'DM Mono',monospace;font-size:12px;color:var(--sage);font-weight:500;padding-top:2px;}
+.sched-act{font-size:13px;color:var(--ink-mid);line-height:1.6;}
+.sched-act strong{color:var(--ink);}
+
+.silica-box{background:var(--sage-pale);border:1px solid var(--border);border-left:3px solid var(--sage-mid);border-radius:0 8px 8px 0;padding:24px 26px;margin:24px 0;}
+.silica-box-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.silica-box-source{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;display:block;}
+.silica-box p{font-size:13px;color:var(--ink-mid);line-height:1.75;margin-bottom:8px;}
+.silica-box strong{color:var(--ink);}
+
+.exp-btn{display:flex;align-items:center;gap:10px;cursor:pointer;margin:24px 0 0;padding:13px 18px;border:1px solid var(--border);border-radius:6px;background:var(--sage-pale);transition:all 0.2s;width:100%;}
+.exp-btn:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
+.exp-btn-terra{border-color:rgba(140,90,60,0.2);background:var(--terra-pale);}
+.exp-btn-terra:hover{border-color:var(--terra-light);}
+.exp-icon{width:22px;height:22px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.exp-icon-terra{background:var(--terra);}
+.exp-icon svg{width:10px;height:10px;transition:transform 0.3s;}
+.exp-btn.open .exp-icon svg{transform:rotate(180deg);}
+.exp-lbl{font-size:13px;font-weight:500;color:var(--sage);letter-spacing:0.03em;}
+.exp-lbl-terra{color:var(--terra);}
+.exp-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease;}
+.exp-body.open{max-height:9999px;}
+.exp-inner{padding-top:24px;}
+
+.print-btn{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:12px;font-weight:600;color:var(--sage);background:var(--sage-pale);border:1px solid var(--border);padding:8px 16px;border-radius:4px;cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.2s;text-decoration:none;}
+.print-btn:hover{background:rgba(61,107,74,0.15);}
+
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:48px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.45);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+
+@media print{.phase-nav,footer,.print-btn,nav{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index_new.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index_new.html">Home</a>
+    <a href="protocols.html">All Protocols</a>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
+</nav>
+
+<div class="main">
+
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <a href="#foundations" data-section="foundations"><span class="pn-dot"></span>Foundations</a>
+    <div class="pn-sep"></div>
+    <a href="#aluminum" data-section="aluminum"><span class="pn-dot"></span>Aluminum &amp; Teeth</a>
+    <div class="pn-sep"></div>
+    <a href="#neuroprotection" data-section="neuroprotection"><span class="pn-dot"></span>Neuroprotection</a>
+    <div class="pn-sep"></div>
+    <a href="#neurogenesis" data-section="neurogenesis"><span class="pn-dot"></span>Neurogenesis</a>
+    <div class="pn-sep"></div>
+    <a href="#parkinsons" data-section="parkinsons"><span class="pn-dot"></span>Parkinson's</a>
+    <div class="pn-sep"></div>
+    <a href="#gut-brain" data-section="gut-brain"><span class="pn-dot"></span>Gut-Brain Axis</a>
+    <div class="pn-sep"></div>
+    <a href="#daily" data-section="daily"><span class="pn-dot"></span>Daily Protocol</a>
+    <div class="pn-protocols">
+      <button class="pn-protocols-btn">All Protocols <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+      <div class="pn-drop">
+        <div class="pn-drop-label">Protocols</div>
+        <a href="Heal_Yourself_Protocol_v2_new.html">🌿 Full Body Detox</a>
+        <a href="Brain_Protocol.html" class="pn-current">🧠 Brain Protocol</a>
+        <a href="DMSO_Oxygen_Therapy.html">⚗️ DMSO &amp; Oxygen</a>
+        <a href="Hidden_Deficiencies.html">🧪 Hidden Deficiencies</a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html">🌱 Dr. Sebi — Alkaline</a>
+        <div class="pn-drop-divider"></div>
+        <a class="drop-soon">🌙 Mental Health</a>
+        <div class="pn-drop-divider"></div>
+        <a href="protocols.html">🏠 All Protocols</a>
+        <a href="index_new.html">📖 Home</a>
+        <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" class="drop-iherb">🛒 iHerb — GUW6132</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>The Brain Healing Protocol</span></div>
+  <h1>The Brain <em>Can Heal</em></h1>
+  <p class="hero-sub">Neuroplasticity is not a metaphor. The brain physically rewires itself in response to what you feed it, what you remove from it, and what you ask of it. This protocol addresses all three.</p>
+  <div class="hero-stats">
+    <div><span class="stat-num">86B</span><span class="stat-label">Neurons in the Brain</span></div>
+    <div><span class="stat-num">100T</span><span class="stat-label">Synaptic Connections</span></div>
+    <div><span class="stat-num">Gut</span><span class="stat-label">Second Brain</span></div>
+    <div><span class="stat-num">∞</span><span class="stat-label">Capacity to Regenerate</span></div>
+  </div>
+</section>
+
+<div class="chapter-row">
+  <a href="#foundations" class="chc"><span class="chc-tag">Part 01</span><div class="chc-name">Foundations</div><p class="chc-desc">The terrain. What the brain actually needs to function and regenerate.</p></a>
+  <a href="#aluminum" class="chc"><span class="chc-tag">Part 02</span><div class="chc-name">Aluminum &amp; Teeth</div><p class="chc-desc">The connection your dentist was never trained to make.</p></a>
+  <a href="#neuroprotection" class="chc"><span class="chc-tag">Part 03</span><div class="chc-name">Neuroprotection</div><p class="chc-desc">Compounds with documented evidence for protecting and repairing the nervous system.</p></a>
+  <a href="#neurogenesis" class="chc"><span class="chc-tag">Part 04</span><div class="chc-name">Neurogenesis</div><p class="chc-desc">Growing new neurons. The practices that stimulate new brain cell growth.</p></a>
+  <a href="#parkinsons" class="chc"><span class="chc-tag">Part 05</span><div class="chc-name">Neurological Conditions</div><p class="chc-desc">Specific protocol for Parkinson's and movement disorders.</p></a>
+</div>
+
+<div class="divider"></div>
+
+<!-- FOUNDATIONS -->
+<section class="sec-b" id="foundations">
+  <div class="inner">
+    <div class="kicker">Part One</div>
+    <h2 class="lh2">The Brain's Actual Needs</h2>
+    <p class="lp">The brain is 60% fat. It runs on glucose — or, when properly conditioned, ketones. It consumes 20% of the body's total oxygen supply. It is protected by the most selective barrier in biology — the blood-brain barrier — and it is simultaneously the most vulnerable organ to the substances that can breach it.</p>
+    <p class="lp">Everything that reaches the brain does so either because the body designed it to cross, or because it shares enough chemical properties with something the body designed to cross that it slips through. Understanding this one fact changes everything about your neurological environment.</p>
+    <div class="pq"><p>"The blood-brain barrier is not a wall. It is a selective gate. The tragedy is not that it fails completely — it is that it was never designed for the chemical environment of the 21st century."</p></div>
+    <h3 class="lh3">What the Brain Runs On — And What It's Being Denied</h3>
+    <p class="lp"><strong>Fat:</strong> The myelin sheath around every nerve fiber is approximately 70% fat. When dietary fat is chronically low or the wrong type, myelin integrity degrades — producing cognitive slowing, mood instability, and neurological symptoms that look like a dozen different diseases.</p>
+    <p class="lp"><strong>Cholesterol:</strong> 25% of the body's total cholesterol is in the brain. Statins suppress cholesterol synthesis throughout the body including the brain. The documented cognitive side effects — memory loss, confusion, personality changes — are direct consequences. They appear in published research. They are largely ignored in clinical practice.</p>
+    <p class="lp"><strong>Oxygen:</strong> The brain uses 20% of the body's oxygen despite being 2% of body weight. Even subtle reductions in cerebral oxygenation produce measurable cognitive impairment. This is why the DMSO &amp; Oxygen protocol is part of this stack.</p>
+    <p class="lp"><strong>Minerals:</strong> Magnesium is required for every nerve firing. Zinc governs synaptic plasticity. Copper is required for myelin synthesis. Iodine governs thyroid hormones that regulate myelination throughout life. All four are commonly deficient. None appear on a standard neurological workup.</p>
+    <div class="callout callout-sage">
+      <div class="callout-title">📋 Sequence — Start Here</div>
+      <p>This protocol works best alongside the Full Body Detox Protocol. The sequence: <strong>1.</strong> Open drainage pathways (Phase 1 of Detox) → <strong>2.</strong> Eliminate pathogens (Phase 2) → <strong>3.</strong> Begin this Brain Protocol alongside Phase 3 (Bind &amp; Drain). The neuroprotective compounds here work best once the body's toxic burden is actively reducing.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ALUMINUM AND TEETH -->
+<section class="sec-c" id="aluminum">
+  <div class="inner">
+    <div class="kicker kicker-terra">Part Two — The Hidden Source</div>
+    <h2 class="lh2">Aluminum, Your Teeth, <em>and Your Brain</em></h2>
+    <p class="lp">Professor Christopher Exley of Keele University spent 30 years researching aluminum biology. His findings are unambiguous: aluminum accumulates in the brain, co-localizes with the protein deposits found in neurodegenerative brain tissue, and accumulates at significantly higher levels in people with neurological diseases than in healthy controls. There is no safe level of aluminum in brain tissue — because it is not supposed to be there at all.</p>
+    <div class="pq pq-terra"><p>"The unequivocal neurotoxicity of aluminum means that when brain burdens exceed toxic thresholds, it is inevitable that aluminum contributes to disease. The question is not whether aluminum is neurotoxic. That is settled."<br><span style="font-size:12px;color:var(--terra-light);font-style:normal;margin-top:8px;display:block;">— Professor Christopher Exley, Keele University, 2017</span></p></div>
+
+    <h3 class="lh3 lh3-terra">The Dental Connection</h3>
+    <table class="src-table">
+      <tr><th>Material</th><th>Issue</th><th>Evidence</th></tr>
+      <tr><td>Amalgam fillings</td><td>50% mercury — vaporizes and crosses the blood-brain barrier. Synergizes with aluminum in neurotoxicity.</td><td class="td-bad">Multiple studies · brain tissue analysis</td></tr>
+      <tr><td>Calcium silicate cements (MTA)</td><td>Contain aluminum. Demirkaya et al. (2017) showed placement caused measurable increases in brain aluminum levels and oxidative brain damage in animal models.</td><td class="td-bad">Human &amp; Experimental Toxicology, 2017</td></tr>
+      <tr><td>Composite "white" fillings</td><td>Many contain aluminum compounds as fillers and radiopacifiers. Not disclosed to patients. Not regulated for neurological risk.</td><td class="td-bad">Under-studied</td></tr>
+      <tr><td>Biological / ceramic alternatives</td><td>Zirconia implants, ceramic inlays, aluminum-free composites. Ask for the material safety data sheet before any procedure.</td><td class="td-good">Biological dentistry literature</td></tr>
+    </table>
+
+    <h3 class="lh3 lh3-terra">All Sources — Ranked by Exposure</h3>
+    <table class="src-table">
+      <tr><th>Source</th><th>Compound</th><th>Level</th></tr>
+      <tr><td>Antiperspirants</td><td>Aluminum chlorohydrate, aluminum zirconium</td><td class="td-bad">High — applied over lymph nodes daily</td></tr>
+      <tr><td>Aluminum cookware &amp; foil</td><td>Leaches dramatically into acidic foods</td><td class="td-bad">High — especially with tomato, citrus, heat</td></tr>
+      <tr><td>Processed foods</td><td>Sodium aluminum phosphate (leavening), aluminum silicate (anti-caking)</td><td class="td-bad">Moderate–High</td></tr>
+      <tr><td>Tap water</td><td>Aluminum sulfate — used as flocculant in water treatment</td><td class="td-bad">Moderate</td></tr>
+      <tr><td>Antacids</td><td>Aluminum hydroxide, aluminum carbonate</td><td class="td-bad">High per dose</td></tr>
+      <tr><td>High-silica mineral water</td><td>Silicic acid — binds and removes aluminum</td><td class="td-good">Protective</td></tr>
+    </table>
+
+    <h3 class="lh3 lh3-terra">The Silica Protocol — Removing Aluminum from the Brain</h3>
+    <p class="lp">Silicic acid forms a stable complex with aluminum ions and facilitates their excretion through urine — including aluminum accumulated in brain tissue. Published in peer-reviewed literature with human clinical data. In Exley's study, 8 of 15 patients with progressive neurological decline showed no further deterioration and 3 showed measurable cognitive improvement after high-silica water intervention.</p>
+
+    <div class="silica-box">
+      <div class="silica-box-title">Dr. Exley's Silica-Rich Water Protocol</div>
+      <span class="silica-box-source">Peer-Reviewed · Keele University · Human Clinical Data</span>
+      <p><strong>Protocol:</strong> Drink 1.5 litres of high-silicic acid mineral water within one hour — on an empty stomach — for a minimum of 5 consecutive days. Repeat monthly.</p>
+      <p><strong>Which water:</strong> Fiji Water (~93mg/L silica, BPA-free) · Volvic (~30mg/L) · Spritzer (used in the original study). For maintenance: 1 litre daily of high-silica water provides ongoing support.</p>
+    </div>
+
+    <h3 class="lh3 lh3-terra">Aluminum Removal — Supplement Checklist</h3>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">Orthosilicic Acid (OSA)</span> <span class="sd">10–20mg elemental silicon daily · Ch-OSA form preferred</span> <span class="sm">Most bioavailable silica form. Crosses the blood-brain barrier, binds aluminum ions, facilitates renal excretion.</span> <span class="sw">⚠️ Ensure adequate hydration — silica needs water to flush aluminum through the kidneys.</span> <a href="https://www.iherb.com/search?kw=orthosilicic+acid+silica&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Horsetail (Equisetum arvense) 💰</span> <span class="sd">300–600mg daily · Standardized to 7% silica</span> <span class="sm">Highest plant source of bioavailable silica. Partially converted to orthosilicic acid in the gut. Budget alternative to OSA.</span> <span class="sw">⚠️ Avoid in kidney disease. Use supplement form only — not the unprocessed plant.</span> <a href="https://www.iherb.com/search?kw=horsetail+silica+equisetum&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Food-Grade Diatomaceous Earth 💰</span> <span class="sd">½–1 tsp in water · Morning · Empty stomach · Build slowly</span> <span class="sm">~85% amorphous silica. Provides aluminum binding plus documented gut integrity and heavy metal chelation benefits. Cheapest silica source.</span> <span class="sw">⚠️ Food-grade ONLY — never pool or filter grade. Do not inhale the powder.</span> <a href="https://www.iherb.com/search?kw=diatomaceous+earth+food+grade&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Apple Cider Vinegar (ACV) — Malic Acid 💰</span> <span class="sd">1–2 tbsp raw ACV in water daily · Or malic acid supplement 1,200–2,400mg</span> <span class="sm">ACV = Apple Cider Vinegar — raw, unfiltered, with the "mother." Malic acid mobilizes aluminum from soft tissue. Use with silica — never alone. Mobilizing without binding causes redistribution, not elimination.</span> <span class="sw">⚠️ Always dilute — undiluted ACV damages tooth enamel. Drink through a straw.</span> <a href="https://www.iherb.com/search?kw=apple+cider+vinegar+organic+raw&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+    <div class="budget-note"><strong>💰 Minimum if budget is tight</strong>Switch to Volvic or Fiji for daily drinking water. Make the ACV morning drink daily — free if you already have ACV. Add food-grade diatomaceous earth at ½ tsp/day. These three steps activate the silica protocol at minimal cost.</div>
+
+    <button class="exp-btn exp-btn-terra" onclick="toggleExpand('al-research',this)" data-label="The full research — what scientists found in brain tissue">
+      <div class="exp-icon exp-icon-terra"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl exp-lbl-terra">The full research record — what scientists found in brain tissue</span>
+    </button>
+    <div class="exp-body" id="al-research">
+      <div class="exp-inner">
+        <p class="lp">Standard histological staining does not detect aluminum. For decades researchers could claim no aluminum was present — because the techniques used couldn't find it. Exley's group developed aluminum-specific fluorescence microscopy using lumogallion, and looked properly for the first time. What they found: aluminum throughout the brain tissue of people who died with neurodegenerative disease, co-located with the protein deposits that characterize these conditions. Every disease group showed higher brain aluminum than healthy controls.</p>
+        <p class="lp">A 1991 study (Hirsch et al., Journal of Neurochemistry) measured aluminum and iron in the substantia nigra — the brain region that degenerates in movement disorders like Parkinson's — and found both significantly elevated compared to controls. The mechanism: aluminum disrupts iron metabolism via ceruloplasmin impairment, and iron accumulation in the substantia nigra is now an accepted pathological finding. This aluminum → iron dysregulation → substantia nigra toxicity pathway is documented and mechanistically coherent. It is not discussed in standard neurology.</p>
+        <div class="pq pq-terra"><p>"Exley's funding was eliminated by Keele University following pressure after his research became too pointed about vaccine aluminum adjuvants. His body of work has not been scientifically refuted. It has been administratively sidelined. The distinction matters."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NEUROPROTECTION -->
+<section class="sec-b" id="neuroprotection">
+  <div class="inner">
+    <div class="kicker">Part Three</div>
+    <h2 class="lh2">Neuroprotective Compounds</h2>
+    <p class="lp">Each compound below has published research in peer-reviewed literature — not health blogs. Start with the foundational six. Add advanced compounds once the foundation is established.</p>
+
+    <h3 class="lh3">Foundations</h3>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">Lion's Mane Mushroom</span> <span class="sd">500–1,000mg extract daily · 30%+ beta-glucan · Morning</span> <span class="sm">The only natural compounds identified to stimulate Nerve Growth Factor (NGF) production. NGF is essential for neuron survival and regeneration. Double-blind human trials document cognitive improvement in mild cognitive impairment. Results typically apparent at 4–8 weeks.</span> <a href="https://www.iherb.com/search?kw=lion+mane+mushroom+extract&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Curcumin (High-Bioavailability)</span> <span class="sd">500–1,000mg · Liposomal, BCM-95, or with piperine · Twice daily with food</span> <span class="sm">Crosses the blood-brain barrier. Documented anti-neuroinflammatory effects. Published evidence for inhibiting protein aggregation in neurodegenerative tissue. Stimulates new brain cell growth. Standard curcumin has poor bioavailability — form matters enormously.</span> <a href="https://www.iherb.com/search?kw=curcumin+BCM95+liposomal&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Magnesium L-Threonate</span> <span class="sd">2g daily (144mg elemental Mg) · Split morning + evening</span> <span class="sm">MIT-developed form. The only magnesium shown to significantly increase brain magnesium levels. Documented to increase synapse density, improve working memory, and slow age-related cognitive decline. For neurological conditions, this is the form to use.</span> <a href="https://www.iherb.com/search?kw=magnesium+threonate+magtein&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Omega-3 (EPA + DHA)</span> <span class="sd">2–3g combined EPA+DHA daily · Triglyceride form · With fat-containing meal</span> <span class="sm">DHA is a literal structural component of neuron membranes — 40% of the brain's polyunsaturated fatty acids. EPA reduces neuroinflammation. Evidence base for omega-3 in depression, cognitive decline, and neurodegeneration is among the largest in nutritional neuroscience.</span> <a href="https://www.iherb.com/search?kw=omega-3+EPA+DHA+triglyceride&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">NMN or NR (NAD+ Precursors)</span> <span class="sd">NMN: 500mg daily · NR: 300–500mg · Morning fasted</span> <span class="sm">NAD+ declines ~50% per decade after age 40. Every neuron runs on it. As NAD+ falls, neuronal energy metabolism falters — a documented mechanism in age-related cognitive decline. NMN and NR are the precursors the brain converts to NAD+.</span> <a href="https://www.iherb.com/search?kw=NMN+nicotinamide+mononucleotide&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Bacopa Monnieri</span> <span class="sd">300mg (50% bacosides) · With food · 8–12 weeks for full effect</span> <span class="sm">Increases cerebral blood flow, enhances acetylcholine signaling, reduces amyloid aggregation, reduces cortisol, increases synaptogenesis. Human trials document improvement in memory acquisition, processing speed, and anxiety. One of the most evidence-backed cognitive herbs in existence.</span> <a href="https://www.iherb.com/search?kw=bacopa+monnieri+bacosides&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+
+    <button class="exp-btn" onclick="toggleExpand('advanced-neuro',this)" data-label="Advanced compounds — Ashwagandha, Ginkgo, PQQ, Phosphatidylserine">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">Advanced compounds — Ashwagandha, Ginkgo, PQQ, Phosphatidylserine</span>
+    </button>
+    <div class="exp-body" id="advanced-neuro">
+      <div class="exp-inner">
+        <ul class="supp-list">
+          <li><span class="sc">✓</span><span><span class="sn">Ashwagandha (KSM-66)</span> <span class="sd">300–600mg KSM-66 extract · Evening</span> <span class="sm">Documented brain cell growth-stimulating, cortisol-reducing effects (published clinical trials), and axon and dendrite growth stimulation in neurons. Cortisol causes hippocampal neuron death at chronically elevated levels. Reducing cortisol is a direct neuroprotective intervention.</span> <a href="https://www.iherb.com/search?kw=ashwagandha+KSM-66&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+          <li><span class="sc">✓</span><span><span class="sn">Ginkgo Biloba</span> <span class="sd">120–240mg standardized (24% flavonoids, 6% terpenes) · Twice daily · 6 weeks minimum</span> <span class="sm">Increases cerebral circulation via vasodilation. Documented in multiple clinical trials for cognitive function in dementia and age-related decline. Potent antioxidant in brain tissue.</span> <span class="sw">⚠️ Mild blood-thinning effect — caution with anticoagulant medications.</span> <a href="https://www.iherb.com/search?kw=ginkgo+biloba+extract&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+          <li><span class="sc">✓</span><span><span class="sn">PQQ (Pyrroloquinoline Quinone)</span> <span class="sd">10–20mg daily · With CoQ10 for synergistic effect</span> <span class="sm">PQQ = Pyrroloquinoline Quinone. The only compound identified to stimulate mitochondrial biogenesis — the creation of new mitochondria in neurons. CoQ10 optimizes existing mitochondria; PQQ generates new ones. Together they restore neuronal energy production from two angles.</span> <a href="https://www.iherb.com/search?kw=PQQ+pyrroloquinoline&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+          <li><span class="sc">✓</span><span><span class="sn">Phosphatidylserine (PS)</span> <span class="sd">100–300mg daily · With food</span> <span class="sm">A phospholipid making up a significant portion of neuron cell membranes at synapses. The only supplement with an FDA-qualified health claim for cognitive decline. Clinical trials document improvement in memory, concentration, and learning. Also reduces cortisol response to stress.</span> <a href="https://www.iherb.com/search?kw=phosphatidylserine+sunflower&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NEUROGENESIS -->
+<section class="sec-a" id="neurogenesis">
+  <div class="inner">
+    <div class="kicker">Part Four</div>
+    <h2 class="lh2">Neurogenesis — <em>Growing New Brain</em></h2>
+    <p class="lp">Adult neurogenesis — the birth of new neurons in the adult brain — is documented, real, and responsive to specific inputs. The molecule that governs it is Brain-Derived Neurotrophic Factor (BDNF) — essentially a growth hormone for brain cells. Every lifestyle intervention that reliably improves brain function does so, in part, by growing it.</p>
+    <div class="pq"><p>"The brain is not a fixed structure. It is a living, dynamic, continuously remodelling organ that responds — within hours — to what you do, what you think, and what you put into your body. This is not optimism. This is neuroscience."</p></div>
+
+    <h3 class="lh3">What Grows New Brain Cells — Ranked by Evidence</h3>
+    <ul class="bdnf-list">
+      <li><span class="bi">🏃</span><div><div class="bt">Aerobic Exercise</div><div class="bd">The single most powerful trigger for new brain cell growth identified by research. 20–30 minutes of sustained aerobic exercise at Zone 2 (65–75% max heart rate) stimulates more new brain cell growth than any supplement. Not weights. Not gentle walking. Sustained cardio.</div><span class="btime">30 min · 5× weekly · Morning preferred</span></div></li>
+      <li><span class="bi">🌙</span><div><div class="bt">Deep Sleep</div><div class="bd">During slow-wave sleep, the glymphatic system flushes amyloid, tau, and metabolic waste from brain tissue using cerebrospinal fluid. This process is almost entirely absent during poor or fragmented sleep. Chronic poor sleep = accumulating brain waste = accelerated neurodegeneration.</div><span class="btime">7–9 hours · Consistent schedule · Dark, cool, device-free</span></div></li>
+      <li><span class="bi">🧘</span><div><div class="bt">Meditation &amp; Breathwork</div><div class="bd">8 weeks of daily meditation produces measurable changes in brain structure documented by MRI — increased cortical thickness, reduced amygdala reactivity, stimulated new brain cell growth. Wim Hof breathing stimulates new brain cell growth acutely and reduces brain inflammation markers via vagus nerve activation.</div><span class="btime">20 min daily · Morning or pre-sleep</span></div></li>
+      <li><span class="bi">❄️</span><div><div class="bt">Cold Exposure</div><div class="bd">Cold water immersion triggers up to 300% increase in norepinephrine — a direct trigger for new brain cell growth and neuroprotective compound. Minimum effective dose: 30 seconds of cold at the end of your shower, 3–4× weekly. Therapeutic dose: 2–3 minutes full immersion at 10–15°C.</div><span class="btime">30 sec–3 min · Cold shower end or full plunge</span></div></li>
+      <li><span class="bi">🍽️</span><div><div class="bt">Intermittent Fasting</div><div class="bd">Fasting triggers autophagy — cellular self-cleaning — in the brain. Clears misfolded proteins and damaged mitochondria. During the fasted state the brain shifts toward ketone metabolism, which is more efficient for neurons and produces less oxidative byproduct.</div><span class="btime">16:8 minimum · 18:6 therapeutic · No calories during fast</span></div></li>
+      <li><span class="bi">🌞</span><div><div class="bt">Morning Sunlight</div><div class="bd">Within 30–60 minutes of waking — sets the circadian clock via the suprachiasmatic nucleus, regulating cortisol rhythm, melatonin production, and neuroplasticity cycles. 10–20 minutes direct morning sunlight, no sunglasses, no window glass. Chronically dysregulated circadian rhythm is associated with accelerated neurodegeneration.</div><span class="btime">10–20 min · Within 1 hour of waking</span></div></li>
+    </ul>
+
+    <button class="exp-btn" onclick="toggleExpand('keto-brain',this)" data-label="Ketosis and the brain — why neurons prefer fat as fuel">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">Ketosis and the brain — why neurons prefer fat as fuel</span>
+    </button>
+    <div class="exp-body" id="keto-brain">
+      <div class="exp-inner">
+        <p class="lp">Neurons can run on two fuels: glucose and ketones. Ketones produce ATP with less oxidative byproduct, bypass mitochondrial dysfunction that accumulates in aging neurons, and reduce neuroinflammation directly. Some forms of neurological decline involve a progressive failure of glucose metabolism in brain tissue — documented by PET scan years before symptoms. Ketones bypass this impairment entirely.</p>
+        <p class="lp">You do not need a strict ketogenic diet. MCT oil produces ketones even in a non-ketogenic metabolic state. 1–2 tablespoons in coffee or a smoothie produces measurable increases in blood ketones within 30 minutes. Start with 1 teaspoon to avoid GI distress and build slowly over 1–2 weeks.</p>
+        <div class="pq"><p>"Some neurological diseases may be, at their metabolic root, a failure of the brain's ability to use glucose as fuel — a disease that predates every symptom by years. And one whose metabolic component can be addressed by something as simple as changing what the brain burns."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PARKINSON'S SPECIFIC -->
+<section class="sec-c" id="parkinsons">
+  <div class="inner">
+    <div class="kicker">Part Five — Neurological Conditions</div>
+    <h2 class="lh2">Conditions This Protocol Addresses</h2>
+    <p class="lp">The neuroprotective mechanisms in this protocol are not condition-specific — they address the underlying terrain. The same foundations support all conditions: open drainage, reduced toxic burden, mineral repletion, mitochondrial energy, nerve growth factor stimulation, and gut-brain axis repair.</p>
+
+    <div class="callout callout-sage" style="margin-bottom:32px;">
+      <div class="callout-title">🧠 Conditions This Protocol May Support</div>
+      <p><strong>Movement disorders:</strong> Tremor · Rigidity · Bradykinesia · Balance difficulties · Restless legs syndrome</p>
+      <p><strong>Cognitive:</strong> Brain fog · Memory difficulties · Slow processing · Word-finding difficulties · Age-related cognitive decline</p>
+      <p><strong>Neurological:</strong> Peripheral neuropathy · Nerve pain · Tinnitus · Migraine · Post-viral neurological symptoms · MS</p>
+      <p><strong>Mood and nervous system:</strong> Anxiety · Depression · Chronic fatigue · Sleep disorders · Mood instability</p>
+    </div>
+
+    <h3 class="lh3">Parkinson's &amp; Movement Disorders — Specific Protocol</h3>
+    <p class="lp">The misfolded protein associated with movement disorder progression has been found in gut wall neurons years or decades before motor symptoms appear. If the condition begins in the gut — and the evidence increasingly suggests it does — then the interventions in this guide are not peripheral. They are central.</p>
+    <div class="pq"><p>"In many movement disorders, approximately 75–80% of the dopamine-producing neurons are already gone by the time the first tremor appears. The window for meaningful intervention is long before the diagnosis. Not after."</p></div>
+
+    <div class="callout callout-terra">
+      <div class="callout-title">⚠️ Aluminum + Substantia Nigra — Specific Data</div>
+      <p>Hirsch et al. (Journal of Neurochemistry, 1991) found both aluminum and iron significantly elevated in substantia nigra tissue of movement disorder cases vs. controls. The mechanism: aluminum disrupts iron metabolism via ceruloplasmin impairment. Iron accumulation in the substantia nigra is now an accepted pathological finding. This pathway is documented and mechanistically coherent. It is not discussed in standard neurology.</p>
+    </div>
+
+    <h3 class="lh3">Parkinson's &amp; Movement Disorders — Supplement Checklist</h3>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">CoQ10 (Ubiquinol form)</span> <span class="sd">1,200mg daily · Ubiquinol form · Split doses with meals</span> <span class="sm">A landmark NIH-funded trial found 1,200mg/day was associated with significantly slower disease progression over 16 months vs. placebo. Ubiquinol is the active reduced form, better absorbed than ubiquinone — especially over age 40. Use with PQQ for synergistic mitochondrial support.</span> <span class="sw">⚠️ Begin at 200–400mg and increase over 4 weeks. The common 100mg dose is insufficient for neurological therapeutic effect.</span> <a href="https://www.iherb.com/search?kw=ubiquinol+CoQ10+200mg&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Mucuna Pruriens (L-DOPA precursor)</span> <span class="sd">Standardized to 15% L-DOPA · 250–500mg · Under practitioner guidance</span> <span class="sm">Ayurvedic plant-based source of levodopa — the same compound in Parkinson's medication, delivered with natural co-factors absent from pharmaceutical versions. Ancient Ayurvedic texts called the condition it addresses Kampavata — trembling disease. Mucuna has been used for it for thousands of years.</span> <span class="sw">⚠️ Do not combine with pharmaceutical L-DOPA/carbidopa without a practitioner — dosing adjustment is required to avoid L-DOPA excess.</span> <a href="https://www.iherb.com/search?kw=mucuna+pruriens+L-DOPA&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">NAC (N-Acetyl Cysteine)</span> <span class="sd">600–1,200mg daily · Fasted or between meals</span> <span class="sm">Glutathione depletion in the substantia nigra is one of the earliest and most consistent findings in movement disorder progression. Glutathione cannot cross the blood-brain barrier directly, but NAC does — and the brain converts it to glutathione. Published clinical data show intravenous NAC improves dopamine pathway function markers.</span> <a href="https://www.iherb.com/search?kw=NAC+N-acetyl+cysteine+600mg&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Lion's Mane + DMSO (topical)</span> <span class="sd">Lion's Mane: 1,000mg oral · DMSO 50–60%: applied to cervical spine at the same time</span> <span class="sm">Lion's Mane stimulates NGF — required for the survival of dopamine-producing neurons. DMSO crosses the blood-brain barrier and enhances CNS delivery of active compounds circulating in blood. Take orally and apply topically to the back of neck and base of skull simultaneously. See DMSO Protocol page.</span> <a href="https://www.iherb.com/search?kw=lion+mane+mushroom+extract+1000mg&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+    <div class="budget-note"><strong>💰 Minimum if budget is tight</strong>NAC is inexpensive and addresses one of the most consistent documented deficiencies in movement disorder progression. Start there. Add Lion's Mane second. CoQ10 at the 1,200mg therapeutic dose is the larger investment — split it into two purchases to build the dose gradually.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GUT-BRAIN AXIS -->
+<section class="sec-b" id="gut-brain">
+  <div class="inner">
+    <div class="kicker">The Missing Chapter</div>
+    <h2 class="lh2">The Gut-Brain Axis — <em>Where It May Have Begun</em></h2>
+
+    <p class="lp">In 2003, German neuroanatomist Heiko Braak published a staging hypothesis that quietly changed everything — and then was quietly ignored. His finding: the misfolded protein at the center of Parkinson's and movement disorder decline appears first in the gut wall neurons and the olfactory system. It travels to the brain via the vagus nerve. By the time any motor symptom appears, the process has been underway for years — sometimes a decade or more.</p>
+    <p class="lp">Two large registry studies confirmed a striking finding: people who had undergone truncal vagotomy — surgical severing of the vagus nerve — showed significantly reduced risk of developing a movement disorder in the decades that followed. Liu et al. (Neurology, 2017) using the Swedish registry. Svensson et al. (Annals of Neurology, 2015) using the Danish registry. Cut the highway — and the disease does not arrive.</p>
+    <div class="pq"><p>"The brain did not start the disease. The research suggests the gut did. That changes what intervention means."</p></div>
+    <p class="lp">Six bacterial strains are consistently depleted in people with movement disorders: <em>Faecalibacterium prausnitzii</em>, <em>Roseburia intestinalis</em>, <em>Blautia</em>, <em>Anaerostipes hadrus</em>, <em>Eubacterium rectale</em>, and <em>Coprococcus</em>. These are butyrate producers. Butyrate feeds the gut lining, dampens neuroinflammation, and governs vagal signalling the brain depends on.</p>
+    <p class="lp">And then there is glyphosate. E. Ray Dorsey's 2023 paper in <em>Movement Disorders</em> (doi: 10.1002/mds.29371) names the lobbying firm, names the corporation, and documents how a leading EPA scientific advisor was removed from a review panel after her research connected pesticide exposure to neurological movement disorders. Syngenta entered settlement agreements for ~6,500 related lawsuits in April 2025 and announced the end of global paraquat production by June 2026.</p>
+
+    <h3 class="lh3">Gut-Brain Rebuild — Supplement Checklist</h3>
+
+    <p class="lp" style="margin-bottom:4px;"><strong>Resistant Starch — Feed the Butyrate Producers</strong></p>
+    <p class="lp" style="font-size:13px;color:var(--ink-light);margin-bottom:12px;">The RESISTA-PD trial showed resistant starch raised fecal butyrate, reduced intestinal inflammation, and reduced non-motor symptom load. A 2025 long-term study (Brain, Behavior and Immunity) showed motor and non-motor improvement with increased <em>F. prausnitzii</em>.</p>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">Cooked &amp; Cooled Rice or Potatoes 💰</span> <span class="sd">Daily · Significant RS2 resistant starch content · Free</span> <span class="sm">Cook rice or potatoes, refrigerate overnight, eat cold or reheated below 40°C. The cooling converts starches into resistant starch that feeds butyrate-producing bacteria. No cost, no supplement required.</span></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Green Banana Flour 💰</span> <span class="sd">20g/day in water or smoothie</span> <span class="sm">High RS2 resistant starch. Budget option with excellent butyrate-raising data.</span> <a href="https://www.iherb.com/search#query=green+banana+flour&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Bob's Red Mill Potato Starch 💰</span> <span class="sd">1 tbsp in cold water · Build slowly</span> <span class="sm">Raw potato starch is among the richest sources of resistant starch. Must be used raw — heat destroys the RS content.</span> <span class="sw">⚠️ Start with 1 tsp and increase slowly — can cause gas as microbiome adjusts.</span> <a href="https://www.iherb.com/search#query=potato+starch+bobs+red+mill&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+
+    <p class="lp" style="margin-bottom:4px;margin-top:20px;"><strong>4-Strain Probiotic — The SymPD Trial</strong></p>
+    <p class="lp" style="font-size:13px;color:var(--ink-light);margin-bottom:12px;">Leta et al. (Movement Disorders, 2025, doi: 10.1002/mds.70047) — a randomised controlled trial — found a 4-strain probiotic over 12 weeks reduced TNF-α, shortened time-to-on after levodopa, and improved non-motor symptoms. The strains: <em>L. rhamnosus</em>, <em>L. acidophilus</em>, <em>L. plantarum</em>, <em>E. faecium</em>.</p>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">Homemade Kefir or Sauerkraut 💰</span> <span class="sd">Daily · Free · Delivers live L. plantarum and L. acidophilus</span> <span class="sm">1kg organic cabbage + salt = 3–4 weeks of daily live culture for almost nothing. Budget first choice and arguably the most bioavailable delivery method.</span></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Multi-strain Probiotic (SymPD strains)</span> <span class="sd">Look for: L. rhamnosus + L. acidophilus + L. plantarum + E. faecium · As directed</span> <span class="sm">Clinical trial data supports this specific combination for movement disorder-related neuroinflammation.</span> <a href="https://www.iherb.com/search#query=lactobacillus+rhamnosus+acidophilus+plantarum&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+
+    <p class="lp" style="margin-bottom:4px;margin-top:20px;"><strong>Glyphosate Elimination — Remove the Trigger</strong></p>
+    <p class="lp" style="font-size:13px;color:var(--ink-light);margin-bottom:12px;">One week on an organic diet reduced urinary glyphosate by 70.93% (Fagan et al., 2020). Highest-tested foods to eliminate first: conventional whole-wheat bread (up to 1,150 ppb), Quaker Oats (535 ppb), Cheerios variants (up to 1,171 ppb), conventional chickpeas (889 ppb).</p>
+    <ul class="supp-list">
+      <li><span class="sc">✓</span><span><span class="sn">Glycine</span> <span class="sd">4g twice daily for 4 weeks · Then 1g twice daily maintenance</span> <span class="sm">Competes with glyphosate for incorporation into proteins. Documented glyphosate displacement mechanism.</span> <a href="https://www.iherb.com/search#query=glycine+powder&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Modified Citrus Pectin (PectaSol)</span> <span class="sd">5g three times daily</span> <span class="sm">Binds glyphosate and heavy metals in the gut for elimination. PectaSol is the most clinically studied form.</span> <a href="https://www.iherb.com/search#query=modified+citrus+pectin+pectasol&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Fulvic Acid</span> <span class="sd">250mg twice daily</span> <span class="sm">Binds glyphosate and other agrochemical residues. Also supports microbiome diversity directly.</span> <a href="https://www.iherb.com/search#query=fulvic+acid&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Chlorella</span> <span class="sd">1–3g/day · With food</span> <span class="sm">Documented binder for heavy metals and pesticide residues. Supports glyphosate elimination.</span> <a href="https://www.iherb.com/search#query=chlorella&rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+    </ul>
+
+    <div class="budget-note"><strong>💰 Minimum if budget is tight</strong>Switch to organic oats and drop conventional wheat — free swap, immediate high-impact reduction. Cook and cool rice and potatoes daily — free resistant starch. Make sauerkraut at home. Sun-charge your drinking water in the morning. These four steps address the core of this section without spending anything.</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DAILY PROTOCOL -->
+<section class="sec-c" id="daily">
+  <div class="inner">
+    <div class="kicker">Part Six</div>
+    <h2 class="lh2">The Daily Brain Protocol</h2>
+    <p class="lp">Every intervention in this guide distilled into a daily framework. Begin with what you can. Add from there.</p>
+
+    <div class="schedule">
+      <div class="sched-row"><div class="sched-time">On Waking</div><div class="sched-act"><strong>Morning sunlight</strong> — 10–20 minutes outside, no sunglasses · Sets circadian biology for the entire day</div></div>
+      <div class="sched-row"><div class="sched-time">Before Breakfast</div><div class="sched-act"><strong>Silica water</strong> — 500ml Fiji or equivalent, fasted · Intensive aluminum detox days: 1.5L within one hour · <strong>ACV drink</strong> — 1 tbsp Apple Cider Vinegar + ½ tsp baking soda in warm water with lemon</div></div>
+      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>MCT oil</strong> — 1–2 tbsp in coffee or smoothie for ketone production · <strong>Omega-3</strong> — 2g EPA+DHA with food · <strong>Lion's Mane</strong> — 1,000mg</div></div>
+      <div class="sched-row"><div class="sched-time">Mid-Morning</div><div class="sched-act"><strong>Aerobic exercise</strong> — 30 minutes Zone 2 cardio · The single most powerful intervention for stimulating new brain cell growth · Non-negotiable for neurological conditions</div></div>
+      <div class="sched-row"><div class="sched-time">With Lunch</div><div class="sched-act"><strong>Curcumin</strong> (BCM-95 or liposomal) — 500mg · <strong>Bacopa</strong> — 300mg · Both with fat-containing food · <strong>CoQ10 Ubiquinol</strong> — 400mg (movement disorder protocol: 600mg)</div></div>
+      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act"><strong>Cold exposure</strong> — cold shower end or cold plunge · <strong>NMN</strong> — 500mg or NR 300mg if not taken at breakfast</div></div>
+      <div class="sched-row"><div class="sched-time">Evening</div><div class="sched-act"><strong>DMSO neurological application</strong> — 50–60% applied to cervical spine (back of neck, base of skull) on protocol days · See DMSO Protocol for full instructions · <strong>CoQ10 second dose</strong> — 400mg with dinner (movement disorder protocol: total 1,200mg/day)</div></div>
+      <div class="sched-row"><div class="sched-time">Before Bed</div><div class="sched-act"><strong>Magnesium L-Threonate</strong> — 1g · <strong>Ashwagandha KSM-66</strong> — 300mg · <strong>Meditation or breathing practice</strong> — 15–20 minutes · Vagus nerve activation, cortisol reduction</div></div>
+      <div class="sched-row"><div class="sched-time">Sleep</div><div class="sched-act"><strong>Dark room · 18–20°C · No screens</strong> · Glymphatic system activates during deep sleep — this is when the brain clears metabolic waste · 7–9 hours non-negotiable</div></div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+      Print Daily Protocol
+    </button>
+
+    <div class="callout callout-sage" style="margin-top:28px;">
+      <div class="callout-title">🛒 Complete Shopping List — iHerb Code GUW6132</div>
+      <p>Lion's Mane extract · Curcumin BCM-95 or liposomal · Magnesium L-Threonate · Omega-3 EPA+DHA (triglyceride form) · NMN or NR · Bacopa monnieri (50% bacosides) · Ashwagandha KSM-66 · NAC · CoQ10 Ubiquinol · PQQ · Orthosilicic Acid or Horsetail silica · MCT Oil · Modified citrus pectin · Glycine · Fulvic acid · Chlorella · Fiji Water or local high-silica mineral water</p>
+      <p><a href="https://www.iherb.com/search?kw=lion+mane+mushroom&rcode=GUW6132" target="_blank">→ Start shopping on iHerb — Code GUW6132 for discount</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CLOSING -->
+<section class="sec-b">
+  <div class="inner">
+    <div class="pq pq-terra"><p>"The brain that is healing is not the brain that is being managed. Management is the language of a system that has no intention of curing anything. Healing is what happens when you give the organ what it actually needs and remove what is actively poisoning it."</p></div>
+    <p class="lp" style="margin-top:28px;">The Brain Protocol works best as part of the complete system. The full-body detox creates the conditions for neurological healing. The hidden deficiencies provide the mineral foundation. DMSO and oxygen therapy extend the reach of neuroprotective compounds into the brain itself.</p>
+    <p class="lp"><a href="Heal_Yourself_Protocol_v2_new.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ The Full Body Detox Protocol — the foundation</a></p>
+    <p class="lp"><a href="Hidden_Deficiencies.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ Hidden Deficiencies — the mineral foundation for the nervous system</a></p>
+    <p class="lp"><a href="DMSO_Oxygen_Therapy.html" style="color:var(--sage);text-decoration:underline;text-underline-offset:3px;">→ DMSO Protocol — carrying neuroprotective compounds through the blood-brain barrier</a></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DISCLAIMER -->
+<section class="sec-a">
+  <div class="inner">
+    <div class="callout callout-warn">
+      <div class="callout-title">Medical Disclaimer</div>
+      <p>This information is for educational purposes only and does not replace the guidance of a qualified healthcare practitioner. For movement disorders specifically: Mucuna pruriens contains L-DOPA and must be used with extreme caution alongside pharmaceutical levodopa/carbidopa — dosing adjustment is required and must be managed by a practitioner. CoQ10, NAC, and other supplements in this protocol may interact with specific medications. The author is not a doctor.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="index_new.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+</div>
+
+<script>
+function toggleExpand(id, btn){
+  const body = document.getElementById(id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  const lbl = btn.querySelector('.exp-lbl,.exp-lbl-terra');
+  lbl.textContent = isOpen ? btn.dataset.label : 'Show less';
+}
+const allSections = ['foundations','aluminum','neuroprotection','neurogenesis','parkinsons','gut-brain','daily'].map(id => document.getElementById(id)).filter(Boolean);
+const navLinks = document.querySelectorAll('.phase-nav a[data-section]');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(a => a.classList.toggle('pn-active', a.dataset.section === entry.target.id));
+    }
+  });
+}, {rootMargin:'-25% 0px -65% 0px'});
+allSections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
