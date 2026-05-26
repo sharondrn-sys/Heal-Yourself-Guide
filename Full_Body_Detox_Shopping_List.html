@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Body Detox — Complete Shopping List · Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+  --nav-h:52px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);}
+@media(max-width:640px){.nav-center{display:none;}}
+
+/* HERO */
+.hero{padding:calc(var(--nav-h) + 40px) 24px 40px;background:var(--bg-warm);border-bottom:1px solid var(--border-s);}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero-tag{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.hero-tag::before{content:'';width:28px;height:1px;background:var(--sage-mid);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:14px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:15px;color:var(--ink-light);line-height:1.7;max-width:580px;margin-bottom:24px;}
+.hero-back{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--sage);text-decoration:none;letter-spacing:0.04em;padding:9px 16px;border:1px solid var(--border);border-radius:5px;background:var(--sage-pale);transition:all 0.2s;}
+.hero-back:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
+
+/* IHERB NOTE */
+.iherb-note{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);border-radius:8px;padding:16px 20px;margin:0 auto 0;max-width:860px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.iherb-note-code{font-family:'DM Mono',monospace;font-size:22px;font-weight:500;color:var(--honey);letter-spacing:0.06em;white-space:nowrap;}
+.iherb-note-text{font-size:13px;color:var(--ink-mid);line-height:1.6;flex:1;min-width:200px;}
+.iherb-note-text strong{color:var(--honey);}
+.iherb-btn{display:inline-block;background:var(--sage);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:9px 18px;border-radius:5px;white-space:nowrap;transition:background 0.2s;}
+.iherb-btn:hover{background:var(--sage-mid);}
+
+/* JUMP NAV */
+.jump-nav{background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:0 24px;position:sticky;top:var(--nav-h);z-index:90;overflow-x:auto;scrollbar-width:none;}
+.jump-nav::-webkit-scrollbar{display:none;}
+.jump-nav-inner{display:flex;gap:0;min-width:max-content;max-width:860px;margin:0 auto;}
+.jump-nav a{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;padding:0 16px;height:38px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;}
+.jump-nav a:hover,.jump-nav a.active{color:var(--sage);border-bottom-color:var(--sage);}
+
+/* MAIN */
+.main{max-width:860px;margin:0 auto;padding:0 24px 80px;}
+
+/* PHASE BLOCK */
+.phase-block{margin-top:48px;}
+.phase-header{display:flex;align-items:baseline;gap:14px;margin-bottom:6px;padding-bottom:12px;border-bottom:2px solid var(--border);}
+.phase-num{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.12em;color:var(--sage);background:var(--sage-pale);padding:3px 10px;border-radius:3px;white-space:nowrap;}
+.phase-days{font-size:12px;color:var(--ink-ghost);font-weight:400;letter-spacing:0.04em;}
+.phase-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);}
+.phase-desc{font-size:13px;color:var(--ink-light);line-height:1.7;margin:10px 0 20px;max-width:600px;}
+
+/* CATEGORY LABEL */
+.cat-label{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin:24px 0 10px;padding-left:2px;}
+
+/* PRODUCT ROW */
+.product-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border-s);border-radius:8px;overflow:hidden;background:var(--bg-warm);}
+.product-row{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid var(--border-s);transition:background 0.15s;}
+.product-row:last-child{border-bottom:none;}
+.product-row:hover{background:var(--bg-deep);}
+.product-left{display:flex;flex-direction:column;gap:3px;}
+.product-name{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3;}
+.product-dose{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);margin-top:1px;}
+.product-note{font-size:12px;color:var(--ink-light);line-height:1.5;margin-top:2px;}
+.product-warn{font-size:11px;color:var(--terra);margin-top:3px;}
+.product-link{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:0.05em;color:#fff;background:var(--sage);text-decoration:none;padding:7px 13px;border-radius:4px;white-space:nowrap;flex-shrink:0;transition:background 0.2s;}
+.product-link:hover{background:var(--sage-mid);}
+.product-link svg{width:10px;height:10px;opacity:0.8;}
+
+/* BADGE */
+.badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-left:6px;vertical-align:middle;}
+.badge-budget{background:var(--honey-pale);color:var(--honey);}
+.badge-free{background:var(--sage-pale);color:var(--sage);}
+.badge-alt{background:var(--bg-stone);color:var(--ink-light);}
+
+/* PHASE TOTAL */
+.phase-total{margin-top:16px;padding:12px 16px;background:var(--bg-stone);border-radius:6px;font-size:12px;color:var(--ink-light);display:flex;align-items:center;gap:8px;}
+.phase-total strong{color:var(--ink-mid);}
+
+/* DIVIDER */
+.phase-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin-top:48px;}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:var(--ink-ghost);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+
+@media(max-width:600px){
+  .product-row{grid-template-columns:1fr;}
+  .product-link{align-self:flex-start;margin-top:6px;}
+  .iherb-note{flex-direction:column;gap:10px;}
+}
+@media print{nav,.jump-nav,footer{display:none!important;} .hero{padding-top:20px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="protocols.html">All Protocols</a>
+    <a href="Full_Body_Detox_Protocol.html">← Full Protocol</a>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Shopping List</div>
+    <h1>The Full Body Detox Protocol<br><em>Complete Supplement List</em></h1>
+    <p class="hero-sub">Every supplement for all five phases, organised by phase. Click any product to go directly to iHerb. Use code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout for a discount — this is how you support the guide at no extra cost to you.</p>
+    <a href="Full_Body_Detox_Protocol.html" class="hero-back">← Back to Full Protocol</a>
+  </div>
+</div>
+
+<div style="background:var(--bg-warm);padding:16px 24px;border-bottom:1px solid var(--border-s);">
+  <div class="iherb-note" style="margin:0;">
+    <div class="iherb-note-code">GUW6132</div>
+    <div class="iherb-note-text">Enter this code at iHerb checkout. <strong>You get a discount.</strong> A small commission comes back to this guide. Every protocol stays free because of this.</div>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" class="iherb-btn">Shop iHerb</a>
+  </div>
+</div>
+
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+    <a href="#phase1">Phase 1 · Prepare</a>
+    <a href="#phase2">Phase 2 · Eliminate</a>
+    <a href="#phase3">Phase 3 · Bind &amp; Drain</a>
+    <a href="#phase4">Phase 4 · Rebuild</a>
+    <a href="#phase5">Phase 5 · Maintenance</a>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ═══════════════════════════════ PHASE 1 ═══════════════════════════════ -->
+  <div class="phase-block" id="phase1">
+    <div class="phase-header">
+      <span class="phase-num">Phase 01</span>
+      <span class="phase-days">Days 1–14</span>
+      <span class="phase-title">Prepare — Open the Drainage Pathways</span>
+    </div>
+    <p class="phase-desc">Nothing else works if the drainage pathways are blocked. Phase 1 opens the bowel, supports the liver, and prepares the kidneys before any active clearing begins.</p>
+
+    <div class="cat-label">Bowel &amp; Colon</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Magnesium Citrate<span class="badge badge-budget">budget friendly</span></div>
+          <div class="product-dose">300–400mg · Before bed · Capsule or powder</div>
+          <div class="product-note">Gentle osmotic laxative. Keeps bowel moving so toxins don't recirculate. Most important supplement in Phase 1.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules-133-mg-per-capsule/698?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Psyllium Husk Powder</div>
+          <div class="product-dose">1 tsp in large glass of water · 2× daily · Always with full glass</div>
+          <div class="product-note">Soluble fibre that binds toxins in the gut and sweeps them out. Buy the large 680g bag — you will use all of it.</div>
+          <div class="product-warn">⚠️ Always drink 2 full glasses of water. Without water it can cause blockage.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-psyllium-husk-powder-24-oz-680-g/21133?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Cold-Pressed Castor Oil<span class="badge badge-budget">budget</span></div>
+          <div class="product-dose">1 tbsp orally if needed · OR external castor pack nightly</div>
+          <div class="product-note">Hexane-free only. Activates the migrating motor complex, stimulates bile flow, and supports lymphatic drainage via topical application.</div>
+          <div class="product-warn">⚠️ Hexane-free food-grade only. Do not use refined castor oil internally.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/heritage-store-castor-oil-16-fl-oz-473-ml/2513?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Liver Support</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Milk Thistle — Silymarin Standardised</div>
+          <div class="product-dose">175mg · 80% silymarin · 2–3× daily with food</div>
+          <div class="product-note">EuroMed-standardised extract. Silymarin regenerates liver cells and increases glutathione production — the liver's primary detox molecule. Use throughout the full protocol.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-euromed-quality-175-mg-60-veggie-capsules/55744?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">NAC — N-Acetyl Cysteine</div>
+          <div class="product-dose">600mg · 2× daily · Between meals · Continue through all phases</div>
+          <div class="product-note">Precursor to glutathione. The liver cannot detoxify without adequate glutathione. NAC is the most direct way to replenish it. Use throughout the full 90 days.</div>
+          <div class="product-warn">⚠️ Take between meals for best absorption. Some dark speckling in capsules is normal oxidation — not mold. Refrigerate if storing long-term.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Dandelion Root Tea<span class="badge badge-budget">budget</span></div>
+          <div class="product-dose">1–2 cups daily · Steep 10 minutes</div>
+          <div class="product-note">Bitter compounds stimulate bile production and liver detox enzymes. One of the most ancient liver tonics. Cheap, effective, completely safe long-term.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/traditional-medicinals-organic-dandelion-root-with-spearmint-herbal-tea-16-wrapped-tea-bags-0-85-oz-24-g/69252?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Kidney Support</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Nettle Leaf Tea<span class="badge badge-budget">budget</span></div>
+          <div class="product-dose">2–3 cups daily · Throughout Phase 1 and 3</div>
+          <div class="product-note">Gentle diuretic that increases kidney filtration. The kidneys are the second major exit route for water-soluble toxins. Nettle keeps them flushed and working.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/traditional-medicinals-organic-nettle-leaf-herbal-tea-16-wrapped-tea-bags-0-85-oz-24-g/20046?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Detox Bath Supplies</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Epsom Salt — Large Bag</div>
+          <div class="product-dose">2 cups per bath · 3× per week · 20 minutes · Hot as tolerated</div>
+          <div class="product-note">Magnesium sulphate absorbs transdermally and draws toxins out through the skin. 3 baths per week is the minimum. Buy 2.5lb or larger — you will go through it fast.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/sky-organics-epsom-salt-usda-organic-2-5-lbs/68534?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Bentonite Clay — Food Grade</div>
+          <div class="product-dose">1 cup in bath water · OR ½ tsp in water orally on empty stomach</div>
+          <div class="product-note">Food-grade calcium bentonite. Added to bath water draws heavy metals and toxins through skin. Can also be used internally as a gut binder — see Phase 3.</div>
+          <div class="product-warn">⚠️ Food-grade only. Never use pool-grade or industrial clay internally.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/living-clay-detox-clay-pure-calcium-bentonite-1-lb-454-g/36832?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Real Sea Salt<span class="badge badge-free">upgrade</span></div>
+          <div class="product-dose">½ tsp in morning water · Celtic, Himalayan, or Real Salt only</div>
+          <div class="product-note">Trace minerals support adrenal function and electrolyte balance during detox. Do not use standard table salt — it is processed and stripped of minerals.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-1-lb-454-g/13879?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Shower Filter</div>
+          <div class="product-dose">Replace existing shower head · KDF/carbon media</div>
+          <div class="product-note">Chlorine and chloramine in tap water absorb through skin during baths and showers — actively working against the detox. A filter removes these for the duration of the protocol.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/aquasana-shower-filter-with-replaceable-filter-cartridge-carbon-and-kdf-media/75434?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="phase-total">
+      <span>Phase 1 total items: <strong>10 products</strong></span>
+      <span style="margin-left:auto;color:var(--sage);font-size:11px;font-weight:600;">Days 1–14 · Open the doors first</span>
+    </div>
+  </div>
+
+  <div class="phase-divider"></div>
+
+  <!-- ═══════════════════════════════ PHASE 2 ═══════════════════════════════ -->
+  <div class="phase-block" id="phase2">
+    <div class="phase-header">
+      <span class="phase-num">Phase 02</span>
+      <span class="phase-days">Days 15–45</span>
+      <span class="phase-title">Eliminate — Biofilm, Parasites &amp; Pathogens</span>
+    </div>
+    <p class="phase-desc">Active clearing phase. Biofilm is disrupted first, then the antiparasitic rotation begins. Die-off symptoms (headache, fatigue, skin breakouts) are normal and temporary — they mean it is working.</p>
+
+    <div class="cat-label">Biofilm Disruptors — Take on Empty Stomach</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Serrapeptase — 120,000 SPU</div>
+          <div class="product-dose">120,000 SPU · 1 capsule · 45 min before breakfast · Empty stomach</div>
+          <div class="product-note">Proteolytic enzyme that digests the protein matrix of biofilm — the protective layer pathogens hide behind. Must reach the gut intact: Doctor's Best uses Serrateric™ coating, superior to standard enteric. Do not take with food — stomach acid degrades it.</div>
+          <div class="product-warn">⚠️ Empty stomach only. Do not take within 2 hours of food.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/doctor-s-best-high-potency-serrapeptase-120-000-spu-270-veggie-caps/51946?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Nattokinase — 2,000 FU</div>
+          <div class="product-dose">2,000 FU · 1 capsule · With serrapeptase · Morning fasted</div>
+          <div class="product-note">Fibrinolytic enzyme from fermented soy. Works alongside serrapeptase to break down fibrin strands in biofilm from a different angle. Together they are more effective than either alone.</div>
+          <div class="product-warn">⚠️ Blood-thinning effect. Do not combine with blood-thinning medications without practitioner guidance.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/doctor-s-best-nattokinase-2-000-fus-270-veggie-caps/36581?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Berberine HCl — 500mg</div>
+          <div class="product-dose">500mg · 3× daily with meals · Continue through Phase 3</div>
+          <div class="product-note">Plant alkaloid with documented anti-biofilm, anti-bacterial, anti-fungal, and anti-parasitic properties. Also stabilises blood sugar during detox. California Gold Nutrition is iHerb's own brand — iTested certified, third-party verified.</div>
+          <div class="product-warn">⚠️ Do not combine with diabetes medication — powerful blood sugar lowering effect. Take with food to avoid nausea.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-berberine-hci-500-mg-120-veggie-capsules/129684?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Antiparasitic Rotation — The Classic Triple Protocol</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Black Walnut Hull + Wormwood Complex</div>
+          <div class="product-dose">30 drops in water · 2× daily · Weeks 1–3 of Phase 2</div>
+          <div class="product-note">NOW Foods Green Black Walnut Wormwood Complex combines two of the three classical antiparasitic herbs in tincture form — green hull extraction ensures maximum juglone content. Targets adult parasites and larvae.</div>
+          <div class="product-warn">⚠️ Contains alcohol. Rotate on/off as directed — continuous use beyond 30 days is not recommended due to thujone content.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-green-black-walnut-wormwood-complex-2-fl-oz-59-ml/591?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Wormwood Capsules — Artemisia absinthium<span class="badge badge-alt">if preferred over tincture</span></div>
+          <div class="product-dose">200mg · 2–3× daily · Weeks 1–3 only</div>
+          <div class="product-note">Capsule alternative to the tincture if alcohol is a concern. Note: use Artemisia absinthium (common wormwood) for intestinal parasites — not Artemisia annua (sweet wormwood), which targets different organisms.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-wormwood-100-capsules-200-mg-per-capsule/784?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Cloves Capsules</div>
+          <div class="product-dose">500mg · 3× daily · Throughout Phase 2</div>
+          <div class="product-note">The only herb that reliably kills parasite eggs. Without cloves the other two herbs cannot complete the lifecycle disruption. Eugenol (clove's active compound) has documented ovicidal activity — egg-killing. All three herbs are required together.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-cloves-500-mg-100-veg-capsules/812?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Oregano Oil — Enteric Coated</div>
+          <div class="product-dose">1 softgel · 2–3× daily · Fasted or 1 hour before meals</div>
+          <div class="product-note">≥55% carvacrol — the active antimicrobial compound. Enteric coating ensures release in the intestine, not the stomach. Broad-spectrum: anti-bacterial, anti-fungal, anti-parasitic. Excellent for Candida overgrowth and SIBO alongside the main antiparasitic protocol.</div>
+          <div class="product-warn">⚠️ Do not take with beneficial probiotic supplements — carvacrol is non-selective. Separate by at least 3 hours.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-oregano-oil-90-softgels/731?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Mimosa Pudica Seed</div>
+          <div class="product-dose">450–900mg · 2× daily · Empty stomach · 30 min before meals</div>
+          <div class="product-note">Ayurvedic herb that forms a gel in the gut on contact with moisture — mechanically trapping and pulling parasites, eggs, and biofilm debris from intestinal walls. Particularly effective for rope worms and deep mucosal parasites. Gentle but persistent.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/codeage-amen-mimosa-pudica-seed-450-mg-120-vegetable-capsules/120334?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="phase-total">
+      <span>Phase 2 total items: <strong>8 products</strong> (some overlap with Phase 1)</span>
+      <span style="margin-left:auto;color:var(--sage);font-size:11px;font-weight:600;">Days 15–45 · Continue Phase 1 products throughout</span>
+    </div>
+  </div>
+
+  <div class="phase-divider"></div>
+
+  <!-- ═══════════════════════════════ PHASE 3 ═══════════════════════════════ -->
+  <div class="phase-block" id="phase3">
+    <div class="phase-header">
+      <span class="phase-num">Phase 03</span>
+      <span class="phase-days">Days 46–75</span>
+      <span class="phase-title">Bind &amp; Drain — Heavy Metals &amp; Deep Toxins</span>
+    </div>
+    <p class="phase-desc">Binders grab what Phase 2 dislodged and carry it out. Never use binders alone without open drainage — toxins must have somewhere to go. Take binders away from food, medication, and supplements.</p>
+
+    <div class="cat-label">Binders — Take on Empty Stomach, Away from Medications</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Activated Charcoal<span class="badge badge-budget">budget</span></div>
+          <div class="product-dose">400–800mg · Between meals · Not within 2 hours of supplements or medication</div>
+          <div class="product-note">Broad-spectrum binder. Adsorbs toxins, chemicals, and mycotoxins in the gut. Most affordable binder available. Use throughout Phase 3 — rotate with other binders to cover different toxin classes.</div>
+          <div class="product-warn">⚠️ Binds everything indiscriminately including medications and supplements. Must be taken 2+ hours away from anything else.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-veg-capsules-200-mg-per-capsule/759?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Bentonite Clay — Food Grade (Internal Use)</div>
+          <div class="product-dose">½ tsp in water · Morning · Empty stomach · 1 hour before food</div>
+          <div class="product-note">Calcium bentonite clay absorbs pesticides, aflatoxins, and some heavy metals via ion exchange in the gut. Also used in baths (Phase 1). Buy two bags — one for bath use, one to keep clean for internal use.</div>
+          <div class="product-warn">⚠️ Food-grade only. Separate from medications by at least 2 hours. Drink extra water — can be constipating if underhydrated.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/living-clay-detox-clay-pure-calcium-bentonite-1-lb-454-g/36832?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Chlorella — Broken Cell Wall</div>
+          <div class="product-dose">1–3g daily · With meals (this binder is food-safe at mealtime)</div>
+          <div class="product-note">Broken cell wall allows chlorella's chelating proteins to bind mercury, lead, cadmium, and aluminium. Unlike other binders, chlorella is a whole food and can be taken with meals. Also provides chlorophyll, B12, and protein. One of the few binders verified in human glyphosate reduction studies.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-certified-organic-chlorella-500-mg-200-tablets/21320?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Zeolite — Clinoptilolite</div>
+          <div class="product-dose">1–2g · Between meals · 3× daily</div>
+          <div class="product-note">Cage-like crystalline volcanic mineral. Physically traps mercury, lead, arsenic, and cadmium inside its molecular structure and carries them out via the bowel. Different mechanism from charcoal — together they cover a broader toxin spectrum.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/zeohealth-zeolite-pure-400-grams/65636?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Modified Citrus Pectin — PectaSol</div>
+          <div class="product-dose">5g powder · 3× daily · On empty stomach · In water</div>
+          <div class="product-note">PectaSol is the only modified citrus pectin backed by 65+ published clinical studies. Binds heavy metals and glyphosate in the gut without stripping essential minerals — unlike charcoal. Also documented to reduce galectin-3, a marker of systemic inflammation. The clinically superior binder in this class.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/econugenics-pectasol-modified-citrus-pectin-5-29-oz-150-g/55234?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Humic &amp; Fulvic Acid Complex</div>
+          <div class="product-dose">750mg · 2× daily · Away from other supplements</div>
+          <div class="product-note">Ancient organic acids from decomposed plant matter. Bind glyphosate and agrochemical residues in the gut. Also directly support microbiome diversity and mineral transport into cells. A key component of the glyphosate displacement protocol used in this guide.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/micro-ingredients-fulvic-acid-and-humic-acid-complex-200-capsules-750-mg-per-capsule/108762?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="phase-total">
+      <span>Phase 3 total items: <strong>6 binders</strong></span>
+      <span style="margin-left:auto;color:var(--sage);font-size:11px;font-weight:600;">Days 46–75 · Continue Phase 1 + 2 where applicable</span>
+    </div>
+  </div>
+
+  <div class="phase-divider"></div>
+
+  <!-- ═══════════════════════════════ PHASE 4 ═══════════════════════════════ -->
+  <div class="phase-block" id="phase4">
+    <div class="phase-header">
+      <span class="phase-num">Phase 04</span>
+      <span class="phase-days">Days 76–90</span>
+      <span class="phase-title">Rebuild — Gut Lining, Microbiome &amp; Cellular Energy</span>
+    </div>
+    <p class="phase-desc">The gut lining has been cleared. Now it needs to be rebuilt. The microbiome needs repopulating with diverse strains. And cellular energy systems — depleted by the clearing phases — need restoration.</p>
+
+    <div class="cat-label">Gut Lining Repair</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">L-Glutamine Powder</div>
+          <div class="product-dose">5g · 2–3× daily · In water · Away from meals</div>
+          <div class="product-note">The primary fuel source for intestinal epithelial cells. Required for tight junction repair — the molecular structure that prevents intestinal permeability (leaky gut). 1lb powder is the most cost-effective format for therapeutic dosing.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-l-glutamine-pure-powder-1-lb-454-g/7090?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Marine Collagen Peptides<span class="badge badge-budget">budget</span></div>
+          <div class="product-dose">10g · Daily · In water, coffee, or smoothie</div>
+          <div class="product-note">Provides glycine, proline, and hydroxyproline — the amino acids that make up the mucosal layer of the intestine. Marine collagen is smaller peptide size than bovine, meaning better absorption. California Gold Nutrition's CollagenUP includes hyaluronic acid and vitamin C for enhanced tissue repair.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-collagenup-hydrolyzed-marine-collagen-peptides-with-hyaluronic-acid-and-vitamin-c-unflavored-1-02-lb-464-g/68672?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Aloe Vera Inner Leaf Juice<span class="badge badge-free">grow it</span></div>
+          <div class="product-dose">60–120ml · Morning · Empty stomach</div>
+          <div class="product-note">Inner fillet (not whole leaf) contains acemannan polysaccharides that soothe and repair the intestinal mucosa. Anti-inflammatory for the gut wall. If you have an aloe plant, fresh inner gel is superior to any bottled version.</div>
+          <div class="product-warn">⚠️ Inner fillet only — not whole leaf. Whole leaf contains aloin which is a harsh laxative.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/lily-of-the-desert-aloe-vera-juice-inner-fillet-32-fl-oz-946-ml/19728?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Zinc Carnosine</div>
+          <div class="product-dose">75mg · 2× daily · With food</div>
+          <div class="product-note">The zinc-carnosine chelate stays in the stomach and intestine rather than absorbing into systemic circulation — delivering zinc directly to the mucosal tissue that needs it. Clinical trials document improved gut barrier integrity and reduced intestinal inflammation at this dose. PepZinGI is the clinically validated form.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/doctor-s-best-pepsizinc-zinc-l-carnosine-120-veggie-caps/1491?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Digestive Enzymes</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Comprehensive Digestive Enzymes</div>
+          <div class="product-dose">1–2 capsules · At start of each main meal</div>
+          <div class="product-note">After 90 days of detox, the digestive system needs support while it rebuilds its own enzyme production. NOW Super Enzymes is a comprehensive formula including HCl (stomach acid support), ox bile (fat digestion), bromelain, pancreatin, and papain. Use for 60–90 days of rebuilding phase.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-super-enzymes-90-capsules/740?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Microbiome Restoration</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Soil-Based Organisms (SBOs) — Primal Defense</div>
+          <div class="product-dose">Start with 1 capsule · Increase to 3–6 daily over 2 weeks</div>
+          <div class="product-note">Soil-based organisms (Bacillus subtilis and related strains) are the most resilient probiotics — they survive stomach acid without refrigeration and colonise where conventional lactobacillus strains cannot. Designed to simulate the microbial exposure humans had through contact with soil and unprocessed food.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/garden-of-life-primal-defense-ultra-ultimate-probiotic-formula-216-ugam-capsules/52?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Saccharomyces Boulardii</div>
+          <div class="product-dose">5 billion CFU · 2× daily · Between meals</div>
+          <div class="product-note">A beneficial yeast (not a bacterial probiotic) — uniquely resistant to antibiotics and antifungals. Displaces Candida, restores gut barrier function, and produces enzymes that digest pathogenic bacteria. Takes a different ecological niche than bacterial probiotics — use both simultaneously.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-saccharomyces-boulardii-120-veg-capsules/7173?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="cat-label">Cellular Energy Renewal</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">NMN — Nicotinamide Mononucleotide</div>
+          <div class="product-dose">500mg · Morning · Fasted · Sublingual if possible</div>
+          <div class="product-note">NAD+ precursor. Every detox reaction in every cell requires NAD+ as a cofactor — 90 days of active detox depletes it significantly. ProHealth uses Uthever® NMN — the only third-party verified, heavy-metal-tested form with documented purity. Begin in Phase 4 when rebuilding, not during active clearing.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/prohealth-longevity-nmn-pro-500-500-mg-30-capsules/114170?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">NR — Nicotinamide Riboside<span class="badge badge-alt">alternative to NMN</span></div>
+          <div class="product-dose">300mg · Morning · Fasted</div>
+          <div class="product-note">Alternative NAD+ precursor pathway. Tru Niagen uses Niagen® — FDA safety-reviewed twice, backed by 35+ clinical studies. If NMN is unavailable or cost-prohibitive, NR is the evidence-backed alternative. The two take different conversion pathways to NAD+ — some people respond better to one than the other.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/tru-niagen-nicotinamide-riboside-chloride-300-mg-90-vegetarian-capsules/88706?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="phase-total">
+      <span>Phase 4 total items: <strong>9 products</strong></span>
+      <span style="margin-left:auto;color:var(--sage);font-size:11px;font-weight:600;">Days 76–90 · The body rebuilds what was cleared</span>
+    </div>
+  </div>
+
+  <div class="phase-divider"></div>
+
+  <!-- ═══════════════════════════════ PHASE 5 ═══════════════════════════════ -->
+  <div class="phase-block" id="phase5">
+    <div class="phase-header">
+      <span class="phase-num">Phase 05</span>
+      <span class="phase-days">Day 91 onwards</span>
+      <span class="phase-title">Maintenance — What You Keep</span>
+    </div>
+    <p class="phase-desc">Not everything from the 90-day protocol continues forever. This is the short list — the foundations that keep the work from undoing itself.</p>
+
+    <div class="cat-label">Daily Foundations — Keep These Long-Term</div>
+    <div class="product-list">
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Vitamin D3 + K2 (MK-7)</div>
+          <div class="product-dose">D3: 5,000 IU · K2: 100–200mcg · Daily with fat-containing meal</div>
+          <div class="product-note">D3 and K2 work as a pair — D3 signals calcium absorption, K2 directs where that calcium goes (bones and teeth, not arteries). NOW Foods combines both in the correct MK-7 form of K2 (the long-acting form, not MK-4). Test your vitamin D levels every 6 months.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/now-foods-vitamin-d-3-k-2-120-veg-capsules/66218?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Omega-3 — EPA + DHA (Triglyceride Form)</div>
+          <div class="product-dose">2–3g combined EPA+DHA · Daily · With largest meal</div>
+          <div class="product-note">Triglyceride form (kd-pur® certified) is significantly better absorbed than ethyl ester form — the form most cheap fish oil uses. California Gold Nutrition Omega 800 is ultra-concentrated, meaning fewer softgels for the same EPA/DHA dose. Systemic anti-inflammatory. Essential for ongoing brain, heart, and joint health.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-omega-800-ultra-concentrated-omega-3-fish-oil-kd-pur-triglyceride-form-90-fish-gelatin-softgels-1-000-mg-per-softgel/68796?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">Magnesium Glycinate</div>
+          <div class="product-dose">300–400mg elemental Mg · Evening · With or without food</div>
+          <div class="product-note">Glycinate form for maintenance — gentler than citrate, no laxative effect at normal doses, better tolerated long-term. Magnesium is required for 300+ enzymatic reactions including sleep, muscle relaxation, blood sugar regulation, and cortisol control. Most people are deficient. This is a lifelong supplement.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/doctor-s-best-high-absorption-magnesium-lysinate-glycinate-chelated-albion-traacs-240-tablets-100-mg-per-tablet/85189?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+      <div class="product-row">
+        <div class="product-left">
+          <div class="product-name">NAD+ Precursor — NMN or NR (maintenance dose)</div>
+          <div class="product-dose">NMN 250–500mg OR NR 300mg · Morning · Fasted · Continue ongoing</div>
+          <div class="product-note">NAD+ continues declining with age regardless of how clean you eat. Maintaining NAD+ levels long-term is the single most evidence-backed longevity intervention currently available. After completing the 90-day protocol, this becomes a lifelong practice — not just a detox tool.</div>
+        </div>
+        <a href="https://www.iherb.com/pr/prohealth-longevity-nmn-pro-500-500-mg-30-capsules/114170?rcode=GUW6132" target="_blank" class="product-link">iHerb <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 9L9 1M9 1H3M9 1V7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="phase-total">
+      <span>Maintenance: <strong>4 daily supplements</strong></span>
+      <span style="margin-left:auto;color:var(--sage);font-size:11px;font-weight:600;">Day 91+ · The foundations that protect the work</span>
+    </div>
+  </div>
+
+  <div class="phase-divider"></div>
+
+  <!-- SUMMARY -->
+  <div style="margin-top:48px;padding:28px 32px;background:var(--bg-warm);border:1px solid var(--border-s);border-radius:8px;">
+    <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--ink);margin-bottom:16px;">Complete Protocol — At a Glance</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:24px;">
+      <div style="background:var(--bg-deep);border-radius:6px;padding:14px 16px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:var(--sage);">37</div>
+        <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;">Total Products</div>
+      </div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:14px 16px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:var(--sage);">5</div>
+        <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;">Protocol Phases</div>
+      </div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:14px 16px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:var(--sage);">90</div>
+        <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;">Days Active</div>
+      </div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:14px 16px;text-align:center;">
+        <div style="font-family:'DM Mono',monospace;font-size:26px;font-weight:500;color:var(--honey);">GUW6132</div>
+        <div style="font-size:11px;color:var(--ink-light);letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;">iHerb Code</div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-light);line-height:1.8;margin-bottom:16px;">All products above were individually researched and selected for clinical relevance, third-party testing, and appropriate form (bioavailability matters — the form of a supplement determines whether it works). Budget alternatives are marked. The free model philosophy: health knowledge should not cost more than the supplements themselves.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="Full_Body_Detox_Protocol.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:11px 22px;border-radius:5px;">Read Full Protocol</a>
+      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--bg-stone);color:var(--ink-mid);border:1px solid var(--border);font-size:12px;font-weight:600;letter-spacing:0.04em;text-decoration:none;padding:11px 22px;border-radius:5px;">Shop All on iHerb — Code GUW6132</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT STRIP -->
+<section style="background:var(--bg-deep);padding:40px 24px;border-top:1px solid var(--border-s);">
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
+    <div>
+      <div style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">About This Guide</div>
+      <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);margin-bottom:10px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
+      <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);">Every protocol here is free — because health knowledge should not be a luxury. It will always remain free.</p>
+      <a href="index.html#about" style="display:inline-block;margin-top:14px;font-size:12px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story</a>
+    </div>
+    <div style="text-align:center;padding:28px;background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Support this free guide</div>
+      <div style="font-family:'Playfair Display',serif;font-size:15px;color:var(--ink);margin-bottom:4px;">Buy supplements on iHerb</div>
+      <div style="font-family:'DM Mono',monospace;font-size:36px;font-weight:700;color:var(--sage);letter-spacing:0.06em;margin:10px 0;">GUW6132</div>
+      <div style="font-size:12px;color:var(--ink-light);margin-bottom:16px;">Enter at checkout &middot; You get a discount</div>
+      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 22px;border-radius:5px;">Shop iHerb</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. Always consult a professional before making changes to your health protocol.</p>
+    </div>
+    <nav class="ft-nav">
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Sticky jump nav active state
+const sections = document.querySelectorAll('.phase-block');
+const navLinks = document.querySelectorAll('.jump-nav a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.jump-nav a[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+sections.forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
