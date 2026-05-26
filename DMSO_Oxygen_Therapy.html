@@ -206,6 +206,20 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .nav-center{display:flex;align-items:center;}
 .nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
 .nav-center a:hover{color:var(--sage-nav);}
+/* DROPDOWN */
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);left:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
 @media(max-width:640px){.nav-center{display:none;}}
 @media print{.phase-nav,footer,.print-btn{display:none!important;}}
 </style>
@@ -216,7 +230,19 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <a href="index.html" class="nav-logo">Heal Yourself</a>
   <div class="nav-center">
     <a href="index.html">Home</a>
-    <a href="protocols.html">All Protocols</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
     <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
   </div>
 <a href="DMSO_Shopping_List.html" style="font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--sage);text-decoration:none;padding:0 14px;height:52px;display:flex;align-items:center;text-transform:uppercase;border-left:1px solid rgba(61,107,74,0.15);background:rgba(228,240,232,0.3);gap:6px;white-space:nowrap;">🛒 Sourcing Guide</a>
