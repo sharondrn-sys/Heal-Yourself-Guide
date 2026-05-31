@@ -131,16 +131,34 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
   .must-link{display:none;}
   a[href]::after{content:none!important;}
 }
-</style>
+
+  body{padding-top:var(--nav-h);}</style>
 </head>
 <body>
 
-<nav class="topnav">
-  <a href="index.html" class="brand">Heal Yourself</a>
-  <a href="index.html">Home</a>
-  <a href="Parkinsons_Protocol.html">Full Protocol</a>
-  <a href="Parkinsons_Daily_Schedule.html">Daily Schedule</a>
-  <a href="Parkinsons_Shopping_Table.html">Full Shopping List</a>
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span><span class="dd-tag">New</span></a>
+        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
+        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
+        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
 </nav>
 
 <header class="hero">
@@ -196,7 +214,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">300–400mg every night before bed</div>
         <div class="must-why">The colon must move every day. One blocked day during detox means toxins recirculate directly into the bloodstream. Magnesium citrate is the safest, gentlest daily colon support available and costs almost nothing.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules-133-mg-per-capsule/698?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules/698?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -226,7 +244,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">175mg daily with food</div>
         <div class="must-why">The liver is the primary detox organ — it must be actively protected before the detox load increases. Milk Thistle is the most researched liver-protective compound available. Without it, the liver becomes the bottleneck of the entire protocol.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-euromed-quality-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -256,7 +274,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">¼ tsp in water every morning · 1 cup in every detox bath</div>
         <div class="must-why">Double duty: morning drink triggers the anti-inflammatory M1→M2 macrophage shift documented in peer-reviewed research. In the bath, neutralises chlorine and alkalises transdermally. Costs almost nothing. No reason to cut this.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-gluten-free-16-oz-454-g/89505?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-16-oz-454-g/89505?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -266,7 +284,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">1 tsp sole solution every morning before anything else</div>
         <div class="must-why">Full-spectrum trace minerals — the body cannot run its biochemistry on sodium alone. Sole water is the cheapest and most bioavailable mineral supplement that exists. One bag lasts months.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-vital-mineral-blend-1-lb-454-g/40557?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-1-lb-454-g/40557?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -276,7 +294,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">1 tbsp in water · 10 min before every meal · use a straw</div>
         <div class="must-why">Restores stomach acid — critical from Phase 2 when Mucuna is added. Mucuna's levodopa is absorbed in the small intestine and requires proper stomach acid to break down before it gets there. Without ACV, Mucuna absorption is compromised. Start now, not at Phase 2.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/bragg-organic-raw-apple-cider-vinegar-32-fl-oz-946-ml/1864?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/bragg-organic-apple-cider-vinegar-with-the-mother-16-fl-oz-473-ml/1864?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
   </div>
@@ -335,7 +353,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">1,000mg morning + 500mg night · with food</div>
         <div class="must-why">The only natural compound that stimulates Nerve Growth Factor (NGF) — the protein that promotes neuron repair and survival. Without ongoing NGF stimulation, the dopaminergic neurons being supported by Mucuna continue to degrade. These two work together. Neither is optional.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/host-defense-mushrooms-lion-s-mane-120-capsules-0-5-g-per-capsule/61802?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/host-defense-lion-s-mane-capsules-120-count/61802?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -345,7 +363,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">1–2 caps daily · with fat-containing meal</div>
         <div class="must-why">Mitochondrial energy production collapses in dopaminergic neurons before they die — this is the mechanism of neurodegeneration. CoQ10 ubiquinol powers existing mitochondria. PQQ creates new ones. Both are necessary. The CGN combo product covers both.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/california-gold-nutrition-ubiquinol-reduced-form-coq10-pqq-120-veggie-capsules/143326?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/california-gold-nutrition-coq10-ubiquinol-pqq-combo/143326?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -356,7 +374,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-why">Glutathione — the brain's primary antioxidant — is severely depleted in the substantia nigra in Parkinson's. NAC is the most effective oral method to restore it. Without glutathione, every other neuroprotective supplement has less effect. This is the foundation of the antioxidant stack.</div>
         <div class="must-warn">Do not use with nitroglycerin or blood pressure medications without guidance.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -387,7 +405,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-why">Biofilm is the protein shell that makes pathogens invisible to the immune system and resistant to every herb and supplement. Until the biofilm is broken, nothing else fully penetrates. Serrapeptase is the primary biofilm breaker. This is the entry point to Phase 2 — without it the phase does not work.</div>
         <div class="must-warn">Do not use with blood-thinning medications.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/doctor-s-best-high-potency-serrapeptase-120-000-spu-270-veggie-caps/51946?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/doctor-s-best-serrapeptase-120-000-spu-90-veggie-caps/51946?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -398,7 +416,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-why">Works with serrapeptase to break down fibrin — the structural scaffolding of biofilm. Neither enzyme alone is as effective as both together. The combination is the mechanism of Phase 2. Cannot skip one without undermining the other.</div>
         <div class="must-warn">Do not combine with warfarin or aspirin without guidance.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/now-foods-nattokinase-100-mg-120-veg-capsules/11904?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/now-foods-nattokinase-2-000-fu-90-veg-capsules/11904?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -481,11 +499,11 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
     <div class="must-item priority-1">
       <div class="must-num" style="background:var(--p3);">1</div>
       <div class="must-body">
-        <div class="must-name">Black Walnut + Wormwood + Cloves Complex <span class="badge badge-core">core</span></div>
+        <div class="must-name">Black Walnut + Wormwood + Cloves Complex <span class="badge badge-core">core</span></div><div class="must-note" style="font-size:12px;color:var(--ink-light);margin-top:3px;">Contains: Green Black Walnut Hulls (<em>Juglans nigra</em>), Wormwood (<em>Artemisia absinthium</em>) &amp; Clove Bud (<em>Syzygium aromaticum</em>) — one product covers the complete Clark Triad.</div>
         <div class="must-dose">½–2 droppersful twice daily · in juice or water before meals · rotation Week 1 and 3</div>
         <div class="must-why">The Clark Triad — the only antiparasitic combination that addresses all life stages simultaneously. Cloves specifically are the only compound that kills eggs and larvae. Without cloves, adult parasites are killed but the next generation survives and repopulates within weeks.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/now-foods-green-black-walnut-wormwood-complex-2-fl-oz-59-ml/591?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/now-foods-black-walnut-hull-and-wormwood-complex-100-veg-capsules/591?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -505,7 +523,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">500–1,000mg · 2+ hours from all supplements · whenever die-off symptoms appear</div>
         <div class="must-why">When pathogens die in large numbers they release toxins into the bloodstream — Herxheimer reaction. Without a binder to capture these toxins, they recirculate to the brain and worsen neurological symptoms. This is especially critical for Parkinson's where the blood-brain barrier is already compromised. Non-negotiable during the antiparasitic phase.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-mg-capsules-100-veg-capsules/708?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-veg-capsules/708?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">
@@ -589,7 +607,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <div class="must-dose">5g powder · 3× daily · between meals</div>
         <div class="must-why">Small enough to enter the bloodstream and pull lead, arsenic, cadmium, and mercury from tissue — not just the gut. The most comprehensively researched natural chelation agent. Essential because silica handles aluminium, chlorella handles mercury, and MCP handles the rest. All three cover different metals.</div>
       </div>
-      <a class="must-link" href="https://www.iherb.com/pr/econugenics-pectasol-modified-citrus-pectin-16-oz-454-g/15379?rcode=GUW6132" target="_blank">iHerb →</a>
+      <a class="must-link" href="https://www.iherb.com/pr/econugenics-pectasol-c-modified-citrus-pectin-454-g/15379?rcode=GUW6132" target="_blank">iHerb →</a>
     </div>
 
     <div class="must-item priority-1">

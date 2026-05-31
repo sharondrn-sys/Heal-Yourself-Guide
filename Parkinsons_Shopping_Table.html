@@ -153,16 +153,34 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
   .phase-badge{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
   a[href]::after{content:none!important;}
 }
-</style>
+
+  body{padding-top:var(--nav-h);}</style>
 </head>
 <body>
 
-<nav class="topnav">
-  <a href="index.html" class="brand">Heal Yourself</a>
-  <a href="index.html">Home</a>
-  <a href="Parkinsons_Protocol.html">Full Protocol</a>
-  <a href="Parkinsons_Daily_Schedule.html">Daily Schedule</a>
-  <a href="Full_Body_Detox_Protocol.html">Detox</a>
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span><span class="dd-tag">New</span></a>
+        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
+        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
+        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
 </nav>
 
 <header class="hero">
@@ -225,7 +243,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">1 tsp sole solution</div><div class="dose-timing">Every morning before anything else</div></td>
         <td><div class="why-text">Full-spectrum trace minerals, adrenal support, primes digestion</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bag</span><span class="qty-sub">lasts 3–4 months</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-vital-mineral-blend-1-lb-454-g/40557?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-1-lb-454-g/40557?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">2</td>
@@ -233,7 +251,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">¼ tsp in water</div><div class="dose-timing">Morning, 30 min before eating · Also in detox baths</div></td>
         <td><div class="why-text">Anti-inflammatory M1→M2 macrophage shift, alkalises system, neutralises chlorine in baths</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bag</span><span class="qty-sub">lasts 2–3 months</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-gluten-free-16-oz-454-g/89505?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-16-oz-454-g/89505?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">3</td>
@@ -241,7 +259,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">175mg · 1 cap</div><div class="dose-timing">Daily with food</div></td>
         <td><div class="why-text">Protects and regenerates liver cells before the detox load increases</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">60 caps = 2 months</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-euromed-quality-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">4</td>
@@ -273,7 +291,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">300–400mg</div><div class="dose-timing">Before bed every night · for bowel regularity</div></td>
         <td><div class="why-text">Gently keeps the colon moving — daily elimination is mandatory throughout this protocol</div></td>
               <td><div class="qty-box qty-monthly"><span class="qty-main">1 bottle/month</span><span class="qty-sub">3 caps/day = 40 days</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules-133-mg-per-capsule/698?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules/698?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">8</td>
@@ -323,7 +341,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">500–1,000mg</div><div class="dose-timing">As needed during die-off · 2+ hrs from all supplements</div></td>
         <td><div class="why-text">Broad-spectrum binder for die-off toxins and endotoxins — especially useful during Phases 2–3</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">100 caps · use as needed</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-mg-capsules-100-veg-capsules/708?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-veg-capsules/708?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">14</td>
@@ -331,7 +349,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">1 tbsp in water</div><div class="dose-timing">10 min before meals · use a straw · also in detox baths</div></td>
         <td><div class="why-text">Restores stomach acid for proper protein digestion — essential for Mucuna absorption in Phase 2+</div></td>
               <td><div class="qty-box"><span class="qty-main">2 bottles</span><span class="qty-sub">each lasts ~3 weeks</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/bragg-organic-raw-apple-cider-vinegar-32-fl-oz-946-ml/1864?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/bragg-organic-apple-cider-vinegar-with-the-mother-16-fl-oz-473-ml/1864?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
     </tbody>
   </table>
@@ -388,7 +406,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">1,000mg morning + 500mg night</div><div class="dose-timing">With food</div></td>
         <td><div class="why-text">Only natural substance that stimulates Nerve Growth Factor (NGF) — promotes neuron repair and dopaminergic protection</div></td>
               <td><div class="qty-box qty-monthly"><span class="qty-main">1 bottle/month</span><span class="qty-sub">120 caps = 40 days at 3/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/host-defense-mushrooms-lion-s-mane-120-capsules-0-5-g-per-capsule/61802?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/host-defense-lion-s-mane-capsules-120-count/61802?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">3</td>
@@ -399,7 +417,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">200–400mg daily</div><div class="dose-timing">With fat-containing meal · ubiquinol form only</div></td>
         <td><div class="why-text">Ubiquinol (active form) + PQQ in one capsule. Ubiquinol powers mitochondrial energy production — severely depleted in Parkinson's. PQQ creates new mitochondria. Combined, these are the most important mitochondrial support available.</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">120 caps = 2–4 months</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/california-gold-nutrition-ubiquinol-reduced-form-coq10-pqq-120-veggie-capsules/143326?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/california-gold-nutrition-coq10-ubiquinol-pqq-combo/143326?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">4</td>
@@ -407,7 +425,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">600mg twice daily</div><div class="dose-timing">Between meals</div></td>
         <td><div class="why-text">Raises glutathione — the brain's primary antioxidant, severely depleted in the substantia nigra in Parkinson's</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">250 caps = 4 months at 2/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">5</td>
@@ -415,7 +433,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">500mg daily</div><div class="dose-timing">Morning · fasted</div></td>
         <td><div class="why-text">NAD+ drops 50% between ages 40–60; restoring it supports mitochondrial function and neuronal DNA repair</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">30g = 2 months at 500mg/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/prohealth-longevity-nmn-pro-pure-nmn-powder-1-000-mg-30-g/114175?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/prohealth-longevity-pure-nmn-powder-30-grams/114175?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">6</td>
@@ -439,7 +457,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">120,000 SPU daily</div><div class="dose-timing">Empty stomach · 45 min before food</div></td>
         <td><div class="why-text">Breaks down the protein matrix of biofilm — the protective shell that makes pathogens invisible to the immune system</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">270 caps = 9 months at 1/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/doctor-s-best-high-potency-serrapeptase-120-000-spu-270-veggie-caps/51946?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/doctor-s-best-serrapeptase-120-000-spu-90-veggie-caps/51946?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">9</td>
@@ -447,7 +465,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">2,000 FU twice daily</div><div class="dose-timing">Empty stomach</div></td>
         <td><div class="why-text">Breaks down fibrin — the structural scaffolding of biofilm — and supports blood flow</div></td>
               <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">120 caps = 2 months at 2/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-nattokinase-100-mg-120-veg-capsules/11904?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-nattokinase-2-000-fu-90-veg-capsules/11904?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">10</td>
@@ -518,11 +536,11 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
     <tbody>
       <tr>
         <td class="col-num">1</td>
-        <td><div class="prod-name">Black Walnut + Wormwood + Cloves</div><div class="prod-brand">NOW Foods Green Black Walnut Wormwood Complex · 2 fl oz tincture</div><div class="prod-warn">Not during pregnancy. Avoid with liver concerns.</div></td>
+        <td><div class="prod-name">Black Walnut + Wormwood + Cloves</div><div class="prod-brand">NOW Foods Black Walnut &amp; Wormwood Complex</div><div class="prod-note">Contains: Green Black Walnut Hulls (<em>Juglans nigra</em>), Wormwood (<em>Artemisia absinthium</em>) &amp; Clove Bud (<em>Syzygium aromaticum</em>) — the complete Clark Triad in one product.</div><div class="prod-warn">Not during pregnancy. Avoid with liver concerns.</div></td>
         <td><div class="dose-amount">½–2 droppersful 2× daily</div><div class="dose-timing">Rotation Week 1 and 3 · in juice or water before meals</div></td>
         <td><div class="why-text">The Clark Triad — covers all parasite life stages. Cloves are the only compound that kills eggs and larvae. All three must work together.</div></td>
               <td><div class="qty-box"><span class="qty-main">2 bottles</span><span class="qty-sub">each lasts ~2 weeks of rotation</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-green-black-walnut-wormwood-complex-2-fl-oz-59-ml/591?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-black-walnut-hull-and-wormwood-complex-100-veg-capsules/591?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">2</td>
@@ -598,7 +616,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         <td><div class="dose-amount">5g · 3× daily</div><div class="dose-timing">Between meals · in water or juice</div></td>
         <td><div class="why-text">Enters bloodstream to pull lead, arsenic, cadmium, and mercury from tissue — most comprehensively researched natural chelation agent available</div></td>
               <td><div class="qty-box"><span class="qty-main">2 bags</span><span class="qty-sub">each 454g = ~30 days at 15g/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/econugenics-pectasol-modified-citrus-pectin-16-oz-454-g/15379?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/econugenics-pectasol-c-modified-citrus-pectin-454-g/15379?rcode=GUW6132" target="_blank">iHerb →</a></div></td>
       </tr>
       <tr>
         <td class="col-num">3</td>
@@ -617,7 +635,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">180 tabs = 3 months at 2/day</span></div></td>
       <td><div class="qty-box qty-monthly"><span class="qty-main">1 bottle/month</span><span class="qty-sub">18oz = ~35 days</span></div></td>
       <td><div class="qty-box"><span class="qty-main">1 bottle</span><span class="qty-sub">180 tabs = 3 months at 2/day</span></div></td>
-<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/eidon-mineral-supplements-ionic-minerals-silica-18-oz-533-ml/25998?rcode=GUW6132" target="_blank">Eidon Silica iHerb →</a><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-silica-complex-with-horsetail-extract-180-tablets/799?rcode=GUW6132" target="_blank" style="margin-top:4px;">NOW Silica iHerb →</a></div></td>
+<td><div class="buy-links"><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/eidon-ionic-minerals-silica-18-oz-533-ml/25998?rcode=GUW6132" target="_blank">Eidon Silica iHerb →</a><a class="buy-link buy-iherb" href="https://www.iherb.com/pr/now-foods-silica-complex-with-horsetail-extract-180-tablets/799?rcode=GUW6132" target="_blank" style="margin-top:4px;">NOW Silica iHerb →</a></div></td>
       </tr>
     </tbody>
   </table>

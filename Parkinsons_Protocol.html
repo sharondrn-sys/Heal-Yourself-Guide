@@ -201,17 +201,35 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
   .supp-grid,.food-grid,.ex-grid,.schedule{page-break-inside:avoid;}
   .sec{page-break-inside:avoid;}
 }
-</style>
+
+  body{padding-top:var(--nav-h);}</style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="topnav">
-  <a href="index.html" class="brand">Heal Yourself</a>
-  <a href="index.html">Home</a>
-  <a href="Parkinsons_Daily_Schedule.html">Daily Schedule</a>
-  <a href="Parkinsons_Shopping_Table.html">Shopping List</a>
-  <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span><span class="dd-tag">New</span></a>
+        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
+        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
+        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1394,7 +1412,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
           <div class="supp-dose">200–400mg daily · with fat-containing meal · ubiquinol form only (not ubiquinone)</div>
           <div class="supp-why">Mitochondrial energy production collapses in dopaminergic neurons before they die — CoQ10 is the central cofactor for mitochondrial function. Ubiquinol is the active, pre-reduced form — the only form the body can use directly. Studies show significantly lower CoQ10 levels in Parkinson's patients. At high doses (1,200mg), a landmark clinical trial showed slowing of functional decline.</div>
         </div>
-        <a href="https://www.iherb.com/pr/california-gold-nutrition-ubiquinol-reduced-form-coq10-pqq-120-veggie-capsules/143326?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-coq10-ubiquinol-pqq-combo/143326?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
 
       <div class="supp-row">
@@ -1423,7 +1441,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
           <div class="supp-why">Raises glutathione — the brain's primary antioxidant and detoxification molecule. Glutathione is severely depleted in the substantia nigra in Parkinson'ss. NAC is the most effective oral method to restore it. Also disrupts biofilm and supports mitochondrial function.</div>
           <div class="supp-warn">Do not use with nitroglycerin or blood pressure medications without guidance.</div>
         </div>
-        <a href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
 
       <div class="supp-row">
@@ -1494,7 +1512,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
           <div class="supp-why">Triggers spleen-mediated anti-inflammatory response — shifting immune cells from pro-inflammatory M1 macrophages to anti-inflammatory M2. Also alkalises the body systemically, which may counteract the brain acidosis associated with astrocyte-driven alpha-synuclein aggregation. Cheap, safe, and evidence-backed for immune regulation. Start with ⅛ tsp and build up.</div>
           <div class="supp-warn">Avoid if on sodium-restricted diet, have kidney disease, or are taking prescription antacids. Do not use within 2 hours of other medications.</div>
         </div>
-        <a href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-gluten-free-16-oz-454-g/89505?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-16-oz-454-g/89505?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
     </div>
   </div>
