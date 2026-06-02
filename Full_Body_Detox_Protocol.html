@@ -14,8 +14,9 @@ html{scroll-behavior:smooth;}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
 
 /* PHASE NAV */
-.phase-nav{position:sticky;top:0;z-index:90;background:rgba(244,239,230,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-.phase-
 .phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav{position:sticky;top:56px;z-index:90;background:rgba(244,239,230,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
 .phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
 .phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
 .phase-nav a:hover{color:var(--sage);}
@@ -43,16 +44,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
 .stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--sage);display:block;}
 .stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
 
-/* PHASE CARDS ROW */
-.phase-hero-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
-@media(max-width:768px){.phase-hero-row{grid-template-columns:1fr 1fr;}}
-@media(max-width:440px){.phase-hero-row{grid-template-columns:1fr;}}
-.phc{padding:22px 18px;background:var(--bg-warm);border-top:3px solid var(--sage);text-decoration:none;display:block;transition:background 0.18s;}
-.phc:hover{background:var(--sage-pale);}
-.phc-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--sage);margin-bottom:5px;display:block;}
-.phc-days{font-size:11px;color:var(--ink-light);margin-bottom:7px;}
-.phc-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:5px;}
-.phc-desc{font-size:12px;color:var(--ink-light);line-height:1.6;}
+
 
 /* SECTIONS */
 .sec-main{background:var(--bg);padding:56px 24px;}
@@ -200,7 +192,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
 .exp-icon svg{width:9px;height:9px;transition:transform 0.3s;}
 .exp-btn.open .exp-icon svg{transform:rotate(180deg);}
 .exp-lbl{font-size:13px;font-weight:500;color:var(--sage);}
-.exp-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease;}
+.exp-
 .exp-body.open{max-height:9999px;}
 .exp-inner{padding-top:22px;}
 
@@ -210,8 +202,8 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 @media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
 .ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:8px;}
 .ft-disc{font-size:12px;color:rgba(212,201,168,0.45);line-height:1.75;}
-.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
-@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-
+@media(max-width:560px){.ft-}
 .ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
 .ft-nav a:hover{color:var(--sage-nav);}
 .ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
@@ -222,9 +214,72 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   body{background:white;color:black;}
   .printable{display:block!important;}
 }
+
+/* TOP NAV */
+#top-nav{position:fixed;top:0;left:0;right:0;height:56px;background:#2c3a2e;border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+#top-nav .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+#top-nav .nav-center{display:flex;align-items:center;}
+#top-nav .nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:56px;display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;}
+#top-nav .nav-center a:hover{color:#8ab89a;}
+#top-nav .nav-dropdown{position:relative;display:flex;align-items:center;height:56px;}
+#top-nav .nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:56px;display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+#top-nav .nav-dropdown-toggle:hover,#top-nav .nav-dropdown.open .nav-dropdown-toggle{color:#8ab89a;border-bottom-color:rgba(138,184,154,0.3);}
+#top-nav .nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+#top-nav .nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+#top-nav .nav-dropdown-menu{position:absolute;top:55px;right:0;background:#2c3a2e;border:1px solid rgba(138,184,154,0.15);border-top:2px solid #5a8c6a;border-radius:0 0 8px 8px;min-width:260px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+#top-nav .nav-dropdown:hover .nav-dropdown-menu,#top-nav .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+#top-nav .nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+#top-nav .nav-dropdown-menu a:last-child{border-bottom:none;}
+#top-nav .nav-dropdown-menu a.dd-sub{padding:7px 18px 7px 38px;font-size:10px;opacity:0.8;border-bottom:none;}
+#top-nav .nav-dropdown-menu a.dd-sub:hover{padding-left:42px;}
+#top-nav .nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+#top-nav .nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+#top-nav .nav-dropdown-menu a .dd-label{flex:1;}
+#top-nav .nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:#8ab89a;background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+/* Push all content below fixed top nav */
+body{padding-top:56px;}
+
 </style>
 </head>
 <body>
+
+<nav id="top-nav">
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
+        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
+        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>90-Day Complete Protocol</span></div>
+  <h1>The Full Body <em>Detox Protocol</em></h1>
+  <p class="hero-sub">Step by step. Day by day. The correct sequence for the correct results. Simple enough to print and put on your wall.</p>
+  <div class="hero-stats">
+    <div><span class="stat-num">90</span><span class="stat-label">Days</span></div>
+    <div><span class="stat-num">4</span><span class="stat-label">Phases</span></div>
+    <div><span class="stat-num">5</span><span class="stat-label">Drainage Doors</span></div>
+    <div><span class="stat-num">∞</span><span class="stat-label">Life After</span></div>
+  </div>
+</section>
+
 
 <!-- PHASE NAV — no right button, phase links only -->
 <div class="phase-nav">
@@ -244,32 +299,12 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
     <a href="#phase4" data-section="phase4" class="pn-phase"><span class="pn-phase-label">Phase 4</span><span class="pn-phase-sub">Days 76–90 · Rebuild</span></a>
     <div class="pn-sep"></div>
     <a href="#phase5" data-section="phase5" class="pn-phase"><span class="pn-phase-label">Phase 5</span><span class="pn-phase-sub">Day 91+ · Life After</span></a>
-    <div class="pn-sep"></div>
-    <a href="Full_Body_Detox_Shopping_List.html" style="font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--sage);text-decoration:none;padding:0 14px;height:38px;display:flex;align-items:center;text-transform:uppercase;border-left:1px solid var(--border-s);background:var(--sage-pale);gap:6px;white-space:nowrap;">🛒 Full Shopping List</a>
-    <a href="protocols.html" class="pn-home"><span class="pn-dot"></span>← Home</a>
+
   </div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="eyebrow"><span>90-Day Complete Protocol</span></div>
-  <h1>The Full Body <em>Detox Protocol</em></h1>
-  <p class="hero-sub">Step by step. Day by day. The correct sequence for the correct results. Simple enough to print and put on your wall.</p>
-  <div class="hero-stats">
-    <div><span class="stat-num">90</span><span class="stat-label">Days</span></div>
-    <div><span class="stat-num">4</span><span class="stat-label">Phases</span></div>
-    <div><span class="stat-num">5</span><span class="stat-label">Drainage Doors</span></div>
-    <div><span class="stat-num">∞</span><span class="stat-label">Life After</span></div>
-  </div>
-</section>
 
-<!-- PHASE CARDS -->
-<div class="phase-hero-row">
-  <a href="#phase1" class="phc"><span class="phc-tag">Phase 01</span><span class="phc-days">Days 1–14</span><div class="phc-name">Prepare</div><p class="phc-desc">Open drainage pathways. Prepare mind and home.</p></a>
-  <a href="#phase2" class="phc"><span class="phc-tag">Phase 02</span><span class="phc-days">Days 15–45</span><div class="phc-name">Eliminate</div><p class="phc-desc">Biofilm disruption. Antiparasitic rotation.</p></a>
-  <a href="#phase3" class="phc"><span class="phc-tag">Phase 03</span><span class="phc-days">Days 46–75</span><div class="phc-name">Bind &amp; Drain</div><p class="phc-desc">Heavy metals. Microplastics. Deep tissue clearing.</p></a>
-  <a href="#phase4" class="phc"><span class="phc-tag">Phase 04</span><span class="phc-days">Days 76–90+</span><div class="phc-name">Rebuild</div><p class="phc-desc">Gut repair. Microbiome restoration. NAD+.</p></a>
-</div>
+
 
 <!-- READ FIRST -->
 <section class="sec-main" id="read-first">
@@ -523,7 +558,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
           <div class="supp-name">Magnesium Citrate</div>
           <div class="supp-meta"><strong>300–400mg before bed</strong> · Powder or capsule · Start at 150mg if elderly or under 60kg<br>Gentle osmotic laxative — draws water into the colon, softens stool, supports regularity. Also replenishes one of the most commonly depleted minerals.</div>
         </div>
-        <a href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules/698?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules-133-mg-per-capsule/698?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
       <div class="supp-item">
         <span class="supp-check">✓</span>
@@ -570,7 +605,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
           <div class="supp-meta"><strong>Silymarin 140–420mg daily · With food</strong> · Lower dose for under 60kg or elderly<br>The most researched liver-protective herb. Silymarin stimulates liver cell regeneration and blocks toxin entry into hepatocytes (liver cells). Non-negotiable for any detox protocol.</div>
           <div class="supp-warn">⚠️ May lower blood sugar — monitor if diabetic</div>
         </div>
-        <a href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-euromed-quality-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
       <div class="supp-item">
         <span class="supp-check">✓</span>
@@ -579,7 +614,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
           <div class="supp-meta"><strong>600mg twice daily · Between meals</strong> · Reduce to once daily for elderly or under 55kg<br>Raises glutathione — the body's master antioxidant and primary detoxification molecule. Also one of the most researched biofilm disruptors — relevant for Phase 2 preparation.</div>
           <div class="supp-warn">⚠️ Do not use with nitroglycerin medications</div>
         </div>
-        <a href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
       <div class="supp-item">
         <span class="supp-check">✓</span>
@@ -743,16 +778,16 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
     <h3 class="lh3 lh3-phase" style="margin-top:28px;">Phase 1 Shopping List</h3>
     <div class="supp-list">
-      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Magnesium Citrate</div><div class="supp-meta">Powder or capsule · 300mg+ per serving</div></div><a href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules/698?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Magnesium Citrate</div><div class="supp-meta">Powder or capsule · 300mg+ per serving</div></div><a href="https://www.iherb.com/pr/now-foods-magnesium-citrate-120-veg-capsules-133-mg-per-capsule/698?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Psyllium Husk Powder</div><div class="supp-meta">Unflavoured · 500g+ for the phase</div></div><a href="https://www.iherb.com/pr/now-foods-psyllium-husk-powder-24-oz-680-g/21133?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
-      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Milk Thistle (Silymarin standardised)</div><div class="supp-meta">80% silymarin extract · 140–175mg per capsule</div></div><a href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
-      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">NAC — N-Acetyl Cysteine</div><div class="supp-meta">600mg capsules</div></div><a href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Milk Thistle (Silymarin standardised)</div><div class="supp-meta">80% silymarin extract · 140–175mg per capsule</div></div><a href="https://www.iherb.com/pr/california-gold-nutrition-euroherbs-milk-thistle-extract-euromed-quality-175-mg-60-veggie-capsules/70955?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">NAC — N-Acetyl Cysteine</div><div class="supp-meta">600mg capsules</div></div><a href="https://www.iherb.com/pr/now-foods-nac-600-mg-250-capsules/694?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Dandelion Root Tea</div><div class="supp-meta">Loose or bagged · organic</div></div><a href="https://www.iherb.com/pr/traditional-medicinals-organic-dandelion-leaf-root-tea-caffeine-free-16-wrapped-tea-bags-0-99-oz-28-g/63384?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Nettle Leaf Tea</div><div class="supp-meta">Loose or bagged</div></div><a href="https://www.iherb.com/pr/traditional-medicinals-organic-nettle-leaf-herbal-tea-16-wrapped-tea-bags-0-85-oz-24-g/20046?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Epsom Salt — Large Bag</div><div class="supp-meta">5lb bag minimum · USP pharmaceutical grade · unscented · no additives · buy 2 bags for the full phase</div></div><a href="https://www.amazon.com/Epsoak-Magnesium-Resealable-Unscented-Cruelty-Free/dp/B004N79BYC" target="_blank" class="supp-link">Amazon →</a></div>
-      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Baking Soda — Aluminum-Free <span class="budget-tag budget">budget</span></div><div class="supp-meta">Food grade · Bob's Red Mill · naturally mined · no chemical processing · 1 cup per bath</div></div><a href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-16-oz-454-g/89505?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Baking Soda — Aluminum-Free <span class="budget-tag budget">budget</span></div><div class="supp-meta">Food grade · Bob's Red Mill · naturally mined · no chemical processing · 1 cup per bath</div></div><a href="https://www.iherb.com/pr/bob-s-red-mill-baking-soda-gluten-free-16-oz-454-g/89505?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Bentonite Clay — Food Grade</div><div class="supp-meta">Food grade only</div></div><a href="https://www.iherb.com/pr/living-clay-detox-clay-pure-calcium-bentonite-1-lb-454-g/36832?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
-      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Real Sea Salt <span class="budget-tag free-tag">upgrade</span></div><div class="supp-meta">Celtic Sea Salt, Himalayan, or Real Salt — not table salt</div></div><a href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-1-lb-454-g/40557?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
+      <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Real Sea Salt <span class="budget-tag free-tag">upgrade</span></div><div class="supp-meta">Celtic Sea Salt, Himalayan, or Real Salt — not table salt</div></div><a href="https://www.iherb.com/pr/celtic-sea-salt-fine-ground-vital-mineral-blend-1-lb-454-g/40557?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Cold-Pressed Castor Oil <span class="budget-tag budget">budget</span></div><div class="supp-meta">Hexane-free · for packs and oral use</div></div><a href="https://www.iherb.com/pr/heritage-store-organic-castor-oil-16-fl-oz-473-ml/22831?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a></div>
       <div class="supp-item"><span class="supp-check">✓</span><div class="supp-body"><div class="supp-name">Shower Filter</div><div class="supp-meta">Vitamin C + KDF + calcium sulfite · fits standard shower head · replace cartridge every 3 months</div></div><a href="https://www.amazon.com/AquaBliss-Output-12-Stage-Shower-Filter/dp/B01MUBU0YC" target="_blank" class="supp-link">Amazon →</a></div>
     </div>
@@ -792,7 +827,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
           <div class="supp-meta"><strong>120,000–250,000 SPU · Empty stomach · 45 min before food</strong> · Start low, build up · Elderly: 80,000 SPU<br>Breaks down the protein components of biofilm matrix. Produced by the Japanese silkworm — used in European clinical medicine for decades. Takes 2–3 weeks to begin visible biofilm disruption.</div>
           <div class="supp-warn">⚠️ Do not use with blood-thinning medications without medical supervision</div>
         </div>
-        <a href="https://www.iherb.com/pr/doctor-s-best-serrapeptase-120-000-spu-90-veggie-caps/51946?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/doctor-s-best-high-potency-serrapeptase-120-000-spu-270-veggie-caps/51946?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
       <div class="supp-item">
         <span class="supp-check">✓</span>
@@ -830,10 +865,10 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
       <div class="supp-item">
         <span class="supp-check">✓</span>
         <div class="supp-body">
-          <div class="supp-name">Black Walnut Hull + Wormwood + Cloves</div><div class="supp-note">A unique blend of: Green Black Walnut Hulls (<em>Juglans nigra</em>), Wormwood Herb (<em>Artemisia absinthium</em>) and Clove Bud (<em>Syzygium aromaticum</em>) — the complete Clark Triad in one product. No separate wormwood or clove needed.</div>
+          <div class="supp-name">Black Walnut Hull</div>
           <div class="supp-meta"><strong>1–2ml tincture 3× daily, or capsules · Rotate every 10 days</strong> · Elderly/low weight: 1ml twice daily<br>Contains juglone — toxic to a broad range of parasites including intestinal worms, flukes, and Candida. Part of the classic Clark Protocol triad. Rotate off after 10 days; return in the next cycle.</div>
         </div>
-        <a href="https://www.iherb.com/pr/now-foods-black-walnut-hull-and-wormwood-complex-100-veg-capsules/591?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
+        <a href="https://www.iherb.com/pr/now-foods-green-black-walnut-wormwood-complex-2-fl-oz-59-ml/591?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
       </div>
       <div class="supp-item">
         <span class="supp-check">✓</span>
