@@ -241,6 +241,7 @@ body{padding-top:56px;}
 
 
 
+/* SCHEDULE PAGE */
 body{padding-top:56px;}
 .hero{background:var(--bg-warm);padding:72px 24px 52px;text-align:center;border-bottom:1px solid var(--border-s);}
 .hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
@@ -250,23 +251,54 @@ body{padding-top:56px;}
 .hero-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px;}
 .hero-link{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:8px 16px;border-radius:5px;transition:all 0.2s;border:1px solid var(--border);color:var(--sage);background:transparent;}
 .hero-link:hover{background:var(--sage-pale);}
-.shop-wrap{max-width:760px;margin:0 auto;padding:40px 24px;}
-.shop-category{margin-bottom:40px;}
-.shop-cat-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--border);}
-.supp-list{list-style:none;margin:0;}
-.supp-list li{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border-s);font-size:14px;line-height:1.65;}
-.supp-list li:last-child{border-bottom:none;}
-.supp-list .sc{color:var(--sage);font-weight:700;font-size:15px;}
-.supp-list .sn{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--ink);}
-.supp-list .sd{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);display:inline;margin:0 6px;}
-.supp-list .sm{font-size:13px;color:var(--ink-light);}
-.supp-list .sl{font-size:11px;font-weight:600;color:var(--sage);text-decoration:none;margin-left:6px;letter-spacing:0.03em;}
-.supp-list .sl:hover{color:var(--sage-mid);}
-.iherb-code{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);border-radius:8px;padding:14px 20px;margin:0 0 32px;font-size:13px;color:var(--ink-mid);line-height:1.7;text-align:center;}
-.iherb-code strong{font-family:'DM Mono',monospace;font-size:18px;color:var(--honey);display:block;margin-bottom:4px;}
-.detox-notice{background:#fff8e6;border:2px solid var(--honey);border-radius:10px;padding:18px 22px;margin:0 0 28px;font-size:13px;color:var(--ink-mid);line-height:1.7;}
-.detox-notice-title{font-family:'DM Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--honey);margin-bottom:6px;}
+
+/* WHO IS THIS FOR */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;}
+@media(max-width:640px){.intro-grid{grid-template-columns:1fr;}}
+.intro-card{background:var(--bg-warm);border:1px solid var(--border-s);border-radius:10px;padding:20px 22px;}
+.intro-card-title{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;}
+.intro-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.intro-card li{font-size:13px;color:var(--ink-mid);line-height:1.5;display:flex;gap:8px;align-items:flex-start;}
+.intro-card li::before{content:'✓';color:var(--sage);font-weight:700;flex-shrink:0;margin-top:1px;}
+.intro-card.warn li::before{content:'⚠️';font-style:normal;}
+
+/* DETOX NOTICE */
+.detox-notice{background:#fff8e6;border:2px solid var(--honey);border-radius:10px;padding:20px 24px;margin:0 0 32px;}
+.detox-notice-title{font-family:'DM Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--honey);margin-bottom:8px;}
+.detox-notice p{font-size:13px;color:var(--ink-mid);line-height:1.7;margin:0;}
 .detox-notice a{color:var(--sage);font-weight:600;}
+
+/* TIME BLOCKS */
+.schedule-wrap{display:flex;flex-direction:column;gap:12px;margin:24px 0;}
+.time-block{background:var(--bg-warm);border:1px solid var(--border-s);border-radius:10px;overflow:hidden;}
+.time-block-header{padding:11px 18px 10px;border-bottom:2px solid var(--border-s);display:flex;align-items:center;gap:10px;background:var(--bg-deep);}
+.time-icon{font-size:16px;line-height:1;}
+.time-label{font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mid);}
+.time-items{padding:14px 18px 16px;display:flex;flex-direction:column;gap:11px;}
+.sched-item{display:flex;flex-direction:column;gap:3px;}
+.sched-name{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
+.sched-dose{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);font-weight:500;margin-top:1px;}
+.sched-note{font-size:11px;color:var(--ink-light);line-height:1.5;}
+.sched-warn{font-size:10px;color:var(--terra);margin-top:3px;}
+.sched-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}
+.tag{font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px;white-space:nowrap;}
+.tag-empty{background:#fef3e8;color:#b07030;}
+.tag-food{background:var(--sage-pale);color:var(--sage);}
+.tag-water{background:#e8f2fb;color:#3a7a9c;}
+.tag-optional{background:var(--bg-deep);color:var(--ink-ghost);}
+.tag-key{background:#2c3a2e;color:#8ab89a;}
+.sched-divider{height:1px;background:var(--border-s);margin:2px 0;}
+
+/* BUDGET NOTE */
+.budget-note{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.2);border-radius:8px;padding:14px 18px;margin:20px 0;font-size:13px;color:var(--ink-mid);line-height:1.7;}
+.budget-note strong{color:var(--honey);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px;}
+
+/* SECTION */
+.sched-section{max-width:760px;margin:0 auto;padding:40px 24px;}
+.sched-section-title{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--ink);margin-bottom:6px;}
+.sched-section-title em{font-style:italic;color:var(--sage);}
+.sched-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.18),transparent);margin:0;}
 @media print{nav,footer{display:none!important;}body{padding-top:0;}}
 
 </style>
@@ -299,324 +331,298 @@ body{padding-top:56px;}
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Brain Protocol</div>
-  <h1>Complete <em>Shopping List</em></h1>
-  <p class="hero-sub">Every supplement for the Brain Protocol, organised by category with corrected iHerb links. Use code GUW6132 at checkout.</p>
+  <h1>Your Daily <em>Brain Schedule</em></h1>
+  <p class="hero-sub">Everything distilled into a daily framework. Begin with what you can. Add from there. Consistency over months, not days.</p>
   <div class="hero-links">
     <a href="Brain_Protocol.html" class="hero-link">← Full Protocol</a>
-    <a href="Brain_Protocol_Daily_Schedule.html" class="hero-link">📋 Daily Schedule</a>
+    <a href="Brain_Protocol_Shopping_List.html" class="hero-link">🛒 Shopping List</a>
   </div>
 </div>
 
-<div class="shop-wrap">
+<div class="sched-section">
 
-  <div class="iherb-code">
-    <strong>GUW6132</strong>
-    New customers: 10% off · Returning customers: 5% off · Enter at iHerb checkout
-  </div>
-
+  <!-- DETOX FIRST NOTICE -->
   <div class="detox-notice">
     <div class="detox-notice-title">⚠️ Do the Full Body Detox First</div>
-    These supplements work significantly better after the Full Body Detox. Start there if you haven't done it. Return here after Phase 2 minimum. <a href="Full_Body_Detox_Protocol.html">→ Full Body Detox Protocol</a>
+    <p>The Brain Protocol works significantly better after a Full Body Detox. When the gut is burdened with parasites, biofilm, and heavy metals, even the best brain supplements struggle to reach their target. The detox opens drainage pathways, clears the gut-brain axis, and removes the heavy metal load that drives neuroinflammation. If you have not done the <a href="Full_Body_Detox_Protocol.html">Full Body Detox Protocol</a>, start there. Return here after Phase 2 minimum — ideally after the full 90 days.</p>
   </div>
 
-
-  <div class="shop-category">
-    <div class="shop-cat-title">Foundation — Daily Non-Negotiables</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Lion's Mane Extract</span>
-          <span class="sd">1,000–2,000mg/day</span>
-          <span class="sm">Real Mushrooms 120 caps</span>
-          <a href="https://www.iherb.com/pr/real-mushrooms-lion-s-mane-mushroom-extract-powder-120-capsules/112246?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Omega-3 EPA+DHA</span>
-          <span class="sd">1,000mg/day · triglyceride form</span>
-          <span class="sm">CGN Omega-800 kd-pur</span>
-          <a href="https://www.iherb.com/pr/california-gold-nutrition-omega-800-ultra-concentrated-omega-3-fish-oil-kd-pur-triglyceride-form-30-fish-gelatin-softgels-1-000-mg-per-softgel/82845?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Magnesium L-Threonate</span>
-          <span class="sd">1g before bed</span>
-          <span class="sm">Life Extension Neuro-Mag</span>
-          <a href="https://www.iherb.com/pr/life-extension-neuro-mag-magnesium-l-threonate-90-vegetarian-capsules/40244?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Vitamin D3 + K2</span>
-          <span class="sd">2,000–5,000 IU D3 · 100mcg K2</span>
-          <span class="sm">CGN D3+K2 180 caps</span>
-          <a href="https://www.iherb.com/pr/california-gold-nutrition-vitamin-d3-k2-as-mk-7-180-veggie-capsules/124745?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
+  <!-- WHO IS THIS FOR -->
+  <div class="sched-kicker">Who This Is For</div>
+  <div class="sched-section-title">This protocol is for anyone experiencing <em>cognitive or neurological symptoms</em></div>
+  <div class="intro-grid">
+    <div class="intro-card">
+      <div class="intro-card-title">Symptoms this protocol addresses</div>
+      <ul>
+        <li>Brain fog — difficulty thinking clearly or finding words</li>
+        <li>Memory decline — short-term and long-term</li>
+        <li>Poor concentration and mental fatigue</li>
+        <li>Anxiety, low mood, emotional dysregulation</li>
+        <li>Sleep disturbances and poor recovery</li>
+        <li>Early cognitive decline or neurological deterioration</li>
+        <li>Post-viral cognitive symptoms (long COVID brain fog)</li>
+        <li>Movement disorders — tremor, rigidity, balance issues</li>
+        <li>Autism spectrum support (gut-brain connection)</li>
+        <li>ADD/ADHD — attention and executive function</li>
+      </ul>
+    </div>
+    <div class="intro-card">
+      <div class="intro-card-title">Who benefits most</div>
+      <ul>
+        <li>Anyone over 40 — neurodegeneration begins silently decades before symptoms</li>
+        <li>People with a family history of neurological conditions</li>
+        <li>Anyone who has had prolonged stress, trauma, or infection</li>
+        <li>People with amalgam fillings or known heavy metal exposure</li>
+        <li>Anyone who has been on long-term medication</li>
+        <li>Caregivers managing a neurological condition in a loved one</li>
+        <li>People who feel "not as sharp" as they used to be</li>
+        <li>Those recovering from burnout or adrenal fatigue</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="shop-category">
-    <div class="shop-cat-title">Neuroprotection</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Curcumin Phytosome</span>
-          <span class="sd">500mg with food</span>
-          <span class="sm">Doctor's Best 60 caps</span>
-          <a href="https://www.iherb.com/pr/doctor-s-best-curcumin-phytosome-60-veggie-caps-500-mg-per-capsule/23084?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">CoQ10 Ubiquinone + BioPerine</span>
-          <span class="sd">200–400mg with food</span>
-          <span class="sm">CGN CoQ10 150 caps</span>
-          <a href="https://www.iherb.com/pr/california-gold-nutrition-coq10-ubiquinone-usp-with-bioperine-black-pepper-extract-enhanced-bioavailability-100-mg-150-veggie-capsules/91610?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">PQQ</span>
-          <span class="sd">20mg with CoQ10</span>
-          <span class="sm">Doctor's Best 30 caps</span>
-          <a href="https://www.iherb.com/pr/doctor-s-best-pqq-20-mg-30-veggie-caps/49081?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">NAC</span>
-          <span class="sd">600mg between meals</span>
-          <span class="sm">NOW Foods 100 caps</span>
-          <a href="https://www.iherb.com/pr/now-foods-nac-n-acetyl-cysteine-600-mg-100-veg-capsules/694?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Bacopa Monnieri</span>
-          <span class="sd">300mg · 50% bacosides</span>
-          <span class="sm">Himalaya Organic 60 caps</span>
-          <a href="https://www.iherb.com/pr/himalaya-organic-bacopa-60-caplets/3687?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
+  <div class="budget-note">
+    <strong>Minimum if budget is tight</strong>
+    Lion's Mane · Omega-3 (triglyceride form) · Magnesium L-Threonate before bed · Morning sunlight · Daily aerobic exercise. These five alone will produce measurable change within 60–90 days. Add the rest as budget allows.
   </div>
 
-  <div class="shop-category">
-    <div class="shop-cat-title">Neurogenesis & Brain Fuel</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">NMN Pure Powder</span>
-          <span class="sd">500mg fasted</span>
-          <span class="sm">ProHealth Longevity 30g</span>
-          <a href="https://www.iherb.com/pr/prohealth-longevity-pure-nmn-powder-30-grams/114175?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">NR (alternative to NMN)</span>
-          <span class="sd">300mg fasted</span>
-          <span class="sm">CGN NR 250mg 60 caps</span>
-          <a href="https://www.iherb.com/pr/california-gold-nutrition-nicotinamide-riboside-tartrate-nr-250-mg-60-veggie-capsules/145870?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Ashwagandha KSM-66</span>
-          <span class="sd">300mg before bed</span>
-          <span class="sm">Planetary Herbals 120 caps</span>
-          <a href="https://www.iherb.com/pr/planetary-herbals-ksm-66-ashwagandha-root-extract-120-vegcaps/119529?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Phosphatidylserine</span>
-          <span class="sd">100mg with food</span>
-          <span class="sm">CGN Sunflower PS 60 caps</span>
-          <a href="https://www.iherb.com/pr/california-gold-nutrition-sunflower-phosphatidylserine-100-mg-60-veggie-softgels/97387?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Ginkgo Biloba</span>
-          <span class="sd">120mg with food</span>
-          <span class="sm">NOW Foods 200 caps</span>
-          <a href="https://www.iherb.com/pr/now-foods-ginkgo-biloba-120-mg-200-veg-capsules/583?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
+  <div class="divider" style="margin:8px 0 32px;"></div>
+
+  <!-- HOW TO USE -->
+  <div class="sched-kicker">How to use this schedule</div>
+  <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;background:var(--sage-pale);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">Select your time of day. Each block shows what to take, the dose, and whether to take it with food or on an empty stomach. Colour-coded tags guide timing. Print this page and keep it next to your supplements.</p>
+
+  <!-- SCHEDULE BLOCKS -->
+  <div class="schedule-wrap">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning — On Waking</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Morning Sunlight</span>
+          <span class="sched-dose">10–20 minutes outside · no sunglasses</span>
+          <span class="sched-note">Sets circadian biology for the entire day · the single free intervention with the most downstream benefit</span>
+          <div class="sched-tags"><span class="tag tag-key">Non-negotiable</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Silica Water</span>
+          <span class="sched-dose">500ml Fiji or Volvic · fasted</span>
+          <span class="sched-note">Option B: Eidon Ionic Silica drops in filtered water · aluminum detox days: 1.5L within one hour</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">ACV Morning Drink</span>
+          <span class="sched-dose">1 tbsp Apple Cider Vinegar + ½ tsp baking soda in warm water with lemon</span>
+          <span class="sched-note">Use a straw · activates digestive enzymes · alkalises terrain · gut motility support</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">NMN or NR</span>
+          <span class="sched-dose">NMN 500mg · or NR 300mg</span>
+          <span class="sched-note">Fasted — NAD+ precursor · cellular energy and DNA repair · especially important over 40</span>
+          <div class="sched-tags"><span class="tag tag-empty">Fasted</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍳</span><span class="time-label">Breakfast</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Lion's Mane Extract</span>
+          <span class="sched-dose">1,000mg</span>
+          <span class="sched-note">With breakfast · NGF stimulation · myelin repair · the most studied neuroregeneration mushroom</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span><span class="tag tag-key">Core</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Omega-3 EPA+DHA</span>
+          <span class="sched-dose">1,000mg · triglyceride form only</span>
+          <span class="sched-note">With fat-containing food · structural component of every neuron · anti-neuroinflammation</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span><span class="tag tag-key">Core</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">MCT Oil</span>
+          <span class="sched-dose">1–2 tbsp in coffee or smoothie</span>
+          <span class="sched-note">Instant ketone production · brain fuel when glucose metabolism is impaired</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Vitamin D3 + K2</span>
+          <span class="sched-dose">2,000–5,000 IU D3 · 100mcg K2-MK7</span>
+          <span class="sched-note">With fat-containing food · always together · neuroprotective and anti-inflammatory</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Silica supplement</span>
+          <span class="sched-dose">Horsetail extract 300mg · or BioSil ch-OSA drops</span>
+          <span class="sched-note">Aluminum chelation · connective tissue · collagen synthesis in brain</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🏃</span><span class="time-label">Mid-Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Aerobic Exercise</span>
+          <span class="sched-dose">30 minutes · Zone 2 cardio</span>
+          <span class="sched-note">The single most powerful intervention for stimulating new brain cell growth · BDNF production · non-negotiable for neurological conditions · walking counts</span>
+          <div class="sched-tags"><span class="tag tag-key">Non-negotiable</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Curcumin Phytosome</span>
+          <span class="sched-dose">500mg</span>
+          <span class="sched-note">With fat-containing food · crosses blood-brain barrier · potent neuroinflammation suppressor</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span><span class="tag tag-key">Core</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Bacopa Monnieri</span>
+          <span class="sched-dose">300mg · 50% bacosides extract</span>
+          <span class="sched-note">With food · memory consolidation · anxiety reduction · takes 6–8 weeks for full effect</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">CoQ10 Ubiquinone</span>
+          <span class="sched-dose">200–400mg · movement disorder protocol: 600mg</span>
+          <span class="sched-note">With fat-containing meal · mitochondrial energy in neurons · critical for any movement disorder</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">NAC</span>
+          <span class="sched-dose">600mg</span>
+          <span class="sched-note">Between meals preferred · glutathione precursor · heavy metal chelation · oxidative stress protection</span>
+          <div class="sched-tags"><span class="tag tag-empty">Between meals</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">PQQ</span>
+          <span class="sched-dose">20mg</span>
+          <span class="sched-note">With CoQ10 · mitochondrial biogenesis · new mitochondria growth · works synergistically with CoQ10</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌤️</span><span class="time-label">Afternoon</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Cold Exposure</span>
+          <span class="sched-dose">Cold shower finish · or cold plunge 2–5 min</span>
+          <span class="sched-note">BDNF surge · norepinephrine release · vagus nerve activation · inflammation reduction</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Glycine</span>
+          <span class="sched-dose">4g in water</span>
+          <span class="sched-note">Glyphosate binder · collagen precursor · inhibitory neurotransmitter — calms overactive neurons</span>
+          <div class="sched-tags"><span class="tag tag-empty">Between meals</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Modified Citrus Pectin</span>
+          <span class="sched-dose">5g in water</span>
+          <span class="sched-note">2 hours from food · heavy metal binder · galectin-3 inhibitor · most research-backed chelator</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌇</span><span class="time-label">Evening</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">CoQ10 — 2nd dose</span>
+          <span class="sched-dose">200mg with dinner · movement disorder: 600mg total daily</span>
+          <span class="sched-note">With evening meal · split dosing improves absorption</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Lion's Mane — 2nd dose</span>
+          <span class="sched-dose">500–1,000mg</span>
+          <span class="sched-note">With dinner · NGF stimulation continues during sleep repair cycle</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">DMSO Neurological Application</span>
+          <span class="sched-dose">50–60% solution · cervical spine and base of skull</span>
+          <span class="sched-note">Protocol days only · see DMSO Protocol for full application instructions · do not use if on Parkinson's medication without guidance</span>
+          <div class="sched-tags"><span class="tag tag-optional">Protocol days</span></div>
+          <span class="sched-warn">⚠️ Not for Parkinson's patients — see DMSO Protocol</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Humic &amp; Fulvic Acids</span>
+          <span class="sched-dose">As directed · in water</span>
+          <span class="sched-note">Away from food · mineral transport · heavy metal binding · cellular detox</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Magnesium L-Threonate</span>
+          <span class="sched-dose">1g (2 capsules typically)</span>
+          <span class="sched-note">The only magnesium that crosses the blood-brain barrier · synaptic plasticity · deep sleep · memory consolidation</span>
+          <div class="sched-tags"><span class="tag tag-key">Core</span><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Ashwagandha KSM-66</span>
+          <span class="sched-dose">300mg</span>
+          <span class="sched-note">Before bed · cortisol reduction · neuroprotective · anxiety relief · improves sleep quality</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Meditation or Breathing Practice</span>
+          <span class="sched-dose">15–20 minutes</span>
+          <span class="sched-note">Vagus nerve activation · cortisol reduction · parasympathetic shift · 4:8 breath (inhale 4, exhale 8)</span>
+          <div class="sched-tags"><span class="tag tag-key">Non-negotiable</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Sleep Environment</span>
+          <span class="sched-dose">Dark room · 18–20°C · no screens · WiFi off</span>
+          <span class="sched-note">Glymphatic system activates during deep sleep — this is when the brain clears metabolic waste including amyloid. 7–9 hours is not optional.</span>
+          <div class="sched-tags"><span class="tag tag-key">Non-negotiable</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end schedule-wrap -->
+
+  <div class="budget-note">
+    <strong>Weekly practices</strong>
+    Castor oil pack over liver 2–3× per week (supports toxin clearance) · Epsom salt bath 1–2× per week · Dry skin brushing daily before shower · Intermittent fasting 16:8 minimum 3× per week · Gluten and dairy reduction — both cross-react with brain tissue proteins
   </div>
 
-  <div class="shop-category">
-    <div class="shop-cat-title">Aluminum & Heavy Metal Detox</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Silica — BioSil ch-OSA</span>
-          <span class="sd">As directed</span>
-          <span class="sm">BioSil 5 fl oz liquid</span>
-          <a href="https://www.iherb.com/pr/biosil-ch-osa-advanced-collagen-generator-5-fl-oz-141-ml/17442?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Silica — Horsetail Extract</span>
-          <span class="sd">300mg · alternative to BioSil</span>
-          <span class="sm">Nature's Life Silica Power</span>
-          <a href="https://www.iherb.com/pr/nature-s-life-silica-power-horsetail-extract-300-mg-60-vegetarian-capsules/56424?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Modified Citrus Pectin</span>
-          <span class="sd">5g 2–3× daily away from food</span>
-          <span class="sm">Econugenics PectaSol 454g</span>
-          <a href="https://www.iherb.com/pr/econugenics-pectasol-c-modified-citrus-pectin-454-g/15379?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Chlorella Broken Cell Wall</span>
-          <span class="sd">1–3g/day · build slowly</span>
-          <span class="sm">NOW Foods 120 tabs</span>
-          <a href="https://www.iherb.com/pr/now-foods-chlorella-120-tablets-1-g-per-tablet/512?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Glycine</span>
-          <span class="sd">4g twice daily</span>
-          <span class="sm">NOW Foods 100 caps 1000mg</span>
-          <a href="https://www.iherb.com/pr/now-foods-glycine-100-veg-capsules-1-000-mg-per-capsule/18106?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Humic & Fulvic Acids</span>
-          <span class="sd">As directed</span>
-          <span class="sm">Morningstar Minerals 2 fl oz</span>
-          <a href="https://www.iherb.com/pr/morningstar-minerals-inner-vitality-concentrate-fulvic-humic-minerals-2-fl-oz/65280?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Activated Charcoal</span>
-          <span class="sd">500mg · only when needed</span>
-          <span class="sm">NOW Foods 200 caps</span>
-          <a href="https://www.iherb.com/pr/now-foods-activated-charcoal-200-veg-capsules/708?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="shop-category">
-    <div class="shop-cat-title">Gut-Brain Axis</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Multi-Strain Probiotic</span>
-          <span class="sd">As directed · with food</span>
-          <span class="sm">InnovixLabs 60 caps</span>
-          <a href="https://www.iherb.com/pr/innovixlabs-multi-strain-probiotic-60-capsules/94913?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Green Banana Flour</span>
-          <span class="sd">1–2 tbsp in smoothie</span>
-          <span class="sm">Let's Do Organic 14oz</span>
-          <a href="https://www.iherb.com/pr/let-s-do-organic-let-s-do-organic-organic-green-banana-flour-14-oz-396-g/83407?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Potato Starch</span>
-          <span class="sd">1 tbsp in cold water · start small</span>
-          <span class="sm">Bob's Red Mill 22oz</span>
-          <a href="https://www.iherb.com/pr/bob-s-red-mill-potato-starch-unmodified-gluten-free-22-oz-623-g/89493?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="shop-category">
-    <div class="shop-cat-title">Glyphosate Binder Protocol</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Glycine</span>
-          <span class="sd">4g twice daily × 4 weeks</span>
-          <span class="sm">NOW Foods 100 caps</span>
-          <a href="https://www.iherb.com/pr/now-foods-glycine-100-veg-capsules-1-000-mg-per-capsule/18106?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Modified Citrus Pectin</span>
-          <span class="sd">5g 3× daily</span>
-          <span class="sm">Econugenics PectaSol</span>
-          <a href="https://www.iherb.com/pr/econugenics-pectasol-c-modified-citrus-pectin-454-g/15379?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Diatomaceous Earth</span>
-          <span class="sd">Food grade · 1 tsp in water</span>
-          <span class="sm">Starwest Botanicals 1 lb</span>
-          <a href="https://www.iherb.com/pr/starwest-botanicals-diatomaceous-earth-1-lb-453-6-g/131522?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-  <div class="shop-category">
-    <div class="shop-cat-title">Kitchen & Daily Rituals</div>
-    <ul class="supp-list">
-      <li>
-        <span class="sc">✓</span>
-        <span>
-          <span class="sn">Apple Cider Vinegar</span>
-          <span class="sd">1 tbsp morning drink</span>
-          <span class="sm">Kevala Organic Raw 8 fl oz</span>
-          <a href="https://www.iherb.com/pr/kevala-organic-raw-apple-cider-vinegar-with-the-mother-8-fl-oz-236-ml/126983?rcode=GUW6132" target="_blank" class="sl">iHerb →</a>
-        </span>
-      </li>
-    </ul>
-  </div>
-
-</div>
+</div><!-- end sched-section -->
 
 <footer>
   <div class="ft-inner">
