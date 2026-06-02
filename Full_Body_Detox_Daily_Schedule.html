@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Body Detox — Daily Schedule · Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+  --nav-h:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;padding-top:56px;}
+
+/* ── TOP NAV ── */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
+@media(max-width:640px){.nav-center{display:none;}}
+
+/* DROPDOWN */
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a.dd-sub{padding:7px 18px 7px 38px;font-size:10px;opacity:0.8;border-bottom:none;}
+.nav-dropdown-menu a.dd-sub:hover{padding-left:42px;}
+.nav-dropdown-menu .dd-group-label{font-size:9px;font-weight:700;letter-spacing:0.15em;color:rgba(138,184,154,0.5);padding:8px 18px 4px;text-transform:uppercase;}
+
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+
+
+
+/* ── PHASE NAV (matches protocol page) ── */
+.phase-nav{position:sticky;top:56px;z-index:90;background:rgba(244,239,230,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;justify-content:center;}
+.phase-nav a,.phase-nav button{display:flex;align-items:center;gap:6px;padding:0 18px;height:42px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;cursor:pointer;}
+.phase-nav button:hover,.phase-nav a:hover{color:var(--sage);}
+.phase-nav button.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+.phase-nav button.pn-active .pn-dot{opacity:1;}
+.pn-phase-label{font-size:10px;font-weight:700;letter-spacing:0.08em;line-height:1.2;}
+.pn-phase-sub{font-size:9px;font-weight:400;opacity:0.6;text-transform:none;line-height:1.2;}
+.pn-sep{width:1px;background:var(--border-s);margin:10px 0;flex-shrink:0;}
+
+/* ── HERO ── */
+.hero{background:var(--bg-warm);padding:52px 24px 40px;text-align:center;border-bottom:1px solid var(--border-s);}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:10px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:14px;color:var(--ink-light);max-width:500px;margin:0 auto 22px;line-height:1.7;}
+.hero-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.hero-link{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:8px 16px;border-radius:5px;transition:all 0.2s;border:1px solid var(--border);color:var(--sage);background:transparent;}
+.hero-link:hover{background:var(--sage-pale);}
+
+
+
+
+
+
+
+
+
+
+
+/* ── PHASE PANELS ── */
+.phase-panel{display:none;padding:32px 24px 60px;max-width:1020px;margin:0 auto;}
+.phase-panel.active{display:block;}
+
+.phase-header{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--border-s);}
+.phase-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.phase-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:5px;}
+.phase-title{font-family:'Playfair Display',serif;font-size:clamp(19px,3vw,26px);font-weight:700;color:var(--ink);line-height:1.25;}
+.phase-title em{font-style:italic;color:var(--sage);}
+.phase-days{font-size:12px;color:var(--ink-light);margin-top:5px;line-height:1.5;}
+.print-btn{font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;background:var(--bg-deep);color:var(--ink-mid);border:1px solid var(--border-s);padding:8px 14px;border-radius:5px;cursor:pointer;white-space:nowrap;transition:all 0.2s;font-family:inherit;flex-shrink:0;}
+.print-btn:hover{background:var(--sage);color:#fff;border-color:var(--sage);}
+
+/* ── NOTE BOX ── */
+.note-box{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.18);border-radius:8px;padding:13px 18px;margin-bottom:22px;font-size:12px;color:var(--ink-mid);line-height:1.65;}
+.note-box strong{color:var(--honey);}
+
+/* ── TIME GRID ── */
+.time-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:26px;}
+@media(max-width:900px){.time-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.time-grid{grid-template-columns:1fr;}}
+
+.time-block{background:var(--bg-warm);border:1px solid var(--border-s);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;}
+.time-block-header{padding:11px 15px 9px;border-bottom:2px solid var(--border-s);display:flex;align-items:center;gap:8px;background:var(--bg-deep);}
+.time-icon{font-size:15px;line-height:1;}
+.time-label{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-mid);}
+.time-items{padding:12px 15px 14px;display:flex;flex-direction:column;gap:11px;flex:1;}
+
+.sched-item{display:flex;flex-direction:column;gap:2px;}
+.sched-name{font-size:13px;font-weight:600;color:var(--ink);line-height:1.3;}
+.sched-dose{font-family:'DM Mono',monospace;font-size:11px;color:var(--sage);font-weight:500;margin-top:1px;}
+.sched-note{font-size:11px;color:var(--ink-light);line-height:1.5;margin-top:1px;}
+.sched-warn{font-size:10px;color:var(--terra);margin-top:3px;line-height:1.4;}
+.sched-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}
+.tag{font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px;white-space:nowrap;}
+.tag-empty{background:#fef3e8;color:#b07030;}
+.tag-food{background:var(--sage-pale);color:var(--sage);}
+.tag-water{background:#e8f2fb;color:#3a7a9c;}
+.tag-rotate{background:var(--terra-pale);color:var(--terra);}
+.tag-optional{background:var(--bg-deep);color:var(--ink-ghost);}
+.sched-divider{height:1px;background:var(--border-s);margin:1px 0;}
+
+/* ── WEEKLY PRACTICES ── */
+.weekly-section{margin-top:4px;}
+.weekly-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-ghost);margin-bottom:10px;}
+.weekly-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;}
+.weekly-item{background:var(--bg-deep);border:1px solid var(--border-s);border-radius:8px;padding:12px 14px;display:flex;gap:9px;align-items:flex-start;}
+.weekly-dot{width:5px;height:5px;border-radius:50%;background:var(--sage-mid);flex-shrink:0;margin-top:6px;}
+.weekly-text{font-size:12px;color:var(--ink-mid);line-height:1.55;}
+.weekly-text strong{color:var(--ink);display:block;font-size:11px;margin-bottom:2px;}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:start;}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:8px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.4);line-height:1.6;max-width:420px;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:var(--sage-nav);}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+
+/* ── PRINT ── */
+@media print{
+  nav,.phase-tabs,.phase-nav,.print-btn,footer{display:none!important;}
+  .phase-panel{display:block!important;padding:0;}
+  .phase-panel:not(.active){display:none!important;}
+  .time-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
+        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
+        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Full Body Detox Protocol</div>
+  <h1>Your Daily <em>Schedule</em></h1>
+  <p class="hero-sub">What to take, when, and why — for each phase of the 90-day protocol.</p>
+  <div style="background:var(--sage-pale);border:1px solid var(--border);border-radius:8px;padding:14px 20px;max-width:560px;margin:0 auto 22px;text-align:left;font-size:12px;color:var(--ink-mid);line-height:1.7;">
+    <strong style="color:var(--sage);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:6px;">How to use this page</strong>
+    Select your current phase from the bar below. Each phase shows exactly what to take at each time of day — morning, lunch, evening, and bedtime. Colour-coded tags tell you whether to take something with food, on an empty stomach, or with a full glass of water. Print the page for your current phase and put it somewhere visible — on your fridge, next to your supplements, or by your bed.
+  </div>
+  <div class="hero-links">
+    <a href="Full_Body_Detox_Protocol.html" class="hero-link">← Full Protocol</a>
+    <a href="Full_Body_Detox_Shopping_List.html" class="hero-link">🛒 Shopping List</a>
+  </div>
+</div>
+
+<!-- PHASE NAV -->
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <button class="phase-nav-btn pn-active" data-phase="1" onclick="switchPhase(1)">
+      <span class="pn-dot"></span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+        <span class="pn-phase-label">Phase 1</span>
+        <span class="pn-phase-sub">Days 1–14 · Prepare</span>
+      </span>
+    </button>
+    <div class="pn-sep"></div>
+    <button class="phase-nav-btn" data-phase="2" onclick="switchPhase(2)">
+      <span class="pn-dot"></span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+        <span class="pn-phase-label">Phase 2</span>
+        <span class="pn-phase-sub">Days 15–45 · Eliminate</span>
+      </span>
+    </button>
+    <div class="pn-sep"></div>
+    <button class="phase-nav-btn" data-phase="3" onclick="switchPhase(3)">
+      <span class="pn-dot"></span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+        <span class="pn-phase-label">Phase 3</span>
+        <span class="pn-phase-sub">Days 46–75 · Bind &amp; Drain</span>
+      </span>
+    </button>
+    <div class="pn-sep"></div>
+    <button class="phase-nav-btn" data-phase="4" onclick="switchPhase(4)">
+      <span class="pn-dot"></span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+        <span class="pn-phase-label">Phase 4</span>
+        <span class="pn-phase-sub">Days 76–90 · Rebuild</span>
+      </span>
+    </button>
+    <div class="pn-sep"></div>
+    <button class="phase-nav-btn" data-phase="5" onclick="switchPhase(5)">
+      <span class="pn-dot"></span>
+      <span style="display:flex;flex-direction:column;align-items:flex-start;gap:1px;">
+        <span class="pn-phase-label">Phase 5</span>
+        <span class="pn-phase-sub">Day 91+ · Life After</span>
+      </span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ══════════════════ PHASE 1 ══════════════════ -->
+<div class="phase-panel" id="panel-1">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Phase One · Days 1–14</div>
+        <div class="phase-title">Prepare — <em>Opening the Drainage Doors</em></div>
+        <div class="phase-days">Do not move to Phase 2 until all 5 drainage doors are open and functioning daily.</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Phase 1</button>
+    </div>
+  </div>
+  <div class="note-box"><strong>Minimum if budget is tight:</strong> Filtered water · Magnesium Citrate before bed · one detox bath per week (Epsom salt + baking soda). These three alone open the drainage doors.</div>
+  <div class="time-grid">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Morning Sole Drink</span>
+          <span class="sched-dose">1 tsp salt solution in full glass water</span>
+          <span class="sched-note">On waking — before anything else</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Warm Lemon Water</span>
+          <span class="sched-dose">½ lemon in warm filtered water</span>
+          <span class="sched-note">5 min after Sole · use a straw to protect enamel</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Dry Skin Brushing</span>
+          <span class="sched-dose">5 min · natural bristle brush</span>
+          <span class="sched-note">Head to toe, always strokes toward the heart · lymph activation</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Shower + Cold Finish</span>
+          <span class="sched-dose">30 seconds cold water at end</span>
+          <span class="sched-note">Shower filter installed · cold finish is non-negotiable</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Morning Sunlight</span>
+          <span class="sched-dose">10 min outside on skin</span>
+          <span class="sched-note">Vitamin D synthesis + circadian anchoring</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Vitamin D3 + K2</span>
+          <span class="sched-dose">2,000–5,000 IU D3 · 100mcg K2</span>
+          <span class="sched-note">With breakfast · always together, never D3 alone</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Omega-3</span>
+          <span class="sched-dose">1,000mg</span>
+          <span class="sched-note">With breakfast · anti-inflammatory foundation</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Milk Thistle</span>
+          <span class="sched-dose">175mg</span>
+          <span class="sched-note">With lunch · liver support · take with food</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Dandelion Root Tea</span>
+          <span class="sched-dose">1 cup alongside lunch</span>
+          <span class="sched-note">Liver and kidney drainage support</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Psyllium Husk</span>
+          <span class="sched-dose">1 tsp in large glass water</span>
+          <span class="sched-note">With lunch · drink immediately · bowel regularity</span>
+          <div class="sched-tags"><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Nettle or Parsley Tea</span>
+          <span class="sched-dose">1 cup</span>
+          <span class="sched-note">Mid-afternoon · kidney flushing support</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">NAC</span>
+          <span class="sched-dose">600mg</span>
+          <span class="sched-note">Between lunch and dinner · glutathione precursor</span>
+          <div class="sched-tags"><span class="tag tag-empty">Between meals</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Movement</span>
+          <span class="sched-dose">20 min minimum</span>
+          <span class="sched-note">Afternoon · walking, rebounding · lymph needs movement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌇</span><span class="time-label">Evening</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">2nd Psyllium Husk</span>
+          <span class="sched-dose">1 tsp in large glass water</span>
+          <span class="sched-note">Before or with dinner</span>
+          <div class="sched-tags"><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Castor Oil Pack</span>
+          <span class="sched-dose">45 min over liver area</span>
+          <span class="sched-note">3–4× per week · warm compress on top · right side under ribs</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3–4× weekly</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Detox Bath or Foot Soak</span>
+          <span class="sched-dose">2 cups Epsom salt + ½ cup baking soda</span>
+          <span class="sched-note">3× per week · 20 min minimum · hot as comfortable</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Magnesium Citrate</span>
+          <span class="sched-dose">300–400mg</span>
+          <span class="sched-note">Before bed · ensures bowel movement next morning · essential</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Deep Breathing</span>
+          <span class="sched-dose">5 full slow belly breaths</span>
+          <span class="sched-note">Activates parasympathetic nervous system · wind down</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Screen-free wind-down</span>
+          <span class="sched-dose">30 min before sleep</span>
+          <span class="sched-note">WiFi off · phone outside bedroom · maximum darkness</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Water target check</span>
+          <span class="sched-dose">2+ litres filtered water today</span>
+          <span class="sched-note">Track it — most people under-drink significantly</span>
+          <div class="sched-tags"><span class="tag tag-water">Daily total</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="weekly-section">
+    <div class="weekly-title">Weekly Practices — Phase 1</div>
+    <div class="weekly-grid">
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Detox Bath × 3 per week</strong>2 cups Epsom salt + ½ cup baking soda · 20 min · as hot as comfortable</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Castor Oil Pack × 3–4 per week</strong>Right side under ribs · warm compress · 45 min · liver's best friend</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Salt Grounding — daily</strong>Stand barefoot on coarse sea salt 10 min · no phone · breathe slowly</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Blood Work — before you start</strong>Baseline CBC, liver panel, kidney panel · compare after 90 days</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PHASE 2 ══════════════════ -->
+<div class="phase-panel" id="panel-2">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Phase Two · Days 15–45</div>
+        <div class="phase-title">Eliminate — <em>Biofilm Disruption &amp; Antiparasitic Rotation</em></div>
+        <div class="phase-days">Continue all Phase 1 practices. Add these on top. Expect Herxheimer reactions — they mean it's working.</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Phase 2</button>
+    </div>
+  </div>
+  <div class="note-box"><strong>Minimum if budget is tight:</strong> Raw garlic daily · handful of pumpkin seeds every morning · oregano oil capsule. Serrapeptase + Nattokinase are the highest-impact upgrade — prioritise these if choosing where to spend.</div>
+  <div class="time-grid">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Sole drink + Lemon water</span>
+          <span class="sched-dose">Continue from Phase 1</span>
+          <span class="sched-note">On waking · before anything else</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Serrapeptase</span>
+          <span class="sched-dose">120,000–250,000 SPU</span>
+          <span class="sched-note">45 min before breakfast · breaks protein matrix of biofilm · takes 2–3 weeks to work</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+          <div class="sched-warn">⚠️ Not with blood-thinning medications</div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Nattokinase</span>
+          <span class="sched-dose">2,000 FU</span>
+          <span class="sched-note">Take with Serrapeptase · together they break both protein and fibrin biofilm layers</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Raw Pumpkin Seeds</span>
+          <span class="sched-dose">Large handful before breakfast</span>
+          <span class="sched-note">Cucurbitacin paralyses parasites · eat before food</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Raw Garlic</span>
+          <span class="sched-dose">1–2 cloves · crush and wait 10 min</span>
+          <span class="sched-note">Crushing activates allicin · with or just after breakfast</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Milk Thistle</span>
+          <span class="sched-dose">175mg · continue</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Berberine</span>
+          <span class="sched-dose">500mg</span>
+          <span class="sched-note">With or just after a meal · antimicrobial + blood sugar support</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Mimosa Pudica Seed</span>
+          <span class="sched-dose">1–2 capsules</span>
+          <span class="sched-note">Between lunch and dinner · gel-forming · physically traps and removes parasites</span>
+          <div class="sched-tags"><span class="tag tag-empty">Between meals</span><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Black Walnut + Wormwood + Cloves</span>
+          <span class="sched-dose">As directed on label</span>
+          <span class="sched-note">The complete Clark Triad · rotation weeks 1 and 3 only</span>
+          <div class="sched-tags"><span class="tag tag-rotate">Rotation weeks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌇</span><span class="time-label">Evening</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Oregano Oil</span>
+          <span class="sched-dose">Enteric coated capsule</span>
+          <span class="sched-note">With dinner · rotation weeks · broad-spectrum antimicrobial</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span><span class="tag tag-rotate">Rotation weeks</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Movement</span>
+          <span class="sched-dose">20 min minimum</span>
+          <span class="sched-note">Rebounding ideal · keeps lymph moving during die-off · critical this phase</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Castor Oil Pack</span>
+          <span class="sched-dose">45 min over liver</span>
+          <span class="sched-note">Critical during die-off · supports toxin processing · 3–4× per week</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3–4× weekly</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Detox Bath</span>
+          <span class="sched-dose">Epsom + baking soda</span>
+          <span class="sched-note">3× per week · skin is a drainage door — use it during die-off</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Nattokinase (2nd dose)</span>
+          <span class="sched-dose">2,000 FU · optional</span>
+          <span class="sched-note">If using twice daily · empty stomach</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span><span class="tag tag-optional">Optional</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Psyllium Husk</span>
+          <span class="sched-dose">1 tsp in water</span>
+          <span class="sched-note">Continue · essential during die-off to keep toxins moving out</span>
+          <div class="sched-tags"><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Magnesium Citrate</span>
+          <span class="sched-dose">300–400mg · continue</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="weekly-section">
+    <div class="weekly-title">Rotation Schedule</div>
+    <div class="weekly-grid">
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Weeks 1 &amp; 3 — Active rotation</strong>Black Walnut + Wormwood + Cloves · Oregano Oil · Mimosa Pudica</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Weeks 2 &amp; 4 — Rest</strong>Discontinue rotation herbs · continue Mimosa Pudica and Berberine</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Die-off too strong?</strong>Add binders (Phase 3 protocol) early · slow down but never stop completely</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Herxheimer signs</strong>Fatigue · headache · skin breakouts · brain fog · irritability — all normal and temporary</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PHASE 3 ══════════════════ -->
+<div class="phase-panel" id="panel-3">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Phase Three · Days 46–75</div>
+        <div class="phase-title">Bind &amp; Drain — <em>Heavy Metals &amp; Deep Tissue Clearing</em></div>
+        <div class="phase-days">Continue Phase 1 practices. Antiparasitic rotation continues on schedule. Add binders with strict timing.</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Phase 3</button>
+    </div>
+  </div>
+  <div class="note-box"><strong>⚠️ Binder rule — non-negotiable:</strong> Every binder must be taken at least <strong>2 hours away from all food, supplements, and medications.</strong> They bind everything — including your supplements. Never use cilantro as a mobiliser without a binder present simultaneously.</div>
+  <div class="time-grid">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Sole drink + Lemon water</span>
+          <span class="sched-dose">Continue from Phase 1</span>
+          <div class="sched-tags"><span class="tag tag-empty">On waking</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Serrapeptase</span>
+          <span class="sched-dose">120,000 SPU · continue</span>
+          <span class="sched-note">45 min before breakfast</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Zeolite (GI Detox+) or Bentonite Clay</span>
+          <span class="sched-dose">As directed · in full glass water</span>
+          <span class="sched-note">30 min before breakfast · binds heavy metals, glyphosate, mycotoxins</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Chlorella — Broken Cell Wall</span>
+          <span class="sched-dose">Start 500mg · build to 2–4g over 2 weeks</span>
+          <span class="sched-note">With breakfast · mercury chelator · build dose slowly</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+          <div class="sched-warn">⚠️ Build slowly — strong detox reactions possible at higher doses</div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Milk Thistle + Raw Garlic</span>
+          <span class="sched-dose">175mg · 1–2 cloves</span>
+          <span class="sched-note">Continue from previous phases · with breakfast</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Berberine</span>
+          <span class="sched-dose">500mg · continue</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Movement</span>
+          <span class="sched-dose">20 min</span>
+          <span class="sched-note">Afternoon · lymph drainage is essential during metal chelation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">⏱️</span><span class="time-label">Between Meals</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Modified Citrus Pectin — 1st dose</span>
+          <span class="sched-dose">5g in water</span>
+          <span class="sched-note">Between breakfast and lunch · most research-backed metal chelator</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Modified Citrus Pectin — 2nd dose</span>
+          <span class="sched-dose">5g in water</span>
+          <span class="sched-note">Between lunch and dinner · 2 hours from any food</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Humic &amp; Fulvic Acids</span>
+          <span class="sched-dose">As directed · in water</span>
+          <span class="sched-note">Afternoon · mineral transport + heavy metal binding</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Modified Citrus Pectin — 3rd dose</span>
+          <span class="sched-dose">5g in water</span>
+          <span class="sched-note">2+ hours after dinner · evening dose</span>
+          <div class="sched-tags"><span class="tag tag-empty">Away from food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Activated Charcoal</span>
+          <span class="sched-dose">500–1,000mg</span>
+          <span class="sched-note">Only if die-off symptoms are strong · at least 2 hrs from everything</span>
+          <div class="sched-tags"><span class="tag tag-optional">As needed</span><span class="tag tag-empty">Away from all else</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Magnesium Citrate</span>
+          <span class="sched-dose">300–400mg</span>
+          <span class="sched-note">Critical this phase — binders cause constipation without it</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Psyllium Husk</span>
+          <span class="sched-dose">1 tsp in water</span>
+          <span class="sched-note">Continue · 1–2 bowel movements daily is the minimum this phase</span>
+          <div class="sched-tags"><span class="tag tag-water">Full glass water</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Detox Bath / Foot Soak</span>
+          <span class="sched-dose">Epsom + baking soda</span>
+          <span class="sched-note">3× per week · skin elimination remains essential</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="weekly-section">
+    <div class="weekly-title">Binder Safety</div>
+    <div class="weekly-grid">
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>2-hour rule — absolute</strong>All binders 2+ hours from food, supplements, medications — they bind everything indiscriminately</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Hydration critical</strong>Minimum 2.5 litres filtered water daily this phase · binders without water cause constipation</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Bowel check daily</strong>Must have 1–2 movements daily · if not, increase magnesium before adding more binders</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Cilantro warning</strong>Never use cilantro without chlorella or zeolite simultaneously — it mobilises metals without capturing them</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PHASE 4 ══════════════════ -->
+<div class="phase-panel" id="panel-4">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Phase Four · Days 76–90+</div>
+        <div class="phase-title">Rebuild — <em>Gut Repair &amp; Microbiome Restoration</em></div>
+        <div class="phase-days">What you have after clearing is not healed — it is empty. Binders and antiparasitics are now reduced. Do not rush this phase.</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Phase 4</button>
+    </div>
+  </div>
+  <div class="note-box"><strong>Key shift this phase:</strong> Magnesium switches from Citrate → <strong>Glycinate</strong>. Citrate was for bowel motility. Glycinate is for nervous system repair and deep sleep — a completely different job.</div>
+  <div class="time-grid">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">L-Glutamine</span>
+          <span class="sched-dose">5–10g powder in water</span>
+          <span class="sched-note">First thing on waking · before anything else · primary gut lining fuel</span>
+          <div class="sched-tags"><span class="tag tag-empty">Empty stomach</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Sole drink + Lemon water</span>
+          <span class="sched-dose">Continue · permanent</span>
+          <span class="sched-note">After L-Glutamine</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">NMN or NR</span>
+          <span class="sched-dose">250–500mg</span>
+          <span class="sched-note">Fasted · NAD+ precursor · cellular repair acceleration</span>
+          <div class="sched-tags"><span class="tag tag-empty">Fasted</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Aloe Vera Inner Leaf</span>
+          <span class="sched-dose">1–2 tbsp in water</span>
+          <span class="sched-note">Before breakfast · coats and protects gut lining · acemannan</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Vitamin D3 + K2 · Omega-3</span>
+          <span class="sched-dose">Continue daily</span>
+          <span class="sched-note">With breakfast · permanent foundations</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Digestive Enzymes</span>
+          <span class="sched-dose">At first bite of breakfast and lunch</span>
+          <span class="sched-note">Restore digestive capacity · depleted after clearing phase</span>
+          <div class="sched-tags"><span class="tag tag-food">Start of meal</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Zinc Carnosine</span>
+          <span class="sched-dose">75mg with lunch</span>
+          <span class="sched-note">Stabilises gut lining · accelerates tight junction repair</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">ACV before lunch</span>
+          <span class="sched-dose">1 tbsp in water · use straw</span>
+          <span class="sched-note">10 min before · restores stomach acid production</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before meal</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Sauerkraut + S. Boulardii</span>
+          <span class="sched-dose">1–2 tbsp + 1 capsule</span>
+          <span class="sched-note">With lunch · begin microbial recolonisation · live probiotics</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Bone Broth or Collagen</span>
+          <span class="sched-dose">1–2 cups or 1 scoop powder</span>
+          <span class="sched-note">With any meal · structural matrix of gut lining</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌇</span><span class="time-label">Evening</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Zinc Carnosine (2nd dose)</span>
+          <span class="sched-dose">75mg with dinner</span>
+          <span class="sched-note">Twice daily for full gut repair phase</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">SBO Probiotic</span>
+          <span class="sched-dose">As directed</span>
+          <span class="sched-note">With dinner · soil-based organisms · most resilient strains</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Sauerkraut with dinner</span>
+          <span class="sched-dose">1–2 tbsp · fermented vegetables</span>
+          <span class="sched-note">Alongside prebiotic-rich vegetables</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Movement + Cold face splash</span>
+          <span class="sched-dose">20 min · then 30 sec cold water on face</span>
+          <span class="sched-note">Cold face splash stimulates vagus nerve · gut-brain axis repair</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Castor Oil Pack</span>
+          <span class="sched-dose">2× per week now</span>
+          <span class="sched-note">Reduce frequency from Phase 1–3 · continue for liver support</span>
+          <div class="sched-tags"><span class="tag tag-rotate">2× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Magnesium Glycinate</span>
+          <span class="sched-dose">300mg</span>
+          <span class="sched-note">Switches from Citrate to Glycinate now · nervous system repair + deep sleep</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">4:8 Breathing</span>
+          <span class="sched-dose">Inhale 4 counts · exhale 8 counts · 5 min</span>
+          <span class="sched-note">Activates vagal tone · essential for gut-brain axis repair</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Detox Bath</span>
+          <span class="sched-dose">Epsom + baking soda · 2× weekly</span>
+          <span class="sched-note">Reduced from Phase 1–3 frequency</span>
+          <div class="sched-tags"><span class="tag tag-rotate">2× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="weekly-section">
+    <div class="weekly-title">What Changes in Phase 4</div>
+    <div class="weekly-grid">
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Stop: All binders</strong>Zeolite, charcoal, bentonite clay — discontinue unless strong die-off symptoms return</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Stop: Antiparasitic rotation</strong>All rotation herbs discontinued · Berberine reduce to 3× per week for maintenance</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Add: Prebiotic foods daily</strong>Green banana flour · potato starch · cooked and cooled rice · chicory · Jerusalem artichoke</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Continue: All Phase 1 foundations</strong>Sole water · lemon water · movement · sunlight · cold shower · castor oil pack (reduced)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PHASE 5 ══════════════════ -->
+<div class="phase-panel" id="panel-5">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Phase Five · Day 91 &amp; Beyond</div>
+        <div class="phase-title">Life After — <em>The Protocol Never Really Ends</em></div>
+        <div class="phase-days">Permanent daily practices. Annual full protocol repeat. The world has not become less toxic.</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print Phase 5</button>
+    </div>
+  </div>
+  <div class="note-box"><strong>The goal was never to finish the protocol.</strong> The goal was to become the person who no longer needs it — because the conditions that required it no longer exist. Repeat the full 90 days once per year. Or a 30-day Phase 1+2 twice yearly.</div>
+  <div class="time-grid">
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Sole water + Lemon water</span>
+          <span class="sched-dose">Permanent morning ritual</span>
+          <span class="sched-note">These cost nothing and maintain everything the protocol built</span>
+          <div class="sched-tags"><span class="tag tag-empty">On waking</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Morning Sunlight</span>
+          <span class="sched-dose">10 min outside</span>
+          <span class="sched-note">Every day possible · circadian anchoring · free and irreplaceable</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">NMN or NR</span>
+          <span class="sched-dose">250mg fasted</span>
+          <span class="sched-note">Especially important over 40 · NAD+ declines with age</span>
+          <div class="sched-tags"><span class="tag tag-empty">Fasted</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Dry Skin Brushing</span>
+          <span class="sched-dose">5 min</span>
+          <span class="sched-note">Keep the lymph moving · permanent practice</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Cold Shower Finish</span>
+          <span class="sched-dose">30 seconds cold</span>
+          <span class="sched-note">Permanent · circulation + resilience + immune activation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🍽️</span><span class="time-label">Lunch</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Omega-3</span>
+          <span class="sched-dose">1,000mg</span>
+          <span class="sched-note">Permanent daily practice · the most universally recommended supplement</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Vitamin D3 + K2</span>
+          <span class="sched-dose">2,000–5,000 IU D3 · 100mcg K2</span>
+          <span class="sched-note">With fat-containing meal · permanent · test levels annually</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Fermented food</span>
+          <span class="sched-dose">Daily · with every meal if possible</span>
+          <span class="sched-note">Sauerkraut · kefir · kimchi · miso · the microbiome requires daily feeding</span>
+          <div class="sched-tags"><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">ACV before meals</span>
+          <span class="sched-dose">1 tbsp in water · straw</span>
+          <span class="sched-note">Continue for ongoing digestive support · stomach acid maintenance</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before meals</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌇</span><span class="time-label">Evening</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Movement</span>
+          <span class="sched-dose">20+ min · every day</span>
+          <span class="sched-note">Non-negotiable permanent practice · the lymph has no pump except movement</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Milk Thistle</span>
+          <span class="sched-dose">175mg · 3–4× per week</span>
+          <span class="sched-note">Not daily — give the liver one maintenance dose most days</span>
+          <div class="sched-tags"><span class="tag tag-rotate">3–4× weekly</span><span class="tag tag-food">With food</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Dandelion Root Tea</span>
+          <span class="sched-dose">1 cup daily</span>
+          <span class="sched-note">Liver and kidney maintenance · gentle and permanent</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Castor Oil Pack</span>
+          <span class="sched-dose">1–2× per week</span>
+          <span class="sched-note">Maintain bile flow and liver support permanently</span>
+          <div class="sched-tags"><span class="tag tag-rotate">1–2× weekly</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="time-block">
+      <div class="time-block-header"><span class="time-icon">🌙</span><span class="time-label">Bedtime</span></div>
+      <div class="time-items">
+        <div class="sched-item">
+          <span class="sched-name">Magnesium Glycinate</span>
+          <span class="sched-dose">300mg · every night</span>
+          <span class="sched-note">The most universally deficient mineral · permanent nightly practice</span>
+          <div class="sched-tags"><span class="tag tag-empty">Before bed</span></div>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Screen-free wind-down</span>
+          <span class="sched-dose">30 min before sleep</span>
+          <span class="sched-note">WiFi off · phone outside bedroom · the nervous system needs this permanently</span>
+        </div>
+        <div class="sched-divider"></div>
+        <div class="sched-item">
+          <span class="sched-name">Annual Protocol Reminder</span>
+          <span class="sched-dose">Full 90 days once per year</span>
+          <span class="sched-note">Or 30-day Phase 1+2 twice yearly · toxic exposure is ongoing · the work is never fully done</span>
+          <div class="sched-tags"><span class="tag tag-rotate">Annually</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="weekly-section">
+    <div class="weekly-title">What Never Returns</div>
+    <div class="weekly-grid">
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Seed oils — gone permanently</strong>Canola, vegetable, soybean, sunflower, corn · replaced with olive oil, ghee, coconut oil</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Processed food — gone permanently</strong>More than 5 ingredients or ingredients you can't pronounce — it does not belong in your body</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Tap water — gone permanently</strong>Filtered water for all drinking and cooking · fluoride and pharmaceuticals do not stop</div></div>
+      <div class="weekly-item"><div class="weekly-dot"></div><div class="weekly-text"><strong>Table salt — gone permanently</strong>Celtic sea salt or Himalayan only · the mineral profile matters · real salt is medicine</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+    </div>
+    <nav class="ft-nav"><a href="index.html">Home</a></nav>
+  </div>
+</footer>
+
+<script>
+function toggleNavDropdown(){
+  const d=document.getElementById('nav-protocols');
+  const open=d.classList.toggle('open');
+  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('nav-protocols');
+  if(d && !d.contains(e.target)) d.classList.remove('open');
+});
+
+function switchPhase(num){
+  document.querySelectorAll('.phase-nav-btn').forEach(t=>{
+    t.classList.toggle('pn-active', parseInt(t.dataset.phase)===num);
+  });
+  document.querySelectorAll('.phase-panel').forEach(p=>{
+    p.classList.toggle('active', p.id==='panel-'+num);
+  });
+  try{ localStorage.setItem('detox-schedule-phase', num); }catch(e){}
+}
+
+// Restore saved phase
+(function(){
+  let saved=1;
+  try{ saved=parseInt(localStorage.getItem('detox-schedule-phase'))||1; }catch(e){}
+  if(saved<1||saved>5) saved=1;
+  switchPhase(saved);
+})();
+</script>
+</body>
+</html>
