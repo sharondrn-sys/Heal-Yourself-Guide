@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;--bg-nav:#2c3a2e;--bg-footer:#263028;--ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;--sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;--terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;--honey:#a07830;--honey-pale:#f5eddb;--border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);}
+:root{--nav-h:56px;--bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;--bg-nav:#2c3a2e;--bg-footer:#263028;--ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;--sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;--terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;--honey:#a07830;--honey-pale:#f5eddb;--border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
@@ -216,28 +216,41 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 }
 
 /* TOP NAV */
-#top-nav{position:fixed;top:0;left:0;right:0;height:56px;background:#2c3a2e;border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
-#top-nav .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
-#top-nav .nav-center{display:flex;align-items:center;}
-#top-nav .nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:56px;display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;}
-#top-nav .nav-center a:hover{color:#8ab89a;}
-#top-nav .nav-dropdown{position:relative;display:flex;align-items:center;height:56px;}
-#top-nav .nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:56px;display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
-#top-nav .nav-dropdown-toggle:hover,#top-nav .nav-dropdown.open .nav-dropdown-toggle{color:#8ab89a;border-bottom-color:rgba(138,184,154,0.3);}
-#top-nav .nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
-#top-nav .nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
-#top-nav .nav-dropdown-menu{position:absolute;top:55px;right:0;background:#2c3a2e;border:1px solid rgba(138,184,154,0.15);border-top:2px solid #5a8c6a;border-radius:0 0 8px 8px;min-width:260px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
-#top-nav .nav-dropdown:hover .nav-dropdown-menu,#top-nav .nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
-#top-nav .nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
-#top-nav .nav-dropdown-menu a:last-child{border-bottom:none;}
-#top-nav .nav-dropdown-menu a.dd-sub{padding:7px 18px 7px 38px;font-size:10px;opacity:0.8;border-bottom:none;}
-#top-nav .nav-dropdown-menu a.dd-sub:hover{padding-left:42px;}
-#top-nav .nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
-#top-nav .nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
-#top-nav .nav-dropdown-menu a .dd-label{flex:1;}
-#top-nav .nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:#8ab89a;background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
-/* Push all content below fixed top nav */
-body{padding-top:56px;}
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
+@media(max-width:400px){.nav-center{display:none;}}
+/* DROPDOWN */
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a.dd-sub{padding:7px 18px 7px 38px;font-size:10px;opacity:0.8;border-bottom:none;}
+.nav-dropdown-menu a.dd-sub:hover{padding-left:42px;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+/* DD-GROUP HOVER SUBS */
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
 
 
 
@@ -391,12 +404,11 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .ft-nav a:hover{color:#d4c9a8;}
 
 @media print{.phase-nav,footer,.print-btn,nav{display:none!important;}}
-
 </style>
 </head>
 <body>
 
-<nav id="top-nav">
+<nav>
   <a href="index.html" class="nav-logo">Heal Yourself</a>
   <div class="nav-center">
     <a href="index.html">Home</a>
@@ -405,17 +417,31 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
         Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
       </button>
       <div class="nav-dropdown-menu">
-        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
-        <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
-        <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
-        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
         <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
-        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
-        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
-        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
-        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          </div>
+        </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
     </div>
@@ -516,8 +542,8 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
     <h3 class="lh3 lh3-terra">Aluminum Removal — Supplement Checklist</h3>
     <ul class="supp-list">
-      <li><span class="sc">✓</span><span><span class="sn">Orthosilicic Acid (OSA)</span> <span class="sd">10–20mg elemental silicon daily · Ch-OSA form preferred</span> <span class="sm">Most bioavailable silica form. Crosses the blood-brain barrier, binds aluminum ions, facilitates renal excretion.</span> <span class="sw">⚠️ Ensure adequate hydration — silica needs water to flush aluminum through the kidneys.</span> <a href="https://www.iherb.com/pr/biosil-ch-osa-advanced-collagen-generator-5-fl-oz-141-ml/17442?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
-      <li><span class="sc">✓</span><span><span class="sn">Horsetail (Equisetum arvense) 💰</span> <span class="sd">300–600mg daily · Standardized to 7% silica</span> <span class="sm">Highest plant source of bioavailable silica. Partially converted to orthosilicic acid in the gut. Budget alternative to OSA.</span> <span class="sw">⚠️ Avoid in kidney disease. Use supplement form only — not the unprocessed plant.</span> <a href="https://www.iherb.com/pr/now-foods-horsetail-herb-500-mg-100-capsules/768?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">CGN Choline Silica Complex (OSA)</span> <span class="sd">10–20mg elemental silicon daily · 5–10 drops in water</span> <span class="sm">Stabilised orthosilicic acid (OSA) — the most bioavailable form of silicon. Crosses the blood-brain barrier, binds aluminum ions, and facilitates renal excretion. With choline and L-carnitine. Note: L-carnitine may worsen hypothyroid symptoms.</span> <span class="sw">⚠️ Ensure adequate hydration — silica needs water to flush aluminum through the kidneys.</span> <a href="https://www.iherb.com/pr/california-gold-nutrition-choline-silica-complex-2-fl-oz-59-ml/96259?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
+      <li><span class="sc">✓</span><span><span class="sn">Horsetail Extract 💰</span> <span class="sd">300–600mg daily · Standardized to silica content</span> <span class="sm">Budget alternative to OSA. Partially converted to orthosilicic acid in the gut — lower bioavailability than CGN Choline Silica but meaningful at this dose. Use Nature's Life Silica Power if choosing this option.</span> <span class="sw">⚠️ Avoid in kidney disease.</span> <a href="https://www.iherb.com/pr/nature-s-life-silica-power-horsetail-extract-300-mg-60-vegetarian-capsules/56424?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
       <li><span class="sc">✓</span><span><span class="sn">Food-Grade Diatomaceous Earth 💰</span> <span class="sd">½–1 tsp in water · Morning · Empty stomach · Build slowly</span> <span class="sm">~85% amorphous silica. Provides aluminum binding plus documented gut integrity and heavy metal chelation benefits. Cheapest silica source.</span> <span class="sw">⚠️ Food-grade ONLY — never pool or filter grade. Do not inhale the powder.</span> <a href="https://www.iherb.com/pr/harris-food-grade-diatomaceous-earth-with-powder-duster-1-lb-453-g/70574?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
       <li><span class="sc">✓</span><span><span class="sn">Apple Cider Vinegar (ACV) — Malic Acid 💰</span> <span class="sd">1–2 tbsp raw ACV in water daily · Or malic acid supplement 1,200–2,400mg</span> <span class="sm">ACV = Apple Cider Vinegar — raw, unfiltered, with the "mother." Malic acid mobilizes aluminum from soft tissue. Use with silica — never alone. Mobilizing without binding causes redistribution, not elimination.</span> <span class="sw">⚠️ Always dilute — undiluted ACV damages tooth enamel. Drink through a straw.</span> <a href="https://www.iherb.com/pr/bragg-organic-raw-apple-cider-vinegar-with-the-mother-32-fl-oz-946-ml/26551?rcode=GUW6132" target="_blank" class="sl">→ iHerb GUW6132</a></span></li>
     </ul>
@@ -665,34 +691,29 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
 <div class="divider"></div>
 
-<!-- DAILY PROTOCOL -->
+<!-- SUBPAGE LINKS -->
 <section class="sec-c" id="daily">
   <div class="inner">
-    <div class="kicker">Part Six</div>
-    <h2 class="lh2">The Daily Brain Protocol</h2>
-    <p class="lp">Every intervention in this guide distilled into a daily framework. Begin with what you can. Add from there.</p>
+    <div class="kicker">Everything You Need</div>
+    <h2 class="lh2">The Protocol Lives Across These Pages</h2>
+    <p class="lp" style="margin-bottom:36px;">Each page is focused, printable, and complete. Use them together.</p>
 
-    <div class="schedule">
-      <div class="sched-row"><div class="sched-time">On Waking</div><div class="sched-act"><strong>Morning sunlight</strong> — 10–20 minutes outside, no sunglasses · Sets circadian biology for the entire day</div></div>
-      <div class="sched-row"><div class="sched-time">Before Breakfast</div><div class="sched-act"><strong>Silica water</strong> — 500ml Fiji or equivalent, fasted · Intensive aluminum detox days: 1.5L within one hour · <strong>ACV drink</strong> — 1 tbsp Apple Cider Vinegar + ½ tsp baking soda in warm water with lemon</div></div>
-      <div class="sched-row"><div class="sched-time">Breakfast</div><div class="sched-act"><strong>MCT oil</strong> — 1–2 tbsp in coffee or smoothie for ketone production · <strong>Omega-3</strong> — 2g EPA+DHA with food · <strong>Lion's Mane</strong> — 1,000mg</div></div>
-      <div class="sched-row"><div class="sched-time">Mid-Morning</div><div class="sched-act"><strong>Aerobic exercise</strong> — 30 minutes Zone 2 cardio · The single most powerful intervention for stimulating new brain cell growth · Non-negotiable for neurological conditions</div></div>
-      <div class="sched-row"><div class="sched-time">With Lunch</div><div class="sched-act"><strong>Curcumin</strong> (BCM-95 or liposomal) — 500mg · <strong>Bacopa</strong> — 300mg · Both with fat-containing food · <strong>CoQ10 Ubiquinol</strong> — 400mg (movement disorder protocol: 600mg)</div></div>
-      <div class="sched-row"><div class="sched-time">Afternoon</div><div class="sched-act"><strong>Cold exposure</strong> — cold shower end or cold plunge · <strong>NMN</strong> — 500mg or NR 300mg if not taken at breakfast</div></div>
-      <div class="sched-row"><div class="sched-time">Evening</div><div class="sched-act"><strong>DMSO neurological application</strong> — 50–60% applied to cervical spine (back of neck, base of skull) on protocol days · See DMSO Protocol for full instructions · <strong>CoQ10 second dose</strong> — 400mg with dinner (movement disorder protocol: total 1,200mg/day)</div></div>
-      <div class="sched-row"><div class="sched-time">Before Bed</div><div class="sched-act"><strong>Magnesium L-Threonate</strong> — 1g · <strong>Ashwagandha KSM-66</strong> — 300mg · <strong>Meditation or breathing practice</strong> — 15–20 minutes · Vagus nerve activation, cortisol reduction</div></div>
-      <div class="sched-row"><div class="sched-time">Sleep</div><div class="sched-act"><strong>Dark room · 18–20°C · No screens</strong> · Glymphatic system activates during deep sleep — this is when the brain clears metabolic waste · 7–9 hours non-negotiable</div></div>
-    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
 
-    <button class="print-btn" onclick="window.print()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
-      Print Daily Protocol
-    </button>
+      <a href="Brain_Protocol_Daily_Schedule.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--sage-mid)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:28px;margin-bottom:12px;">📋</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Daily Schedule</div>
+        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">Hour by hour — morning sunlight through bedtime magnesium. Every supplement, every practice, in the correct sequence. Print it and put it on your wall.</p>
+        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);">Open page →</div>
+      </a>
 
-    <div class="callout callout-sage" style="margin-top:28px;">
-      <div class="callout-title">🛒 Complete Shopping List — iHerb Code GUW6132</div>
-      <p>Lion's Mane extract · Curcumin BCM-95 or liposomal · Magnesium L-Threonate · Omega-3 EPA+DHA (triglyceride form) · NMN or NR · Bacopa monnieri (50% bacosides) · Ashwagandha KSM-66 · NAC · CoQ10 Ubiquinol · PQQ · Orthosilicic Acid or Horsetail silica · MCT Oil · Modified citrus pectin · Glycine · Fulvic acid · Chlorella · Fiji Water or local high-silica mineral water</p>
-      <p><a href="https://www.iherb.com/pr/real-mushrooms-lion-s-mane-mushroom-extract-powder-120-capsules/112246?rcode=GUW6132" target="_blank">→ Start shopping on iHerb — Code GUW6132 for discount</a></p>
+      <a href="Brain_Protocol_Shopping_List.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--sage-mid)'" onmouseout="this.style.borderColor='var(--border)'">
+        <div style="font-size:28px;margin-bottom:12px;">🛒</div>
+        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Shopping List</div>
+        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">All 24 products by phase with direct iHerb links and full reasoning. Use code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout.</p>
+        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);">Open page →</div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -722,35 +743,26 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </div>
 </section>
 
-<!-- ABOUT STRIP -->
-<section style="background:var(--bg-deep);padding:40px 24px;border-top:1px solid var(--border-s);">
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;">
-    <div>
-      <div style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">About This Guide</div>
-      <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);margin-bottom:10px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
-      <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);">Every protocol here is free — because health knowledge should not be a luxury. It will always remain free. If it helps you, the only thing asked in return is that you buy your supplements through iHerb using the code below. You save money. This guide stays alive.</p>
-      <a href="index.html#about" style="display:inline-block;margin-top:14px;font-size:12px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story</a>
-    </div>
-    <div style="text-align:center;padding:28px;background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;">
-      <div style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-light);margin-bottom:8px;">Support this free guide</div>
-      <div style="font-family:'Playfair Display',serif;font-size:15px;color:var(--ink);margin-bottom:4px;">Buy supplements on iHerb</div>
-      <div style="font-family:'DM Mono',monospace;font-size:36px;font-weight:700;color:var(--sage);letter-spacing:0.06em;margin:10px 0;">GUW6132</div>
-      <div style="font-size:12px;color:var(--ink-light);margin-bottom:16px;">Enter at checkout &middot; You get a discount</div>
-      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-block;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 22px;border-radius:5px;">Shop iHerb</a>
-    </div>
+
+
+<section style="background:var(--bg-deep);border-top:1px solid var(--border);">
+  <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
   </div>
 </section>
 
-
 <footer>
-  <div class="ft-inner">
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
     <div>
-      <div class="ft-brand">Heal Yourself</div>
-      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:var(--ink-ghost);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
     </div>
-    <nav class="ft-nav">
-      <a href="index.html">Home</a>
-    </nav>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html" style="font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Home</a>
+    </div>
   </div>
 </footer>
 
