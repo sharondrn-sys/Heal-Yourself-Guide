@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
+:root{--nav-h:56px;
   --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
   --bg-nav:#2c3a2e;--bg-footer:#263028;
   --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;
@@ -22,19 +22,45 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
 
-/* NAV */
-.topnav{background:var(--bg-nav);padding:0 24px;display:flex;align-items:center;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,0.06);}
-.topnav a{color:var(--sage-nav);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:14px 14px;display:block;transition:color 0.2s;}
-.topnav a:hover{color:#fff;}
-.topnav .brand{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;margin-right:16px;padding:14px 0;text-transform:none;}
-
+/* TOP NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
+@media(max-width:400px){.nav-center{display:none;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
 /* HERO */
-.hero{background:var(--bg-nav);padding:48px 24px 40px;text-align:center;}
-.hero-tag{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px;}
-.hero-tag::before,.hero-tag::after{content:'';width:40px;height:1px;background:rgba(138,184,154,0.4);}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,42px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:10px;}
+.hero{background:var(--bg-warm);padding:48px 24px 40px;text-align:center;}
+.hero-tag{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px;}
+.hero-tag::before,.hero-tag::after{content:'';flex:1;max-width:60px;height:1px;background:var(--sage-mid);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:10px;}
 .hero h1 em{font-style:italic;color:var(--sage-nav);}
-.hero-sub{font-size:14px;color:rgba(255,255,255,0.5);max-width:500px;margin:0 auto;}
+.hero-sub{font-size:14px;color:var(--ink-light);max-width:500px;margin:0 auto;}
 
 /* PRINT BAR */
 .print-bar{background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
@@ -153,19 +179,35 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
         Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
       </button>
       <div class="nav-dropdown-menu">
-        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
-        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
         <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
-        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span><span class="dd-tag">New</span></a>
-        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
-        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
-        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
+          </div>
+        </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
     </div>
-    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank">iHerb — GUW6132</a>
   </div>
 </nav>
 
@@ -204,6 +246,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">Prepare the Body. No Supplements Yet.</h2>
       <p class="phase-desc">The body's five exit routes — colon, liver, kidneys, lymph, skin — must be open before anything else is added. Putting supplements into a congested body is like pouring clean water into a blocked drain. These two weeks are the foundation everything else is built on.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase1')" title="Print Phase 1" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid #3d6b4a;color:#3d6b4a;border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='#3d6b4a';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='#3d6b4a'">🖨 Print Phase 1</button>
+
     </div>
 
     <div class="feel-box" style="margin-top:20px;">
@@ -425,6 +469,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">The Brain Starts Getting Support.</h2>
       <p class="phase-desc">Drainage is open. Now the core Parkinson's supplements begin. Simultaneously, biofilm disruption starts — breaking the protective shell around pathogens so the immune system can find them. Everything from Phase 1 continues. This is where the real work begins.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase2')" title="Print Phase 2" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid #6a5acd;color:#6a5acd;border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='#6a5acd';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='#6a5acd'">🖨 Print Phase 2</button>
+
     </div>
 
     <div class="feel-box">
@@ -673,6 +719,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">Clear What Has Been Hidden.</h2>
       <p class="phase-desc">Everything from Phases 1 and 2 continues. Now add the antiparasitic rotation. Rotate herbs every 7–10 days — parasites adapt to a single herb but cannot adapt to a rotation. This phase is the most intensive. Expect die-off. Support the drainage system heavily.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase3')" title="Print Phase 3" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--terra);color:var(--terra);border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='var(--terra)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='var(--terra)'">🖨 Print Phase 3</button>
+
     </div>
 
     <div class="feel-box">
@@ -866,6 +914,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">Pull the Metals From Deep Tissue.</h2>
       <p class="phase-desc">Aluminium accumulation in the substantia nigra — the brain region that fails in Parkinson's — is documented in post-mortem studies. This phase pulls it out. All previous phases continue. Binders are added and must be taken at least 2 hours away from food and supplements. Silica water intensifies. Never mobilise metals without binders present.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase4')" title="Print Phase 4" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid #4a7a8c;color:#4a7a8c;border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='#4a7a8c';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='#4a7a8c'">🖨 Print Phase 4</button>
+
     </div>
 
     <div class="feel-box">
@@ -1074,6 +1124,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">Rebuild the Gut. Heal the Brain.</h2>
       <p class="phase-desc">Alpha-synuclein begins in the gut. The clearing phases have removed what was damaging it. Now it must be rebuilt — the lining, the microbiome, the motility. This is where the gut-brain axis is repaired. Everything from previous phases continues, simplified. This phase is gentler — the body is ready to receive.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase5')" title="Print Phase 5" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid var(--sage);color:var(--sage);border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='var(--sage)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='var(--sage)'">🖨 Print Phase 5</button>
+
     </div>
 
     <div class="feel-box">
@@ -1282,6 +1334,8 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
       </div>
       <h2 class="phase-title">This Is Not a Protocol Anymore. This Is How You Live.</h2>
       <p class="phase-desc">The world has not changed. Toxic exposure continues. Dopamine neurons need daily support. The gut microbiome needs daily feeding. These are not things you do for 16 weeks — they are the conditions under which a body can maintain and regenerate. This page is your permanent daily rhythm.</p>
+      <button class="phase-print-btn no-print" onclick="printPhase('phase6')" title="Print Phase 6" style="display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid #2c3a2e;color:#2c3a2e;border-radius:4px;padding:6px 14px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;margin-top:12px;" onmouseover="this.style.background='#2c3a2e';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='#2c3a2e'">🖨 Print Phase 6</button>
+
     </div>
 
     <div class="feel-box">
@@ -1487,13 +1541,70 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:var(--bg-footer);padding:28px 24px;text-align:center;margin-top:40px;">
-  <p style="font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:8px;">Heal Yourself</p>
-  <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:12px;">Support this guide — shop iHerb with code <strong style="color:var(--sage-nav);">GUW6132</strong> and get a discount.</p>
-  <a href="Parkinsons_Protocol.html" style="color:var(--sage-nav);font-size:12px;text-decoration:none;">← Full Protocol</a>
-  <a href="Parkinsons_Shopping_Table.html" style="color:var(--sage-nav);font-size:12px;text-decoration:none;">🛒 Shopping List →</a>
+
+<section style="background:var(--bg-deep);border-top:1px solid var(--border);">
+  <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:var(--ink-ghost);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html" style="font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Home</a>
+    </div>
+  </div>
 </footer>
 
+<script>
+function printPhase(phaseId) {
+  const phase = document.getElementById(phaseId);
+  if (!phase) return;
+
+  // Get the phase-divider that precedes this section
+  const divider = phase.previousElementSibling && 
+    phase.previousElementSibling.classList.contains('phase-divider') 
+    ? phase.previousElementSibling.outerHTML : '';
+
+  // Pull the main stylesheet
+  const styles = Array.from(document.styleSheets)
+    .map(s => { try { return Array.from(s.cssRules).map(r => r.cssText).join('\n'); } catch(e){ return ''; } })
+    .join('\n');
+
+  const win = window.open('', '_blank', 'width=900,height=700');
+  win.document.write(`
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Parkinson's Protocol — ${phase.querySelector('.phase-num') ? phase.querySelector('.phase-num').textContent : phaseId}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Jost:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+  <style>
+    ${styles}
+    body { padding: 24px; background: #f4efe6; }
+    nav, .print-bar, .phase-nav, .no-print, .phase-print-btn { display: none !important; }
+    body { padding-top: 0 !important; }
+    @media print {
+      nav, .print-bar, .phase-nav, .no-print, .phase-print-btn { display: none !important; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  ${divider}
+  ${phase.outerHTML}
+  <script>window.onload = function(){ window.print(); window.close(); }<\/script>
+</body>
+</html>`);
+  win.document.close();
+}
+</script>
 </body>
 </html>
