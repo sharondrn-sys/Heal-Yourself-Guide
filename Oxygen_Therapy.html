@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oxygen Therapy Protocol — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+  --nav-h:56px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);padding-top:var(--nav-h);}
+
+/* TOP NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+@media(max-width:400px){.nav-center{display:none;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+
+/* SECTION NAV */
+.jump-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.jump-nav::-webkit-scrollbar{display:none;}
+.jump-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.jump-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
+.jump-nav a:hover{color:var(--sage);border-bottom-color:var(--sage-mid);}
+.jn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(61,107,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
+.eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--honey);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,54px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:14px;max-width:780px;margin-left:auto;margin-right:auto;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:600px;margin:0 auto 44px;line-height:1.75;}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+.stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--sage);display:block;}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+
+/* LAYOUT */
+.sec{padding:64px 24px;}
+.sec-warm{background:var(--bg-warm);}
+.sec-bg{background:var(--bg);}
+.sec-deep{background:var(--bg-deep);}
+.sec-stone{background:var(--bg-stone);}
+.sec-sage{background:var(--sage-pale);}
+.sec-honey{background:var(--honey-pale);}
+.sec-terra{background:var(--terra-pale);}
+.inner{max-width:760px;margin:0 auto;}
+.inner-wide{max-width:960px;margin:0 auto;}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:32px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+.kicker-honey{color:var(--honey);}
+.kicker-honey::before{background:var(--honey);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--sage);line-height:1.3;margin:32px 0 12px;}
+.lh3:first-child{margin-top:0;}
+.lh3-terra{color:var(--terra);}
+.lh3-honey{color:var(--honey);}
+.lp{font-size:15px;line-height:1.85;color:var(--ink-mid);margin-bottom:16px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+.lp a{color:var(--sage);text-underline-offset:3px;}
+
+/* PULL QUOTES */
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq-text{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:8px;}
+.pq-attr{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra .pq-attr{color:var(--terra);}
+.pq-honey{border-left-color:var(--honey);background:var(--honey-pale);}
+.pq-honey .pq-attr{color:var(--honey);}
+
+/* WARNING BOXES */
+.warn-box{background:#fff3cd;border:1px solid #d4a017;border-left:4px solid #d4a017;border-radius:6px;padding:16px 20px;margin:20px 0;}
+.warn-box .warn-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7a5500;margin-bottom:6px;}
+.warn-box .warn-text{font-size:14px;line-height:1.7;color:#5a3d00;}
+.critical-box{background:#fde8e8;border:1px solid #c0392b;border-left:4px solid #c0392b;border-radius:6px;padding:16px 20px;margin:20px 0;}
+.critical-box .warn-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7a1010;margin-bottom:6px;}
+.critical-box .warn-text{font-size:14px;line-height:1.7;color:#5a1010;}
+.note-box{background:var(--sage-pale);border:1px solid var(--border);border-left:4px solid var(--sage-mid);border-radius:6px;padding:16px 20px;margin:20px 0;}
+.note-box .warn-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+.note-box .warn-text{font-size:14px;line-height:1.7;color:var(--ink-mid);}
+
+/* CHECKLIST */
+.checklist{list-style:none;margin:16px 0 24px;}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border-s);font-size:15px;line-height:1.7;color:var(--ink-mid);}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:'✓';color:var(--sage-mid);font-weight:700;flex-shrink:0;margin-top:2px;}
+.checklist li strong{color:var(--ink);font-weight:600;}
+.checklist-cross li::before{content:'✗';color:#c0392b;}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;margin:24px 0;}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--sage-mid),var(--sage-light));}
+.tl-item{position:relative;margin-bottom:24px;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg-warm);border:2px solid var(--sage-mid);}
+.tl-year{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--honey);margin-bottom:4px;letter-spacing:0.08em;}
+.tl-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.tl-body{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+
+/* THERAPY CARDS */
+.therapy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:24px 0;}
+.therapy-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;}
+.therapy-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.tc-green::before{background:linear-gradient(to right,var(--sage),var(--sage-light));}
+.tc-honey::before{background:linear-gradient(to right,var(--honey),var(--terra-light));}
+.tc-terra::before{background:linear-gradient(to right,var(--terra),var(--terra-light));}
+.tc-deep::before{background:linear-gradient(to right,var(--ink-mid),var(--ink-light));}
+.tc-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:8px;}
+.tc-green .tc-label{color:var(--sage);}
+.tc-honey .tc-label{color:var(--honey);}
+.tc-terra .tc-label{color:var(--terra);}
+.tc-deep .tc-label{color:var(--ink-light);}
+.tc-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+.tc-body{font-size:14px;line-height:1.75;color:var(--ink-mid);}
+.tc-evidence{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-top:14px;padding-top:12px;border-top:1px solid var(--border-s);}
+.tc-green .tc-evidence{color:var(--sage);}
+.tc-honey .tc-evidence{color:var(--honey);}
+.tc-terra .tc-evidence{color:var(--terra);}
+
+/* DOSING TABLE */
+.dose-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.dose-table th{background:var(--bg-nav);color:#d4c9a8;padding:10px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;}
+.dose-table td{padding:9px 14px;border-bottom:1px solid var(--border-s);color:var(--ink-mid);font-family:'DM Mono',monospace;}
+.dose-table tr:last-child td{border-bottom:none;}
+.dose-table tr:nth-child(even) td{background:rgba(244,239,230,0.5);}
+.dose-table td:first-child{font-weight:600;color:var(--sage);}
+
+/* GRADES TABLE */
+.grade-grid{display:grid;gap:12px;margin:20px 0;}
+.grade-row{display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:start;padding:14px 16px;background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;}
+.grade-label{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:var(--honey);}
+.grade-body{font-size:14px;color:var(--ink-mid);line-height:1.6;}
+.grade-body strong{color:var(--ink);}
+
+/* PRINT */
+.print-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--ink-light);padding:9px 18px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:20px;}
+.print-btn:hover{border-color:var(--sage-mid);color:var(--sage);}
+@media print{.print-btn,.jump-nav,nav{display:none!important;}.hero{padding-top:20px!important;}}
+
+/* PROTOCOL LINK CARD */
+.proto-link{display:flex;align-items:center;gap:16px;background:var(--bg-nav);border-radius:10px;padding:20px 24px;text-decoration:none;transition:opacity 0.2s;margin:12px 0;}
+.proto-link:hover{opacity:0.85;}
+.proto-link .pl-icon{font-size:24px;flex-shrink:0;}
+.proto-link .pl-label{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:3px;}
+.proto-link .pl-title{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;}
+.proto-link .pl-arrow{margin-left:auto;color:var(--sage-nav);font-size:20px;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:var(--bg-footer);padding:40px 24px;}
+footer a{color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+footer a:hover{color:#d4c9a8;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center"><a href="index.html">Home</a></div>
+  <div class="nav-dropdown" id="mainDrop">
+    <button class="nav-dropdown-toggle" onclick="document.getElementById('mainDrop').classList.toggle('open')">
+      Protocols
+      <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="nav-dropdown-menu">
+      <div class="dd-group">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <div class="dd-subs">
+          <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <div class="dd-subs">
+          <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+        <div class="dd-subs">
+          <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+        <div class="dd-subs">
+          <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+          <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+          <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+        </div>
+      </div>
+      <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+      <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+      <div class="dd-group">
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+        <div class="dd-subs">
+          <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
+        </div>
+      </div>
+      <a href="protocols.html"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>🫁 Oxygen Therapy Protocol</span></div>
+  <h1>Oxygen Therapy<br><em>The Terrain They Don't Want You to Change</em></h1>
+  <p class="hero-sub">Disease-causing microorganisms are anaerobic. They thrive where oxygen is absent. What happens when you flood the body with it? That question has been answered — and then suppressed — for over 170 years.</p>
+  <div class="hero-stats">
+    <div><span class="stat-num">1931</span><span class="stat-label">Warburg Nobel Prize</span></div>
+    <div><span class="stat-num">15,000+</span><span class="stat-label">European doctors using it</span></div>
+    <div><span class="stat-num">6,100+</span><span class="stat-label">Published studies</span></div>
+    <div><span class="stat-num">170 yrs</span><span class="stat-label">Of documented use</span></div>
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+    <a href="#warburg"><span class="jn-dot"></span>The Science</a>
+    <a href="#history"><span class="jn-dot"></span>History</a>
+    <a href="#suppression"><span class="jn-dot"></span>Suppression</a>
+    <a href="#therapies"><span class="jn-dot"></span>The Three Therapies</a>
+    <a href="#h2o2"><span class="jn-dot"></span>Hydrogen Peroxide</a>
+    <a href="#grades"><span class="jn-dot"></span>Grades & Safety</a>
+    <a href="#protocol"><span class="jn-dot"></span>How to Use</a>
+    <a href="#inhalation"><span class="jn-dot"></span>Inhalation Method</a>
+    <a href="#ozone"><span class="jn-dot"></span>Ozone Therapy</a>
+    <a href="#hbot"><span class="jn-dot"></span>Hyperbaric Oxygen</a>
+    <a href="#budget"><span class="jn-dot"></span>Budget Options</a>
+  </div>
+</div>
+
+<!-- THE SCIENCE — WARBURG -->
+<section id="warburg" class="sec sec-bg">
+  <div class="inner">
+    <div class="kicker">The Foundation</div>
+    <h2 class="lh2">Otto Warburg and the Oxygen Discovery That Changed Everything</h2>
+
+    <p class="lp">In 1931, German biochemist Otto Warburg received the Nobel Prize in Physiology and Medicine for his discovery that cancer cells use fermentation — not aerobic (oxygen-based) respiration — as their primary energy source. Normal, healthy cells burn oxygen for energy. Cancer cells, when deprived of sufficient oxygen, switch to a primitive fermentation pathway. This is now called the Warburg Effect, and it is one of the most studied and replicated findings in cancer biology.</p>
+
+    <div class="pq pq-honey">
+      <div class="pq-text">"The prime cause of cancer is the replacement of the respiration of oxygen in normal body cells by a fermentation of sugar. All normal body cells meet their energy needs by respiration of oxygen; cancer cells meet their energy needs in great part by fermentation."</div>
+      <div class="pq-attr">— Otto Warburg, Nobel Prize in Physiology, Science journal 1956</div>
+    </div>
+
+    <p class="lp">Warburg went further. His decades of subsequent research suggested that cellular oxygen deprivation is not just a consequence of cancer — it is a precondition for it. In his 1966 lecture at Lindau, he stated plainly: <em>"Deprive a cell 35% of its oxygen for 48 hours and it may become cancerous."</em> He argued that if the primary cause of cancer is insufficient cellular oxygen, then systematically increasing cellular oxygenation should logically reverse the conditions that permit cancer to develop.</p>
+
+    <p class="lp">This insight extends beyond cancer. Virtually all pathogenic microorganisms — viruses, harmful bacteria, fungi, parasites — are anaerobic to varying degrees. They are adapted to survive and multiply in low-oxygen environments. A body that maintains high tissue oxygen levels creates a cellular terrain that is systematically hostile to disease. Louis Pasteur, on his deathbed, is reported to have recanted his own germ theory: <em>"The microbe is nothing. The terrain is everything."</em> The terrain Pasteur meant is the internal environment of the body — and at its core, that means oxygenation.</p>
+
+    <p class="lp">This is not a fringe idea. The FDA itself approved hyperbaric oxygen therapy for multiple indications. Modern oncology uses oxygen-activating mechanisms in both radiation and certain chemotherapy drugs. Interferon drugs prescribed for multiple sclerosis work in part by raising systemic oxygen levels. The pharmaceutical industry builds expensive therapies on oxygen chemistry — it simply prefers that the public not access the direct version for 1.5 cents a day.</p>
+
+    <h3 class="lh3">How Oxygen Deficiency Happens</h3>
+    <ul class="checklist">
+      <li><strong>Air pollution</strong> — urban air can contain as little as 10% oxygen vs the 20% ideal. Shallow breathing in polluted air compounds this.</li>
+      <li><strong>Processed and overcooked food</strong> — cooking and industrial processing destroys the oxygen content of fresh foods. Raw, living foods carry dissolved oxygen; shelf-stable processed foods carry none.</li>
+      <li><strong>Sedentary lifestyle</strong> — the body's ability to utilise oxygen depends on cardiovascular capacity and mitochondrial density. Both decline sharply with inactivity.</li>
+      <li><strong>Antibiotic overuse</strong> — destroys aerobic gut bacteria that contribute to systemic oxygen production pathways and gut-based oxygenation.</li>
+      <li><strong>Chlorinated tap water</strong> — chlorine strips dissolved oxygen from water and disrupts gut microbiome balance.</li>
+      <li><strong>Chronic stress</strong> — sustained sympathetic nervous system activation causes cells to enter a self-protective closed state, reducing their ability to absorb and utilise oxygen even when it is present. This is the most underrated mechanism — and the reason stress alone can sustain illness even in people doing everything else right.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker kicker-honey">170 Years of Evidence</div>
+    <h2 class="lh2">A History That Keeps Getting Buried</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1783</div>
+        <div class="tl-title">First recorded use of oxygen as medicine</div>
+        <div class="tl-body">French physician Caillens successfully treats a female patient with daily oxygen inhalations, curing her of tuberculosis (then called phthisis). Published in the Gazette de Santé.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1857</div>
+        <div class="tl-title">The Lancet: patients need more oxygen than air provides</div>
+        <div class="tl-body">Dr S.B. Birch publishes in The Lancet that diseased patients require "more oxygen than can possibly be obtained under many circumstances from the atmosphere around them" — and that oxygen may be a powerful therapeutic agent.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1880s–1910s</div>
+        <div class="tl-title">India: hydrogen peroxide in drinking water cures cholera and malaria</div>
+        <div class="tl-body">Throughout British colonial India, hydrogen peroxide added in minute amounts to drinking water was documented curing conditions ranging from common colds to cholera and malaria. British pharmaceutical interests hired a journalist posing as a doctor to fabricate a story about a child dying of brain damage from H₂O₂ — the misinformation was effective and the practice was abandoned in favour of British drugs. This is documented in colonial health records.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1920</div>
+        <div class="tl-title">World War I: intravenous H₂O₂ for pneumonia</div>
+        <div class="tl-body">British physician T.H. Oliver, treating Indian patients critically ill with pneumonia, uses intravenous hydrogen peroxide infusion. He reduces mortality from 80% to 48% — a dramatic result documented in medical literature. This remains the most significant early clinical data on IV H₂O₂.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1931</div>
+        <div class="tl-title">Warburg Nobel Prize — the oxygen-cancer connection confirmed</div>
+        <div class="tl-body">The Nobel Committee awards Warburg the Prize in Physiology for proving that cancer cells operate via anaerobic fermentation in the absence of adequate oxygen. The implications for oxygen therapy are direct — and largely unaddressed by mainstream medicine for the following 90 years.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1940s</div>
+        <div class="tl-title">Father Richard Willhelm founds ECHO</div>
+        <div class="tl-body">Father Willhelm creates the Educational Concern for Hydrogen Peroxide (ECHO) to document and disseminate H₂O₂ therapeutic use. His work focuses on skin diseases, polio, and mental illness from bacterial infection. Pharmaceutical drugs become dominant in the same decade, eclipsing oxygen therapy in medical education.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1950s</div>
+        <div class="tl-title">Rat tumours dissolve in H₂O₂ water</div>
+        <div class="tl-body">Dr. Reginald Holman documents that rats with cancerous tumours, given drinking water with 0.45% hydrogen peroxide, experience complete tumour disappearance within 15 to 60 days. Not replicated in large human trials — never funded for replication.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1960s–present</div>
+        <div class="tl-title">Europe adopts, America suppresses</div>
+        <div class="tl-body">Germany, Russia, Cuba, Austria, Italy and Mexico integrate bio-oxidative therapies into mainstream medicine. Over 15,000 European doctors, naturopaths and homeopaths administer ozone and H₂O₂ to millions of patients. In the United States, the number practising these therapies never exceeds 500. Physicians who speak publicly about the benefits have been ridiculed, had licences threatened, and in some cases had clinics closed.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1986–87</div>
+        <div class="tl-title">The Medizone case: ozone cures AIDS, then FDA stalls</div>
+        <div class="tl-body">New York's Medizone Company receives FDA permission to experiment with ozone therapy on AIDS patients. In vitro results: the AIDS virus is completely destroyed with no toxicity. The company is in the process of receiving permission for human trials in 1987. The FDA unexpectedly stalls the process. In that same year, Burroughs Wellcome's AZT — the first HIV drug, filed for patent in 1985 — receives FDA approval. No confirmed explanation for the Medizone delay has ever been given. The stall kept ozone therapy out of public awareness during the peak of the AIDS crisis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPRESSION -->
+<section id="suppression" class="sec sec-deep">
+  <div class="inner">
+    <div class="kicker kicker-terra">Why You Haven't Heard of This</div>
+    <h2 class="lh2">The Economics of Suppression</h2>
+
+    <p class="lp">Ozone and hydrogen peroxide are non-patentable. They cost almost nothing to produce. No pharmaceutical company can own them, and no one can charge $50,000 a course for them. In a medical system where profit is the primary organising principle, this makes them structurally invisible. The incentive to fund trials, train physicians, or include these therapies in medical school curricula simply does not exist.</p>
+
+    <p class="lp">This is not conspiracy — it is economics. The pharmaceutical industry spent approximately $100 million per year in lobbying expenses in the early 2000s, with pharmaceutical lobbyists outnumbering Congressmen 2 to 1. Over 1,500 pharmaceutical bills were placed before the House of Representatives over 8 years — the drug companies got what they wanted on virtually every one. In this environment, a therapy that costs 1.5 cents per day and requires no prescription represents not just a lost sale, but a systemic threat.</p>
+
+    <div class="pq pq-terra">
+      <div class="pq-text">"Since 1992, I realised how the scepticism and diffidence against ozone therapy was diffused in the academic world. The FDA's prohibition was based on the dogma that ozone is always toxic — this is an absurd and antiscientific idea. Today we have a million reasons for saying it is totally wrong."</div>
+      <div class="pq-attr">— Velio Bocci, Professor of Physiology, University of Siena — PMC peer-reviewed article on ozone therapy</div>
+    </div>
+
+    <p class="lp">The pattern is identical to what happened to DMSO, Laetrile, and dozens of other non-patentable therapies: not disproved, not dangerous — just structurally abandoned. The evidence accumulates in journals. European practitioners keep using these therapies. American patients keep dying of conditions that respond to them. The regulatory wall holds.</p>
+
+    <div class="note-box">
+      <div class="warn-title">This does not mean everything is a cure</div>
+      <div class="warn-text">Suppression of oxygen therapy is real and documented. That does not mean it cures every disease, or that every claim made about it is accurate. The honest position: the evidence base is strong for anaerobic infections and certain cancers; promising but incomplete for others; and absent for some of the broader claims. This page reflects that distinction throughout.</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE THREE THERAPIES -->
+<section id="therapies" class="sec sec-stone">
+  <div class="inner">
+    <div class="kicker">The Three Forms</div>
+    <h2 class="lh2">Hydrogen Peroxide · Ozone · Hyperbaric Oxygen</h2>
+    <p class="lp">Oxygen therapy covers three distinct approaches, each with different mechanisms, evidence bases, accessibility, and risk profiles. Understanding which form is appropriate for which situation is the beginning of using this protocol responsibly.</p>
+
+    <div class="therapy-grid">
+      <div class="therapy-card tc-green">
+        <div class="tc-label">Most Accessible</div>
+        <div class="tc-title">💧 Hydrogen Peroxide (H₂O₂)</div>
+        <div class="tc-body">Water with one extra oxygen atom. When absorbed by the body — orally, via inhalation, or through skin — it releases that extra atom into the bloodstream, creating a flood of bioavailable oxygen. Used for 170 years. Costs pennies per day. Can be self-administered at home in multiple forms. Requires careful handling at concentration; diluted to therapeutic levels it is well-tolerated by most people.</div>
+        <div class="tc-evidence">Evidence: Strong historical + clinical; ongoing anecdotal use by millions</div>
+      </div>
+      <div class="therapy-card tc-honey">
+        <div class="tc-label">Most Powerful</div>
+        <div class="tc-title">⚡ Ozone Therapy (O₃)</div>
+        <div class="tc-body">A three-atom form of oxygen. The third atom is highly reactive — it oxidises pathogens on contact, stimulates mitochondrial function, and activates antioxidant defences. Major autohemotherapy (blood ozonation) is standard practice in Germany, Russia, Italy, Cuba. Over 33 major diseases documented as responding. Requires equipment and ideally a trained practitioner for intravenous forms. Ozonated water and ozonated oils are accessible at home.</div>
+        <div class="tc-evidence">Evidence: Strong European clinical data; 6,100+ published studies; limited US trials due to regulatory suppression</div>
+      </div>
+      <div class="therapy-card tc-terra">
+        <div class="tc-label">Most Clinically Documented</div>
+        <div class="tc-title">🏥 Hyperbaric Oxygen Therapy (HBOT)</div>
+        <div class="tc-body">Breathing 100% oxygen at 1.5–3 atmospheres absolute pressure. Under pressure, oxygen dissolves into blood plasma directly — not just haemoglobin — supersaturating tissues. The only form with multiple FDA-approved indications. Strongest evidence for TBI, stroke recovery, wound healing, and radiation damage. Growing evidence for neurological conditions. Expensive (USD $150–300 per session) and requires specialist facilities, but the evidence base is the most mainstream of the three.</div>
+        <div class="tc-evidence">Evidence: Multiple RCTs; FDA-approved for 14 conditions; 2024 meta-analysis confirms TBI cognitive benefit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HYDROGEN PEROXIDE DEEP DIVE -->
+<section id="h2o2" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker">Hydrogen Peroxide</div>
+    <h2 class="lh2">H₂O₂ — What It Is, Why It Works, What the Body Does With It</h2>
+
+    <p class="lp">Hydrogen peroxide (H₂O₂) is not an exotic laboratory chemical. It is a naturally occurring molecule found in every living system on earth. Your own immune cells produce it. When granulocytes — the white blood cells that are your first line of defence against every invading pathogen — encounter a threat, they produce hydrogen peroxide to destroy it. This is called oxidative burst, and it is one of the most fundamental mechanisms of immune defence known to biology.</p>
+
+    <p class="lp">Mother's breast milk contains hydrogen peroxide — highest in colostrum, the first milk. This is thought to be one of the key reasons breastfed infants have significantly stronger immune systems. Rainwater contains trace H₂O₂, formed when UV light acts on atmospheric oxygen. The famous healing springs at Lourdes, France, and the Hunza valley in the Himalayas — both associated with exceptional health outcomes — have been found to have unusually high naturally-occurring hydrogen peroxide levels.</p>
+
+    <p class="lp">When food-grade hydrogen peroxide is taken internally in therapeutic dilutions, it does what the immune system does naturally, but at scale: it releases bioavailable oxygen into the bloodstream, creating an environment hostile to anaerobic pathogens while nourishing healthy aerobic cells. Normal cells have an enzyme coating (catalase) that protects them from oxidation. Anaerobic bacteria, viruses, and most pathogens lack this protection and are oxidised on contact.</p>
+
+    <h3 class="lh3">What H₂O₂ Has Been Documented to Address</h3>
+    <p class="lp">Over 15,000 European doctors have administered H₂O₂ to patients for conditions including:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:16px 0 24px;">
+      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Respiratory infections<br>Emphysema / COPD<br>Asthma support<br>Sinusitis<br>Influenza / viral infections</div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Gum disease<br>Candidiasis / fungal<br>Herpes simplex/zoster<br>Bacterial infections<br>Parasitic infections</div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Cancer (adjunct)<br>Cardiovascular disease<br>Diabetes Type II<br>Arthritis<br>Multiple sclerosis</div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Chronic fatigue<br>Migraine / headaches<br>Skin conditions / acne<br>Wound healing<br>Alcoholism support</div>
+    </div>
+
+    <div class="warn-box">
+      <div class="warn-title">⚠️ Who Should NOT Use H₂O₂ Internally</div>
+      <div class="warn-text">
+        <strong>Organ transplant recipients</strong> — H₂O₂ stimulates the immune system, which may attack the transplanted organ as foreign tissue.<br><br>
+        <strong>People on cisplatin or platinum-based chemotherapy</strong> — oxidative reactions may interfere with treatment.<br><br>
+        <strong>Pregnant women</strong> — insufficient safety data for internal use during pregnancy.<br><br>
+        <strong>Children under 12</strong> — concentrated H₂O₂ is particularly dangerous if mishandled around children; dosing is not established for paediatric use.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRADES & SAFETY -->
+<section id="grades" class="sec sec-bg">
+  <div class="inner">
+    <div class="kicker kicker-terra">Critical Safety Information</div>
+    <h2 class="lh2">Grades of H₂O₂ — Only One Is for Internal Use</h2>
+
+    <p class="lp">This distinction is non-negotiable. The grade you use determines both safety and efficacy. Get this wrong and you introduce synthetic stabilisers directly into your bloodstream.</p>
+
+    <div class="grade-grid">
+      <div class="grade-row">
+        <div class="grade-label">3% Pharmaceutical</div>
+        <div class="grade-body"><strong>Drugstore grade. External use only.</strong> Contains stabilisers including acetanilide, phenol, sodium stannate, and tetrasodium phosphate. These should not be ingested. Safe for topical wound care, teeth whitening, and oral rinse.</div>
+      </div>
+      <div class="grade-row">
+        <div class="grade-label">6% Beautician</div>
+        <div class="grade-body"><strong>Hair bleaching grade. Not for internal use.</strong> Contains stabilisers and bleach agents.</div>
+      </div>
+      <div class="grade-row">
+        <div class="grade-label">30–32% Electronic</div>
+        <div class="grade-body"><strong>Industrial/electronics cleaning. Not for internal use.</strong> Contains stabilisers, not purified for biological use.</div>
+      </div>
+      <div class="grade-row" style="border:1px solid var(--sage-mid);background:var(--sage-pale);">
+        <div class="grade-label" style="color:var(--sage);font-weight:700;">35% Food Grade ✓</div>
+        <div class="grade-body"><strong>The only grade appropriate for internal therapeutic use.</strong> No synthetic stabilisers. Used commercially to sanitise food production equipment, sterilise juice packaging, and preserve dairy. Must be diluted before any internal use — 35% concentration causes burns on contact with skin and is dangerous if ingested undiluted. Handle with gloves. Store in freezer, labelled clearly, out of reach of children.</div>
+      </div>
+      <div class="grade-row">
+        <div class="grade-label">90%</div>
+        <div class="grade-body"><strong>Rocket fuel grade. No therapeutic application.</strong></div>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      <div class="warn-title">⚠️ The Real Risk — From Peer-Reviewed Medical Literature</div>
+      <div class="warn-text">Concentrated hydrogen peroxide (35%) ingested incorrectly is documented in peer-reviewed emergency medicine literature as causing venous gas embolism, haemorrhagic gastritis, gastrointestinal bleeding, and death. A 2022 systematic review analysed 126 reported cases — 17 deaths occurred, 13 associated with high-concentration exposures. Most serious events were accidental ingestions of undiluted or insufficiently diluted product. Properly diluted therapeutic protocols — e.g. 3 drops of 35% in 8oz distilled water — bring the final concentration to approximately 0.1%, which is in a completely different risk category. The risk is real at concentration, and minimal at correct therapeutic dilution. Both truths must be held together. Do not let the risk of concentrated H₂O₂ make you dismiss the safety of diluted therapeutic use — and do not let enthusiasm for the therapy make you dismiss the need for exact dilution.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNAL PROTOCOL -->
+<section id="protocol" class="sec sec-stone">
+  <div class="inner">
+    <div class="kicker">Oral Protocol</div>
+    <h2 class="lh2">The Escalating Drops Protocol — Carefully</h2>
+
+    <button class="print-btn" onclick="window.print()">🖨 Print This Protocol</button>
+
+    <p class="lp">The oral internal protocol is based on decades of practitioner experience, most thoroughly documented by Dr. David Williams and Dr. William Campbell Douglass. It uses 35% food-grade hydrogen peroxide, diluted in distilled water (never tap — chlorine reacts with H₂O₂), taken on an empty stomach at least one hour before or three hours after eating.</p>
+
+    <div class="warn-box">
+      <div class="warn-title">Before You Begin</div>
+      <div class="warn-text">Use only distilled water. Never tap, filtered, or mineral water — chlorine and minerals react with H₂O₂. Take on an empty stomach only — H₂O₂ reacts with food bacteria in the stomach, causing excessive foaming and nausea. Store 35% in a clearly labelled glass bottle in the freezer, out of children's reach. Never ingest undiluted at any concentration above approximately 3%.</div>
+    </div>
+
+    <table class="dose-table">
+      <tr><th>Day</th><th>Drops of 35% H₂O₂</th><th>In 8oz Distilled Water</th><th>Times Daily</th></tr>
+      <tr><td>1–2</td><td>3</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>3–4</td><td>5</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>5–6</td><td>7</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>7–8</td><td>9</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>9–10</td><td>11</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>11–12</td><td>13</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>13–14</td><td>15</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>15–16</td><td>17</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>17–18</td><td>19</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>19–21</td><td>21–25</td><td>240ml</td><td>3×</td></tr>
+      <tr><td>Maintenance</td><td>3–5</td><td>240ml</td><td>3×</td></tr>
+    </table>
+
+    <p class="lp">After reaching 25 drops, reduce by one drop per day back down to a maintenance dose of 3–5 drops three times daily. For serious conditions, some practitioners maintain 25 drops twice daily for up to six months before tapering. Do not rush the escalation — the gradual build is intentional and allows the body to adjust.</p>
+
+    <h3 class="lh3">The Taste Problem</h3>
+    <p class="lp">At higher drop counts, the solution tastes strongly of bleach. Some people find this genuinely difficult. Solutions: dilute in a full 8–12oz of water rather than less; add aloe vera gel (pure, no additives) as a natural flavour buffer; dilute in a small amount of watermelon juice or coconut water. Do not use fruit juice with pulp — bacteria in the juice react with H₂O₂.</p>
+
+    <h3 class="lh3">What to Expect</h3>
+    <ul class="checklist">
+      <li><strong>Detox reaction (Herxheimer response)</strong> — some people experience nausea, fatigue, loose stools, or flu-like symptoms during the escalation phase. This is the body processing dead pathogenic cells and mobilising toxins. It is more common in people with significant pathogen load. Reduce the dosage by a step or two if this is severe, but do not stop entirely.</li>
+      <li><strong>Skin breakout</strong> — some users experience temporary acne or boils as toxins exit through the skin. Usually resolves within days.</li>
+      <li><strong>Increased energy</strong> — many people report a noticeable increase in energy and clarity, sometimes within the first week. This is the mitochondrial oxygen boost in action.</li>
+      <li><strong>Nausea from food proximity</strong> — if you accidentally take H₂O₂ within two hours of eating, nausea and foaming will result. Not dangerous but unpleasant. Always on empty stomach.</li>
+    </ul>
+
+    <div class="note-box">
+      <div class="warn-title">💰 Budget Note</div>
+      <div class="warn-text">35% food-grade hydrogen peroxide costs approximately $13 for a 16oz bottle. The maintenance dose of 3 drops three times daily costs approximately 1.5 cents per day. The full escalation protocol costs under 12 cents per day at maximum dose. This is one of the most affordable therapies on this entire site.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INHALATION METHOD -->
+<section id="inhalation" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker kicker-honey">The Inhalation Method</div>
+    <h2 class="lh2">Bill Munro's Method — Direct Delivery to the Lungs</h2>
+
+    <p class="lp">Bill Munro of Waterford, Michigan, developed and documented a simple inhalation method using a nasal spray pump filled with 3% hydrogen peroxide solution. He used this method for over 13 years and reported using it during a simultaneous bout with melanoma and prostate cancer. His self-reported outcomes are anecdotal — but the method has been adopted by hundreds of thousands of people globally, with substantial positive testimony particularly for respiratory conditions, colds, flu, and sinusitis.</p>
+
+    <p class="lp">The inhalation method delivers H₂O₂ directly to the mucous membranes of the mouth, throat, and lungs — the primary interface where respiratory pathogens establish themselves. At 3% concentration, the H₂O₂ is absorbed through the lung tissue into the bloodstream, providing both local antimicrobial action and systemic oxygenation. It avoids the gastric reaction that oral ingestion sometimes causes.</p>
+
+    <h3 class="lh3">How to Do It — Nasal Spray Method</h3>
+    <ul class="checklist">
+      <li><strong>Use only 3% food-grade H₂O₂</strong> (dilute 35% food-grade: 1 part H₂O₂ to 11 parts distilled water). Do NOT use the 3% drugstore pharmaceutical grade — it contains synthetic stabilisers.</li>
+      <li><strong>Fill a clean nasal spray pump</strong> with the 3% solution. Wash a purchased pump thoroughly before use, or purchase a clean empty spray bottle.</li>
+      <li><strong>Open your mouth wide</strong>, direct the spray to the back of the throat, and pump 5–10 times while inhaling deeply to draw the mist into the lungs.</li>
+      <li><strong>Frequency:</strong> Morning and night for maintenance. Every 4–6 hours at first sign of illness. Every 2 hours during active viral infection. Most users report viral symptoms resolving within 36–48 hours.</li>
+      <li><strong>Nebuliser option:</strong> 3ml of 3% food-grade H₂O₂ in a standard nebuliser is a more thorough method, delivering a fine mist deeper into the airways. Used by practitioners for respiratory conditions including COPD and emphysema. Some add 1 drop of Lugol's iodine to the nebuliser solution for added antimicrobial effect.</li>
+    </ul>
+
+    <div class="warn-box">
+      <div class="warn-title">Caution — Start Low</div>
+      <div class="warn-text">Some people find the 3% solution strong for direct inhalation and prefer to dilute further: 1 part 3% solution to 1 part distilled water (giving approximately 1.5%). Start with fewer pumps and work up. People with reactive airways or COPD should begin with the most dilute version and assess carefully. If throat tightening or significant coughing occurs, dilute further or discontinue.</div>
+    </div>
+
+    <h3 class="lh3">Topical Uses of 3% H₂O₂</h3>
+    <ul class="checklist">
+      <li><strong>Oral rinse and teeth</strong> — 3% H₂O₂ used as a mouthwash addresses gum disease, bacterial infections, and whitens teeth. Dentist Dr. Paul Cummings (University of North Carolina) reported a 98% success rate treating 1,000 periodontal patients with H₂O₂ therapy, stating it was more effective than surgery.</li>
+      <li><strong>Skin conditions</strong> — apply 3% H₂O₂ with cotton ball to acne, fungal infections, and slow-healing wounds. Well-documented antimicrobial action.</li>
+      <li><strong>Bath soak</strong> — add 1–8 pints of 3% H₂O₂ to a warm bath. Absorbed transdermally. Some users report return of hair colour with regular use at 1 pint of 35% in a full tub — likely related to catalase enzyme interaction with melanin.</li>
+      <li><strong>Foot soak</strong> — 3% H₂O₂ full strength in a foot bath for athlete's foot and fungal conditions. Diabetics have used diluted foot baths (1 pint 3% per gallon warm water) for circulation support.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- OZONE THERAPY -->
+<section id="ozone" class="sec sec-deep">
+  <div class="inner">
+    <div class="kicker">Ozone Therapy</div>
+    <h2 class="lh2">O₃ — The European Standard That America Ignores</h2>
+
+    <p class="lp">Ozone (O₃) is a three-atom form of oxygen. The third oxygen atom is unstable and highly reactive — it oxidises pathogens, stimulates mitochondrial function, activates the antioxidant enzyme system, and creates a cascade of beneficial biochemical responses in blood and tissues. When ozone dissolves in the body, it releases the third atom, effectively flooding the area with reactive oxygen.</p>
+
+    <p class="lp">In Germany, Italy, Russia, Cuba, and Mexico, ozone therapy is mainstream medicine — not alternative. Hundreds of published studies confirm its effectiveness against a range of conditions. A 2025 PMC review describes ozone as a promising immunomodulatory adjunct for treating immunodeficiencies, with multiple randomised trials and mechanistic studies confirming its effects on cytokine regulation, macrophage function, and NK cell activity.</p>
+
+    <h3 class="lh3">Forms of Ozone Therapy</h3>
+
+    <div style="display:grid;gap:14px;margin:20px 0;">
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--honey);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Major Autohemotherapy (MAH) — Clinical Setting</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.75;">Blood is drawn from the patient, ozonated in a glass container, then reinfused intravenously. The ozonated blood is a vivid red — visually demonstrating the oxygen saturation. As ozone-strengthened blood disperses, it confers virucidal properties to the remaining blood, destroying pathogens systemically. Standard clinical practice in Germany. Requires a practitioner trained in bio-oxidative therapy.</p>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--sage);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Rectal Insufflation — Most Accessible Home Option</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.75;">Ozonated gas introduced rectally is rapidly absorbed through the intestinal mucosa into the portal circulation, providing near-systemic effects without IV access. Used widely in Europe and Latin America. Requires a medical-grade ozone generator. Lower cost than clinical MAH. Significant community of practitioners and patients self-administering with proper equipment and education.</p>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--sage-mid);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Ozonated Water — Home Use, Low Barrier</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.75;">Water ozonated with an ozone generator and consumed immediately. Ozone is not stable in water for long (degasses within minutes), so timing matters — drink within 5–10 minutes of ozonation. Used for gut infections, oral health, and general oxygenation. Inexpensive desktop ozone generators are widely available. The EPA recognises ozone as a water treatment agent that eliminates 99.99% of bacteria and viruses.</p>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:12px;font-weight:700;color:var(--terra);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;">Ozonated Oils — Topical, No Equipment Needed</div>
+        <p style="font-size:14px;color:var(--ink-mid);line-height:1.75;">Ozone dissolved in olive, sunflower, or coconut oil is stable enough for topical use and available pre-made online. Used for skin infections, chronic wounds, fungal conditions, and inflammation. The most accessible entry point for ozone therapy — no generator, no equipment, no clinical setting required. Very low cost.</p>
+      </div>
+    </div>
+
+    <div class="critical-box">
+      <div class="warn-title">⚠️ Ozone Gas Must NEVER Be Inhaled Directly</div>
+      <div class="warn-text">Ozone is toxic to lung tissue when inhaled directly. It causes pulmonary oedema and bronchial damage. ALL therapeutic ozone applications are into blood (IV), into the colon (rectally), into the ear, or applied topically in oil — never breathed directly as gas. This is not controversial. Even the most experienced ozone practitioners in Europe agree on this point absolutely. Any source suggesting direct inhalation of ozone gas is wrong.</div>
+    </div>
+
+    <p class="lp">To find a practitioner trained in ozone therapy, contact the International Bio-Oxidative Medicine Foundation or search for practitioners in your area through the German Society for Ozone Therapy (Deutsche Gesellschaft für Ozon-Anwendungen in Biologie und Medizin) or equivalent in your country.</p>
+  </div>
+</section>
+
+<!-- HYPERBARIC OXYGEN -->
+<section id="hbot" class="sec sec-sage">
+  <div class="inner">
+    <div class="kicker kicker-honey">Hyperbaric Oxygen Therapy</div>
+    <h2 class="lh2">HBOT — The Mainstream Oxygen Therapy That Can't Be Suppressed</h2>
+
+    <p class="lp">Hyperbaric oxygen therapy (HBOT) is the most clinically established form of oxygen therapy — the one even conventional medicine cannot fully ignore. It involves breathing 100% pure oxygen inside a pressurised chamber at 1.5–3 atmospheres absolute. Under this pressure, oxygen dissolves directly into blood plasma — not just haemoglobin — saturating tissues including damaged areas that haemoglobin-bound oxygen cannot reach effectively.</p>
+
+    <p class="lp">A 2024 review in Frontiers in Neurology (Bin-Alamer et al.) confirmed that HBOT promotes neuroplasticity through mitochondrial biogenesis, enhanced ATP production, VEGF/ERK-mediated neurogenesis, reduced inflammation, and synaptogenesis. A 2025 meta-analysis of TBI patients showed statistically significant improvements in cognitive function, memory, attention, executive function, information processing speed, and motor skills compared to baseline.</p>
+
+    <h3 class="lh3">FDA-Approved Indications</h3>
+    <ul class="checklist">
+      <li>Decompression sickness (diving)</li>
+      <li>Carbon monoxide poisoning</li>
+      <li>Gas gangrene</li>
+      <li>Radiation-induced tissue damage</li>
+      <li>Diabetic foot ulcers</li>
+      <li>Sudden hearing loss</li>
+      <li>Severe anaemia (where blood transfusion is refused)</li>
+      <li>Traumatic brain injury (acute)</li>
+      <li>Thermal burns</li>
+      <li>Crush injuries</li>
+    </ul>
+
+    <h3 class="lh3">Off-Label Conditions with Active Research (2024–2025)</h3>
+    <ul class="checklist">
+      <li><strong>Post-stroke recovery</strong> — Israeli trials (Efrati group) show significant neurological recovery even years post-stroke; HBOT appears to reactivate dormant neurons in the penumbra zone</li>
+      <li><strong>Traumatic brain injury — chronic</strong> — 2025 meta-analysis confirms cognitive improvements across four RCTs, 250 patients</li>
+      <li><strong>Post-COVID / Long COVID</strong> — multiple trials showing improvement in brain fog, fatigue, autonomic dysfunction</li>
+      <li><strong>Parkinson's disease</strong> — early clinical interest; reduces neuroinflammation markers; no large RCTs yet</li>
+      <li><strong>Autism spectrum</strong> — mixed evidence; some trials show improvement in communication and social behaviour</li>
+      <li><strong>Multiple sclerosis</strong> — active research; HBOT reduces demyelination markers in animal models</li>
+      <li><strong>Mild cognitive impairment</strong> — Israeli trials show reversal of cognitive decline biomarkers</li>
+      <li><strong>PTSD and treatment-resistant depression</strong> — preliminary trials with promising results</li>
+    </ul>
+
+    <h3 class="lh3">Practical Access</h3>
+    <p class="lp">Professional HBOT sessions cost USD $150–$300 per session at specialist facilities. Most neurological and chronic conditions require 40–80 sessions for documented benefit. This places full HBOT out of reach for many people. Soft hyperbaric chambers (mHBOT) at 1.3 atmospheres are available for home use at $3,000–$6,000 and provide meaningful benefit at lower cost, though at less pressure than hard chambers. Some practitioners consider 1.3 ATA with 95% oxygen concentrator-supplied O₂ (not 100% pure) a reasonable compromise for chronic use.</p>
+
+    <div class="note-box">
+      <div class="warn-title">💰 Budget Reality</div>
+      <div class="warn-text">Full HBOT is expensive. For people without access to HBOT, the most accessible oxygen therapy with a genuine evidence base is the H₂O₂ inhalation method — particularly via nebuliser for respiratory benefit, and the oral protocol for systemic effect. These are not equivalent to HBOT, but they are not without value either. Deep breathing practice, regular physical movement, and chlorophyll-rich foods (spirulina, chlorella, leafy greens) all support haemoglobin synthesis and oxygen utilisation at zero cost.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET OPTIONS -->
+<section id="budget" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker">💰 Accessible for Everyone</div>
+    <h2 class="lh2">Starting Oxygen Therapy on Any Budget</h2>
+
+    <p class="lp">Most of what makes this protocol powerful costs almost nothing. Start here before spending anything:</p>
+
+    <ul class="checklist">
+      <li><strong>Deep diaphragmatic breathing — free.</strong> 20 minutes of conscious deep breathing daily increases tissue oxygenation measurably, activates the parasympathetic nervous system (opening cells to receive oxygen), and costs nothing. This is the foundation before anything else. Most people in cities breathe at 30–40% of their lung capacity most of the time.</li>
+      <li><strong>Physical movement — free.</strong> Even a 30-minute walk outdoors significantly improves mitochondrial density and oxygen utilisation over time. Nature environments typically have higher oxygen content than urban interiors.</li>
+      <li><strong>Sun-charged clean water — very low cost.</strong> Placing water in a glass container in direct sunlight increases dissolved oxygen via photolysis. Water stored in dark or plastic containers loses dissolved oxygen over time.</li>
+      <li><strong>Chlorophyll-rich foods — very low cost.</strong> Spirulina, chlorella, dark leafy greens, and wheatgrass all support haemoglobin synthesis and oxygen-carrying capacity of blood. A tablespoon of spirulina daily costs pennies.</li>
+      <li><strong>35% food-grade H₂O₂ oral protocol — 1.5 cents per day</strong> at maintenance dose. The full escalation costs under 12 cents per day maximum. A 16oz bottle ($13 approximately) will last months at maintenance dose.</li>
+      <li><strong>H₂O₂ inhalation via nasal spray</strong> — the spray bottle is under $2 and a bottle of 35% food-grade H₂O₂ will last many months for inhalation use. One of the lowest-cost therapeutic interventions anywhere in this guide.</li>
+      <li><strong>Ozonated olive oil (topical)</strong> — available pre-made online for $15–30. No equipment required. Useful for skin, wounds, fungal infections, and oral health.</li>
+      <li><strong>Stress reduction — free.</strong> The appendix of the book this research draws from makes the most important point of all: if you are in chronic sympathetic nervous system activation (fight-or-flight mode), your cells are closed. They cannot receive oxygen regardless of how much you provide. Meditation, breathwork, time in nature, and addressing the beliefs that create chronic stress are not optional additions to this protocol. They may be the most important part.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LINK TO DMSO PAGE -->
+<section class="sec sec-deep">
+  <div class="inner">
+    <div class="kicker">Related Protocol</div>
+    <h2 class="lh2" style="margin-bottom:12px;">DMSO — The Other Suppressed Compound</h2>
+    <p class="lp">Oxygen therapy and DMSO therapy share the same suppression story: both are non-patentable, inexpensive, and effective. Both were actively blocked from US medicine by the FDA despite thousands of peer-reviewed studies. For people dealing with neurological conditions, pain, arthritis, or any condition where deep tissue penetration matters, DMSO and oxygen therapy are complementary.</p>
+    <a href="DMSO_Protocol.html" class="proto-link">
+      <span class="pl-icon">⚗️</span>
+      <div>
+        <div class="pl-label">Protocol</div>
+        <div class="pl-title">DMSO — Nature's Healer</div>
+      </div>
+      <span class="pl-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT THIS GUIDE -->
+<section style="background:var(--bg-deep);border-top:1px solid var(--border);">
+  <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('click',function(e){
+  const drop=document.getElementById('mainDrop');
+  if(drop&&!drop.contains(e.target))drop.classList.remove('open');
+});
+</script>
+</body>
+</html>

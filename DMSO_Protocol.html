@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMSO Protocol — Heal Yourself</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+  --nav-h:56px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
+
+/* TOP NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+@media(max-width:400px){.nav-center{display:none;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+body{padding-top:var(--nav-h);}
+
+/* SECTION NAV */
+.jump-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.jump-nav::-webkit-scrollbar{display:none;}
+.jump-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.jump-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
+.jump-nav a:hover{color:var(--sage);border-bottom-color:var(--sage-mid);}
+.jn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(140,90,60,0.07) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px;}
+.eyebrow::before{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:80px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--honey);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,56px);font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:14px;max-width:780px;margin-left:auto;margin-right:auto;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:580px;margin:0 auto 40px;line-height:1.75;}
+.hero-stats{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-bottom:0;}
+.stat-num{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--sage);display:block;}
+.stat-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-light);}
+
+/* SECTIONS */
+.sec{padding:64px 24px;}
+.sec-warm{background:var(--bg-warm);}
+.sec-bg{background:var(--bg);}
+.sec-deep{background:var(--bg-deep);}
+.sec-stone{background:var(--bg-stone);}
+.sec-terra{background:var(--terra-pale);}
+.sec-sage{background:var(--sage-pale);}
+.sec-honey{background:var(--honey-pale);}
+.inner{max-width:760px;margin:0 auto;}
+.inner-wide{max-width:960px;margin:0 auto;}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:32px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+.kicker-honey{color:var(--honey);}
+.kicker-honey::before{background:var(--honey);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,36px);font-weight:700;color:var(--ink);line-height:1.2;margin-bottom:20px;}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:600;color:var(--sage);line-height:1.3;margin:32px 0 12px;}
+.lh3:first-child{margin-top:0;}
+.lh3-terra{color:var(--terra);}
+.lp{font-size:15px;line-height:1.85;color:var(--ink-mid);margin-bottom:16px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+.lp-terra em{color:var(--terra);}
+
+/* PULL QUOTES */
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq-text{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:var(--ink);line-height:1.5;margin-bottom:8px;}
+.pq-attr{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra .pq-text{color:var(--ink);}
+.pq-terra .pq-attr{color:var(--terra);}
+.pq-honey{border-left-color:var(--honey);background:var(--honey-pale);}
+.pq-honey .pq-text{color:var(--ink);}
+
+/* WARNING / NOTE BOXES */
+.warn-box{background:#fff3cd;border:1px solid #d4a017;border-left:4px solid #d4a017;border-radius:6px;padding:16px 20px;margin:20px 0;}
+.warn-box .warn-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7a5500;margin-bottom:6px;}
+.warn-box .warn-text{font-size:14px;line-height:1.7;color:#5a3d00;}
+.critical-box{background:#fde8e8;border:1px solid #c0392b;border-left:4px solid #c0392b;border-radius:6px;padding:16px 20px;margin:20px 0;}
+.critical-box .warn-title{color:#7a1010;}
+.critical-box .warn-text{color:#5a1010;}
+.note-box{background:var(--sage-pale);border:1px solid var(--border);border-left:4px solid var(--sage-mid);border-radius:6px;padding:16px 20px;margin:20px 0;}
+.note-box .warn-title{color:var(--sage);}
+.note-box .warn-text{font-size:14px;line-height:1.7;color:var(--ink-mid);}
+
+/* CONCENTRATION TABLE */
+.conc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0;}
+.conc-card{background:var(--bg-warm);border:1px solid var(--border);border-radius:10px;padding:20px;position:relative;overflow:hidden;}
+.conc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.conc-card.c10::before{background:var(--sage-light);}
+.conc-card.c25::before{background:var(--sage-mid);}
+.conc-card.c50::before{background:var(--sage);}
+.conc-card.c70::before{background:var(--honey);}
+.conc-card.c99::before{background:var(--terra);}
+.conc-pct{font-family:'DM Mono',monospace;font-size:28px;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.conc-title{font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+.conc-body{font-size:13px;line-height:1.7;color:var(--ink-mid);}
+.conc-use{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-light);margin-top:10px;padding-top:10px;border-top:1px solid var(--border-s);}
+
+/* CHECKLIST */
+.checklist{list-style:none;margin:16px 0 24px;}
+.checklist li{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid var(--border-s);font-size:15px;line-height:1.7;color:var(--ink-mid);}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:'✓';color:var(--sage-mid);font-weight:700;flex-shrink:0;margin-top:1px;}
+.checklist li strong{color:var(--ink);font-weight:600;}
+.checklist-terra li::before{color:var(--terra-light);}
+.checklist-cross li::before{content:'✗';color:#c0392b;}
+
+/* APPLICATION TABLE */
+.app-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+.app-table th{background:var(--bg-nav);color:#d4c9a8;padding:10px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;}
+.app-table td{padding:11px 14px;border-bottom:1px solid var(--border-s);color:var(--ink-mid);vertical-align:top;line-height:1.6;}
+.app-table tr:last-child td{border-bottom:none;}
+.app-table tr:nth-child(even) td{background:rgba(244,239,230,0.5);}
+.app-table td:first-child{font-weight:600;color:var(--ink);}
+
+/* DILUTION GUIDE */
+.dil-row{display:grid;grid-template-columns:80px 1fr 1fr;gap:0;border-bottom:1px solid var(--border-s);padding:10px 0;}
+.dil-row:first-child{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-ghost);padding-bottom:8px;}
+.dil-row:last-child{border-bottom:none;}
+.dil-pct{font-family:'DM Mono',monospace;font-size:15px;color:var(--sage);font-weight:500;}
+.dil-parts{font-size:13px;color:var(--ink-mid);}
+
+/* PRODUCT BOX */
+.product-box{background:var(--bg-warm);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin:24px 0;}
+.product-box .prod-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.product-box .prod-sub{font-size:13px;color:var(--ink-light);margin-bottom:14px;}
+.product-box .prod-links{display:flex;flex-wrap:wrap;gap:10px;}
+.btn-amazon{display:inline-flex;align-items:center;gap:7px;background:var(--honey);color:#fff;text-decoration:none;padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:opacity 0.2s;}
+.btn-amazon:hover{opacity:0.85;}
+.btn-budget{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid var(--sage-mid);color:var(--sage);text-decoration:none;padding:9px 18px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;}
+.btn-budget:hover{background:var(--sage-pale);}
+
+/* PRINT BUTTON */
+.print-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--ink-light);padding:9px 18px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:20px;}
+.print-btn:hover{border-color:var(--sage-mid);color:var(--sage);}
+@media print{.print-btn,.jump-nav,nav{display:none!important;}.hero{padding-top:24px!important;}}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;margin:24px 0;}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--sage-mid),var(--sage-light));}
+.tl-item{position:relative;margin-bottom:24px;}
+.tl-item:last-child{margin-bottom:0;}
+.tl-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--bg-warm);border:2px solid var(--sage-mid);}
+.tl-year{font-family:'DM Mono',monospace;font-size:11px;font-weight:500;color:var(--honey);margin-bottom:4px;letter-spacing:0.08em;}
+.tl-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px;}
+.tl-body{font-size:14px;color:var(--ink-mid);line-height:1.7;}
+
+
+/* FOOTER */
+footer{background:var(--bg-footer);padding:40px 24px;}
+footer a{color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+footer a:hover{color:#d4c9a8;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+  </div>
+  <div class="nav-dropdown" id="mainDrop">
+    <button class="nav-dropdown-toggle" onclick="document.getElementById('mainDrop').classList.toggle('open')">
+      Protocols
+      <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="nav-dropdown-menu">
+      <div class="dd-group">
+        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+        <div class="dd-subs">
+          <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+        <div class="dd-subs">
+          <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+        <div class="dd-subs">
+          <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+        </div>
+      </div>
+      <div class="dd-group">
+        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+        <div class="dd-subs">
+          <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+          <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+          <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+        </div>
+      </div>
+      <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+      <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+      <div class="dd-group">
+        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+        <div class="dd-subs">
+          <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+          <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
+        </div>
+      </div>
+      <a href="protocols.html"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>⚗️ DMSO Protocol</span></div>
+  <h1>DMSO<br><em>The Most Suppressed Healing Substance on Earth</em></h1>
+  <p class="hero-sub">A byproduct of wood pulp. Over 11,000 peer-reviewed studies. FDA approved for one single condition. This is not incompetence — this is a system working exactly as designed.</p>
+  <div class="hero-stats">
+    <div>
+      <span class="stat-num">11,000+</span>
+      <span class="stat-label">Published studies</span>
+    </div>
+    <div>
+      <span class="stat-num">1963</span>
+      <span class="stat-label">Discovered by Dr. Jacob</span>
+    </div>
+    <div>
+      <span class="stat-num">1965</span>
+      <span class="stat-label">FDA banned clinical trials</span>
+    </div>
+    <div>
+      <span class="stat-num">1</span>
+      <span class="stat-label">FDA-approved use</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION NAV -->
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+    <a href="#suppression"><span class="jn-dot"></span>The Suppression</a>
+    <a href="#what-is"><span class="jn-dot"></span>What Is DMSO</a>
+    <a href="#carrier"><span class="jn-dot"></span>The Carrier</a>
+    <a href="#concentrations"><span class="jn-dot"></span>Concentrations</a>
+    <a href="#conditions"><span class="jn-dot"></span>By Condition</a>
+    <a href="#neuro"><span class="jn-dot"></span>Neurological</a>
+    <a href="#suppressed-research"><span class="jn-dot"></span>Buried Research</a>
+    <a href="#safety"><span class="jn-dot"></span>Safety Rules</a>
+    <a href="#msm"><span class="jn-dot"></span>DMSO + MSM</a>
+    <a href="#products"><span class="jn-dot"></span>What to Buy</a>
+    <a href="#schedule"><span class="jn-dot"></span>Daily Schedule</a>
+  </div>
+</div>
+
+<!-- WHO THIS IS FOR -->
+<section class="sec sec-stone">
+  <div class="inner">
+    <div class="kicker">Who This Protocol Is For</div>
+    <h2 class="lh2">Is DMSO Right for You?</h2>
+    <p class="lp">DMSO is not a supplement. It is not a gentle wellness tool. It is a serious therapeutic compound with decades of suppressed clinical evidence behind it — and it is most relevant to people dealing with conditions that conventional medicine has failed to adequately address. If you are here because nothing else has worked, you are in the right place.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:28px 0;">
+
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--sage-mid);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:13px;font-weight:700;color:var(--sage);margin-bottom:10px;">🦴 Joint & Musculoskeletal Pain</div>
+        <ul style="list-style:none;font-size:13px;color:var(--ink-mid);line-height:1.9;">
+          <li>Rheumatoid arthritis</li>
+          <li>Osteoarthritis</li>
+          <li>Chronic joint inflammation</li>
+          <li>Sports injuries / strains</li>
+          <li>Fibromyalgia</li>
+          <li>Plantar fasciitis</li>
+          <li>Tendinitis / bursitis</li>
+          <li>Post-surgical pain</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--honey);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:13px;font-weight:700;color:var(--honey);margin-bottom:10px;">🧠 Neurological Conditions</div>
+        <ul style="list-style:none;font-size:13px;color:var(--ink-mid);line-height:1.9;">
+          <li>Multiple sclerosis</li>
+          <li>ALS / motor neuron disease</li>
+          <li>Traumatic brain injury</li>
+          <li>Spinal cord injury</li>
+          <li>Chronic headache / migraine</li>
+          <li>Nerve pain / neuropathy</li>
+          <li>Post-stroke recovery</li>
+          <li>Cognitive decline support</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--terra-light);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:13px;font-weight:700;color:var(--terra);margin-bottom:10px;">🛡️ Autoimmune & Inflammatory</div>
+        <ul style="list-style:none;font-size:13px;color:var(--ink-mid);line-height:1.9;">
+          <li>Scleroderma</li>
+          <li>Lupus (adjunct support)</li>
+          <li>Interstitial cystitis</li>
+          <li>Chronic inflammatory conditions</li>
+          <li>Myasthenia gravis</li>
+          <li>Inflammatory bowel disease</li>
+          <li>Chronic sinusitis / infections</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-left:3px solid var(--sage-light);border-radius:8px;padding:18px 20px;">
+        <div style="font-size:13px;font-weight:700;color:var(--sage-mid);margin-bottom:10px;">🌿 General Healing Support</div>
+        <ul style="list-style:none;font-size:13px;color:var(--ink-mid);line-height:1.9;">
+          <li>Wound healing / burns</li>
+          <li>Scar tissue reduction</li>
+          <li>Chronic skin conditions</li>
+          <li>Lyme disease (adjunct)</li>
+          <li>Heavy metal detox support</li>
+          <li>Biofilm-related infections</li>
+          <li>Tinnitus (chronic ear ringing)</li>
+          <li>Periodontal / dental infections</li>
+          <li>Cancer (adjunct — not standalone)</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="background:var(--bg-nav);border-radius:10px;padding:20px 24px;margin-top:8px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:10px;">⚠️ Who Should NOT Use DMSO</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px;">
+        <div style="font-size:13px;color:rgba(212,201,168,0.7);display:flex;gap:8px;align-items:flex-start;"><span style="color:#e07070;flex-shrink:0;">✗</span><span><strong style="color:rgba(212,201,168,0.9);">Parkinson's disease</strong> — DMSO accelerates alpha-synuclein aggregation</span></div>
+        <div style="font-size:13px;color:rgba(212,201,168,0.7);display:flex;gap:8px;align-items:flex-start;"><span style="color:#e07070;flex-shrink:0;">✗</span><span><strong style="color:rgba(212,201,168,0.9);">Pregnancy</strong> — insufficient safety data</span></div>
+        <div style="font-size:13px;color:rgba(212,201,168,0.7);display:flex;gap:8px;align-items:flex-start;"><span style="color:#e07070;flex-shrink:0;">✗</span><span><strong style="color:rgba(212,201,168,0.9);">Active platinum chemotherapy</strong> — DMSO inactivates cisplatin/carboplatin</span></div>
+        <div style="font-size:13px;color:rgba(212,201,168,0.7);display:flex;gap:8px;align-items:flex-start;"><span style="color:#e07070;flex-shrink:0;">✗</span><span><strong style="color:rgba(212,201,168,0.9);">Severe liver or kidney disease</strong> — impaired metabolism</span></div>
+      </div>
+    </div>
+
+    <p class="lp" style="margin-top:20px;font-size:14px;color:var(--ink-light);">Not sure if DMSO fits your situation? Read the full <a href="#safety" style="color:var(--sage);">safety rules section</a> below before deciding. If you have Parkinson's, go to the <a href="Parkinsons_Protocol.html" style="color:var(--sage);">Parkinson's Protocol</a> instead — a full dedicated protocol exists for you there.</p>
+  </div>
+</section>
+
+<!-- SUPPRESSION STORY -->
+<section id="suppression" class="sec sec-bg">
+  <div class="inner">
+    <div class="kicker kicker-terra">The Suppression Story</div>
+    <h2 class="lh2">They Banned It Before Most People Heard of It</h2>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1866</div>
+        <div class="tl-title">First synthesis</div>
+        <div class="tl-body">Russian chemist Alexander Zaytsev first synthesises DMSO (dimethyl sulfoxide) as a byproduct of wood pulp lignin processing. It sits in chemical literature for nearly a century — useful as an industrial solvent, nothing more.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1961</div>
+        <div class="tl-title">Dr. Stanley Jacob changes everything</div>
+        <div class="tl-body">Surgeon Dr. Stanley Jacob at Oregon Health &amp; Science University is searching for a way to preserve organs for transplant at low temperatures. He connects with industrial chemist Robert Herschler at Crown Zellerbach Company, who had noticed DMSO could penetrate biological membranes. Jacob begins experiments and quickly realizes: this compound absorbs through skin instantly, carries other molecules with it, reduces inflammation, relieves pain — and appears to have no meaningful toxicity in humans.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1963–65</div>
+        <div class="tl-title">The golden window</div>
+        <div class="tl-body">Within two years, approximately 1,500 physicians across the United States are using DMSO with clinical data on over 70,000 patients. Merck, Syntex, and Squibb all file New Drug Applications. The New York Times editorial board calls it <em>"the nearest thing to a wonder drug the 1960s have produced."</em> Athletes, arthritis patients, burn victims, and people with chronic pain are finding relief from a substance costing almost nothing.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">November 10, 1965</div>
+        <div class="tl-title">The ban</div>
+        <div class="tl-body">The FDA halts all DMSO clinical trials in the United States — overnight. The stated reason: eye lens changes observed in <em>dogs and rabbits</em> given extremely high doses. This effect was never observed in humans or in primates. Dr. Jacob later recalled that the FDA "halted all studies of DMSO on November 10, 1965, even though they had data in their files on more than 70,000 patients submitted by approximately 1,500 physicians showing its safety and effectiveness." The day before the announcement, an FDA official had told Dr. Jacob that a planned New York Academy of Sciences DMSO symposium "would never be held." He was wrong — but the damage was done.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1965–1978</div>
+        <div class="tl-title">Thirteen years of limbo</div>
+        <div class="tl-body">Research continues in dozens of countries. Europe, Russia, Japan, Cuba, and Mexico develop approved therapeutic uses. In the United States, physicians are ordered to return their stocks. The compound that costs pennies per dose and cannot be patented finds no commercial champion willing to fund the hundreds of millions in FDA approval trials. A cheap, unpatentable substance had no path through a system built to approve expensive patented molecules.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1978</div>
+        <div class="tl-title">Partial approval — for one condition only</div>
+        <div class="tl-body">After Senator Edward Kennedy and other legislators publicly criticise the FDA's stance, DMSO is approved for <strong>interstitial cystitis</strong> — a painful chronic bladder condition. This remains, to this day, the only officially approved human use in the United States. Not for arthritis. Not for traumatic brain injury. Not for spinal cord damage. Not for pain. One condition.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1980</div>
+        <div class="tl-title">60 Minutes breaks through</div>
+        <div class="tl-body">Mike Wallace runs two separate <em>60 Minutes</em> segments on DMSO — March 23 and July 6, 1980. Millions of Americans hear of it for the first time. Demand surges. The FDA does not change its position.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Today</div>
+        <div class="tl-title">Over 11,000 studies. Still one approved use.</div>
+        <div class="tl-body">The scientific literature on DMSO continues to grow. Researchers in oncology, neurology, immunology, and trauma medicine continue to publish. The compound is used freely by veterinarians on horses and dogs for neurological and musculoskeletal conditions — standard practice in equine medicine. In humans, the regulatory wall has not moved.</div>
+      </div>
+    </div>
+
+    <div class="pq pq-terra">
+      <div class="pq-text">"The FDA halted all studies even though they had data in their files on more than 70,000 patients showing its safety and effectiveness."</div>
+      <div class="pq-attr">— Dr. Stanley Jacob, Father of DMSO, Oregon Health &amp; Science University</div>
+    </div>
+
+    <div class="pq pq-terra">
+      <div class="pq-text">"If there is a drug for which there was an enormous amount of prospect of good — being pressed upon you by three drug companies who apparently thought it had enormous potential — I would think you would be eager to see if the claims could be justified."</div>
+      <div class="pq-attr">— Congressman Claude Pepper, House Select Committee on Aging, 1980, to FDA Director Dr. Crout</div>
+    </div>
+
+    <h3 class="lh3">The Internal Contradiction the FDA Never Answered</h3>
+    <p class="lp">The FDA's own Bureau of Drugs classified drugs into effectiveness categories: 1A (breakthrough discovery), 2A (potential uses), 3A (probably useless). Out of thirty-seven drugs rated, only four received the top classification of 1A. <strong>DMSO was one of the four.</strong> The same bureau director, Dr. J. Richard Crout, went on national television — Good Morning America — and told the American public that DMSO "is not dramatically effective." The same man. The same agency. Two completely opposite statements. Nobody in Congress ever received a satisfactory explanation for this contradiction.</p>
+
+    <h3 class="lh3">Dr. Jacob's Acquittal</h3>
+    <p class="lp">In 1982, the Justice Department brought criminal charges against Dr. Jacob — three counts of improper payments to an FDA official and one count of conspiracy. The basis: he had made personal loans to FDA researcher Dr. K.C. Pani to help pay for Pani's wife's cancer treatment, and Pani had repaid them by personal cheque. Jacob welcomed the trial, stating it would give him the chance to vindicate DMSO publicly. The first trial ended in a mistrial. At the second trial, the Justice Department dropped all charges on the fifth day of proceedings. The judge had already signalled the case should be dismissed. In open court, the federal attorneys stated: <em>"We are dropping all charges against Dr. Jacob, and we wish to take this opportunity to commend him for his good services to the community."</em> The grand jury indictment was totally dismissed. One to two million dollars of taxpayer money had been spent prosecuting a man for lending money to a friend whose wife was dying of cancer.</p>
+
+    <p class="lp">The pharmaceutical industry understood the problem immediately. DMSO is derived from wood pulp — it cannot be patented. It is inexpensive to produce. It requires no ongoing prescription. A substance with these properties represents a direct threat to the business model of managed chronic disease. The question was never whether it worked. The question was always: who profits?</p>
+  </div>
+</section>
+
+<!-- WHAT IS DMSO -->
+<section id="what-is" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker">What DMSO Actually Is</div>
+    <h2 class="lh2">Wood Pulp. Lignin. The Compound That Shouldn't Work — But Does.</h2>
+
+    <p class="lp">DMSO is dimethyl sulfoxide — a small, naturally occurring molecule (CH₃SOCH₃) produced as a byproduct of the kraft process used to manufacture wood pulp paper. It is extracted from lignin, the structural compound that holds tree cells together. There is nothing synthetic about its origin — it is literally wood.</p>
+
+    <p class="lp">At room temperature (above 18.4°C / 65°F), DMSO is a clear, colourless, slightly oily liquid. Below this temperature, it solidifies into crystals. If your DMSO bottle becomes solid in cool weather, this is not a sign of degradation — it is a sign of <strong>high purity</strong>. Simply warm the bottle gently in your hands or a bowl of warm water.</p>
+
+    <p class="lp">DMSO is amphiphilic — it is simultaneously attracted to both water-soluble and fat-soluble molecules. This is extremely rare in nature, and it is the key to DMSO's extraordinary properties. Most molecules must choose between dissolving in water or dissolving in fat. DMSO dissolves in both, and it can carry molecules across barriers (including skin and cell membranes) that normally stop them.</p>
+
+    <h3 class="lh3">Why It Smells Like Garlic</h3>
+    <p class="lp">One of the first things people notice when using DMSO is a garlic-like or oyster-like odour on the breath and skin within minutes of application — even if applied topically. This happens because DMSO metabolises in the body into dimethyl sulfide (DMS), a volatile sulfur compound that exits through the lungs and skin. This is <strong>not a sign of toxicity</strong> — it is proof the compound is being absorbed and metabolised. The odour typically fades within a few hours to a day. Lower-quality DMSO will smell strongly at the bottle; pharmaceutical-grade DMSO has minimal odour.</p>
+
+    <h3 class="lh3">How Safe Is It — The Numbers</h3>
+    <p class="lp">Toxicity is measured by LD50 — the dose per kilogram of body weight that kills half of test animals. Higher numbers mean safer substances. The LD50 of aspirin for monkeys is 558 mg/kg. The LD50 of DMSO for monkeys is 4,000 mg/kg. <strong>DMSO is more than seven times safer than aspirin by this measure.</strong> Laboratory rats survive being completely dipped in 80% DMSO. Rats survive repeated dippings in 60% DMSO three times per week for twenty-six consecutive weeks with no toxic effects. In the most comprehensive human toxicology study conducted — prisoners at Vacaville, California, coated with 80% DMSO at 1g/kg daily for three months — not one participant showed eye changes, organ damage, or any pathological finding. The researcher concluded: <em>"DMSO appears to be a very safe drug for human administration. I am very glad to be able to permanently dispel the myth that DMSO is in any way a toxic or dangerous drug."</em> The side effects are real but minor: skin warmth, redness, temporary garlic odour. That is the complete toxicity profile after sixty years of use across millions of people.</p>
+
+    <h3 class="lh3">What DMSO Does in the Body</h3>
+    <ul class="checklist">
+      <li><strong>Penetrates skin within seconds</strong> — applying DMSO to the wrist produces a taste of garlic in the mouth within 12–20 seconds. This is not exaggeration. Dr. Jacob famously demonstrated this in his lab by tasting iodine after applying DMSO mixed with iodine to the skin.</li>
+      <li><strong>Carries molecules with it</strong> — DMSO acts as a molecular ferry, pulling other substances through the skin and into systemic circulation. This is its most powerful and most dangerous property simultaneously.</li>
+      <li><strong>Potent anti-inflammatory</strong> — reduces prostaglandins, interleukins, and cytokines at concentrations far lower than most pharmaceutical anti-inflammatories.</li>
+      <li><strong>Free radical scavenger</strong> — neutralises the hydroxyl radical (·OH), one of the most destructive reactive oxygen species produced in inflammation and cellular damage.</li>
+      <li><strong>Improves microcirculation</strong> — reduces blood cell aggregation, lowers viscosity, and improves flow through small vessels. This matters enormously in neurological and connective tissue conditions.</li>
+      <li><strong>Reduces intracranial pressure</strong> — used in emergency medicine in other countries for traumatic brain injury because it rapidly draws fluid away from swollen brain tissue.</li>
+      <li><strong>Chemical chaperone</strong> — stabilises misfolded proteins and helps them refold correctly. This property is directly relevant to neurodegenerative diseases involving protein aggregation.</li>
+      <li><strong>Antimicrobial and antiviral</strong> — disrupts bacterial biofilms, inhibits viral replication in multiple studied pathogen lines.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- THE CARRIER FUNCTION -->
+<section id="carrier" class="sec sec-deep">
+  <div class="inner">
+    <div class="kicker kicker-honey">The Carrier Function</div>
+    <h2 class="lh2">The Golden Key — and the Warning That Comes With It</h2>
+
+    <p class="lp">The carrier function of DMSO is both its greatest power and its most important risk. When DMSO is applied to skin, it does not absorb alone — it takes with it <em>whatever else is present on the skin surface</em> at the time of application.</p>
+
+    <div class="critical-box">
+      <div class="warn-title">⚠️ The Most Important Rule in All of DMSO Use</div>
+      <div class="warn-text"><strong>The skin surface must be completely clean before any DMSO application.</strong> Soap residue, synthetic fabric fibres, perfume, lotion, cleaning products, paint, pesticide residue — all of these will be carried directly into the bloodstream if they are present when DMSO touches the skin. This is not theoretical. People have been seriously harmed by applying DMSO over contaminated skin. Wash the application site thoroughly with unscented natural soap. Rinse well. Allow to dry. Use only cotton or natural fibre clothing after application — never nylon, polyester, or synthetic fabrics.</div>
+    </div>
+
+    <h3 class="lh3">What DMSO Can Carry Through Skin</h3>
+    <p class="lp">Research has documented DMSO's ability to carry a wide range of therapeutic compounds transdermally — bypassing the digestive system and delivering substances directly into tissue and, in some formulations, across the blood-brain barrier (BBB).</p>
+
+    <table class="app-table">
+      <tr>
+        <th>Substance</th>
+        <th>Effect When Combined With DMSO</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>Curcumin</td>
+        <td>Dramatically increased tissue absorption; crosses BBB with DMSO carrier</td>
+        <td>Curcumin is normally almost impossible to absorb. DMSO solves this. Use in 70% solution.</td>
+      </tr>
+      <tr>
+        <td>Magnesium</td>
+        <td>Transdermal delivery bypasses digestive limitations</td>
+        <td>DMSO + magnesium oil is a popular pain and sleep combination.</td>
+      </tr>
+      <tr>
+        <td>MSM (methylsulfonylmethane)</td>
+        <td>Synergistic anti-inflammatory; complements DMSO's sulfur chemistry</td>
+        <td>DMSO is a metabolic precursor to MSM. Often combined 50/50.</td>
+      </tr>
+      <tr>
+        <td>Iodine (Lugol's solution)</td>
+        <td>Carried systemically — Dr. Jacob's original demonstration</td>
+        <td>Use with extreme care on thyroid area; potent combination.</td>
+      </tr>
+      <tr>
+        <td>Colloidal silver</td>
+        <td>Deeper tissue antimicrobial delivery</td>
+        <td>Used topically for skin infections, Lyme co-infections.</td>
+      </tr>
+      <tr>
+        <td>DMSO alone (neurological)</td>
+        <td>Opens BBB at 10–15% concentration; increases brain concentrations of L-dopa when combined with carbidopa</td>
+        <td>Studies in animals. Human data limited but biologically plausible.</td>
+      </tr>
+    </table>
+
+    <h3 class="lh3">What DMSO Cannot Safely Carry</h3>
+    <ul class="checklist checklist-cross">
+      <li><strong>Pharmaceutical drugs</strong> — unless under direct medical supervision, do not combine DMSO with any prescription medication. The systemic absorption rate changes dramatically and unpredictably.</li>
+      <li><strong>Anything with synthetic chemicals</strong> — dyes, preservatives, synthetic fragrances, petrochemical-derived substances.</li>
+      <li><strong>Oxidising agents</strong> — hydrogen peroxide and DMSO should not be combined directly on skin; the peroxide is a powerful oxidant and DMSO amplifies its tissue penetration.</li>
+      <li><strong>Cisplatin or other platinum-based chemotherapy</strong> — DMSO chemically inactivates cisplatin and carboplatin. Do not use during platinum-based chemotherapy.</li>
+    </ul>
+
+    <div class="note-box">
+      <div class="warn-title">The Blood-Brain Barrier</div>
+      <div class="warn-text">Studies in mice and rats have shown that DMSO at 10–15% concentrations reversibly opens the blood-brain barrier, allowing proteins, drugs including L-dopa, and amino acids to reach brain tissue in higher concentrations than without DMSO. The BBB closure is temporary. Results in humans are mixed and not confirmed by large RCTs — this area requires individual caution and ideally a practitioner familiar with DMSO. The therapeutic potential for neurological conditions is real; the evidence base is biologically compelling but remains largely preclinical.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCENTRATIONS -->
+<section id="concentrations" class="sec sec-bg">
+  <div class="inner">
+    <div class="kicker">Concentration Guide</div>
+    <h2 class="lh2">What Strength to Use — and Why It Matters</h2>
+    <p class="lp">DMSO is sold at 99%+ purity (pharmaceutical grade, pure liquid for dilution) or as pre-diluted solutions. The working concentration determines penetration depth, side effect risk, and appropriate application sites. <strong>Never apply undiluted 99% DMSO to skin</strong> — it causes immediate burning, redness, and irritation.</p>
+
+    <div class="conc-grid">
+      <div class="conc-card c10">
+        <div class="conc-pct">10%</div>
+        <div class="conc-title">Face &amp; Sensitive Areas</div>
+        <div class="conc-body">For face, neck, scalp, and thin-skinned areas with high sensitivity. Minimal irritation. Lower penetration depth but sufficient for topical anti-inflammatory and skin-barrier work.</div>
+        <div class="conc-use">Mix: 1 part DMSO + 9 parts distilled water</div>
+      </div>
+      <div class="conc-card c25">
+        <div class="conc-pct">25–30%</div>
+        <div class="conc-title">Sensitive Skin / First Use</div>
+        <div class="conc-body">Good starting concentration for new users. Use for allergy patch test. Suitable for areas with reduced circulation or compromised skin integrity.</div>
+        <div class="conc-use">Mix: 1 part DMSO + 3 parts distilled water</div>
+      </div>
+      <div class="conc-card c50">
+        <div class="conc-pct">50%</div>
+        <div class="conc-title">General Use / Most Protocols</div>
+        <div class="conc-body">The most commonly recommended working concentration. Effective penetration, manageable skin reaction. Used for joint pain, inflammation, wound healing, and most internal applications.</div>
+        <div class="conc-use">Mix: 1 part DMSO + 1 part distilled water</div>
+      </div>
+      <div class="conc-card c70">
+        <div class="conc-pct">70%</div>
+        <div class="conc-title">Standard Topical / Athletic</div>
+        <div class="conc-body">The traditional "standard" DMSO concentration. Maximum penetration for musculoskeletal and nerve pain. Strong skin warming sensation. Widely used for arthritis, injuries, post-surgical healing, and nerve damage.</div>
+        <div class="conc-use">Mix: 7 parts DMSO + 3 parts distilled water</div>
+      </div>
+      <div class="conc-card c99">
+        <div class="conc-pct">99%</div>
+        <div class="conc-title">Pharmaceutical Grade / Dilute Before Use</div>
+        <div class="conc-body">Pure DMSO purchased as liquid or gel. Must be diluted before any skin application. Used as the base for all custom dilutions. Paradoxically, <strong>pharmaceutical-grade (99.9% USP) is purer and safer than "food-grade"</strong> — pharmaceutical grade has the most stringent purity testing.</div>
+        <div class="conc-use">Dilute before any topical use. Always use glass or polypropylene containers — never regular plastic.</div>
+      </div>
+    </div>
+
+    <h3 class="lh3">Dilution Quick Reference</h3>
+    <p class="lp">Always dilute with <strong>distilled water only</strong>. Tap water contains chlorine, fluoride, and minerals that DMSO will carry into your skin. Aloe vera gel (100% pure, no additives) can replace water as a diluent and reduces skin irritation.</p>
+
+    <div class="dil-row"><div>Target %</div><div>Recipe (from 99%)</div><div>Example</div></div>
+    <div class="dil-row"><div class="dil-pct">10%</div><div class="dil-parts">1 part DMSO + 9 parts distilled water</div><div class="dil-parts">1 ml + 9 ml = 10 ml</div></div>
+    <div class="dil-row"><div class="dil-pct">25%</div><div class="dil-parts">1 part DMSO + 3 parts distilled water</div><div class="dil-parts">5 ml + 15 ml = 20 ml</div></div>
+    <div class="dil-row"><div class="dil-pct">50%</div><div class="dil-parts">1 part DMSO + 1 part distilled water</div><div class="dil-parts">10 ml + 10 ml = 20 ml</div></div>
+    <div class="dil-row"><div class="dil-pct">70%</div><div class="dil-parts">7 parts DMSO + 3 parts distilled water</div><div class="dil-parts">14 ml + 6 ml = 20 ml</div></div>
+
+    <div class="warn-box">
+      <div class="warn-title">Container Warning</div>
+      <div class="warn-text">DMSO dissolves many plastics and will leach chemicals from regular plastic containers — which it will then carry directly into your skin. Always store and mix DMSO in glass, amber glass, or polypropylene (PP) containers. The DMSO Store and WoldoHealth products come in glass bottles precisely for this reason.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BY CONDITION -->
+<section id="conditions" class="sec sec-stone">
+  <div class="inner">
+    <div class="kicker">Application by Condition</div>
+    <h2 class="lh2">Where and How DMSO Has Been Used</h2>
+    <p class="lp">The following is drawn from the published research, clinical reports from Dr. Stanley Jacob's practice, veterinary medicine (where DMSO has remained in active clinical use throughout), and practitioner accounts from countries where DMSO has wider approval.</p>
+
+    <button class="print-btn" onclick="window.print()">🖨 Print This Guide</button>
+
+    <table class="app-table">
+      <tr>
+        <th>Condition</th>
+        <th>Concentration</th>
+        <th>Application</th>
+        <th>Evidence Level</th>
+      </tr>
+      <tr>
+        <td>Arthritis (joints)</td>
+        <td>70%</td>
+        <td>Apply to affected joint 2–3× daily with cotton ball. Rub in gently until absorbed. Approved use in multiple countries.</td>
+        <td>Strong — multiple human trials, approved in Germany and other countries for musculoskeletal use</td>
+      </tr>
+      <tr>
+        <td>Musculoskeletal pain / injuries</td>
+        <td>50–70%</td>
+        <td>Apply topically to site 2–3× daily. Standard practice in equine and canine veterinary medicine for decades.</td>
+        <td>Strong veterinary evidence; substantial human clinical experience</td>
+      </tr>
+      <tr>
+        <td>Burns and wound healing</td>
+        <td>25–50%</td>
+        <td>Apply to clean wound area; accelerates healing and reduces scarring in multiple studies.</td>
+        <td>Good — multiple controlled studies</td>
+      </tr>
+      <tr>
+        <td>Interstitial cystitis (bladder)</td>
+        <td>50% solution</td>
+        <td>FDA-approved bladder instillation under medical supervision. Not a DIY protocol.</td>
+        <td>FDA-approved — strongest evidence base</td>
+      </tr>
+      <tr>
+        <td>Nerve pain / neuropathy</td>
+        <td>50–70%</td>
+        <td>Apply topically along the nerve path. Anti-inflammatory and analgesic effect at nerve roots.</td>
+        <td>Moderate — clinical reports and animal studies</td>
+      </tr>
+      <tr>
+        <td>Traumatic brain injury / head trauma</td>
+        <td>IV use only</td>
+        <td>Reduces intracranial pressure rapidly. Used in emergency medicine in other countries. IV use requires clinical setting.</td>
+        <td>Strong animal data; human case series; not used in US standard care</td>
+      </tr>
+      <tr>
+        <td>Spinal cord injury</td>
+        <td>IV / topical cervical</td>
+        <td>IV DMSO standard in equine spinal injury. Human case series show neurological recovery. IV use requires medical supervision.</td>
+        <td>Strong veterinary; promising human case series; no large RCTs</td>
+      </tr>
+      <tr>
+        <td>Scleroderma / hardened tissue</td>
+        <td>70%</td>
+        <td>Apply to affected skin 2–3× daily. DMSO softens hardened connective tissue and improves microvascular circulation.</td>
+        <td>Clinical trial data — one of Jacob's most documented indications</td>
+      </tr>
+      <tr>
+        <td>Infections / antimicrobial</td>
+        <td>70%</td>
+        <td>Apply topically to infected area. Disrupts bacterial biofilms. Often combined with colloidal silver.</td>
+        <td>Moderate — in vitro studies, clinical reports</td>
+      </tr>
+      <tr>
+        <td>Tinnitus (chronic ringing)</td>
+        <td>IM injection + topical ear spray</td>
+        <td>Chilean study of 15 chronic tinnitus patients, all non-responsive to prior treatment: 9 of 15 achieved complete disappearance of tinnitus after one month. 2 more had significant reduction. Zero recurrence at one-year follow-up. DMSO combined with vasoactive compounds injected daily, plus topical ear-canal spray every four days.</td>
+        <td>Strong for the condition — formal clinical study, documented follow-up</td>
+      </tr>
+      <tr>
+        <td>Periodontal disease / dental infections</td>
+        <td>Topical painting / direct application</td>
+        <td>Polish and Bulgarian clinical data: DMSO combined with anti-inflammatory agents applied topically cleared periodontitis and reduced calculus formation. American podiatrists and dentists documented relief from dry socket (post-extraction pain), corns, calluses, bunions, gout inflammation, and ingrown toenails. Drops applied directly into extraction socket prevent dry socket formation.</td>
+        <td>Moderate — multiple country clinical reports; no large RCT</td>
+      </tr>
+      <tr>
+        <td>Respiratory infections (acute / infants)</td>
+        <td>Spray / topical</td>
+        <td>Chilean pediatric hospital study: 30 infants with bronchiolitis and obstructive bronchitis treated with DMSO spray. 80% showed immediate sensory improvement, 76% reduction in adenoid swelling, 75% reduction in intercostal retraction — results faster and more significant than control group on standard antibiotics + corticoids + oxygen croupette. Researchers noted it required no specialised equipment and could be used in remote settings.</td>
+        <td>Formal clinical study — small cohort, compelling outcomes</td>
+      </tr>
+      <tr>
+        <td>Gallstones (cholesterol)</td>
+        <td>Direct infusion (clinical)</td>
+        <td>French and Japanese clinical data: 30% DMSO combined with methyl tert-butyl ether dissolved mixed cholesterol gallstones more completely and with less residue than standard treatment alone. In animal models, nearly complete dissolution of implanted human cholesterol stones within 8 hours. Requires clinical setting — direct biliary infusion.</td>
+        <td>Promising clinical/animal data; not standard of care; requires medical setting</td>
+      </tr>
+      <tr>
+        <td>Cancer (adjunct — not standalone)</td>
+        <td>Multiple</td>
+        <td>Used as a carrier for therapeutic compounds; DMSO-potassium iodide protocol; differentiation of leukemia cells in studies (Charlotte Friend, Mount Sinai). Journal of Clinical Oncology 1988: 20 anthracycline extravasation patients treated with 99% topical DMSO — zero progressed to ulceration vs expected 17%+ rate. Also reduces free radical load from chemotherapy: relieves metallic taste, mouth sores, nausea, and hair loss associated with chemo. Do NOT combine with cisplatin or platinum-based chemotherapy.</td>
+        <td>Preclinical studies + one published clinical trial; adjunct role only</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- NEUROLOGICAL -->
+<section id="neuro" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker kicker-honey">Neurological Application</div>
+    <h2 class="lh2">DMSO and the Brain: What the Research Actually Shows</h2>
+
+    <p class="lp">DMSO's neurological properties are the area of greatest suppressed potential and the most active current research interest. The compound crosses the blood-brain barrier, reduces brain oedema, improves cerebral blood flow, acts as a chemical chaperone for misfolded proteins, and has been documented reversing neurological deficits in animal models across dozens of published studies.</p>
+
+    <h3 class="lh3">Traumatic Brain Injury</h3>
+    <p class="lp">Dr. Jack de la Torre at the University of Texas spent decades studying DMSO's role in traumatic brain injury. His research showed DMSO reduces intracranial pressure more effectively than mannitol (the standard clinical treatment), restores cerebral blood flow after injury, and dramatically reduces mortality in animal models. De la Torre stated publicly that DMSO's failure to enter emergency neurology was one of the great failures of the American regulatory system — "the FDA had a sort of chip on its shoulder because it thought DMSO was some kind of snake-oil medicine."</p>
+
+    <h3 class="lh3">Multiple Sclerosis</h3>
+    <p class="lp">Multiple mechanisms suggest DMSO relevance to MS: it reduces inflammatory cytokines, improves microcirculation to white matter, stabilises myelin-associated proteins, blocks clotting triggered by myelin debris, and temporarily opens the BBB for delivery of neuroprotective compounds. Practitioner reports from DMSO practitioners (primarily outside the US) describe symptom improvements. No large RCT has been conducted.</p>
+
+    <h3 class="lh3">Parkinson's Disease — A Specific Warning</h3>
+
+    <div class="critical-box">
+      <div class="warn-title">⚠️ DMSO Is NOT Recommended for Parkinson's Disease</div>
+      <div class="warn-text">A 2022 study demonstrated that DMSO accelerates <strong>alpha-synuclein aggregation</strong> — the exact pathological process that drives neurodegeneration in Parkinson's disease. Alpha-synuclein is the protein that misfolds and clumps into Lewy bodies, destroying dopaminergic neurons. DMSO's chemical chaperone properties, which are beneficial for most protein misfolding conditions, appear to have the opposite effect with alpha-synuclein specifically. For this reason, <strong>DMSO is excluded from this guide's Parkinson's Protocol</strong>. If you are using this guide for Parkinson's support, do not add DMSO to your regimen without consulting a practitioner.</div>
+    </div>
+
+    <h3 class="lh3">ALS, Huntington's, and Other Neurodegenerative Conditions</h3>
+    <p class="lp">Outside of Parkinson's, the picture is different. For ALS (amyotrophic lateral sclerosis), Huntington's disease, prion disorders, and general neurodegeneration not driven by alpha-synuclein aggregation, DMSO's chemical chaperone properties, anti-inflammatory effects, and BBB-penetrating capacity make it biologically relevant. Anecdotal practitioner reports exist for each of these conditions. No large human trials have been conducted.</p>
+
+    <h3 class="lh3">Topical Application for Neurological Benefit</h3>
+    <p class="lp">For users interested in neurological applications, the areas with the most documented rationale for topical DMSO are:</p>
+    <ul class="checklist">
+      <li><strong>Cervical spine (back of neck)</strong> — DMSO applied to C1–C7 vertebrae region for inflammation at the nerve roots that communicate with the brain. Used by practitioners for chronic headache, cognitive fog, and tinnitus.</li>
+      <li><strong>Base of skull (occiput)</strong> — the posterior base of the skull, where cranial nerves exit. Practitioners apply 50% DMSO here for chronic inflammation affecting brain circulation.</li>
+      <li><strong>Scalp application</strong> — 10–25% DMSO (lower concentration due to skin sensitivity) applied to scalp for transdermal delivery of neuroprotective compounds. Lower concentrations required — scalp skin is thin and sensitive.</li>
+      <li><strong>Spine along vertebrae</strong> — for nerve root inflammation. Always use lower concentrations (25–50%) near the spine.</li>
+    </ul>
+
+    <div class="note-box">
+      <div class="warn-title">Carry curcumin to the brain?</div>
+      <div class="warn-text">Curcumin (from turmeric) is one of the most studied neuroprotective compounds in natural medicine — but its bioavailability is notoriously poor and it normally cannot cross the BBB. DMSO is documented as a carrier that increases curcumin's tissue absorption dramatically. For topical neurological application, some practitioners dissolve a small amount of Doctor's Best Curcumin Phytosome in 50–70% DMSO before applying to the cervical spine. The curcumin formulation must be pure — no synthetic additives, no fillers, no synthetic capsule coating.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPRESSED RESEARCH -->
+<section id="suppressed-research" class="sec sec-honey">
+  <div class="inner">
+    <div class="kicker kicker-terra">Buried Research</div>
+    <h2 class="lh2">What Was Suppressed That You Were Never Meant to Know</h2>
+    <p class="lp">Beyond the well-known arthritis and pain applications, DMSO research extended into areas so far outside mainstream medicine that they were simply buried — not disproved, not refuted, just ignored until the funding stopped. These two areas are among the most striking.</p>
+
+    <h3 class="lh3">Down's Syndrome and Severe Mental Retardation</h3>
+    <p class="lp">Between the late 1960s and early 1980s, medical teams in Chile, Argentina, the United States, and Canada used a combination of DMSO with specific amino acids (GABA, GABOB, and acetylglutamine — sold in South America as "Merinex" and "Akron") to treat children with trisomy 21 (Down's syndrome) and other forms of severe mental retardation. The rationale: DMSO carries the amino acids across the blood-brain barrier, where they activate neuronal function suppressed in these conditions.</p>
+
+    <p class="lp">The results, presented at the New York Academy of Sciences and published in formal proceedings, were extraordinary. A controlled study by Dr. Lydia de Coriat (Buenos Aires Municipal Pediatric Hospital) of 18 DMSO-treated children vs 91 controls showed:</p>
+
+    <ul class="checklist">
+      <li>Motor index: controls rose from 56 to 58. Treated group rose from 56 to <strong>72</strong>.</li>
+      <li>Adaptation index: controls dropped from 52 to 49. Treated group rose from 52 to <strong>66</strong>.</li>
+      <li>Social area: controls rose from 45 to 50. Treated group rose from 40 to <strong>64</strong>.</li>
+      <li>Language: significant improvements in speech initiation and comprehension in treated children; stagnation in controls.</li>
+    </ul>
+
+    <p class="lp">A second Chilean study of 55 trisomy children showed average IQ rising from 29 to 40 in treated children, while the control group's average IQ dropped from 34 to 33 over the same period. No serious side effects were reported in any of the studies. The earlier DMSO treatment was started, the greater the benefit — with the most striking results in children under three and a half years old.</p>
+
+    <p class="lp">The most documented individual case is Melody Clark of Wenatchee, Washington. Diagnosed at birth with trisomy 21 and assessed as likely to never exceed the mental age of six, Melody was placed on DMSO therapy by Dr. Jacob at eleven months old. By age eight — after seven years of treatment — she was reading, writing, doing arithmetic at second-grade level, attending school with other children, and socialising normally. Her dentist formally noted that her palate had developed toward normal range. Her teacher wrote: "Melody has made great strides in every area of academic and social and physical development. The progress is quite remarkable." Her case was presented before the United States House Select Committee on Aging. Congressman Don Bonker told Dr. Jacob in the hearing room: "Today Melody is a miracle child for the entire community."</p>
+
+    <div class="pq">
+      <div class="pq-text">"DMSO aminoacid therapy in trisomic children offers an evident advance in the therapy of this syndrome — if the parameters approach normality with this treatment, this is already a positive result and may well be the starting point for future progress in a field where no progress had been made in the course of various decades."</div>
+      <div class="pq-attr">— Dr. Manuel Aspillaga et al., University of Chile, presented to the New York Academy of Sciences</div>
+    </div>
+
+    <p class="lp">None of this research was ever pursued in the United States. No American pharmaceutical company funded follow-up trials. The treatment is not offered anywhere in mainstream medicine today. The children with Down's syndrome born since 1980 who might have benefited from this research number in the millions.</p>
+
+    <h3 class="lh3 lh3-terra">Amyloidosis — Misfolded Protein Disease</h3>
+    <p class="lp">Amyloidosis is the accumulation of misfolded proteins (amyloid) in organs — a process directly related to the misfolded protein pathology seen in neurodegenerative diseases including Parkinson's and neurological decline. In secondary amyloidosis (where a chronic disease drives amyloid deposit in the kidneys, liver, and spleen), standard medicine has no effective treatment beyond managing the underlying disease.</p>
+
+    <p class="lp">Multiple studies — Japanese, Italian, Israeli, and Russian — showed DMSO administered orally at 7–15g daily produced measurable improvement in secondary amyloidosis patients:</p>
+
+    <ul class="checklist">
+      <li>Kidney function (creatinine clearance) improved <strong>30–100%</strong> in 7 patients with secondary amyloidosis. The improvement was maintained as long as DMSO was continued.</li>
+      <li>A 65-year-old woman with systemic amyloidosis was given oral DMSO for four years without side effects — her cutaneous (skin) lesions improved markedly and she remained in satisfactory condition at time of publication.</li>
+      <li>A Japanese patient with amyloidosis causing whitening and rapid loss of scalp hair: hair regrew and returned to black colour several months after DMSO treatment.</li>
+      <li>Bladder amyloidosis: complete resolution of amyloid deposits with transurethral resection plus DMSO bladder instillation over four months.</li>
+    </ul>
+
+    <div class="note-box">
+      <div class="warn-title">The Connection to Neurodegeneration</div>
+      <div class="warn-text">DMSO functions as a "chemical chaperone" — it helps misfolded proteins refold correctly. Amyloid protein misfolding is the same fundamental mechanism involved in most neurodegenerative diseases. The fact that DMSO can dissolve and reduce amyloid deposits in organs has direct theoretical relevance to brain protein aggregation — with the critical exception of Parkinson's disease, where the specific alpha-synuclein protein behaves differently and DMSO is contraindicated.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY RULES -->
+<section id="safety" class="sec sec-deep">
+  <div class="inner">
+    <div class="kicker kicker-terra">Safety Protocol</div>
+    <h2 class="lh2">Non-Negotiable Rules Before You Touch a Drop</h2>
+
+    <p class="lp">DMSO is safe when used correctly. The risks are almost entirely from misuse — particularly applying DMSO to contaminated skin, using it with incompatible substances, or using industrial-grade rather than pharmaceutical-grade product.</p>
+
+    <button class="print-btn" onclick="window.print()">🖨 Print Safety Rules</button>
+
+    <h3 class="lh3">Before Every Single Application</h3>
+    <ul class="checklist">
+      <li><strong>Wash hands thoroughly</strong> with unscented natural soap (no synthetic fragrance, no synthetic ingredients). Rinse completely. Dry with a clean cotton towel.</li>
+      <li><strong>Wash the application site</strong> the same way. Rinse all soap residue off — soap itself contains compounds that DMSO will carry into the skin. Dry fully before applying.</li>
+      <li><strong>Remove all synthetic clothing</strong> from the area to be treated and surrounding skin. Nylon, polyester, spandex, acrylic — all must be replaced with 100% cotton or linen. Do not put synthetic fabric back on for at least 30–60 minutes after application.</li>
+      <li><strong>Remove nail polish and synthetic cosmetics</strong> if applying near hands or face. Nail polish is a particular concern — DMSO absorbs through nail beds.</li>
+      <li><strong>No lotion, sunscreen, or fragrance</strong> on or near the application site.</li>
+    </ul>
+
+    <h3 class="lh3">Patch Test — Do This First</h3>
+    <p class="lp">Before using DMSO on any significant area, perform a patch test on a small area of inner forearm. Apply one drop of your working dilution (start with 25%), smooth gently, and observe for 24 hours. If you experience significant itching, burning beyond mild warmth, hives, or a rash, you may have a sensitivity to DMSO. Mild warmth and slight redness are normal. Intense burning or itching is not.</p>
+
+    <h3 class="lh3">Application Method</h3>
+    <ul class="checklist">
+      <li><strong>Use cotton balls or cotton pads</strong> — never synthetic foam applicators, never polyurethane gloves. If using gloves, use 100% natural latex only (and test for latex allergy first).</li>
+      <li><strong>Apply with gentle pressure</strong> and allow to absorb — do not rub aggressively. DMSO absorbs within seconds to minutes depending on concentration.</li>
+      <li><strong>Allow to dry before dressing</strong> — wait 20–30 minutes before putting cotton clothing back on. Never put synthetic fabric over freshly applied DMSO.</li>
+      <li><strong>Anticipate the garlic odour</strong> — it will appear on your breath within minutes. This is normal metabolic processing, not toxicity. Inform those around you.</li>
+      <li><strong>Start low, go slow</strong> — begin with 25% concentration, once daily. Assess tolerance. Progress to 50%, then 70% as needed.</li>
+    </ul>
+
+    <h3 class="lh3">What Not to Mix With DMSO</h3>
+    <ul class="checklist checklist-cross">
+      <li><strong>Pharmaceutical drugs</strong> (unless under direct medical supervision) — the absorption kinetics change unpredictably and can cause overdose or dangerous interactions.</li>
+      <li><strong>Hydrogen peroxide directly on skin</strong> — H₂O₂ is a strong oxidant; combining it with DMSO topically amplifies tissue penetration of oxidative damage.</li>
+      <li><strong>Cisplatin / platinum-based chemotherapy</strong> — DMSO chemically inactivates these drugs and is contraindicated during treatment.</li>
+      <li><strong>Anything you would not want in your bloodstream</strong> — this is the simplest rule. If you wouldn't inject it, don't apply it over DMSO.</li>
+    </ul>
+
+    <h3 class="lh3">Who Should Not Use DMSO</h3>
+    <ul class="checklist checklist-cross">
+      <li><strong>Pregnant women</strong> — insufficient safety data; avoid entirely during pregnancy.</li>
+      <li><strong>People with known liver or kidney disease</strong> — DMSO is metabolised primarily by these organs; impaired function increases risk.</li>
+      <li><strong>People with Parkinson's disease</strong> — as noted: DMSO accelerates alpha-synuclein aggregation.</li>
+      <li><strong>During active pharmaceutical chemotherapy</strong> — particularly platinum-based regimens (cisplatin, carboplatin, oxaliplatin).</li>
+      <li><strong>Anyone with a strong sulphur sensitivity</strong> — DMSO metabolises to dimethyl sulfide; people with severe sulphur intolerance may react badly.</li>
+    </ul>
+
+    <h3 class="lh3">Pharma Grade vs Food Grade vs Industrial Grade</h3>
+    <p class="lp">This distinction matters significantly:</p>
+    <ul class="checklist">
+      <li><strong>Pharmaceutical grade (99.9% USP/NF)</strong> — the most refined form. Tested for heavy metals and contaminants under pharmaceutical standards. This is what you want. The label should say USP, NF, or 99.9% pharmaceutical grade.</li>
+      <li><strong>Industrial grade</strong> — not purified for human use. May contain residual processing chemicals that DMSO will carry into your skin. Do NOT use. Usually identifiable by strong unpleasant odour.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DMSO + MSM -->
+<section id="msm" class="sec sec-bg">
+  <div class="inner">
+    <div class="kicker">DMSO + MSM</div>
+    <h2 class="lh2">The Sulfur Pair: DMSO and Methylsulfonylmethane</h2>
+
+    <p class="lp">MSM (methylsulfonylmethane) is a naturally occurring organic sulfur compound found in foods, soil, and many plants in small amounts. It is also a direct metabolic byproduct of DMSO: when DMSO is metabolised in the body, one of its breakdown products is MSM. This is not coincidence — they share the same sulfur chemistry and complementary mechanisms.</p>
+
+    <p class="lp">Many practitioners use DMSO and MSM together because they work through overlapping pathways: both reduce inflammation, both provide bioavailable sulfur (essential for glutathione synthesis, joint cartilage, and connective tissue), and both penetrate cell membranes effectively. MSM is gentler, slower, and suitable for long-term daily use. DMSO is faster, more powerful, and best used in targeted therapeutic windows.</p>
+
+    <h3 class="lh3">Why Sulfur Is Critical</h3>
+    <p class="lp">Sulfur is the third most abundant mineral in the human body and one of the most commonly depleted in modern people. It is essential for:</p>
+    <ul class="checklist">
+      <li><strong>Glutathione synthesis</strong> — the body's master antioxidant and primary detoxification molecule. Every molecule of glutathione contains three amino acids, one of which (cysteine) is sulfur-containing.</li>
+      <li><strong>Collagen and keratin structure</strong> — skin, hair, nails, joint cartilage, and connective tissue all depend on sulfur-containing amino acids for their structural integrity.</li>
+      <li><strong>Phase II liver detoxification</strong> — sulfation is one of the liver's primary conjugation pathways for clearing toxins, hormones, and xenobiotics.</li>
+      <li><strong>Insulin receptor function</strong> — sulfur is required for proper insulin receptor activity. Sulfur depletion may contribute to insulin resistance.</li>
+    </ul>
+
+    <h3 class="lh3">Combining DMSO and MSM</h3>
+    <p class="lp">A common protocol for joint pain, inflammation, and connective tissue conditions:</p>
+    <ul class="checklist">
+      <li><strong>DMSO topical (70%)</strong> applied to affected area for acute or sub-acute inflammation — 1–2 times daily during active treatment phases.</li>
+      <li><strong>MSM oral (1–3g daily)</strong> as a long-term daily foundation — taken with food in divided doses for joint support, glutathione precursor loading, and systemic anti-inflammatory effect.</li>
+      <li><strong>DMSO + MSM topical blend</strong> — some practitioners mix 50% DMSO with MSM powder dissolved in water, applying topically for synergistic local effect. The combination is thought to reduce skin irritation compared to DMSO alone.</li>
+    </ul>
+
+    <div class="note-box">
+      <div class="warn-title">Budget-Friendly Note</div>
+      <div class="warn-text">MSM powder is one of the most affordable supplements available. NOW Foods MSM powder is available on iHerb (code GUW6132) for very low cost per gram. For people who cannot afford DMSO or find it difficult to source locally, MSM oral supplementation provides much of the same sulfur biochemistry through slower but gentler mechanisms.</div>
+    </div>
+  </div>
+</section>
+
+<!-- OXYGEN LINK -->
+<section class="sec sec-sage">
+  <div class="inner" style="text-align:center;">
+    <div class="kicker" style="justify-content:center;">🫁 Companion Protocol</div>
+    <h2 class="lh2" style="margin-bottom:12px;">Oxygen Therapy</h2>
+    <p class="lp" style="max-width:560px;margin:0 auto 24px;">DMSO and oxygen therapy share the same suppression story and the same mechanism: both work by changing the cellular terrain. The oxygen protocol — hydrogen peroxide, ozone, and hyperbaric oxygen — lives on its own dedicated page.</p>
+    <a href="Oxygen_Therapy.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--sage);color:#fff;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">🫁 Open Oxygen Therapy Protocol →</a>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="sec sec-warm">
+  <div class="inner">
+    <div class="kicker">What to Buy</div>
+    <h2 class="lh2">Recommended Products</h2>
+    <p class="lp">DMSO is not available on iHerb — only on Amazon. All products below are pharmaceutical-grade (99.9%+ purity), packaged in glass, and appropriate for topical use after dilution.</p>
+
+    <div class="product-box">
+      <div class="prod-title">Best Overall: DMSO Store 99.995% Pharmaceutical Grade Liquid</div>
+      <div class="prod-sub">Glass bottle · 8 oz or 16 oz · Lab-tested · Low odour · Made in USA · Ships fulfilled by Amazon</div>
+      <div class="prod-links">
+        <a href="https://www.amazon.com/dp/B01BSYQ0XC" target="_blank" class="btn-amazon">🛒 View on Amazon</a>
+      </div>
+    </div>
+
+    <div class="product-box">
+      <div class="prod-title">Pre-Diluted Option: DMSO Direct Gel 70/30 — 99.99% Pure</div>
+      <div class="prod-sub">Already diluted to 70% working concentration · Gel form = easy application · BPA-free polypropylene jar · No dilution needed for standard topical use</div>
+      <div class="prod-links">
+        <a href="https://www.amazon.com/dp/B0DVD5M8VC" target="_blank" class="btn-amazon">🛒 View on Amazon</a>
+      </div>
+    </div>
+
+    <div class="product-box">
+      <div class="prod-title">Budget Option: WoldoHealth 99.9% Pharmaceutical Grade (Small Bottle)</div>
+      <div class="prod-sub">Amber glass with precision dropper · FT-IR verified purity · 3.38 oz starter size — good for patch testing and beginning users · German manufacturing</div>
+      <div class="prod-links">
+        <a href="https://www.amazon.com/dp/B07L7WVK5M" target="_blank" class="btn-amazon">🛒 View on Amazon (small)</a>
+        <a href="https://www.amazon.com/dp/B07V6QXGHX" target="_blank" class="btn-budget">🛒 Large size (33.8 oz)</a>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <div class="warn-title">What to Look for When Buying</div>
+      <div class="warn-text">✓ Glass bottle (not plastic) · ✓ 99.9% pharmaceutical or USP grade · ✓ Lab tested / Certificate of Analysis available · ✓ Low odour (odour = impurity) · ✓ Crystallises below 18°C (sign of purity) · ✗ Avoid: industrial grade, strong chemical odour, plastic containers, "food grade" labelling without purity documentation.</div>
+    </div>
+
+    <h3 class="lh3">Supporting Supplies</h3>
+    <ul class="checklist">
+      <li><strong>Distilled water</strong> — mandatory for dilution. Not tap. Not filtered. Distilled. Available at any supermarket for very low cost.</li>
+      <li><strong>Glass measuring cups or amber glass bottles</strong> — for mixing and storing dilutions. Look for small amber glass dropper bottles online.</li>
+      <li><strong>100% cotton balls or pads</strong> — for application only. No synthetic foam.</li>
+      <li><strong>Natural unscented soap</strong> — for pre-cleaning skin. No synthetic fragrances, no synthetic chemicals.</li>
+      <li><strong>Pure aloe vera gel</strong> (no synthetic additives) — optional diluent that reduces skin irritation compared to water alone. Budget-friendly: aloe plants can be grown on a windowsill for free ongoing supply.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DAILY SCHEDULE LINK -->
+<section id="schedule" class="sec sec-deep">
+  <div class="inner" style="text-align:center;">
+    <div class="kicker" style="justify-content:center;">📋 Daily Schedule</div>
+    <h2 class="lh2">How to Incorporate DMSO Into Your Day</h2>
+    <p class="lp" style="max-width:560px;margin-left:auto;margin-right:auto;">The separate Daily Schedule page gives you a structured day-by-day protocol for beginning DMSO therapy — starting slowly, testing tolerance, and building toward a full topical regimen. Includes a print-ready checklist.</p>
+    <a href="DMSO_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--sage);color:#fff;text-decoration:none;padding:14px 28px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:opacity 0.2s;margin-top:10px;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📋 Open DMSO Daily Schedule →</a>
+  </div>
+</section>
+
+<!-- ABOUT THIS GUIDE -->
+<section style="background:var(--bg-deep);border-top:1px solid var(--border);">
+  <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html">Home</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('click', function(e) {
+  const drop = document.getElementById('mainDrop');
+  if (drop && !drop.contains(e.target)) drop.classList.remove('open');
+});
+</script>
+</body>
+</html>
