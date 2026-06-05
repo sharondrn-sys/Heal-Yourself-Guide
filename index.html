@@ -95,6 +95,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .inner-wide{max-width:960px;margin:0 auto;}
 .divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.18),transparent);}
 
+/* SECTION NAV */
+.sec-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.sec-nav::-webkit-scrollbar{display:none;}
+.sec-nav-inner{display:flex;align-items:stretch;justify-content:center;min-width:max-content;margin:0 auto;}
+.sec-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
+.sec-nav a:hover{color:var(--sage);border-bottom-color:var(--sage-mid);}
+.sec-nav a.active{color:var(--sage);border-bottom-color:var(--sage-mid);}
+.sn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
+
 /* TYPOGRAPHY */
 .kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .kicker::before{content:'';width:28px;height:1px;background:var(--sage-mid);}
@@ -337,8 +346,74 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
 <div class="divider"></div>
 
+<!-- SECTION NAV -->
+<div class="sec-nav" id="secNav">
+  <div class="sec-nav-inner">
+    <a href="#about"><span class="sn-dot"></span>About</a>
+    <a href="#intro"><span class="sn-dot"></span>Introduction</a>
+    <a href="#chapter1"><span class="sn-dot"></span>The System</a>
+    <a href="#chapter2"><span class="sn-dot"></span>The Gut</a>
+    <a href="#chapter3"><span class="sn-dot"></span>Four Enemies</a>
+    <a href="#isthisforyou"><span class="sn-dot"></span>Is This For You?</a>
+    <a href="#roadmap"><span class="sn-dot"></span>The Protocol</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT THE AUTHOR -->
+<section class="sec-warm" id="about">
+  <div class="inner">
+    <div class="kicker">About the Author</div>
+    <div class="auth-wrap">
+      <div><div class="auth-init">S</div></div>
+      <div>
+        <div class="auth-name">Sharona</div>
+        <div class="auth-role">Pharmaceutical QA Internal Auditor · Independent Researcher</div>
+
+        <p class="lp">This guide was written with a lot of love and passion for helping people heal.</p>
+
+        <p class="lp">It first came about when my best friend was diagnosed with Parkinson's disease at a relatively young age — early fifties. I felt like someone hit me in the gut. And I knew I had to try and do something.</p>
+
+        <p class="lp">I worked many years in the pharmaceutical industry, in Quality Assurance, responsible for all documentation in the factory. My department was the paper trail of the entire operation. Every document from every department passed through my team. Regulatory submissions. Clinical trial data. Internal safety reports. Manufacturing instructions, specifications, and much more. I worked in the room where the documentation lived.</p>
+
+        <p class="lp">I always knew that the system is not designed to cure anything. It is about symptom management. Each drug causes more symptoms and conditions that need more drugs. The more we get sick, the more profit for them.</p>
+
+        <p class="lp">In 2020, the world changed. I started researching — frantically. I gave it everything. I had to find out the truth. What I found shook my core. I morally could not keep working in the industry despite a good salary, benefits, and a position I was valued in. I was very good at what I did. But I could not continue working for a system that is built to manage illness rather than resolve it.</p>
+
+        <div class="pq pq-terra"><p>"I am not a Doctor. This is precisely why you need to listen to me."</p></div>
+
+        <p class="lp">Doctors are trained to prescribe drugs for symptoms. They rarely investigate root cause. That is why no doctor has ever really cured anything. If you survived their treatment, it is despite — not because. I am not saying every doctor is corrupt. They don't know. Nobody teaches them. Most became doctors because they genuinely want to help. I am saying something more specific: <em>the system was never designed to cure you.</em></p>
+
+        <p class="lp">A patient who heals completely is, from a purely commercial standpoint, a customer lost. The incentive structure is built around management — not resolution. I watched this play out in the paperwork. Not as conspiracy. As architecture.</p>
+
+        <p class="lp">When my friend got her diagnosis, I began compiling. Years of research — ancient healing traditions, functional medicine, suppressed compounds, gut science, neurological research, nutritional protocols, emotional healing. The information existed. It was scattered across thousands of sources, behind paywalls, buried in scientific language, fragmented across websites charging hundreds of dollars per consultation.</p>
+
+        <p class="lp">That is the real crime. Not just that the information was suppressed — but that when people finally find it, they are overwhelmed. They don't know where to start. They buy fifteen supplements in the wrong order. They do a parasite cleanse without opening their drainage pathways first. They try to heal their gut while still feeding the organisms that damaged it. They feel worse and give up.</p>
+
+        <p class="lp">I built this for my friend first. Then I realised she is not alone. Millions of people are drowning in information and starving for clarity. What they need is not another article — they need a companion. Something that says: do this today. Then this tomorrow. Here is what to buy. Here is what it costs. Here is the free version. Here is the science behind it. Here is where it has been suppressed and why.</p>
+
+        <p class="lp">This guide is that companion. It is not finished — no honest healing guide ever is. But what is here, right now, is enough to change the trajectory of someone's health. Perhaps your health. Perhaps the health of someone you love.</p>
+
+        <div class="pq pq-terra"><p>"You found this because you are ready. Begin."</p></div>
+
+        <p class="lp" style="font-style:italic;color:var(--ink-light);">Written with love, urgency, and everything I know — by someone who watched the system from the inside and chose the patient.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;padding:28px 32px;background:var(--terra-pale);border-left:3px solid var(--terra);border-radius:0 8px 8px 0;">
+      <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:14px;">Why this guide is free — and how to support it</div>
+      <p class="lp" style="margin-bottom:12px;">This guide exists because I believe that a person standing at a diagnosis, or watching someone they love decline, should not have to pay for the knowledge that might change the outcome. Health information should not be a luxury. This guide will remain completely free — every protocol, every daily schedule, every shopping list — always.</p>
+      <p class="lp" style="margin-bottom:12px;">If this guide helps you — if even one protocol changes something for you or someone you love — there is a way to support it that costs you nothing extra. Buy your supplements through <strong>iHerb</strong> using the code <strong style="font-family:'DM Mono',monospace;color:var(--terra);">GUW6132</strong>. You receive a discount at checkout. I receive a small commission. The guide stays funded. No subscriptions. No ads. No corporate sponsors. Just one simple code that lets good information keep existing in the world.</p>
+      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-block;margin-top:8px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:11px 24px;border-radius:5px;">Shop iHerb · Use code GUW6132</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- INTRODUCTION -->
-<section class="sec-warm">
+<section class="sec-warm" id="intro">
   <div class="inner">
     <div class="kicker">Introduction</div>
     <h2 class="lh2">Are You Ready?</h2>
@@ -360,7 +435,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- CHAPTER 1 — THE SYSTEM -->
-<section class="sec-main">
+<section class="sec-main" id="chapter1">
   <div class="inner">
     <div class="kicker kicker-terra">Part One — The Truth</div>
     <h2 class="lh2">The Business of Sickness</h2>
@@ -412,7 +487,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- CHAPTER 2 — THE GUT -->
-<section class="sec-deep">
+<section class="sec-deep" id="chapter2">
   <div class="inner">
     <div class="kicker">Chapter Two</div>
     <h2 class="lh2">Your Gut — <em>The Root of Everything</em></h2>
@@ -454,7 +529,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- CHAPTER 3 — FOUR ENEMIES -->
-<section class="sec-warm">
+<section class="sec-warm" id="chapter3">
   <div class="inner" style="margin-bottom:0;">
     <div class="kicker">Chapter Three</div>
     <h2 class="lh2">The Four Enemies</h2>
@@ -539,7 +614,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- IS THIS FOR YOU -->
-<section class="sec-deep">
+<section class="sec-deep" id="isthisforyou">
   <div class="inner">
     <div class="kicker kicker-terra">Is This For You?</div>
     <h2 class="lh2">If You Recognise Any of This — <em>Keep Reading</em></h2>
@@ -601,7 +676,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- 90-DAY ROADMAP -->
-<section class="sec-main">
+<section class="sec-main" id="roadmap">
   <div class="inner">
     <div class="kicker">The Protocol</div>
     <h2 class="lh2">The 90-Day Roadmap</h2>
@@ -729,41 +804,6 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 </section>
 
 <div class="divider"></div>
-
-<!-- ABOUT THIS GUIDE -->
-<section class="sec-warm" id="about">
-  <div class="inner">
-    <div class="kicker">About This Guide</div>
-    <div class="auth-wrap">
-      <div><div class="auth-init">S</div></div>
-      <div>
-        <div class="auth-name">Sharona</div>
-        <div class="auth-role">Pharmaceutical QA Internal Auditor · Independent Researcher</div>
-
-        <p class="lp">I am not a doctor. And that is precisely why what I have to say matters.</p>
-
-        <p class="lp">I spent years working inside the pharmaceutical industry as a Quality Assurance Internal Auditor — responsible for reviewing all documentation across facilities. Regulatory submissions. Clinical trial data. Safety reports. Manufacturing audits. I worked in the room where the documentation lived. And what I found there, over years of careful reading, changed everything I thought I understood about medicine, disease, and healing.</p>
-
-        <p class="lp">I left the industry for reasons I could no longer ignore. What I carried out with me was the knowledge of how the system actually operates — the financial incentives, the suppression mechanisms, the gap between what the research shows and what reaches the patient.</p>
-
-        <p class="lp">Then my best friend was diagnosed with Parkinson's disease in her early fifties. I could not accept the answer the system offered her — management, not healing. Medication to slow the decline. No investigation into cause. No protocol for reversal. I began researching the way only someone who has already seen behind the curtain can — not accepting any source at face value, tracing citations to their origins, reading the studies that never became guidelines.</p>
-
-        <div class="pq pq-terra"><p>"If you survived their treatment, it is despite — not because."</p></div>
-
-        <p class="lp">What you are reading is the result of thousands of hours of research across peer-reviewed journals, suppressed clinical trials, ethnobotanical traditions, and the work of researchers who were defunded, discredited, or simply ignored because their findings were inconvenient to pharmaceutical revenue models. This is not alternative medicine for its own sake. It is the medicine that existed before profit became the filter through which all knowledge was required to pass.</p>
-
-        <p class="lp">Every protocol in this guide is referenced. Every claim is traceable. Every recommendation has been weighed against what the evidence actually shows — including evidence that does not appear in mainstream clinical guidelines because it was never funded for the final stage of approval. That is not the same as evidence that it does not work.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:40px;padding:28px 32px;background:var(--terra-pale);border-left:3px solid var(--terra);border-radius:0 8px 8px 0;">
-      <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:14px;">Why this guide is free — and how to support it</div>
-      <p class="lp" style="margin-bottom:12px;">This guide exists because I believe that a person standing at a diagnosis, or watching someone they love decline, should not have to pay for the knowledge that might change the outcome. Health information should not be a luxury. Paywalls in front of healing protocols are a moral problem. This guide will remain completely free — every protocol, every daily schedule, every shopping list — always.</p>
-      <p class="lp" style="margin-bottom:12px;">If this guide helps you — if even one protocol changes something for you or someone you love — there is a way to support it that costs you nothing extra. Buy your supplements through <strong>iHerb</strong> using the code <strong style="font-family:'DM Mono',monospace;color:var(--terra);">GUW6132</strong>. You receive a discount at checkout. I receive a small commission. The guide stays funded. No subscriptions. No ads. No corporate sponsors. Just one simple code that lets good information keep existing in the world.</p>
-      <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-block;margin-top:8px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:11px 24px;border-radius:5px;">Shop iHerb · Use code GUW6132</a>
-    </div>
-  </div>
-</section>
 
 <div class="divider"></div>
 
