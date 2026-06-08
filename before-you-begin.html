@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before You Begin — Understanding the Root Cause | Heal Yourself</title>
+<meta name="description" content="Before starting any protocol, understand why the body breaks down. The business of sickness, the gut connection, the four enemies. Written by a pharmaceutical QA insider.">
+<link rel="canonical" href="https://sharondrn-sys.github.io/Heal-Yourself-Guide/before-you-begin.html">
+<meta property="og:title" content="Before You Begin — What the Doctor Won't Tell You">
+<meta property="og:description" content="Before starting any healing protocol, you need to understand why the body breaks down. The gut connection. The four enemies. The system that was never designed to heal you.">
+<meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/before-you-begin.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nav-h:56px;
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;padding-top:var(--nav-h);}
+section[id]{scroll-margin-top:100px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
+@media(max-width:400px){.nav-center{display:none;}}
+/* DROPDOWN */
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+
+/* PHASE NAV (page-level sticky nav) */
+.phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;justify-content:center;margin:0 auto;}
+.phase-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
+.phase-nav a:hover{color:var(--sage);border-bottom-color:rgba(61,107,74,0.3);}
+.phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:68px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border-s);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(61,107,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.eyebrow::before{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:580px;margin:0 auto 0;line-height:1.85;}
+
+/* SECTIONS */
+.sec-main{background:var(--bg);padding:60px 24px;}
+.sec-warm{background:var(--bg-warm);padding:60px 24px;}
+.sec-deep{background:var(--bg-deep);padding:60px 24px;}
+.sec-stone{background:var(--bg-stone);padding:60px 24px;}
+.sec-forest{background:#2c3a2e;padding:60px 24px;}
+.sec-terra{background:var(--terra-pale);padding:60px 24px;}
+.sec-sage{background:#e8f2ec;padding:60px 24px;}
+
+.inner{max-width:760px;margin:0 auto;}
+.inner-wide{max-width:1000px;margin:0 auto;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.15),transparent);}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:28px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+.kicker-dark{color:var(--sage-nav);}
+.kicker-dark::before{background:var(--sage-nav);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,38px);font-weight:700;color:var(--ink);line-height:1.22;margin-bottom:18px;}
+.lh2 em{color:var(--sage);font-style:italic;}
+.lh2-dark{color:#f0ece2;}
+.lh2-dark em{color:var(--sage-nav);}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,21px);font-weight:600;color:var(--sage);line-height:1.3;margin:30px 0 12px;}
+.lh3-terra{color:var(--terra);}
+.lh3-ink{color:var(--ink);}
+.lh3-dark{color:#c8e0cc;}
+.lp{font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+.lp-light{font-size:15px;line-height:1.9;color:rgba(240,236,226,0.82);margin-bottom:16px;}
+.lp-light strong{color:#f0ece2;}
+
+/* PULL QUOTES */
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,2.2vw,19px);line-height:1.65;color:var(--sage);margin:0;}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra p{color:var(--terra);}
+.pq-dark{border-left-color:var(--sage-nav);background:rgba(138,184,154,0.1);}
+.pq-dark p{color:#a8c8b0;}
+
+/* EXPAND */
+.exp-btn{display:flex;align-items:center;gap:10px;cursor:pointer;margin:24px 0 0;padding:13px 18px;border:1px solid var(--border);border-radius:6px;background:var(--sage-pale);transition:all 0.2s;width:100%;}
+.exp-btn:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
+.exp-btn-terra{border-color:rgba(140,90,60,0.2);background:var(--terra-pale);}
+.exp-btn-terra:hover{background:rgba(140,90,60,0.1);border-color:var(--terra-light);}
+.exp-icon{width:22px;height:22px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.exp-icon-terra{background:var(--terra);}
+.exp-icon svg{width:10px;height:10px;transition:transform 0.3s;}
+.exp-btn.open .exp-icon svg{transform:rotate(180deg);}
+.exp-lbl{font-size:13px;font-weight:500;color:var(--sage);letter-spacing:0.03em;}
+.exp-lbl-terra{color:var(--terra);}
+.exp-body{overflow:hidden;max-height:0;transition:max-height 0.5s ease;}
+.exp-body.open{max-height:9999px;}
+.exp-inner{padding-top:24px;}
+
+/* RESEARCH BADGES */
+.rb-wrap{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0;}
+.rb{font-size:11px;font-weight:500;color:var(--sage);background:var(--sage-pale);border:1px solid var(--border);padding:3px 12px;border-radius:16px;letter-spacing:0.03em;}
+
+/* ENEMY GRID */
+.enemy-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:32px 0;}
+@media(max-width:600px){.enemy-grid{grid-template-columns:1fr;}}
+.ec{padding:32px 28px;}
+.ec:nth-child(1){background:#f0ede6;}
+.ec:nth-child(2){background:#e8f0eb;}
+.ec:nth-child(3){background:#eceef5;}
+.ec:nth-child(4){background:#f5ece8;}
+.ec-num{font-family:'DM Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.15em;color:var(--sage);opacity:0.7;margin-bottom:10px;display:block;}
+.ec-num-terra{color:var(--terra);}
+.ec-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.ec-sub{font-size:13px;color:var(--ink-light);line-height:1.7;}
+
+/* CHAPTER NAV CARDS */
+.chapter-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:32px 0;}
+@media(max-width:700px){.chapter-cards{grid-template-columns:1fr 1fr;}}
+@media(max-width:400px){.chapter-cards{grid-template-columns:1fr;}}
+.cc{padding:22px 20px;background:var(--bg-warm);border-top:3px solid var(--sage);text-decoration:none;display:block;transition:background 0.2s;}
+.cc:hover{background:var(--sage-pale);}
+.cc-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.12em;color:var(--sage);display:block;margin-bottom:6px;}
+.cc-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.cc-desc{font-size:11px;color:var(--ink-light);line-height:1.5;}
+
+/* WARN BOX */
+.warn-box{background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);border-radius:8px;padding:22px 26px;}
+.warn-title{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:8px;}
+.warn-box p{font-size:13px;color:var(--ink-mid);line-height:1.8;margin:0;}
+
+/* NEXT STEP CTA */
+.next-cta{background:var(--bg-nav);border-radius:12px;padding:40px 36px;text-align:center;margin-top:8px;}
+.next-cta-label{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:10px;}
+.next-cta h3{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#f0ece2;margin-bottom:10px;line-height:1.25;}
+.next-cta p{font-size:14px;color:rgba(240,236,226,0.7);line-height:1.8;max-width:480px;margin:0 auto 28px;}
+.btn-primary{display:inline-block;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:15px 40px;border-radius:6px;transition:all 0.2s;}
+.btn-primary:hover{background:var(--sage-mid);transform:translateY(-1px);}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:48px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.45);line-height:1.75;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+
+/* SHARE — FLOATING */
+.share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
+@media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
+.share-pill{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.18);}
+.share-pill:hover{transform:translateY(-2px) scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,0.22);}
+.share-pill.wa{background:#25D366;}
+.share-pill.fb{background:#1877F2;}
+.share-pill svg{width:22px;height:22px;fill:#fff;}
+.share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-ghost);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
+@media(max-width:768px){.share-float-label{display:none;}}
+
+/* SHARE — BOTTOM BLOCK */
+.share-block{background:var(--bg-deep);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);padding:44px 24px;text-align:center;}
+.share-block-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px;}
+.share-block-sub{font-size:14px;color:var(--ink-light);line-height:1.7;max-width:500px;margin:0 auto 28px;}
+.share-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+.share-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:0.04em;transition:all 0.2s;}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+.share-btn.wa{background:#25D366;color:#fff;}
+.share-btn.fb{background:#1877F2;color:#fff;}
+.share-btn svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+
+/* COMPACT EMAIL SIGNUP */
+.email-signup-compact{background:#2c3a2e;border-radius:10px;padding:32px 36px;margin-top:8px;text-align:center;}
+.email-signup-compact h3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:700;color:#f0ece2;margin-bottom:8px;}
+.email-signup-compact p{font-size:13px;color:rgba(240,236,226,0.65);margin-bottom:20px;line-height:1.7;}
+.email-row{display:flex;gap:10px;max-width:420px;margin:0 auto;}
+@media(max-width:480px){.email-row{flex-direction:column;}}
+.email-input{flex:1;padding:12px 16px;border-radius:6px;border:1px solid rgba(138,184,154,0.3);background:rgba(255,255,255,0.07);color:#f0ece2;font-size:14px;font-family:'Jost',sans-serif;outline:none;}
+.email-input::placeholder{color:rgba(240,236,226,0.35);}
+.email-btn{padding:12px 20px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;white-space:nowrap;transition:background 0.2s;}
+.email-btn:hover{background:var(--sage-mid);}
+.email-note{font-size:11px;color:rgba(240,236,226,0.35);margin-top:10px;letter-spacing:0.03em;}
+
+/* CITATIONS */
+sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:default;}
+.sources{margin-top:8px;}
+.sources h2{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:18px;}
+.source-list{list-style:none;counter-reset:src;margin:0;padding:0;}
+.source-list li{counter-increment:src;padding:14px 0 14px 36px;border-bottom:1px solid var(--border-s);font-size:13px;color:var(--ink-mid);line-height:1.75;position:relative;}
+.source-list li:last-child{border-bottom:none;}
+.source-list li::before{content:counter(src);font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);position:absolute;left:0;top:16px;width:24px;}
+.source-list a{color:var(--sage);text-decoration:none;border-bottom:1px solid var(--border);word-break:break-all;display:inline;}
+.source-list a:hover{color:var(--sage-mid);}
+
+@media print{nav,footer,.phase-nav,.share-float,.share-block{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="before-you-begin.html" class="active">Before You Begin</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          </div>
+        </div>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="research.html">Research</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- FLOATING SHARE BAR -->
+<div class="share-float" aria-label="Share this guide">
+  <span class="share-float-label">Share</span>
+  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+<section class="hero">
+  <div class="eyebrow"><span>Step One — Read This First</span></div>
+  <h1>Before You Begin<br><em>Understanding the Root</em></h1>
+  <p class="hero-sub">Before a single supplement. Before any protocol. Before anything changes — you need to understand why the body breaks down. What the system was designed to do. What it was never designed to do. And what your body has been trying to tell you this whole time.</p>
+</section>
+
+<!-- PAGE NAV -->
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <a href="#are-you-ready"><span class="pn-dot"></span>Introduction</a>
+    <a href="#the-system"><span class="pn-dot"></span>The System</a>
+    <a href="#the-gut"><span class="pn-dot"></span>The Gut</a>
+    <a href="#four-enemies"><span class="pn-dot"></span>Four Enemies</a>
+    <a href="#ready-to-begin"><span class="pn-dot"></span>Ready to Begin</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CHAPTER MAP -->
+<section class="sec-stone">
+  <div class="inner">
+    <div class="kicker">What You Are About to Read</div>
+    <h2 class="lh2">Four Chapters. <em>One Truth.</em></h2>
+    <p class="lp">This page is the foundation that makes everything else make sense. Read it once, fully, before you begin any protocol. It will take you approximately 20 minutes. It will change how you understand your body permanently.</p>
+  </div>
+  <div class="inner-wide" style="padding:0 24px;">
+    <div class="chapter-cards">
+      <a href="#are-you-ready" class="cc">
+        <span class="cc-num">Intro</span>
+        <div class="cc-name">Are You Ready?</div>
+        <p class="cc-desc">When did you stop feeling like yourself? That voice saying "this is not how it is supposed to be" — it is right.</p>
+      </a>
+      <a href="#the-system" class="cc" style="border-top-color:var(--terra);">
+        <span class="cc-num" style="color:var(--terra);">Chapter 01</span>
+        <div class="cc-name">The Business of Sickness</div>
+        <p class="cc-desc">Why the system was never designed to heal you. Written by someone who worked inside it.</p>
+      </a>
+      <a href="#the-gut" class="cc">
+        <span class="cc-num">Chapter 02</span>
+        <div class="cc-name">The Gut</div>
+        <p class="cc-desc">Your second brain. The root of almost every chronic condition. The gate that was never supposed to open.</p>
+      </a>
+      <a href="#four-enemies" class="cc" style="border-top-color:var(--honey);">
+        <span class="cc-num" style="color:var(--honey);">Chapter 03</span>
+        <div class="cc-name">The Four Enemies</div>
+        <p class="cc-desc">Toxins. Parasites. Deficiency. Deception. You are fighting four battles simultaneously. None of them are your fault.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INTRODUCTION -->
+<section class="sec-warm" id="are-you-ready">
+  <div class="inner">
+    <div class="kicker">Introduction</div>
+    <h2 class="lh2">Are You Ready?</h2>
+    <p class="lp">Let me ask you something.</p>
+    <p class="lp">When did you stop feeling like yourself?</p>
+    <p class="lp">Was it gradual? A little more tired each year. A little more foggy. A little more pain that the doctor shrugged off and handed you a prescription for. And you took it. Because what else do you do? They went to medical school. They must know.</p>
+    <p class="lp">But here you are. Still not well.</p>
+    <p class="lp">And somewhere deep inside — underneath the fatigue and the frustration and the appointments that lead nowhere — there is a voice. Quiet but persistent. Saying: <em>this is not how it is supposed to be.</em></p>
+    <div class="pq pq-terra"><p>That voice is right.</p></div>
+    <p class="lp">You were not designed to deteriorate slowly while searching endlessly for answers. Your body wants to heal. It is built to heal. Every system inside you is oriented toward repair, regeneration, and resilience. That capacity has not disappeared. It has simply been buried under conditions that make healing impossible.</p>
+    <p class="lp">This guide is about removing those conditions — one by one — and giving your body what it has been waiting for.</p>
+    <p class="lp">It is not complicated. It is not expensive. It does not require a doctor's permission — though it works best alongside a good one.</p>
+    <p class="lp">It just requires you to be ready.</p>
+    <div class="pq pq-terra"><p>Are you ready?</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHAPTER 1 — THE SYSTEM -->
+<section class="sec-main" id="the-system">
+  <div class="inner">
+    <div class="kicker kicker-terra">Chapter One</div>
+    <h2 class="lh2">The Business of Sickness</h2>
+    <p style="font-size:12px;font-weight:500;letter-spacing:0.06em;color:var(--ink-light);font-style:italic;margin-bottom:24px;">By someone who worked inside the system.</p>
+    <p class="lp">I am not a doctor.</p>
+    <p class="lp">And that is precisely why you should keep reading.</p>
+    <p class="lp">I am something far more valuable to you right now. I am someone who spent years inside the system that is supposed to keep you healthy. I worked for one of the largest pharmaceutical corporations on the planet. I knew the regulations. I knew the procedures. I knew the language they use to make everything sound legitimate and measured and safe.</p>
+    <p class="lp">And then one day — in 2020, the year COVID changed everything — I saw the curtain pulled back.</p>
+    <p class="lp">What I saw behind it, I could not unsee.</p>
+    <div class="pq pq-terra"><p>"The system was never designed to heal you. The system was designed to manage symptoms."</p></div>
+
+    <button class="exp-btn exp-btn-terra" onclick="toggleExpand('sys',this)" data-label="Continue reading — the full chapter">
+      <div class="exp-icon exp-icon-terra"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl exp-lbl-terra">Continue reading — the full chapter</span>
+    </button>
+    <div class="exp-body" id="sys">
+      <div class="exp-inner">
+        <p class="lp">So I walked away. Not for money. Not for a better opportunity. I walked away because staying meant being complicit in something I did not want to be a part of.</p>
+        <p class="lp">I know that sounds extreme. I know your doctor went to medical school for a decade and genuinely wants to help you. I am not talking about individual doctors. I am talking about the architecture of the system they were trained inside.</p>
+        <p class="lp">That system has one fundamental flaw built into its foundation.</p>
+        <div class="pq pq-terra"><p>"There is no financial incentive in a cure. Think about that slowly."</p></div>
+        <p class="lp">A patient who heals completely is a customer lost forever. A patient who is managed — whose symptoms are controlled but never resolved — is a customer for life. Every side effect from medication A becomes the justification for medication B. Medication B creates the conditions for medication C. And so the wheel turns. Profitably. Indefinitely.</p>
+        <p class="lp"><strong>This is not conspiracy. This is accounting.</strong></p>
+        <p class="lp">I watched it happen. In the paperwork. In the approvals. In the language carefully chosen to satisfy regulators while revealing as little as possible about what was actually occurring inside human bodies.</p>
+        <h3 class="lh3 lh3-terra">And then came 2020.</h3>
+        <p class="lp">When the world was told to be afraid — and I watched colleagues, institutions, and governments move in a lockstep that defied any scientific process I had ever been trained in — something crystallized for me.</p>
+        <p class="lp">This was not about health. This had never been about health.</p>
+        <h3 class="lh3 lh3-terra">Health is simple.</h3>
+        <p class="lp">The human body is extraordinary. It is designed with an intelligence so profound that science has barely scratched the surface of understanding it. Given the right conditions — clean food, clean water, clean air, rest, connection, purpose — the body heals itself with breathtaking efficiency.</p>
+        <p class="lp">The entire industry I worked in existed to make you forget that.</p>
+        <p class="lp">So I started looking. Not in medical journals funded by the companies whose products they were evaluating. Not in news outlets whose largest advertisers were pharmaceutical corporations. Not in government health agencies staffed by former industry executives.</p>
+        <p class="lp"><em>I looked in places they don't want you to look.</em></p>
+        <p class="lp">What I found over the next several years changed everything I thought I understood about the human body. About disease. About what is actually making us sick and why. And what I found was both darker and more hopeful than anything I expected.</p>
+        <h3 class="lh3 lh3-terra">This guide is both.</h3>
+        <p class="lp">I am not writing this for the health and wellness market. I am writing this for my best friend. She was diagnosed with Parkinson's in her early fifties. The medical system cannot really help her. They don't even look at what they should be looking at.</p>
+        <p class="lp">I knew there was another way. Because I had spent years finding it.</p>
+        <p class="lp">This guide is what I found. Organised, simplified, and written with one purpose — to give the people I love a fighting chance that the system never offered them.</p>
+        <p class="lp">If you are reading this, you are one of those people now.</p>
+        <p class="lp">What you are about to learn will make you angry.</p>
+        <div class="pq pq-terra"><p>"Good. Let it."</p></div>
+        <p class="lp">Because here is the truth that sits on the other side of everything dark in these pages —</p>
+        <p class="lp">Your body wants to heal. Desperately. Urgently. With every breath. It has been trying to heal this whole time. Sending you signals you were taught to suppress with medication. Fighting battles you did not know were happening. Waiting patiently for you to give it what it needs and remove what is destroying it.</p>
+        <p class="lp">That is what this protocol does.</p>
+        <div class="pq pq-terra"><p>"We are not going to fight your body. We are going to finally get out of its way."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHAPTER 2 — THE GUT -->
+<section class="sec-deep" id="the-gut">
+  <div class="inner">
+    <div class="kicker">Chapter Two</div>
+    <h2 class="lh2">Your Gut — <em>The Root of Everything</em></h2>
+    <p class="lp"><strong>You have two brains.</strong></p>
+    <p class="lp">One is in your head. The other is in your gut — a complex network of over 500 million nerve cells lining your digestive tract.<sup class="cite" title="PMC11433641 — Enteric Nervous System and Neurological Diseases, 2024">1</sup> Scientists call it the Enteric Nervous System. Your gut talks directly to your brain through the vagus nerve — a superhighway of information running from your brainstem all the way into your abdomen.</p>
+    <p class="lp"><strong>90% of that communication travels from the gut up to the brain. Not the other way around.</strong><sup class="cite" title="PMC5808284 — Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis, 2018">2</sup> Your brain is largely responding to signals from your gut. Which means what lives in your gut — what grows there, what feeds there, what damages there — is directly shaping your thoughts, your moods, your anxiety, your clarity, and your will to engage with life.</p>
+    <div class="pq"><p>"Depression has been treated for decades as a serotonin deficiency in the brain. But 90–95% of the body's serotonin is produced in the gut — not the brain.<sup class="cite" title="Cell 2017 — UCSF: Enterochromaffin cells produce >90% of body's serotonin; ScienceDirect 2018 confirms 95%">3</sup> Medicate the brain while ignoring the gut and you are treating a house fire by adjusting the thermostat."</p></div>
+
+    <button class="exp-btn" onclick="toggleExpand('gut',this)" data-label="The full science — every condition now linked to the gut">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">The full science — every condition now linked to the gut</span>
+    </button>
+    <div class="exp-body" id="gut">
+      <div class="exp-inner">
+        <p class="lp">Researchers have now established documented links between gut microbiome dysfunction and virtually every major neurological and psychiatric condition known to modern medicine. Every single one.</p>
+        <div class="rb-wrap">
+          <span class="rb">Autism Spectrum Disorder</span><span class="rb">ADHD</span><span class="rb">Neurological decline</span><span class="rb">Movement disorders</span><span class="rb">ALS</span><span class="rb">Huntington's Disease</span><span class="rb">Multiple Sclerosis</span><span class="rb">Depression</span><span class="rb">Anxiety</span><span class="rb">Schizophrenia</span><span class="rb">Bipolar Disorder</span><span class="rb">Obesity</span><span class="rb">Insulin Resistance</span>
+        </div>
+        <p class="lp">This is the list that should have been on the front page of every newspaper in the world. Instead it sits in academic journals that most doctors never read — while the same doctors prescribe medications that further destroy the very gut lining driving every condition on this list.</p>
+        <p class="lp">The connection between gut health and neurological movement disorders is particularly striking. The toxic proteins associated with dopaminergic decline appear in the gut years, sometimes decades, before they appear in the brain.<sup class="cite" title="Braak Hypothesis — Nature Reviews Neurology 2015; confirmed experimentally in Neuron/Cell 2019 — Kim et al., truncal vagotomy prevents spread">4</sup> Research published in Cell and Nature suggests the disease may originate in the enteric nervous system and travel to the brain via the vagus nerve. <strong>The brain did not start the disease. The gut did.</strong></p>
+        <h3 class="lh3">How We Broke the Most Important Ecosystem on Earth</h3>
+        <p class="lp"><strong>Antibiotics</strong> — even a single course can alter your microbiome composition for up to 4–8 years, with diversity never fully recovering in some individuals.<sup class="cite" title="Nature Medicine 2026 — Uppsala University, 14,979 adults; Baldanzi et al., doi:10.1038/s41591-026-04284-y">5</sup></p>
+        <p class="lp"><strong>Glyphosate</strong> — the world's most widely used herbicide, patented as an antibiotic in 2010,<sup class="cite" title="US Patent No 7771736 B2; Tandfonline 2023 — Impact of glyphosate on gut microbiome composition">6</sup> disrupts the shikimate pathway used by beneficial gut bacteria, reducing populations of Lactobacillus and Bifidobacterium.<sup class="cite" title="ScienceDirect 2023 — Low-dose glyphosate exposure alters gut microbiota and modulates gut homeostasis">7</sup></p>
+        <p class="lp"><strong>Processed food</strong> — emulsifiers like carboxymethylcellulose and polysorbate 80 disrupt the gut's protective mucus layer.</p>
+        <p class="lp"><strong>Chronic stress</strong> — cortisol directly damages gut lining integrity and disrupts microbial balance.</p>
+        <h3 class="lh3">The Gate That Should Never Open</h3>
+        <p class="lp">Running along the inside of your gut is a lining just one cell thick. <em>One cell.</em> That single layer is the gate between everything inside your digestive tract and the rest of your body. When damaged — and in most modern humans it is damaged — that gate begins to open where it should not.</p>
+        <p class="lp">Undigested food particles. Bacterial toxins. Parasitic waste products. Heavy metals. Chemicals. All of it leaking through a compromised barrier directly into your bloodstream. Your immune system responds with constant inflammation. Not the acute inflammation that heals a wound. Chronic, systemic, low-grade inflammation that slowly burns through every system in your body.</p>
+        <p class="lp">The medical system gives each consequence a different name. A different specialist. A different medication. But they all share one root: <strong>a gut that has been broken by a world designed to break it.</strong></p>
+        <h3 class="lh3">And Then Come the Opportunists</h3>
+        <p class="lp">A damaged gut becomes the perfect environment for something else entirely. Parasites. Not exotic tropical parasites. The everyday, common, extraordinarily widespread organisms that have adapted perfectly to the modern human gut.</p>
+        <p class="lp">Blastocystis. Giardia. Candida overgrowth. Rope worms. Liver flukes. Pinworms. Conservative estimates suggest that over 3 billion people — nearly half the world's population — carry parasitic infections. These organisms are not passive passengers. They reshape your gut environment to suit their survival. They consume your nutrients before your cells can access them. They communicate with your nervous system — influencing your cravings, your mood, your behavior, your will.</p>
+        <div class="pq"><p>"When you crave sugar at midnight — that may not be you. When you feel inexplicably anxious for no reason — that may not be you. Make sure the body is clean before you decide what is and isn't you."</p></div>
+        <p class="lp"><strong>But here is what I need you to hold onto:</strong> everything described above is reversible. Not managed. Not suppressed. <em>Reversed.</em> The gut lining renews itself completely every few days. Beneficial bacteria, given the right conditions, recolonize with extraordinary speed. The immune system, relieved of constant assault, recalibrates. This is not wishful thinking. This is biology.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHAPTER 3 — FOUR ENEMIES -->
+<section class="sec-warm" id="four-enemies">
+  <div class="inner" style="margin-bottom:0;">
+    <div class="kicker">Chapter Three</div>
+    <h2 class="lh2">The Four Enemies</h2>
+    <p class="lp">You are not fighting one battle. You are fighting four. Simultaneously. And none of them are your fault.</p>
+  </div>
+  <div class="inner-wide" style="padding:0 24px;margin-top:28px;">
+    <div class="enemy-grid">
+      <div class="ec">
+        <span class="ec-num">Enemy 01</span>
+        <div class="ec-title">Toxins</div>
+        <p class="ec-sub">In your air. Your water. Your food. Your household products. Every single day — without your knowledge or consent. The toxic load on the modern human body is unlike anything our species has ever faced.</p>
+      </div>
+      <div class="ec">
+        <span class="ec-num">Enemy 02</span>
+        <div class="ec-title">Parasites</div>
+        <p class="ec-sub">Over 3 billion people carry parasitic infections. They are not passive passengers. They steal your nutrients, reshape your gut, produce toxic waste, and influence your thoughts, moods, and cravings.</p>
+      </div>
+      <div class="ec">
+        <span class="ec-num">Enemy 03</span>
+        <div class="ec-title">Deficiency</div>
+        <p class="ec-sub">Your body needs hundreds of specific nutrients to function. The modern human is profoundly deficient in almost all of them. The soil is depleted. The food is engineered to be empty. The drugs steal what remains.</p>
+      </div>
+      <div class="ec">
+        <span class="ec-num ec-num-terra">Enemy 04</span>
+        <div class="ec-title">Deception</div>
+        <p class="ec-sub">Every toxin, every parasite, every deficiency — none could reach this scale without a carefully constructed architecture of deception protecting them. I know this from the inside.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="inner" style="margin-top:16px;">
+    <button class="exp-btn" onclick="toggleExpand('enemies',this)" data-label="Read the full truth about each enemy">
+      <div class="exp-icon"><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <span class="exp-lbl">Read the full truth about each enemy</span>
+    </button>
+    <div class="exp-body" id="enemies">
+      <div class="exp-inner">
+        <h3 class="lh3 lh3-ink">Enemy One — Toxins</h3>
+        <p class="lp"><strong>The Air.</strong> Stratospheric Aerosol Injection — the deliberate spraying of reflective particles into the upper atmosphere to deflect solar radiation — is not a fringe theory. It is an actively researched geoengineering proposal, covered in multiple US patents,<sup class="cite" title="US Patent 5,003,186 (Chang et al.); US20100127224A1; US20100071771A1 — atmospheric aerosol injection systems involving aluminum oxide, barium, and related compounds">11</sup> the subject of three formal US Congressional hearings,<sup class="cite" title="US House Committee on Science and Technology: Geoengineering hearings November 2009, February 2010, March 2010 (govinfo.gov CHRG-111hhrg53007); House Committee on Science, Space & Technology, November 2017; House Oversight Subcommittee, September 2025 (C-SPAN)">12</sup> and openly discussed by researchers at Harvard, Carnegie Institution, and Pacific Northwest National Laboratory. The proposed particles include aluminum oxide, barium, and strontium. Whether these programs are already operational — and to what extent — remains actively disputed. What is not disputed: industrial pollution, vehicle emissions, PFAS compounds, flame retardants off-gassing from furniture, and formaldehyde from flooring mean the air inside most homes is measurably more toxic than the air outside. Heavy metal accumulation from industrial sources is well-documented in air, water, and soil samples worldwide. The toxic load on the modern respiratory system is real — whatever its precise composition.</p>
+        <p class="lp"><strong>The Water.</strong> Your tap water contains chlorine — which continues killing microorganisms inside your gut. It contains fluoride — documented to accumulate in the pineal gland, potentially disrupting melatonin production and thyroid hormone synthesis by interfering with iodine uptake.<sup class="cite" title="Medical News Today — Fluoride effect on pituitary/pineal gland; Harvard School of Public Health meta-analysis of 27 studies on fluoride and cognitive effects">8</sup> It contains pharmaceutical residues — hormones, antibiotics, antidepressants — that water treatment plants were never designed to remove. It contains microplastics, glyphosate, and in many regions, lead from aging pipes.</p>
+        <p class="lp"><strong>The Food.</strong> Glyphosate is present in alarming concentrations in wheat, oats, corn, soy, and most processed foods. It disrupts gut bacteria through the shikimate pathway and chelates essential minerals out of your body.<sup class="cite" title="US Patent 7771736 B2; ScienceDirect 2023">7</sup> Seed oils — canola, soybean, sunflower, corn oil — industrially processed at high heat, profoundly inflammatory. Hundreds of synthetic chemicals are present in food, approved by the same regulatory agencies whose executives rotate in and out of the corporations being regulated.</p>
+        <p class="lp"><strong>The Products.</strong> Your shampoo. Your deodorant. Your moisturizer. Your makeup. Your cleaning products. Your non-stick cookware. Endocrine disruptors. Heavy metals. Carcinogens. Neurotoxins. All legally present in products used daily by billions of people.</p>
+        <p class="lp"><strong>Microplastics.</strong> Now found in human blood, breast milk, placenta, testes, liver, kidneys, and brain.<sup class="cite" title="Nature Medicine 2025 — University of New Mexico: microplastics in brain 7–30× higher concentration than liver or kidneys; Environmental International 2022 — microplastics in human blood">9</sup> Brain concentrations have increased approximately 50% between 2016 and 2024. We are not just surrounded by plastic. We are becoming it.</p>
+        <div class="pq pq-terra"><p>"They are the predictable consequence of living in a toxic world and being told it is normal."</p></div>
+
+        <h3 class="lh3 lh3-ink">Enemy Two — Parasites</h3>
+        <p class="lp">An estimated 3.5 billion people worldwide are affected by parasitic infections — with approximately 450 million ill as a result.<sup class="cite" title="Dove Medical Press / IDR 2024 citing WHO data; Frontiers in Parasitology 2025">10</sup> Standard medical testing routinely misses them — partly because testing methods are genuinely inadequate, partly because most doctors receive minimal training in parasitology.</p>
+        <p class="lp">Parasites consume your nutrients first — particularly B12, iron, zinc, and magnesium — leaving you deficient regardless of how well you eat. They produce toxic waste that floods your system. They perforate the gut lining. They suppress your immune response.</p>
+        <p class="lp"><strong>The Biofilm Shield.</strong> Here is why most parasite cleanses fail. Parasites construct biofilm — a complex, sticky, protective matrix that hardens around their colonies. A biological fortress. This biofilm physically shields parasites from your immune system and from antiparasitic herbs. If you do not break the biofilm first — everything else is largely ineffective. This is the critical step that virtually every cleanse protocol on the market skips entirely.</p>
+        <div class="pq"><p>"When you start something important and stop at the same point every time — before you decide that is simply who you are — clean the body first. Then decide."</p></div>
+
+        <h3 class="lh3 lh3-ink">Enemy Three — Deficiency</h3>
+        <p class="lp">The soil is depleted. Industrial farming has stripped topsoil of the mineral content it took nature thousands of years to build. Heavy metals compete directly with essential minerals for absorption. Lead displaces calcium. Cadmium displaces zinc. Mercury displaces selenium. The parasites take their share first. And then the medications deepen the deficiency further: statins deplete CoQ10, metformin depletes B12, proton pump inhibitors deplete magnesium.</p>
+        <p class="lp">The result: <strong>magnesium deficient</strong> (required for over 300 enzymatic reactions). <strong>Vitamin D deficient</strong> — despite living under a sun specifically designed to produce it. <strong>Iodine deficient</strong> — affecting thyroid, metabolism, and neurological development. <strong>B12 deficient</strong> — neurological deterioration, fatigue, depression, and progressive damage to the myelin sheath protecting every nerve in your body. You cannot heal a body that does not have the raw materials to heal itself.</p>
+
+        <h3 class="lh3 lh3-ink">Enemy Four — Deception</h3>
+        <p class="lp">The deception that your food is safe because it is approved. The deception that your water is clean because it is treated. The deception that your medications are effective because they passed clinical trials designed, funded, and analyzed by the companies that profit from their approval.</p>
+        <p class="lp">The deception that your symptoms are genetic. That your depression is a brain chemistry imbalance. That your autoimmune disease has no known cause. That there is nothing to be done except manage it with medication for the rest of your life.</p>
+        <p class="lp">I am not asking you to be angry forever. Anger is exhausting and it keeps you focused outward when the healing happens within. But I am asking you to understand clearly — just once, fully, without flinching — that the system telling you it cannot help you is the same system that created the conditions making you sick.</p>
+        <div class="pq pq-terra"><p>"Once you understand that completely, something shifts. You stop waiting for permission to heal. You stop looking outside yourself for the answer. You turn inward. You take responsibility. You take action. And that is where this protocol begins."</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE TURN -->
+<section class="sec-forest">
+  <div class="inner" style="text-align:center;">
+    <div style="margin-bottom:24px;">
+      <span style="font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-nav);">The Good News</span>
+    </div>
+    <h2 class="lh2 lh2-dark" style="text-align:center;">Everything described above<br>is reversible.</h2>
+    <p style="font-size:clamp(16px,2vw,19px);color:rgba(240,236,226,0.75);max-width:560px;margin:14px auto;line-height:1.85;font-weight:300;">Not managed. Not suppressed. <strong style="color:#f0ece2;">Reversed.</strong></p>
+    <p style="font-size:15px;color:rgba(240,236,226,0.6);max-width:620px;margin:0 auto 36px;line-height:1.9;">The gut lining renews itself completely every few days. Beneficial bacteria, given the right conditions, recolonize with extraordinary speed. The immune system, relieved of constant assault, recalibrates. The nervous system, given genuine nourishment, begins to repair. This is not wishful thinking. <strong style="color:rgba(240,236,226,0.8);">This is biology.</strong></p>
+    <div style="display:inline-block;background:rgba(138,184,154,0.1);border:1px solid rgba(138,184,154,0.25);border-radius:8px;padding:20px 32px;max-width:560px;">
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.3vw,20px);color:#d4e8d8;margin:0;line-height:1.65;">"The next section is the map. Step by step. In the right order. With the right tools. Beginning not with what we add — but with what we must first remove."</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- COMPACT EMAIL SIGNUP — peak emotional moment -->
+<section class="sec-warm">
+  <div class="inner">
+    <div class="email-signup-compact">
+      <h3>Stay connected as new protocols are added</h3>
+      <p>New research. New protocols. New tools — delivered directly to you. No algorithms. No ads.</p>
+      <div class="email-row">
+        <input type="email" id="mc-email-byb" class="email-input" placeholder="Your email address" />
+        <button class="email-btn" onclick="mcSubmitByb()">Join →</button>
+      </div>
+      <p id="mc-msg-byb" class="email-note" style="min-height:16px;"></p>
+      <p class="email-note">Free · No spam · Unsubscribe anytime</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- READY TO BEGIN -->
+<section class="sec-main" id="ready-to-begin">
+  <div class="inner">
+    <div class="kicker">You Have Read the Foundation</div>
+    <h2 class="lh2">Now You Are Ready to Begin.</h2>
+    <p class="lp">The Full Body Detox Protocol is the mandatory first step. Every other protocol in this guide — Brain, Parkinson's, DMSO, Oxygen, Deficiencies — works only on a body that has been cleaned first. You cannot nourish a cell surrounded by waste. You cannot absorb a supplement effectively in a compromised gut.</p>
+    <p class="lp">The detox creates the terrain. Without it, every other protocol is building on sand.</p>
+    <div class="pq"><p>"The sequence matters as much as the substances. This protocol is designed in the correct order. Trust the order."</p></div>
+
+    <div class="next-cta">
+      <div class="next-cta-label">Your Next Step</div>
+      <h3>Start the Full Body Detox Protocol →</h3>
+      <p>90 days. 4 phases. Complete daily schedules, supplement stacks with iHerb links, and a shopping list you can print. Step by step. Day by day.</p>
+      <a href="Full_Body_Detox_Protocol.html" class="btn-primary">Begin the 90-Day Protocol →</a>
+      <p style="font-size:12px;color:rgba(240,236,226,0.45);margin-top:12px;">Free · Complete · Non-negotiable foundation for everything that follows</p>
+    </div>
+
+    <div style="margin-top:40px;">
+      <div class="warn-box">
+        <div class="warn-title">Important — Please Read Before Beginning</div>
+        <p>This protocol is a general wellness and detoxification framework for generally healthy adults. Consult a qualified healthcare practitioner before beginning if you are: pregnant or breastfeeding · under 18 · currently undergoing cancer treatment · living with kidney disease or serious autoimmune conditions managed by immunosuppressive medication · taking blood-thinning, heart, psychiatric, epilepsy, or diabetes medications. Several compounds in this protocol — including nattokinase, serrapeptase, berberine, oregano oil, St. John's Wort, and milk thistle — have documented interactions with pharmaceutical medications. If you experience severe symptoms at any point — stop immediately and seek medical attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SUPPORT -->
+<section class="sec-sage">
+  <div class="inner" style="text-align:center;">
+    <div class="kicker" style="justify-content:center;">Support This Guide</div>
+    <h2 class="lh2">This guide is completely free.</h2>
+    <p class="lp" style="max-width:520px;margin:0 auto 24px;">If this guide helps you — buy your supplements through iHerb using the code below. You get a discount. A small commission keeps the guide funded. It costs you nothing extra.</p>
+    <p style="font-family:'DM Mono',monospace;font-size:32px;font-weight:500;color:var(--sage);letter-spacing:0.1em;margin-bottom:6px;">GUW6132</p>
+    <p style="font-size:12px;color:var(--ink-light);margin-bottom:20px;">Your iHerb affiliate code · Use at checkout for a discount</p>
+    <a href="https://www.iherb.com/?rcode=GUW6132" class="btn-primary" target="_blank">Shop iHerb — Code GUW6132</a>
+    <p style="font-size:12px;color:var(--ink-light);margin-top:12px;">All supplements in this guide are available on iHerb · Ships internationally</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SHARE -->
+<section class="share-block">
+  <div class="share-block-title">Know someone who needs this?</div>
+  <p class="share-block-sub">If this changed how you understand your body — share it. It costs nothing and could change everything for someone you love.</p>
+  <div class="share-btns">
+    <a class="share-btn wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Share on WhatsApp
+    </a>
+    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Share on Facebook
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SOURCES -->
+<section class="sec-main sources">
+  <div class="inner">
+    <div class="kicker">Research & Sources</div>
+    <h2>Citations & Further Reading</h2>
+    <p class="lp" style="margin-bottom:28px;">Every major claim in this guide is grounded in peer-reviewed research, institutional data, or primary source documentation. Sources include both mainstream and independent research. Numbers correspond to superscript citations in the text above.</p>
+    <ol class="source-list">
+      <li>Enteric Nervous System and Its Relationship with Neurological Diseases — PMC / NCBI, 2024. "90% of vagal fibers between the gut and brain are of the afferent type." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11433641/" target="_blank" rel="noopener">PMC11433641 →</a></li>
+      <li>The Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis — PMC / NCBI, 2018. "The VN contains 80% afferent and 20% efferent fibers." <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5808284/" target="_blank" rel="noopener">PMC5808284 →</a></li>
+      <li>Enterochromaffin Cells Are Gut Chemosensors — Cell / UCSF, 2017. "These unique cells produce >90% of the body's serotonin." <a href="https://www.cell.com/cell/fulltext/S0092-8674(17)30595-0" target="_blank" rel="noopener">Cell, June 2017 →</a> — confirmed by ScienceDirect, 2018: "About 95% of 5-HT is estimated to be found in gut." <a href="https://www.sciencedirect.com/science/article/abs/pii/S0300908418301652" target="_blank" rel="noopener">ScienceDirect 2018 →</a></li>
+      <li>Braak's Hypothesis — Parkinson's disease originates in the gut. (a) Nature Reviews Neurology, 2015 — Klingelhoefer & Bhidayasiri. <a href="https://www.nature.com/articles/nrneurol.2015.197" target="_blank" rel="noopener">Nature Reviews Neurology →</a> (b) Transneuronal Propagation of Pathologic α-Synuclein from the Gut to the Brain — Neuron/Cell, 2019 — Kim et al. Truncal vagotomy prevents spread. <a href="https://www.cell.com/neuron/fulltext/S0896-6273(19)30488-X" target="_blank" rel="noopener">Neuron, 2019 →</a> (c) Johns Hopkins Medicine, 2019 — animal model confirmation. <a href="https://www.hopkinsmedicine.org/news/articles/2019/07/qa--an-unlikely-origin-for-parkinsons-disease" target="_blank" rel="noopener">Johns Hopkins →</a></li>
+      <li>Antibiotics can affect the gut microbiome for several years — Nature Medicine, March 2026. Uppsala University, 14,979 adults. "Even a single course leaves traces up to 4–8 years." Baldanzi et al., doi:10.1038/s41591-026-04284-y. <a href="https://www.uu.se/en/press/press-releases/2026/2026-03-11-antibiotics-can-affect-the-gut-microbiome-for-several-years" target="_blank" rel="noopener">Uppsala University →</a></li>
+      <li>Glyphosate patented as antibiotic — US Patent No 7771736 B2. Confirmed in: Impact of glyphosate on the composition and functionality of the gut microbiome — Tandfonline, 2023. "In 2010, glyphosate was patented as an antibiotic." <a href="https://www.tandfonline.com/doi/full/10.1080/19490976.2023.2263935" target="_blank" rel="noopener">Tandfonline 2023 →</a></li>
+      <li>Low-dose glyphosate exposure alters gut microbiota and modulates gut homeostasis — ScienceDirect, 2023. Loss of Lactobacillus and Bifidobacterium; increased inflammatory markers. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1382668923000911" target="_blank" rel="noopener">ScienceDirect 2023 →</a></li>
+      <li>Fluoride accumulation in pineal gland and thyroid disruption. (a) Medical News Today — fluoride reduces T3/T4, accumulates in pineal gland. <a href="https://www.medicalnewstoday.com/articles/fluoride-effect-on-pituitary-gland" target="_blank" rel="noopener">Medical News Today →</a> (b) Harvard School of Public Health / China Medical University — meta-analysis of 27 studies on fluoride and cognitive development in children. (c) RSIS International Journal, 2025 — fluoride, calcification, melatonin disruption. <a href="https://rsisinternational.org/journals/ijriss/articles/the-links-between-pineal-gland-calcification-mental-health-and-fluoride-exposure/" target="_blank" rel="noopener">RSIS International →</a></li>
+      <li>Microplastics in human tissues. (a) Nature Medicine, 2025 — University of New Mexico: microplastics in brain 7–30× higher than liver or kidneys; concentrations up ~50% from 2016 to 2024. <a href="https://www.nature.com/articles/s41591-024-03453-1" target="_blank" rel="noopener">Nature Medicine →</a> (b) Environmental International, 2022 — microplastics in human blood. (c) Ragusa et al., Environmental International, 2021 — microplastics in human placenta.</li>
+      <li>Global burden of parasitic infections — "3.5 billion individuals worldwide are affected, approximately 450 million patients are ill." Dove Medical Press / IDR, 2024, citing WHO data. <a href="https://www.dovepress.com/prevalence-and-predictors-of-intestinal-parasitic-infections-at-king-a-peer-reviewed-fulltext-article-IDR" target="_blank" rel="noopener">Dove Medical Press →</a> Confirmed by Frontiers in Parasitology, 2025 — "Up to one-third of the global human population is infected with Toxoplasma gondii." <a href="https://public-pages-files-2025.frontiersin.org/journals/parasitology/articles/10.3389/fpara.2025.1546195/pdf" target="_blank" rel="noopener">Frontiers in Parasitology →</a></li>
+      <li>Stratospheric Aerosol Injection — US Patents: US Patent 5,003,186 (Chang et al.); US20100127224A1 — atmospheric injection of reflective aerosol; US20100071771A1 — high altitude atmospheric injection system. <a href="https://patents.google.com/patent/US20100127224A1/en" target="_blank" rel="noopener">Google Patents →</a></li>
+      <li>US Congressional hearings on geoengineering. (a) House Committee on Science and Technology, November 5, 2009 — "Geoengineering: Assessing the Implications of Large-Scale Climate Intervention." <a href="https://www.govinfo.gov/app/details/CHRG-111hhrg53007/CHRG-111hhrg53007" target="_blank" rel="noopener">govinfo.gov →</a> (b) Energy and Environment Subcommittee, February 4, 2010 — "Geoengineering II: The Scientific Basis and Engineering Challenges." (c) House Committee on Science, Space & Technology, November 2017. <a href="https://science.house.gov/2017/11/subcommittee-environment-and-subcommittee-energy-hearing-geoengineering" target="_blank" rel="noopener">science.house.gov →</a> (d) House Oversight Subcommittee, September 16, 2025 — Weather Manipulation and Geoengineering. <a href="https://www.c-span.org/program/house-committee/hearing-on-weather-manipulation-and-geoengineering/665664" target="_blank" rel="noopener">C-SPAN →</a></li>
+    </ol>
+    <p style="font-size:12px;color:var(--ink-ghost);margin-top:20px;line-height:1.7;">This guide cites peer-reviewed research, institutional data, and primary source documents. Where mainstream and independent research conflict, both perspectives are presented. Citations are provided for reader verification — not as a substitute for professional medical advice.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:10px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+    </div>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html" style="color:var(--sage-nav);font-weight:600;">Before You Begin</a>
+      <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
+      <a href="protocols.html">All Protocols</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleExpand(id,btn){
+  const body=document.getElementById(id);
+  const isOpen=body.classList.contains('open');
+  body.classList.toggle('open',!isOpen);
+  btn.classList.toggle('open',!isOpen);
+  const lbl=btn.querySelector('.exp-lbl,.exp-lbl-terra');
+  lbl.textContent=isOpen?btn.dataset.label:'Show less';
+}
+
+function mcSubmitByb(){
+  var email=document.getElementById('mc-email-byb').value.trim();
+  var msg=document.getElementById('mc-msg-byb');
+  if(!email||!email.includes('@')){
+    msg.style.color='#e88a7a';
+    msg.textContent='Please enter a valid email address.';
+    return;
+  }
+  msg.style.color='var(--sage-nav)';
+  msg.textContent='Thank you — look out for updates soon.';
+  document.getElementById('mc-email-byb').value='';
+  if(window.MailchimpSubscribe){MailchimpSubscribe({EMAIL:email});}
+}
+
+function toggleNavDropdown(){
+  const d=document.getElementById('nav-protocols');
+  const open=d.classList.toggle('open');
+  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('nav-protocols');
+  if(d && !d.contains(e.target)) d.classList.remove('open');
+});
+
+// Sticky nav active state
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.phase-nav a');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(l=>l.classList.remove('pn-active'));
+      const active=document.querySelector('.phase-nav a[href="#'+entry.target.id+'"]');
+      if(active) active.classList.add('pn-active');
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+sections.forEach(s=>observer.observe(s));
+</script>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
+</body>
+</html>

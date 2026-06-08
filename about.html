@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — The Story Behind Heal Yourself | Sharona</title>
+<meta name="description" content="Sharona spent years as a pharmaceutical QA internal auditor. In 2020 she walked away — and spent years finding what the system was never designed to give you. This is her story.">
+<link rel="canonical" href="https://sharondrn-sys.github.io/Heal-Yourself-Guide/about.html">
+<meta property="og:title" content="The Story Behind Heal Yourself — Why This Guide Exists">
+<meta property="og:description" content="A pharmaceutical QA insider who watched the system from the inside and chose the patient. The full story behind this free healing guide.">
+<meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/about.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Heal Yourself Guide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Story Behind Heal Yourself">
+<meta name="twitter:description" content="A pharmaceutical QA insider who watched the system from the inside and chose the patient.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nav-h:56px;
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
+  --honey:#a07830;--honey-pale:#f5eddb;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;padding-top:var(--nav-h);}
+section[id]{scroll-margin-top:100px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
+@media(max-width:480px){.nav-center{display:none;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:22px;}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;white-space:nowrap;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
+.dd-group:hover .dd-subs{display:block;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+
+/* HERO */
+.hero{background:var(--bg-warm);padding:68px 24px 52px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border-s);}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 40%,rgba(61,107,74,0.06) 0%,transparent 70%);pointer-events:none;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.eyebrow::before{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to right,transparent,var(--sage-mid));}
+.eyebrow::after{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(to left,transparent,var(--sage-mid));}
+.eyebrow span{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(30px,5vw,54px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(14px,2vw,17px);color:var(--ink-light);font-weight:300;max-width:560px;margin:0 auto;line-height:1.85;}
+
+/* SECTIONS */
+.sec-main{background:var(--bg);padding:64px 24px;}
+.sec-warm{background:var(--bg-warm);padding:64px 24px;}
+.sec-deep{background:var(--bg-deep);padding:64px 24px;}
+.sec-stone{background:var(--bg-stone);padding:64px 24px;}
+.sec-forest{background:#2c3a2e;padding:64px 24px;}
+.sec-terra{background:var(--terra-pale);padding:64px 24px;}
+
+.inner{max-width:720px;margin:0 auto;}
+.divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.18),transparent);}
+
+/* TYPOGRAPHY */
+.kicker{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.kicker::before{content:'';width:28px;height:1px;background:var(--sage-mid);}
+.kicker-terra{color:var(--terra);}
+.kicker-terra::before{background:var(--terra-light);}
+.lh2{font-family:'Playfair Display',serif;font-size:clamp(24px,3.8vw,38px);font-weight:700;color:var(--ink);line-height:1.22;margin-bottom:18px;}
+.lh2 em{color:var(--sage);font-style:italic;}
+.lh2-dark{color:#f0ece2;}
+.lh3{font-family:'Playfair Display',serif;font-size:clamp(16px,2.2vw,21px);font-weight:600;color:var(--sage);line-height:1.3;margin:32px 0 12px;}
+.lh3-terra{color:var(--terra);}
+.lp{font-size:16px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;}
+.lp strong{color:var(--ink);font-weight:600;}
+.lp em{font-style:italic;color:var(--sage);}
+.lp-light{font-size:15px;line-height:1.9;color:rgba(240,236,226,0.82);margin-bottom:16px;}
+
+/* PULL QUOTES */
+.pq{border-left:3px solid var(--sage-mid);padding:18px 22px;margin:28px 0;background:var(--sage-pale);border-radius:0 6px 6px 0;}
+.pq p{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(15px,2.2vw,19px);line-height:1.65;color:var(--sage);margin:0;}
+.pq-terra{border-left-color:var(--terra-light);background:var(--terra-pale);}
+.pq-terra p{color:var(--terra);}
+
+/* AUTHOR PROFILE */
+.auth-profile{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start;margin-bottom:36px;}
+@media(max-width:560px){.auth-profile{grid-template-columns:1fr;}}
+.auth-avatar{width:90px;height:90px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;flex-shrink:0;}
+.auth-name{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.auth-role{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+.auth-tagline{font-size:14px;color:var(--ink-light);line-height:1.6;font-style:italic;}
+
+/* TIMELINE */
+.timeline{margin:32px 0;}
+.tl-item{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--border-s);}
+.tl-item:last-child{border-bottom:none;}
+.tl-year{font-family:'DM Mono',monospace;font-size:13px;font-weight:700;color:var(--sage);padding-top:2px;}
+.tl-content{}
+.tl-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.tl-text{font-size:14px;color:var(--ink-mid);line-height:1.75;}
+
+/* PHILOSOPHY CARDS */
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+@media(max-width:560px){.phil-grid{grid-template-columns:1fr;}}
+.phil-card{background:var(--bg-warm);border:1px solid var(--border-s);border-radius:8px;padding:22px 20px;}
+.phil-icon{font-size:24px;margin-bottom:10px;display:block;}
+.phil-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.phil-text{font-size:13px;color:var(--ink-light);line-height:1.7;}
+
+/* SHARE */
+.share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
+@media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
+.share-pill{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.18);}
+.share-pill:hover{transform:translateY(-2px) scale(1.08);}
+.share-pill.wa{background:#25D366;}
+.share-pill.fb{background:#1877F2;}
+.share-pill svg{width:22px;height:22px;fill:#fff;}
+.share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-ghost);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
+@media(max-width:768px){.share-float-label{display:none;}}
+
+/* EMAIL */
+.email-compact{background:#2c3a2e;border-radius:10px;padding:32px 36px;text-align:center;max-width:480px;margin:0 auto;}
+.email-compact h3{font-family:'Playfair Display',serif;font-size:clamp(17px,2.5vw,22px);font-weight:700;color:#f0ece2;margin-bottom:8px;}
+.email-compact p{font-size:13px;color:rgba(240,236,226,0.65);margin-bottom:20px;line-height:1.7;}
+.email-row{display:flex;gap:10px;max-width:380px;margin:0 auto;}
+@media(max-width:440px){.email-row{flex-direction:column;}}
+.email-row input{flex:1;padding:12px 16px;border-radius:6px;border:1px solid rgba(138,184,154,0.3);background:rgba(255,255,255,0.07);color:#f0ece2;font-size:14px;font-family:'Jost',sans-serif;outline:none;}
+.email-row input::placeholder{color:rgba(240,236,226,0.35);}
+.email-row button{padding:12px 20px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;white-space:nowrap;transition:background 0.2s;}
+.email-row button:hover{background:var(--sage-mid);}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:48px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.45);line-height:1.75;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+
+@media print{nav,footer,.share-float{display:none!important;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="before-you-begin.html">Before You Begin</a>
+    <div class="nav-dropdown" id="nav-protocols">
+      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
+        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          </div>
+        </div>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="research.html">Research</a>
+    <a href="about.html" class="active">About</a>
+  </div>
+</nav>
+
+<!-- FLOATING SHARE BAR -->
+<div class="share-float" aria-label="Share this guide">
+  <span class="share-float-label">Share</span>
+  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span>The Story Behind the Guide</span></div>
+  <h1>Someone Who Chose<br><em>the Patient</em></h1>
+  <p class="hero-sub">Not a doctor. Not a naturopath. Someone who spent years inside the pharmaceutical system — and walked away when she could no longer stay.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- AUTHOR PROFILE -->
+<section class="sec-warm" id="sharona">
+  <div class="inner">
+    <div class="auth-profile">
+      <div class="auth-avatar">S</div>
+      <div>
+        <div class="auth-name">Sharona</div>
+        <div class="auth-role">Pharmaceutical QA Internal Auditor · Independent Researcher</div>
+        <p class="auth-tagline">"I am not a Doctor. This is precisely why you need to listen to me."</p>
+      </div>
+    </div>
+
+    <div class="kicker">The Beginning</div>
+    <h2 class="lh2">A Diagnosis That Changed Everything</h2>
+    <p class="lp">This guide was written with a lot of love and passion for helping people heal.</p>
+    <p class="lp">It first came about when my best friend was diagnosed with Parkinson's disease at a relatively young age — early fifties. I felt like someone hit me in the gut. And I knew I had to try and do something.</p>
+    <p class="lp">I had watched her move through the medical system. The neurologist. The prescriptions. The management plan. The slow, measured progression toward a future nobody was asking questions about. Nobody was asking: why is this happening? Nobody was looking at the gut. Nobody was looking at the environment. Nobody was asking what had changed in her body in the decade before the diagnosis.</p>
+    <p class="lp">They were managing. Not investigating. Not healing.</p>
+    <div class="pq pq-terra"><p>"The system was never designed to heal you. I know this — because I worked inside it."</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE INSIDE STORY -->
+<section class="sec-main" id="inside">
+  <div class="inner">
+    <div class="kicker kicker-terra">The Pharmaceutical Years</div>
+    <h2 class="lh2">What I Saw From the Inside</h2>
+    <p class="lp">I worked many years in the pharmaceutical industry, in Quality Assurance — responsible for all documentation in the factory. My department was the paper trail of the entire operation. Every document from every department passed through my team. Regulatory submissions. Clinical trial data. Internal safety reports. Manufacturing instructions, specifications, and much more.</p>
+    <p class="lp">I worked in the room where the documentation lived.</p>
+    <p class="lp">I always knew that the system is not designed to cure anything. It is about symptom management. Each drug causes more symptoms and conditions that need more drugs. The more we get sick, the more profit for them.</p>
+    <div class="pq pq-terra"><p>"There is no financial incentive in a cure. Think about that slowly."</p></div>
+    <p class="lp">A patient who heals completely is, from a purely commercial standpoint, a customer lost. A patient who is managed — whose symptoms are controlled but never resolved — is a customer for life. Every side effect from medication A becomes the justification for medication B. Medication B creates the conditions for medication C. And so the wheel turns. Profitably. Indefinitely.</p>
+    <p class="lp"><strong>This is not conspiracy. This is accounting.</strong></p>
+    <p class="lp">I watched it happen. In the paperwork. In the approvals. In the language carefully chosen to satisfy regulators while revealing as little as possible about what was actually occurring inside human bodies.</p>
+    <p class="lp">I am not saying every doctor is corrupt. They don't know. Nobody teaches them. Most became doctors because they genuinely want to help. I am saying something more specific: <em>the system was never designed to cure you.</em></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE DECISION -->
+<section class="sec-deep" id="decision">
+  <div class="inner">
+    <div class="kicker">2020</div>
+    <h2 class="lh2">The Decision to Leave</h2>
+    <p class="lp">In 2020, the world changed. I started researching — frantically. I gave it everything. I had to find out the truth. What I found shook my core.</p>
+    <p class="lp">I morally could not keep working in the industry despite a good salary, benefits, and a position I was valued in. I was very good at what I did. But I could not continue working for a system that is built to manage illness rather than resolve it.</p>
+    <p class="lp">So I walked away. Not for money. Not for a better opportunity. I walked away because staying meant being complicit in something I did not want to be a part of.</p>
+    <p class="lp">And then I started looking. Not in medical journals funded by the companies whose products they were evaluating. Not in news outlets whose largest advertisers were pharmaceutical corporations. Not in government health agencies staffed by former industry executives.</p>
+    <p class="lp"><em>I looked in places they don't want you to look.</em></p>
+    <p class="lp">What I found over the next several years changed everything I thought I understood about the human body. About disease. About what is actually making us sick and why. And what I found was both darker and more hopeful than anything I expected.</p>
+    <div class="pq pq-terra"><p>"You found this because you are ready. Begin."</p></div>
+    <p class="lp" style="font-style:italic;color:var(--ink-light);">Written with love, urgency, and everything I know — by someone who watched the system from the inside and chose the patient.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TIMELINE -->
+<section class="sec-stone" id="journey">
+  <div class="inner">
+    <div class="kicker">The Journey</div>
+    <h2 class="lh2">How This Guide Was Built</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">Years 1–10</div>
+        <div class="tl-content">
+          <div class="tl-title">Inside the System</div>
+          <p class="tl-text">Pharmaceutical Quality Assurance. Every document, every report, every regulatory submission. Learning how the system works — and how it fails.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020</div>
+        <div class="tl-content">
+          <div class="tl-title">The Breaking Point</div>
+          <p class="tl-text">The world changed. The curtain was pulled back. The decision to leave an industry and a salary — and begin looking for what the system was never designed to provide.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2020–2023</div>
+        <div class="tl-content">
+          <div class="tl-title">The Research Years</div>
+          <p class="tl-text">Thousands of hours across peer-reviewed research, suppressed clinical trials, ancient healing traditions, functional medicine, gut science, neurological research, and healing protocols from practitioners the mainstream never references.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-content">
+          <div class="tl-title">The Friend's Diagnosis</div>
+          <p class="tl-text">A best friend diagnosed with Parkinson's in her early fifties. The catalyst that turned years of private research into a structured guide — built first for her, then for everyone who has been told there is nothing more to do.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Now</div>
+        <div class="tl-content">
+          <div class="tl-title">The Guide Continues Growing</div>
+          <p class="tl-text">This guide is not finished — no honest healing guide ever is. What is here right now is enough to change the trajectory of someone's health. New protocols, new research, and new applications of the system are added continuously.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHILOSOPHY -->
+<section class="sec-warm" id="philosophy">
+  <div class="inner">
+    <div class="kicker">The Philosophy</div>
+    <h2 class="lh2">What This Guide Believes</h2>
+    <p class="lp">This is not a collection of alternative health opinions. It is a coherent philosophy built on one foundational premise: the body has an extraordinary capacity to heal when given the right conditions and relieved of what is burdening it.</p>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <span class="phil-icon">🧹</span>
+        <div class="phil-title">Remove the Burden First</div>
+        <p class="phil-text">Toxins, parasites, heavy metals, inflammatory inputs. The body cannot heal while it is overwhelmed by what it is fighting.</p>
+      </div>
+      <div class="phil-card">
+        <span class="phil-icon">🌱</span>
+        <div class="phil-title">Restore What Was Taken</div>
+        <p class="phil-text">Minerals, clean water, oxygen, real nutrition, rest, sunlight. The inputs the body needs to function and repair.</p>
+      </div>
+      <div class="phil-card">
+        <span class="phil-icon">🔬</span>
+        <div class="phil-title">Follow the Research — All of It</div>
+        <p class="phil-text">Peer-reviewed studies, independent researchers, ancient traditions. Not just what is funded by those who profit from illness.</p>
+      </div>
+      <div class="phil-card">
+        <span class="phil-icon">💚</span>
+        <div class="phil-title">Information Is Not a Luxury</div>
+        <p class="phil-text">This guide is free. It will remain free. Health knowledge should not depend on what someone can afford to pay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT & SUPPORT -->
+<section class="sec-deep" id="contact">
+  <div class="inner" style="text-align:center;">
+    <div class="kicker" style="justify-content:center;">Get in Touch</div>
+    <h2 class="lh2">Contact & Support</h2>
+    <p class="lp" style="max-width:500px;margin:0 auto 28px;">Questions about the guide, feedback, or research you think should be included — reach out directly.</p>
+    <a href="mailto:healyourselfguide101@gmail.com" style="display:inline-block;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:14px 36px;border-radius:6px;transition:background 0.2s;margin-bottom:36px;">healyourselfguide101@gmail.com</a>
+
+    <div class="divider" style="margin:36px 0;"></div>
+
+    <div class="kicker" style="justify-content:center;">Support the Guide</div>
+    <h2 class="lh2" style="font-size:clamp(20px,3vw,28px);">This guide is completely free — always.</h2>
+    <p class="lp" style="max-width:500px;margin:0 auto 20px;">If it helps you — buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--sage);">GUW6132</strong>. You get a discount at checkout. A small commission keeps the guide funded and growing.</p>
+    <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" style="display:inline-block;background:var(--terra);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:14px 36px;border-radius:6px;transition:background 0.2s;">Shop iHerb · Code GUW6132</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EMAIL SIGNUP -->
+<section class="sec-forest">
+  <div class="inner" style="text-align:center;">
+    <div class="kicker kicker-dark" style="justify-content:center;">Stay Connected</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#f0ece2;margin-bottom:12px;">New protocols delivered to you</h2>
+    <p style="font-size:14px;color:rgba(240,236,226,0.65);margin-bottom:28px;max-width:400px;margin-left:auto;margin-right:auto;line-height:1.7;">Free · No spam · Unsubscribe anytime</p>
+    <div class="email-compact">
+      <h3>Join the Community</h3>
+      <p>New research. New protocols. When they are ready.</p>
+      <div class="email-row">
+        <input type="email" id="mc-email-about" placeholder="Your email address" />
+        <button onclick="mcSubmitAbout()">Join →</button>
+      </div>
+      <p id="mc-msg-about" style="font-size:11px;color:rgba(240,236,226,0.35);margin-top:10px;min-height:16px;"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:8px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+    </div>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
+      <a href="protocols.html">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html" style="color:var(--sage-nav);font-weight:600;">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
+<script>
+function mcSubmitAbout(){
+  var email=document.getElementById('mc-email-about').value.trim();
+  var msg=document.getElementById('mc-msg-about');
+  if(!email||!email.includes('@')){msg.style.color='#e88a7a';msg.textContent='Please enter a valid email address.';return;}
+  msg.style.color='var(--sage-nav)';msg.textContent='Thank you — look out for updates soon.';
+  document.getElementById('mc-email-about').value='';
+  if(window.MailchimpSubscribe){MailchimpSubscribe({EMAIL:email});}
+}
+function toggleNavDropdown(){
+  const d=document.getElementById('nav-protocols');
+  const open=d.classList.toggle('open');
+  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('nav-protocols');
+  if(d&&!d.contains(e.target))d.classList.remove('open');
+});
+</script>
+</body>
+</html>

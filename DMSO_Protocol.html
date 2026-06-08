@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DMSO Protocol — Heal Yourself</title>
+<title>DMSO Protocol — The Suppressed Healing Compound | Heal Yourself</title>
+<meta name="description" content="The complete DMSO protocol. Over 11,000 peer-reviewed studies. The suppression story, concentrations guide, application by condition, safety rules, and daily schedule. Free guide.">
+<link rel="canonical" href="https://sharondrn-sys.github.io/Heal-Yourself-Guide/DMSO_Protocol.html">
+<meta property="og:title" content="DMSO Protocol — What the FDA Doesn't Want You to Know">
+<meta property="og:description" content="11,000+ peer-reviewed studies. The suppression story. Concentrations, application by condition, neurological use, safety rules. Free complete protocol.">
+<meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/DMSO_Protocol.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Heal Yourself Guide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DMSO Protocol — The Suppressed Healing Compound | Heal Yourself">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,7 +67,7 @@ body{padding-top:var(--nav-h);}
 /* SECTION NAV */
 .jump-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
 .jump-nav::-webkit-scrollbar{display:none;}
-.jump-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.jump-nav-inner{display:flex;align-items:stretch;min-width:max-content;justify-content:center;margin:0 auto;}
 .jump-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
 .jump-nav a:hover{color:var(--sage);border-bottom-color:var(--sage-mid);}
 .jn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
@@ -177,7 +186,28 @@ body{padding-top:var(--nav-h);}
 /* PRINT BUTTON */
 .print-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--ink-light);padding:9px 18px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;margin-bottom:20px;}
 .print-btn:hover{border-color:var(--sage-mid);color:var(--sage);}
-@media print{.print-btn,.jump-nav,nav{display:none!important;}.hero{padding-top:24px!important;}}
+.pdf-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:var(--terra-pale);color:var(--terra);border:1px solid rgba(140,90,60,0.25);padding:9px 18px;border-radius:5px;cursor:pointer;font-family:inherit;transition:all 0.2s;margin-bottom:20px;}
+.pdf-btn:hover{background:var(--terra);color:#fff;}
+
+/* SHARE — FLOATING */
+.share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
+@media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
+.share-pill{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.18);}
+.share-pill:hover{transform:translateY(-2px) scale(1.08);}
+.share-pill.wa{background:#25D366;}
+.share-pill.fb{background:#1877F2;}
+.share-pill svg{width:22px;height:22px;fill:#fff;}
+.share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
+@media(max-width:768px){.share-float-label{display:none;}}
+
+/* CITATIONS */
+sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:default;}
+
+/* TGRID */
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
+@media(max-width:560px){.tgrid{grid-template-columns:1fr;}}
+
+@media print{.print-btn,.pdf-btn,.jump-nav,nav,.share-float,.no-print{display:none!important;}.hero{padding-top:24px!important;}body{background:white;color:black;}@page{margin:15mm;size:A4;}}
 
 /* TIMELINE */
 .timeline{position:relative;padding-left:28px;margin:24px 0;}
@@ -203,84 +233,101 @@ footer a:hover{color:#d4c9a8;}
   <a href="index.html" class="nav-logo">Heal Yourself</a>
   <div class="nav-center">
     <a href="index.html">Home</a>
-  </div>
-  <div class="nav-dropdown" id="mainDrop">
-    <button class="nav-dropdown-toggle" onclick="document.getElementById('mainDrop').classList.toggle('open')">
-      Protocols
-      <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div class="nav-dropdown-menu">
-      <div class="dd-group">
-        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
-        <div class="dd-subs">
-          <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-          <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+    <a href="before-you-begin.html">Before You Begin</a>
+    <div class="nav-dropdown" id="mainDrop">
+      <button class="nav-dropdown-toggle" onclick="document.getElementById('mainDrop').classList.toggle('open')">
+        Protocols <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
         </div>
-      </div>
-      <div class="dd-group">
-        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
-        <div class="dd-subs">
-          <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-          <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
         </div>
-      </div>
-      <div class="dd-group">
-        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
-        <div class="dd-subs">
-          <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+        <div class="dd-group">
+          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <div class="dd-subs">
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
         </div>
-      </div>
-      <div class="dd-group">
-        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
-        <div class="dd-subs">
-          <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
-          <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
-          <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+        <div class="dd-group">
+          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <div class="dd-subs">
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+          </div>
         </div>
-      </div>
-      <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
-      <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
-      <div class="dd-group">
-        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
-        <div class="dd-subs">
-          <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-          <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
-          <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
-          <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+          </div>
         </div>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
-      <a href="protocols.html"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
     </div>
+    <a href="research.html">Research</a>
+    <a href="about.html">About</a>
   </div>
 </nav>
 
+<!-- FLOATING SHARE BAR -->
+<div class="share-float" aria-label="Share this guide">
+  <span class="share-float-label">Share</span>
+  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="eyebrow"><span>⚗️ DMSO Protocol</span></div>
+  <div class="eyebrow"><span>⚗️ DMSO Protocol — Heal Yourself System</span></div>
   <h1>DMSO<br><em>The Most Suppressed Healing Substance on Earth</em></h1>
   <p class="hero-sub">A byproduct of wood pulp. Over 11,000 peer-reviewed studies. FDA approved for one single condition. This is not incompetence — this is a system working exactly as designed.</p>
   <div class="hero-stats">
-    <div>
-      <span class="stat-num">11,000+</span>
-      <span class="stat-label">Published studies</span>
-    </div>
-    <div>
-      <span class="stat-num">1963</span>
-      <span class="stat-label">Discovered by Dr. Jacob</span>
-    </div>
-    <div>
-      <span class="stat-num">1965</span>
-      <span class="stat-label">FDA banned clinical trials</span>
-    </div>
-    <div>
-      <span class="stat-num">1</span>
-      <span class="stat-label">FDA-approved use</span>
-    </div>
+    <div><span class="stat-num">11,000+</span><span class="stat-label">Published studies</span></div>
+    <div><span class="stat-num">1963</span><span class="stat-label">Discovered by Dr. Jacob</span></div>
+    <div><span class="stat-num">1965</span><span class="stat-label">FDA banned clinical trials</span></div>
+    <div><span class="stat-num">1</span><span class="stat-label">FDA-approved use</span></div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:12px;margin-top:32px;flex-wrap:wrap;">
+    <a href="#part-a" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage-pale);border:1px solid var(--border);color:var(--sage);font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:10px 22px;border-radius:6px;"><span style="font-family:'DM Mono',monospace;opacity:0.6;">Part A</span> Understand It</a>
+    <a href="#part-b" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:10px 22px;border-radius:6px;"><span style="font-family:'DM Mono',monospace;opacity:0.7;">Part B</span> Do It →</a>
   </div>
 </section>
 
-<!-- SECTION NAV -->
-<div class="jump-nav">
+<!-- MANDATORY DETOX WARNING -->
+<div style="background:var(--terra);padding:12px 24px;">
+  <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <div style="font-size:13px;color:#fff;line-height:1.6;"><strong>⚠️ Foundation Required:</strong> DMSO penetrates deep tissue and carries whatever is on your skin into your bloodstream. Before using it therapeutically, your toxic load — parasites, heavy metals, biofilm — must be substantially reduced. Complete the Full Body Detox first.</div>
+    <a href="Full_Body_Detox_Protocol.html" style="display:inline-block;background:#fff;color:var(--terra);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:9px 18px;border-radius:5px;white-space:nowrap;flex-shrink:0;">Do the Detox First →</a>
+  </div>
+</div>
+
+<!-- PART A BANNER -->
+<div id="part-a" style="background:var(--sage);padding:10px 24px;text-align:center;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Understand It · The Suppression · The Science · The Carrier Function</span>
+</div>
+
+<!-- SECTION NAV — Part A only, will be replaced in Part B -->
+<div class="jump-nav" id="partANav">
   <div class="jump-nav-inner">
     <a href="#suppression"><span class="jn-dot"></span>The Suppression</a>
     <a href="#what-is"><span class="jn-dot"></span>What Is DMSO</a>
@@ -289,10 +336,6 @@ footer a:hover{color:#d4c9a8;}
     <a href="#conditions"><span class="jn-dot"></span>By Condition</a>
     <a href="#neuro"><span class="jn-dot"></span>Neurological</a>
     <a href="#suppressed-research"><span class="jn-dot"></span>Buried Research</a>
-    <a href="#safety"><span class="jn-dot"></span>Safety Rules</a>
-    <a href="#msm"><span class="jn-dot"></span>DMSO + MSM</a>
-    <a href="#products"><span class="jn-dot"></span>What to Buy</a>
-    <a href="#schedule"><span class="jn-dot"></span>Daily Schedule</a>
   </div>
 </div>
 
@@ -804,6 +847,36 @@ footer a:hover{color:#d4c9a8;}
   </div>
 </section>
 
+<!-- PART B BANNER -->
+<div id="part-b" style="background:var(--terra);padding:10px 24px;text-align:center;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part B — Do It · Safety Rules · Application Protocol · What to Buy · Daily Schedule</span>
+</div>
+
+
+<!-- PART B COMPANION LINKS -->
+<div style="background:var(--bg-deep);border-bottom:2px solid var(--border);">
+  <div style="max-width:860px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <p style="font-size:14px;color:var(--ink-mid);line-height:1.6;margin:0;flex:1;min-width:220px;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+      <a href="DMSO_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">📋 Daily Schedule →</a>
+      <a href="DMSO_Shopping_List.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">🛒 Shopping List →</a>
+    </div>
+  </div>
+</div>
+
+<!-- PART B NAV -->
+<div class="jump-nav">
+  <div class="jump-nav-inner">
+    <a href="#safety"><span class="jn-dot"></span>Safety Rules</a>
+    <a href="#msm"><span class="jn-dot"></span>DMSO + MSM</a>
+    <a href="#products"><span class="jn-dot"></span>What to Buy</a>
+    <a href="#schedule"><span class="jn-dot"></span>Daily Schedule</a>
+  </div>
+</div>
+
+
+
+
 <!-- SAFETY RULES -->
 <section id="safety" class="sec sec-deep">
   <div class="inner">
@@ -969,57 +1042,46 @@ footer a:hover{color:#d4c9a8;}
     <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
-    <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
+    <a href="about.html" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
   </div>
 </section>
 
-
-<!-- WHATSAPP SHARE -->
-<section style="background:var(--bg-warm);padding:36px 24px;border-top:1px solid var(--border-s);">
-  <div style="max-width:720px;margin:0 auto;text-align:center;">
-    <p style="font-size:14px;color:var(--ink-light);margin-bottom:16px;font-weight:500;letter-spacing:0.03em;">Know someone who needs this protocol?</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:4px;"><a id="wa-share-btn" href="#" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;transition:background 0.2s;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Send on WhatsApp
-    </a>
-    <a id="fb-share-btn" href="#" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:10px;background:#1877F2;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;transition:background 0.2s;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Share on Facebook
-    </a></div>
-    <p style="font-size:12px;color:var(--ink-ghost);margin-top:12px;">This guide is free — share it freely.</p>
-  </div>
-</section>
-
-<script>
-(function(){
-  var btn = document.getElementById("wa-share-btn");
-  if(btn){
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent("I found this free healing protocol — thought you should see it: ");
-    btn.href = "https://wa.me/?text=" + text + url;
-  }
-  var fb = document.getElementById("fb-share-btn");
-  if(fb){
-    var url = encodeURIComponent(window.location.href);
-    fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-  }
-})();
-</script>
-
-<!-- EMAIL SIGNUP -->
-<section style="background:var(--bg-deep);padding:48px 24px;border-top:1px solid var(--border-s);">
-  <div style="max-width:480px;margin:0 auto;text-align:center;">
-    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">New protocols · New research</div>
-    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px;">Be the first to know when new protocols are added</h3>
-    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">No algorithms. No ads. Just the information that matters, when it matters.</p>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <input type="email" id="mc-email-dmso" placeholder="Your email address" style="width:100%;padding:14px 18px;border-radius:6px;border:1px solid var(--border);background:var(--bg-warm);color:var(--ink);font-size:15px;font-family:'Jost',sans-serif;outline:none;" />
-      <button onclick="mcSubmit_dmso()" style="width:100%;padding:14px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;">Join the Community →</button>
-      <p id="mc-msg-dmso" style="font-size:13px;color:var(--sage);min-height:18px;margin:0;"></p>
+<!-- TESTIMONIALS -->
+<section style="background:var(--bg-stone);padding:56px 24px;">
+  <div style="max-width:760px;margin:0 auto;">
+    <div class="kicker">Success Stories</div>
+    <h2 class="lh2">What Readers Are Saying</h2>
+    <p class="lp">Real testimonials from people using DMSO therapeutically are being collected. If this protocol has helped you — share your experience.</p>
+    <div class="tgrid">
+      <div style="background:var(--bg-warm);border:1px solid var(--border-s);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:120px;">
+        <p style="font-size:14px;color:var(--ink-light);font-style:italic;margin-bottom:12px;">Be the first to share your DMSO experience.</p>
+        <a href="mailto:healyourselfguide101@gmail.com?subject=My%20DMSO%20Experience" style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--border);">Share Your Story →</a>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border-s);border-radius:8px;padding:24px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:120px;">
+        <p style="font-size:14px;color:var(--ink-light);font-style:italic;margin-bottom:12px;">Community testimonials will appear here as received.</p>
+        <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--border);">Contact Sharona →</a>
+      </div>
     </div>
-    <p style="font-size:11px;color:var(--ink-ghost);margin-top:12px;">Free · No spam · Unsubscribe anytime</p>
+    <div style="text-align:center;margin-top:8px;">
+      <button class="print-btn no-print" onclick="window.print()">🖨 Print This Protocol</button>
+      <button class="pdf-btn no-print" onclick="window.print()">⬇ Download PDF</button>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE BLOCK -->
+<section style="background:var(--bg-deep);padding:44px 24px;text-align:center;">
+  <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px;">Know someone who needs this protocol?</div>
+  <p style="font-size:14px;color:var(--ink-light);line-height:1.7;max-width:500px;margin:0 auto 28px;">DMSO information is suppressed everywhere. Sharing this guide is an act of genuine service.</p>
+  <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#25D366;color:#fff;" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Share on WhatsApp
+    </a>
+    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#1877F2;color:#fff;" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Share on Facebook
+    </a>
   </div>
 </section>
 
@@ -1028,9 +1090,18 @@ footer a:hover{color:#d4c9a8;}
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
       <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p style="font-size:12px;color:rgba(212,201,168,0.5);margin-top:8px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
       <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
+      <a href="DMSO_Shopping_List.html" style="color:var(--sage-nav);font-weight:600;">Shopping List →</a>
+      <a href="protocols.html">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
 </footer>

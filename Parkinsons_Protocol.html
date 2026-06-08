@@ -3,7 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parkinson's Recovery Protocol — Heal Yourself</title>
+<title>Parkinson's Recovery Protocol — Natural Healing Guide | Heal Yourself</title>
+<meta name="description" content="A complete natural Parkinson's protocol — Mucuna Pruriens, Mannitol, gut-brain axis repair, mitochondrial support, and toxin removal. Free guide with daily schedule and shopping list.">
+<link rel="canonical" href="https://sharondrn-sys.github.io/Heal-Yourself-Guide/Parkinsons_Protocol.html">
+<meta property="og:title" content="Parkinson's Recovery Protocol — What the Doctor Won't Tell You">
+<meta property="og:description" content="Every intervention, in the correct order. Mucuna Pruriens, Mannitol, gut-brain repair, mitochondrial recovery. Free natural protocol based on peer-reviewed research.">
+<meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/Parkinsons_Protocol.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Heal Yourself Guide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Parkinson's Recovery Protocol — What the Doctor Won't Tell You">
+<meta name="twitter:description" content="Every intervention, in the correct order. Mucuna Pruriens, Mannitol, gut-brain repair, mitochondrial recovery. Free natural protocol based on peer-reviewed research.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [{
+    "@type": "MedicalWebPage",
+    "name": "Parkinson's Natural Recovery Protocol",
+    "description": "Comprehensive natural protocol for supporting Parkinson's recovery.",
+    "url": "https://sharondrn-sys.github.io/Heal-Yourself-Guide/Parkinsons_Protocol.html",
+    "inLanguage": "en",
+    "author": {"@type":"Person","name":"Sharona","description":"Former Pharmaceutical QA Internal Auditor"},
+    "publisher": {"@type":"Organization","name":"Heal Yourself Guide","url":"https://sharondrn-sys.github.io/Heal-Yourself-Guide/"},
+    "about": [{"@type":"MedicalCondition","name":"Parkinson's disease"}],
+    "dateModified": "2026-06-07"
+  }]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,6 +38,19 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+
+/* PHASE NAV */
+.phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
+.phase-nav::-webkit-scrollbar{display:none;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}.phase-nav-inner.centered{min-width:0;margin:0 auto;justify-content:center;}
+.phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
+.phase-nav a:hover{color:var(--sage);}
+.phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
+.pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
+.phase-nav a.pn-active .pn-dot{opacity:1;}
+.phase-nav a.pn-home{border-left:1px solid var(--border-s);padding-left:14px;opacity:0.7;color:var(--honey);}
+.phase-nav a.pn-home:hover{color:var(--sage);opacity:1;}
+@media print{.phase-nav{display:none!important;}}
 
 /* TOP NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
@@ -228,15 +267,59 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   .sec{page-break-inside:avoid;}
 }
 
-  body{padding-top:var(--nav-h);}</style>
+  body{padding-top:var(--nav-h);}
+/* SHARE FLOAT */
+.share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
+@media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
+.share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
+@media(max-width:768px){.share-float-label{display:none;}}
+.share-pill{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.18);}
+.share-pill:hover{transform:translateY(-2px) scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,0.22);}
+.share-pill.wa{background:#25D366;}
+.share-pill.fb{background:#1877F2;}
+.share-pill svg{width:22px;height:22px;fill:white;}
+@media print{.share-float{display:none!important;}}
+
+/* ACCORDION CHAPTERS */
+.chapter{border-bottom:1px solid var(--border-s);}
+.chapter-header{width:100%;display:flex;cursor:pointer;background:transparent;border:none;transition:background 0.15s;text-align:left;}
+.chapter-header:hover{background:rgba(61,107,74,0.04);}
+.chapter.open>.chapter-header{background:rgba(61,107,74,0.04);}
+.chapter-header-inner{max-width:760px;width:100%;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-left:3px solid transparent;transition:border-color 0.2s;}
+.chapter-header:hover .chapter-header-inner{border-left-color:var(--sage-mid);}
+.chapter.open>.chapter-header .chapter-header-inner{border-left-color:var(--sage);}
+.chapter-header-left{display:flex;align-items:center;gap:18px;flex:1;min-width:0;}
+.chapter-num{font-family:'DM Mono',monospace;font-size:13px;font-weight:500;color:var(--sage-mid);flex-shrink:0;min-width:26px;}
+.chapter-meta{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0;}
+.chapter-kicker{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--honey);}
+.chapter-title{font-family:'Playfair Display',serif;font-size:clamp(15px,2vw,19px);font-weight:700;color:var(--ink);line-height:1.2;}
+.chapter-arrow{font-size:20px;color:var(--sage);transition:transform 0.25s;flex-shrink:0;opacity:0.45;line-height:1;}
+.chapter.open .chapter-arrow{transform:rotate(180deg);opacity:1;}
+.chapter-body{display:none;}
+.chapter.open .chapter-body{display:block;}.chapter-body-inner{max-width:760px;margin:0 auto;padding:8px 24px 32px;}
+.chapter-body .highlight-box,.chapter-body .phase-block{margin-top:20px;}
+</style>
 </head>
 <body>
+
+<!-- SHARE FLOAT -->
+<div class="share-float" aria-label="Share this guide">
+  <span class="share-float-label">Share</span>
+  <a class="share-pill wa" id="sf-wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a class="share-pill fb" id="sf-fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+  </a>
+</div>
+
 
 <!-- NAV -->
 <nav>
   <a href="index.html" class="nav-logo">Heal Yourself</a>
   <div class="nav-center">
     <a href="index.html">Home</a>
+    <a href="before-you-begin.html">Before You Begin</a>
     <div class="nav-dropdown" id="nav-protocols">
       <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
         Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
@@ -256,8 +339,28 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
             <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
-        <a href="DMSO_Oxygen_Therapy.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO &amp; Oxygen</span></a>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <div class="dd-group">
+          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <div class="dd-subs">
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <div class="dd-subs">
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <div class="dd-subs">
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
         <div class="dd-group">
           <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
@@ -265,11 +368,14 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
             <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
             <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
             <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
           </div>
         </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
     </div>
+    <a href="research.html">Research</a>
+    <a href="about.html">About</a>
   </div>
 </nav>
 
@@ -287,23 +393,136 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <button class="print-btn" onclick="window.print()">🖨 Print This Protocol</button>
 </div>
 
+<!-- OPTION C: WHO IS THIS FOR + SYMPTOM LOOKUP + COMPANION LINKS -->
+<section style="background:var(--bg-deep);padding:52px 24px 40px;">
+  <div style="max-width:760px;margin:0 auto;">
 
-<!-- UNDERSTANDING PARKINSON'S — THE FULL PICTURE -->
-<section class="sec sec-warm" id="understanding">
-  <div class="inner">
-    <div class="kicker">Before the Protocol</div>
-    <h2 class="sec-title">What Is Actually Happening in the Body</h2>
-    <p class="sec-sub">The diagnosis is the beginning, not the answer. To reverse something, you need to understand what it is. Most people with Parkinson's have never been told any of this — not because it isn't known, but because knowing it doesn't sell anything.</p>
+    <div style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.25);border-left:4px solid var(--terra);border-radius:8px;padding:18px 22px;margin-bottom:28px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">⚠️ Do the Full Body Detox First</div>
+      <div style="font-size:14px;line-height:1.7;color:var(--ink-mid);">This protocol is built on a clean foundation. The Parkinson's-specific supplements reach the brain and work properly only when drainage pathways are open and the toxin load is reduced. Complete at least Weeks 1–2 of the <a href="Full_Body_Detox_Protocol.html" style="color:var(--terra);font-weight:600;">Full Body Detox Protocol</a> before beginning the neurological stack.</div>
+    </div>
+
+    <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:32px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">📋 This Protocol Has Companion Pages</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <a href="Parkinsons_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">📋 Daily Schedule →</a>
+        <a href="Parkinsons_Shopping_Table.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--bg-stone);color:var(--ink-mid);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;border:1px solid var(--border);">🛒 Shopping List →</a>
+        <a href="Parkinsons_Must_Have.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--honey-pale);color:var(--honey);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;border:1px solid rgba(160,120,48,0.2);">⭐ Must-Have List →</a>
+        <a href="Parkinsons_Symptoms.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--terra-pale);color:var(--terra);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;border:1px solid rgba(140,90,60,0.2);">🔍 Symptom Guide →</a>
+      </div>
+    </div>
+
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--ink);margin-bottom:8px;">Who Is This Protocol For?</div>
+    <p style="font-size:15px;color:var(--ink-light);line-height:1.8;margin-bottom:24px;">For anyone facing a Parkinson's diagnosis — their own or a loved one's. For caregivers who want to do more than manage decline. For people who have been told there is nothing to be done and know that cannot be the whole truth.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:32px;">
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🧬</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Recently Diagnosed</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">In the early stages, the most neurons are still alive. This is when intervention has the most leverage.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">💊</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">On Levodopa</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Pharmaceutical levodopa and Mucuna Pruriens interact directly. This protocol includes the supervision rules.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🧑‍🤝‍🧑</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Caregiver</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">This page is designed to print and hand directly to someone. One page. One plan. Start here.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🔍</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Prodromal Signs</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Constipation, loss of smell, REM sleep disorder, fatigue — years before tremor. Act before the diagnosis.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">💰</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Budget Is Tight</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">See the <a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List</a> — the 7 interventions that matter most if you can only do a few.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">😤</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Told Nothing Can Be Done</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">That is not true. This protocol documents what the research actually shows.</div></div>
+      </div>
+    </div>
+
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Symptom → Where to Start</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:28px;">
+      <tr><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Symptom or Concern</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Primary Intervention</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Go To</th></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Tremor, rigidity, slowness</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna Pruriens + Mannitol + exercise</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#tremor" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Constipation / gut issues</td><td style="padding:10px 14px;color:var(--ink-mid);">Gut-brain axis repair — the origin point of the disease</td><td style="padding:10px 14px;"><a href="#gut-origin" style="color:var(--sage);font-weight:600;">Gut Origin →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Sleep disturbance / REM disorder</td><td style="padding:10px 14px;color:var(--ink-mid);">Nocturnal tremor protocol: Mucuna + Magnesium glycinate + 4:8 breathing</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#sleep" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Fatigue / low energy</td><td style="padding:10px 14px;color:var(--ink-mid);">Mitochondrial stack: CoQ10 Ubiquinol + NMN + NAC</td><td style="padding:10px 14px;"><a href="#mitochondria" style="color:var(--sage);font-weight:600;">Mitochondria →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Depression / anxiety / mood</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna (dopamine precursor) + Lion's Mane + gut repair</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#mood" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Don't know where to start</td><td style="padding:10px 14px;color:var(--ink-mid);">The 7 must-have interventions, prioritised</td><td style="padding:10px 14px;"><a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List →</a></td></tr>
+    </table>
+
+    <div style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.25);border-left:4px solid var(--terra);border-radius:8px;padding:18px 22px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">⚠️ Medical Disclaimer</div>
+      <div style="font-size:14px;line-height:1.7;color:var(--ink-mid);">This protocol is for educational purposes only. It is not medical advice and does not replace consultation with a qualified healthcare practitioner. <strong>If currently taking pharmaceutical levodopa (Sinemet, Madopar), Mucuna Pruriens requires medical supervision</strong> — both are dopamine precursors and doses must be adjusted together. Not suitable for use if pregnant, breastfeeding, or under 18 without practitioner guidance.</div>
+    </div>
+
   </div>
 </section>
 
-<!-- ANGLE 1: THE SILENT DECADE -->
-<section class="sec sec-deep" id="silent-decade">
-  <div class="inner">
-    <div class="kicker">The Silent Decade</div>
-    <h2 class="sec-title">The Disease Started 10–20 Years Before the Tremor</h2>
-    <p class="sec-sub">By the time a neurologist makes a diagnosis, most of the damage is already done.</p>
+<!-- ═══ PART A — UNDERSTAND IT ═══ -->
+<div id="part-a" style="background:var(--sage);padding:10px 24px;text-align:center;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Understand It · The Science · Root Causes · What to Expect</span>
+</div>
 
+<!-- PHASE NAV — Part A -->
+<div class="phase-nav no-print" id="chapterNav">
+  <div class="phase-nav-inner centered">
+    <a href="#understanding" onclick="openChapter('ch-understanding')"><span class="pn-dot"></span>Overview</a>
+    <a href="#silent-decade" onclick="openChapter('ch-silent')"><span class="pn-dot"></span>The Silent Decade</a>
+    <a href="#alpha-syn" onclick="openChapter('ch-alpha')"><span class="pn-dot"></span>Alpha-Synuclein</a>
+    <a href="#mitochondria" onclick="openChapter('ch-mito')"><span class="pn-dot"></span>Mitochondria</a>
+    <a href="#gut-origin" onclick="openChapter('ch-gut')"><span class="pn-dot"></span>Gut Origin</a>
+    <a href="#toxins" onclick="openChapter('ch-toxins')"><span class="pn-dot"></span>Toxins</a>
+    <a href="#inflammation" onclick="openChapter('ch-inflam')"><span class="pn-dot"></span>Neuroinflammation</a>
+    <a href="#dopamine" onclick="openChapter('ch-dopa')"><span class="pn-dot"></span>Dopamine</a>
+    <a href="#hope" onclick="openChapter('ch-hope')"><span class="pn-dot"></span>Hope & Evidence</a>
+    <a href="#part-b" style="border-left:1px solid var(--border-s);padding-left:14px;color:var(--honey);font-weight:600;">Part B →</a>
+  </div>
+</div>
+
+<div id="part-a-chapters" style="background:var(--bg);">
+
+<!-- CHAPTER: understanding -->
+<div class="chapter open" id="ch-understanding" data-section="understanding">
+  <div id="understanding" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-understanding')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">00</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">Before the Protocol</div>
+        <div class="chapter-title">What Is Actually Happening in the Body</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:0;">The diagnosis is the beginning, not the answer. To reverse something, you need to understand what it is. Most people with Parkinson's have never been told any of this — not because it isn't known, but because knowing it doesn't sell anything. Use the chapter tabs above to read the science in any order, or work through them chronologically from The Silent Decade.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER: silent-decade -->
+<div class="chapter" id="ch-silent" data-section="silent-decade">
+  <div id="silent-decade" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-silent')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">01</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Silent Decade</div>
+        <div class="chapter-title">The Disease Started 10–20 Years Before the Tremor</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <div class="highlight-box" style="margin-bottom:28px;">
       <div class="h-title">The Number Nobody Tells You</div>
       <p>When motor symptoms first appear — the tremor, the stiffness, the slowness — between 60% and 80% of the dopamine-producing neurons in the substantia nigra are already dead. According to the National Institute of Neurological Disorders and Stroke, "by the time PD symptoms appear, most people have lost 60 to 80% or more of the dopamine-producing cells." The brain compensated for years. It rerouted, recruited backup circuits, pushed harder with fewer cells. Then one day it could no longer hide it. That is the day of diagnosis. Not the beginning.</p>
@@ -317,15 +536,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">What This Means for Recovery</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The damage is extensive — but the timeline also means the brain had remarkable plasticity for years before it gave out. That plasticity does not disappear at diagnosis. Neuroplasticity, neurogenesis, and mitochondrial recovery are all possible at any stage. The protocol is built on this. The goal is not to mourn the neurons already lost — it is to protect every neuron still alive, rebuild the environment around them, and trigger the brain's own repair mechanisms.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 2: ALPHA-SYNUCLEIN — THE PRION-LIKE PROTEIN -->
-<section class="sec sec-a" id="alpha-syn">
-  <div class="inner">
-    <div class="kicker">The Protein That Spreads</div>
-    <h2 class="sec-title">Alpha-Synuclein — What It Is and Why It Becomes a Weapon</h2>
-
+<!-- CHAPTER: alpha-syn -->
+<div class="chapter" id="ch-alpha" data-section="alpha-syn">
+  <div id="alpha-syn" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-alpha')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">02</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Protein That Spreads</div>
+        <div class="chapter-title">Alpha-Synuclein — What It Is and Why It Becomes a Weapon</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Alpha-synuclein is a normal protein. Every neuron in your body makes it. In healthy cells, it floats freely, helps regulate dopamine release, and gets cleared away by the cell's waste disposal system. In Parkinson's disease, something goes wrong at the folding stage. The protein misfolds — twisting into an abnormal shape instead of its correct one. Misfolded proteins clump together. The clumps grow into fibrils. The fibrils accumulate into what are called Lewy bodies: dense, toxic protein deposits inside neurons.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -341,15 +572,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Mannitol has been studied specifically for its ability to prevent alpha-synuclein aggregation — animal studies showed it prevented clumping and improved motor function. Curcumin directly inhibits alpha-synuclein aggregation (Pandey et al., Acta Neuropathologica 2008). Berberine inhibits aggregation in Parkinson's models. NAC (N-acetylcysteine) reduces the oxidative modification that triggers misfolding. The protocol addresses the root molecular event, not just its downstream symptoms.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 3: MITOCHONDRIA — THE ENERGY CRISIS -->
-<section class="sec sec-deep" id="mitochondria">
-  <div class="inner">
-    <div class="kicker">The Energy Crisis</div>
-    <h2 class="sec-title">Mitochondrial Collapse — Why the Substantia Nigra Dies First</h2>
-
+<!-- CHAPTER: mitochondria -->
+<div class="chapter" id="ch-mito" data-section="mitochondria">
+  <div id="mitochondria" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-mito')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">03</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Energy Crisis</div>
+        <div class="chapter-title">Mitochondrial Collapse — Why the Substantia Nigra Dies First</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopaminergic neurons in the substantia nigra are among the most metabolically demanding cells in the human body. They fire constantly — not in response to signals, but spontaneously, as a pacemaker. This autonomous firing requires enormous amounts of ATP. ATP is made by mitochondria. And mitochondria in Parkinson's disease are failing.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -365,15 +608,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">CoQ10 Ubiquinol directly supports electron transport chain function — it is the electron carrier between Complex I/II and Complex III. NMN and NR restore NAD+ levels, which are essential for Complex I to function. PQQ stimulates mitochondrial biogenesis — the creation of new mitochondria. NAC restores glutathione, the primary antioxidant that neutralises the ROS cascade. These are not general "antioxidants." They are targeted interventions at the exact points where the mitochondrial system breaks down in Parkinson's.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 4: THE GUT ORIGIN -->
-<section class="sec sec-warm" id="gut-origin">
-  <div class="inner">
-    <div class="kicker">Where It Starts</div>
-    <h2 class="sec-title">The Gut-Brain Highway — How Parkinson's Likely Begins</h2>
-
+<!-- CHAPTER: gut-origin -->
+<div class="chapter" id="ch-gut" data-section="gut-origin">
+  <div id="gut-origin" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-gut')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">04</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">Where It Starts</div>
+        <div class="chapter-title">The Gut-Brain Highway — How Parkinson's Likely Begins</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">In 2003, German neuropathologist Heiko Braak proposed something radical: Parkinson's does not begin in the brain. It begins in the gut — or in the nose — and travels upward. After two decades of research, the evidence is substantial enough that the Parkinson's Foundation now describes this as a mainstream hypothesis. The disease, in the body-first subtype, starts in the enteric nervous system and spreads to the brain via the vagus nerve.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -389,15 +644,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The Full Body Detox runs first precisely because the gut is the origin. Rebuilding the gut wall (L-Glutamine, zinc carnosine, aloe), restoring depleted strains (Faecalibacterium prausnitzii, Roseburia, Blautia — all depleted in Parkinson's), removing glyphosate and heavy metals that disrupt gut neurons, and healing the intestinal microbiome is not supportive care. It is addressing the most likely site of origin of the disease itself. The SymPD trial (2025) confirmed a 4-strain probiotic produced positive motor outcomes in a randomised controlled trial. The GUT-PARFECT trial (Lancet eClinicalMedicine 2024) showed FMT improved motor scores. The gut is not peripheral to Parkinson's. For most people, it is where it started.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 5: THE TOXIN STORY -->
-<section class="sec sec-deep" id="toxins">
-  <div class="inner">
-    <div class="kicker">The Environmental Evidence</div>
-    <h2 class="sec-title">Pesticides, Herbicides, and the Rise of a Pandemic</h2>
-
+<!-- CHAPTER: toxins -->
+<div class="chapter" id="ch-toxins" data-section="toxins">
+  <div id="toxins" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-toxins')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">05</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Environmental Evidence</div>
+        <div class="chapter-title">Pesticides, Herbicides, and the Rise of a Pandemic</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Parkinson's disease is increasing. It is not genetics — genetics accounts for only 5–10% of cases. Something in the modern environment is driving the epidemic. The evidence points to a small group of agricultural chemicals with a specific mechanism of action: they destroy dopaminergic neurons the same way Parkinson's does.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -413,15 +680,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Uncomfortable Truth</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The regulatory agencies knew. The studies existed. The mechanisms were understood. But the chemicals stayed on the market while millions of people were exposed. Parkinson's has a 10–20 year latency. By the time symptoms appeared, the exposure was decades old, the link unprovable in court, and the company legally protected. This is not a conspiracy theory — it is documented agnotology: the deliberate manufacture of doubt. Prof. Dorsey named it directly in peer-reviewed literature. The settlement in 2025 confirmed it.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 6: NEUROINFLAMMATION AND THE GLYMPHATIC SYSTEM -->
-<section class="sec sec-warm" id="inflammation">
-  <div class="inner">
-    <div class="kicker">The Brain on Fire</div>
-    <h2 class="sec-title">Neuroinflammation and the Brain's Broken Waste System</h2>
-
+<!-- CHAPTER: inflammation -->
+<div class="chapter" id="ch-inflam" data-section="inflammation">
+  <div id="inflammation" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-inflam')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">06</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Brain on Fire</div>
+        <div class="chapter-title">Neuroinflammation and the Brain's Broken Waste System</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">The brain has its own waste disposal system. It was only discovered in 2013. It is called the glymphatic system — a network of channels around blood vessels that flushes cerebrospinal fluid through the brain during deep sleep, clearing out toxic proteins, debris, and metabolic waste. When this system works, misfolded alpha-synuclein and other neurotoxic proteins are cleared every night. When it fails — or when sleep is disrupted — they accumulate.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -437,15 +716,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Sleep is a non-negotiable pillar of this protocol — not for rest, but for glymphatic clearance. Passionflower and saffron support deep sleep architecture. Lion's Mane stimulates NGF (Nerve Growth Factor), which modulates microglial activation. Curcumin directly suppresses neuroinflammatory pathways (NF-κB). Omega-3 fatty acids reduce pro-inflammatory cytokines. Magnesium glycinate supports sleep depth and reduces neuroinflammatory markers. The detox protocols — binders, castor oil packs, drainage support — reduce the systemic inflammatory load that crosses into the brain and triggers microglial activation in the first place.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 7: THE DOPAMINE SYSTEM — WHAT'S REALLY HAPPENING -->
-<section class="sec sec-deep" id="dopamine">
-  <div class="inner">
-    <div class="kicker">What You Were Never Told About Dopamine</div>
-    <h2 class="sec-title">Why Levodopa Is a Patch — and Why the Patch Stops Working</h2>
-
+<!-- CHAPTER: dopamine -->
+<div class="chapter" id="ch-dopa" data-section="dopamine">
+  <div id="dopamine" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-dopa')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">07</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">What You Were Never Told</div>
+        <div class="chapter-title">Why Levodopa Is a Patch — and Why the Patch Stops Working</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopamine is not just the "movement chemical." It is the currency of motivation, reward, decision-making, and emotion. Parkinson's strips all of it. But the loss of dopamine is not the disease. It is the consequence of the disease — the downstream result of decades of neuronal death. Levodopa replaces the dopamine those dead neurons can no longer make. It does not address why they died. It does not slow the dying. It manages the symptom while the cause continues unimpeded.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -459,15 +750,27 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Honest Picture</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">If you are on levodopa and following this protocol, the goal is to slow the progression enough that the medication continues to work — and to give the surviving neurons the conditions to function optimally. Mucuna Pruriens can potentially extend the effective window and reduce dyskinesias. But any change to pharmaceutical medication must be done in consultation with a neurologist. The protocol works alongside medication — it does not replace it. What it does replace is the passive acceptance that nothing else can be done.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
 
-<!-- ANGLE 8: NEUROPLASTICITY AND THE CASE FOR HOPE -->
-<section class="sec sec-warm" id="hope">
-  <div class="inner">
-    <div class="kicker">The Science of Recovery</div>
-    <h2 class="sec-title">The Brain Can Grow. It Can Repair. Here Is the Evidence.</h2>
-
+<!-- CHAPTER: hope -->
+<div class="chapter" id="ch-hope" data-section="hope">
+  <div id="hope" style="scroll-margin-top:calc(var(--nav-h) + 80px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-hope')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">08</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Science of Recovery</div>
+        <div class="chapter-title">The Brain Can Grow. It Can Repair. Here Is the Evidence.</div>
+      </div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">For most of the 20th century, science believed adult brains could not generate new neurons. That belief is now known to be wrong. Neurogenesis — the birth of new neurons — occurs in the adult brain, including in regions critical to dopaminergic function. Neuroplasticity — the rewiring of existing circuits — occurs throughout life and accelerates with the right inputs. This is not optimism. It is biology. And it is the scientific foundation of every intervention in this protocol.</p>
 
     <div class="highlight-box" style="margin-bottom:24px;">
@@ -483,8 +786,11 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">The Summary of Everything Above</div>
       <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Parkinson's is not a dopamine deficiency. It is a decades-long cascade: environmental toxins trigger mitochondrial failure and oxidative stress → alpha-synuclein misfolds and spreads prion-like from gut to brain → the glymphatic system, overwhelmed and sleep-deprived, fails to clear the accumulation → microglia activate and drive neuroinflammation → the ubiquitin-proteasome system collapses under protein load → neurons in the substantia nigra die. By the time the tremor appears, the cascade has been running for a decade or more. The protocol below addresses every stage of that cascade. Not one thing. All of it. At the same time.</p>
     </div>
+    </div>
   </div>
-</section>
+</div>
+
+</div><!-- /part-a-chapters -->
 
 <div class="divider"></div>
 
@@ -583,51 +889,36 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <div class="divider"></div>
 
 
-<!-- LINK CARDS — SUBPAGES -->
-<section style="background:var(--bg-warm);padding:48px 24px;">
-  <div class="inner">
-    <div class="kicker">Everything You Need</div>
-    <h2 class="sec-title">The Protocol Lives Across These Pages</h2>
-    <p class="sec-sub" style="margin-bottom:36px;">Each page is focused, printable, and complete. Use them together.</p>
+<!-- ═══ PART B — DO IT ═══ -->
+<div id="part-b" style="background:var(--terra);padding:10px 24px;text-align:center;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part B — Do It · Daily Protocol · Food · Exercise · Weekly Plan</span>
+</div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
-
-      <a href="Parkinsons_Daily_Schedule.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--sage-mid)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="font-size:28px;margin-bottom:12px;">📋</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Daily Schedule</div>
-        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">The full step-by-step protocol — every phase from Week 1 through maintenance. What to do each morning, afternoon, evening, and bedtime. Integrated with the Full Body Detox.</p>
-        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);">Open page →</div>
-      </a>
-
-      <a href="Parkinsons_Shopping_Table.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--sage-mid)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="font-size:28px;margin-bottom:12px;">🛒</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Shopping List</div>
-        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">Every supplement for every phase — with full reasoning, exact doses, and verified iHerb links. The complete stack in one place. Use code GUW6132 at checkout.</p>
-        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);">Open page →</div>
-      </a>
-
-      <a href="Parkinsons_Symptoms.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--terra-light)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="font-size:28px;margin-bottom:12px;">🔍</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Symptom Guide</div>
-        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">Tremor, freezing, rigidity, sleep disturbance, constipation, fatigue, depression — each symptom explained with its mechanism and specific natural interventions. What to do right now.</p>
-        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);">Open page →</div>
-      </a>
-
-      <a href="Parkinsons_Must_Have.html" style="display:block;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--honey)'" onmouseout="this.style.borderColor='var(--border)'">
-        <div style="font-size:28px;margin-bottom:12px;">⭐</div>
-        <div style="font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);margin-bottom:8px;">Must-Have List</div>
-        <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin:0;">If budget is tight or you don't know where to start — the 7 things that matter most. The minimum effective protocol, prioritised and explained.</p>
-        <div style="margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--honey);">Open page →</div>
-      </a>
-
+<!-- PART B COMPANION LINKS -->
+<div style="background:var(--bg-deep);border-bottom:2px solid var(--border);">
+  <div style="max-width:860px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <p style="font-size:14px;color:var(--ink-mid);line-height:1.6;margin:0;flex:1;min-width:220px;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+      <a href="Parkinsons_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">📋 Daily Schedule →</a>
+      <a href="Parkinsons_Shopping_Table.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">🛒 Shopping List →</a>
     </div>
   </div>
-</section>
+</div>
 
-<div class="divider"></div>
+<!-- PHASE NAV — Part B -->
+<div class="phase-nav no-print">
+  <div class="phase-nav-inner centered">
+    <a href="#food"><span class="pn-dot"></span>Food</a>
+    <a href="#exercise"><span class="pn-dot"></span>Exercise</a>
+    <a href="#gut-brain"><span class="pn-dot"></span>Gut-Brain</a>
+    <a href="#weekly"><span class="pn-dot"></span>Weekly Plan</a>
+    <a href="#part-a" style="border-left:1px solid var(--border-s);padding-left:14px;color:var(--honey);font-weight:600;">← Part A</a>
+  </div>
+</div>
+
 
 <!-- FOOD -->
-<section class="sec sec-warm">
+<section class="sec sec-warm" id="food">
   <div class="inner">
     <div class="kicker">Food as Medicine</div>
     <h2 class="sec-title">What To Eat — And What To Remove</h2>
@@ -667,7 +958,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <div class="divider"></div>
 
 <!-- EXERCISE -->
-<section class="sec sec-stone">
+<section class="sec sec-stone" id="exercise">
   <div class="inner">
     <div class="kicker">Movement Therapy</div>
     <h2 class="sec-title">Exercise — The Non-Negotiable</h2>
@@ -717,7 +1008,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <div class="divider"></div>
 
 <!-- GUT BRAIN -->
-<section class="sec sec-sage">
+<section class="sec sec-sage" id="gut-brain">
   <div class="inner">
     <div class="kicker">Gut-Brain Axis</div>
     <h2 class="sec-title">The Root Nobody Is Addressing</h2>
@@ -742,7 +1033,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <div class="divider"></div>
 
 <!-- WEEKLY CHECKLIST -->
-<section class="sec sec-deep">
+<section class="sec sec-deep" id="weekly">
   <div class="inner">
     <div class="kicker">Weekly Schedule</div>
     <h2 class="sec-title">What Happens Each Day of the Week</h2>
@@ -797,43 +1088,14 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 
 <div class="divider"></div>
 
-<!-- PRINTABLE DAILY CHECKLIST -->
-<section class="sec sec-warm">
-  <div class="inner">
-    <div class="kicker">Print This Section</div>
-    <h2 class="sec-title">Daily Checklist — One Page</h2>
-    <p class="sec-sub">Tick every item. Every day. Put it on the wall.</p>
-
-    <table class="schedule">
-      <thead>
-        <tr><th>✓</th><th>Time</th><th>Action</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>☐</td><td class="time">Wake</td><td>Sole water (1 tsp salt solution in glass of water)</td></tr>
-        <tr><td>☐</td><td class="time">+5 min</td><td>Lemon water (½ lemon in warm filtered water, use straw)</td></tr>
-        <tr><td>☐</td><td class="time">+10 min</td><td>Baking soda drink (¼ tsp in glass of filtered water)</td></tr>
-        <tr><td>☐</td><td class="time">+15 min</td><td>Mucuna Pruriens 500mg — first dose (30 min before breakfast)</td></tr>
-        <tr><td>☐</td><td class="time">Morning</td><td>Sunlight — 10–20 minutes outside</td></tr>
-        <tr><td>☐</td><td class="time">Morning</td><td>Exercise — minimum 30 minutes</td></tr>
-        <tr><td>☐</td><td class="time">Morning</td><td>1 litre silica-rich water (Volvic or Fiji)</td></tr>
-        <tr><td>☐</td><td class="time">Breakfast</td><td>Lion's Mane 1,000mg · CoQ10 Ubiquinol 200mg · NAC 600mg · Omega-3 2g · Vitamin D3+K2 · Milk Thistle</td></tr>
-        <tr><td>☐</td><td class="time">Breakfast</td><td>Sauerkraut 2 tbsp with meal</td></tr>
-        <tr><td>☐</td><td class="time">Midday</td><td>Mucuna Pruriens 500mg — second dose (30 min before lunch)</td></tr>
-        <tr><td>☐</td><td class="time">Lunch</td><td>Magnesium glycinate 200mg · Berberine 500mg · Sauerkraut 2 tbsp</td></tr>
-        <tr><td>☐</td><td class="time">Afternoon</td><td>Vagus nerve practice — humming 5 min + 4:8 breathing 5 min</td></tr>
-        <tr><td>☐</td><td class="time">Afternoon</td><td>Mannitol 5–10g in water</td></tr>
-        <tr><td>☐</td><td class="time">Evening</td><td>Mucuna Pruriens 500mg — third dose if needed (30 min before dinner)</td></tr>
-        <tr><td>☐</td><td class="time">Dinner</td><td>Sauerkraut 2 tbsp · Prebiotic vegetables</td></tr>
-        <tr><td>☐</td><td class="time">3×/week</td><td>Detox bath: Epsom salt + baking soda + Celtic salt + ACV + clay + ginger</td></tr>
-        <tr><td>☐</td><td class="time">2×/week</td><td>Castor oil pack over abdomen — 45 min with warm compress</td></tr>
-        <tr><td>☐</td><td class="time">Bedtime</td><td>Magnesium glycinate 400mg · NMN 500mg · Lion's Mane 500mg · PQQ 20mg</td></tr>
-        <tr><td>☐</td><td class="time">Daily</td><td>2+ litres filtered water throughout the day</td></tr>
-      </tbody>
-    </table>
+<!-- DAILY SCHEDULE LINK -->
+<section style="background:var(--bg-warm);padding:28px 24px;">
+  <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <p style="font-size:14px;color:var(--ink-mid);margin:0;">The full day-by-day schedule — every supplement, every timing, every phase — lives on its own dedicated page.</p>
+    <a href="Parkinsons_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:11px 20px;border-radius:6px;white-space:nowrap;">📋 Open Daily Schedule →</a>
   </div>
 </section>
 
-<div class="divider"></div>
 
 <!-- DISCLAIMER -->
 <section class="sec sec-dark">
@@ -853,7 +1115,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
     <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout — new customers save 10%, returning customers save 5%. This guide stays alive.</p>
     <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
   </div>
 </section>
@@ -879,17 +1141,16 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 
 <script>
 (function(){
-  var btn = document.getElementById("wa-share-btn");
-  if(btn){
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent("I found this free healing protocol — thought you should see it: ");
-    btn.href = "https://wa.me/?text=" + text + url;
-  }
-  var fb = document.getElementById("fb-share-btn");
-  if(fb){
-    var url = encodeURIComponent(window.location.href);
-    fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-  }
+  var url = encodeURIComponent(window.location.href);
+  var text = encodeURIComponent("I found this free healing protocol — thought you should see it: ");
+  ['wa-share-btn','sf-wa'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.href = "https://wa.me/?text=" + text + url;
+  });
+  ['fb-share-btn','sf-fb'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
+  });
 })();
 </script>
 
@@ -912,7 +1173,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
-      <p style="font-size:12px;color:var(--ink-ghost);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p style="font-size:12px;color:var(--ink-ghost);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
       <a href="index.html" style="font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Home</a>
@@ -922,6 +1183,36 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 
 <script id="mcjs-park">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 <script>
+
+// Phase nav active state
+(function(){
+  var links = document.querySelectorAll('.phase-nav a[href^="#"]');
+  var sections = document.querySelectorAll('section[id]');
+  if(!sections.length) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('pn-active');});
+        var active = document.querySelector('.phase-nav a[href="#'+e.target.id+'"]');
+        if(active) active.classList.add('pn-active');
+      }
+    });
+  },{rootMargin:'-20% 0px -70% 0px'});
+  sections.forEach(function(s){obs.observe(s);});
+})();
+
+
+function toggleChapter(id){
+  var el = document.getElementById(id);
+  if(!el) return;
+  el.classList.toggle('open');
+}
+
+function openChapter(id){
+  document.querySelectorAll('.chapter').forEach(function(c){ c.classList.remove('open'); });
+  var el = document.getElementById(id);
+  if(el){ el.classList.add('open'); }
+}
 function mcSubmit_park(){
   var email=document.getElementById('mc-email-park').value.trim();
   var msg=document.getElementById('mc-msg-park');
