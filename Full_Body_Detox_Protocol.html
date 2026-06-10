@@ -231,18 +231,18 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 @media(max-width:768px){.share-float-label{display:none;}}
 
 /* CITATIONS */
-sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:default;}
+sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:pointer;border-bottom:1px dotted var(--sage-mid);}
 
 /* SOURCE LIST */
-.source-section{padding:56px 24px;background:var(--bg-warm);}
+
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
 @media(max-width:560px){.tgrid{grid-template-columns:1fr;}}
-.source-list{list-style:none;counter-reset:src;margin:0;padding:0;}
-.source-list li{counter-increment:src;padding:12px 0 12px 36px;border-bottom:1px solid var(--border-s);font-size:13px;color:var(--ink-mid);line-height:1.75;position:relative;}
-.source-list li:last-child{border-bottom:none;}
-.source-list li::before{content:counter(src);font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);position:absolute;left:0;top:14px;width:24px;}
-.source-list a{color:var(--sage);text-decoration:none;border-bottom:1px solid var(--border);word-break:break-all;display:inline;}
-.source-list a:hover{color:var(--sage-mid);}
+
+
+
+
+
+
 
 @media print{
   .phase-nav,footer,.print-btn,nav{display:none!important;}
@@ -253,7 +253,7 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
 
 /* TOP NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
-.nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
 .nav-center{display:flex;align-items:center;}
 .nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
 .nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
@@ -278,17 +278,33 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 /* DD-GROUP HOVER SUBS */
 .dd-group{position:relative;}
 .dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
-.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
-.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group>a::after{content:'›';position:absolute;right:10px;top:50%;transform:translateY(-50%);opacity:0.4;font-size:14px;transition:opacity 0.15s;}
+.dd-group:hover>a::after{opacity:1;color:var(--sage-nav);}
 .dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
-.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
-.dd-group:hover .dd-subs{display:block;}
-.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
-.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
-.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
-.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+.dd-subs{position:absolute;left:100%;top:0;min-width:200px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;padding:4px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.15s,visibility 0.15s;}
+.dd-group:hover .dd-subs{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.65);text-transform:uppercase;border:none;height:auto;border-bottom:1px solid rgba(138,184,154,0.07);transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub:last-child{border-bottom:none;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:12px;opacity:0.8;}
+.nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:11px;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:20px;}
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [{
+    "@type": "MedicalWebPage",
+    "name": "Full Body Detox Protocol — 90-Day Natural Detox System",
+    "description": "Complete 90-day full body detox protocol — 4 phases covering biofilm removal, parasite clearing, heavy metal chelation, and cellular rebuilding. Free with daily schedule and shopping list.",
+    "url": "https://sharondrn-sys.github.io/Heal-Yourself-Guide/Full_Body_Detox_Protocol.html",
+    "inLanguage": "en",
+    "author": {"@type":"Person","name":"Sharona","description":"Former Pharmaceutical QA Internal Auditor"},
+    "publisher": {"@type":"Organization","name":"Heal Yourself Guide","url":"https://sharondrn-sys.github.io/Heal-Yourself-Guide/"},
+    "dateModified": "2026-06-07"
+  }]
+}
+</script>
 </head>
 <body>
 
@@ -316,9 +332,28 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
             <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
-        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
-        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <div class="dd-group">
+          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <div class="dd-subs">
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <div class="dd-subs">
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <div class="dd-subs">
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
         <div class="dd-group">
           <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
@@ -326,6 +361,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
             <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
             <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
             <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
           </div>
         </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
@@ -339,10 +375,10 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <!-- FLOATING SHARE BAR -->
 <div class="share-float" aria-label="Share this guide">
   <span class="share-float-label">Share</span>
-  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+  <a id="sf-wa" class="share-pill wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+  <a id="sf-fb" class="share-pill fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
   </a>
 </div>
@@ -463,7 +499,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <tr><td>Vitamin B12 + Folate</td><td>B12 deficiency causes neurological damage — frequently missed</td></tr>
       <tr><td>Thyroid Panel (TSH, Free T3, Free T4)</td><td>Thyroid affects every system — often disrupted by iodine deficiency and toxins</td></tr>
       <tr><td>Zinc + Copper (serum)</td><td>The zinc-copper balance — critical for immune and neurological health</td></tr>
-      <tr><td>Iodine (spot urine)</td><td>WHO estimates 2 billion people are deficient worldwide</td></tr>
+      <tr><td>Iodine (spot urine)</td><td>WHO estimates 2 billion people are deficient worldwide<sup class="cite" title="WHO Global prevalence of vitamin A deficiency in populations at risk — iodine deficiency data" onclick="openCitations(5)" style="cursor:pointer;">5</sup></td></tr>
       <tr><td>hs-CRP (high sensitivity)</td><td>Systemic inflammation marker — shows how inflamed your body is right now</td></tr>
       <tr><td>Homocysteine</td><td>Elevated = B vitamin deficiency + cardiovascular and neurological risk</td></tr>
       <tr><td>HbA1c + Fasting Glucose</td><td>Blood sugar regulation — insulin resistance affects every organ</td></tr>
@@ -496,7 +532,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
       <p><strong>Pharmaceutical residues</strong> — antibiotics, hormones (including synthetic estrogens from contraceptive pills), antidepressants, blood pressure medications, painkillers. These compounds pass through the human body and enter wastewater. Municipal treatment plants were not designed to remove them. The WHO confirmed existing treatment methods remove only 20–60% of pharmaceutical byproducts. Reverse osmosis removes up to 99%.</p>
       <p><strong>Microplastics</strong> — a 2017 study tested bottled water from 9 countries and found microplastics in 93% of samples. Tap water contains them too. They have since been found in human blood, lungs, placentas, and brain tissue. Standard carbon pitcher filters (Brita, etc.) do not adequately remove microplastics.</p>
       <p><strong>Heavy metals</strong> — lead from aging pipe infrastructure, arsenic from groundwater, cadmium and chromium from industrial sources. Directly compete with essential minerals in your body.</p>
-      <p><strong>PFAS ("forever chemicals")</strong> — industrial compounds used in non-stick coatings, food packaging, firefighting foam. Extremely persistent. Linked to thyroid disease, immune suppression, and certain cancers. Increasingly found in groundwater worldwide.</p>
+      <p><strong>PFAS ("forever chemicals")</strong> — industrial compounds used in non-stick coatings, food packaging, firefighting foam. Extremely persistent. Linked to thyroid disease, immune suppression, and certain cancers. Increasingly found in groundwater worldwide.<sup class="cite" title="US CDC ATSDR — PFAS health effects overview; WHO drinking water quality guidelines 2022" onclick="openCitations(4)" style="cursor:pointer;">4</sup></p>
     </div>
 
     <h3 class="lh3">Your Skin Absorbs Water Too</h3>
@@ -626,17 +662,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part B — Do It · 4 Phases · Daily Schedules · Supplement Stacks · Shopping Lists</span>
 </div>
 
-
-<!-- PART B COMPANION LINKS -->
-<div style="background:var(--bg-deep);border-bottom:2px solid var(--border);">
-  <div style="max-width:860px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
-    <p style="font-size:14px;color:var(--ink-mid);line-height:1.6;margin:0;flex:1;min-width:220px;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
-      <a href="Full_Body_Detox_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">📋 Daily Schedule →</a>
-      <a href="Full_Body_Detox_Shopping_List.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:10px 18px;border-radius:6px;">🛒 Shopping List →</a>
-    </div>
-  </div>
-</div>
 
 <!-- PHASE NAV — Part B only -->
 <div class="phase-nav">
@@ -903,16 +928,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     
   </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0 0;">
-  <a href="Full_Body_Detox_Daily_Schedule.html#phase-1" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">📋</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 1 Daily Schedule</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">Prepare · Days 1–14</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+<p style="font-size:13px;color:var(--ink-mid);text-align:center;margin:24px 0 6px;font-style:italic;">Put it into practice — your phase-specific daily schedule and shopping list:</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+  <a href="Full_Body_Detox_Daily_Schedule.html#phase-1" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">📋 Phase 1 · Daily Schedule</span>
+    
   </a>
-  <a href="Full_Body_Detox_Shopping_List.html#phase1" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">🛒</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 1 Shopping List</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">All products · iHerb links</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+  <a href="Full_Body_Detox_Shopping_List.html#phase1" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">🛒 Phase 1 · Shopping List</span>
+    
   </a>
 </div>
 </section>
@@ -946,7 +970,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
         <span class="supp-check">✓</span>
         <div class="supp-body">
           <div class="supp-name">Serrapeptase <span class="budget-tag opt-tag">optional</span></div>
-          <div class="supp-meta"><strong>120,000–250,000 SPU · Empty stomach · 45 min before food</strong> · Start low, build up · Elderly: 80,000 SPU<br>Breaks down the protein components of biofilm matrix. Produced by the Japanese silkworm — used in European clinical medicine for decades. Published research shows serrapeptase inhibits E. coli biofilm formation with 92% reduction at 500ng/mL and inhibits MRSA biofilm by up to 88%.<sup class="cite" title="PMC12388453 — Serrapeptase eliminates E. coli biofilms, 2024; PMC9898353 — Serrapeptase impairs MRSA biofilm, 88% reduction">1</sup> Takes 2–3 weeks to begin visible biofilm disruption.</div>
+          <div class="supp-meta"><strong>120,000–250,000 SPU · Empty stomach · 45 min before food</strong> · Start low, build up · Elderly: 80,000 SPU<br>Breaks down the protein components of biofilm matrix. Produced by the Japanese silkworm — used in European clinical medicine for decades. Published research shows serrapeptase inhibits E. coli biofilm formation with 92% reduction at 500ng/mL and inhibits MRSA biofilm by up to 88%.<sup class="cite" title="PMC12388453 — Serrapeptase eliminates E. coli biofilms, 2024; PMC9898353 — Serrapeptase impairs MRSA biofilm, 88% reduction" onclick="openCitations(1)" style="cursor:pointer;">1</sup> Takes 2–3 weeks to begin visible biofilm disruption.</div>
           <div class="supp-warn">⚠️ Do not use with blood-thinning medications without medical supervision</div>
         </div>
         <a href="https://www.iherb.com/pr/doctor-s-best-high-potency-serrapeptase-120-000-spu-270-veggie-caps/51946?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
@@ -955,7 +979,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
         <span class="supp-check">✓</span>
         <div class="supp-body">
           <div class="supp-name">Nattokinase <span class="budget-tag opt-tag">optional</span></div>
-          <div class="supp-meta"><strong>2,000 FU twice daily · Empty stomach</strong> · Reduce to once daily over age 70 or under 55kg<br>Breaks down fibrin — a key structural component of biofilm — by disassembling the amyloid-like fibers of the biofilm matrix.<sup class="cite" title="Jensen et al. 2023, PMC10331947 — enzyme/botanical blend including nattokinase disrupts Candida and Staphylococcus biofilms">2</sup> Derived from natto (Japanese fermented soybeans). Also supports cardiovascular health by reducing excessive clotting factors.</div>
+          <div class="supp-meta"><strong>2,000 FU twice daily · Empty stomach</strong> · Reduce to once daily over age 70 or under 55kg<br>Breaks down fibrin — a key structural component of biofilm — by disassembling the amyloid-like fibers of the biofilm matrix.<sup class="cite" title="Jensen et al. 2023, PMC10331947 — enzyme/botanical blend including nattokinase disrupts Candida and Staphylococcus biofilms" onclick="openCitations(2)" style="cursor:pointer;">2</sup> Derived from natto (Japanese fermented soybeans). Also supports cardiovascular health by reducing excessive clotting factors.</div>
           <div class="supp-warn">⚠️ Do not combine with warfarin, heparin, or aspirin therapy without medical guidance</div>
         </div>
         <a href="https://www.iherb.com/pr/doctor-s-best-nattokinase-2-000-fus-270-veggie-caps/36581?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
@@ -1045,16 +1069,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     
   </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0 0;">
-  <a href="Full_Body_Detox_Daily_Schedule.html#phase-2" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">📋</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 2 Daily Schedule</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">Eliminate · Days 15–45</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+<p style="font-size:13px;color:var(--ink-mid);text-align:center;margin:24px 0 6px;font-style:italic;">Put it into practice — your phase-specific daily schedule and shopping list:</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+  <a href="Full_Body_Detox_Daily_Schedule.html#phase-2" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">📋 Phase 2 · Daily Schedule</span>
+    
   </a>
-  <a href="Full_Body_Detox_Shopping_List.html#phase2" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">🛒</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 2 Shopping List</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">All products · iHerb links</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+  <a href="Full_Body_Detox_Shopping_List.html#phase2" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">🛒 Phase 2 · Shopping List</span>
+    
   </a>
 </div>
 </section>
@@ -1100,7 +1123,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
         <span class="supp-check">✓</span>
         <div class="supp-body">
           <div class="supp-name">Chlorella — Broken Cell Wall <span class="budget-tag must-tag">⭐ must have</span></div>
-          <div class="supp-meta"><strong>Start at 500mg · Build slowly to 2–4g daily over 2 weeks · With food</strong> · Must be broken cell wall form · Clean water source essential<br>Strong chelator of mercury specifically — and also binds microplastics. A human clinical study showed significant reduction in mercury and tin levels after 90 days of chlorella supplementation versus untreated controls.<sup class="cite" title="PMC6523211 — Chlorella and algae supplementation decreases Hg/Sn in patients with dental implants, 90-day human trial">3</sup> Always pair with cilantro if using cilantro as a mobiliser. Build dose very slowly — chlorella causes strong detox reactions in some people at higher doses.</div>
+          <div class="supp-meta"><strong>Start at 500mg · Build slowly to 2–4g daily over 2 weeks · With food</strong> · Must be broken cell wall form · Clean water source essential<br>Strong chelator of mercury specifically — and also binds microplastics. A human clinical study showed significant reduction in mercury and tin levels after 90 days of chlorella supplementation versus untreated controls.<sup class="cite" title="PMC6523211 — Chlorella and algae supplementation decreases Hg/Sn in patients with dental implants, 90-day human trial" onclick="openCitations(3)" style="cursor:pointer;">3</sup> Always pair with cilantro if using cilantro as a mobiliser. Build dose very slowly — chlorella causes strong detox reactions in some people at higher doses.</div>
           <div class="supp-warn">⚠️ Source carefully — heavy metal contamination is a real risk with low-quality algae. Buy from verified clean-water sources.</div>
         </div>
         <a href="https://www.iherb.com/pr/now-foods-certified-organic-chlorella-500-mg-200-tablets/21320?rcode=GUW6132" target="_blank" class="supp-link">iHerb →</a>
@@ -1139,16 +1162,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     
   </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0 0;">
-  <a href="Full_Body_Detox_Daily_Schedule.html#phase-3" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">📋</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 3 Daily Schedule</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">Bind & Drain · Days 46–75</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+<p style="font-size:13px;color:var(--ink-mid);text-align:center;margin:24px 0 6px;font-style:italic;">Put it into practice — your phase-specific daily schedule and shopping list:</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+  <a href="Full_Body_Detox_Daily_Schedule.html#phase-3" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">📋 Phase 3 · Daily Schedule</span>
+    
   </a>
-  <a href="Full_Body_Detox_Shopping_List.html#phase3" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">🛒</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 3 Shopping List</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">All products · iHerb links</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+  <a href="Full_Body_Detox_Shopping_List.html#phase3" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">🛒 Phase 3 · Shopping List</span>
+    
   </a>
 </div>
 </section>
@@ -1276,7 +1298,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     <h3 class="lh3">Stage 4 — NAD+ Restoration</h3>
     <div class="callout callout-sage">
       <div class="callout-title">⚡ Why NAD+ Belongs in Phase 4</div>
-      <p>NAD+ (Nicotinamide Adenine Dinucleotide) is present in every cell in the body — required for energy production, DNA repair, cellular communication, and neurological function. Levels decline dramatically with age, toxic load, and chronic illness — studies show up to 50% decline between ages 40 and 60. During the clearing and rebuilding phases your cells are working harder than they have in years. NAD+ is the fuel for that cellular work. This is the right moment to restore it.</p>
+      <p>NAD+ (Nicotinamide Adenine Dinucleotide) is present in every cell in the body — required for energy production, DNA repair, cellular communication, and neurological function. Levels decline dramatically with age, toxic load, and chronic illness — studies show up to 50% decline between ages 40 and 60.<sup class="cite" title="Zhu XH et al. PNAS 2015 — In vivo NAD assay reveals age-associated decrease; Rajman et al. Cell Metabolism 2018 — NAD+ and the age of aging" onclick="openCitations(6)" style="cursor:pointer;">6</sup> During the clearing and rebuilding phases your cells are working harder than they have in years. NAD+ is the fuel for that cellular work. This is the right moment to restore it.</p>
     </div>
     <div class="supp-list">
       <div class="supp-item">
@@ -1311,16 +1333,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     
   </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0 0;">
-  <a href="Full_Body_Detox_Daily_Schedule.html#phase-4" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">📋</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 4 Daily Schedule</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">Rebuild · Days 76–90</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+<p style="font-size:13px;color:var(--ink-mid);text-align:center;margin:24px 0 6px;font-style:italic;">Put it into practice — your phase-specific daily schedule and shopping list:</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+  <a href="Full_Body_Detox_Daily_Schedule.html#phase-4" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">📋 Phase 4 · Daily Schedule</span>
+    
   </a>
-  <a href="Full_Body_Detox_Shopping_List.html#phase4" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">🛒</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 4 Shopping List</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">All products · iHerb links</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+  <a href="Full_Body_Detox_Shopping_List.html#phase4" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">🛒 Phase 4 · Shopping List</span>
+    
   </a>
 </div>
 </section>
@@ -1407,16 +1428,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     <div class="pq" style="margin-top:32px;"><p>"You are not at the end of something. You are at the beginning of the version of yourself that uses everything the difficult years gave her — not to suffer any longer — but to heal, to help, and to offer the lamp she built over so long to people still stumbling in the dark around her."</p></div>
   </div>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:32px 0 0;">
-  <a href="Full_Body_Detox_Daily_Schedule.html#phase-5" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">📋</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 5 Daily Schedule</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">Life After · Day 91+</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+<p style="font-size:13px;color:var(--ink-mid);text-align:center;margin:24px 0 6px;font-style:italic;">Put it into practice — your phase-specific daily schedule and shopping list:</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+  <a href="Full_Body_Detox_Daily_Schedule.html#phase-5" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">📋 Phase 5 · Daily Schedule</span>
+    
   </a>
-  <a href="Full_Body_Detox_Shopping_List.html#phase5" style="display:flex;align-items:center;gap:12px;background:var(--bg-nav);border-radius:8px;padding:14px 18px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-    <span style="font-size:22px;">🛒</span>
-    <div><div style="font-size:9px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-nav);margin-bottom:2px;">Phase 5 Shopping List</div><div style="font-family:'Playfair Display',serif;font-size:14px;color:#d4c9a8;">All products · iHerb links</div></div>
-    <span style="margin-left:auto;color:var(--sage-nav);">→</span>
+  <a href="Full_Body_Detox_Shopping_List.html#phase5" style="display:inline-flex;align-items:center;gap:6px;background:rgba(138,184,154,0.12);border:1px solid rgba(138,184,154,0.25);border-radius:6px;padding:8px 12px;text-decoration:none;transition:opacity 0.2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    <span style="font-size:12px;font-weight:700;color:var(--sage);">🛒 Phase 5 · Shopping List</span>
+    
   </a>
 </div>
 </section>
@@ -1559,60 +1579,11 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <div class="inner" style="max-width:740px;padding-top:52px;padding-bottom:52px;">
     <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:18px;">About This Guide</div>
     <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This guide was built from thousands of hours of independent research — peer-reviewed studies, suppressed clinical trials, and ancient healing traditions that predate the pharmaceutical model. The author spent years as a Pharmaceutical QA Internal Auditor before leaving to find the answers the system was not asking for.</p>
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. You save money. This guide stays alive.</p>
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Every protocol here is free — because health knowledge should not be a luxury. If this guide helps you, the only thing asked in return is that you buy your supplements through iHerb using code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout. New customers save 10%, returning customers save 5%. This guide stays alive.</p>
     <a href="index.html#about" style="font-size:13px;font-weight:600;color:var(--sage);text-decoration:underline;text-underline-offset:3px;">Read the full story →</a>
   </div>
 </section>
 
-
-<!-- WHATSAPP SHARE -->
-<section style="background:var(--bg-warm);padding:36px 24px;border-top:1px solid var(--border-s);">
-  <div style="max-width:720px;margin:0 auto;text-align:center;">
-    <p style="font-size:14px;color:var(--ink-light);margin-bottom:16px;font-weight:500;letter-spacing:0.03em;">Know someone who needs this protocol?</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:4px;"><a id="wa-share-btn" href="#" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;transition:background 0.2s;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Send on WhatsApp
-    </a>
-    <a id="fb-share-btn" href="#" target="_blank" rel="noopener"
-      style="display:inline-flex;align-items:center;gap:10px;background:#1877F2;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;transition:background 0.2s;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Share on Facebook
-    </a></div>
-    <p style="font-size:12px;color:var(--ink-ghost);margin-top:12px;">This guide is free — share it freely.</p>
-  </div>
-</section>
-
-<script>
-(function(){
-  var btn = document.getElementById("wa-share-btn");
-  if(btn){
-    var url = encodeURIComponent(window.location.href);
-    var text = encodeURIComponent("I found this free healing protocol — thought you should see it: ");
-    btn.href = "https://wa.me/?text=" + text + url;
-  }
-  var fb = document.getElementById("fb-share-btn");
-  if(fb){
-    var url = encodeURIComponent(window.location.href);
-    fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + url;
-  }
-})();
-</script>
-
-<!-- EMAIL SIGNUP -->
-<section style="background:var(--bg-deep);padding:48px 24px;border-top:1px solid var(--border-s);">
-  <div style="max-width:480px;margin:0 auto;text-align:center;">
-    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">New protocols · New research</div>
-    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px;">Be the first to know when new protocols are added</h3>
-    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">No algorithms. No ads. Just the information that matters, when it matters.</p>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <input type="email" id="mc-email-detox" placeholder="Your email address" style="width:100%;padding:14px 18px;border-radius:6px;border:1px solid var(--border);background:var(--bg-warm);color:var(--ink);font-size:15px;font-family:'Jost',sans-serif;outline:none;" />
-      <button onclick="mcSubmit_detox()" style="width:100%;padding:14px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;">Join the Community →</button>
-      <p id="mc-msg-detox" style="font-size:13px;color:var(--sage);min-height:18px;margin:0;"></p>
-    </div>
-    <p style="font-size:11px;color:var(--ink-ghost);margin-top:12px;">Free · No spam · Unsubscribe anytime</p>
-  </div>
-</section>
 
 <!-- TESTIMONIALS PLACEHOLDER -->
 <section style="background:var(--bg-stone);padding:56px 24px;">
@@ -1636,59 +1607,90 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <div class="divider"></div>
 
 <!-- SOURCES -->
-<section class="source-section">
-  <div style="max-width:760px;margin:0 auto;">
-    <div class="kicker">Research & Sources</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:18px;">Citations & Further Reading</h2>
-    <p class="lp" style="margin-bottom:24px;">Key claims in this protocol are grounded in peer-reviewed research. Numbers correspond to superscript citations in the text above.</p>
-    <ol class="source-list">
-      <li>Serrapeptase eliminates E. coli biofilms by targeting curli fibers — PMC12388453, 2024. "92% reduction in biofilm mass at 500ng/mL." Also: Serrapeptase impairs biofilm of MRSA — PMC9898353, 2022. "Up to 88% biofilm density reduction." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12388453/" target="_blank" rel="noopener">PMC12388453 →</a></li>
-      <li>Disruption of established bacterial and fungal biofilms by a blend of enzymes and botanical extracts — Jensen et al., Journal of Microbiology and Biotechnology, 2023. PMC10331947. Nattokinase and enzyme blend significantly reduced biofilm mass in Candida albicans and Staphylococcus species. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10331947/" target="_blank" rel="noopener">PMC10331947 →</a></li>
-      <li>Long-term algae extract (Chlorella and Fucus sp) and aminosulphurate supplementation modulate SOD-1 activity and decrease heavy metals (Hg, Sn) in patients with long-term dental titanium implants — PMC6523211, 2019. Human clinical trial showing significant reduction in mercury and tin levels after 90 days of chlorella supplementation. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6523211/" target="_blank" rel="noopener">PMC6523211 →</a></li>
+<!-- CITATIONS DRAWER -->
+<div id="citations-drawer" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg-nav);border-top:2px solid var(--sage-mid);max-height:50vh;overflow-y:auto;box-shadow:0 -8px 32px rgba(0,0,0,0.3);">
+  <div style="max-width:860px;margin:0 auto;padding:20px 24px 28px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-nav);">Sources & Citations</div>
+      <button onclick="closeCitations()" style="background:none;border:none;color:rgba(212,201,168,0.6);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;">✕</button>
+    </div>
+    <ol id="citations-list" style="list-style:none;margin:0;padding:0;">
+      <li id="cite-1" style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">1</span><span>Serrapeptase eliminates E. coli biofilms — PMC12388453, 2024. 92% reduction at 500ng/mL. Also: MRSA biofilm 88% reduction, PMC9898353, 2022. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12388453/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC12388453 →</a></span></li>
+      <li id="cite-2" style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">2</span><span>Nattokinase enzyme blend disrupts Candida and Staphylococcus biofilms — Jensen et al., Journal of Microbiology and Biotechnology, 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10331947/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC10331947 →</a></span></li>
+      <li id="cite-3" style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">3</span><span>Chlorella supplementation reduces mercury and tin levels — PMC6523211, 2019. Human 90-day clinical trial. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6523211/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC6523211 →</a></span></li>
+      <li id="cite-4" style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">4</span><span>PFAS health effects — CDC ATSDR overview; WHO drinking water quality guidelines 2022. <a href="https://www.atsdr.cdc.gov/pfas/health-effects/" target="_blank" rel="noopener" style="color:var(--sage-nav);">CDC ATSDR →</a></span></li>
+      <li id="cite-5" style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">5</span><span>WHO Global iodine deficiency — estimated 2 billion people deficient worldwide. WHO Micronutrient Deficiencies data.</span></li>
+      <li id="cite-6" style="display:flex;gap:10px;padding:10px 0;font-size:13px;color:rgba(212,201,168,0.7);line-height:1.6;"><span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--sage-nav);flex-shrink:0;min-width:18px;margin-top:2px;">6</span><span>NAD+ decline with age — Zhu XH et al. PNAS 2015; Rajman et al. Cell Metabolism 2018. Up to 50% decline between ages 40–60.</span></li>
     </ol>
-    <p style="font-size:12px;color:var(--ink-ghost);margin-top:20px;line-height:1.7;">Additional references: Zhao et al. 2023, Frontiers in Cellular and Infection Microbiology — biofilm biology and treatment strategies; WHO Pharmaceutical residues in drinking water (2012); Ragusa et al. 2021, Environmental International — microplastics in human placenta; Fagan et al. 2020 — organic diet reduces urinary glyphosate 70.93%.</p>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(138,184,154,0.15);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:11px;color:rgba(212,201,168,0.4);line-height:1.6;margin:0;">Citations provided for reader verification — not a substitute for professional medical advice.</p>
+      <a href="research.html" style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage-nav);text-decoration:none;white-space:nowrap;">View Full Research Library →</a>
+    </div>
+  </div>
+</div>
+<div id="citations-overlay" onclick="closeCitations()" style="display:none;position:fixed;inset:0;z-index:199;background:rgba(0,0,0,0.4);"></div>
+
+<!-- SHARE BOTTOM -->
+<section style="background:var(--bg-warm);padding:36px 24px;border-top:1px solid var(--border-s);">
+  <div style="max-width:720px;margin:0 auto;text-align:center;">
+    <p style="font-size:14px;color:var(--ink-light);margin-bottom:16px;font-weight:500;">Know someone who needs this?</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:4px;">
+      <a id="wa-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Send on WhatsApp
+      </a>
+      <a id="fb-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#1877F2;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Share on Facebook
+      </a>
+    </div>
+    <p style="font-size:12px;color:var(--ink-ghost);margin-top:12px;">This guide is free — share it freely.</p>
   </div>
 </section>
-
-<div class="divider"></div>
-
-<!-- SHARE BLOCK -->
-<section style="background:var(--bg-deep);border-top:1px solid var(--border-s);padding:44px 24px;text-align:center;">
-  <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px;">Know someone who needs this protocol?</div>
-  <p style="font-size:14px;color:var(--ink-light);line-height:1.7;max-width:500px;margin:0 auto 28px;">If this helped you — share it. It costs nothing and could change everything for someone you love.</p>
-  <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:0.04em;background:#25D366;color:#fff;" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;flex-shrink:0;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Share on WhatsApp
-    </a>
-    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;letter-spacing:0.04em;background:#1877F2;color:#fff;" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;flex-shrink:0;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Share on Facebook
-    </a>
+<!-- EMAIL SIGNUP -->
+<section style="background:var(--bg-deep);padding:48px 24px;border-top:1px solid var(--border-s);">
+  <div style="max-width:480px;margin:0 auto;text-align:center;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">New protocols · New research</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px;">Be the first to know when new protocols are added</h3>
+    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">No algorithms. No ads. Just the information that matters, when it matters.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <input type="email" id="mc-email-detox" placeholder="Your email address" style="width:100%;padding:14px 18px;border-radius:6px;border:1px solid var(--border);background:var(--bg-warm);color:var(--ink);font-size:15px;font-family:'Jost',sans-serif;outline:none;" />
+      <button onclick="mcSubmitFBD()" style="width:100%;padding:14px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;">Join the Community →</button>
+      <p id="mc-msg-fbd" style="font-size:13px;color:var(--sage);min-height:18px;margin:0;"></p>
+    </div>
+    <p style="font-size:11px;color:var(--ink-ghost);margin-top:12px;">Free · No spam · Unsubscribe anytime</p>
   </div>
 </section>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
-  <div class="ft-inner" style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
     <div>
-      <div class="ft-brand">Heal Yourself</div>
-      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
-      <p class="ft-disc" style="margin-top:8px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
-    <div class="ft-nav">
-      <a href="index.html">Home</a>
-      <a href="before-you-begin.html">Before You Begin</a>
-      <a href="Full_Body_Detox_Protocol.html" class="hi">Full Body Detox</a>
-      <a href="protocols.html">All Protocols</a>
-      <a href="research.html">Research</a>
-      <a href="about.html">About</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Home</a>
+      <a href="before-you-begin.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Before You Begin</a>
+      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">All Protocols</a>
+      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Research</a>
+      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">About</a>
+      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Contact</a>
     </div>
   </div>
 </footer>
 
 <script>
+// Share URL wiring
+(function(){
+  var pageUrl=encodeURIComponent(window.location.href);
+  var msg=encodeURIComponent('I found this free healing guide and had to share it. It covers everything the medical system never tells you — detox, gut health, brain, Parkinson\'s and more. Written by someone who worked inside pharma and walked away. Worth reading: '+decodeURIComponent(pageUrl));
+  var waUrl='https://wa.me/?text='+msg;
+  var fbUrl='https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
+  ['sf-wa','wa-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waUrl;});
+  ['sf-fb','fb-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=fbUrl;});
+})();
 // Nav dropdown
 function toggleNavDropdown(){
   const d=document.getElementById('nav-protocols');
@@ -1720,7 +1722,9 @@ function updateNav(){
 }
 window.addEventListener('scroll', updateNav, {passive:true});
 updateNav();
+</script>
 
+<script>
 // Section-specific printing
 function printSection(id){
   const el = document.getElementById(id);
@@ -1738,7 +1742,7 @@ function printSection(id){
     .check-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#5a8c6a;margin-right:8px;vertical-align:middle;}
     .checklist-item,.sched-row,.supp-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0dbd0;font-size:13px;align-items:flex-start;}
     .sched-time{font-family:'DM Mono',monospace;font-size:11px;color:#3d6b4a;min-width:100px;padding-top:2px;}
-    .print-header{font-family:'Playfair Display',serif;font-size:22px;color:#1e1a14;margin-bottom:6px;}
+    .print-header{font-family:'Playfair Display',serif;font-size:16px;color:#1e1a14;margin-bottom:6px;}
     .print-sub{font-size:12px;color:#7a6e5c;margin-bottom:24px;}
     @media print{@page{margin:20mm;}}
   </style></head><body>
@@ -1746,12 +1750,12 @@ function printSection(id){
   <div class="print-sub">healyourself.guide · iHerb affiliate code: GUW6132</div>
   ${el.outerHTML}
   <script>window.onload=function(){window.print();}<\/script>
-</body></html>`);
+</body></html>\`);
 
   win.document.close();
 }
 </script>
-<script id="mcjs-detox">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
+
 <script>
 function mcSubmit_detox(){
   var email=document.getElementById('mc-email-detox').value.trim();
@@ -1760,6 +1764,22 @@ function mcSubmit_detox(){
   msg.style.color='var(--sage)';msg.textContent='Thank you — look out for updates soon.';
   document.getElementById('mc-email-detox').value='';
   if(window.MailchimpSubscribe){MailchimpSubscribe({EMAIL:email});}
+}
+</script>
+<script>
+function openCitations(num){
+  var drawer = document.getElementById('citations-drawer');
+  var overlay = document.getElementById('citations-overlay');
+  if(!drawer) return;
+  drawer.style.display = 'block';
+  overlay.style.display = 'block';
+  document.querySelectorAll('#citations-list li').forEach(function(li){ li.classList.remove('cite-active'); });
+  var target = document.getElementById('cite-' + num);
+  if(target){ target.classList.add('cite-active'); setTimeout(function(){ target.scrollIntoView({behavior:'smooth',block:'nearest'}); }, 50); }
+}
+function closeCitations(){
+  document.getElementById('citations-drawer').style.display = 'none';
+  document.getElementById('citations-overlay').style.display = 'none';
 }
 </script>
 </body>
