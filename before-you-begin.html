@@ -10,6 +10,10 @@
 <meta property="og:description" content="Before starting any healing protocol, you need to understand why the body breaks down. The gut connection. The four enemies. The system that was never designed to heal you.">
 <meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/before-you-begin.html">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Heal Yourself Guide">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Before You Begin — What the Doctor Won't Tell You">
+<meta name="twitter:description" content="Before starting any healing protocol, understand why the body breaks down. The gut connection. The four enemies. Written by a pharmaceutical QA insider.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,8 +60,11 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
 .dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
 .dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
-.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
-.dd-group:hover .dd-subs{display:block;}
+.dd-subs{position:absolute;left:100%;top:0;min-width:200px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;padding:4px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.15s,visibility 0.15s;}
+.dd-group:hover .dd-subs{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;border-bottom:1px solid rgba(138,184,154,0.08);height:auto;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub:last-child{border-bottom:none;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);background:rgba(138,184,154,0.08);}
 .nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
@@ -226,7 +233,8 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .email-note{font-size:11px;color:rgba(240,236,226,0.35);margin-top:10px;letter-spacing:0.03em;}
 
 /* CITATIONS */
-sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:default;}
+sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:pointer;border-bottom:1px dotted var(--sage-mid);}
+.cite-active{background:rgba(138,184,154,0.15);border-radius:4px;}
 .sources{margin-top:8px;}
 .sources h2{font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:18px;}
 .source-list{list-style:none;counter-reset:src;margin:0;padding:0;}
@@ -265,9 +273,28 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
             <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
-        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
-        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <div class="dd-group">
+          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <div class="dd-subs">
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <div class="dd-subs">
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <div class="dd-subs">
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
         <div class="dd-group">
           <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
@@ -275,6 +302,7 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
             <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
             <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
             <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
           </div>
         </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
@@ -288,10 +316,10 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
 <!-- FLOATING SHARE BAR -->
 <div class="share-float" aria-label="Share this guide">
   <span class="share-float-label">Share</span>
-  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+  <a id="sf-wa" class="share-pill wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+  <a id="sf-fb" class="share-pill fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
   </a>
 </div>
@@ -429,8 +457,8 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
     <div class="kicker">Chapter Two</div>
     <h2 class="lh2">Your Gut — <em>The Root of Everything</em></h2>
     <p class="lp"><strong>You have two brains.</strong></p>
-    <p class="lp">One is in your head. The other is in your gut — a complex network of over 500 million nerve cells lining your digestive tract.<sup class="cite" title="PMC11433641 — Enteric Nervous System and Neurological Diseases, 2024">1</sup> Scientists call it the Enteric Nervous System. Your gut talks directly to your brain through the vagus nerve — a superhighway of information running from your brainstem all the way into your abdomen.</p>
-    <p class="lp"><strong>90% of that communication travels from the gut up to the brain. Not the other way around.</strong><sup class="cite" title="PMC5808284 — Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis, 2018">2</sup> Your brain is largely responding to signals from your gut. Which means what lives in your gut — what grows there, what feeds there, what damages there — is directly shaping your thoughts, your moods, your anxiety, your clarity, and your will to engage with life.</p>
+    <p class="lp">One is in your head. The other is in your gut — a complex network of over 500 million nerve cells lining your digestive tract.<sup class="cite" onclick="openCitations(1)">1</sup> Scientists call it the Enteric Nervous System. Your gut talks directly to your brain through the vagus nerve — a superhighway of information running from your brainstem all the way into your abdomen.</p>
+    <p class="lp"><strong>90% of that communication travels from the gut up to the brain. Not the other way around.</strong><sup class="cite" onclick="openCitations(2)">2</sup> Your brain is largely responding to signals from your gut. Which means what lives in your gut — what grows there, what feeds there, what damages there — is directly shaping your thoughts, your moods, your anxiety, your clarity, and your will to engage with life.</p>
     <div class="pq"><p>"Depression has been treated for decades as a serotonin deficiency in the brain. But 90–95% of the body's serotonin is produced in the gut — not the brain.<sup class="cite" title="Cell 2017 — UCSF: Enterochromaffin cells produce >90% of body's serotonin; ScienceDirect 2018 confirms 95%">3</sup> Medicate the brain while ignoring the gut and you are treating a house fire by adjusting the thermostat."</p></div>
 
     <button class="exp-btn" onclick="toggleExpand('gut',this)" data-label="The full science — every condition now linked to the gut">
@@ -444,10 +472,10 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
           <span class="rb">Autism Spectrum Disorder</span><span class="rb">ADHD</span><span class="rb">Neurological decline</span><span class="rb">Movement disorders</span><span class="rb">ALS</span><span class="rb">Huntington's Disease</span><span class="rb">Multiple Sclerosis</span><span class="rb">Depression</span><span class="rb">Anxiety</span><span class="rb">Schizophrenia</span><span class="rb">Bipolar Disorder</span><span class="rb">Obesity</span><span class="rb">Insulin Resistance</span>
         </div>
         <p class="lp">This is the list that should have been on the front page of every newspaper in the world. Instead it sits in academic journals that most doctors never read — while the same doctors prescribe medications that further destroy the very gut lining driving every condition on this list.</p>
-        <p class="lp">The connection between gut health and neurological movement disorders is particularly striking. The toxic proteins associated with dopaminergic decline appear in the gut years, sometimes decades, before they appear in the brain.<sup class="cite" title="Braak Hypothesis — Nature Reviews Neurology 2015; confirmed experimentally in Neuron/Cell 2019 — Kim et al., truncal vagotomy prevents spread">4</sup> Research published in Cell and Nature suggests the disease may originate in the enteric nervous system and travel to the brain via the vagus nerve. <strong>The brain did not start the disease. The gut did.</strong></p>
+        <p class="lp">The connection between gut health and neurological movement disorders is particularly striking. The toxic proteins associated with dopaminergic decline appear in the gut years, sometimes decades, before they appear in the brain.<sup class="cite" onclick="openCitations(4)">4</sup> Research published in Cell and Nature suggests the disease may originate in the enteric nervous system and travel to the brain via the vagus nerve. <strong>The brain did not start the disease. The gut did.</strong></p>
         <h3 class="lh3">How We Broke the Most Important Ecosystem on Earth</h3>
-        <p class="lp"><strong>Antibiotics</strong> — even a single course can alter your microbiome composition for up to 4–8 years, with diversity never fully recovering in some individuals.<sup class="cite" title="Nature Medicine 2026 — Uppsala University, 14,979 adults; Baldanzi et al., doi:10.1038/s41591-026-04284-y">5</sup></p>
-        <p class="lp"><strong>Glyphosate</strong> — the world's most widely used herbicide, patented as an antibiotic in 2010,<sup class="cite" title="US Patent No 7771736 B2; Tandfonline 2023 — Impact of glyphosate on gut microbiome composition">6</sup> disrupts the shikimate pathway used by beneficial gut bacteria, reducing populations of Lactobacillus and Bifidobacterium.<sup class="cite" title="ScienceDirect 2023 — Low-dose glyphosate exposure alters gut microbiota and modulates gut homeostasis">7</sup></p>
+        <p class="lp"><strong>Antibiotics</strong> — even a single course can alter your microbiome composition for up to 4–8 years, with diversity never fully recovering in some individuals.<sup class="cite" onclick="openCitations(5)">5</sup></p>
+        <p class="lp"><strong>Glyphosate</strong> — the world's most widely used herbicide, patented as an antibiotic in 2010,<sup class="cite" onclick="openCitations(6)">6</sup> disrupts the shikimate pathway used by beneficial gut bacteria, reducing populations of Lactobacillus and Bifidobacterium.<sup class="cite" onclick="openCitations(7)">7</sup></p>
         <p class="lp"><strong>Processed food</strong> — emulsifiers like carboxymethylcellulose and polysorbate 80 disrupt the gut's protective mucus layer.</p>
         <p class="lp"><strong>Chronic stress</strong> — cortisol directly damages gut lining integrity and disrupts microbial balance.</p>
         <h3 class="lh3">The Gate That Should Never Open</h3>
@@ -506,15 +534,15 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
     <div class="exp-body" id="enemies">
       <div class="exp-inner">
         <h3 class="lh3 lh3-ink">Enemy One — Toxins</h3>
-        <p class="lp"><strong>The Air.</strong> Stratospheric Aerosol Injection — the deliberate spraying of reflective particles into the upper atmosphere to deflect solar radiation — is not a fringe theory. It is an actively researched geoengineering proposal, covered in multiple US patents,<sup class="cite" title="US Patent 5,003,186 (Chang et al.); US20100127224A1; US20100071771A1 — atmospheric aerosol injection systems involving aluminum oxide, barium, and related compounds">11</sup> the subject of three formal US Congressional hearings,<sup class="cite" title="US House Committee on Science and Technology: Geoengineering hearings November 2009, February 2010, March 2010 (govinfo.gov CHRG-111hhrg53007); House Committee on Science, Space & Technology, November 2017; House Oversight Subcommittee, September 2025 (C-SPAN)">12</sup> and openly discussed by researchers at Harvard, Carnegie Institution, and Pacific Northwest National Laboratory. The proposed particles include aluminum oxide, barium, and strontium. Whether these programs are already operational — and to what extent — remains actively disputed. What is not disputed: industrial pollution, vehicle emissions, PFAS compounds, flame retardants off-gassing from furniture, and formaldehyde from flooring mean the air inside most homes is measurably more toxic than the air outside. Heavy metal accumulation from industrial sources is well-documented in air, water, and soil samples worldwide. The toxic load on the modern respiratory system is real — whatever its precise composition.</p>
-        <p class="lp"><strong>The Water.</strong> Your tap water contains chlorine — which continues killing microorganisms inside your gut. It contains fluoride — documented to accumulate in the pineal gland, potentially disrupting melatonin production and thyroid hormone synthesis by interfering with iodine uptake.<sup class="cite" title="Medical News Today — Fluoride effect on pituitary/pineal gland; Harvard School of Public Health meta-analysis of 27 studies on fluoride and cognitive effects">8</sup> It contains pharmaceutical residues — hormones, antibiotics, antidepressants — that water treatment plants were never designed to remove. It contains microplastics, glyphosate, and in many regions, lead from aging pipes.</p>
-        <p class="lp"><strong>The Food.</strong> Glyphosate is present in alarming concentrations in wheat, oats, corn, soy, and most processed foods. It disrupts gut bacteria through the shikimate pathway and chelates essential minerals out of your body.<sup class="cite" title="US Patent 7771736 B2; ScienceDirect 2023">7</sup> Seed oils — canola, soybean, sunflower, corn oil — industrially processed at high heat, profoundly inflammatory. Hundreds of synthetic chemicals are present in food, approved by the same regulatory agencies whose executives rotate in and out of the corporations being regulated.</p>
+        <p class="lp"><strong>The Air.</strong> Stratospheric Aerosol Injection — the deliberate spraying of reflective particles into the upper atmosphere to deflect solar radiation — is not a fringe theory. It is an actively researched geoengineering proposal, covered in multiple US patents,<sup class="cite" onclick="openCitations(11)">11</sup> the subject of three formal US Congressional hearings,<sup class="cite" onclick="openCitations(12)">12</sup> and openly discussed by researchers at Harvard, Carnegie Institution, and Pacific Northwest National Laboratory. The proposed particles include aluminum oxide, barium, and strontium. Whether these programs are already operational — and to what extent — remains actively disputed. What is not disputed: industrial pollution, vehicle emissions, PFAS compounds, flame retardants off-gassing from furniture, and formaldehyde from flooring mean the air inside most homes is measurably more toxic than the air outside. Heavy metal accumulation from industrial sources is well-documented in air, water, and soil samples worldwide. The toxic load on the modern respiratory system is real — whatever its precise composition.</p>
+        <p class="lp"><strong>The Water.</strong> Your tap water contains chlorine — which continues killing microorganisms inside your gut. It contains fluoride — documented to accumulate in the pineal gland, potentially disrupting melatonin production and thyroid hormone synthesis by interfering with iodine uptake.<sup class="cite" onclick="openCitations(8)">8</sup> It contains pharmaceutical residues — hormones, antibiotics, antidepressants — that water treatment plants were never designed to remove. It contains microplastics, glyphosate, and in many regions, lead from aging pipes.</p>
+        <p class="lp"><strong>The Food.</strong> Glyphosate is present in alarming concentrations in wheat, oats, corn, soy, and most processed foods. It disrupts gut bacteria through the shikimate pathway and chelates essential minerals out of your body.<sup class="cite" onclick="openCitations(7)">7</sup> Seed oils — canola, soybean, sunflower, corn oil — industrially processed at high heat, profoundly inflammatory. Hundreds of synthetic chemicals are present in food, approved by the same regulatory agencies whose executives rotate in and out of the corporations being regulated.</p>
         <p class="lp"><strong>The Products.</strong> Your shampoo. Your deodorant. Your moisturizer. Your makeup. Your cleaning products. Your non-stick cookware. Endocrine disruptors. Heavy metals. Carcinogens. Neurotoxins. All legally present in products used daily by billions of people.</p>
-        <p class="lp"><strong>Microplastics.</strong> Now found in human blood, breast milk, placenta, testes, liver, kidneys, and brain.<sup class="cite" title="Nature Medicine 2025 — University of New Mexico: microplastics in brain 7–30× higher concentration than liver or kidneys; Environmental International 2022 — microplastics in human blood">9</sup> Brain concentrations have increased approximately 50% between 2016 and 2024. We are not just surrounded by plastic. We are becoming it.</p>
+        <p class="lp"><strong>Microplastics.</strong> Now found in human blood, breast milk, placenta, testes, liver, kidneys, and brain.<sup class="cite" onclick="openCitations(9)">9</sup> Brain concentrations have increased approximately 50% between 2016 and 2024. We are not just surrounded by plastic. We are becoming it.</p>
         <div class="pq pq-terra"><p>"They are the predictable consequence of living in a toxic world and being told it is normal."</p></div>
 
         <h3 class="lh3 lh3-ink">Enemy Two — Parasites</h3>
-        <p class="lp">An estimated 3.5 billion people worldwide are affected by parasitic infections — with approximately 450 million ill as a result.<sup class="cite" title="Dove Medical Press / IDR 2024 citing WHO data; Frontiers in Parasitology 2025">10</sup> Standard medical testing routinely misses them — partly because testing methods are genuinely inadequate, partly because most doctors receive minimal training in parasitology.</p>
+        <p class="lp">An estimated 3.5 billion people worldwide are affected by parasitic infections — with approximately 450 million ill as a result.<sup class="cite" onclick="openCitations(10)">10</sup> Standard medical testing routinely misses them — partly because testing methods are genuinely inadequate, partly because most doctors receive minimal training in parasitology.</p>
         <p class="lp">Parasites consume your nutrients first — particularly B12, iron, zinc, and magnesium — leaving you deficient regardless of how well you eat. They produce toxic waste that floods your system. They perforate the gut lining. They suppress your immune response.</p>
         <p class="lp"><strong>The Biofilm Shield.</strong> Here is why most parasite cleanses fail. Parasites construct biofilm — a complex, sticky, protective matrix that hardens around their colonies. A biological fortress. This biofilm physically shields parasites from your immune system and from antiparasitic herbs. If you do not break the biofilm first — everything else is largely ineffective. This is the critical step that virtually every cleanse protocol on the market skips entirely.</p>
         <div class="pq"><p>"When you start something important and stop at the same point every time — before you decide that is simply who you are — clean the body first. Then decide."</p></div>
@@ -613,67 +641,95 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
 
 <div class="divider"></div>
 
-<!-- SHARE -->
+<!-- SHARE BOTTOM -->
 <section class="share-block">
-  <div class="share-block-title">Know someone who needs this?</div>
-  <p class="share-block-sub">If this changed how you understand your body — share it. It costs nothing and could change everything for someone you love.</p>
-  <div class="share-btns">
-    <a class="share-btn wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20It%20covers%20everything%20the%20medical%20system%20never%20tells%20you%20%E2%80%94%20detox%2C%20gut%20health%2C%20brain%2C%20Parkinson%27s%20and%20more.%20Written%20by%20someone%20who%20worked%20inside%20pharma%20and%20walked%20away.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Share on WhatsApp
-    </a>
-    <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      Share on Facebook
-    </a>
+  <div style="max-width:720px;margin:0 auto;text-align:center;">
+    <p class="share-block-title">Know someone who needs this?</p>
+    <p class="share-block-sub">This information was buried. Help someone find it.</p>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
+      <a id="wa-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Share on WhatsApp
+      </a>
+      <a id="fb-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#1877F2;color:#fff;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 32px;border-radius:6px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Share on Facebook
+      </a>
+    </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- SOURCES -->
-<section class="sec-main sources">
-  <div class="inner">
-    <div class="kicker">Research & Sources</div>
-    <h2>Citations & Further Reading</h2>
-    <p class="lp" style="margin-bottom:28px;">Every major claim in this guide is grounded in peer-reviewed research, institutional data, or primary source documentation. Sources include both mainstream and independent research. Numbers correspond to superscript citations in the text above.</p>
-    <ol class="source-list">
-      <li>Enteric Nervous System and Its Relationship with Neurological Diseases — PMC / NCBI, 2024. "90% of vagal fibers between the gut and brain are of the afferent type." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11433641/" target="_blank" rel="noopener">PMC11433641 →</a></li>
-      <li>The Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis — PMC / NCBI, 2018. "The VN contains 80% afferent and 20% efferent fibers." <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5808284/" target="_blank" rel="noopener">PMC5808284 →</a></li>
-      <li>Enterochromaffin Cells Are Gut Chemosensors — Cell / UCSF, 2017. "These unique cells produce >90% of the body's serotonin." <a href="https://www.cell.com/cell/fulltext/S0092-8674(17)30595-0" target="_blank" rel="noopener">Cell, June 2017 →</a> — confirmed by ScienceDirect, 2018: "About 95% of 5-HT is estimated to be found in gut." <a href="https://www.sciencedirect.com/science/article/abs/pii/S0300908418301652" target="_blank" rel="noopener">ScienceDirect 2018 →</a></li>
-      <li>Braak's Hypothesis — Parkinson's disease originates in the gut. (a) Nature Reviews Neurology, 2015 — Klingelhoefer & Bhidayasiri. <a href="https://www.nature.com/articles/nrneurol.2015.197" target="_blank" rel="noopener">Nature Reviews Neurology →</a> (b) Transneuronal Propagation of Pathologic α-Synuclein from the Gut to the Brain — Neuron/Cell, 2019 — Kim et al. Truncal vagotomy prevents spread. <a href="https://www.cell.com/neuron/fulltext/S0896-6273(19)30488-X" target="_blank" rel="noopener">Neuron, 2019 →</a> (c) Johns Hopkins Medicine, 2019 — animal model confirmation. <a href="https://www.hopkinsmedicine.org/news/articles/2019/07/qa--an-unlikely-origin-for-parkinsons-disease" target="_blank" rel="noopener">Johns Hopkins →</a></li>
-      <li>Antibiotics can affect the gut microbiome for several years — Nature Medicine, March 2026. Uppsala University, 14,979 adults. "Even a single course leaves traces up to 4–8 years." Baldanzi et al., doi:10.1038/s41591-026-04284-y. <a href="https://www.uu.se/en/press/press-releases/2026/2026-03-11-antibiotics-can-affect-the-gut-microbiome-for-several-years" target="_blank" rel="noopener">Uppsala University →</a></li>
-      <li>Glyphosate patented as antibiotic — US Patent No 7771736 B2. Confirmed in: Impact of glyphosate on the composition and functionality of the gut microbiome — Tandfonline, 2023. "In 2010, glyphosate was patented as an antibiotic." <a href="https://www.tandfonline.com/doi/full/10.1080/19490976.2023.2263935" target="_blank" rel="noopener">Tandfonline 2023 →</a></li>
-      <li>Low-dose glyphosate exposure alters gut microbiota and modulates gut homeostasis — ScienceDirect, 2023. Loss of Lactobacillus and Bifidobacterium; increased inflammatory markers. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1382668923000911" target="_blank" rel="noopener">ScienceDirect 2023 →</a></li>
-      <li>Fluoride accumulation in pineal gland and thyroid disruption. (a) Medical News Today — fluoride reduces T3/T4, accumulates in pineal gland. <a href="https://www.medicalnewstoday.com/articles/fluoride-effect-on-pituitary-gland" target="_blank" rel="noopener">Medical News Today →</a> (b) Harvard School of Public Health / China Medical University — meta-analysis of 27 studies on fluoride and cognitive development in children. (c) RSIS International Journal, 2025 — fluoride, calcification, melatonin disruption. <a href="https://rsisinternational.org/journals/ijriss/articles/the-links-between-pineal-gland-calcification-mental-health-and-fluoride-exposure/" target="_blank" rel="noopener">RSIS International →</a></li>
-      <li>Microplastics in human tissues. (a) Nature Medicine, 2025 — University of New Mexico: microplastics in brain 7–30× higher than liver or kidneys; concentrations up ~50% from 2016 to 2024. <a href="https://www.nature.com/articles/s41591-024-03453-1" target="_blank" rel="noopener">Nature Medicine →</a> (b) Environmental International, 2022 — microplastics in human blood. (c) Ragusa et al., Environmental International, 2021 — microplastics in human placenta.</li>
-      <li>Global burden of parasitic infections — "3.5 billion individuals worldwide are affected, approximately 450 million patients are ill." Dove Medical Press / IDR, 2024, citing WHO data. <a href="https://www.dovepress.com/prevalence-and-predictors-of-intestinal-parasitic-infections-at-king-a-peer-reviewed-fulltext-article-IDR" target="_blank" rel="noopener">Dove Medical Press →</a> Confirmed by Frontiers in Parasitology, 2025 — "Up to one-third of the global human population is infected with Toxoplasma gondii." <a href="https://public-pages-files-2025.frontiersin.org/journals/parasitology/articles/10.3389/fpara.2025.1546195/pdf" target="_blank" rel="noopener">Frontiers in Parasitology →</a></li>
-      <li>Stratospheric Aerosol Injection — US Patents: US Patent 5,003,186 (Chang et al.); US20100127224A1 — atmospheric injection of reflective aerosol; US20100071771A1 — high altitude atmospheric injection system. <a href="https://patents.google.com/patent/US20100127224A1/en" target="_blank" rel="noopener">Google Patents →</a></li>
-      <li>US Congressional hearings on geoengineering. (a) House Committee on Science and Technology, November 5, 2009 — "Geoengineering: Assessing the Implications of Large-Scale Climate Intervention." <a href="https://www.govinfo.gov/app/details/CHRG-111hhrg53007/CHRG-111hhrg53007" target="_blank" rel="noopener">govinfo.gov →</a> (b) Energy and Environment Subcommittee, February 4, 2010 — "Geoengineering II: The Scientific Basis and Engineering Challenges." (c) House Committee on Science, Space & Technology, November 2017. <a href="https://science.house.gov/2017/11/subcommittee-environment-and-subcommittee-energy-hearing-geoengineering" target="_blank" rel="noopener">science.house.gov →</a> (d) House Oversight Subcommittee, September 16, 2025 — Weather Manipulation and Geoengineering. <a href="https://www.c-span.org/program/house-committee/hearing-on-weather-manipulation-and-geoengineering/665664" target="_blank" rel="noopener">C-SPAN →</a></li>
+<!-- CITATIONS DRAWER -->
+<div id="citations-overlay" onclick="closeCitations()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:199;"></div>
+<div id="citations-drawer" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg-nav);border-top:2px solid var(--sage-mid);padding:20px 24px 32px;max-height:60vh;overflow-y:auto;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-nav);">Citations</span>
+      <button onclick="closeCitations()" style="background:none;border:none;color:rgba(212,201,168,0.6);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;">×</button>
+    </div>
+    <ol id="citations-list" style="list-style:none;counter-reset:cite;margin:0;padding:0;">
+      <li id="cite-1" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">1</span>Enteric Nervous System and Its Relationship with Neurological Diseases — PMC / NCBI, 2024. "90% of vagal fibers between the gut and brain are of the afferent type." <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11433641/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC11433641 →</a></li>
+      <li id="cite-2" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">2</span>The Vagus Nerve at the Interface of the Microbiota-Gut-Brain Axis — PMC / NCBI, 2018. "The VN contains 80% afferent and 20% efferent fibers." <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5808284/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC5808284 →</a></li>
+      <li id="cite-3" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">3</span>Enterochromaffin Cells Are Gut Chemosensors — Cell / UCSF, 2017. "These unique cells produce >90% of the body's serotonin." <a href="https://www.cell.com/cell/fulltext/S0092-8674(17)30595-0" target="_blank" rel="noopener" style="color:var(--sage-nav);">Cell, June 2017 →</a> Confirmed by ScienceDirect, 2018: "About 95% of 5-HT is estimated to be found in gut." <a href="https://www.sciencedirect.com/science/article/abs/pii/S0300908418301652" target="_blank" rel="noopener" style="color:var(--sage-nav);">ScienceDirect 2018 →</a></li>
+      <li id="cite-4" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">4</span>Braak's Hypothesis — Parkinson's disease originates in the gut. (a) Nature Reviews Neurology, 2015 — Klingelhoefer &amp; Bhidayasiri. <a href="https://www.nature.com/articles/nrneurol.2015.197" target="_blank" rel="noopener" style="color:var(--sage-nav);">Nature Reviews Neurology →</a> (b) Transneuronal Propagation of Pathologic α-Synuclein from the Gut to the Brain — Neuron/Cell, 2019 — Kim et al. <a href="https://www.cell.com/neuron/fulltext/S0896-6273(19)30488-X" target="_blank" rel="noopener" style="color:var(--sage-nav);">Neuron, 2019 →</a> (c) Johns Hopkins Medicine, 2019. <a href="https://www.hopkinsmedicine.org/news/articles/2019/07/qa--an-unlikely-origin-for-parkinsons-disease" target="_blank" rel="noopener" style="color:var(--sage-nav);">Johns Hopkins →</a></li>
+      <li id="cite-5" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">5</span>Antibiotics can affect the gut microbiome for several years — Nature Medicine, March 2026. Uppsala University, 14,979 adults. "Even a single course leaves traces up to 4–8 years." Baldanzi et al. <a href="https://www.uu.se/en/press/press-releases/2026/2026-03-11-antibiotics-can-affect-the-gut-microbiome-for-several-years" target="_blank" rel="noopener" style="color:var(--sage-nav);">Uppsala University →</a></li>
+      <li id="cite-6" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">6</span>Glyphosate patented as antibiotic — US Patent No 7771736 B2. Impact of glyphosate on the composition and functionality of the gut microbiome — Tandfonline, 2023. "In 2010, glyphosate was patented as an antibiotic." <a href="https://www.tandfonline.com/doi/full/10.1080/19490976.2023.2263935" target="_blank" rel="noopener" style="color:var(--sage-nav);">Tandfonline 2023 →</a></li>
+      <li id="cite-7" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">7</span>Low-dose glyphosate exposure alters gut microbiota and modulates gut homeostasis — ScienceDirect, 2023. Loss of Lactobacillus and Bifidobacterium; increased inflammatory markers. <a href="https://www.sciencedirect.com/science/article/abs/pii/S1382668923000911" target="_blank" rel="noopener" style="color:var(--sage-nav);">ScienceDirect 2023 →</a></li>
+      <li id="cite-8" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">8</span>Fluoride accumulation in pineal gland and thyroid disruption. (a) Medical News Today — fluoride reduces T3/T4, accumulates in pineal gland. <a href="https://www.medicalnewstoday.com/articles/fluoride-effect-on-pituitary-gland" target="_blank" rel="noopener" style="color:var(--sage-nav);">Medical News Today →</a> (b) Harvard / China Medical University meta-analysis of 27 studies on fluoride and cognitive development. (c) RSIS International Journal, 2025. <a href="https://rsisinternational.org/journals/ijriss/articles/the-links-between-pineal-gland-calcification-mental-health-and-fluoride-exposure/" target="_blank" rel="noopener" style="color:var(--sage-nav);">RSIS International →</a></li>
+      <li id="cite-9" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">9</span>Microplastics in human tissues. (a) Nature Medicine, 2025 — microplastics in brain 7–30× higher than liver or kidneys; concentrations up ~50% from 2016 to 2024. <a href="https://www.nature.com/articles/s41591-024-03453-1" target="_blank" rel="noopener" style="color:var(--sage-nav);">Nature Medicine →</a> (b) Environmental International, 2022 — microplastics in human blood. (c) Ragusa et al., 2021 — microplastics in human placenta.</li>
+      <li id="cite-10" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">10</span>Global burden of parasitic infections — "3.5 billion individuals worldwide are affected." Dove Medical Press / IDR, 2024. <a href="https://www.dovepress.com/prevalence-and-predictors-of-intestinal-parasitic-infections-at-king-a-peer-reviewed-fulltext-article-IDR" target="_blank" rel="noopener" style="color:var(--sage-nav);">Dove Medical Press →</a> Frontiers in Parasitology, 2025 — "Up to one-third of the global human population is infected with Toxoplasma gondii." <a href="https://public-pages-files-2025.frontiersin.org/journals/parasitology/articles/10.3389/fpara.2025.1546195/pdf" target="_blank" rel="noopener" style="color:var(--sage-nav);">Frontiers in Parasitology →</a></li>
+      <li id="cite-11" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">11</span>Stratospheric Aerosol Injection — US Patents: US Patent 5,003,186; US20100127224A1; US20100071771A1. <a href="https://patents.google.com/patent/US20100127224A1/en" target="_blank" rel="noopener" style="color:var(--sage-nav);">Google Patents →</a></li>
+      <li id="cite-12" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:none;font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">12</span>US Congressional hearings on geoengineering. (a) House Committee on Science and Technology, November 5, 2009. <a href="https://www.govinfo.gov/app/details/CHRG-111hhrg53007/CHRG-111hhrg53007" target="_blank" rel="noopener" style="color:var(--sage-nav);">govinfo.gov →</a> (b) Energy and Environment Subcommittee, February 4, 2010. (c) House Committee on Science, Space &amp; Technology, November 2017. <a href="https://science.house.gov/2017/11/subcommittee-environment-and-subcommittee-energy-hearing-geoengineering" target="_blank" rel="noopener" style="color:var(--sage-nav);">science.house.gov →</a> (d) House Oversight Subcommittee, September 16, 2025. <a href="https://www.c-span.org/program/house-committee/hearing-on-weather-manipulation-and-geoengineering/665664" target="_blank" rel="noopener" style="color:var(--sage-nav);">C-SPAN →</a></li>
     </ol>
-    <p style="font-size:12px;color:var(--ink-ghost);margin-top:20px;line-height:1.7;">This guide cites peer-reviewed research, institutional data, and primary source documents. Where mainstream and independent research conflict, both perspectives are presented. Citations are provided for reader verification — not as a substitute for professional medical advice.</p>
+    <p style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(138,184,154,0.1);"><a href="research.html" style="font-size:12px;color:var(--sage-nav);text-decoration:none;">View Full Research Library →</a></p>
   </div>
-</section>
+</div>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
-  <div class="ft-inner">
+  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
     <div>
-      <div class="ft-brand">Heal Yourself</div>
-      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
-      <p class="ft-disc" style="margin-top:10px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
+      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">Educational purposes only. Not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
-    <div class="ft-nav">
-      <a href="index.html">Home</a>
-      <a href="before-you-begin.html" style="color:var(--sage-nav);font-weight:600;">Before You Begin</a>
-      <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
-      <a href="protocols.html">All Protocols</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
+      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Home</a>
+      <a href="before-you-begin.html" style="font-size:12px;color:var(--sage-nav);font-weight:600;text-decoration:none;">Before You Begin</a>
+      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">All Protocols</a>
+      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Research</a>
+      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">About</a>
+      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Contact</a>
     </div>
   </div>
 </footer>
 
 <script>
+// Share URL wiring
+(function(){
+  var pageUrl=encodeURIComponent(window.location.href);
+  var msg=encodeURIComponent('I found this free healing guide and had to share it. It covers everything the medical system never tells you — detox, gut health, brain, Parkinson\'s and more. Written by someone who worked inside pharma and walked away. Worth reading: '+decodeURIComponent(pageUrl));
+  var waUrl='https://wa.me/?text='+msg;
+  var fbUrl='https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
+  ['sf-wa','wa-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waUrl;});
+  ['sf-fb','fb-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=fbUrl;});
+})();
+// Citations drawer
+function openCitations(num){
+  var drawer=document.getElementById('citations-drawer');
+  var overlay=document.getElementById('citations-overlay');
+  if(!drawer)return;
+  drawer.style.display='block';
+  overlay.style.display='block';
+  document.querySelectorAll('#citations-list li').forEach(function(li){li.classList.remove('cite-active');});
+  var target=document.getElementById('cite-'+num);
+  if(target){target.classList.add('cite-active');setTimeout(function(){target.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}
+}
+function closeCitations(){
+  document.getElementById('citations-drawer').style.display='none';
+  document.getElementById('citations-overlay').style.display='none';
+}
 function toggleExpand(id,btn){
   const body=document.getElementById(id);
   const isOpen=body.classList.contains('open');
@@ -721,6 +777,5 @@ const observer=new IntersectionObserver(entries=>{
 },{rootMargin:'-30% 0px -60% 0px'});
 sections.forEach(s=>observer.observe(s));
 </script>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 </body>
 </html>

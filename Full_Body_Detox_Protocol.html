@@ -25,7 +25,7 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
 
 /* PHASE NAV */
 .phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
-.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;justify-content:center;margin:0 auto;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:0;justify-content:center;margin:0 auto;}
 .phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
 .phase-nav a:hover{color:var(--sage);}
 .phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
@@ -412,6 +412,18 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
   <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Understand It · Why This Works · What to Expect · How to Prepare</span>
 </div>
 
+<!-- PART A CHAPTER NAV -->
+<div class="phase-nav" id="part-a-nav" style="background:var(--bg-deep);">
+  <div class="phase-nav-inner" style="min-width:0;justify-content:center;">
+    <a href="#whoisthisfor" data-section="whoisthisfor" style="color:var(--ink-light);">Who It's For</a>
+    <a href="#symptoms" data-section="symptoms" style="color:var(--ink-light);">Symptom Lookup</a>
+    <a href="#read-first" data-section="read-first" style="color:var(--ink-light);">Before You Start</a>
+    <a href="#bloodwork" data-section="bloodwork" style="color:var(--ink-light);">Blood Work</a>
+    <a href="#water" data-section="water" style="color:var(--ink-light);">Clean Water</a>
+    <a href="#part-b" style="margin-left:auto;color:var(--terra-light);">Part B →</a>
+  </div>
+</div>
+
 <!-- ═══ WHO IS THIS FOR ═══ -->
 <section class="sec-main" id="whoisthisfor">
   <div class="inner">
@@ -664,8 +676,8 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 
 
 <!-- PHASE NAV — Part B only -->
-<div class="phase-nav">
-  <div class="phase-nav-inner">
+<div class="phase-nav" id="part-b-nav">
+  <div class="phase-nav-inner" style="min-width:0;justify-content:center;">
     <a href="#phase1" data-section="phase1" class="pn-phase"><span class="pn-phase-label">Phase 1</span><span class="pn-phase-sub">Days 1–14 · Prepare</span></a>
     <div class="pn-sep"></div>
     <a href="#phase2" data-section="phase2" class="pn-phase"><span class="pn-phase-label">Phase 2</span><span class="pn-phase-sub">Days 15–45 · Eliminate</span></a>
@@ -1703,8 +1715,21 @@ document.addEventListener('click',function(e){
 });
 
 // Phase nav active tracking
+// Part A chapter nav active tracking
+const chapterSections = ['whoisthisfor','symptoms','read-first','bloodwork','water'];
+const chapterLinks = document.querySelectorAll('#part-a-nav a[data-section]');
+function updateChapterNav(){
+  let current = chapterSections[0];
+  chapterSections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && el.getBoundingClientRect().top <= 100) current = id;
+  });
+  chapterLinks.forEach(a => a.classList.toggle('pn-active', a.dataset.section === current));
+}
+
+// Part B phase nav active tracking
 const sections = ['phase1','phase2','phase3','phase4','phase5'];
-const navLinks = document.querySelectorAll('.phase-nav a[data-section]');
+const navLinks = document.querySelectorAll('#part-b-nav a[data-section]');
 function updateNav(){
   let current = sections[0];
   sections.forEach(id => {
@@ -1712,47 +1737,43 @@ function updateNav(){
     if(el && el.getBoundingClientRect().top <= 100) current = id;
   });
   navLinks.forEach(a => a.classList.toggle('pn-active', a.dataset.section === current));
-  const active = document.querySelector('.phase-nav a.pn-active');
+  const active = document.querySelector('#part-b-nav a.pn-active');
   if(active){
-    const nav = document.querySelector('.phase-nav-inner');
+    const nav = document.querySelector('#part-b-nav .phase-nav-inner');
     if(nav){
       nav.scrollLeft = active.offsetLeft - (nav.offsetWidth/2) + (active.offsetWidth/2);
     }
   }
 }
-window.addEventListener('scroll', updateNav, {passive:true});
+window.addEventListener('scroll', function(){ updateChapterNav(); updateNav(); }, {passive:true});
+updateChapterNav();
 updateNav();
 </script>
 
 <script>
 // Section-specific printing
 function printSection(id){
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   if(!el) return;
-  const title = document.title;
-  const win = window.open('','_blank');
-  win.document.write(`<!DOCTYPE html><html><head><title>Print — Heal Yourself</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">
-  <style>
-    body{font-family:'Jost',sans-serif;color:#1e1a14;padding:32px;max-width:680px;margin:0 auto;background:white;}
-    h2,h3{font-family:'Playfair Display',serif;}
-    table{width:100%;border-collapse:collapse;margin:12px 0;}
-    th{text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;border-bottom:2px solid #3d6b4a;color:#3d6b4a;}
-    td{padding:8px 10px;border-bottom:1px solid #e0dbd0;font-size:13px;vertical-align:top;}
-    .check-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#5a8c6a;margin-right:8px;vertical-align:middle;}
-    .checklist-item,.sched-row,.supp-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px solid #e0dbd0;font-size:13px;align-items:flex-start;}
-    .sched-time{font-family:'DM Mono',monospace;font-size:11px;color:#3d6b4a;min-width:100px;padding-top:2px;}
-    .print-header{font-family:'Playfair Display',serif;font-size:16px;color:#1e1a14;margin-bottom:6px;}
-    .print-sub{font-size:12px;color:#7a6e5c;margin-bottom:24px;}
-    @media print{@page{margin:20mm;}}
-  </style></head><body>
-  <div class="print-header">Heal Yourself — Detox Protocol</div>
-  <div class="print-sub">healyourself.guide · iHerb affiliate code: GUW6132</div>
-  ${el.outerHTML}
-  <script>window.onload=function(){window.print();}<\/script>
-</body></html>\`);
-
+  var win = window.open('','_blank');
+  var css = 'body{font-family:\'Jost\',sans-serif;color:#1e1a14;padding:32px;max-width:680px;margin:0 auto;background:white;}'
+    + 'h2,h3{font-family:\'Playfair Display\',serif;}'
+    + 'table{width:100%;border-collapse:collapse;margin:12px 0;}'
+    + 'th{text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;border-bottom:2px solid #3d6b4a;color:#3d6b4a;}'
+    + 'td{padding:8px 10px;border-bottom:1px solid #e0dbd0;font-size:13px;vertical-align:top;}'
+    + '.print-header{font-family:\'Playfair Display\',serif;font-size:16px;color:#1e1a14;margin-bottom:6px;}'
+    + '.print-sub{font-size:12px;color:#7a6e5c;margin-bottom:24px;}'
+    + '@media print{@page{margin:20mm;}}';
+  var html = '<!DOCTYPE html><html><head><title>Print \u2014 Heal Yourself</title>'
+    + '<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Jost:wght@400;600&family=DM+Mono&display=swap" rel="stylesheet">'
+    + '<style>' + css + '</style></head><body>'
+    + '<div class="print-header">Heal Yourself \u2014 Detox Protocol</div>'
+    + '<div class="print-sub">healyourself.guide \u00b7 iHerb affiliate code: GUW6132</div>'
+    + el.outerHTML
+    + '</body></html>';
+  win.document.write(html);
   win.document.close();
+  win.onload = function(){ win.print(); };
 }
 </script>
 
