@@ -12,6 +12,8 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Heal Yourself Guide">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DMSO Protocol — What the FDA Doesn't Want You to Know">
+<meta name="twitter:description" content="11,000+ peer-reviewed studies. The suppression story. Concentrations, application by condition, neurological use, safety rules. Free complete protocol.">
 <meta name="twitter:title" content="DMSO Protocol — The Suppressed Healing Compound | Heal Yourself">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +31,8 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+section[id]{scroll-margin-top:72px;}
 
 /* TOP NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
@@ -56,21 +59,24 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
 .dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
 .dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
-.dd-subs{display:none;background:rgba(0,0,0,0.18);padding:2px 0;}
-.dd-group:hover .dd-subs{display:block;}
-.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:7px 12px 7px 24px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;height:auto;min-height:0;border-left:1px solid rgba(138,184,154,0.25);margin-left:18px;transition:all 0.15s;}
+.dd-subs{position:absolute;left:100%;top:0;min-width:200px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;padding:4px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.15s,visibility 0.15s;}
+.dd-group:hover .dd-subs{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;border-bottom:1px solid rgba(138,184,154,0.08);height:auto;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub:last-child{border-bottom:none;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
-.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);padding-left:28px;background:none;border-left-color:var(--sage-nav);}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);background:rgba(138,184,154,0.08);}
 body{padding-top:var(--nav-h);}
 
 /* SECTION NAV */
 .jump-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
 .jump-nav::-webkit-scrollbar{display:none;}
-.jump-nav-inner{display:flex;align-items:stretch;min-width:max-content;justify-content:center;margin:0 auto;}
+.jump-nav-inner{display:flex;align-items:stretch;min-width:0;justify-content:center;margin:0 auto;}
 .jump-nav a{display:flex;align-items:center;gap:6px;padding:0 15px;height:36px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;}
 .jump-nav a:hover{color:var(--sage);border-bottom-color:var(--sage-mid);}
 .jn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
+.jump-nav a.jn-active{color:var(--sage);border-bottom-color:var(--sage);}
+.jump-nav a.jn-active .jn-dot{opacity:1;background:var(--sage);}
 
 /* HERO */
 .hero{background:var(--bg-warm);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;}
@@ -201,7 +207,8 @@ body{padding-top:var(--nav-h);}
 @media(max-width:768px){.share-float-label{display:none;}}
 
 /* CITATIONS */
-sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:default;}
+sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;line-height:0;margin-left:1px;cursor:pointer;border-bottom:1px dotted var(--sage-mid);}
+.cite-active{background:rgba(138,184,154,0.15);border-radius:4px;}
 
 /* TGRID */
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0;}
@@ -256,6 +263,7 @@ footer a:hover{color:#d4c9a8;}
         <div class="dd-group">
           <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
           <div class="dd-subs">
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
             <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
@@ -267,7 +275,13 @@ footer a:hover{color:#d4c9a8;}
             <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
           </div>
         </div>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <div class="dd-group">
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <div class="dd-subs">
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
         <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
         <div class="dd-group">
           <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
@@ -275,6 +289,7 @@ footer a:hover{color:#d4c9a8;}
             <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
             <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
             <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
           </div>
         </div>
         <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
@@ -288,10 +303,10 @@ footer a:hover{color:#d4c9a8;}
 <!-- FLOATING SHARE BAR -->
 <div class="share-float" aria-label="Share this guide">
   <span class="share-float-label">Share</span>
-  <a class="share-pill wa" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
+  <a id="sf-wa" class="share-pill wa" href="#" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
-  <a class="share-pill fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener" aria-label="Share on Facebook">
+  <a id="sf-fb" class="share-pill fb" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook">
     <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
   </a>
 </div>
@@ -329,13 +344,13 @@ footer a:hover{color:#d4c9a8;}
 <!-- SECTION NAV — Part A only, will be replaced in Part B -->
 <div class="jump-nav" id="partANav">
   <div class="jump-nav-inner">
-    <a href="#suppression"><span class="jn-dot"></span>The Suppression</a>
-    <a href="#what-is"><span class="jn-dot"></span>What Is DMSO</a>
-    <a href="#carrier"><span class="jn-dot"></span>The Carrier</a>
-    <a href="#concentrations"><span class="jn-dot"></span>Concentrations</a>
-    <a href="#conditions"><span class="jn-dot"></span>By Condition</a>
-    <a href="#neuro"><span class="jn-dot"></span>Neurological</a>
-    <a href="#suppressed-research"><span class="jn-dot"></span>Buried Research</a>
+    <a href="#suppression" data-section="suppression"><span class="jn-dot"></span>The Suppression</a>
+    <a href="#what-is" data-section="what-is"><span class="jn-dot"></span>What Is DMSO</a>
+    <a href="#carrier" data-section="carrier"><span class="jn-dot"></span>The Carrier</a>
+    <a href="#concentrations" data-section="concentrations"><span class="jn-dot"></span>Concentrations</a>
+    <a href="#conditions" data-section="conditions"><span class="jn-dot"></span>By Condition</a>
+    <a href="#neuro" data-section="neuro"><span class="jn-dot"></span>Neurological</a>
+    <a href="#suppressed-research" data-section="suppressed-research"><span class="jn-dot"></span>Buried Research</a>
   </div>
 </div>
 
@@ -461,7 +476,7 @@ footer a:hover{color:#d4c9a8;}
         <div class="tl-dot"></div>
         <div class="tl-year">1978</div>
         <div class="tl-title">Partial approval — for one condition only</div>
-        <div class="tl-body">After Senator Edward Kennedy and other legislators publicly criticise the FDA's stance, DMSO is approved for <strong>interstitial cystitis</strong> — a painful chronic bladder condition. This remains, to this day, the only officially approved human use in the United States. Not for arthritis. Not for traumatic brain injury. Not for spinal cord damage. Not for pain. One condition.</div>
+        <div class="tl-body">After Senator Edward Kennedy and other legislators publicly criticise the FDA's stance, DMSO is approved for <strong>interstitial cystitis</strong> — a painful chronic bladder condition.<sup class="cite" onclick="openCitations(1)">1</sup> This remains, to this day, the only officially approved human use in the United States. Not for arthritis. Not for traumatic brain injury. Not for spinal cord damage. Not for pain. One condition.</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
@@ -513,9 +528,9 @@ footer a:hover{color:#d4c9a8;}
     <p class="lp">One of the first things people notice when using DMSO is a garlic-like or oyster-like odour on the breath and skin within minutes of application — even if applied topically. This happens because DMSO metabolises in the body into dimethyl sulfide (DMS), a volatile sulfur compound that exits through the lungs and skin. This is <strong>not a sign of toxicity</strong> — it is proof the compound is being absorbed and metabolised. The odour typically fades within a few hours to a day. Lower-quality DMSO will smell strongly at the bottle; pharmaceutical-grade DMSO has minimal odour.</p>
 
     <h3 class="lh3">How Safe Is It — The Numbers</h3>
-    <p class="lp">Toxicity is measured by LD50 — the dose per kilogram of body weight that kills half of test animals. Higher numbers mean safer substances. The LD50 of aspirin for monkeys is 558 mg/kg. The LD50 of DMSO for monkeys is 4,000 mg/kg. <strong>DMSO is more than seven times safer than aspirin by this measure.</strong> Laboratory rats survive being completely dipped in 80% DMSO. Rats survive repeated dippings in 60% DMSO three times per week for twenty-six consecutive weeks with no toxic effects. In the most comprehensive human toxicology study conducted — prisoners at Vacaville, California, coated with 80% DMSO at 1g/kg daily for three months — not one participant showed eye changes, organ damage, or any pathological finding. The researcher concluded: <em>"DMSO appears to be a very safe drug for human administration. I am very glad to be able to permanently dispel the myth that DMSO is in any way a toxic or dangerous drug."</em> The side effects are real but minor: skin warmth, redness, temporary garlic odour. That is the complete toxicity profile after sixty years of use across millions of people.</p>
+    <p class="lp">Toxicity is measured by LD50 — the dose per kilogram of body weight that kills half of test animals. Higher numbers mean safer substances.<sup class="cite" onclick="openCitations(3)">3</sup> The LD50 of aspirin for monkeys is 558 mg/kg. The LD50 of DMSO for monkeys is 4,000 mg/kg. <strong>DMSO is more than seven times safer than aspirin by this measure.</strong> Laboratory rats survive being completely dipped in 80% DMSO. Rats survive repeated dippings in 60% DMSO three times per week for twenty-six consecutive weeks with no toxic effects. In the most comprehensive human toxicology study conducted — prisoners at Vacaville, California, coated with 80% DMSO at 1g/kg daily for three months — not one participant showed eye changes, organ damage, or any pathological finding. The researcher concluded: <em>"DMSO appears to be a very safe drug for human administration. I am very glad to be able to permanently dispel the myth that DMSO is in any way a toxic or dangerous drug."</em><sup class="cite" onclick="openCitations(4)">4</sup> The side effects are real but minor: skin warmth, redness, temporary garlic odour. That is the complete toxicity profile after sixty years of use across millions of people.</p>
 
-    <h3 class="lh3">What DMSO Does in the Body</h3>
+    <h3 class="lh3">What DMSO Does in the Body<sup class="cite" onclick="openCitations(2)">2</sup></h3>
     <ul class="checklist">
       <li><strong>Penetrates skin within seconds</strong> — applying DMSO to the wrist produces a taste of garlic in the mouth within 12–20 seconds. This is not exaggeration. Dr. Jacob famously demonstrated this in his lab by tasting iodine after applying DMSO mixed with iodine to the skin.</li>
       <li><strong>Carries molecules with it</strong> — DMSO acts as a molecular ferry, pulling other substances through the skin and into systemic circulation. This is its most powerful and most dangerous property simultaneously.</li>
@@ -727,7 +742,7 @@ footer a:hover{color:#d4c9a8;}
       <tr>
         <td>Tinnitus (chronic ringing)</td>
         <td>IM injection + topical ear spray</td>
-        <td>Chilean study of 15 chronic tinnitus patients, all non-responsive to prior treatment: 9 of 15 achieved complete disappearance of tinnitus after one month. 2 more had significant reduction. Zero recurrence at one-year follow-up. DMSO combined with vasoactive compounds injected daily, plus topical ear-canal spray every four days.</td>
+        <td>Chilean study of 15 chronic tinnitus patients, all non-responsive to prior treatment: 9 of 15 achieved complete disappearance of tinnitus after one month. 2 more had significant reduction. Zero recurrence at one-year follow-up. DMSO combined with vasoactive compounds injected daily, plus topical ear-canal spray every four days.<sup class="cite" onclick="openCitations(9)">9</sup></td>
         <td>Strong for the condition — formal clinical study, documented follow-up</td>
       </tr>
       <tr>
@@ -739,7 +754,7 @@ footer a:hover{color:#d4c9a8;}
       <tr>
         <td>Respiratory infections (acute / infants)</td>
         <td>Spray / topical</td>
-        <td>Chilean pediatric hospital study: 30 infants with bronchiolitis and obstructive bronchitis treated with DMSO spray. 80% showed immediate sensory improvement, 76% reduction in adenoid swelling, 75% reduction in intercostal retraction — results faster and more significant than control group on standard antibiotics + corticoids + oxygen croupette. Researchers noted it required no specialised equipment and could be used in remote settings.</td>
+        <td>Chilean pediatric hospital study: 30 infants with bronchiolitis and obstructive bronchitis treated with DMSO spray. 80% showed immediate sensory improvement, 76% reduction in adenoid swelling, 75% reduction in intercostal retraction — results faster and more significant than control group on standard antibiotics + corticoids + oxygen croupette.<sup class="cite" onclick="openCitations(9)">9</sup> Researchers noted it required no specialised equipment and could be used in remote settings.</td>
         <td>Formal clinical study — small cohort, compelling outcomes</td>
       </tr>
       <tr>
@@ -751,7 +766,7 @@ footer a:hover{color:#d4c9a8;}
       <tr>
         <td>Cancer (adjunct — not standalone)</td>
         <td>Multiple</td>
-        <td>Used as a carrier for therapeutic compounds; DMSO-potassium iodide protocol; differentiation of leukemia cells in studies (Charlotte Friend, Mount Sinai). Journal of Clinical Oncology 1988: 20 anthracycline extravasation patients treated with 99% topical DMSO — zero progressed to ulceration vs expected 17%+ rate. Also reduces free radical load from chemotherapy: relieves metallic taste, mouth sores, nausea, and hair loss associated with chemo. Do NOT combine with cisplatin or platinum-based chemotherapy.</td>
+        <td>Used as a carrier for therapeutic compounds; DMSO-potassium iodide protocol; differentiation of leukemia cells in studies (Charlotte Friend, Mount Sinai). A 1988 prospective study treated 20 anthracycline extravasation patients with 99% topical DMSO — none progressed to ulceration, with the data supporting a true ulceration rate of 1–17% (95% confidence).<sup class="cite" onclick="openCitations(8)">8</sup> Also reduces free radical load from chemotherapy: relieves metallic taste, mouth sores, nausea, and hair loss associated with chemo. Do NOT combine with cisplatin or platinum-based chemotherapy.</td>
         <td>Preclinical studies + one published clinical trial; adjunct role only</td>
       </tr>
     </table>
@@ -767,7 +782,7 @@ footer a:hover{color:#d4c9a8;}
     <p class="lp">DMSO's neurological properties are the area of greatest suppressed potential and the most active current research interest. The compound crosses the blood-brain barrier, reduces brain oedema, improves cerebral blood flow, acts as a chemical chaperone for misfolded proteins, and has been documented reversing neurological deficits in animal models across dozens of published studies.</p>
 
     <h3 class="lh3">Traumatic Brain Injury</h3>
-    <p class="lp">Dr. Jack de la Torre at the University of Texas spent decades studying DMSO's role in traumatic brain injury. His research showed DMSO reduces intracranial pressure more effectively than mannitol (the standard clinical treatment), restores cerebral blood flow after injury, and dramatically reduces mortality in animal models. De la Torre stated publicly that DMSO's failure to enter emergency neurology was one of the great failures of the American regulatory system — "the FDA had a sort of chip on its shoulder because it thought DMSO was some kind of snake-oil medicine."</p>
+    <p class="lp">Dr. Jack de la Torre, beginning as an Assistant Professor of Neurosurgery at the University of Chicago in the early 1970s, spent decades studying DMSO's role in traumatic brain injury.<sup class="cite" onclick="openCitations(6)">6</sup> His research showed DMSO reduces intracranial pressure more effectively than mannitol (the standard clinical treatment), restores cerebral blood flow after injury, and dramatically reduces mortality in animal models. De la Torre stated publicly that DMSO's failure to enter emergency neurology was one of the great failures of the American regulatory system — "the FDA had a sort of chip on its shoulder because it thought DMSO was some kind of snake-oil medicine."</p>
 
     <h3 class="lh3">Multiple Sclerosis</h3>
     <p class="lp">Multiple mechanisms suggest DMSO relevance to MS: it reduces inflammatory cytokines, improves microcirculation to white matter, stabilises myelin-associated proteins, blocks clotting triggered by myelin debris, and temporarily opens the BBB for delivery of neuroprotective compounds. Practitioner reports from DMSO practitioners (primarily outside the US) describe symptom improvements. No large RCT has been conducted.</p>
@@ -776,7 +791,7 @@ footer a:hover{color:#d4c9a8;}
 
     <div class="critical-box">
       <div class="warn-title">⚠️ DMSO Is NOT Recommended for Parkinson's Disease</div>
-      <div class="warn-text">A 2022 study demonstrated that DMSO accelerates <strong>alpha-synuclein aggregation</strong> — the exact pathological process that drives neurodegeneration in Parkinson's disease. Alpha-synuclein is the protein that misfolds and clumps into Lewy bodies, destroying dopaminergic neurons. DMSO's chemical chaperone properties, which are beneficial for most protein misfolding conditions, appear to have the opposite effect with alpha-synuclein specifically. For this reason, <strong>DMSO is excluded from this guide's Parkinson's Protocol</strong>. If you are using this guide for Parkinson's support, do not add DMSO to your regimen without consulting a practitioner.</div>
+      <div class="warn-text">A 2022 laboratory study found that DMSO, even at low concentrations, promotes <strong>alpha-synuclein aggregation</strong><sup class="cite" onclick="openCitations(5)">5</sup> — the exact pathological process that drives neurodegeneration in Parkinson's disease. Alpha-synuclein is the protein that misfolds and clumps into Lewy bodies, destroying dopaminergic neurons. DMSO's chemical chaperone properties, which are beneficial for most protein misfolding conditions, appear to have the opposite effect with alpha-synuclein specifically. For this reason, <strong>DMSO is excluded from this guide's Parkinson's Protocol</strong>. If you are using this guide for Parkinson's support, do not add DMSO to your regimen without consulting a practitioner.</div>
     </div>
 
     <h3 class="lh3">ALS, Huntington's, and Other Neurodegenerative Conditions</h3>
@@ -808,7 +823,7 @@ footer a:hover{color:#d4c9a8;}
     <h3 class="lh3">Down's Syndrome and Severe Mental Retardation</h3>
     <p class="lp">Between the late 1960s and early 1980s, medical teams in Chile, Argentina, the United States, and Canada used a combination of DMSO with specific amino acids (GABA, GABOB, and acetylglutamine — sold in South America as "Merinex" and "Akron") to treat children with trisomy 21 (Down's syndrome) and other forms of severe mental retardation. The rationale: DMSO carries the amino acids across the blood-brain barrier, where they activate neuronal function suppressed in these conditions.</p>
 
-    <p class="lp">The results, presented at the New York Academy of Sciences and published in formal proceedings, were extraordinary. A controlled study by Dr. Lydia de Coriat (Buenos Aires Municipal Pediatric Hospital) of 18 DMSO-treated children vs 91 controls showed:</p>
+    <p class="lp">The results, presented at the New York Academy of Sciences and published in formal proceedings,<sup class="cite" onclick="openCitations(9)">9</sup> were extraordinary. A controlled study by Dr. Lydia de Coriat (Buenos Aires Municipal Pediatric Hospital) of 18 DMSO-treated children vs 91 controls showed:</p>
 
     <ul class="checklist">
       <li>Motor index: controls rose from 56 to 58. Treated group rose from 56 to <strong>72</strong>.</li>
@@ -865,12 +880,12 @@ footer a:hover{color:#d4c9a8;}
 </div>
 
 <!-- PART B NAV -->
-<div class="jump-nav">
+<div class="jump-nav" id="partBNav">
   <div class="jump-nav-inner">
-    <a href="#safety"><span class="jn-dot"></span>Safety Rules</a>
-    <a href="#msm"><span class="jn-dot"></span>DMSO + MSM</a>
-    <a href="#products"><span class="jn-dot"></span>What to Buy</a>
-    <a href="#schedule"><span class="jn-dot"></span>Daily Schedule</a>
+    <a href="#safety" data-section="safety"><span class="jn-dot"></span>Safety Rules</a>
+    <a href="#msm" data-section="msm"><span class="jn-dot"></span>DMSO + MSM</a>
+    <a href="#products" data-section="products"><span class="jn-dot"></span>What to Buy</a>
+    <a href="#schedule" data-section="schedule"><span class="jn-dot"></span>Daily Schedule</a>
   </div>
 </div>
 
@@ -944,7 +959,7 @@ footer a:hover{color:#d4c9a8;}
 
     <p class="lp">Many practitioners use DMSO and MSM together because they work through overlapping pathways: both reduce inflammation, both provide bioavailable sulfur (essential for glutathione synthesis, joint cartilage, and connective tissue), and both penetrate cell membranes effectively. MSM is gentler, slower, and suitable for long-term daily use. DMSO is faster, more powerful, and best used in targeted therapeutic windows.</p>
 
-    <h3 class="lh3">Why Sulfur Is Critical</h3>
+    <h3 class="lh3">Why Sulfur Is Critical<sup class="cite" onclick="openCitations(7)">7</sup></h3>
     <p class="lp">Sulfur is the third most abundant mineral in the human body and one of the most commonly depleted in modern people. It is essential for:</p>
     <ul class="checklist">
       <li><strong>Glutathione synthesis</strong> — the body's master antioxidant and primary detoxification molecule. Every molecule of glutathione contains three amino acids, one of which (cysteine) is sulfur-containing.</li>
@@ -1074,16 +1089,41 @@ footer a:hover{color:#d4c9a8;}
   <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px;">Know someone who needs this protocol?</div>
   <p style="font-size:14px;color:var(--ink-light);line-height:1.7;max-width:500px;margin:0 auto 28px;">DMSO information is suppressed everywhere. Sharing this guide is an act of genuine service.</p>
   <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#25D366;color:#fff;" href="https://wa.me/?text=I%20found%20this%20free%20healing%20guide%20and%20had%20to%20share%20it.%20Worth%20reading%3A%20https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+    <a id="wa-share-btn" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#25D366;color:#fff;" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Share on WhatsApp
     </a>
-    <a style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#1877F2;color:#fff;" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsharondrn-sys.github.io%2FHeal-Yourself-Guide%2F" target="_blank" rel="noopener">
+    <a id="fb-share-btn" style="display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:6px;text-decoration:none;font-size:14px;font-weight:700;background:#1877F2;color:#fff;" href="#" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#fff;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Share on Facebook
     </a>
   </div>
 </section>
+
+<!-- CITATIONS DRAWER -->
+<div id="citations-overlay" onclick="closeCitations()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:199;"></div>
+<div id="citations-drawer" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg-nav);border-top:2px solid var(--sage-mid);padding:20px 24px 32px;max-height:60vh;overflow-y:auto;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <span style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-nav);">Citations</span>
+      <button onclick="closeCitations()" style="background:none;border:none;color:rgba(212,201,168,0.6);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;">×</button>
+    </div>
+    <ol id="citations-list" style="list-style:none;counter-reset:cite;margin:0;padding:0;">
+      <li id="cite-1" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">1</span>FDA approval for interstitial cystitis (1978) — RIMSO-50 (50% DMSO) is the only FDA-approved human use, first approved 1978 after IND status granted 1963 and a 1965 human-trials ban. <a href="https://www.sciencedirect.com/science/article/pii/S2772973723009165" target="_blank" rel="noopener" style="color:var(--sage-nav);">ScienceDirect review, 2023 →</a> <a href="https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=58b25d79-78f2-4953-b0c6-61658dc4ef0d" target="_blank" rel="noopener" style="color:var(--sage-nav);">RIMSO-50 FDA label →</a> <a href="https://www.ichelp.org/understanding-ic/medical-treatments/bladder-instillations/" target="_blank" rel="noopener" style="color:var(--sage-nav);">Interstitial Cystitis Association →</a></li>
+      <li id="cite-2" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">2</span>DMSO pharmacology — wood-pulp byproduct, amphiphilic, membrane-penetrating, hydroxyl-radical (·OH) scavenger, anti-inflammatory, analgesic, vasodilator, anti-platelet, radioprotective, muscle-relaxing, low toxicity. Sterling JB et al., "DMSO: a solvent that may solve selected cutaneous clinical challenges." <a href="https://pubmed.ncbi.nlm.nih.gov/36459193/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PubMed →</a> Confirmed in ScienceDirect 2023 review (above) — DMSO and its metabolite DMS both scavenge ·OH.</li>
+      <li id="cite-3" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">3</span>DMSO toxicity profile — rat oral LD50 17.4–28.3 g/kg, mouse 16.5–24.6 g/kg, dermal LD50 &gt;11 g/kg in dogs and rhesus monkeys; 18-month rhesus study at 9g/kg/day dermal showed no intolerance; oral NOEL 3300mg/kg/day in monkeys; not listed as a carcinogen by IARC, NTP, OSHA, or ACGIH. <a href="https://www.yufenggp.com/resources/dimethyl-sulfoxide-dmso-health-amp-safety.html" target="_blank" rel="noopener" style="color:var(--sage-nav);">Safety data summary →</a> Monkey LD50 figures (880g dermal / 320g IV in an 80kg human equivalent) per Jacob SW &amp; Herschler R, "Pharmacology of DMSO," Cryobiology 23:14-27 (1986), cited in <a href="https://www.nature.com/articles/s41598-019-40660-0" target="_blank" rel="noopener" style="color:var(--sage-nav);">Nature Sci Rep 2019 →</a></li>
+      <li id="cite-4" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">4</span>Dr. Jacob's own toxicology reviews — rat dipping studies, the Vacaville prison study (80% DMSO, 1g/kg/day, 3 months), and the aspirin/DMSO LD50 comparison in monkeys, as published by Dr. Stanley Jacob's research organisation. <a href="https://dmso.org/articles/information/brobyn.html" target="_blank" rel="noopener" style="color:var(--sage-nav);">"The Human Toxicology of Dimethyl Sulfoxide" →</a></li>
+      <li id="cite-5" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">5</span>Alpha-synuclein aggregation (Parkinson's warning) — Reimer L, Haikal C, Gram H, et al. "Low dose DMSO treatment induces oligomerization and accelerates aggregation of α-synuclein." Sci Rep 12:3737 (2022). DOI: 10.1038/s41598-022-07706-2. <a href="https://www.nature.com/articles/s41598-022-07706-2" target="_blank" rel="noopener" style="color:var(--sage-nav);">Nature →</a> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8904838/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PMC →</a> Note: the aggregation-promoting effect was shown in vitro at low DMSO concentrations (&lt;3%); a companion experiment in the same paper found oral DMSO (10–30%) did not increase α-synuclein aggregation in mouse brain tissue. Given the biological plausibility and the severity of Parkinson's pathology, this guide takes the cautious position of excluding DMSO from the Parkinson's Protocol.</li>
+      <li id="cite-6" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">6</span>DMSO vs mannitol for traumatic brain injury — Brown FD, Johns LM, Mullan S. "Dimethyl sulfoxide in experimental brain injury, with comparison to mannitol." J Neurosurg 53(1):58-62 (1980). Karaca M, Bilgin U, Akar M, de la Torre JC. "Dimethyl sulfoxide lowers ICP after closed head trauma." Eur J Clin Pharmacol 40:113-114 (1991). Dr. de la Torre's research history (University of Chicago, early 1970s): <a href="https://www.routledge.com/authors/i7575-jack-de-la-torre" target="_blank" rel="noopener" style="color:var(--sage-nav);">Routledge author profile →</a></li>
+      <li id="cite-7" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">7</span>DMSO + MSM for arthritis and inflammation — Brien S et al., systematic review of DMSO and MSM nutritional supplements for osteoarthritis. <a href="https://www.oarsijournal.com/article/S1063-4584(08)00066-6/pdf" target="_blank" rel="noopener" style="color:var(--sage-nav);">OARSI journal →</a> Both reduce pain, inflammation, and arthritis via cell-membrane stabilisation and hydroxyl-radical scavenging.</li>
+      <li id="cite-8" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:1px solid rgba(138,184,154,0.1);font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">8</span>Topical DMSO for anthracycline (chemotherapy) extravasation — Olver IN, Aisner J, Hament A, Buchanan L, Bishop JF, Kaplan RS. "A prospective study of topical dimethyl sulfoxide for treating anthracycline extravasation." J Clin Oncol 6(11):1732-5 (1988). PMID: 3183703. <a href="https://pubmed.ncbi.nlm.nih.gov/3183703/" target="_blank" rel="noopener" style="color:var(--sage-nav);">PubMed →</a> 20 patients treated; none progressed to ulceration (95% CI for true ulceration rate: 1–17%).</li>
+      <li id="cite-9" style="counter-increment:cite;padding:12px 0 12px 32px;border-bottom:none;font-size:13px;color:rgba(212,201,168,0.7);line-height:1.7;position:relative;"><span style="position:absolute;left:0;top:14px;font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);">9</span>The 1975 New York Academy of Sciences proceedings — Jacob SW &amp; Herschler R (eds.), "Biological Actions of Dimethyl Sulfoxide," Ann NY Acad Sci, Vol. 243 (1975). <a href="https://nyaspubs.onlinelibrary.wiley.com/toc/17496632/1975/243/1" target="_blank" rel="noopener" style="color:var(--sage-nav);">Full volume index →</a> Contains the original Chilean and Argentine clinical papers referenced in this guide, including: Zúñiga A, Burdach R, Rubio S, "Dimethyl Sulfoxide Therapy in Bronchiolitis," pp.460-467 (the infant respiratory study); Caro/Zúñiga Caro A, "Dimethyl Sulfoxide Therapy in Subjective Tinnitus of Unknown Origin," pp.468-474 (the tinnitus study); and Giller F et al., "Dimethyl Sulfoxide Therapy in Nonmongoloid Infantile Oligophrenia," pp.432-448 (Buenos Aires, the amino-acid/cognitive studies — this volume's companion paper on trisomy 21 children by Dr. Lydia de Coriat covers the Down's syndrome research specifically). These papers were published and indexed — but never followed up with US trials.</li>
+    </ol>
+    <p style="margin-top:16px;padding-top:12px;border-top:1px solid rgba(138,184,154,0.1);"><a href="research.html" style="font-size:12px;color:var(--sage-nav);text-decoration:none;">View Full Research Library →</a></p>
+  </div>
+</div>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
   <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
@@ -1093,26 +1133,73 @@ footer a:hover{color:#d4c9a8;}
       <p style="font-size:12px;color:rgba(212,201,168,0.5);margin-top:8px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
-      <a href="index.html">Home</a>
-      <a href="before-you-begin.html">Before You Begin</a>
-      <a href="Full_Body_Detox_Protocol.html">Full Body Detox</a>
-      <a href="DMSO_Shopping_List.html" style="color:var(--sage-nav);font-weight:600;">Shopping List →</a>
-      <a href="protocols.html">All Protocols</a>
-      <a href="research.html">Research</a>
-      <a href="about.html">About</a>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Home</a>
+      <a href="before-you-begin.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Before You Begin</a>
+      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">All Protocols</a>
+      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Research</a>
+      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">About</a>
+      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Contact</a>
     </div>
   </div>
 </footer>
 
 <script>
+// Citations drawer
+function openCitations(num){
+  var drawer=document.getElementById('citations-drawer');
+  var overlay=document.getElementById('citations-overlay');
+  if(!drawer)return;
+  drawer.style.display='block';
+  overlay.style.display='block';
+  document.querySelectorAll('#citations-list li').forEach(function(li){li.classList.remove('cite-active');});
+  var target=document.getElementById('cite-'+num);
+  if(target){target.classList.add('cite-active');setTimeout(function(){target.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}
+}
+function closeCitations(){
+  document.getElementById('citations-drawer').style.display='none';
+  document.getElementById('citations-overlay').style.display='none';
+}
+// Share URL wiring
+(function(){
+  var pageUrl=encodeURIComponent(window.location.href);
+  var msg=encodeURIComponent('I found this free healing guide and had to share it. It covers everything the medical system never tells you — detox, gut health, brain, Parkinson\'s and more. Written by someone who worked inside pharma and walked away. Worth reading: '+decodeURIComponent(pageUrl));
+  var waUrl='https://wa.me/?text='+msg;
+  var fbUrl='https://www.facebook.com/sharer/sharer.php?u='+pageUrl;
+  ['sf-wa','wa-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=waUrl;});
+  ['sf-fb','fb-share-btn'].forEach(function(id){var el=document.getElementById(id);if(el)el.href=fbUrl;});
+})();
+// Part A jump-nav active tracking
+(function(){
+  var sectionsA=['suppression','what-is','carrier','concentrations','conditions','neuro','suppressed-research'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var linksA=document.querySelectorAll('#partANav a[data-section]');
+  var observerA=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        linksA.forEach(function(a){a.classList.toggle('jn-active', a.dataset.section===entry.target.id);});
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  sectionsA.forEach(function(s){observerA.observe(s);});
+})();
+// Part B jump-nav active tracking
+(function(){
+  var sectionsB=['safety','msm','products','schedule'].map(function(id){return document.getElementById(id);}).filter(Boolean);
+  var linksB=document.querySelectorAll('#partBNav a[data-section]');
+  var observerB=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        linksB.forEach(function(a){a.classList.toggle('jn-active', a.dataset.section===entry.target.id);});
+      }
+    });
+  },{rootMargin:'-25% 0px -65% 0px'});
+  sectionsB.forEach(function(s){observerB.observe(s);});
+})();
 document.addEventListener('click', function(e) {
   const drop = document.getElementById('mainDrop');
   if (drop && !drop.contains(e.target)) drop.classList.remove('open');
 });
 </script>
-<script id="mcjs-dmso">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 <script>
 function mcSubmit_dmso(){
   var email=document.getElementById('mc-email-dmso').value.trim();
