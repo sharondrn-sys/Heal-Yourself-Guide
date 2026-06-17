@@ -27,7 +27,7 @@ section[id]{scroll-margin-top:72px;}
 /* PHASE NAV */
 .phase-nav::-webkit-scrollbar{display:none;}
 .phase-nav{position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-s);overflow-x:auto;scrollbar-width:none;}
-.phase-nav-inner{display:flex;align-items:stretch;min-width:max-content;}
+.phase-nav-inner{display:flex;align-items:stretch;min-width:0;justify-content:center;margin:0 auto;}
 .phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
 .phase-nav a:hover{color:var(--sage);}
 .phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
@@ -334,6 +334,36 @@ body{padding-top:56px;}
 .sched-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
 .divider{height:1px;background:linear-gradient(to right,transparent,rgba(61,107,74,0.18),transparent);margin:0;}
 @media print{nav,footer{display:none!important;}body{padding-top:0;}}
+
+/* PHASE PANEL — SINGLE PANEL TEMPLATE */
+.phase-panel{padding:32px 24px 60px;max-width:1020px;margin:0 auto;}
+.phase-header{margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--border-s);}
+.phase-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.phase-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:5px;}
+.phase-title{font-family:'Playfair Display',serif;font-size:clamp(19px,3vw,26px);font-weight:700;color:var(--ink);line-height:1.25;}
+.phase-title em{font-style:italic;color:var(--sage);}
+.phase-days{font-size:12px;color:var(--ink-light);margin-top:5px;line-height:1.5;}
+.pdf-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:var(--terra-pale);color:var(--terra);border:1px solid rgba(140,90,60,0.25);padding:8px 16px;border-radius:5px;cursor:pointer;font-family:inherit;transition:all 0.2s;text-decoration:none;}
+.pdf-btn:hover{background:var(--terra);color:#fff;border-color:var(--terra);}
+.note-box{background:var(--honey-pale);border:1px solid rgba(160,120,48,0.18);border-radius:8px;padding:13px 18px;margin-bottom:22px;font-size:12px;color:var(--ink-mid);line-height:1.65;}
+.note-box strong{color:var(--honey);}
+.time-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:26px;}
+
+/* FOOTER */
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+.ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
+
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+
 </style>
 </head>
 <body>
@@ -421,10 +451,21 @@ body{padding-top:56px;}
   <div class="hero-links">
     <a href="Brain_Protocol.html" class="hero-link">← Full Protocol</a>
     <a href="Brain_Protocol_Shopping_List.html" class="hero-link">🛒 Shopping List</a>
-    <button class="print-btn no-print" onclick="window.print()" style="margin-left:8px;">🖨 Print Schedule</button>
-    <button class="print-btn no-print" onclick="window.print()" style="margin-left:4px;background:var(--terra-pale);color:var(--terra);border-color:rgba(140,90,60,0.25);">⬇ PDF</button>
   </div>
 </div>
+
+<div class="phase-panel" id="panel-1">
+  <div class="phase-header">
+    <div class="phase-header-top">
+      <div>
+        <div class="phase-kicker">Brain Healing Protocol · Daily Schedule</div>
+        <div class="phase-title">Your Day — <em>From Waking to Sleep</em></div>
+        <div class="phase-days">Follow this schedule daily. Consistency over weeks and months is what produces measurable neurological change.</div>
+      </div>
+      <button class="print-btn no-print" onclick="window.print()">🖨 Print</button>
+      <button class="pdf-btn no-print" onclick="window.print()">⬇ PDF</button>
+    </div>
+  </div>
 
 <div class="sched-section">
 
@@ -441,12 +482,8 @@ body{padding-top:56px;}
 
   <div class="divider" style="margin:8px 0 32px;"></div>
 
-  <!-- HOW TO USE -->
-  <div class="sched-kicker">How to use this schedule</div>
-  <p style="font-size:13px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;background:var(--sage-pale);border:1px solid var(--border);border-radius:8px;padding:14px 18px;">Select your time of day. Each block shows what to take, the dose, and whether to take it with food or on an empty stomach. Colour-coded tags guide timing. Print this page and keep it next to your supplements.</p>
-
   <!-- SCHEDULE BLOCKS -->
-  <div class="schedule-wrap">
+  <div class="time-grid">
 
     <div class="time-block">
       <div class="time-block-header"><span class="time-icon">🌅</span><span class="time-label">Morning — On Waking</span></div>
@@ -703,6 +740,8 @@ body{padding-top:56px;}
   </div>
 </section>
 
+</div><!-- /phase-panel -->
+
 <!-- SHARE BOTTOM -->
 <section style="background:var(--bg-deep);border-top:1px solid var(--border-s);border-bottom:1px solid var(--border-s);padding:44px 24px;text-align:center;">
   <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:8px;">Know someone who needs this?</div>
@@ -736,19 +775,20 @@ body{padding-top:56px;}
 <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <div class="ft-inner">
     <div>
-      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
-      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">Educational purposes only. Not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
-      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Home</a>
-      <a href="before-you-begin.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Before You Begin</a>
-      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">All Protocols</a>
-      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Research</a>
-      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">About</a>
-      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Contact</a>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="protocols.html" class="hi">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
