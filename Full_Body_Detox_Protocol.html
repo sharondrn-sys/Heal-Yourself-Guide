@@ -216,6 +216,9 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
 .ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+.ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
 .ft-nav a:hover{color:var(--sage-nav);}
 .ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
 
@@ -288,6 +291,21 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:12px;opacity:0.8;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:11px;}
 .nav-dropdown-menu .dd-subs a.dd-sub:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);padding-left:20px;}
+
+
+/* STICKY CONTEXT BUTTON */
+.sticky-partb{position:fixed;right:20px;bottom:32px;z-index:95;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.sticky-partb.visible{opacity:1;pointer-events:auto;}
+.sticky-partb-btn{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:12px 18px;border-radius:8px;box-shadow:0 4px 20px rgba(140,90,60,0.35);transition:transform 0.2s,box-shadow 0.2s,background 0.2s;}
+.sticky-partb-btn:hover{transform:translateY(-2px);}
+.sticky-nav-wrap .phase-nav{position:relative;top:auto;}
+@media(max-width:600px){.sticky-partb{right:12px;bottom:70px;}}
+@media print{.sticky-partb{display:none!important;}}
+
+/* CHAPTER READ MORE HINT */
+.chapter-read-hint{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-mid);margin-top:5px;display:flex;align-items:center;gap:5px;}
+.chapter-read-hint::after{content:'›';font-size:13px;}
+.chapter.open .chapter-read-hint{display:none;}
 
 </style>
 <script type="application/ld+json">
@@ -410,7 +428,15 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 <!-- ═══ PART A — UNDERSTAND IT ═══ -->
 <div id="part-a" style="background:var(--sage);padding:10px 24px;text-align:center;">
   <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Understand It · Why This Works · What to Expect · How to Prepare</span>
+
+<!-- STICKY CONTEXT BUTTON -->
+<div class="sticky-partb" id="sticky-partb">
+  <a href="#part-b" class="sticky-partb-btn" id="sticky-partb-link">Part B — Do It →</a>
 </div>
+</div>
+
+<!-- PART A NAV + COMPANION BAR — sticky wrapper -->
+<div class="sticky-nav-wrap" style="position:sticky;top:var(--nav-h);z-index:90;">
 
 <!-- PART A CHAPTER NAV -->
 <div class="phase-nav" id="part-a-nav" style="background:var(--bg-deep);">
@@ -420,9 +446,20 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     <a href="#read-first" data-section="read-first" style="color:var(--ink-light);">Before You Start</a>
     <a href="#bloodwork" data-section="bloodwork" style="color:var(--ink-light);">Blood Work</a>
     <a href="#water" data-section="water" style="color:var(--ink-light);">Clean Water</a>
-    <a href="#part-b" style="margin-left:auto;color:var(--terra-light);">Part B →</a>
   </div>
 </div>
+
+<!-- PART A COMPANION BAR -->
+<div style="background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:8px 24px;">
+  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
+    <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-ghost);flex-shrink:0;">Jump to:</span>
+    <a href="#part-b" style="display:inline-flex;align-items:center;gap:5px;background:var(--terra);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">Part B — Do It →</a>
+    <a href="Full_Body_Detox_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">📋 Daily Schedule</a>
+    <a href="Full_Body_Detox_Shopping_List.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">🛒 Shopping List</a>
+  </div>
+</div>
+
+</div><!-- end sticky wrapper -->
 
 <!-- ═══ WHO IS THIS FOR ═══ -->
 <section class="sec-main" id="whoisthisfor">
@@ -1673,24 +1710,24 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
     <p style="font-size:11px;color:var(--ink-ghost);margin-top:12px;">Free · No spam · Unsubscribe anytime</p>
   </div>
 </section>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
-
 <footer>
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <div class="ft-inner">
     <div>
-      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
-      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
-      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Home</a>
-      <a href="before-you-begin.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Before You Begin</a>
-      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">All Protocols</a>
-      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Research</a>
-      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">About</a>
-      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;">Contact</a>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="protocols.html" class="hi">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 </footer>
 
 <script>
@@ -1801,6 +1838,28 @@ function openCitations(num){
 function closeCitations(){
   document.getElementById('citations-drawer').style.display = 'none';
   document.getElementById('citations-overlay').style.display = 'none';
+}
+
+// Context-aware sticky button
+const stickyBtn = document.getElementById('sticky-partb');
+const stickyLink = document.getElementById('sticky-partb-link');
+const partAEl = document.getElementById('part-a');
+const heroEl = document.querySelector('.hero');
+if(stickyBtn && stickyLink && partAEl){
+  const setPartB = () => { stickyLink.href='#part-b'; stickyLink.textContent='Part B — Do It →'; stickyLink.style.background='var(--terra)'; stickyLink.style.boxShadow='0 4px 20px rgba(140,90,60,0.35)'; };
+  const setPartA = () => { stickyLink.href='#part-a'; stickyLink.textContent='← Back to Part A'; stickyLink.style.background='var(--sage)'; stickyLink.style.boxShadow='0 4px 20px rgba(61,107,74,0.35)'; };
+  const partAObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting && entry.boundingClientRect.top < 0){ setPartA(); } else { setPartB(); }
+    });
+  }, {threshold:0});
+  partAObs.observe(partAEl);
+  const showAfterHero = () => {
+    const heroH = heroEl ? heroEl.offsetHeight + heroEl.offsetTop : 300;
+    stickyBtn.classList.toggle('visible', window.scrollY > heroH);
+  };
+  window.addEventListener('scroll', showAfterHero, {passive:true});
+  showAfterHero();
 }
 </script>
 </body>
