@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-icon{font-size:10px;opacity:0.7;}
 .nav-dropdown-menu .dd-subs a.dd-sub .dd-label{font-size:10px;}
 .nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);background:rgba(138,184,154,0.08);padding-left:16px;}
-@media(max-width:640px){.nav-center{display:none;}}
+@media(max-width:400px){.nav-center{display:none;}}
 .hero{padding:calc(var(--nav-h) + 40px) 24px 40px;background:var(--bg-warm);border-bottom:1px solid var(--border-s);}
 .hero-inner{max-width:860px;margin:0 auto;text-align:center;}
 .hero-tag{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px;}
@@ -73,7 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .hero-back:hover{background:rgba(61,107,74,0.12);border-color:var(--sage-mid);}
 .jump-nav{background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:0 24px;position:sticky;top:var(--nav-h);z-index:90;overflow-x:auto;scrollbar-width:none;}
 .jump-nav::-webkit-scrollbar{display:none;}
-.jump-nav-inner{display:flex;min-width:max-content;max-width:860px;margin:0 auto;}
+.jump-nav-inner{display:flex;min-width:0;max-width:860px;margin:0 auto;justify-content:center;}
 .jump-nav a{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;padding:0 16px;height:38px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap;gap:6px;}
 .jump-nav a:hover,.jump-nav a.active{color:var(--sage);border-bottom-color:var(--sage);}
 .main{max-width:860px;margin:0 auto;padding:0 24px 80px;}
@@ -134,7 +134,43 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .share-pill svg{width:22px;height:22px;fill:#fff;}
 .share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
 @media(max-width:768px){.share-float-label{display:none;}}
-@media print{nav,footer,.share-float,.jump-nav,.no-print{display:none!important;}body{padding-top:0!important;}@page{margin:15mm;size:A4;}}
+@media print{nav,footer,.share-float,.jump-nav,.no-print{display:none!important;body{padding-top:0!important;}.hero{padding-top:16px!important;}}body{padding-top:0!important;}@page{margin:15mm;size:A4;}}
+
+/* PHASE TAB SYSTEM */
+.phase-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:0;overflow-x:auto;scrollbar-width:none;justify-content:center;}
+.phase-tabs::-webkit-scrollbar{display:none;}
+.phase-tab{display:flex;flex-direction:column;align-items:flex-start;padding:10px 20px;cursor:pointer;border:none;background:none;font-family:inherit;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.2s;white-space:nowrap;gap:2px;}
+.phase-tab:hover{background:var(--sage-pale);}
+.phase-tab.active{border-bottom-color:var(--sage);background:var(--sage-pale);}
+.phase-tab .pt-num{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);opacity:0.7;}
+.phase-tab.active .pt-num{opacity:1;}
+.phase-tab .pt-label{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:0.03em;}
+.phase-tab .pt-sub{font-size:10px;color:var(--ink-light);}
+.phase-panel{display:none;padding:32px 0 48px;}
+.phase-panel.active{display:block;}
+
+/* PHASE HEADER */
+.phase-header{margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--border-s);}
+.phase-header-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.phase-kicker{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:5px;}
+.phase-title{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,24px);font-weight:700;color:var(--ink);line-height:1.25;}
+.phase-title em{font-style:italic;color:var(--sage);}
+.phase-days{font-size:12px;color:var(--ink-light);margin-top:5px;line-height:1.5;}
+.pdf-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:var(--terra-pale);color:var(--terra);border:1px solid rgba(140,90,60,0.25);padding:8px 16px;border-radius:5px;cursor:pointer;font-family:inherit;transition:all 0.2s;}
+.pdf-btn:hover{background:var(--terra);color:#fff;}
+
+/* FOOTER */
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+.ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
+footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+
 </style>
 </head>
 <body>
@@ -222,6 +258,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
       <a href="DMSO_Protocol.html" class="hero-back">← Back to Full Protocol</a>
       <a href="DMSO_Shopping_List.html" class="hero-back">🛒 Shopping List</a>
+      <button class="print-btn no-print" onclick="window.print()" style="margin-left:4px;">🖨 Print Page</button>
     </div>
   </div>
 </div>
@@ -229,9 +266,9 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="jump-nav">
   <div class="jump-nav-inner">
     <a href="#before-you-start">Before You Start</a>
-    <a href="#week1">Week 1</a>
-    <a href="#week2">Week 2</a>
-    <a href="#week3">Week 3+</a>
+    <a href="#panel-week1" onclick="switchWeek('week1',document.querySelector('.phase-tab:nth-child(1)'))">Week 1 · 25%</a>
+    <a href="#panel-week2" onclick="switchWeek('week2',document.querySelector('.phase-tab:nth-child(2)'))">Week 2 · 50%</a>
+    <a href="#panel-week3" onclick="switchWeek('week3',document.querySelector('.phase-tab:nth-child(3)'))">Week 3+ · 70%</a>
     <a href="#msm">MSM Pairing</a>
     <a href="#checklist">Daily Checklist</a>
   </div>
@@ -239,10 +276,10 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
 <div class="main">
 
+  <!-- BEFORE YOU START — always visible -->
   <!-- BEFORE YOU START -->
-  <section id="before-you-start" class="section-block">
+<section id="before-you-start" class="section-block">
     <div class="section-header">
-      <span class="section-num">00</span>
       <span class="section-title">Before You Start — Every Single Session</span>
     </div>
     <p class="section-desc">These steps apply to every application, on every day, regardless of which week you're in. DMSO carries whatever is on your skin into your bloodstream — skipping this checklist is the most common cause of irritation and unwanted side effects.</p>
@@ -277,10 +314,43 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
     </div>
   </section>
 
-  <div class="section-divider"></div>
 
-  <!-- WEEK 1 -->
-  <section id="week1" class="section-block">
+  <!-- WEEK TABS -->
+  <div class="phase-tabs" id="week-tabs">
+    <button class="phase-tab active" onclick="switchWeek('week1', this)">
+      <span class="pt-num">Week 1</span>
+      <span class="pt-label">Patch Test & Start</span>
+      <span class="pt-sub">Days 1–7 · 25%</span>
+    </button>
+    <button class="phase-tab" onclick="switchWeek('week2', this)">
+      <span class="pt-num">Week 2</span>
+      <span class="pt-label">Moving to 50%</span>
+      <span class="pt-sub">Days 8–14 · 50%</span>
+    </button>
+    <button class="phase-tab" onclick="switchWeek('week3', this)">
+      <span class="pt-num">Week 3+</span>
+      <span class="pt-label">Maintenance</span>
+      <span class="pt-sub">Day 15+ · 70%</span>
+    </button>
+  </div>
+
+  <!-- WEEK 1 PANEL -->
+  <div class="phase-panel active" id="panel-week1">
+    <div class="phase-header">
+      <div class="phase-header-top">
+        <div>
+          <div class="phase-kicker">DMSO Application Schedule · Week 1</div>
+          <div class="phase-title">Patch Test &amp; <em>First Applications</em></div>
+          <div class="phase-days">Days 1–7 · Start at 25% · Confirm tolerance before progressing</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button class="print-btn no-print" onclick="window.print()">🖨 Print Page</button>
+          <button class="pdf-btn no-print" onclick="printWeekOnly('week1','Week 1 — Patch Test & First Applications','Days 1–7 · 25%')">📋 Print Week</button>
+        </div>
+      </div>
+    </div>
+    <!-- WEEK 1 -->
+<section id="week1" class="section-block">
     <div class="section-header">
       <span class="section-num">01</span>
       <span class="section-title">Week 1 — Patch Test &amp; First Applications</span>
@@ -325,9 +395,25 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </section>
 
   <div class="section-divider"></div>
+  </div>
 
-  <!-- WEEK 2 -->
-  <section id="week2" class="section-block">
+  <!-- WEEK 2 PANEL -->
+  <div class="phase-panel" id="panel-week2">
+    <div class="phase-header">
+      <div class="phase-header-top">
+        <div>
+          <div class="phase-kicker">DMSO Application Schedule · Week 2</div>
+          <div class="phase-title">Moving to <em>50%</em></div>
+          <div class="phase-days">Days 8–14 · Increase concentration if Week 1 tolerated well</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button class="print-btn no-print" onclick="window.print()">🖨 Print Page</button>
+          <button class="pdf-btn no-print" onclick="printWeekOnly('week2','Week 2 — Moving to 50%','Days 8–14 · 50%')">📋 Print Week</button>
+        </div>
+      </div>
+    </div>
+    <!-- WEEK 2 -->
+<section id="week2" class="section-block">
     <div class="section-header">
       <span class="section-num">02</span>
       <span class="section-title">Week 2 — Moving to 50%</span>
@@ -360,9 +446,25 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </section>
 
   <div class="section-divider"></div>
+  </div>
 
-  <!-- WEEK 3+ -->
-  <section id="week3" class="section-block">
+  <!-- WEEK 3+ PANEL -->
+  <div class="phase-panel" id="panel-week3">
+    <div class="phase-header">
+      <div class="phase-header-top">
+        <div>
+          <div class="phase-kicker">DMSO Application Schedule · Week 3+</div>
+          <div class="phase-title">Maintenance at <em>70%</em></div>
+          <div class="phase-days">Day 15 onward · Move here only once 50% is well tolerated</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button class="print-btn no-print" onclick="window.print()">🖨 Print Page</button>
+          <button class="pdf-btn no-print" onclick="printWeekOnly('week3','Week 3+ — 70% As Tolerated','Day 15 onward · 70%')">📋 Print Week</button>
+        </div>
+      </div>
+    </div>
+    <!-- WEEK 3+ -->
+<section id="week3" class="section-block">
     <div class="section-header">
       <span class="section-num">03</span>
       <span class="section-title">Week 3+ — 70% As Tolerated</span>
@@ -400,9 +502,12 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </section>
 
   <div class="section-divider"></div>
+  </div>
+
+  <div class="section-divider"></div>
 
   <!-- MSM PAIRING -->
-  <section id="msm" class="section-block">
+<section id="msm" class="section-block">
     <div class="section-header">
       <span class="section-num">04</span>
       <span class="section-title">MSM Oral Pairing — Daily Foundation</span>
@@ -430,8 +535,10 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
   <div class="section-divider"></div>
 
+  <div class="section-divider"></div>
+
   <!-- SAFETY RECAP -->
-  <section class="section-block">
+<section class="section-block">
     <div class="alert-box">
       <div class="alert-box-title">⚠️ Quick Safety Recap</div>
       <p style="margin-bottom:10px;"><strong>Never combine DMSO with:</strong> pharmaceutical drugs (unless under direct medical supervision), hydrogen peroxide applied directly to skin, cisplatin or other platinum-based chemotherapy, or anything you wouldn't be comfortable injecting.</p>
@@ -528,19 +635,20 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
-  <div style="max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+  <div class="ft-inner">
     <div>
-      <div style="font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;">Heal Yourself</div>
-      <p style="font-size:12px;color:rgba(212,201,168,0.5);line-height:1.7;">Educational purposes only. Not a doctor. © 2025 Heal Yourself Guide. All rights reserved.</p>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;">
-      <a href="index.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Home</a>
-      <a href="before-you-begin.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Before You Begin</a>
-      <a href="protocols.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">All Protocols</a>
-      <a href="research.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Research</a>
-      <a href="about.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">About</a>
-      <a href="privacy-policy.html" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Privacy Policy</a>
-      <a href="mailto:healyourselfguide101@gmail.com" style="font-size:12px;color:rgba(212,201,168,0.55);text-decoration:none;">Contact</a>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="protocols.html" class="hi">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
 </footer>
@@ -591,6 +699,71 @@ document.addEventListener('click',function(e){
   const d=document.getElementById('nav-protocols');
   if(d && !d.contains(e.target)) d.classList.remove('open');
 });
+
+// Week tab switching
+function switchWeek(weekId, btn){
+  document.querySelectorAll('.phase-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.phase-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('panel-' + weekId).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Print active week only
+function printWeekOnly(weekId, title, subtitle){
+  var panel = document.getElementById('panel-' + weekId);
+  if(!panel) return;
+  var content = panel.innerHTML;
+  var win = window.open('','_blank','width=850,height=700');
+  if(!win){ alert('Please allow popups for this site, then try again.'); return; }
+  var html = '<!DOCTYPE html>' +
+    '<html lang="en"><head><meta charset="UTF-8">' +
+    '<title>DMSO Schedule — ' + title + '</title>' +
+    '<style>' +
+    '*{box-sizing:border-box;margin:0;padding:0;}' +
+    'body{font-family:Georgia,serif;font-size:12px;color:#1e1a14;padding:20px 28px;background:#fff;}' +
+    'h1{font-size:17px;font-weight:700;color:#3d6b4a;margin-bottom:2px;}' +
+    '.sub{font-size:10px;color:#7a6e5c;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #ddd;}' +
+    '.phase-header{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #ddd;}' +
+    '.phase-kicker{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#3d6b4a;margin-bottom:3px;}' +
+    '.phase-title{font-size:18px;font-weight:700;color:#1e1a14;}' +
+    '.phase-title em{color:#3d6b4a;}' +
+    '.phase-days{font-size:11px;color:#7a6e5c;margin-top:3px;}' +
+    '.phase-header-top{display:flex;justify-content:space-between;}' +
+    '.no-print,.print-btn,.pdf-btn{display:none!important;}' +
+    '.week-card{background:#f9f7f3;border:1px solid #e8e4dc;border-radius:6px;padding:14px 16px;margin-bottom:12px;}' +
+    '.week-card.honey{background:#faf7f0;border-color:#e8dfc8;}' +
+    '.week-card.terra{background:#fdf0eb;border-color:#e8d0c4;}' +
+    '.week-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #e8e4dc;}' +
+    '.week-name{font-weight:700;font-size:13px;}' +
+    '.week-pct{font-family:monospace;font-size:18px;font-weight:700;color:#3d6b4a;}' +
+    '.week-pct.honey{color:#a07830;}.week-pct.terra{color:#8c5a3c;}' +
+    '.day-row{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid #eee;font-size:12px;line-height:1.5;}' +
+    '.day-row:last-child{border-bottom:none;}' +
+    '.day-tag{font-family:monospace;font-size:10px;font-weight:700;color:#3d6b4a;min-width:70px;flex-shrink:0;}' +
+    '.day-tag.terra{color:#8c5a3c;}' +
+    '.checklist{padding-left:16px;font-size:12px;line-height:1.6;}' +
+    '.checklist li{margin-bottom:5px;}' +
+    '.dil-wrap{border:1px solid #e8e4dc;border-radius:5px;overflow:hidden;margin-top:12px;font-size:11px;}' +
+    '.dil-row{display:grid;grid-template-columns:80px 1fr 1fr;gap:8px;padding:7px 10px;border-bottom:1px solid #eee;}' +
+    '.dil-row:last-child{border-bottom:none;}' +
+    '.dil-row:first-child{background:#f0f0ee;font-weight:700;font-size:10px;}' +
+    '.dil-pct{font-family:monospace;font-weight:700;color:#3d6b4a;}' +
+    '.note-box{background:#f5f2ec;border-radius:6px;padding:12px 16px;margin-top:12px;font-size:12px;line-height:1.6;}' +
+    '.note-box-title{font-weight:700;color:#3d6b4a;margin-bottom:5px;}' +
+    '.section-header{display:none;}.section-desc{display:none;}' +
+    '.footer{margin-top:16px;padding-top:10px;border-top:1px solid #ddd;font-size:9px;color:#a89e8e;display:flex;justify-content:space-between;}' +
+    '@media print{@page{margin:10mm;size:A4;}body{padding:10px 16px;}}' +
+    '</style></head><body>' +
+    '<h1>DMSO Protocol — ' + title + '</h1>' +
+    '<div class="sub">' + subtitle + ' &nbsp;&middot;&nbsp; healyourselfguide.com &nbsp;&middot;&nbsp; For educational purposes only</div>' +
+    content +
+    '<div class="footer"><span>Heal Yourself Guide &nbsp;&middot;&nbsp; healyourselfguide.com</span><span>iHerb code: GUW6132</span></div>' +
+    '</body></html>';
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(function(){ win.print(); win.close(); }, 400);
+}
 </script>
 </body>
 </html>

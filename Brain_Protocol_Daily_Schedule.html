@@ -831,64 +831,53 @@ document.addEventListener('click',function(e){
 
 // Print schedule only — clean popup
 function printScheduleOnly(){
-  const table = document.querySelector('.sched-table');
-  const weeklyNote = document.querySelector('.budget-note');
+  var table = document.querySelector('.sched-table');
+  var weeklyNote = document.querySelector('.budget-note');
   if(!table) return;
-
-  const win = window.open('', '_blank', 'width=900,height=700');
-  win.document.write(`<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Brain Healing Protocol — Daily Schedule</title>
-<style>
-  *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Georgia',serif;font-size:12px;color:#1e1a14;padding:20px 28px;background:#fff;}
-  h1{font-size:18px;font-weight:700;color:#3d6b4a;margin-bottom:3px;}
-  .sub{font-size:11px;color:#7a6e5c;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #ddd;}
-  table{width:100%;border-collapse:collapse;}
-  tr{border-bottom:1px solid #e8e4dc;}
-  tr:last-child{border-bottom:none;}
-  td{padding:10px 12px;vertical-align:top;}
-  .time-col{width:110px;white-space:nowrap;}
-  .time-label{font-family:monospace;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#3d6b4a;}
-  .t-icon{margin-right:4px;}
-  .items-col{border-left:2px solid #e8e4dc;padding-left:14px;}
-  .sched-row-item{padding:6px 0;}
-  .sched-row-item:not(:last-child){border-bottom:1px solid #f0ece4;}
-  .sr-name{font-weight:700;font-size:12px;display:block;}
-  .sr-dose{font-family:monospace;font-size:10px;color:#3d6b4a;display:block;margin-top:2px;}
-  .sr-note{font-size:10px;color:#7a6e5c;display:block;margin-top:2px;line-height:1.45;}
-  .sr-warn{font-size:10px;font-weight:700;color:#8c5a3c;display:block;margin-top:2px;}
-  .sr-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}
-  .tag{font-size:8px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:2px 6px;border-radius:2px;}
-  .tag-food{background:#e4f0e8;color:#3d6b4a;}
-  .tag-empty{background:#f5eddb;color:#a07830;}
-  .tag-key{background:#f5ede6;color:#8c5a3c;}
-  .tag-optional{background:#ede7db;color:#7a6e5c;}
-  .weekly{margin-top:16px;padding:10px 14px;background:#f4efe6;border-radius:5px;font-size:11px;color:#3d3426;line-height:1.6;}
-  .weekly strong{color:#3d6b4a;}
-  .footer{margin-top:18px;padding-top:10px;border-top:1px solid #ddd;font-size:9px;color:#a89e8e;display:flex;justify-content:space-between;}
-  @media print{
-    body{padding:10px 16px;}
-    @page{margin:10mm;size:A4;}
-  }
-</style>
-</head>
-<body>
-<h1>Brain Healing Protocol — Daily Schedule</h1>
-<div class="sub">healyourselfguide.com &nbsp;·&nbsp; For educational purposes only &nbsp;·&nbsp; Not medical advice</div>
-${table.outerHTML}
-${weeklyNote ? '<div class="weekly"><strong>Weekly practices:</strong> ' + weeklyNote.textContent.replace('Weekly practices','').trim() + '</div>' : ''}
-<div class="footer">
-  <span>Heal Yourself Guide &nbsp;·&nbsp; healyourselfguide.com</span>
-  <span>iHerb code: GUW6132</span>
-</div>
-</body>
-</html>`);
+  var win = window.open('', '_blank', 'width=900,height=700');
+  if(!win){ alert('Please allow popups for this site, then try again.'); return; }
+  var html = '<!DOCTYPE html>' +
+    '<html lang="en"><head><meta charset="UTF-8">' +
+    '<title>Brain Healing Protocol — Daily Schedule</title>' +
+    '<style>' +
+    '*{box-sizing:border-box;margin:0;padding:0;}' +
+    'body{font-family:Georgia,serif;font-size:12px;color:#1e1a14;padding:20px 28px;background:#fff;}' +
+    'h1{font-size:18px;font-weight:700;color:#3d6b4a;margin-bottom:3px;}' +
+    '.sub{font-size:11px;color:#7a6e5c;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #ddd;}' +
+    'table{width:100%;border-collapse:collapse;}' +
+    'tr{border-bottom:1px solid #e8e4dc;}' +
+    'tr:last-child{border-bottom:none;}' +
+    'td{padding:10px 12px;vertical-align:top;}' +
+    '.time-col{width:110px;white-space:nowrap;}' +
+    '.time-label{font-family:monospace;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#3d6b4a;}' +
+    '.items-col{border-left:2px solid #e8e4dc;padding-left:14px;}' +
+    '.sched-row-item{padding:6px 0;}' +
+    '.sched-row-item:not(:last-child){border-bottom:1px solid #f0ece4;}' +
+    '.sr-name{font-weight:700;font-size:12px;display:block;}' +
+    '.sr-dose{font-family:monospace;font-size:10px;color:#3d6b4a;display:block;margin-top:2px;}' +
+    '.sr-note{font-size:10px;color:#7a6e5c;display:block;margin-top:2px;line-height:1.45;}' +
+    '.sr-warn{font-size:10px;font-weight:700;color:#8c5a3c;display:block;margin-top:2px;}' +
+    '.sr-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px;}' +
+    '.tag{font-size:8px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:2px 6px;border-radius:2px;}' +
+    '.tag-food{background:#e4f0e8;color:#3d6b4a;}' +
+    '.tag-empty{background:#f5eddb;color:#a07830;}' +
+    '.tag-key{background:#f5ede6;color:#8c5a3c;}' +
+    '.tag-optional{background:#ede7db;color:#7a6e5c;}' +
+    '.weekly{margin-top:16px;padding:10px 14px;background:#f4efe6;border-radius:5px;font-size:11px;color:#3d3426;line-height:1.6;}' +
+    '.weekly strong{color:#3d6b4a;}' +
+    '.footer{margin-top:18px;padding-top:10px;border-top:1px solid #ddd;font-size:9px;color:#a89e8e;display:flex;justify-content:space-between;}' +
+    '@media print{body{padding:10px 16px;}@page{margin:10mm;size:A4;}}' +
+    '</style></head><body>' +
+    '<h1>Brain Healing Protocol — Daily Schedule</h1>' +
+    '<div class="sub">healyourselfguide.com &nbsp;&middot;&nbsp; For educational purposes only &nbsp;&middot;&nbsp; Not medical advice</div>' +
+    table.outerHTML +
+    (weeklyNote ? '<div class="weekly"><strong>Weekly practices:</strong> ' + weeklyNote.textContent.replace('Weekly practices','').trim() + '</div>' : '') +
+    '<div class="footer"><span>Heal Yourself Guide &nbsp;&middot;&nbsp; healyourselfguide.com</span><span>iHerb code: GUW6132</span></div>' +
+    '</body></html>';
+  win.document.write(html);
   win.document.close();
   win.focus();
-  setTimeout(() => { win.print(); win.close(); }, 400);
+  setTimeout(function(){ win.print(); win.close(); }, 400);
 }
 </script>
 
