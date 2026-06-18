@@ -121,7 +121,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .print-col-title{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
 .print-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-mid);line-height:1.6;margin-bottom:8px;}
 .print-box{width:14px;height:14px;border:1.5px solid var(--sage-mid);border-radius:3px;flex-shrink:0;margin-top:2px;}
-.print-btn{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;border:none;border-radius:6px;padding:11px 22px;font-size:13px;font-weight:700;letter-spacing:0.04em;cursor:pointer;font-family:'Jost',sans-serif;}
+.print-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.05em;font-family:inherit;color:var(--ink-mid);background:var(--bg-deep);border:1px solid var(--border);border-radius:5px;padding:6px 12px;cursor:pointer;transition:all 0.2s;text-decoration:none;white-space:nowrap;}
 .section-divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin-top:48px;}
 footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
 /* SHARE — FLOATING */
@@ -156,7 +156,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .phase-title{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,24px);font-weight:700;color:var(--ink);line-height:1.25;}
 .phase-title em{font-style:italic;color:var(--sage);}
 .phase-days{font-size:12px;color:var(--ink-light);margin-top:5px;line-height:1.5;}
-.pdf-btn{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;background:var(--terra-pale);color:var(--terra);border:1px solid rgba(140,90,60,0.25);padding:8px 16px;border-radius:5px;cursor:pointer;font-family:inherit;transition:all 0.2s;}
+.pdf-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.05em;font-family:inherit;color:var(--terra);background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);border-radius:5px;padding:6px 12px;cursor:pointer;transition:all 0.2s;text-decoration:none;white-space:nowrap;}
 .pdf-btn:hover{background:var(--terra);color:#fff;}
 
 /* FOOTER */
@@ -258,7 +258,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
       <a href="DMSO_Protocol.html" class="hero-back">← Back to Full Protocol</a>
       <a href="DMSO_Shopping_List.html" class="hero-back">🛒 Shopping List</a>
-      <button class="print-btn no-print" onclick="window.print()" style="margin-left:4px;">🖨 Print Page</button>
+      <button class="print-btn no-print" onclick="window.print()">🖨 Print Page</button>
     </div>
   </div>
 </div>
@@ -729,7 +729,7 @@ function printWeekOnly(weekId, title, subtitle){
     '.phase-title em{color:#3d6b4a;}' +
     '.phase-days{font-size:11px;color:#7a6e5c;margin-top:3px;}' +
     '.phase-header-top{display:flex;justify-content:space-between;}' +
-    '.no-print,.print-btn,.pdf-btn{display:none!important;}' +
+    '.no-print,.print-btn,.pdf-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.05em;font-family:inherit;color:var(--terra);background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);border-radius:5px;padding:6px 12px;cursor:pointer;transition:all 0.2s;text-decoration:none;white-space:nowrap;}' +
     '.week-card{background:#f9f7f3;border:1px solid #e8e4dc;border-radius:6px;padding:14px 16px;margin-bottom:12px;}' +
     '.week-card.honey{background:#faf7f0;border-color:#e8dfc8;}' +
     '.week-card.terra{background:#fdf0eb;border-color:#e8d0c4;}' +
