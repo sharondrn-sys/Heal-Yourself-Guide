@@ -305,9 +305,15 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .sn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.4;flex-shrink:0;}
 
 @media print{nav,footer,.share-float,.share-block,.sec-nav{display:none!important;}}
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-60px;left:8px;background:var(--sage);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;z-index:1000;transition:top 0.2s;}
+.skip-link:focus{top:8px;}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 
 <!-- TOP NAV -->
 <nav>
@@ -374,6 +380,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </div>
 </nav>
 
+<span id="main-content"></span>
 <!-- FLOATING SHARE BAR -->
 <div class="share-float" aria-label="Share this guide">
   <span class="share-float-label">Share</span>
@@ -397,25 +404,26 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
   <p class="hero-tagline">“The body knows how to heal. The question is what is preventing it.”</p>
 
-  <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:44px;">
-    <a href="before-you-begin.html" style="display:inline-block;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border-radius:6px;">Start Here — It’s Free →</a>
-    <a href="#protocols" style="display:inline-block;background:transparent;color:var(--sage);font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;padding:14px 24px;border-radius:6px;border:1px solid var(--border);">See the Protocols ↓</a>
-  </div>
-
-  <div class="hero-stats">
-    <div><span class="stat-num">90</span><span class="stat-label">Day Foundation Protocol</span></div>
-    <div><span class="stat-num">6+</span><span class="stat-label">Complete Free Guides</span></div>
-    <div><span class="stat-num">100%</span><span class="stat-label">Free — Always</span></div>
-  </div>
-
-  <!-- EMAIL — after the hook, not before -->
-  <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);">
+  <!-- PRIMARY CTA — EMAIL CAPTURE -->
+  <div style="margin-top:8px;margin-bottom:20px;">
     <p style="font-size:13px;font-weight:500;color:var(--ink-light);margin-bottom:14px;letter-spacing:0.02em;">New protocols delivered when they’re ready. No noise.</p>
     <div class="hero-email">
       <label for="mc-email-hero" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">Email address</label><input type="email" id="mc-email-hero" placeholder="Your email address" />
       <button onclick="mcSubmitHero()">Join Free →</button>
     </div>
     <p id="mc-msg-hero" class="hero-email-note" style="min-height:14px;margin-bottom:0;"></p>
+  </div>
+
+  <!-- SECONDARY — explore without signing up -->
+  <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:44px;font-size:13px;">
+    <a href="before-you-begin.html" style="color:var(--sage);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px;font-weight:600;">Start Here — It’s Free →</a>
+    <a href="#protocols" style="color:var(--ink-light);text-decoration:underline;text-decoration-color:var(--border);text-underline-offset:3px;">See the Protocols ↓</a>
+  </div>
+
+  <div class="hero-stats">
+    <div><span class="stat-num">90</span><span class="stat-label">Day Foundation Protocol</span></div>
+    <div><span class="stat-num">6+</span><span class="stat-label">Complete Free Guides</span></div>
+    <div><span class="stat-num">100%</span><span class="stat-label">Free — Always</span></div>
   </div>
 </section>
 
