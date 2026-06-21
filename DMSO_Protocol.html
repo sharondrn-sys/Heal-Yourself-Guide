@@ -51,6 +51,7 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:98;opacity:0;transition:opacity 0.25s;}
 .nav-overlay.open{display:block;opacity:1;}
 @media(max-width:768px){
+  nav{padding:0 12px 0 28px;}
   .nav-hamburger{display:flex;}
   .nav-center{
     position:fixed;top:var(--nav-h);right:0;bottom:0;width:min(300px,80vw);
