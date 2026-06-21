@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Not Found — Heal Yourself Guide</title>
+<meta property="og:title" content="Page Not Found — Heal Yourself Guide">
+<meta property="og:description" content="Page not found. Return to the Heal Yourself Guide homepage or browse all protocols.">
+<meta name="description" content="Page not found. Return to the Heal Yourself Guide homepage or browse all protocols.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
+  --bg-nav:#2c3a2e;--bg-footer:#263028;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#5c5144;--ink-ghost:#a89e8e;
+  --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
+  --terra:#8c5a3c;--terra-pale:#f5ede6;
+  --honey:#a07830;
+  --border:rgba(61,107,74,0.15);--border-s:rgba(30,26,20,0.08);
+  --nav-h:56px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;min-height:100vh;display:flex;flex-direction:column;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100;box-shadow:0 1px 0 rgba(138,184,154,0.1);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
+.nav-center{display:flex;align-items:center;gap:4px;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
+@media(max-width:640px){.nav-center{display:none;}}
+.nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle:hover{color:var(--sage-nav);}
+.nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
+.nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(var(--nav-h) - 1px);right:0;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;min-width:250px;padding:6px 0;z-index:200;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s,visibility 0.18s;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:11px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.7);text-decoration:none;text-transform:uppercase;transition:all 0.15s;border-bottom:1px solid rgba(138,184,154,0.07);}
+.nav-dropdown-menu a:last-child{border-bottom:none;}
+.nav-dropdown-menu a:hover{color:#d4c9a8;background:rgba(138,184,154,0.08);}
+.nav-dropdown-menu a .dd-icon{font-size:13px;flex-shrink:0;}
+.nav-dropdown-menu a .dd-label{flex:1;}
+.nav-dropdown-menu a .dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;color:var(--sage-nav);background:rgba(90,140,106,0.2);padding:2px 7px;border-radius:3px;}
+.dd-group{position:relative;}
+.dd-group>a{position:relative;padding-right:28px;border-bottom:1px solid rgba(138,184,154,0.07);}
+.dd-group>a::after{content:'›';position:absolute;right:14px;top:50%;transform:translateY(-50%);opacity:0.35;font-size:13px;transition:all 0.15s;}
+.dd-group:hover>a::after{opacity:0.9;color:var(--sage-nav);}
+.dd-group:hover>a{color:#d4c9a8;background:rgba(138,184,154,0.06);}
+.dd-subs{position:absolute;left:100%;top:0;min-width:200px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-top:2px solid var(--sage-mid);border-radius:0 0 8px 8px;padding:4px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.15s,visibility 0.15s;}
+.dd-group:hover .dd-subs{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-menu .dd-subs a.dd-sub{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:10px;font-weight:500;letter-spacing:0.05em;color:rgba(212,201,168,0.55);text-transform:uppercase;border:none;border-bottom:1px solid rgba(138,184,154,0.08);height:auto;transition:all 0.15s;}
+.nav-dropdown-menu .dd-subs a.dd-sub:last-child{border-bottom:none;}
+.nav-dropdown-menu .dd-subs a.dd-sub:hover{color:rgba(212,201,168,0.85);background:rgba(138,184,154,0.08);}
+
+/* MAIN */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:calc(var(--nav-h) + 60px) 24px 60px;}
+.error-inner{max-width:560px;text-align:center;}
+.error-code{font-family:'DM Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;}
+.error-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,48px);color:var(--ink);line-height:1.2;margin-bottom:16px;}
+.error-title em{font-style:italic;color:var(--sage);}
+.error-sub{font-size:15px;color:var(--ink-light);line-height:1.8;margin-bottom:36px;}
+.error-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;text-decoration:none;padding:13px 28px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:opacity 0.2s;}
+.btn-primary:hover{opacity:0.85;}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--sage);text-decoration:none;padding:13px 28px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--border);transition:all 0.2s;}
+.btn-secondary:hover{background:var(--sage-pale);border-color:var(--sage);}
+.quick-links{background:var(--bg-deep);border-radius:12px;padding:28px 32px;text-align:left;}
+.quick-links-title{font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:16px;}
+.quick-links-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media(max-width:400px){.quick-links-grid{grid-template-columns:1fr;}}
+.quick-link{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;text-decoration:none;color:var(--ink-mid);font-size:13px;transition:background 0.15s;}
+.quick-link:hover{background:var(--bg-stone);}
+.quick-link-icon{font-size:16px;width:24px;text-align:center;}
+
+/* FOOTER */
+footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);padding:40px 24px;}
+.ft-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+@media(max-width:560px){.ft-inner{grid-template-columns:1fr;}}
+.ft-brand{font-family:'Playfair Display',serif;font-size:18px;color:#d4c9a8;margin-bottom:10px;}
+.ft-disc{font-size:12px;color:rgba(212,201,168,0.65);line-height:1.7;}
+.ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+@media(max-width:560px){.ft-nav{align-items:flex-start;}}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a:hover{color:#d4c9a8;}
+.ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Heal Yourself</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="before-you-begin.html">Before You Begin</a>
+    <div class="nav-dropdown" id="mainDrop">
+      <button class="nav-dropdown-toggle" onclick="document.getElementById('mainDrop').classList.toggle('open')">
+        Protocols <svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="nav-dropdown-menu">
+        <div class="dd-group">
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon" aria-hidden="true">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <div class="dd-subs">
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Brain_Protocol.html"><span class="dd-icon" aria-hidden="true">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="DMSO_Protocol.html"><span class="dd-icon" aria-hidden="true">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <div class="dd-subs">
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Oxygen_Therapy.html"><span class="dd-icon" aria-hidden="true">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <div class="dd-subs">
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon" aria-hidden="true">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon" aria-hidden="true">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon" aria-hidden="true">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+          </div>
+        </div>
+        <div class="dd-group">
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon" aria-hidden="true">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <div class="dd-subs">
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+          </div>
+        </div>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon" aria-hidden="true">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <div class="dd-group">
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon" aria-hidden="true">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <div class="dd-subs">
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🔍</span><span class="dd-label">Symptom Guide</span></a>
+          </div>
+        </div>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon" aria-hidden="true">☰</span><span class="dd-label">All Protocols</span></a>
+      </div>
+    </div>
+    <a href="research.html">Research</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<main>
+  <div class="error-inner">
+    <div class="error-code">404 — Page Not Found</div>
+    <h1 class="error-title">This page doesn't<br><em>exist yet.</em></h1>
+    <p class="error-sub">The link you followed may be broken, or the page may have moved. The guide is growing — if you were looking for something specific, it may be coming soon.</p>
+    <div class="error-links">
+      <a href="index.html" class="btn-primary">🌿 Go Home</a>
+      <a href="protocols.html" class="btn-secondary">☰ All Protocols</a>
+    </div>
+    <div class="quick-links">
+      <div class="quick-links-title">Where would you like to go?</div>
+      <div class="quick-links-grid">
+        <a href="Full_Body_Detox_Protocol.html" class="quick-link"><span class="quick-link-icon">🌿</span>Full Body Detox</a>
+        <a href="Brain_Protocol.html" class="quick-link"><span class="quick-link-icon">🧠</span>Brain Protocol</a>
+        <a href="DMSO_Protocol.html" class="quick-link"><span class="quick-link-icon">⚗️</span>DMSO Protocol</a>
+        <a href="Oxygen_Therapy.html" class="quick-link"><span class="quick-link-icon">🫁</span>Oxygen Therapy</a>
+        <a href="Hidden_Deficiencies.html" class="quick-link"><span class="quick-link-icon">🔬</span>Hidden Deficiencies</a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html" class="quick-link"><span class="quick-link-icon">🌱</span>Dr. Sebi Alkaline</a>
+        <a href="Parkinsons_Protocol.html" class="quick-link"><span class="quick-link-icon">🧬</span>Parkinson's Protocol</a>
+        <a href="research.html" class="quick-link"><span class="quick-link-icon">📚</span>Research Library</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-brand">Heal Yourself</div>
+      <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2026 Heal Yourself Guide. All rights reserved.</p>
+    </div>
+    <div class="ft-nav">
+      <a href="index.html">Home</a>
+      <a href="before-you-begin.html">Before You Begin</a>
+      <a href="protocols.html">All Protocols</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Use</a>
+      <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var path=window.location.pathname.split('/').pop()||'index.html';
+  document.querySelectorAll('.ft-nav a').forEach(function(a){
+    var href=a.getAttribute('href').split('/').pop();
+    if(href===path)a.classList.add('hi');
+  });
+})();
+</script>
+</body>
+</html>
