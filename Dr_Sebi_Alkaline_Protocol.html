@@ -22,7 +22,7 @@
 :root{
   --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
   --bg-nav:#2c3a2e;--bg-footer:#263028;
-  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#5c5144;--ink-ghost:#a89e8e;
   --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
   --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
   --honey:#a07830;--honey-pale:#f5eddb;
@@ -38,11 +38,11 @@ section[id]{scroll-margin-top:72px;}
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
 .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
 .nav-center{display:flex;align-items:center;}
-.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
 .nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 @media(max-width:400px){.nav-center{display:none;}}
 .nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
-.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
 .nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 .nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
 .nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
@@ -319,7 +319,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
 
-.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.80);text-decoration:none;transition:color 0.2s;}
 .ft-nav a:hover{color:#d4c9a8;}
 .ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
 
@@ -333,6 +333,10 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
 
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-60px;left:8px;background:var(--sage);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;z-index:1000;transition:top 0.2s;}
+.skip-link:focus{top:8px;}
 </style>
 <script type="application/ld+json">
 {
@@ -350,6 +354,8 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 
 <!-- NAV -->
 <nav>
@@ -363,58 +369,58 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       </button>
       <div class="nav-dropdown-menu">
         <div class="dd-group">
-          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon" aria-hidden="true">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
           <div class="dd-subs">
-            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <a href="Brain_Protocol.html"><span class="dd-icon" aria-hidden="true">🧠</span><span class="dd-label">Brain Protocol</span></a>
           <div class="dd-subs">
-            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <a href="DMSO_Protocol.html"><span class="dd-icon" aria-hidden="true">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
           <div class="dd-subs">
-            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="DMSO_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <a href="Oxygen_Therapy.html"><span class="dd-icon" aria-hidden="true">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
           <div class="dd-subs">
-            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
-            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
-            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon" aria-hidden="true">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon" aria-hidden="true">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon" aria-hidden="true">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+          <a href="Hidden_Deficiencies.html"><span class="dd-icon" aria-hidden="true">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
           <div class="dd-subs">
-            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Hidden_Deficiencies_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Hidden_Deficiencies_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+          <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon" aria-hidden="true">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
           <div class="dd-subs">
-            <a href="Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Dr_Sebi_Alkaline_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Dr_Sebi_Alkaline_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon" aria-hidden="true">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
           <div class="dd-subs">
-            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
-            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
-            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon">🔍</span><span class="dd-label">Symptom Guide</span></a>
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Symptoms.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🔍</span><span class="dd-label">Symptom Guide</span></a>
           </div>
         </div>
-        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon" aria-hidden="true">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
     </div>
     <a href="research.html">Research</a>
@@ -435,7 +441,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="eyebrow"><span>🌱 Dr. Sebi Alkaline Protocol</span></div>
   <h1>Dr. Sebi<br><em>One Disease. One Solution. Feed the Body What It Recognises.</em></h1>
   <p class="hero-sub">Alfredo Bowman never went to medical school. He healed himself from diabetes, impotence, obesity, asthma, and blindness in one eye — using plants. He then went to the New York Supreme Court with dozens of witnesses and walked out acquitted. His methodology is one of the most coherent alternative healing frameworks ever documented.</p>
@@ -456,6 +462,14 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
     <div style="font-size:13px;color:#fff;line-height:1.6;"><strong>⚠️ Sequence Matters:</strong> The Dr. Sebi alkaline lifestyle is the long-term framework you live in — most effective once your toxic load is already reduced. If you haven't started yet, do the Full Body Detox Protocol first, then use this as where you land afterward.</div>
     <a href="Full_Body_Detox_Protocol.html" style="display:inline-block;background:#fff;color:var(--terra);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:9px 18px;border-radius:5px;white-space:nowrap;flex-shrink:0;">Do the Detox First →</a>
+  </div>
+</div>
+
+<!-- MEDICAL DISCLAIMER — moved above instructional content per safety review -->
+<div style="background:var(--terra-pale,#f5ede6);border-bottom:1px solid rgba(140,90,60,0.2);padding:16px 24px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra,#8c5a3c);margin-bottom:6px;">⚠️ Medical Disclaimer — Read Before Starting</div>
+    <p style="font-size:13px;line-height:1.7;color:var(--ink-mid,#3d3426);margin:0;">This page is educational, not medical advice, and does not replace consultation with a qualified healthcare practitioner. <strong>Soursop/Graviola (covered below) carries a documented neurological risk</strong> — see the dedicated warning in that section before using it. If you have an existing health condition or take prescription medication, consult a practitioner before making significant dietary changes. The "approved food list" approach is restrictive; do not begin without reading the full protocol first.</p>
   </div>
 </div>
 
@@ -1165,7 +1179,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <div>
       <div class="ft-brand">Heal Yourself</div>
       <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
-      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2026 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div class="ft-nav">
       <a href="index.html">Home</a>
@@ -1174,6 +1188,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       <a href="research.html">Research</a>
       <a href="about.html">About</a>
       <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Use</a>
       <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>

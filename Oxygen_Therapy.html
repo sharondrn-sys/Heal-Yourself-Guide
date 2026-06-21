@@ -21,7 +21,7 @@
 :root{
   --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
   --bg-nav:#2c3a2e;--bg-footer:#263028;
-  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#5c5144;--ink-ghost:#a89e8e;
   --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
   --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
   --honey:#a07830;--honey-pale:#f5eddb;
@@ -36,11 +36,11 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);pad
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
 .nav-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
 .nav-center{display:flex;align-items:center;}
-.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;}
 .nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 @media(max-width:400px){.nav-center{display:none;}}
 .nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
-.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
 .nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 .nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
 .nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
@@ -258,7 +258,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 .ft-disc{font-size:12px;color:rgba(212,201,168,0.65);line-height:1.7;}
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
-.ft-nav a{font-size:13px;color:rgba(212,201,168,0.55);text-decoration:none;transition:color 0.2s;}
+.ft-nav a{font-size:13px;color:rgba(212,201,168,0.80);text-decoration:none;transition:color 0.2s;}
 .ft-nav a:hover{color:#d4c9a8;}
 .ft-nav a.hi{color:var(--sage-nav);font-weight:600;}
 
@@ -274,6 +274,10 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 .source-list li::before{content:counter(src);font-family:'DM Mono',monospace;font-size:10px;font-weight:700;color:var(--sage);position:absolute;left:0;top:12px;}
 .citations-close{float:right;background:none;border:none;font-size:22px;cursor:pointer;color:var(--ink-light);}
 
+
+/* SKIP LINK */
+.skip-link{position:absolute;top:-60px;left:8px;background:var(--sage);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;z-index:1000;transition:top 0.2s;}
+.skip-link:focus{top:8px;}
 </style>
 <script type="application/ld+json">
 {
@@ -291,6 +295,8 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 
 <!-- NAV -->
 <nav>
@@ -304,44 +310,44 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       </button>
       <div class="nav-dropdown-menu">
         <div class="dd-group">
-          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
+          <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon" aria-hidden="true">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
           <div class="dd-subs">
-            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Full_Body_Detox_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Full_Body_Detox_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
+          <a href="Brain_Protocol.html"><span class="dd-icon" aria-hidden="true">🧠</span><span class="dd-label">Brain Protocol</span></a>
           <div class="dd-subs">
-            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Brain_Protocol_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Brain_Protocol_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
+          <a href="DMSO_Protocol.html"><span class="dd-icon" aria-hidden="true">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
           <div class="dd-subs">
-            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="DMSO_Shopping_List.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
           </div>
         </div>
         <div class="dd-group">
-          <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
+          <a href="Oxygen_Therapy.html"><span class="dd-icon" aria-hidden="true">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
           <div class="dd-subs">
-            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
-            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon">⚡</span><span class="dd-label">Ozone Therapy</span></a>
-            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
+            <a href="Oxygen_Therapy.html#h2o2" class="dd-sub"><span class="dd-icon" aria-hidden="true">💧</span><span class="dd-label">Hydrogen Peroxide</span></a>
+            <a href="Oxygen_Therapy.html#ozone" class="dd-sub"><span class="dd-icon" aria-hidden="true">⚡</span><span class="dd-label">Ozone Therapy</span></a>
+            <a href="Oxygen_Therapy.html#hbot" class="dd-sub"><span class="dd-icon" aria-hidden="true">🏥</span><span class="dd-label">Hyperbaric Oxygen</span></a>
           </div>
         </div>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
-        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
+        <a href="Hidden_Deficiencies.html"><span class="dd-icon" aria-hidden="true">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
+        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon" aria-hidden="true">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
         <div class="dd-group">
-          <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
+          <a href="Parkinsons_Protocol.html"><span class="dd-icon" aria-hidden="true">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
           <div class="dd-subs">
-            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">Daily Schedule</span></a>
-            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">Shopping List</span></a>
-            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">Must-Have List</span></a>
+            <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">📋</span><span class="dd-label">Daily Schedule</span></a>
+            <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">🛒</span><span class="dd-label">Shopping List</span></a>
+            <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon" aria-hidden="true">⭐</span><span class="dd-label">Must-Have List</span></a>
           </div>
         </div>
-        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
+        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon" aria-hidden="true">☰</span><span class="dd-label">All Protocols</span></a>
       </div>
     </div>
     <a href="research.html">Research</a>
@@ -361,7 +367,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="eyebrow"><span>🫁 Oxygen Therapy Protocol — Heal Yourself System</span></div>
   <h1>Oxygen Therapy<br><em>The Terrain They Don't Want You to Change</em></h1>
   <p class="hero-sub">Disease-causing microorganisms are anaerobic. They thrive where oxygen is absent. What happens when you flood the body with it? That question has been answered — and then suppressed — for over 170 years.</p>
@@ -382,6 +388,14 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   <div style="max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
     <div style="font-size:13px;color:#fff;line-height:1.6;"><strong>⚠️ Foundation Required:</strong> Oxygen therapy is most effective when the body's drainage pathways are open and the toxic burden is reduced. Begin with the Full Body Detox. The two work powerfully together.</div>
     <a href="Full_Body_Detox_Protocol.html" style="display:inline-block;background:#fff;color:var(--terra);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:9px 18px;border-radius:5px;white-space:nowrap;flex-shrink:0;">Do the Detox First →</a>
+  </div>
+</div>
+
+<!-- MEDICAL DISCLAIMER — moved above instructional content per safety review -->
+<div style="background:var(--terra-pale,#f5ede6);border-bottom:1px solid rgba(140,90,60,0.2);padding:16px 24px;">
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra,#8c5a3c);margin-bottom:6px;">⚠️ Medical Disclaimer — Read Before Using This Page</div>
+    <p style="font-size:13px;line-height:1.7;color:var(--ink-mid,#3d3426);margin:0;">This page covers oxygen therapy history, topical/oral-rinse hydrogen peroxide use, ozone, and hyperbaric oxygen — it is educational, not medical advice. <strong>Internal ingestion and nebulized inhalation of food-grade hydrogen peroxide are not covered or recommended on this page</strong> — these carry serious risks and an active FDA consumer warning exists against them. Only food-grade H₂O₂ is appropriate for the topical/oral-rinse uses described here, always diluted as specified — never apply or use concentrated (35%) H₂O₂ directly on skin or undiluted. If pregnant, breastfeeding, or managing a chronic condition, consult a practitioner before beginning any oxygen therapy.</p>
   </div>
 </div>
 
@@ -578,9 +592,8 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 <div class="jump-nav" id="part-b-nav">
   <div class="jump-nav-inner">
     <a href="#h2o2"><span class="jn-dot"></span>Hydrogen Peroxide</a>
-    <a href="#grades"><span class="jn-dot"></span>Grades & Safety</a>
-    <a href="#protocol"><span class="jn-dot"></span>How to Use</a>
-    <a href="#inhalation"><span class="jn-dot"></span>Inhalation</a>
+    <a href="#grades"><span class="jn-dot"></span>Safety Information</a>
+    <a href="#topical"><span class="jn-dot"></span>Topical & Rinse Use</a>
     <a href="#ozone"><span class="jn-dot"></span>Ozone Therapy</a>
     <a href="#hbot"><span class="jn-dot"></span>Hyperbaric Oxygen</a>
     <a href="#budget"><span class="jn-dot"></span>Budget Options</a>
@@ -590,7 +603,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 <!-- DAILY SCHEDULE + SHOPPING INTRO -->
 <div style="background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:20px 24px;">
   <div style="max-width:860px;margin:0 auto;">
-    <p style="font-size:13px;color:var(--ink-mid);margin-bottom:0;">📋 <strong>This protocol is self-contained on this page.</strong> The H₂O₂ protocol, inhalation method, ozone, and hyperbaric oxygen sections below are your complete practical guide. Use the print button at the bottom to save a copy.</p>
+    <p style="font-size:13px;color:var(--ink-mid);margin-bottom:0;">📋 <strong>This page covers H₂O₂ history and topical/oral-rinse use, plus ozone and hyperbaric oxygen.</strong> Internal ingestion and nebulized inhalation of food-grade H₂O₂ are not covered here — see the safety note below. Use the print button at the bottom to save a copy.</p>
   </div>
 </div>
 
@@ -610,7 +623,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:16px 0 24px;">
       <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Respiratory infections<br>Emphysema / COPD<br>Asthma support<br>Sinusitis<br>Influenza / viral infections</div>
       <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Gum disease<br>Candidiasis / fungal<br>Herpes simplex/zoster<br>Bacterial infections<br>Parasitic infections</div>
-      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Cancer (adjunct)<br>Cardiovascular disease<br>Diabetes Type II<br>Arthritis<br>Multiple sclerosis</div>
+      <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Cardiovascular disease<br>Diabetes Type II support<br>Arthritis<br>Multiple sclerosis</div>
       <div style="background:var(--bg-deep);border-radius:6px;padding:12px 14px;font-size:13px;color:var(--ink-mid);line-height:1.8;">Chronic fatigue<br>Migraine / headaches<br>Skin conditions / acne<br>Wound healing<br>Alcoholism support</div>
     </div>
 
@@ -630,121 +643,37 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 <section id="grades" class="sec sec-bg">
   <div class="inner">
     <div class="kicker kicker-terra">Critical Safety Information</div>
-    <h2 class="lh2">Grades of H₂O₂ — Only One Is for Internal Use</h2>
+    <h2 class="lh2">Grades of H₂O₂ — and Why Internal Use Is Not Covered Here</h2>
 
-    <p class="lp">This distinction is non-negotiable. The grade you use determines both safety and efficacy. Get this wrong and you introduce synthetic stabilisers directly into your bloodstream.</p>
-
-    <div class="grade-grid">
-      <div class="grade-row">
-        <div class="grade-label">3% Pharmaceutical</div>
-        <div class="grade-body"><strong>Drugstore grade. External use only.</strong> Contains stabilisers including acetanilide, phenol, sodium stannate, and tetrasodium phosphate. These should not be ingested. Safe for topical wound care, teeth whitening, and oral rinse.</div>
-      </div>
-      <div class="grade-row">
-        <div class="grade-label">6% Beautician</div>
-        <div class="grade-body"><strong>Hair bleaching grade. Not for internal use.</strong> Contains stabilisers and bleach agents.</div>
-      </div>
-      <div class="grade-row">
-        <div class="grade-label">30–32% Electronic</div>
-        <div class="grade-body"><strong>Industrial/electronics cleaning. Not for internal use.</strong> Contains stabilisers, not purified for biological use.</div>
-      </div>
-      <div class="grade-row" style="border:1px solid var(--sage-mid);background:var(--sage-pale);">
-        <div class="grade-label" style="color:var(--sage);font-weight:700;">35% Food Grade ✓</div>
-        <div class="grade-body"><strong>The only grade appropriate for internal therapeutic use.</strong> No synthetic stabilisers. Used commercially to sanitise food production equipment, sterilise juice packaging, and preserve dairy. Must be diluted before any internal use — 35% concentration causes burns on contact with skin and is dangerous if ingested undiluted. Handle with gloves. Store in freezer, labelled clearly, out of reach of children.</div>
-      </div>
-      <div class="grade-row">
-        <div class="grade-label">90%</div>
-        <div class="grade-body"><strong>Rocket fuel grade. No therapeutic application.</strong></div>
-      </div>
-    </div>
+    <p class="lp">Hydrogen peroxide is sold in several grades, and they are not interchangeable. Most people only ever encounter 3% pharmaceutical-grade — the brown bottle from the drugstore, intended for external use only. Higher concentrations exist for industrial, food-processing, and other non-consumer purposes and carry real handling risks at full strength.</p>
 
     <div class="critical-box">
-      <div class="warn-title">⚠️ The Real Risk — From Peer-Reviewed Medical Literature</div>
-      <div class="warn-text">Concentrated hydrogen peroxide (35%) ingested incorrectly is documented in peer-reviewed emergency medicine literature as causing venous gas embolism, haemorrhagic gastritis, gastrointestinal bleeding, and death. A 2022 systematic review analysed 126 reported cases — 17 deaths occurred, 13 associated with high-concentration exposures. Most serious events were accidental ingestions of undiluted or insufficiently diluted product. Properly diluted therapeutic protocols — e.g. 3 drops of 35% in 8oz distilled water — bring the final concentration to approximately 0.1%, which is in a completely different risk category. The risk is real at concentration, and minimal at correct therapeutic dilution. Both truths must be held together. Do not let the risk of concentrated H₂O₂ make you dismiss the safety of diluted therapeutic use — and do not let enthusiasm for the therapy make you dismiss the need for exact dilution.</div>
+      <div class="warn-title">⚠️ This Page Does Not Provide an Internal-Use Protocol</div>
+      <div class="warn-text">The U.S. FDA maintains an active consumer warning specifically naming "35 Percent Food Grade Hydrogen Peroxide," stating that drinking it can cause serious harm or death — and explicitly that this holds true even when a product is used according to its label or a published "protocol." Peer-reviewed emergency medicine case literature documents venous gas embolism, gastrointestinal haemorrhage, and death from internal use at this concentration, including in people who report following diluted home protocols rather than drinking it undiluted by accident. Given an active, named regulatory warning on this exact product and use case, we are not providing dosing instructions for internal ingestion or nebulized inhalation of food-grade hydrogen peroxide on this page. The historical and research context below is presented for that reason only — as context, not as instructions to follow.</div>
     </div>
+
+    <p class="lp">If you are researching internal H₂O₂ protocols independently, treat any source — including older holistic-health literature — with the same scrutiny you would want applied to a pharmaceutical claim, and discuss it with a physician familiar with your full medical history before considering it, given the documented risk profile above.</p>
   </div>
 </section>
 
-<!-- INTERNAL PROTOCOL -->
-<section id="protocol" class="sec sec-stone">
+<!-- TOPICAL & ORAL RINSE USES -->
+<section id="topical" class="sec sec-warm">
   <div class="inner">
-    <div class="kicker">Oral Protocol</div>
-    <h2 class="lh2">The Escalating Drops Protocol — Carefully</h2>
+    <div class="kicker">What Remains Well-Supported</div>
+    <h2 class="lh2">Topical and Oral Rinse Use — A Smaller, Better-Documented Category</h2>
 
-    <button class="print-btn" onclick="window.print()">🖨 Print This Protocol</button>
+    <p class="lp">Separate from internal ingestion, dilute 3% hydrogen peroxide has a real and much less controversial history as a topical antiseptic and oral rinse — this is the same grade and concentration sold in any drugstore.</p>
 
-    <p class="lp">The oral internal protocol is based on decades of practitioner experience, most thoroughly documented by Dr. David Williams and Dr. William Campbell Douglass. It uses 35% food-grade hydrogen peroxide, diluted in distilled water (never tap — chlorine reacts with H₂O₂), taken on an empty stomach at least one hour before or three hours after eating.</p>
-
-    <div class="warn-box">
-      <div class="warn-title">Before You Begin</div>
-      <div class="warn-text">Use only distilled water. Never tap, filtered, or mineral water — chlorine and minerals react with H₂O₂. Take on an empty stomach only — H₂O₂ reacts with food bacteria in the stomach, causing excessive foaming and nausea. Store 35% in a clearly labelled glass bottle in the freezer, out of children's reach. Never ingest undiluted at any concentration above approximately 3%.</div>
-    </div>
-
-    <table class="dose-table">
-      <tr><th>Day</th><th>Drops of 35% H₂O₂</th><th>In 8oz Distilled Water</th><th>Times Daily</th></tr>
-      <tr><td>1–2</td><td>3</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>3–4</td><td>5</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>5–6</td><td>7</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>7–8</td><td>9</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>9–10</td><td>11</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>11–12</td><td>13</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>13–14</td><td>15</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>15–16</td><td>17</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>17–18</td><td>19</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>19–21</td><td>21–25</td><td>240ml</td><td>3×</td></tr>
-      <tr><td>Maintenance</td><td>3–5</td><td>240ml</td><td>3×</td></tr>
-    </table>
-
-    <p class="lp">After reaching 25 drops, reduce by one drop per day back down to a maintenance dose of 3–5 drops three times daily. For serious conditions, some practitioners maintain 25 drops twice daily for up to six months before tapering. Do not rush the escalation — the gradual build is intentional and allows the body to adjust.</p>
-
-    <h3 class="lh3">The Taste Problem</h3>
-    <p class="lp">At higher drop counts, the solution tastes strongly of bleach. Some people find this genuinely difficult. Solutions: dilute in a full 8–12oz of water rather than less; add aloe vera gel (pure, no additives) as a natural flavour buffer; dilute in a small amount of watermelon juice or coconut water. Do not use fruit juice with pulp — bacteria in the juice react with H₂O₂.</p>
-
-    <h3 class="lh3">What to Expect</h3>
     <ul class="checklist">
-      <li><strong>Detox reaction (Herxheimer response)</strong> — some people experience nausea, fatigue, loose stools, or flu-like symptoms during the escalation phase. This is the body processing dead pathogenic cells and mobilising toxins. It is more common in people with significant pathogen load. Reduce the dosage by a step or two if this is severe, but do not stop entirely.</li>
-      <li><strong>Skin breakout</strong> — some users experience temporary acne or boils as toxins exit through the skin. Usually resolves within days.</li>
-      <li><strong>Increased energy</strong> — many people report a noticeable increase in energy and clarity, sometimes within the first week. This is the mitochondrial oxygen boost in action.</li>
-      <li><strong>Nausea from food proximity</strong> — if you accidentally take H₂O₂ within two hours of eating, nausea and foaming will result. Not dangerous but unpleasant. Always on empty stomach.</li>
-    </ul>
-
-    <div class="note-box">
-      <div class="warn-title">💰 Budget Note</div>
-      <div class="warn-text">35% food-grade hydrogen peroxide costs approximately $13 for a 16oz bottle. The maintenance dose of 3 drops three times daily costs approximately 1.5 cents per day. The full escalation protocol costs under 12 cents per day at maximum dose. This is one of the most affordable therapies on this entire site.</div>
-    </div>
-  </div>
-</section>
-
-<!-- INHALATION METHOD -->
-<section id="inhalation" class="sec sec-warm">
-  <div class="inner">
-    <div class="kicker kicker-honey">The Inhalation Method</div>
-    <h2 class="lh2">Bill Munro's Method — Direct Delivery to the Lungs</h2>
-
-    <p class="lp">Bill Munro of Waterford, Michigan, developed and documented a simple inhalation method using a nasal spray pump filled with 3% hydrogen peroxide solution. He used this method for over 13 years and reported using it during a simultaneous bout with melanoma and prostate cancer. His self-reported outcomes are anecdotal — but the method has been adopted by hundreds of thousands of people globally, with substantial positive testimony particularly for respiratory conditions, colds, flu, and sinusitis.</p>
-
-    <p class="lp">The inhalation method delivers H₂O₂ directly to the mucous membranes of the mouth, throat, and lungs — the primary interface where respiratory pathogens establish themselves. At 3% concentration, the H₂O₂ is absorbed through the lung tissue into the bloodstream, providing both local antimicrobial action and systemic oxygenation. It avoids the gastric reaction that oral ingestion sometimes causes.</p>
-
-    <h3 class="lh3">How to Do It — Nasal Spray Method</h3>
-    <ul class="checklist">
-      <li><strong>Use only 3% food-grade H₂O₂</strong> (dilute 35% food-grade: 1 part H₂O₂ to 11 parts distilled water). Do NOT use the 3% drugstore pharmaceutical grade — it contains synthetic stabilisers.</li>
-      <li><strong>Fill a clean nasal spray pump</strong> with the 3% solution. Wash a purchased pump thoroughly before use, or purchase a clean empty spray bottle.</li>
-      <li><strong>Open your mouth wide</strong>, direct the spray to the back of the throat, and pump 5–10 times while inhaling deeply to draw the mist into the lungs.</li>
-      <li><strong>Frequency:</strong> Morning and night for maintenance. Every 4–6 hours at first sign of illness. Every 2 hours during active viral infection. Most users report viral symptoms resolving within 36–48 hours.</li>
-      <li><strong>Nebuliser option:</strong> 3ml of 3% food-grade H₂O₂ in a standard nebuliser is a more thorough method, delivering a fine mist deeper into the airways. Used by practitioners for respiratory conditions including COPD and emphysema. Some add 1 drop of Lugol's iodine to the nebuliser solution for added antimicrobial effect.</li>
+      <li><strong>Oral rinse and gum health</strong> — 3% H₂O₂ used as a diluted mouthwash (commonly mixed roughly 1:1 with water) has documented use in dental literature for gum health and as an antimicrobial rinse. Dentist Dr. Paul Cummings (University of North Carolina) reported strong outcomes treating periodontal patients with H₂O₂ rinse protocols as part of dental hygiene practice. Spit out after rinsing — do not swallow.</li>
+      <li><strong>Topical skin use</strong> — 3% H₂O₂ applied with a cotton ball is a long-established topical antiseptic for minor cuts and skin concerns. Standard drugstore use, no special dilution needed.</li>
+      <li><strong>Foot soak</strong> — diluted 3% H₂O₂ in a foot bath is used topically for fungal skin conditions. External use only, standard precautions for any topical antiseptic.</li>
     </ul>
 
     <div class="warn-box">
-      <div class="warn-title">Caution — Start Low</div>
-      <div class="warn-text">Some people find the 3% solution strong for direct inhalation and prefer to dilute further: 1 part 3% solution to 1 part distilled water (giving approximately 1.5%). Start with fewer pumps and work up. People with reactive airways or COPD should begin with the most dilute version and assess carefully. If throat tightening or significant coughing occurs, dilute further or discontinue.</div>
+      <div class="warn-title">Keep These Separate</div>
+      <div class="warn-text">Topical and oral-rinse use of standard 3% drugstore-grade H₂O₂ is a fundamentally different risk category from ingesting or nebulizing higher-concentration "food grade" product — do not treat the safety profile of one as evidence for the safety of the other.</div>
     </div>
-
-    <h3 class="lh3">Topical Uses of 3% H₂O₂</h3>
-    <ul class="checklist">
-      <li><strong>Oral rinse and teeth</strong> — 3% H₂O₂ used as a mouthwash addresses gum disease, bacterial infections, and whitens teeth. Dentist Dr. Paul Cummings (University of North Carolina) reported a 98% success rate treating 1,000 periodontal patients with H₂O₂ therapy, stating it was more effective than surgery.</li>
-      <li><strong>Skin conditions</strong> — apply 3% H₂O₂ with cotton ball to acne, fungal infections, and slow-healing wounds. Well-documented antimicrobial action.</li>
-      <li><strong>Bath soak</strong> — add 1–8 pints of 3% H₂O₂ to a warm bath. Absorbed transdermally. Some users report return of hair colour with regular use at 1 pint of 35% in a full tub — likely related to catalase enzyme interaction with melanin.</li>
-      <li><strong>Foot soak</strong> — 3% H₂O₂ full strength in a foot bath for athlete's foot and fungal conditions. Diabetics have used diluted foot baths (1 pint 3% per gallon warm water) for circulation support.</li>
-    </ul>
   </div>
 </section>
 
@@ -829,7 +758,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 
     <div class="note-box">
       <div class="warn-title">💰 Budget Reality</div>
-      <div class="warn-text">Full HBOT is expensive. For people without access to HBOT, the most accessible oxygen therapy with a genuine evidence base is the H₂O₂ inhalation method — particularly via nebuliser for respiratory benefit, and the oral protocol for systemic effect. These are not equivalent to HBOT, but they are not without value either. Deep breathing practice, regular physical movement, and chlorophyll-rich foods (spirulina, chlorella, leafy greens) all support haemoglobin synthesis and oxygen utilisation at zero cost.</div>
+      <div class="warn-text">Full HBOT is expensive. For most people, the most accessible starting point is the free and low-cost foundation below — deep breathing, movement, and chlorophyll-rich foods all support haemoglobin synthesis and oxygen utilisation at zero cost. Ozonated oil (topical only) is the lowest-cost equipment-free option with a genuine evidence base for external use. See the safety note above regarding internal or nebulized hydrogen peroxide.</div>
     </div>
   </div>
 </section>
@@ -847,8 +776,6 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       <li><strong>Physical movement — free.</strong> Even a 30-minute walk outdoors significantly improves mitochondrial density and oxygen utilisation over time. Nature environments typically have higher oxygen content than urban interiors.</li>
       <li><strong>Sun-charged clean water — very low cost.</strong> Placing water in a glass container in direct sunlight increases dissolved oxygen via photolysis. Water stored in dark or plastic containers loses dissolved oxygen over time.</li>
       <li><strong>Chlorophyll-rich foods — very low cost.</strong> Spirulina, chlorella, dark leafy greens, and wheatgrass all support haemoglobin synthesis and oxygen-carrying capacity of blood. A tablespoon of spirulina daily costs pennies.</li>
-      <li><strong>35% food-grade H₂O₂ oral protocol — 1.5 cents per day</strong> at maintenance dose. The full escalation costs under 12 cents per day maximum. A 16oz bottle ($13 approximately) will last months at maintenance dose.</li>
-      <li><strong>H₂O₂ inhalation via nasal spray</strong> — the spray bottle is under $2 and a bottle of 35% food-grade H₂O₂ will last many months for inhalation use. One of the lowest-cost therapeutic interventions anywhere in this guide.</li>
       <li><strong>Ozonated olive oil (topical)</strong> — available pre-made online for $15–30. No equipment required. Useful for skin, wounds, fungal infections, and oral health.</li>
       <li><strong>Stress reduction — free.</strong> The appendix of the book this research draws from makes the most important point of all: if you are in chronic sympathetic nervous system activation (fight-or-flight mode), your cells are closed. They cannot receive oxygen regardless of how much you provide. Meditation, breathwork, time in nature, and addressing the beliefs that create chronic stress are not optional additions to this protocol. They may be the most important part.</li>
     </ul>
@@ -941,7 +868,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <div>
       <div class="ft-brand">Heal Yourself</div>
       <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
-      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2026 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div class="ft-nav">
       <a href="index.html">Home</a>
@@ -950,6 +877,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       <a href="research.html">Research</a>
       <a href="about.html">About</a>
       <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Use</a>
       <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
