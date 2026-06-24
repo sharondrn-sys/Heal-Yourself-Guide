@@ -1,3 +1,10 @@
 /drafts/
 /ops/
 /sops/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
