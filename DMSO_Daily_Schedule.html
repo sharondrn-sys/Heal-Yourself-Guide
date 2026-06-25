@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DMSO Protocol — Daily Schedule | Heal Yourself</title>
 <meta name="description" content="Day-by-day DMSO application schedule: patch testing, progressive concentration build-up from 25% to 70%, MSM pairing, and a printable daily checklist.">
-<link rel="canonical" href="https://sharondrn-sys.github.io/Heal-Yourself-Guide/DMSO_Daily_Schedule.html">
+<link rel="canonical" href="https://healyourselfguide.github.io/Heal-Yourself-Guide/DMSO_Daily_Schedule.html">
 <meta property="og:title" content="DMSO Protocol — Daily Schedule | Heal Yourself">
 <meta property="og:description" content="Day-by-day DMSO application schedule: patch testing, progressive concentration build-up from 25% to 70%, MSM pairing, and a printable daily checklist.">
-<meta property="og:url" content="https://sharondrn-sys.github.io/Heal-Yourself-Guide/DMSO_Daily_Schedule.html">
+<meta property="og:url" content="https://healyourselfguide.github.io/Heal-Yourself-Guide/DMSO_Daily_Schedule.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Heal Yourself Guide">
 <meta name="twitter:card" content="summary">
@@ -20,7 +20,7 @@
 :root{
   --bg:#f4efe6;--bg-warm:#faf7f2;--bg-deep:#ede7db;--bg-stone:#e5dfd4;
   --bg-nav:#2c3a2e;--bg-footer:#263028;
-  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#7a6e5c;--ink-ghost:#a89e8e;
+  --ink:#1e1a14;--ink-mid:#3d3426;--ink-light:#5c5144;--ink-ghost:#a89e8e;
   --sage:#3d6b4a;--sage-mid:#5a8c6a;--sage-light:#7aac8a;--sage-pale:#e4f0e8;--sage-nav:#8ab89a;
   --terra:#8c5a3c;--terra-light:#b07a58;--terra-pale:#f5ede6;
   --honey:#a07830;--honey-pale:#f5eddb;
@@ -28,16 +28,16 @@
   --nav-h:52px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);overflow-x:hidden;max-width:100vw;}
 section[id]{scroll-margin-top:72px;}
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-nav);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
 .nav-logo{font-family:'Playfair Display',serif;font-size:17px;color:#d4c9a8;text-decoration:none;letter-spacing:0.02em;}
 .nav-center{display:flex;align-items:center;}
-.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
+.nav-center a{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;white-space:nowrap;}
 .nav-center a:hover{color:var(--sage-nav);}
 /* DROPDOWN */
 .nav-dropdown{position:relative;display:flex;align-items:center;height:var(--nav-h);}
-.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.65);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
+.nav-dropdown-toggle{font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-decoration:none;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;text-transform:uppercase;transition:color 0.2s;border-bottom:2px solid transparent;white-space:nowrap;cursor:pointer;gap:5px;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit;}
 .nav-dropdown-toggle:hover,.nav-dropdown:hover .nav-dropdown-toggle{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 .nav-dropdown-toggle svg{width:8px;height:8px;transition:transform 0.2s;opacity:0.5;}
 .nav-dropdown.open .nav-dropdown-toggle svg{transform:rotate(180deg);}
@@ -134,7 +134,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 .share-pill svg{width:22px;height:22px;fill:#fff;}
 .share-float-label{font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);writing-mode:vertical-rl;margin-bottom:6px;opacity:0.7;}
 @media(max-width:768px){.share-float-label{display:none;}}
-@media print{nav,footer,.share-float,.jump-nav,.no-print{display:none!important;body{padding-top:0!important;}.hero{padding-top:16px!important;}}body{padding-top:0!important;}@page{margin:15mm;size:A4;}}
+@media print{nav,footer,.share-float,.jump-nav,.no-print{display:none!important;body{padding-top:0!important;max-width:100vw;overflow-x:hidden;}.hero{padding-top:16px!important;}}body{padding-top:0!important;max-width:100vw;overflow-x:hidden;}@page{margin:15mm;size:A4;}}
 
 /* PHASE TAB SYSTEM */
 .phase-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:0;overflow-x:auto;scrollbar-width:none;justify-content:center;}
@@ -171,9 +171,42 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 .ft-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
 @media(max-width:560px){.ft-nav{align-items:flex-start;}}
 
+.skip-link{position:absolute;top:-60px;left:8px;background:var(--sage);color:#fff;padding:10px 18px;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;z-index:1000;transition:top 0.2s;}
+.skip-link:focus{top:8px;}
+/* MOBILE HAMBURGER MENU */
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px 8px;font-size:26px;color:#d4c9a8;line-height:1;flex-shrink:0;letter-spacing:0;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:98;opacity:0;transition:opacity 0.25s;}
+.nav-overlay.open{display:block;opacity:1;}
+@media(max-width:768px){
+  nav{padding:0 16px;}
+  .nav-hamburger{display:flex;}
+  .nav-center{
+    position:fixed;top:var(--nav-h);right:0;bottom:0;width:min(260px,65vw);
+    background:var(--bg-nav);flex-direction:column;align-items:stretch;
+    padding:8px 0 24px;overflow-y:auto;z-index:99;
+    transform:translateX(100%);transition:transform 0.28s ease;
+    border-left:1px solid rgba(138,184,154,0.2);
+    box-shadow:-4px 0 20px rgba(0,0,0,0.22);
+  }
+  .nav-center.open{transform:translateX(0);}
+  .nav-center a{height:auto;padding:14px 24px;border-bottom:1px solid rgba(138,184,154,0.08);justify-content:flex-start;}
+  .nav-center a:hover{border-bottom-color:rgba(138,184,154,0.08);}
+  .nav-dropdown{flex-direction:column;align-items:stretch;height:auto;}
+  .nav-dropdown-toggle{height:auto;padding:14px 24px;justify-content:space-between;width:100%;border-bottom:1px solid rgba(138,184,154,0.08);}
+  .nav-dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;}
+  .nav-dropdown.open .nav-dropdown-menu{max-height:2000px;}
+  .nav-dropdown-menu>a,.dd-group>a{padding-left:36px;}
+  .dd-group>a::after{display:none;}
+  .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
+  .dd-subs a.dd-sub{padding-left:52px!important;}
+}
 </style>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav>
   <a href="index.html" class="nav-logo">Heal Yourself</a>
@@ -237,7 +270,9 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <a href="research.html">Research</a>
     <a href="about.html">About</a>
   </div>
+<button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">&#9776;</button>
 </nav>
+<div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
 
 <!-- FLOATING SHARE BAR -->
 <div class="share-float" aria-label="Share this guide">
@@ -639,7 +674,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <div>
       <div class="ft-brand">Heal Yourself</div>
       <p class="ft-disc">This guide is for educational purposes only. It does not replace the guidance of a qualified healthcare practitioner. The author is not a doctor.</p>
-      <p class="ft-disc" style="margin-top:6px;">© 2025 Heal Yourself Guide. All rights reserved.</p>
+      <p class="ft-disc" style="margin-top:6px;">© 2026 Heal Yourself Guide. All rights reserved.</p>
     </div>
     <div class="ft-nav">
       <a href="index.html">Home</a>
@@ -648,6 +683,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       <a href="research.html">Research</a>
       <a href="about.html">About</a>
       <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html">Terms of Use</a>
       <a href="mailto:healyourselfguide101@gmail.com">Contact</a>
     </div>
   </div>
@@ -720,14 +756,14 @@ function printWeekOnly(weekId, title, subtitle){
     '<title>DMSO Schedule — ' + title + '</title>' +
     '<style>' +
     '*{box-sizing:border-box;margin:0;padding:0;}' +
-    'body{font-family:Georgia,serif;font-size:12px;color:#1e1a14;padding:20px 28px;background:#fff;}' +
+    'body{font-family:Georgia,serif;font-size:12px;color:#1e1a14;padding:20px 28px;background:#fff;max-width:100vw;overflow-x:hidden;}' +
     'h1{font-size:17px;font-weight:700;color:#3d6b4a;margin-bottom:2px;}' +
-    '.sub{font-size:10px;color:#7a6e5c;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #ddd;}' +
+    '.sub{font-size:10px;color:#5c5144;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid #ddd;}' +
     '.phase-header{margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #ddd;}' +
     '.phase-kicker{font-size:9px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#3d6b4a;margin-bottom:3px;}' +
     '.phase-title{font-size:18px;font-weight:700;color:#1e1a14;}' +
     '.phase-title em{color:#3d6b4a;}' +
-    '.phase-days{font-size:11px;color:#7a6e5c;margin-top:3px;}' +
+    '.phase-days{font-size:11px;color:#5c5144;margin-top:3px;}' +
     '.phase-header-top{display:flex;justify-content:space-between;}' +
     '.no-print,.print-btn,.pdf-btn{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:0.05em;font-family:inherit;color:var(--terra);background:var(--terra-pale);border:1px solid rgba(140,90,60,0.2);border-radius:5px;padding:6px 12px;cursor:pointer;transition:all 0.2s;text-decoration:none;white-space:nowrap;}' +
     '.week-card{background:#f9f7f3;border:1px solid #e8e4dc;border-radius:6px;padding:14px 16px;margin-bottom:12px;}' +
@@ -752,8 +788,9 @@ function printWeekOnly(weekId, title, subtitle){
     '.note-box-title{font-weight:700;color:#3d6b4a;margin-bottom:5px;}' +
     '.section-header{display:none;}.section-desc{display:none;}' +
     '.footer{margin-top:16px;padding-top:10px;border-top:1px solid #ddd;font-size:9px;color:#a89e8e;display:flex;justify-content:space-between;}' +
-    '@media print{@page{margin:10mm;size:A4;}body{padding:10px 16px;}}' +
-    '</style></head><body>' +
+    '@media print{@page{margin:10mm;size:A4;}body{padding:10px 16px;max-width:100vw;overflow-x:hidden;}}' +
+    '</style></head><body>
+<a href="#main-content" class="skip-link">Skip to main content</a>' +
     '<h1>DMSO Protocol — ' + title + '</h1>' +
     '<div class="sub">' + subtitle + ' &nbsp;&middot;&nbsp; healyourselfguide.com &nbsp;&middot;&nbsp; For educational purposes only</div>' +
     content +
