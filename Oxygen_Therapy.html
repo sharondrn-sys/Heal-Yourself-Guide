@@ -474,7 +474,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 <div style="background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:8px 24px;">
   <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
     <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-ghost);flex-shrink:0;">Jump to:</span>
-    <a href="#part-b" style="display:inline-flex;align-items:center;gap:5px;background:var(--terra);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">Part B — Do It →</a>
+    <a href="#part-b" id="companion-partb-link" style="display:inline-flex;align-items:center;gap:5px;background:var(--terra);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">Part B — Do It →</a>
   </div>
 </div>
 
@@ -945,8 +945,15 @@ const stickyLink = document.getElementById('sticky-partb-link');
 const partAEl = document.getElementById('part-a');
 const heroEl = document.querySelector('.hero');
 if(stickyBtn && stickyLink && partAEl){
-  const setPartB = () => { stickyLink.href='#part-b'; stickyLink.textContent='Part B — Do It →'; stickyLink.style.background='var(--terra)'; stickyLink.style.boxShadow='0 4px 20px rgba(140,90,60,0.35)'; };
-  const setPartA = () => { stickyLink.href='#part-a'; stickyLink.textContent='← Back to Part A'; stickyLink.style.background='var(--sage)'; stickyLink.style.boxShadow='0 4px 20px rgba(61,107,74,0.35)'; };
+  const companionLink = document.getElementById('companion-partb-link');
+  const setPartB = () => {
+    stickyLink.href='#part-b'; stickyLink.textContent='Part B — Do It →'; stickyLink.style.background='var(--terra)'; stickyLink.style.boxShadow='0 4px 20px rgba(140,90,60,0.35)';
+    if(companionLink){ companionLink.href='#part-b'; companionLink.textContent='Part B — Do It →'; companionLink.style.background='var(--terra)'; }
+  };
+  const setPartA = () => {
+    stickyLink.href='#part-a'; stickyLink.textContent='← Back to Part A'; stickyLink.style.background='var(--sage)'; stickyLink.style.boxShadow='0 4px 20px rgba(61,107,74,0.35)';
+    if(companionLink){ companionLink.href='#part-a'; companionLink.textContent='← Back to Part A'; companionLink.style.background='var(--sage)'; }
+  };
   const partBEl = document.getElementById('h2o2');
   const checkPartBPosition = () => {
     if(!partBEl) return;
