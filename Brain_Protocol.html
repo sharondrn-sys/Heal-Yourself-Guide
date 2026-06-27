@@ -477,7 +477,33 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
   .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
+.sticky-partb{position:fixed;right:20px;bottom:32px;z-index:95;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.sticky-partb.visible{opacity:1;pointer-events:auto;}
+.sticky-partb-btn{display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;padding:12px 18px;border-radius:8px;box-shadow:0 4px 20px rgba(140,90,60,0.35);transition:transform 0.2s,box-shadow 0.2s,background 0.2s;}
+.sticky-partb-btn:hover{transform:translateY(-2px);}
+@media(max-width:600px){.sticky-partb{right:12px;bottom:70px;}}
+@media print{.sticky-partb{display:none!important;}}
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "name": "Brain Protocol — Heal Yourself",
+    "description": "A natural protocol to support neurological health, cognitive clarity, and brain repair through targeted supplementation and lifestyle.",
+    "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/Brain_Protocol.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sharona",
+      "jobTitle": "Former Pharmaceutical QA Internal Auditor"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heal Yourself Guide",
+      "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/"
+    },
+    "dateModified": "2026-06"
+  }
+  </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -603,6 +629,11 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
     <div style="font-size:13px;color:#fff;line-height:1.6;"><strong>⚠️ Foundation Required:</strong> This protocol works only on a body that has completed the Full Body Detox. The detox removes the toxins and parasites that are directly driving neurological decline. Without it, this stack builds on sand.</div>
     <a href="Full_Body_Detox_Protocol.html" style="display:inline-block;background:#fff;color:var(--terra);font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:9px 18px;border-radius:5px;white-space:nowrap;flex-shrink:0;">Start There First →</a>
   </div>
+</div>
+
+<!-- STICKY CONTEXT BUTTON -->
+<div class="sticky-partb" id="sticky-partb">
+  <a href="#part-b" class="sticky-partb-btn" id="sticky-partb-link">Part B — Do It →</a>
 </div>
 
 <!-- ═══ PART A — UNDERSTAND IT ═══ -->
@@ -1264,6 +1295,54 @@ const observerB = new IntersectionObserver((entries) => {
   });
 }, {rootMargin:'-25% 0px -65% 0px'});
 chapterSectionsB.forEach(s => observerB.observe(s));
+
+// Context-aware sticky button
+const stickyBtn = document.getElementById('sticky-partb');
+const stickyLink = document.getElementById('sticky-partb-link');
+const partAEl = document.getElementById('part-a');
+const heroEl = document.querySelector('.hero');
+if(stickyBtn && stickyLink && partAEl){
+  const setPartB = () => { stickyLink.href='#part-b'; stickyLink.textContent='Part B — Do It →'; stickyLink.style.background='var(--terra)'; stickyLink.style.boxShadow='0 4px 20px rgba(140,90,60,0.35)'; };
+  const setPartA = () => { stickyLink.href='#part-a'; stickyLink.textContent='← Back to Part A'; stickyLink.style.background='var(--sage)'; stickyLink.style.boxShadow='0 4px 20px rgba(61,107,74,0.35)'; };
+  const partAObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(!entry.isIntersecting && entry.boundingClientRect.top < 0){ setPartA(); } else { setPartB(); }
+    });
+  }, {threshold:0});
+  partAObs.observe(partAEl);
+  const showAfterHero = () => {
+    const heroH = heroEl ? heroEl.offsetHeight + heroEl.offsetTop : 300;
+    stickyBtn.classList.toggle('visible', window.scrollY > heroH);
+  };
+  window.addEventListener('scroll', showAfterHero, {passive:true});
+  showAfterHero();
+}
+</script>
+<script>
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
+      closeMobileNav();
+    }
+  });
+});
 </script>
 </body>
 </html>

@@ -204,6 +204,26 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "DMSO Protocol Daily Schedule — Heal Yourself",
+    "description": "Exact daily application schedule for the DMSO Protocol — timing, dilution, and application windows.",
+    "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/DMSO_Daily_Schedule.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sharona",
+      "jobTitle": "Former Pharmaceutical QA Internal Auditor"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heal Yourself Guide",
+      "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/"
+    },
+    "dateModified": "2026-06"
+  }
+  </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -813,7 +833,33 @@ function printWeekOnly(weekId, title, subtitle){
     '<div class="sub">' + subtitle + ' &nbsp;&middot;&nbsp; healyourselfguide.com &nbsp;&middot;&nbsp; For educational purposes only</div>' +
     content +
     '<div class="footer"><span>Heal Yourself Guide &nbsp;&middot;&nbsp; healyourselfguide.com</span><span>iHerb code: GUW6132</span></div>' +
-    '</body></html>';
+    '<script>
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
+      closeMobileNav();
+    }
+  });
+});
+</script>
+</body></html>';
   win.document.write(html);
   win.document.close();
   win.focus();

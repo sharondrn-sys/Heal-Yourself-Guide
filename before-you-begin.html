@@ -278,6 +278,26 @@ sup.cite{font-size:9px;font-weight:700;color:var(--sage);vertical-align:super;li
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Before You Begin — Heal Yourself",
+    "description": "Essential reading before starting any protocol. How the guide works, the order of protocols, and what to expect.",
+    "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/before-you-begin.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sharona",
+      "jobTitle": "Former Pharmaceutical QA Internal Auditor"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heal Yourself Guide",
+      "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/"
+    },
+    "dateModified": "2026-06"
+  }
+  </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -781,6 +801,32 @@ const observer=new IntersectionObserver(entries=>{
   });
 },{rootMargin:'-30% 0px -60% 0px'});
 sections.forEach(s=>observer.observe(s));
+</script>
+<script>
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
+      closeMobileNav();
+    }
+  });
+});
 </script>
 </body>
 </html>

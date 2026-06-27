@@ -347,6 +347,26 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Dr. Sebi Alkaline Protocol Daily Schedule — Heal Yourself",
+    "description": "Hour-by-hour daily schedule for the Dr. Sebi alkaline protocol — herb timing, meal plans, and water pacing.",
+    "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sharona",
+      "jobTitle": "Former Pharmaceutical QA Internal Auditor"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heal Yourself Guide",
+      "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/"
+    },
+    "dateModified": "2026-06"
+  }
+  </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -935,6 +955,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
       <a href="Dr_Sebi_Alkaline_Protocol_Shopping_List.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:6px;font-size:13px;font-weight:700;background:var(--bg-warm);color:var(--ink-mid);border:1px solid var(--border);text-decoration:none;">🛒 Get the Herbs</a>
       <a href="Dr_Sebi_Alkaline_Protocol.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:6px;font-size:13px;font-weight:700;background:var(--bg-warm);color:var(--ink-mid);border:1px solid var(--border);text-decoration:none;">📖 Full Protocol</a>
     </div>
+    <p style="font-size:13px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">All herbs in this protocol are available on iHerb. Use code <strong style="font-family:'DM Mono',monospace;color:var(--honey);">GUW6132</strong> at checkout — new customers save 10%, returning customers save 5%. <a href="https://www.iherb.com/?rcode=GUW6132" target="_blank" rel="noopener" style="color:var(--sage);font-weight:600;text-decoration:none;">Shop iHerb →</a></p>
     <p style="font-size:13px;color:var(--ink-light);margin-bottom:20px;">Know someone this could help?</p>
     <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
       <a id="wa-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:6px;font-size:13px;font-weight:700;background:#25D366;color:#fff;text-decoration:none;">
@@ -950,7 +971,7 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 </section>
 
 
-<script id="mcjs-sebi">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c3e0fa55054efc8787d2cd7c6/47c72440170a91d68e1cc233b.js");</script>
 
 <footer>
   <div class="ft-inner">
@@ -1004,6 +1025,32 @@ document.addEventListener('click',function(e){
     if(href===path)a.classList.add('hi');
   });
 })();
+</script>
+<script>
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
+      closeMobileNav();
+    }
+  });
+});
 </script>
 </body>
 </html>

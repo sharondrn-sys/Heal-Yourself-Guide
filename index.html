@@ -340,6 +340,26 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Heal Yourself — What the Doctor Won't Tell You",
+    "description": "Free holistic healing protocols covering detox, brain health, DMSO, hidden deficiencies, and more. Written by a former pharmaceutical QA auditor.",
+    "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/index.html",
+    "author": {
+      "@type": "Person",
+      "name": "Sharona",
+      "jobTitle": "Former Pharmaceutical QA Internal Auditor"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Heal Yourself Guide",
+      "url": "https://healyourselfguide.github.io/Heal-Yourself-Guide/"
+    },
+    "dateModified": "2026-06"
+  }
+  </script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -1003,6 +1023,32 @@ const secObs=new IntersectionObserver(entries=>{
   });
 },{rootMargin:'-20% 0px -70% 0px'});
 document.querySelectorAll('section[id]').forEach(s=>secObs.observe(s));
+</script>
+<script>
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
+      closeMobileNav();
+    }
+  });
+});
 </script>
 </body>
 </html>
