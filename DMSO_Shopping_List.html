@@ -844,7 +844,14 @@ function printListOnly(){
     '<div class="sub">healyourselfguide.com &nbsp;&middot;&nbsp; Use code <strong>GUW6132</strong> at iHerb checkout &nbsp;&middot;&nbsp; For educational purposes only</div>' +
     html +
     '<div class="footer"><span>Heal Yourself Guide &nbsp;&middot;&nbsp; healyourselfguide.com</span><span>iHerb code: GUW6132 (10% off new customers)</span></div>' +
-    '<script>
+    ';
+  win.document.write(htmlDoc);
+  win.document.close();
+  win.focus();
+  setTimeout(function(){ win.print(); win.close(); }, 400);
+}
+</script>
+<script>
 function toggleMobileNav(){
   var center=document.querySelector('.nav-center');
   var ham=document.getElementById('navHamburger');
@@ -869,13 +876,6 @@ document.querySelectorAll('.nav-center a').forEach(function(a){
     }
   });
 });
-</script>
-</body></html>';
-  win.document.write(htmlDoc);
-  win.document.close();
-  win.focus();
-  setTimeout(function(){ win.print(); win.close(); }, 400);
-}
 </script>
 </body>
 </html>

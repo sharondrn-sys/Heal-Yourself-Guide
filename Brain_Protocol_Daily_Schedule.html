@@ -948,7 +948,15 @@ function printScheduleOnly(){
     table.outerHTML +
     (weeklyNote ? '<div class="weekly"><strong>Weekly practices:</strong> ' + weeklyNote.textContent.replace('Weekly practices','').trim() + '</div>' : '') +
     '<div class="footer"><span>Heal Yourself Guide &nbsp;&middot;&nbsp; healyourselfguide.com</span><span>iHerb code: GUW6132</span></div>' +
-    '<script>
+    ';
+  win.document.write(html);
+  win.document.close();
+  win.focus();
+  setTimeout(function(){ win.print(); win.close(); }, 400);
+}
+</script>
+
+<script>
 function toggleMobileNav(){
   var center=document.querySelector('.nav-center');
   var ham=document.getElementById('navHamburger');
@@ -974,13 +982,5 @@ document.querySelectorAll('.nav-center a').forEach(function(a){
   });
 });
 </script>
-</body></html>';
-  win.document.write(html);
-  win.document.close();
-  win.focus();
-  setTimeout(function(){ win.print(); win.close(); }, 400);
-}
-</script>
-
 </body>
 </html>
