@@ -16,6 +16,10 @@
 8. **dd-subs:** `position:absolute;left:100%;top:0` side panel — never inline expand (causes cursor jump)
 9. **iHerb links:** `www.iherb.com` only — never `il.iherb.com`
 10. **Language:** "reverse" / "heal" — never "cure". "may improve" — never "proven" or "cures"
+11. **Sticky nav bars — every page with sections must have one:** Protocol pages use `.phase-nav` or `.jump-nav` with `position:sticky;top:var(--nav-h);z-index:90`. Subpages use `.jump-nav` with the same. Never `top:56px` — always `top:var(--nav-h)`.
+12. **Part A / Part B banners must be sticky:** Both banners use `position:sticky;top:var(--nav-h);z-index:91` so the reader always knows which part they're in.
+13. **Sticky context button (protocol pages):** `position:fixed` — must be at body level, never nested inside a `position:sticky` or `position:relative` ancestor. Observes the first non-sticky section inside Part B via scroll event (not IntersectionObserver). Both the floating button AND the companion bar "Jump to:" button must be wired to the same `setPartA()`/`setPartB()` functions.
+14. **`toggleMobileNav()` JS insertion rule:** Must go AFTER any print popup `document.write()` strings that contain `</body></html>`. If placed before, the function lands inside the string and is never callable. Always verify with: search for `'<script>\nfunction toggleMobileNav'` — if found, the function is trapped.
 11. **Never pull from GitHub without explicit session authorization from Sharona**
 12. **Div balance check after every change:** `<div` count must equal `</div` count
 

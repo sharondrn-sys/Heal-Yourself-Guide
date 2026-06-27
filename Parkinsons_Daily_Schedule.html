@@ -250,6 +250,11 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
+.jump-nav{background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:0 24px;position:sticky;top:var(--nav-h);z-index:90;overflow-x:auto;scrollbar-width:none;}
+.jump-nav-inner{display:flex;min-width:0;max-width:960px;margin:0 auto;justify-content:center;}
+.jump-nav::-webkit-scrollbar{display:none;}
+.jump-nav a{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;padding:12px 14px;border-bottom:2px solid transparent;white-space:nowrap;transition:color 0.15s,border-color 0.15s;}
+.jump-nav a:hover,.jump-nav a.active{color:var(--sage);border-bottom-color:var(--sage);}
 </style>
 </head>
 <body>
@@ -381,6 +386,18 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
 <!-- ═══════════════════════════════════════════════════════ -->
 <!-- PHASE 1 -->
 <!-- ═══════════════════════════════════════════════════════ -->
+<!-- JUMP NAV -->
+<div class="jump-nav" style="position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:0 24px;overflow-x:auto;scrollbar-width:none;">
+  <div class="jump-nav-inner" style="min-width:0;display:flex;gap:0;align-items:stretch;">
+    <a href="#phase1">Phase 1 · Prepare</a>
+    <a href="#phase2">Phase 2 · Detox</a>
+    <a href="#phase3">Phase 3 · Repair</a>
+    <a href="#phase4">Phase 4 · Rebuild</a>
+    <a href="#phase5">Phase 5 · Maintain</a>
+    <a href="#phase6">Phase 6 · Life After</a>
+  </div>
+</div>
+
 <div class="phase-divider" style="--phase-color:#3d6b4a;"></div>
 <section class="phase-section" id="phase1">
   <div class="inner">

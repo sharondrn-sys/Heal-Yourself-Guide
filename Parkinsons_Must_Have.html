@@ -254,6 +254,11 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
   .dd-subs a.dd-sub{padding-left:52px!important;}
 }
+.jump-nav{background:var(--bg-deep);border-bottom:1px solid var(--border-s);padding:0 24px;position:sticky;top:var(--nav-h);z-index:90;overflow-x:auto;scrollbar-width:none;}
+.jump-nav-inner{display:flex;min-width:0;max-width:960px;margin:0 auto;justify-content:center;}
+.jump-nav::-webkit-scrollbar{display:none;}
+.jump-nav a{font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-light);text-decoration:none;padding:12px 14px;border-bottom:2px solid transparent;white-space:nowrap;transition:color 0.15s,border-color 0.15s;}
+.jump-nav a:hover,.jump-nav a.active{color:var(--sage);border-bottom-color:var(--sage);}
 </style>
 </head>
 <body>
@@ -381,6 +386,19 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     <p>This is not the full protocol — it is the minimum viable protocol. Every item here was chosen because removing it would either break the phase mechanism entirely, or directly harm the healing process. These are non-negotiable.</p>
     <p>Items marked <span class="badge badge-budget">budget-friendly</span> cost very little — they should never be cut regardless of budget. Items marked <span class="badge badge-core">core</span> are the primary mechanism of that phase. Items marked <span class="badge badge-pd">Parkinson's</span> are specific to dopamine and neurological function — cutting them defeats the purpose of the protocol entirely.</p>
     <p>Items in the "can wait" section are genuinely valuable — add them as soon as budget allows. They are not on this list because they are unimportant. They are off this list because the must-haves cannot work without them.</p>
+  </div>
+</div>
+
+<!-- JUMP NAV -->
+<div class="jump-nav" style="position:sticky;top:var(--nav-h);z-index:90;background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:0 24px;overflow-x:auto;scrollbar-width:none;">
+  <div class="jump-nav-inner" style="min-width:0;display:flex;gap:0;align-items:stretch;">
+    <a href="#phase1">Phase 1</a>
+    <a href="#phase2">Phase 2</a>
+    <a href="#phase3">Phase 3</a>
+    <a href="#phase4">Phase 4</a>
+    <a href="#phase5">Phase 5</a>
+    <a href="#permanent">Permanent</a>
+    <a href="#master">Master List</a>
   </div>
 </div>
 
