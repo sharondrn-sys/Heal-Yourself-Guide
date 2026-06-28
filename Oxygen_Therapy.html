@@ -911,6 +911,48 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
     </ol>
   </div>
 </div>
+<!-- BOTTOM SHARE -->
+<section style="background:var(--bg-warm);padding:36px 24px;text-align:center;border-top:1px solid var(--border-s);">
+  <div style="max-width:560px;margin:0 auto;">
+    <p style="font-size:13px;font-weight:600;color:var(--ink-mid);margin-bottom:16px;letter-spacing:0.03em;">Know someone who needs this guide?</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a id="wa-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:12px;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Share on WhatsApp
+      </a>
+      <a id="fb-share-btn" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#1877F2;color:#fff;font-size:12px;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Share on Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL SIGNUP -->
+<section style="background:var(--bg-deep);padding:48px 24px;border-top:1px solid var(--border-s);">
+  <div style="max-width:480px;margin:0 auto;text-align:center;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">New protocols · New research</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px;">Be the first to know when new protocols are added</h3>
+    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">No algorithms. No ads. Just the information that matters, when it matters.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <input type="email" id="mc-email-oxygen" placeholder="Your email address" style="width:100%;padding:14px 18px;border-radius:6px;border:1px solid var(--border);background:var(--bg-warm);color:var(--ink);font-size:15px;font-family:'Jost',sans-serif;outline:none;" />
+      <button onclick="mcSubmitOxygen()" style="width:100%;padding:14px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;">Join the Community →</button>
+      <p id="mc-msg-oxygen" style="font-size:13px;color:var(--sage);min-height:20px;"></p>
+      <p style="font-size:11px;color:var(--ink-light);margin-top:4px;">Free · No spam · Unsubscribe anytime</p>
+    </div>
+  </div>
+</section>
+<script>
+function mcSubmitOxygen(){
+  var email=document.getElementById('mc-email-oxygen').value.trim();
+  var msg=document.getElementById('mc-msg-oxygen');
+  if(!email||!email.includes('@')){msg.style.color='#e88a7a';msg.textContent='Please enter a valid email address.';return;}
+  msg.style.color='#9ab89e';
+  msg.textContent='Thank you \u2014 you\'re on the list!';
+  document.getElementById('mc-email-oxygen').value='';
+}
+</script>
+
 <footer>
   <div class="ft-inner">
     <div>
@@ -1002,6 +1044,39 @@ document.querySelectorAll('.nav-center a').forEach(function(a){
     if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
       closeMobileNav();
     }
+  });
+});
+</script>
+<script>
+function toggleNavDropdown(){
+  const d=document.getElementById('nav-protocols');
+  const open=d.classList.toggle('open');
+  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('nav-protocols');
+  if(d&&!d.contains(e.target))d.classList.remove('open');
+});
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768&&!a.closest('.nav-dropdown')){closeMobileNav();}
   });
 });
 </script>

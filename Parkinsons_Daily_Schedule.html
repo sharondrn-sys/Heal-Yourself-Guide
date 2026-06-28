@@ -1746,6 +1746,31 @@ footer{background:var(--bg-footer,#263028);border-top:1px solid rgba(138,184,154
   </div>
 </section>
 
+<!-- EMAIL SIGNUP -->
+<section style="background:var(--bg-deep);padding:48px 24px;border-top:1px solid var(--border-s);">
+  <div style="max-width:480px;margin:0 auto;text-align:center;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">New protocols · New research</div>
+    <h3 style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--ink);margin-bottom:10px;">Be the first to know when new protocols are added</h3>
+    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:24px;">No algorithms. No ads. Just the information that matters, when it matters.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <input type="email" id="mc-email-park-sched" placeholder="Your email address" style="width:100%;padding:14px 18px;border-radius:6px;border:1px solid var(--border);background:var(--bg-warm);color:var(--ink);font-size:15px;font-family:'Jost',sans-serif;outline:none;" />
+      <button onclick="mcSubmitParkSched()" style="width:100%;padding:14px;background:var(--sage);color:#fff;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;border-radius:6px;cursor:pointer;font-family:'Jost',sans-serif;">Join the Community →</button>
+      <p id="mc-msg-park-sched" style="font-size:13px;color:var(--sage);min-height:20px;"></p>
+      <p style="font-size:11px;color:var(--ink-light);margin-top:4px;">Free · No spam · Unsubscribe anytime</p>
+    </div>
+  </div>
+</section>
+<script>
+function mcSubmitParkSched(){
+  var email=document.getElementById('mc-email-park-sched').value.trim();
+  var msg=document.getElementById('mc-msg-park-sched');
+  if(!email||!email.includes('@')){msg.style.color='#e88a7a';msg.textContent='Please enter a valid email address.';return;}
+  msg.style.color='#9ab89e';
+  msg.textContent='Thank you \u2014 you\'re on the list!';
+  document.getElementById('mc-email-park-sched').value='';
+}
+</script>
+
 <footer>
   <div class="ft-inner">
     <div>
@@ -1849,6 +1874,39 @@ document.querySelectorAll('.nav-center a').forEach(function(a){
     if(window.innerWidth<=768 && !a.closest('.nav-dropdown')){
       closeMobileNav();
     }
+  });
+});
+</script>
+<script>
+function toggleNavDropdown(){
+  const d=document.getElementById('nav-protocols');
+  const open=d.classList.toggle('open');
+  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
+}
+document.addEventListener('click',function(e){
+  const d=document.getElementById('nav-protocols');
+  if(d&&!d.contains(e.target))d.classList.remove('open');
+});
+function toggleMobileNav(){
+  var center=document.querySelector('.nav-center');
+  var ham=document.getElementById('navHamburger');
+  var overlay=document.getElementById('navOverlay');
+  var isOpen=center.classList.toggle('open');
+  ham.classList.toggle('open',isOpen);
+  ham.setAttribute('aria-expanded',isOpen?'true':'false');
+  overlay.classList.toggle('open',isOpen);
+  document.body.style.overflow=isOpen?'hidden':'';
+}
+function closeMobileNav(){
+  document.querySelector('.nav-center').classList.remove('open');
+  document.getElementById('navHamburger').classList.remove('open');
+  document.getElementById('navHamburger').setAttribute('aria-expanded','false');
+  document.getElementById('navOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.nav-center a').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.innerWidth<=768&&!a.closest('.nav-dropdown')){closeMobileNav();}
   });
 });
 </script>
