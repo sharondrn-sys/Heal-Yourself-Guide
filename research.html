@@ -34,19 +34,6 @@ nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-
 .nav-center a:hover{color:var(--sage-nav);border-bottom-color:rgba(138,184,154,0.3);}
 .nav-center a.active{color:var(--sage-nav);border-bottom-color:var(--sage-mid);}
 
-.nav-dropdown{position:relative;}
-.nav-dropdown-toggle{background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.07em;color:rgba(212,201,168,0.80);text-transform:uppercase;padding:0 14px;height:var(--nav-h);display:flex;align-items:center;gap:6px;transition:color 0.2s;}
-.nav-dropdown-toggle:hover{color:var(--sage-nav);}
-.nav-dropdown-toggle svg{width:8px;height:5px;transition:transform 0.2s;}
-.nav-dropdown-toggle[aria-expanded="true"] svg{transform:rotate(180deg);}
-.nav-dropdown-menu{display:none;position:absolute;top:100%;right:0;min-width:230px;background:var(--bg-nav);border:1px solid rgba(138,184,154,0.15);border-radius:0 0 8px 8px;padding:8px 0;box-shadow:0 8px 24px rgba(0,0,0,0.3);}
-.nav-dropdown-menu.open{display:block;}
-.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:9px 18px;font-size:12px;color:rgba(212,201,168,0.80);text-decoration:none;transition:background 0.15s,color 0.15s;}
-.nav-dropdown-menu a:hover{background:rgba(138,184,154,0.08);color:#d4c9a8;}
-.dd-icon{font-size:14px;width:20px;text-align:center;}
-.dd-label{flex:1;}
-.dd-tag{font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--sage);color:#fff;padding:2px 6px;border-radius:3px;}
-.dd-sub{padding-left:28px !important;opacity:0.8;font-size:11px !important;}
 
 /* LAYOUT */
 body{padding-top:var(--nav-h);max-width:100vw;overflow-x:hidden;}
@@ -133,14 +120,6 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   .nav-center.open{transform:translateX(0);}
   .nav-center a{height:auto;padding:14px 24px;border-bottom:1px solid rgba(138,184,154,0.08);justify-content:flex-start;}
   .nav-center a:hover{border-bottom-color:rgba(138,184,154,0.08);}
-  .nav-dropdown{flex-direction:column;align-items:stretch;height:auto;}
-  .nav-dropdown-toggle{height:auto;padding:14px 24px;justify-content:space-between;width:100%;border-bottom:1px solid rgba(138,184,154,0.08);}
-  .nav-dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;}
-  .nav-dropdown.open .nav-dropdown-menu{max-height:2000px;}
-  .nav-dropdown-menu>a,.dd-group>a{padding-left:36px;}
-  .dd-group>a::after{display:none;}
-  .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
-  .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 .share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
 @media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
@@ -201,28 +180,10 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
       <ellipse cx="41" cy="50" rx="4.5" ry="7" fill="#8ab89a" opacity="0.75" transform="rotate(25 41 50)"/>
       <ellipse cx="26" cy="54" rx="4" ry="6" fill="#8ab89a" opacity="0.65" transform="rotate(-20 26 54)"/>
     </svg>Heal Yourself</a>
-  <div class="nav-center">
+    <div class="nav-center">
     <a href="index.html">Home</a>
-    <a href="before-you-begin.html">Before You Begin</a>
-    <div class="nav-dropdown" id="mainDrop">
-      <button class="nav-dropdown-toggle" onclick="toggleNavDropdown()" aria-expanded="false">
-        Protocols <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1l3 3 3-3"/></svg>
-      </button>
-      <div class="nav-dropdown-menu">
-        <a href="Full_Body_Detox_Protocol.html"><span class="dd-icon">🌿</span><span class="dd-label">Full Body Detox</span><span class="dd-tag">Start Here</span></a>
-        <a href="Brain_Protocol.html"><span class="dd-icon">🧠</span><span class="dd-label">Brain Protocol</span></a>
-        <a href="DMSO_Protocol.html"><span class="dd-icon">⚗️</span><span class="dd-label">DMSO Protocol</span></a>
-        <a href="Oxygen_Therapy.html"><span class="dd-icon">🫁</span><span class="dd-label">Oxygen Therapy</span></a>
-        <a href="Hidden_Deficiencies.html"><span class="dd-icon">🔬</span><span class="dd-label">Hidden Deficiencies</span></a>
-        <a href="Dr_Sebi_Alkaline_Protocol.html"><span class="dd-icon">🌱</span><span class="dd-label">Dr. Sebi Alkaline</span></a>
-        <a href="Parkinsons_Protocol.html"><span class="dd-icon">🧬</span><span class="dd-label">Parkinson's Protocol</span></a>
-        <a href="Parkinsons_Daily_Schedule.html" class="dd-sub"><span class="dd-icon">📋</span><span class="dd-label">↳ Daily Schedule</span></a>
-        <a href="Parkinsons_Shopping_Table.html" class="dd-sub"><span class="dd-icon">🛒</span><span class="dd-label">↳ Shopping List</span></a>
-        <a href="Parkinsons_Must_Have.html" class="dd-sub"><span class="dd-icon">⭐</span><span class="dd-label">↳ Must-Have List</span></a>
-        <a href="protocols.html" style="margin-top:4px;border-top:1px solid rgba(138,184,154,0.15);"><span class="dd-icon">☰</span><span class="dd-label">All Protocols</span></a>
-      </div>
-    </div>
-    <a href="research.html" class="active">Research</a>
+    <a href="before-you-begin.html">Start Here</a>
+    <a href="protocols.html">Protocols</a>
     <a href="about.html">About</a>
   </div>
 <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">&#9776;</button>

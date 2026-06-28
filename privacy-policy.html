@@ -69,14 +69,6 @@ footer a:hover{color:#d4c9a8;}
   .nav-center.open{transform:translateX(0);}
   .nav-center a{height:auto;padding:14px 24px;border-bottom:1px solid rgba(138,184,154,0.08);justify-content:flex-start;}
   .nav-center a:hover{border-bottom-color:rgba(138,184,154,0.08);}
-  .nav-dropdown{flex-direction:column;align-items:stretch;height:auto;}
-  .nav-dropdown-toggle{height:auto;padding:14px 24px;justify-content:space-between;width:100%;border-bottom:1px solid rgba(138,184,154,0.08);}
-  .nav-dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;max-height:0;overflow:hidden;transition:max-height 0.25s ease;}
-  .nav-dropdown.open .nav-dropdown-menu{max-height:2000px;}
-  .nav-dropdown-menu>a,.dd-group>a{padding-left:36px;}
-  .dd-group>a::after{display:none;}
-  .dd-subs{position:static;opacity:1;visibility:visible;pointer-events:auto;background:rgba(0,0,0,0.15);border:none;border-radius:0;min-width:0;padding:0;}
-  .dd-subs a.dd-sub{padding-left:52px!important;}
 }
 .share-float{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:10px;align-items:center;}
 @media(max-width:768px){.share-float{top:auto;bottom:0;left:0;right:0;transform:none;flex-direction:row;justify-content:center;background:var(--bg-nav);border-top:1px solid rgba(138,184,154,0.15);padding:10px 16px;gap:12px;}}
@@ -139,7 +131,12 @@ footer a:hover{color:#d4c9a8;}
       <ellipse cx="41" cy="50" rx="4.5" ry="7" fill="#8ab89a" opacity="0.75" transform="rotate(25 41 50)"/>
       <ellipse cx="26" cy="54" rx="4" ry="6" fill="#8ab89a" opacity="0.65" transform="rotate(-20 26 54)"/>
     </svg>Heal Yourself</a>
-  <a href="index.html" class="nav-back">← Back to Guide</a>
+  <div class="nav-center">
+    <a href="index.html">Home</a>
+    <a href="before-you-begin.html">Start Here</a>
+    <a href="protocols.html">Protocols</a>
+    <a href="about.html">About</a>
+  </div>
 <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">&#9776;</button>
 </nav>
 <div class="nav-overlay" id="navOverlay" onclick="closeMobileNav()"></div>
@@ -284,15 +281,6 @@ document.querySelectorAll('.nav-center a').forEach(function(a){
 });
 </script>
 <script>
-function toggleNavDropdown(){
-  const d=document.getElementById('nav-protocols');
-  const open=d.classList.toggle('open');
-  d.querySelector('.nav-dropdown-toggle').setAttribute('aria-expanded',open);
-}
-document.addEventListener('click',function(e){
-  const d=document.getElementById('nav-protocols');
-  if(d&&!d.contains(e.target))d.classList.remove('open');
-});
 function toggleMobileNav(){
   var center=document.querySelector('.nav-center');
   var ham=document.getElementById('navHamburger');
