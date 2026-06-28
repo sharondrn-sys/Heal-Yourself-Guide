@@ -1,6 +1,6 @@
 # Heal Yourself — Master Page Checklist
 *Single source of truth. Reconciled from v4, unnamed June 2026, and Full Audit versions.*
-*Updated: June 2026 — post Session 10 audit*
+*Updated: June 2026 — post Session 11 (Fix #5 inline iHerb links)*
 
 ---
 
@@ -212,7 +212,7 @@
 | Dr_Sebi_Alkaline_Protocol.html | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
 | Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html | ⚠️ schema | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ⚠️ |
 | Dr_Sebi_Alkaline_Protocol_Shopping_List.html | ⚠️ schema | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ⚠️ |
-| Parkinsons_Protocol.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Parkinsons_Protocol.html | ✅ | ✅ | ✅ | ✅ | ❌ inline | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
 | Parkinsons_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
 | Parkinsons_Shopping_Table.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
 | Parkinsons_Must_Have.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
@@ -239,6 +239,14 @@
 6. **Share bars** — missing float bar and/or bottom block on: protocols.html, research.html, about.html, privacy-policy.html, terms-of-service.html, 404.html
 7. **Email signup (mcjs)** — missing on Dr_Sebi_Alkaline_Protocol.html + both subpages
 8. **iHerb** — missing on Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html
+
+### ✅ Completed this session (Fix #5 — inline iHerb links)
+- Full_Body_Detox_Protocol.html — 4 new inline links
+- Brain_Protocol.html — 20 new inline links  
+- Dr_Sebi_Alkaline_Protocol.html — 13 new inline links
+- Oxygen_Therapy.html — 1 new inline link
+- DMSO_Protocol.html — 6 new inline links
+- **HELD** Parkinsons_Protocol.html + Hidden_Deficiencies.html — safety review required before Fix #5
 
 ### 🔵 Requires content work (cannot batch)
 9. **Citations** — missing drawer on all daily schedules, shopping lists, and several main pages
