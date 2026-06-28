@@ -1,13 +1,13 @@
 # Heal Yourself — Master Page Checklist
-*Single source of truth. Reconciled from v4, unnamed June 2026, and Full Audit versions.*
-*Updated: June 2026 — post Session 11 (Fix #5 inline iHerb links)*
+*Single source of truth.*
+*Updated: June 2026 — post Session 12. Live audit run against actual repo.*
 
 ---
 
 ## CANONICAL RULES (Never Override)
 
-1. **Footer:** ft-inner CSS classes — NOT inline styles
-2. **html element:** `overflow-x:hidden` FORBIDDEN — breaks position:sticky site-wide. Body only.
+1. **Footer:** `ft-inner` CSS classes — NOT inline styles
+2. **html element:** `overflow-x:hidden` FORBIDDEN — breaks `position:sticky` site-wide. Body only.
 3. **Print functions:** String concatenation only — never backticks/template literals
 4. **jump-nav-inner:** `min-width:0` — never `max-content`
 5. **Footer nav tag:** `<div>` — never `<nav>`
@@ -16,258 +16,196 @@
 8. **dd-subs:** `position:absolute;left:100%;top:0` side panel — never inline expand (causes cursor jump)
 9. **iHerb links:** `www.iherb.com` only — never `il.iherb.com`
 10. **Language:** "reverse" / "heal" — never "cure". "may improve" — never "proven" or "cures"
-11. **Sticky nav bars — every page with sections must have one:** Protocol pages use `.phase-nav` or `.jump-nav` with `position:sticky;top:var(--nav-h);z-index:90`. Subpages use `.jump-nav` with the same. Never `top:56px` — always `top:var(--nav-h)`.
-12. **Part A / Part B banners must be sticky:** Both banners use `position:sticky;top:var(--nav-h);z-index:91` so the reader always knows which part they're in.
-13. **Sticky context button (protocol pages):** `position:fixed` — must be at body level, never nested inside a `position:sticky` or `position:relative` ancestor. Observes the first non-sticky section inside Part B via scroll event (not IntersectionObserver). Both the floating button AND the companion bar "Jump to:" button must be wired to the same `setPartA()`/`setPartB()` functions.
-14. **`toggleMobileNav()` JS insertion rule:** Must go AFTER any print popup `document.write()` strings that contain `</body></html>`. If placed before, the function lands inside the string and is never callable. Always verify with: search for `'<script>\nfunction toggleMobileNav'` — if found, the function is trapped.
-11. **Never pull from GitHub without explicit session authorization from Sharona**
-12. **Div balance check after every change:** `<div` count must equal `</div` count
+11. **Sticky nav bars:** Protocol pages use `.phase-nav` or `.jump-nav` with `position:sticky;top:var(--nav-h);z-index:90`. Never `top:56px` — always `top:var(--nav-h)`.
+12. **Part A / Part B banners must be sticky:** Both use `position:sticky;top:var(--nav-h);z-index:91`
+13. **Sticky context button:** `position:fixed` — must be at body level, never inside a `position:sticky` or `position:relative` ancestor. Uses scroll event (not IntersectionObserver).
+14. **`toggleMobileNav()` insertion rule:** Must go AFTER any print popup `document.write()` strings containing `</body></html>`. If placed before, the function is trapped inside the string.
+15. **Never pull from GitHub without explicit session authorization from Sharona**
+16. **Div balance check after every change:** `<div` count must equal `</div` count (strip `<script>` blocks before counting)
 
 ---
 
-## A. HEAD / SEO (Every Page)
+## PAGE STATUS — Live Audit (Session 12)
 
-- [ ] `<title>` — unique, keyword-rich, under 60 chars: "Topic — Subtopic | Heal Yourself"
-- [ ] `<meta name="description">` — unique, 150–160 chars, primary keyword
-- [ ] `<link rel="canonical">` — correct full URL
-- [ ] `<meta property="og:title">`
-- [ ] `<meta property="og:description">` — 1–2 sentences, emotional hook
-- [ ] `<meta property="og:url">` — canonical URL
-- [ ] `<meta property="og:type">` — "website" for index, "article" for all others
-- [ ] `<meta property="og:site_name">` — "Heal Yourself Guide"
-- [ ] `<meta name="twitter:card">` — "summary"
-- [ ] `<meta name="twitter:title">`
-- [ ] `<meta name="twitter:description">`
-- [ ] `<script type="application/ld+json">` — Article or MedicalWebPage schema
-
----
-
-## B. NAVIGATION (Every Page)
-
-- [ ] Nav order: Home · Before You Begin · Protocols ▾ · Research · About
-- [ ] Logo left, links to index.html, SVG sun 28px inline, font-size 22px
-- [ ] `toggleNavDropdown()` JS present
-- [ ] Dropdown closes on outside click (document click listener)
-- [ ] Mobile hamburger — slides from right, 260px, overlay
-- [ ] `nav-hamburger` / `navHamburger` id present
-- [ ] `nav-overlay` present
-- [ ] Skip-to-content link present (`class="skip-link"`)
-- [ ] Dropdown dd-subs use side panel CSS (not inline)
-- [ ] All emoji in nav marked `aria-hidden="true"`
-
-### Protocols Dropdown Contents (canonical):
-- 🌿 Full Body Detox → Start Here tag + Daily Schedule + Shopping List
-- 🧠 Brain Protocol + Daily Schedule + Shopping List
-- ⚗️ DMSO Protocol + Daily Schedule + Shopping List
-- 🫁 Oxygen Therapy + H2O2 + Ozone + Hyperbaric anchors
-- 🔬 Hidden Deficiencies + Daily Schedule + Shopping List
-- 🌱 Dr. Sebi Alkaline + Daily Schedule + Shopping List
-- 🧬 Parkinson's Protocol + Daily Schedule + Shopping List + Must-Have + Symptom Guide
-- ☰ All Protocols (separator line above, links to protocols.html)
-
----
-
-## C. SHARE BUTTONS (Every Page)
-
-- [ ] Floating share bar — left side desktop, bottom bar mobile (768px breakpoint)
-- [ ] Float bar: WhatsApp pill (#25D366) + Facebook pill (#1877F2)
-- [ ] Float bar hidden on print
-- [ ] Bottom share block above email signup — "Know someone who needs this?"
-- [ ] Bottom block: WhatsApp + Facebook buttons with labels
-- [ ] Share JS uses `window.location.href` — NOT hardcoded URL
-- [ ] `sf-wa` + `sf-fb` IDs on float bar; `wa-share-btn` + `fb-share-btn` on bottom block
-
----
-
-## D. EMAIL SIGNUP (Every Page)
-
-- [ ] `<script id="mcjs">` present — exactly once
-- [ ] Email input + submit button
-- [ ] Unique input ID per page (e.g. `mc-email-detox`)
-- [ ] Submit validates email format
-- [ ] Success message on submit
-- [ ] "Free · No spam · Unsubscribe anytime" note
-
-### Page order (bottom of every page):
-1. Companion links block (protocol pages)
-2. Share block
-3. Email signup
-4. Footer
-
----
-
-## E. IHERB AFFILIATE (Protocol + Shopping Pages)
-
-- [ ] Every purchasable supplement links to iHerb with `?rcode=GUW6132`
-- [ ] iHerb support block with code GUW6132 prominently displayed
-- [ ] iHerb button → `https://www.iherb.com/?rcode=GUW6132`
-- [ ] Wording (exact): "new customers save 10%, returning customers save 5%"
-- [ ] No supplement without iHerb link OR explicit "free / grow it / avoid" label
-- [ ] No iHerb banner (permanently removed)
-- [ ] N/A for: index, about, research, protocols, privacy-policy, terms-of-service, 404
-
----
-
-## F. MEDICAL DISCLAIMER (Every Page)
-
-- [ ] Visible callout box in page body — NOT only in footer
-- [ ] Above first actionable content on protocol pages
-- [ ] Covers: pregnant/breastfeeding, under 18, cancer treatment, kidney disease, drug interactions
-- [ ] Parkinson's pages: specific Levodopa/Mucuna warning
-- [ ] Footer short disclaimer also present
-
----
-
-## G. PART A / PART B (Protocol Main Pages Only)
-
-- [ ] Part A banner (sage green) — `id="part-a"`
-- [ ] Part A sticky jump nav — `justify-content:center`, `min-width:0`
-- [ ] Part B banner (terracotta) — `id="part-b"`
-- [ ] Part B companion links block immediately after banner (📋 Daily + 🛒 Shopping)
-- [ ] Part B sticky jump nav
-- [ ] **Sticky floating button** — `class="sticky-partb"` — allows jumping between Part A and Part B
-- [ ] "← Part A" / "Part B →" links use inline style — NOT `pn-home` class
-
----
-
-## H. CITATIONS (Content Pages)
-
-- [ ] Superscript citations: `<sup class="cite">` with `onclick="openCitations(N)"`
-- [ ] Citations drawer: `id="citations-drawer"` — fixed bottom, slides up
-- [ ] Citations overlay: `id="citations-overlay"` — click to close
-- [ ] Each citation has `id="cite-N"`
-- [ ] Active citation gets `.cite-active` highlight
-- [ ] "View Full Research Library →" link → `research.html`
-- [ ] `openCitations()` and `closeCitations()` JS present
-- [ ] JS inserted AFTER any print popup template literals
-- [ ] N/A for: daily schedules, shopping lists, 404, privacy-policy, terms-of-service
-
----
-
-## I. FOOTER (Every Page)
-
-- [ ] Uses `ft-inner` CSS class structure
-- [ ] Left column: brand name + disclaimer text + © 2026
-- [ ] Right column: Home · Before You Begin · All Protocols · Research · About · Privacy Policy · Terms of Use · Contact
-- [ ] Contact: `mailto:healyourselfguide101@gmail.com`
-- [ ] `footer{background:var(--bg-footer);padding:40px 24px;}`
-- [ ] Current page link gets active style
-- [ ] Footer uses `<div>` not `<nav>`
-
----
-
-## J. TECHNICAL (Every Page)
-
-- [ ] Div balance: `<div` count == `</div` count
-- [ ] `html{}` does NOT have `overflow-x:hidden`
-- [ ] `body{}` has `overflow-x:hidden`
-- [ ] `section[id]` has `scroll-margin-top` for sticky nav offset
-- [ ] No duplicate mcjs script tags
-- [ ] Print styles hide nav, share, footer, buttons
-- [ ] `lang="en"` on `<html>` tag
-- [ ] `aria-label` on floating share bar
-- [ ] No dead internal links
-- [ ] Page loads without console errors
-
----
-
-## K. DESIGN SYSTEM (Every Page)
-
-```css
---bg:#f4efe6; --bg-warm:#faf7f2; --bg-deep:#ede7db;
---bg-stone:#e5dfd4; --bg-nav:#2c3a2e; --bg-footer:#263028;
---ink:#1e1a14; --ink-mid:#3d3426; --ink-light:#5c5144;
---sage:#3d6b4a; --sage-mid:#5a8c6a; --sage-light:#7aac8a;
---sage-pale:#e4f0e8; --sage-nav:#8ab89a;
---terra:#8c5a3c; --terra-light:#b07a58; --terra-pale:#f5ede6;
---honey:#a07830; --honey-pale:#f5eddb;
-```
-
-- [ ] Nav alpha: 0.80 (not 0.65)
-- [ ] ink-light: #5c5144 (not #7a6e5c)
-- [ ] Fonts: Playfair Display · Jost · DM Mono
-- [ ] Nav logo font-size: 22px
-
----
-
-## PAGE STATUS — Post Session 10 Audit
-
-| Page | Head | Nav | Share | Email | iHerb | Disclaim | Footer | PartAB | Sticky | Citations | DivBal | Done |
-|------|------|-----|-------|-------|-------|----------|--------|--------|--------|-----------|--------|------|
-| index.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| before-you-begin.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ⚠️ |
+| Page | Head | Nav | Share | Email | iHerb | Disclaim | Footer | PartAB | Sticky | Cite | DivBal | **Done** |
+|------|------|-----|-------|-------|-------|----------|--------|--------|--------|------|--------|----------|
+| index.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
+| before-you-begin.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ✅ |
+| about.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
+| protocols.html | ✅ | ✅ | ✅ | ✅ | N/A | ❌ | ✅ | N/A | N/A | ❌ | ✅ | ❌ |
+| research.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
+| privacy-policy.html | ✅ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| terms-of-service.html | ✅ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| 404.html | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | N/A | N/A | N/A | ✅ | ❌ |
 | Full_Body_Detox_Protocol.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Full_Body_Detox_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Full_Body_Detox_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Brain_Protocol.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ⚠️ |
-| Brain_Protocol_Daily_Schedule.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Brain_Protocol_Shopping_List.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ❌+2 | ❌ |
+| Full_Body_Detox_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | N/A | ❌ | ❌ | N/A | N/A | N/A | ✅ | ❌ |
+| Full_Body_Detox_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Brain_Protocol.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Brain_Protocol_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Brain_Protocol_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
 | DMSO_Protocol.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| DMSO_Daily_Schedule.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| DMSO_Shopping_List.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
+| DMSO_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| DMSO_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
 | Oxygen_Therapy.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Hidden_Deficiencies.html | ✅ | ✅ | ❌ float | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
-| Hidden_Deficiencies_Daily_Schedule.html | ⚠️ schema | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Hidden_Deficiencies_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Dr_Sebi_Alkaline_Protocol.html | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
-| Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html | ⚠️ schema | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ⚠️ |
-| Dr_Sebi_Alkaline_Protocol_Shopping_List.html | ⚠️ schema | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ⚠️ |
-| Parkinsons_Protocol.html | ✅ | ✅ | ✅ | ✅ | ❌ inline | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
-| Parkinsons_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Parkinsons_Shopping_Table.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Parkinsons_Must_Have.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| Parkinsons_Symptoms.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| protocols.html | ❌ canon/schema | ✅ | ❌ both | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ❌ |
-| research.html | ❌ canon/schema | ✅ | ❌ both | ✅ | ❌ | ✅ | ✅ | N/A | N/A | ✅ | ✅ | ❌ |
-| about.html | ⚠️ schema | ✅ | ❌ bottom | ✅ | ✅ | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
-| privacy-policy.html | ❌ og/schema | ✅ | ❌ both | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ⚠️ |
-| terms-of-service.html | ❌ canon/schema | ✅ | ❌ both | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ⚠️ |
-| 404.html | ❌ canon/schema | ✅ | ❌ both | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ⚠️ |
+| Hidden_Deficiencies.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Hidden_Deficiencies_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Hidden_Deficiencies_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | N/A | N/A | N/A | ✅ | ❌ |
+| Dr_Sebi_Alkaline_Protocol.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Dr_Sebi_Alkaline_Protocol_Shopping_List.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Parkinsons_Protocol.html | ✅ | ✅ | ✅ | ✅ | ⏸ hold | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ |
+| Parkinsons_Daily_Schedule.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Parkinsons_Shopping_Table.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Parkinsons_Must_Have.html | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | N/A | N/A | N/A | ✅ | ✅ |
+| Parkinsons_Symptoms.html | ✅ | ✅ | ✅ | ✅ | N/A | ✅ | ✅ | N/A | N/A | ❌ | ✅ | ⚠️ |
+
+**Key:** ✅ done · ❌ missing · ⚠️ partial · ⏸ on hold · N/A not applicable
 
 ---
 
-## OPEN ISSUES — Priority Order
+## OPEN ISSUES — Prioritised
 
-### 🔴 Fix immediately (structural/functional)
-1. **Brain_Protocol_Shopping_List.html** — div imbalance (+2)
-2. **Brain_Protocol.html** — sticky Part B button missing
-3. **Hidden_Deficiencies.html** — floating share bar missing
+### 🔴 Fix immediately
 
-### 🟡 Batch-fixable (mechanical, low risk)
-4. **JSON-LD schema** — missing on 18 pages (all except Full Body Detox, DMSO, Oxygen, Hidden Def, Dr Sebi main, Parkinson's main + subpages)
-5. **Canonical/OG URL tags** — missing on protocols.html, research.html, terms-of-service.html, 404.html
-6. **Share bars** — missing float bar and/or bottom block on: protocols.html, research.html, about.html, privacy-policy.html, terms-of-service.html, 404.html
-7. **Email signup (mcjs)** — missing on Dr_Sebi_Alkaline_Protocol.html + both subpages
-8. **iHerb** — missing on Dr_Sebi_Alkaline_Protocol_Daily_Schedule.html
+| # | Page | Issue |
+|---|------|-------|
+| 1 | `Full_Body_Detox_Daily_Schedule.html` | Disclaimer missing · Footer structure broken |
+| 2 | `Hidden_Deficiencies_Shopping_List.html` | Footer structure broken (`ft-inner` / `ft-nav` missing) |
+| 3 | `protocols.html` | Disclaimer missing |
+| 4 | `404.html` | Disclaimer missing |
 
-### ✅ Completed this session (Fix #5 — inline iHerb links)
-- Full_Body_Detox_Protocol.html — 4 new inline links
-- Brain_Protocol.html — 20 new inline links  
-- Dr_Sebi_Alkaline_Protocol.html — 13 new inline links
-- Oxygen_Therapy.html — 1 new inline link
-- DMSO_Protocol.html — 6 new inline links
-- **HELD** Parkinsons_Protocol.html + Hidden_Deficiencies.html — safety review required before Fix #5
+### 🟡 Fix next (content / citations)
 
-### 🔵 Requires content work (cannot batch)
-9. **Citations** — missing drawer on all daily schedules, shopping lists, and several main pages
-10. **Search function** — documented in Full Audit as ❌ NOT DONE; implementation TBD
-11. **Breadcrumbs** — documented in Full Audit as ❌ NOT DONE
+| # | Page | Issue |
+|---|------|-------|
+| 5 | `index.html` | Citations drawer missing |
+| 6 | `about.html` | Citations drawer missing |
+| 7 | `protocols.html` | Citations drawer missing |
+| 8 | `research.html` | Citations drawer missing |
+| 9 | `Parkinsons_Symptoms.html` | Citations drawer missing |
 
-### ⚠️ Safety-flagged (do not touch content without Safety Review Log)
-- DMSO_Oxygen_Therapy.html — orphaned, dosing content review pending
-- Hidden_Deficiencies pages — supplement-drug interaction screening
-- Parkinson's pages — full audit review pending
-- Affiliate-link + disease-claim pattern — legal review before scaling traffic
+### ⏸ On hold — safety review required before touching
+
+| Page | Hold reason |
+|------|-------------|
+| `Parkinsons_Protocol.html` | iHerb inline links (Fix #5) — safety review pending |
+| `Hidden_Deficiencies.html` | iHerb inline links (Fix #5) — supplement-drug interaction screening pending |
+| `DMSO_Oxygen_Therapy.html` | Orphaned — full content/dosing safety review pending. Do NOT link in nav or include in batch ops. |
 
 ---
 
-## DEFERRED / STRATEGIC (Not This Session)
-- No search — implementation not agreed. Was in Full Audit as future work only.
-- No breadcrumbs — same.
-- Lead magnet / testimonials / social proof — editorial, Sharona's call
+## UX BRIEF BACKLOG — Fixes 1–9 (HealYourselfGuide_UX_Brief.md)
+
+All fixes from the brief. None started yet unless noted.
+
+### Fix #1 — Simplify Global Navigation
+**All HTML pages** · Medium priority · Low effort
+- Replace protocol dropdown in nav with flat: `Home · Start Here · Protocols · About`
+- `Protocols` links to `protocols.html` (discovery page) — dropdown removed entirely
+- Mobile hamburger mirrors same 4 items
+- Research link moves to footer only
+- **Status: ❌ Not started**
+
+### Fix #2 — Homepage Entry Selector ("Where do you need to start?")
+**`index.html`** · Very High priority · Medium effort
+- Add section directly below hero with 3 condition buttons:
+  - 🧬 Parkinson's Disease → `start-here-parkinsons.html`
+  - 🧠 Brain Fog & Cognitive Decline → `start-here-brain.html`
+  - 🌿 I Just Feel Off — General Detox → `start-here-general.html`
+- Below buttons: "Not sure? Start with Before You Begin →"
+- Depends on Fixes #7, #8, #9 (pages must exist first)
+- **Status: ❌ Not started**
+
+### Fix #3 — Flip Part A / Part B on All Protocol Pages
+**All protocol main pages** · Very High priority · Low-Medium effort
+- Make Part B the default visible section (appears first)
+- Move Part A below Part B
+- Make Part A collapsible (`<details>`/`<summary>`) — collapsed by default
+- Update hero CTA buttons: primary = Part B, secondary = Part A
+- Affected: Full_Body_Detox_Protocol, Brain_Protocol, Parkinsons_Protocol, DMSO_Protocol, Oxygen_Therapy, Hidden_Deficiencies, Dr_Sebi_Alkaline_Protocol
+- **Status: ❌ Not started**
+
+### Fix #4 — Promote Daily Schedule as Primary CTA on Protocol Pages
+**All protocol main pages** · High priority · Low effort
+- Add CTA block at top of Part B (before first protocol step):
+  `📋 View Your Daily Schedule →` + `🛒 Shopping List →`
+- Styled as sage green border / linen background box
+- On Daily Schedule pages: add visible `← Back to Full Protocol` link at top
+- **Status: ❌ Not started**
+
+### Fix #5 — Inline iHerb Affiliate Links at First Mention
+**All protocol main pages** · High priority · Medium effort (most error-prone)
+- ✅ Full_Body_Detox_Protocol.html — done (+4 links)
+- ✅ Brain_Protocol.html — done (+20 links)
+- ✅ Dr_Sebi_Alkaline_Protocol.html — done (+13 links)
+- ✅ Oxygen_Therapy.html — done (+1 link)
+- ✅ DMSO_Protocol.html — done (+6 links)
+- ⏸ Parkinsons_Protocol.html — safety review hold
+- ⏸ Hidden_Deficiencies.html — safety review hold
+
+### Fix #6 — Hide / Remove "Coming Soon" Foundations Section
+**`index.html`** · Medium priority · Low effort
+- Remove the 8-card "Foundations of Health" section entirely (preferred)
+- Or replace "Coming Soon" with "In progress — join the list to be notified"
+- **Status: ❌ Not started**
+
+### Fix #7 — New Page: `start-here-parkinsons.html`
+**New file** · High priority · Medium effort
+- Emergency lane for Parkinson's diagnosis visitors
+- Hero → honest truth section → 3-step path → free actions → daily schedule CTA → iHerb → share
+- Mobile-first, WhatsApp-shareable
+- ⚠️ Requires safety review before publishing (Parkinson's content)
+- **Status: ❌ Not started**
+
+### Fix #8 — New Page: `start-here-brain.html`
+**New file** · High priority · Medium effort
+- Entry page for brain fog / cognitive decline visitors
+- Same structure as Fix #7
+- **Status: ❌ Not started**
+
+### Fix #9 — New Page: `start-here-general.html`
+**New file** · High priority · Medium effort
+- Entry page for visitors without a specific diagnosis
+- Simpler: single starting point = Full Body Detox
+- **Status: ❌ Not started**
+
+---
+
+## SITE BUILD BACKLOG (Pages Not Yet Built)
+
+| Page | Status | Notes |
+|------|--------|-------|
+| `faq.html` | ❌ Not built | — |
+| `sitemap.xml` | ❌ Not built | — |
+| `robots.txt` | ❌ Not built | — |
+| `start-here-parkinsons.html` | ❌ Not built | Fix #7 · Safety review required |
+| `start-here-brain.html` | ❌ Not built | Fix #8 |
+| `start-here-general.html` | ❌ Not built | Fix #9 |
+
+---
+
+## SAFETY REVIEW LOG
+
+Pages that require a safety review entry before going live or receiving content changes:
+
+| Page | Review status | Blocker |
+|------|--------------|---------|
+| `Parkinsons_Protocol.html` | ⏸ Pending | iHerb inline links; Levodopa/Mucuna interaction warning audit |
+| `Hidden_Deficiencies.html` | ⏸ Pending | Supplement-drug interaction screening |
+| `start-here-parkinsons.html` | ⏸ Pending | New page — full content review before publish |
+| `DMSO_Oxygen_Therapy.html` | ⏸ Pending | Dosing content; keep orphaned from nav until cleared |
+
+---
+
+## DEFERRED / STRATEGIC
+
 - Make.com Facebook/Instagram auto-posting — pending setup
+- Search function — not agreed, future work
+- Breadcrumbs — not agreed, future work
+- Lead magnet / testimonials / social proof — editorial, Sharona's call
 - YouTube channel setup
 
 ---
-*This file lives in the repo root. Update the PAGE STATUS table after every session.*
-*Run the audit script before every push to catch regressions.*
+
+*This file is the single source of truth. Update PAGE STATUS after every session.*
+*Run the live audit script before every push.*
