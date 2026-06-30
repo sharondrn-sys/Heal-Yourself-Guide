@@ -58,7 +58,7 @@ body:not(.in-part-b) #sticky-nav-wrap-b{display:none;}
 .phase-nav a.pn-active .pn-dot{opacity:1;}
 .phase-nav a.pn-home{border-left:1px solid var(--border-s);padding-left:14px;opacity:0.7;color:var(--honey);}
 .phase-nav a.pn-home:hover{color:var(--sage);opacity:1;}
-@media print{.phase-nav,.sticky-partb{display:none!important;}}
+@media print{.phase-nav,.sticky-partb,#companion-bar,#companion-bar-intro,.sticky-nav-wrap{display:none!important;}}
 /* STICKY NAV WRAP */
 .sticky-nav-wrap .phase-nav{position:relative;top:auto;}
 
@@ -455,7 +455,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 </div><!-- end sticky wrapper -->
 
 <!-- PERSISTENT COMPANION BAR — stays visible across Part A and Part B -->
-<p style="max-width:700px;margin:14px auto 0;padding:0 24px;text-align:center;font-size:13px;color:var(--ink-light);line-height:1.6;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
+<p id="companion-bar-intro" style="max-width:700px;margin:14px auto 0;padding:0 24px;text-align:center;font-size:13px;color:var(--ink-light);line-height:1.6;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
 <div id="companion-bar" style="position:sticky;top:calc(var(--nav-h)*2);z-index:85;background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:8px 24px;">
   <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
     <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-ghost);flex-shrink:0;">Jump to:</span>
@@ -968,7 +968,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
 
 <!-- FOOD -->
-<section class="sec sec-warm" id="food">
+<section class="sec sec-warm" id="food" style="scroll-margin-top:calc(var(--nav-h) + 90px);">
   <div class="inner">
     <div class="kicker">Food as Medicine</div>
     <h2 class="sec-title">What To Eat — And What To Remove</h2>
@@ -1008,7 +1008,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- EXERCISE -->
-<section class="sec sec-stone" id="exercise">
+<section class="sec sec-stone" id="exercise" style="scroll-margin-top:calc(var(--nav-h) + 90px);">
   <div class="inner">
     <div class="kicker">Movement Therapy</div>
     <h2 class="sec-title">Exercise — The Non-Negotiable</h2>
@@ -1058,7 +1058,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- GUT BRAIN -->
-<section class="sec sec-sage" id="gut-brain">
+<section class="sec sec-sage" id="gut-brain" style="scroll-margin-top:calc(var(--nav-h) + 90px);">
   <div class="inner">
     <div class="kicker">Gut-Brain Axis</div>
     <h2 class="sec-title">The Root Nobody Is Addressing</h2>
@@ -1083,7 +1083,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div class="divider"></div>
 
 <!-- WEEKLY CHECKLIST -->
-<section class="sec sec-deep" id="weekly">
+<section class="sec sec-deep" id="weekly" style="scroll-margin-top:calc(var(--nav-h) + 90px);">
   <div class="inner">
     <div class="kicker">Weekly Schedule</div>
     <h2 class="sec-title">What Happens Each Day of the Week</h2>
