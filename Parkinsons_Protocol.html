@@ -43,16 +43,14 @@ body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink-mid);ove
 .phase-nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:var(--bg-deep);border-bottom:1px solid rgba(138,184,154,0.12);z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 28px;}
 .phase-nav a{color:var(--ink-light);}
 .phase-nav a.pn-active{color:var(--sage);}
-/* Only one Part's sticky nav bar should be visible at a time */
-body.in-part-b #sticky-nav-wrap-a{display:none;}
-body:not(.in-part-b) #sticky-nav-wrap-b{display:none;}
-/* Part A's tab row has too many items for one line — wrap to 2 rows */
-#part-a-nav{height:auto;min-height:80px;flex-wrap:wrap;align-content:center;padding:4px 28px;}
-#part-a-nav .phase-nav-inner{flex-wrap:wrap;row-gap:2px;}
 .phase-nav::-webkit-scrollbar{display:none;}
 .phase-nav-inner{display:flex;align-items:stretch;min-width:0;margin:0 auto;justify-content:center;}
 .phase-nav a{display:flex;align-items:center;gap:6px;padding:0 14px;height:38px;font-size:10px;font-weight:600;letter-spacing:0.07em;color:var(--ink-light);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s;text-transform:uppercase;flex-shrink:0;}
 .phase-nav a:hover{color:var(--sage);}
+#part-b summary{-webkit-appearance:none;appearance:none;}
+#part-b summary::-webkit-details-marker{display:none;}
+#part-b summary::marker{content:"";}
+#part-b[open] .part-b-chevron{transform:rotate(180deg);}
 .phase-nav a.pn-active{color:var(--sage);border-bottom-color:var(--sage);}
 .pn-dot{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:0.35;flex-shrink:0;}
 .phase-nav a.pn-active .pn-dot{opacity:1;}
@@ -397,8 +395,8 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   <p class="hero-sub">Every intervention. In the correct order. One page you can print and follow today.</p>
   <p class="hero-note"><strong>This page contains everything.</strong> The Full Body Detox (summarised) runs first — Weeks 1–14. The Parkinson's-specific protocol begins in Week 3 and runs alongside it. By Week 15, you are running the full protocol. One page. One plan. Start here.</p>
   <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;flex-wrap:wrap;">
-    <a href="#part-a" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(61,107,74,0.25);">Part A — Understand It ↓</a>
-    <a href="#part-b-sentinel" style="display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(140,90,60,0.25);">Part B — Do It ↓</a>
+    <a href="#part-a-content" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(61,107,74,0.25);">Part A — Do It ↓</a>
+    <a href="#part-b" style="display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(140,90,60,0.25);">Part B — Understand It ↓</a>
   </div>
 </header>
 
@@ -416,532 +414,13 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   </div>
 </div>
 
-<!-- ═══ PART A — UNDERSTAND IT ═══ -->
-
-<!-- PART A — sticky wrapper: header + tabs + jump-to bar, fully self-contained -->
-<div class="sticky-nav-wrap" id="sticky-nav-wrap-a" style="position:sticky;top:var(--nav-h);z-index:90;">
+<!-- ═══ PART A — DO IT ═══ -->
+<div id="part-a-content">
+<div class="sticky-nav-wrap" style="position:sticky;top:var(--nav-h);z-index:90;">
 <div id="part-a" style="background:var(--sage);padding:10px 24px;text-align:center;">
-  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Understand It · The Science · Root Causes · What to Expect</span>
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part A — Do It · Daily Protocol · Food · Exercise · Weekly Plan</span>
 </div>
-<!-- PHASE NAV — Part A -->
 <div class="phase-nav no-print" id="part-a-nav">
-  <div class="phase-nav-inner">
-    <a href="#whoisthisfor" data-section="whoisthisfor"><span class="pn-dot"></span>Who It's For</a>
-    <a href="#symptom-lookup" data-section="symptom-lookup"><span class="pn-dot"></span>Symptom Lookup</a>
-    <a href="#understanding" data-section="understanding"><span class="pn-dot"></span>Overview</a>
-    <a href="#silent-decade" data-section="silent-decade"><span class="pn-dot"></span>The Silent Decade</a>
-    <a href="#alpha-syn" data-section="alpha-syn"><span class="pn-dot"></span>Alpha-Synuclein</a>
-    <a href="#mitochondria" data-section="mitochondria"><span class="pn-dot"></span>Mitochondria</a>
-    <a href="#gut-origin" data-section="gut-origin"><span class="pn-dot"></span>Gut Origin</a>
-    <a href="#toxins" data-section="toxins"><span class="pn-dot"></span>Toxins</a>
-    <a href="#inflammation" data-section="inflammation"><span class="pn-dot"></span>Neuroinflammation</a>
-    <a href="#dopamine" data-section="dopamine"><span class="pn-dot"></span>Dopamine</a>
-    <a href="#hope" data-section="hope"><span class="pn-dot"></span>Hope &amp; Evidence</a>
-  </div>
-</div>
-<p style="max-width:700px;margin:10px auto 0;padding:0 24px;text-align:center;font-size:12px;color:var(--ink-light);line-height:1.5;">This protocol has a dedicated daily schedule — exact timing, morning through evening — and a complete shopping list with direct iHerb links.</p>
-<div style="background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:8px 24px;">
-  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
-    <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-ghost);flex-shrink:0;">Jump to:</span>
-    <a href="#part-b-sentinel" style="display:inline-flex;align-items:center;gap:5px;background:var(--terra);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">Part B — Do It →</a>
-    <a href="Parkinsons_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">📋 Daily Schedule</a>
-    <a href="Parkinsons_Shopping_Table.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">🛒 Shopping List</a>
-    <a href="Parkinsons_Must_Have.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">⭐ Must-Have List</a>
-    <a href="Parkinsons_Symptoms.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">🔍 Symptom Guide</a>
-  </div>
-</div>
-</div><!-- end Part A wrapper -->
-<!-- WHO IS THIS FOR -->
-<section class="sec-b" id="whoisthisfor" style="scroll-margin-top:calc(var(--nav-h) + 220px);">
-  <div class="inner">
-    <div class="kicker">Is This For You</div>
-    <h2 class="sec-title">Who This Protocol Is For</h2>
-    <p class="sec-sub">For anyone facing a Parkinson's diagnosis — their own or a loved one's. For caregivers who want to do more than manage decline. For people who have been told there is nothing to be done and know that cannot be the whole truth.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:24px 0;">
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">🧬</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Recently Diagnosed</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">In the early stages, the most neurons are still alive. This is when intervention has the most leverage.</div></div>
-      </div>
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">💊</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">On Levodopa</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Pharmaceutical levodopa and Mucuna Pruriens interact directly. This protocol includes the supervision rules.</div></div>
-      </div>
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">🧑‍🤝‍🧑</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Caregiver</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">This page is designed to print and hand directly to someone. One page. One plan. Start here.</div></div>
-      </div>
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">🔍</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Prodromal Signs</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Constipation, loss of smell, REM sleep disorder, fatigue — years before tremor. Act before the diagnosis.</div></div>
-      </div>
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">💰</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Budget Is Tight</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">See the <a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List</a> — the 7 interventions that matter most if you can only do a few.</div></div>
-      </div>
-      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
-        <div style="font-size:22px;flex-shrink:0;">😤</div>
-        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Told Nothing Can Be Done</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">That is not true. This protocol documents what the research actually shows.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SYMPTOM LOOKUP -->
-<section class="sec-c" id="symptom-lookup" style="scroll-margin-top:calc(var(--nav-h) + 220px);">
-  <div class="inner">
-    <div class="kicker">Where to Start</div>
-    <h2 class="sec-title">Symptom → Where to Start</h2>
-    <p class="sec-sub">Find your most pressing symptom and go directly to the relevant section.</p>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:20px;">
-      <tr><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Symptom or Concern</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Primary Intervention</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Go To</th></tr>
-      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Tremor, rigidity, slowness</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna Pruriens + Mannitol + exercise</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#tremor" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
-      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Constipation / gut issues</td><td style="padding:10px 14px;color:var(--ink-mid);">Gut-brain axis repair — the origin point of the disease</td><td style="padding:10px 14px;"><a href="#gut-origin" style="color:var(--sage);font-weight:600;">Gut Origin →</a></td></tr>
-      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Sleep disturbance / REM disorder</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna + Magnesium glycinate + 4:8 breathing</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#sleep" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
-      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Fatigue / low energy</td><td style="padding:10px 14px;color:var(--ink-mid);">Mitochondrial stack: CoQ10 Ubiquinol + NMN + NAC</td><td style="padding:10px 14px;"><a href="#mitochondria" style="color:var(--sage);font-weight:600;">Mitochondria →</a></td></tr>
-      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Depression / anxiety / mood</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna (dopamine precursor) + Lion's Mane + gut repair</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#mood" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
-      <tr style="background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Don't know where to start</td><td style="padding:10px 14px;color:var(--ink-mid);">The 7 must-have interventions, prioritised</td><td style="padding:10px 14px;"><a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List →</a></td></tr>
-    </table>
-    <div style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.25);border-left:4px solid var(--terra);border-radius:8px;padding:18px 22px;margin-top:24px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">⚠️ Medical Disclaimer</div>
-      <div style="font-size:14px;line-height:1.7;color:var(--ink-mid);">This protocol is for educational purposes only. It is not medical advice and does not replace consultation with a qualified healthcare practitioner. <strong>If currently taking pharmaceutical levodopa (Sinemet, Madopar) or an MAO-B inhibitor (selegiline, rasagiline) — both common first-line and early-adjunct Parkinson's medications — Mucuna Pruriens requires direct medical supervision before starting,</strong> not just dose adjustment after the fact. Mucuna extracts vary 4–10x in actual levodopa content depending on standardization — "500mg Mucuna" is a label weight, not a levodopa dose, and your neurologist cannot safely titrate your prescription against it without knowing the % levodopa of the specific product you're using. Bring the product label to your appointment before starting.</div>
-    </div>
-  </div>
-</section>
-
-<div id="part-a-chapters" style="background:var(--bg);">
-
-<!-- CHAPTER: understanding -->
-<div class="chapter open" id="ch-understanding" data-section="understanding">
-  <div id="understanding" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-understanding')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">00</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">Before the Protocol</div>
-        <div class="chapter-title">What Is Actually Happening in the Body</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:0;">The diagnosis is the beginning, not the answer. To reverse something, you need to understand what it is. Most people with Parkinson's have never been told any of this — not because it isn't known, but because knowing it doesn't sell anything. Use the chapter tabs above to read the science in any order, or work through them chronologically from The Silent Decade.</p>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: silent-decade -->
-<div class="chapter" id="ch-silent" data-section="silent-decade">
-  <div id="silent-decade" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-silent')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">01</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Silent Decade</div>
-        <div class="chapter-title">The Disease Started 10–20 Years Before the Tremor</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <div class="highlight-box" style="margin-bottom:28px;">
-      <div class="h-title">The Number Nobody Tells You</div>
-      <p>When motor symptoms first appear — the tremor, the stiffness, the slowness — between 60% and 80% of the dopamine-producing neurons in the substantia nigra are already dead. According to the National Institute of Neurological Disorders and Stroke, "by the time PD symptoms appear, most people have lost 60 to 80% or more of the dopamine-producing cells." The brain compensated for years. It rerouted, recruited backup circuits, pushed harder with fewer cells. Then one day it could no longer hide it. That is the day of diagnosis. Not the beginning.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The prodromal phase — the silent period of neurodegeneration before motor diagnosis — lasts on average 10 to 20 years. Research confirms that 98.8% of people with Parkinson's experienced prodromal symptoms beforehand. They averaged 7.6 different symptoms over a 10-year window before receiving a diagnosis. The body was speaking the whole time. Nobody was listening.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">The prodromal signs are not subtle. They include: constipation for years or decades before tremor appears, loss of smell (hyposmia), REM sleep behavior disorder (acting out dreams), depression, fatigue, and pain. Every one of these is a sign of the neurodegeneration already underway — spreading up through the brainstem, long before it reaches the substantia nigra.</p>
-
-    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;margin-bottom:0;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">What This Means for Recovery</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The damage is extensive — but the timeline also means the brain had remarkable plasticity for years before it gave out. That plasticity does not disappear at diagnosis. Neuroplasticity, neurogenesis, and mitochondrial recovery are all possible at any stage. The protocol is built on this. The goal is not to mourn the neurons already lost — it is to protect every neuron still alive, rebuild the environment around them, and trigger the brain's own repair mechanisms.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: alpha-syn -->
-<div class="chapter" id="ch-alpha" data-section="alpha-syn">
-  <div id="alpha-syn" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-alpha')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">02</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Protein That Spreads</div>
-        <div class="chapter-title">Alpha-Synuclein — What It Is and Why It Becomes a Weapon</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Alpha-synuclein is a normal protein. Every neuron in your body makes it. In healthy cells, it floats freely, helps regulate dopamine release, and gets cleared away by the cell's waste disposal system. In Parkinson's disease, something goes wrong at the folding stage. The protein misfolds — twisting into an abnormal shape instead of its correct one. Misfolded proteins clump together. The clumps grow into fibrils. The fibrils accumulate into what are called Lewy bodies: dense, toxic protein deposits inside neurons.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Why It Spreads Like an Infection</div>
-      <p>The most alarming finding in Parkinson's research is that alpha-synuclein behaves like a prion — a misfolded protein that forces neighbouring proteins to misfold too. Once the pattern starts, it propagates. It spreads cell to cell, neuron to neuron, region to region. This is not cancer. It is not inflammation. It is a protein conformation that is essentially contagious within the nervous system. A 2024 review in Neurochemistry International confirmed: misfolded alpha-synuclein forms fibrils, then Lewy bodies, and the pathological process "tends to occur predominantly in neurons with high energy demands and low myelination" — exactly the profile of dopaminergic neurons in the substantia nigra.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">What triggers the first misfold? The research points to a convergence of factors: mitochondrial dysfunction (generating the oxidative stress that damages the protein), environmental toxins (paraquat, rotenone, pesticides), impaired protein clearance systems (the ubiquitin-proteasome system and the lysosomal pathway — the cell's own rubbish disposal becoming overwhelmed), and gut dysbiosis allowing misfolded protein to enter the vagus nerve and travel directly to the brainstem.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">Critically, abnormal phosphorylation at serine 129 — a chemical modification that happens under oxidative stress and pesticide exposure — accelerates aggregation. This is why reducing oxidative load, supporting mitochondrial function, and eliminating toxin exposure are not soft lifestyle advice. They are direct interventions at the molecular trigger of the disease.</p>
-
-    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Mannitol has been studied specifically for its ability to prevent alpha-synuclein aggregation — animal studies showed it prevented clumping and improved motor function. Curcumin directly inhibits alpha-synuclein aggregation (Pandey et al., Acta Neuropathologica 2008). Berberine inhibits aggregation in Parkinson's models. NAC (N-acetylcysteine) reduces the oxidative modification that triggers misfolding. The protocol addresses the root molecular event, not just its downstream symptoms.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: mitochondria -->
-<div class="chapter" id="ch-mito" data-section="mitochondria">
-  <div id="mitochondria" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-mito')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">03</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Energy Crisis</div>
-        <div class="chapter-title">Mitochondrial Collapse — Why the Substantia Nigra Dies First</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopaminergic neurons in the substantia nigra are among the most metabolically demanding cells in the human body. They fire constantly — not in response to signals, but spontaneously, as a pacemaker. This autonomous firing requires enormous amounts of ATP. ATP is made by mitochondria. And mitochondria in Parkinson's disease are failing.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Complex I — The Primary Failure Point</div>
-      <p>In 1989, researchers discovered a consistent finding in the substantia nigra of Parkinson's patients: Complex I of the mitochondrial electron transport chain was significantly deficient. This was not a random finding — it has been replicated in dozens of studies over 35 years. Complex I is the entry point of the chain that produces ATP. When it fails, energy production collapses. Reactive oxygen species (ROS) flood the cell. The neuron, already operating at maximum metabolic load, cannot sustain itself. It begins to die. This same mechanism is how the pesticides paraquat and rotenone cause Parkinson's — both are Complex I inhibitors. The disease and the pesticide converge on the same molecular target.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The substantia nigra is particularly vulnerable because its neurons have long, highly branched axons — more branches means more surface area, more mitochondria required, more energy demanded. A 2023 study in npj Parkinson's Disease found "a generalised and synergistic reduction in mitochondrial quality control proteins in dopaminergic neurons" from Parkinson's patients. The cells are not just running low on energy — they have lost the mechanisms to repair and replace damaged mitochondria.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">There is also a vicious feedback loop: mitochondrial dysfunction produces oxidative stress → oxidative stress damages alpha-synuclein → damaged alpha-synuclein aggregates → Lewy bodies → more mitochondrial dysfunction. Once this loop is running, it accelerates itself. Breaking any link in the chain slows the whole process.</p>
-
-    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">CoQ10 Ubiquinol directly supports electron transport chain function — it is the electron carrier between Complex I/II and Complex III. NMN and NR restore NAD+ levels, which are essential for Complex I to function. PQQ stimulates mitochondrial biogenesis — the creation of new mitochondria. NAC restores glutathione, the primary antioxidant that neutralises the ROS cascade. These are not general "antioxidants." They are targeted interventions at the exact points where the mitochondrial system breaks down in Parkinson's.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: gut-origin -->
-<div class="chapter" id="ch-gut" data-section="gut-origin">
-  <div id="gut-origin" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-gut')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">04</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">Where It Starts</div>
-        <div class="chapter-title">The Gut-Brain Highway — How Parkinson's Likely Begins</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">In 2003, German neuropathologist Heiko Braak proposed something radical: Parkinson's does not begin in the brain. It begins in the gut — or in the nose — and travels upward. After two decades of research, the evidence is substantial enough that the Parkinson's Foundation now describes this as a mainstream hypothesis. The disease, in the body-first subtype, starts in the enteric nervous system and spreads to the brain via the vagus nerve.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Braak Staging — The Road Map of the Disease's Spread</div>
-      <p>Braak described six stages of Parkinson's pathology based on where Lewy body deposits appear in the nervous system. In Stages 1 and 2, the damage is entirely peripheral — in the gut, the olfactory bulb, and the lower brainstem. The substantia nigra — the region responsible for movement — is not affected until Stage 3. This staging explains why constipation, smell loss, and sleep disorders (REM behaviour disorder) appear years before a single tremor. The motor symptoms are not the disease. They are the disease's announcement that it has reached the brain.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The vagus nerve is the highway. It is the longest nerve in the body — running directly from the gut's enteric nervous system up through the diaphragm, chest, and neck, into the brainstem. Research from Neuron (2019) confirmed that alpha-synuclein travels this route. Truncal vagotomy studies — where the vagus nerve was surgically cut — showed reduced Parkinson's risk: a 2017 study by Liu et al. in Neurology and a 2015 study by Svensson et al. in Annals of Neurology both found that people who had vagotomies decades earlier had significantly lower Parkinson's rates. This is not coincidence — it is causal evidence.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">A 2024 paper published on World Parkinson's Day united the brain-first and body-first models with environmental toxins: the hypothesis is that inhaled or ingested toxins — pesticides, herbicides, heavy metals — trigger the first misfold in either the olfactory bulb (brain-first) or the gut neurons (body-first), and the spread follows from there. The entry point determines the subtype. The mechanism is the same.</p>
-
-    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The Full Body Detox runs first precisely because the gut is the origin. Rebuilding the gut wall (L-Glutamine, zinc carnosine, aloe), restoring depleted strains (Faecalibacterium prausnitzii, Roseburia, Blautia — all depleted in Parkinson's), removing glyphosate and heavy metals that disrupt gut neurons, and healing the intestinal microbiome is not supportive care. It is addressing the most likely site of origin of the disease itself. The SymPD trial (2025) confirmed a 4-strain probiotic produced positive motor outcomes in a randomised controlled trial. The GUT-PARFECT trial (Lancet eClinicalMedicine 2024) showed FMT improved motor scores. The gut is not peripheral to Parkinson's. For most people, it is where it started.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: toxins -->
-<div class="chapter" id="ch-toxins" data-section="toxins">
-  <div id="toxins" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-toxins')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">05</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Environmental Evidence</div>
-        <div class="chapter-title">Pesticides, Herbicides, and the Rise of a Pandemic</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Parkinson's disease is increasing. It is not genetics — genetics accounts for only 5–10% of cases. Something in the modern environment is driving the epidemic. The evidence points to a small group of agricultural chemicals with a specific mechanism of action: they destroy dopaminergic neurons the same way Parkinson's does.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Paraquat and Rotenone — The Smoking Gun</div>
-      <p>A landmark study by the National Institute of Environmental Health Sciences found that people who used paraquat or rotenone developed Parkinson's approximately 2.5 times more often than non-users. Rotenone is a mitochondrial Complex I inhibitor — it causes Parkinson's in animals by the exact same mechanism seen in human disease. Rats exposed to rotenone develop Lewy body-like inclusions in the substantia nigra. This is not correlation. This is experimental replication of the disease using a pesticide as the trigger. Paraquat has been banned in the EU and China but remains in use in many countries. Prof. E. Ray Dorsey named Syngenta directly in Movement Disorders (2023), documenting a lobbying campaign to maintain paraquat's approval despite the evidence. In 2025, Syngenta settled approximately 6,500 paraquat lawsuits. In March 2026, Syngenta announced the end of global paraquat production by June 2026.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">A 2025 study published in Nature's npj Parkinson's Disease journal found that rotenone triggers lasting alterations in brain gene activity — specifically in the substantia nigra — weeks after exposure stopped. Genes related to inflammation and immune activation were permanently switched on. The molecular memory of the toxin persists long after the chemical has left the body. This has enormous implications for anyone who has lived near agricultural land, eaten non-organic food for decades, or worked in an environment with pesticide exposure.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">Trichloroethylene (TCE), a common industrial solvent and dry-cleaning chemical found in groundwater across the world, has also been linked to Parkinson's with an approximately 2.5-fold increased risk. Heavy metals — particularly aluminium and mercury — accumulate in the substantia nigra and directly promote alpha-synuclein aggregation. Glyphosate (Roundup) disrupts gut bacteria, depletes the specific bacterial strains that produce butyrate and short-chain fatty acids, and has been detected at over 1,000 ppb in commonly consumed foods.</p>
-
-    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Uncomfortable Truth</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The regulatory agencies knew. The studies existed. The mechanisms were understood. But the chemicals stayed on the market while millions of people were exposed. Parkinson's has a 10–20 year latency. By the time symptoms appeared, the exposure was decades old, the link unprovable in court, and the company legally protected. This is not a conspiracy theory — it is documented agnotology: the deliberate manufacture of doubt. Prof. Dorsey named it directly in peer-reviewed literature. The settlement in 2025 confirmed it.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: inflammation -->
-<div class="chapter" id="ch-inflam" data-section="inflammation">
-  <div id="inflammation" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-inflam')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">06</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Brain on Fire</div>
-        <div class="chapter-title">Neuroinflammation and the Brain's Broken Waste System</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">The brain has its own waste disposal system. It was only discovered in 2013. It is called the glymphatic system — a network of channels around blood vessels that flushes cerebrospinal fluid through the brain during deep sleep, clearing out toxic proteins, debris, and metabolic waste. When this system works, misfolded alpha-synuclein and other neurotoxic proteins are cleared every night. When it fails — or when sleep is disrupted — they accumulate.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Sleep Is Not Recovery. Sleep Is Surgery.</div>
-      <p>Glymphatic clearance occurs predominantly during deep, slow-wave sleep. Research published in Sleep (2024) confirmed: "the efficacy of glymphatic clearance relies on the depth of sleep stage — decrease of deep sleep, frequent interruptions of lighter sleep stages, and shorter total sleep time all lead to decreased glymphatic activity." In Parkinson's disease, sleep is severely disrupted — REM behaviour disorder, insomnia, frequent waking. Every disrupted night is a night the brain failed to flush its waste. The accumulated toxins accelerate the neurodegeneration. The neurodegeneration further disrupts sleep. This is a loop that, once established, tightens itself.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">Microglia are the brain's immune cells — its resident macrophages. The substantia nigra has a higher density of microglia than any other brain region, which is part of why it is so vulnerable. Under normal conditions, microglia clean up debris, produce neurotrophic factors, and protect neurons. When they become chronically activated — by Lewy bodies, by toxins, by gut-derived lipopolysaccharides crossing a leaky blood-brain barrier — they switch into a pro-inflammatory mode. They release cytokines that damage the very neurons they are meant to protect. This is neuroinflammation. It is self-perpetuating: inflammation activates more microglia, which produce more inflammation.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">The feedback loop is three-way: impaired glymphatic clearance → alpha-synuclein accumulates → microglia activate → neuroinflammation → AQP4 channels (the water channels that drive glymphatic flow) become dysregulated → glymphatic clearance further impaired. Each element makes the others worse. Addressing only one without the others produces limited results.</p>
-
-    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Sleep is a non-negotiable pillar of this protocol — not for rest, but for glymphatic clearance. Passionflower and saffron support deep sleep architecture. Lion's Mane stimulates NGF (Nerve Growth Factor), which modulates microglial activation. Curcumin directly suppresses neuroinflammatory pathways (NF-κB). Omega-3 fatty acids reduce pro-inflammatory cytokines. Magnesium glycinate supports sleep depth and reduces neuroinflammatory markers. The detox protocols — binders, castor oil packs, drainage support — reduce the systemic inflammatory load that crosses into the brain and triggers microglial activation in the first place.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: dopamine -->
-<div class="chapter" id="ch-dopa" data-section="dopamine">
-  <div id="dopamine" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-dopa')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">07</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">What You Were Never Told</div>
-        <div class="chapter-title">Why Levodopa Is a Patch — and Why the Patch Stops Working</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopamine is not just the "movement chemical." It is the currency of motivation, reward, decision-making, and emotion. Parkinson's strips all of it. But the loss of dopamine is not the disease. It is the consequence of the disease — the downstream result of decades of neuronal death. Levodopa replaces the dopamine those dead neurons can no longer make. It does not address why they died. It does not slow the dying. It manages the symptom while the cause continues unimpeded.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">The Wearing-Off Problem and What It Really Means</div>
-      <p>Levodopa works by being converted to dopamine in the brain. In the early stages, surviving neurons do this conversion and buffer the dopamine — releasing it steadily. Over time, as more neurons die, there is less buffering capacity. The dopamine spikes and crashes with each dose. The "on" window shrinks. "Wearing off" begins — the return of symptoms before the next dose. Within 5 years, up to 50% of people on levodopa experience wearing-off. After 10 years, the majority do. The drug that was managing the condition begins to generate its own complications: dyskinesias (involuntary movements from too much dopamine), "on-off" fluctuations, and increasingly severe "off" states. A 2025 paper in Journal of Neural Transmission confirmed: as neurons continue dying, serotonergic neurons begin releasing levodopa-derived dopamine as a "false neurotransmitter" — with no buffering capacity and no regulation. This is the mechanism of late-stage motor complications.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This does not mean levodopa is wrong. For many people, it remains essential for quality of life, and Mucuna Pruriens — a plant-based natural source of L-dopa — shows consistent improvements in motor symptoms with fewer dyskinesias than pharmaceutical levodopa in multiple clinical studies, including a 2025 systematic review. But the important understanding is this: levodopa does not change the trajectory of the disease. The neurons are still dying. The protein is still misfolding. The mitochondria are still failing. The medication buys time. The protocol is what you do with that time.</p>
-
-    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Honest Picture</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0 0 16px;">If you are on levodopa and following this protocol, the goal is to slow the progression enough that the medication continues to work — and to give the surviving neurons the conditions to function optimally. Mucuna Pruriens can potentially extend the effective window and reduce dyskinesias. But any change to pharmaceutical medication must be done in consultation with a neurologist. The protocol works alongside medication — it does not replace it. What it does replace is the passive acceptance that nothing else can be done.</p>
-      <div style="background:#fff;border:1px solid rgba(140,90,60,0.3);border-radius:8px;padding:16px 18px;">
-        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:8px;">🛑 Stop Mucuna and contact your neurologist if you notice:</div>
-        <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;color:var(--ink-mid);">
-          <li><strong>Dizziness or fainting when standing up</strong> (orthostatic hypotension) — a real fall risk, more dangerous in PD patients due to already-impaired balance reflexes</li>
-          <li><strong>New or worsening involuntary movements</strong> (dyskinesia) — twitching or writhing not present before</li>
-          <li><strong>Hallucinations or visual disturbances</strong> — seeing things that aren't there</li>
-          <li><strong>Confusion, unusual agitation, or a noticeable change in mental clarity</strong></li>
-          <li><strong>Nausea that doesn't resolve</strong> with proper empty-stomach timing</li>
-        </ul>
-      </div>
-    </div>
-    </div>
-</div>
-</div>
-
-<!-- CHAPTER: hope -->
-<div class="chapter" id="ch-hope" data-section="hope">
-  <div id="hope" style="scroll-margin-top:calc(var(--nav-h) + 220px);"></div>
-  <div class="chapter-header" onclick="toggleChapter('ch-hope')">
-    <div class="chapter-header-inner">
-        <div class="chapter-header-left">
-      <span class="chapter-num">08</span>
-      <div class="chapter-meta">
-        <div class="chapter-kicker">The Science of Recovery</div>
-        <div class="chapter-title">The Brain Can Grow. It Can Repair. Here Is the Evidence.</div>
-      </div>
-        <div class="chapter-read-hint">Read more</div>
-    </div>
-    <span class="chapter-arrow">▾</span>
-    </div>
-  </div>
-  <div class="chapter-body">
-    <div class="chapter-body-inner">
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">For most of the 20th century, science believed adult brains could not generate new neurons. That belief is now known to be wrong. Neurogenesis — the birth of new neurons — occurs in the adult brain, including in regions critical to dopaminergic function. Neuroplasticity — the rewiring of existing circuits — occurs throughout life and accelerates with the right inputs. This is not optimism. It is biology. And it is the scientific foundation of every intervention in this protocol.</p>
-
-    <div class="highlight-box" style="margin-bottom:24px;">
-      <div class="h-title">Lion's Mane, NGF, and BDNF — The Repair Signals</div>
-      <p>Lion's Mane mushroom (Hericium erinaceus) contains two unique compounds — hericenones and erinacines — that cross the blood-brain barrier and stimulate the synthesis of Nerve Growth Factor (NGF) and Brain-Derived Neurotrophic Factor (BDNF). NGF supports the survival and maintenance of cholinergic neurons. BDNF is the primary signal for neuroplasticity and neurogenesis — it tells neurons to survive, grow new connections, and the brain to generate new cells. In Parkinson's disease, both NGF and BDNF are depleted. Lion's Mane directly addresses this depletion. It does not repair dead neurons — but it creates the chemical environment in which surviving neurons grow, branch, and compensate.</p>
-    </div>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">Exercise is the single most evidence-backed intervention for Parkinson's — not as gentle movement but as a medical necessity. Vigorous aerobic exercise raises BDNF levels, stimulates dopamine synthesis in surviving neurons, triggers neuroplasticity in the motor cortex, and has been shown to slow progression in multiple human studies. Tango dancing specifically has been studied in Parkinson's patients for its unique combination of rhythmic movement, music, social engagement, and cognitive challenge — each of which independently stimulates BDNF production and dopaminergic function.</p>
-
-    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">NMN (Nicotinamide Mononucleotide) and NR (Nicotinamide Riboside) restore NAD+ — a coenzyme that declines dramatically with age and Parkinson's progression, and which is required for the sirtuins (longevity proteins) that regulate mitochondrial repair, DNA repair, and neuronal survival. PQQ stimulates mitochondrial biogenesis. Every new mitochondrion built is increased energy capacity for neurons that were starving. These are not supplements in the casual sense. They are targeted molecular interventions at documented failure points in Parkinson's pathology.</p>
-
-    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
-      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">The Summary of Everything Above</div>
-      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Parkinson's is not a dopamine deficiency. It is a decades-long cascade: environmental toxins trigger mitochondrial failure and oxidative stress → alpha-synuclein misfolds and spreads prion-like from gut to brain → the glymphatic system, overwhelmed and sleep-deprived, fails to clear the accumulation → microglia activate and drive neuroinflammation → the ubiquitin-proteasome system collapses under protein load → neurons in the substantia nigra die. By the time the tremor appears, the cascade has been running for a decade or more. The protocol below addresses every stage of that cascade. Not one thing. All of it. At the same time.</p>
-    </div>
-    </div>
-</div>
-</div>
-
-</div><!-- /part-a-chapters -->
-
-<div class="divider"></div>
-
-
-<!-- PARALLEL TREATMENT OVERVIEW -->
-<section class="sec sec-dark">
-  <div class="inner">
-    <div class="kicker kicker-white">The Full Plan</div>
-    <h2 class="sec-title sec-title-white">How This Protocol Works — Two Tracks Running Together</h2>
-    <p class="sec-sub sec-sub-white">The detox and the Parkinson's protocol are not sequential — they are parallel. The detox clears the terrain. The neurological protocol rebuilds it. They run at the same time, starting Week 1.</p>
-
-    <!-- PARALLEL TIMELINE TABLE -->
-    <div class="timeline">
-      <div class="timeline-row" style="margin-bottom:4px;">
-        <div class="tl-header" style="color:rgba(255,255,255,0.4);border-right-color:rgba(255,255,255,0.1);"></div>
-        <div class="tl-col-head detox">🌿 Track 1 — Full Body Detox</div>
-        <div class="tl-col-head pd">🧠 Track 2 — Parkinson's Protocol</div>
-      </div>
-
-      <div class="timeline-row">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>1–2</div>
-        <div class="tl-detox">
-          <div class="tl-title">Open the 5 Drainage Doors</div>
-          <div class="tl-body">Filtered water, magnesium citrate, detox baths, dry brushing, castor oil pack, rebounding. Prepare liver, colon, kidneys, lymph, skin.</div>
-          <div class="tl-note">Foundation. Nothing else works without this.</div>
-        </div>
-        <div class="tl-pd">
-          <div class="tl-title">Begin Gently</div>
-          <div class="tl-body">Morning sole water, lemon water, baking soda drink. Silica-rich water 1L daily. Morning sunlight. Daily exercise. No supplements yet — let the drainage open first.</div>
-          <div class="tl-note tl-note-pd">Prepare the terrain before loading supplements.</div>
-        </div>
-      </div>
-
-      <div class="timeline-row" style="margin-top:2px;">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Week<br>3</div>
-        <div class="tl-detox">
-          <div class="tl-title">Biofilm Disruption Begins</div>
-          <div class="tl-body">Serrapeptase + Nattokinase on empty stomach. Raw garlic daily. Berberine with meals. Disrupting the protective shield around pathogens.</div>
-        </div>
-        <div class="tl-pd">
-          <div class="tl-title">Add Core Neurological Stack</div>
-          <div class="tl-body">Start Mucuna Pruriens, Lion's Mane, CoQ10 Ubiquinol, NMN, NAC. With drainage open, these can reach the brain and work properly.</div>
-          <div class="tl-note tl-note-pd">This is the turning point — full protocol begins.</div>
-        </div>
-      </div>
-
-      <div class="timeline-row" style="margin-top:2px;">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>5–6</div>
-        <div class="tl-detox">
-          <div class="tl-title">Antiparasitic Rotation</div>
-          <div class="tl-body">Black walnut + wormwood + cloves (the Clark triad) in rotation. Oregano oil. Mimosa pudica. Pumpkin seeds every morning. Die-off management with binders.</div>
-        </div>
-        <div class="tl-pd">
-          <div class="tl-title">Full Protocol Running</div>
-          <div class="tl-body">All daily supplements, exercise, vagus nerve practice, mannitol, castor oil packs, detox baths. Track symptom changes weekly.</div>
-        </div>
-      </div>
-
-      <div class="timeline-row" style="margin-top:2px;">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>7–10</div>
-        <div class="tl-detox">
-          <div class="tl-title">Heavy Metal Binders</div>
-          <div class="tl-body">Zeolite, chlorella (broken cell wall), modified citrus pectin, humic/fulvic acids. Pulling aluminium, mercury, lead from deep tissue — including brain tissue.</div>
-          <div class="tl-note">Aluminium in the substantia nigra is directly linked to Parkinson's pathology.</div>
-        </div>
-        <div class="tl-pd">
-          <div class="tl-title">Deepen & Adjust</div>
-          <div class="tl-body">Note what has shifted. Adjust Mucuna dose if needed. Add PQQ and Mannitol if not already in. Continue everything. This is where neurological improvement typically begins to show.</div>
-        </div>
-      </div>
-
-      <div class="timeline-row" style="margin-top:2px;">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>11–14</div>
-        <div class="tl-detox">
-          <div class="tl-title">Gut Rebuild</div>
-          <div class="tl-body">L-Glutamine, bone broth, aloe vera, zinc carnosine, SBO probiotics, sauerkraut. Repair the gut lining that the clearing phase exposed. This directly repairs the gut-brain axis.</div>
-          <div class="tl-note">The gut is where the disease begins. This is where healing begins too.</div>
-        </div>
-        <div class="tl-pd">
-          <div class="tl-title">Maintain & Expand</div>
-          <div class="tl-body">Continue full Parkinson's protocol. Consider adding spirulina (neuroprotective, documented in animal studies). Retest blood work — compare to baseline.</div>
-        </div>
-      </div>
-
-      <div class="timeline-row" style="margin-top:2px;">
-        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Week 15<br>& beyond</div>
-        <div class="tl-both" style="grid-column:span 2;margin-left:8px;">
-          <div class="tl-title" style="color:var(--sage);">Both tracks merge into one daily life protocol</div>
-          <div class="tl-body" style="color:var(--ink-mid);">Maintenance detox supplements run alongside the full neurological stack permanently. Annual 30-day detox repeat. Track symptoms every week. The body is always speaking — listen.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<div id="part-b-sentinel" style="height:1px;"></div>
-
-<!-- PART B — sticky wrapper: header + tabs + jump-to bar, fully self-contained -->
-<div class="sticky-nav-wrap" id="sticky-nav-wrap-b" style="position:sticky;top:var(--nav-h);z-index:90;">
-<!-- ═══ PART B — DO IT ═══ -->
-<div id="part-b" style="background:var(--terra);padding:10px 24px;text-align:center;">
-  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.9;">Part B — Do It · Daily Protocol · Food · Exercise · Weekly Plan</span>
-</div>
-<div class="phase-nav no-print" id="part-b-nav">
   <div class="phase-nav-inner">
     <a href="#food"><span class="pn-dot"></span>Food</a>
     <a href="#exercise"><span class="pn-dot"></span>Exercise</a>
@@ -952,14 +431,14 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 <div style="background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:8px 24px;">
   <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
     <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-ghost);flex-shrink:0;">Jump to:</span>
-    <a href="#whoisthisfor" style="display:inline-flex;align-items:center;gap:5px;background:var(--sage);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">← Back to Part A</a>
+    <a href="#part-b" style="display:inline-flex;align-items:center;gap:5px;background:var(--terra);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">Part B — Understand It →</a>
     <a href="Parkinsons_Daily_Schedule.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">📋 Daily Schedule</a>
     <a href="Parkinsons_Shopping_Table.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">🛒 Shopping List</a>
     <a href="Parkinsons_Must_Have.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">⭐ Must-Have List</a>
     <a href="Parkinsons_Symptoms.html" style="display:inline-flex;align-items:center;gap:5px;background:var(--bg-warm);border:1px solid var(--border);color:var(--sage);font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">🔍 Symptom Guide</a>
   </div>
 </div>
-</div><!-- end Part B wrapper -->
+</div><!-- end Part A sticky-nav-wrap -->
 
 
 <!-- FOOD -->
@@ -1130,6 +609,515 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
     </table>
   </div>
 </section>
+</div><!-- end part-a-content -->
+
+<div class="divider"></div>
+
+<!-- ═══ PART B — UNDERSTAND IT (collapsible) ═══ -->
+<details id="part-b">
+<summary style="background:var(--terra);padding:14px 24px;text-align:center;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:center;gap:10px;">
+  <span style="font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#fff;opacity:0.95;">Part B — Understand It · The Science · Root Causes · What to Expect</span>
+  <span class="part-b-chevron" style="color:#fff;font-size:12px;transition:transform 0.2s;">▾</span>
+</summary>
+<div style="background:var(--bg-stone);border-bottom:1px solid var(--border-s);padding:10px 24px;">
+  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:6px 10px;flex-wrap:wrap;">
+    <a href="#part-a-content" style="display:inline-flex;align-items:center;gap:5px;background:var(--sage);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;padding:6px 12px;border-radius:5px;white-space:nowrap;">← Back to Part A</a>
+    <span style="width:1px;height:16px;background:var(--border-s);"></span>
+    <a href="#whoisthisfor" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Who It's For</a>
+    <a href="#symptom-lookup" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Symptom Lookup</a>
+    <a href="#understanding" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Overview</a>
+    <a href="#silent-decade" style="font-size:11px;color:var(--ink-light);text-decoration:none;">The Silent Decade</a>
+    <a href="#alpha-syn" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Alpha-Synuclein</a>
+    <a href="#mitochondria" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Mitochondria</a>
+    <a href="#gut-origin" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Gut Origin</a>
+    <a href="#toxins" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Toxins</a>
+    <a href="#inflammation" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Neuroinflammation</a>
+    <a href="#dopamine" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Dopamine</a>
+    <a href="#hope" style="font-size:11px;color:var(--ink-light);text-decoration:none;">Hope &amp; Evidence</a>
+  </div>
+</div>
+<!-- WHO IS THIS FOR -->
+<section class="sec-b" id="whoisthisfor" style="scroll-margin-top:calc(var(--nav-h) + 20px);">
+  <div class="inner">
+    <div class="kicker">Is This For You</div>
+    <h2 class="sec-title">Who This Protocol Is For</h2>
+    <p class="sec-sub">For anyone facing a Parkinson's diagnosis — their own or a loved one's. For caregivers who want to do more than manage decline. For people who have been told there is nothing to be done and know that cannot be the whole truth.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:24px 0;">
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🧬</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Recently Diagnosed</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">In the early stages, the most neurons are still alive. This is when intervention has the most leverage.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">💊</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">On Levodopa</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Pharmaceutical levodopa and Mucuna Pruriens interact directly. This protocol includes the supervision rules.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🧑‍🤝‍🧑</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Caregiver</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">This page is designed to print and hand directly to someone. One page. One plan. Start here.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">🔍</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Prodromal Signs</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">Constipation, loss of smell, REM sleep disorder, fatigue — years before tremor. Act before the diagnosis.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">💰</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Budget Is Tight</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">See the <a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List</a> — the 7 interventions that matter most if you can only do a few.</div></div>
+      </div>
+      <div style="background:var(--bg-warm);border:1px solid var(--border);border-radius:8px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="font-size:22px;flex-shrink:0;">😤</div>
+        <div><div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;">Told Nothing Can Be Done</div><div style="font-size:12px;color:var(--ink-light);line-height:1.55;">That is not true. This protocol documents what the research actually shows.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SYMPTOM LOOKUP -->
+<section class="sec-c" id="symptom-lookup" style="scroll-margin-top:calc(var(--nav-h) + 20px);">
+  <div class="inner">
+    <div class="kicker">Where to Start</div>
+    <h2 class="sec-title">Symptom → Where to Start</h2>
+    <p class="sec-sub">Find your most pressing symptom and go directly to the relevant section.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:20px;">
+      <tr><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Symptom or Concern</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Primary Intervention</th><th style="background:var(--bg-nav);color:#d4c9a8;padding:9px 14px;text-align:left;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;">Go To</th></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Tremor, rigidity, slowness</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna Pruriens + Mannitol + exercise</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#tremor" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Constipation / gut issues</td><td style="padding:10px 14px;color:var(--ink-mid);">Gut-brain axis repair — the origin point of the disease</td><td style="padding:10px 14px;"><a href="#gut-origin" style="color:var(--sage);font-weight:600;">Gut Origin →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Sleep disturbance / REM disorder</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna + Magnesium glycinate + 4:8 breathing</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#sleep" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Fatigue / low energy</td><td style="padding:10px 14px;color:var(--ink-mid);">Mitochondrial stack: CoQ10 Ubiquinol + NMN + NAC</td><td style="padding:10px 14px;"><a href="#mitochondria" style="color:var(--sage);font-weight:600;">Mitochondria →</a></td></tr>
+      <tr style="border-bottom:1px solid var(--border-s);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Depression / anxiety / mood</td><td style="padding:10px 14px;color:var(--ink-mid);">Mucuna (dopamine precursor) + Lion's Mane + gut repair</td><td style="padding:10px 14px;"><a href="Parkinsons_Symptoms.html#mood" style="color:var(--sage);font-weight:600;">Symptom Guide →</a></td></tr>
+      <tr style="background:rgba(244,239,230,0.5);"><td style="padding:10px 14px;font-weight:600;color:var(--ink);">Don't know where to start</td><td style="padding:10px 14px;color:var(--ink-mid);">The 7 must-have interventions, prioritised</td><td style="padding:10px 14px;"><a href="Parkinsons_Must_Have.html" style="color:var(--sage);font-weight:600;">Must-Have List →</a></td></tr>
+    </table>
+    <div style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.25);border-left:4px solid var(--terra);border-radius:8px;padding:18px 22px;margin-top:24px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:6px;">⚠️ Medical Disclaimer</div>
+      <div style="font-size:14px;line-height:1.7;color:var(--ink-mid);">This protocol is for educational purposes only. It is not medical advice and does not replace consultation with a qualified healthcare practitioner. <strong>If currently taking pharmaceutical levodopa (Sinemet, Madopar) or an MAO-B inhibitor (selegiline, rasagiline) — both common first-line and early-adjunct Parkinson's medications — Mucuna Pruriens requires direct medical supervision before starting,</strong> not just dose adjustment after the fact. Mucuna extracts vary 4–10x in actual levodopa content depending on standardization — "500mg Mucuna" is a label weight, not a levodopa dose, and your neurologist cannot safely titrate your prescription against it without knowing the % levodopa of the specific product you're using. Bring the product label to your appointment before starting.</div>
+    </div>
+  </div>
+</section>
+
+<div id="part-a-chapters" style="background:var(--bg);">
+
+<!-- CHAPTER: understanding -->
+<div class="chapter open" id="ch-understanding" data-section="understanding">
+  <div id="understanding" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-understanding')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">00</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">Before the Protocol</div>
+        <div class="chapter-title">What Is Actually Happening in the Body</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:0;">The diagnosis is the beginning, not the answer. To reverse something, you need to understand what it is. Most people with Parkinson's have never been told any of this — not because it isn't known, but because knowing it doesn't sell anything. Use the chapter tabs above to read the science in any order, or work through them chronologically from The Silent Decade.</p>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: silent-decade -->
+<div class="chapter" id="ch-silent" data-section="silent-decade">
+  <div id="silent-decade" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-silent')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">01</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Silent Decade</div>
+        <div class="chapter-title">The Disease Started 10–20 Years Before the Tremor</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <div class="highlight-box" style="margin-bottom:28px;">
+      <div class="h-title">The Number Nobody Tells You</div>
+      <p>When motor symptoms first appear — the tremor, the stiffness, the slowness — between 60% and 80% of the dopamine-producing neurons in the substantia nigra are already dead. According to the National Institute of Neurological Disorders and Stroke, "by the time PD symptoms appear, most people have lost 60 to 80% or more of the dopamine-producing cells." The brain compensated for years. It rerouted, recruited backup circuits, pushed harder with fewer cells. Then one day it could no longer hide it. That is the day of diagnosis. Not the beginning.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The prodromal phase — the silent period of neurodegeneration before motor diagnosis — lasts on average 10 to 20 years. Research confirms that 98.8% of people with Parkinson's experienced prodromal symptoms beforehand. They averaged 7.6 different symptoms over a 10-year window before receiving a diagnosis. The body was speaking the whole time. Nobody was listening.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">The prodromal signs are not subtle. They include: constipation for years or decades before tremor appears, loss of smell (hyposmia), REM sleep behavior disorder (acting out dreams), depression, fatigue, and pain. Every one of these is a sign of the neurodegeneration already underway — spreading up through the brainstem, long before it reaches the substantia nigra.</p>
+
+    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;margin-bottom:0;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">What This Means for Recovery</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The damage is extensive — but the timeline also means the brain had remarkable plasticity for years before it gave out. That plasticity does not disappear at diagnosis. Neuroplasticity, neurogenesis, and mitochondrial recovery are all possible at any stage. The protocol is built on this. The goal is not to mourn the neurons already lost — it is to protect every neuron still alive, rebuild the environment around them, and trigger the brain's own repair mechanisms.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: alpha-syn -->
+<div class="chapter" id="ch-alpha" data-section="alpha-syn">
+  <div id="alpha-syn" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-alpha')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">02</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Protein That Spreads</div>
+        <div class="chapter-title">Alpha-Synuclein — What It Is and Why It Becomes a Weapon</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Alpha-synuclein is a normal protein. Every neuron in your body makes it. In healthy cells, it floats freely, helps regulate dopamine release, and gets cleared away by the cell's waste disposal system. In Parkinson's disease, something goes wrong at the folding stage. The protein misfolds — twisting into an abnormal shape instead of its correct one. Misfolded proteins clump together. The clumps grow into fibrils. The fibrils accumulate into what are called Lewy bodies: dense, toxic protein deposits inside neurons.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Why It Spreads Like an Infection</div>
+      <p>The most alarming finding in Parkinson's research is that alpha-synuclein behaves like a prion — a misfolded protein that forces neighbouring proteins to misfold too. Once the pattern starts, it propagates. It spreads cell to cell, neuron to neuron, region to region. This is not cancer. It is not inflammation. It is a protein conformation that is essentially contagious within the nervous system. A 2024 review in Neurochemistry International confirmed: misfolded alpha-synuclein forms fibrils, then Lewy bodies, and the pathological process "tends to occur predominantly in neurons with high energy demands and low myelination" — exactly the profile of dopaminergic neurons in the substantia nigra.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">What triggers the first misfold? The research points to a convergence of factors: mitochondrial dysfunction (generating the oxidative stress that damages the protein), environmental toxins (paraquat, rotenone, pesticides), impaired protein clearance systems (the ubiquitin-proteasome system and the lysosomal pathway — the cell's own rubbish disposal becoming overwhelmed), and gut dysbiosis allowing misfolded protein to enter the vagus nerve and travel directly to the brainstem.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">Critically, abnormal phosphorylation at serine 129 — a chemical modification that happens under oxidative stress and pesticide exposure — accelerates aggregation. This is why reducing oxidative load, supporting mitochondrial function, and eliminating toxin exposure are not soft lifestyle advice. They are direct interventions at the molecular trigger of the disease.</p>
+
+    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Mannitol has been studied specifically for its ability to prevent alpha-synuclein aggregation — animal studies showed it prevented clumping and improved motor function. Curcumin directly inhibits alpha-synuclein aggregation (Pandey et al., Acta Neuropathologica 2008). Berberine inhibits aggregation in Parkinson's models. NAC (N-acetylcysteine) reduces the oxidative modification that triggers misfolding. The protocol addresses the root molecular event, not just its downstream symptoms.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: mitochondria -->
+<div class="chapter" id="ch-mito" data-section="mitochondria">
+  <div id="mitochondria" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-mito')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">03</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Energy Crisis</div>
+        <div class="chapter-title">Mitochondrial Collapse — Why the Substantia Nigra Dies First</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopaminergic neurons in the substantia nigra are among the most metabolically demanding cells in the human body. They fire constantly — not in response to signals, but spontaneously, as a pacemaker. This autonomous firing requires enormous amounts of ATP. ATP is made by mitochondria. And mitochondria in Parkinson's disease are failing.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Complex I — The Primary Failure Point</div>
+      <p>In 1989, researchers discovered a consistent finding in the substantia nigra of Parkinson's patients: Complex I of the mitochondrial electron transport chain was significantly deficient. This was not a random finding — it has been replicated in dozens of studies over 35 years. Complex I is the entry point of the chain that produces ATP. When it fails, energy production collapses. Reactive oxygen species (ROS) flood the cell. The neuron, already operating at maximum metabolic load, cannot sustain itself. It begins to die. This same mechanism is how the pesticides paraquat and rotenone cause Parkinson's — both are Complex I inhibitors. The disease and the pesticide converge on the same molecular target.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The substantia nigra is particularly vulnerable because its neurons have long, highly branched axons — more branches means more surface area, more mitochondria required, more energy demanded. A 2023 study in npj Parkinson's Disease found "a generalised and synergistic reduction in mitochondrial quality control proteins in dopaminergic neurons" from Parkinson's patients. The cells are not just running low on energy — they have lost the mechanisms to repair and replace damaged mitochondria.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">There is also a vicious feedback loop: mitochondrial dysfunction produces oxidative stress → oxidative stress damages alpha-synuclein → damaged alpha-synuclein aggregates → Lewy bodies → more mitochondrial dysfunction. Once this loop is running, it accelerates itself. Breaking any link in the chain slows the whole process.</p>
+
+    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">CoQ10 Ubiquinol directly supports electron transport chain function — it is the electron carrier between Complex I/II and Complex III. NMN and NR restore NAD+ levels, which are essential for Complex I to function. PQQ stimulates mitochondrial biogenesis — the creation of new mitochondria. NAC restores glutathione, the primary antioxidant that neutralises the ROS cascade. These are not general "antioxidants." They are targeted interventions at the exact points where the mitochondrial system breaks down in Parkinson's.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: gut-origin -->
+<div class="chapter" id="ch-gut" data-section="gut-origin">
+  <div id="gut-origin" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-gut')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">04</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">Where It Starts</div>
+        <div class="chapter-title">The Gut-Brain Highway — How Parkinson's Likely Begins</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">In 2003, German neuropathologist Heiko Braak proposed something radical: Parkinson's does not begin in the brain. It begins in the gut — or in the nose — and travels upward. After two decades of research, the evidence is substantial enough that the Parkinson's Foundation now describes this as a mainstream hypothesis. The disease, in the body-first subtype, starts in the enteric nervous system and spreads to the brain via the vagus nerve.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Braak Staging — The Road Map of the Disease's Spread</div>
+      <p>Braak described six stages of Parkinson's pathology based on where Lewy body deposits appear in the nervous system. In Stages 1 and 2, the damage is entirely peripheral — in the gut, the olfactory bulb, and the lower brainstem. The substantia nigra — the region responsible for movement — is not affected until Stage 3. This staging explains why constipation, smell loss, and sleep disorders (REM behaviour disorder) appear years before a single tremor. The motor symptoms are not the disease. They are the disease's announcement that it has reached the brain.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">The vagus nerve is the highway. It is the longest nerve in the body — running directly from the gut's enteric nervous system up through the diaphragm, chest, and neck, into the brainstem. Research from Neuron (2019) confirmed that alpha-synuclein travels this route. Truncal vagotomy studies — where the vagus nerve was surgically cut — showed reduced Parkinson's risk: a 2017 study by Liu et al. in Neurology and a 2015 study by Svensson et al. in Annals of Neurology both found that people who had vagotomies decades earlier had significantly lower Parkinson's rates. This is not coincidence — it is causal evidence.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">A 2024 paper published on World Parkinson's Day united the brain-first and body-first models with environmental toxins: the hypothesis is that inhaled or ingested toxins — pesticides, herbicides, heavy metals — trigger the first misfold in either the olfactory bulb (brain-first) or the gut neurons (body-first), and the spread follows from there. The entry point determines the subtype. The mechanism is the same.</p>
+
+    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The Full Body Detox runs first precisely because the gut is the origin. Rebuilding the gut wall (L-Glutamine, zinc carnosine, aloe), restoring depleted strains (Faecalibacterium prausnitzii, Roseburia, Blautia — all depleted in Parkinson's), removing glyphosate and heavy metals that disrupt gut neurons, and healing the intestinal microbiome is not supportive care. It is addressing the most likely site of origin of the disease itself. The SymPD trial (2025) confirmed a 4-strain probiotic produced positive motor outcomes in a randomised controlled trial. The GUT-PARFECT trial (Lancet eClinicalMedicine 2024) showed FMT improved motor scores. The gut is not peripheral to Parkinson's. For most people, it is where it started.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: toxins -->
+<div class="chapter" id="ch-toxins" data-section="toxins">
+  <div id="toxins" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-toxins')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">05</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Environmental Evidence</div>
+        <div class="chapter-title">Pesticides, Herbicides, and the Rise of a Pandemic</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Parkinson's disease is increasing. It is not genetics — genetics accounts for only 5–10% of cases. Something in the modern environment is driving the epidemic. The evidence points to a small group of agricultural chemicals with a specific mechanism of action: they destroy dopaminergic neurons the same way Parkinson's does.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Paraquat and Rotenone — The Smoking Gun</div>
+      <p>A landmark study by the National Institute of Environmental Health Sciences found that people who used paraquat or rotenone developed Parkinson's approximately 2.5 times more often than non-users. Rotenone is a mitochondrial Complex I inhibitor — it causes Parkinson's in animals by the exact same mechanism seen in human disease. Rats exposed to rotenone develop Lewy body-like inclusions in the substantia nigra. This is not correlation. This is experimental replication of the disease using a pesticide as the trigger. Paraquat has been banned in the EU and China but remains in use in many countries. Prof. E. Ray Dorsey named Syngenta directly in Movement Disorders (2023), documenting a lobbying campaign to maintain paraquat's approval despite the evidence. In 2025, Syngenta settled approximately 6,500 paraquat lawsuits. In March 2026, Syngenta announced the end of global paraquat production by June 2026.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">A 2025 study published in Nature's npj Parkinson's Disease journal found that rotenone triggers lasting alterations in brain gene activity — specifically in the substantia nigra — weeks after exposure stopped. Genes related to inflammation and immune activation were permanently switched on. The molecular memory of the toxin persists long after the chemical has left the body. This has enormous implications for anyone who has lived near agricultural land, eaten non-organic food for decades, or worked in an environment with pesticide exposure.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">Trichloroethylene (TCE), a common industrial solvent and dry-cleaning chemical found in groundwater across the world, has also been linked to Parkinson's with an approximately 2.5-fold increased risk. Heavy metals — particularly aluminium and mercury — accumulate in the substantia nigra and directly promote alpha-synuclein aggregation. Glyphosate (Roundup) disrupts gut bacteria, depletes the specific bacterial strains that produce butyrate and short-chain fatty acids, and has been detected at over 1,000 ppb in commonly consumed foods.</p>
+
+    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Uncomfortable Truth</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">The regulatory agencies knew. The studies existed. The mechanisms were understood. But the chemicals stayed on the market while millions of people were exposed. Parkinson's has a 10–20 year latency. By the time symptoms appeared, the exposure was decades old, the link unprovable in court, and the company legally protected. This is not a conspiracy theory — it is documented agnotology: the deliberate manufacture of doubt. Prof. Dorsey named it directly in peer-reviewed literature. The settlement in 2025 confirmed it.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: inflammation -->
+<div class="chapter" id="ch-inflam" data-section="inflammation">
+  <div id="inflammation" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-inflam')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">06</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Brain on Fire</div>
+        <div class="chapter-title">Neuroinflammation and the Brain's Broken Waste System</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">The brain has its own waste disposal system. It was only discovered in 2013. It is called the glymphatic system — a network of channels around blood vessels that flushes cerebrospinal fluid through the brain during deep sleep, clearing out toxic proteins, debris, and metabolic waste. When this system works, misfolded alpha-synuclein and other neurotoxic proteins are cleared every night. When it fails — or when sleep is disrupted — they accumulate.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Sleep Is Not Recovery. Sleep Is Surgery.</div>
+      <p>Glymphatic clearance occurs predominantly during deep, slow-wave sleep. Research published in Sleep (2024) confirmed: "the efficacy of glymphatic clearance relies on the depth of sleep stage — decrease of deep sleep, frequent interruptions of lighter sleep stages, and shorter total sleep time all lead to decreased glymphatic activity." In Parkinson's disease, sleep is severely disrupted — REM behaviour disorder, insomnia, frequent waking. Every disrupted night is a night the brain failed to flush its waste. The accumulated toxins accelerate the neurodegeneration. The neurodegeneration further disrupts sleep. This is a loop that, once established, tightens itself.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">Microglia are the brain's immune cells — its resident macrophages. The substantia nigra has a higher density of microglia than any other brain region, which is part of why it is so vulnerable. Under normal conditions, microglia clean up debris, produce neurotrophic factors, and protect neurons. When they become chronically activated — by Lewy bodies, by toxins, by gut-derived lipopolysaccharides crossing a leaky blood-brain barrier — they switch into a pro-inflammatory mode. They release cytokines that damage the very neurons they are meant to protect. This is neuroinflammation. It is self-perpetuating: inflammation activates more microglia, which produce more inflammation.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">The feedback loop is three-way: impaired glymphatic clearance → alpha-synuclein accumulates → microglia activate → neuroinflammation → AQP4 channels (the water channels that drive glymphatic flow) become dysregulated → glymphatic clearance further impaired. Each element makes the others worse. Addressing only one without the others produces limited results.</p>
+
+    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">Protocol Response</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Sleep is a non-negotiable pillar of this protocol — not for rest, but for glymphatic clearance. Passionflower and saffron support deep sleep architecture. Lion's Mane stimulates NGF (Nerve Growth Factor), which modulates microglial activation. Curcumin directly suppresses neuroinflammatory pathways (NF-κB). Omega-3 fatty acids reduce pro-inflammatory cytokines. Magnesium glycinate supports sleep depth and reduces neuroinflammatory markers. The detox protocols — binders, castor oil packs, drainage support — reduce the systemic inflammatory load that crosses into the brain and triggers microglial activation in the first place.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: dopamine -->
+<div class="chapter" id="ch-dopa" data-section="dopamine">
+  <div id="dopamine" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-dopa')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">07</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">What You Were Never Told</div>
+        <div class="chapter-title">Why Levodopa Is a Patch — and Why the Patch Stops Working</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">Dopamine is not just the "movement chemical." It is the currency of motivation, reward, decision-making, and emotion. Parkinson's strips all of it. But the loss of dopamine is not the disease. It is the consequence of the disease — the downstream result of decades of neuronal death. Levodopa replaces the dopamine those dead neurons can no longer make. It does not address why they died. It does not slow the dying. It manages the symptom while the cause continues unimpeded.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">The Wearing-Off Problem and What It Really Means</div>
+      <p>Levodopa works by being converted to dopamine in the brain. In the early stages, surviving neurons do this conversion and buffer the dopamine — releasing it steadily. Over time, as more neurons die, there is less buffering capacity. The dopamine spikes and crashes with each dose. The "on" window shrinks. "Wearing off" begins — the return of symptoms before the next dose. Within 5 years, up to 50% of people on levodopa experience wearing-off. After 10 years, the majority do. The drug that was managing the condition begins to generate its own complications: dyskinesias (involuntary movements from too much dopamine), "on-off" fluctuations, and increasingly severe "off" states. A 2025 paper in Journal of Neural Transmission confirmed: as neurons continue dying, serotonergic neurons begin releasing levodopa-derived dopamine as a "false neurotransmitter" — with no buffering capacity and no regulation. This is the mechanism of late-stage motor complications.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">This does not mean levodopa is wrong. For many people, it remains essential for quality of life, and Mucuna Pruriens — a plant-based natural source of L-dopa — shows consistent improvements in motor symptoms with fewer dyskinesias than pharmaceutical levodopa in multiple clinical studies, including a 2025 systematic review. But the important understanding is this: levodopa does not change the trajectory of the disease. The neurons are still dying. The protein is still misfolding. The mitochondria are still failing. The medication buys time. The protocol is what you do with that time.</p>
+
+    <div class="phase-block" style="background:var(--terra-pale);border:1px solid rgba(140,90,60,0.15);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--terra);margin-bottom:14px;">The Honest Picture</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0 0 16px;">If you are on levodopa and following this protocol, the goal is to slow the progression enough that the medication continues to work — and to give the surviving neurons the conditions to function optimally. Mucuna Pruriens can potentially extend the effective window and reduce dyskinesias. But any change to pharmaceutical medication must be done in consultation with a neurologist. The protocol works alongside medication — it does not replace it. What it does replace is the passive acceptance that nothing else can be done.</p>
+      <div style="background:#fff;border:1px solid rgba(140,90,60,0.3);border-radius:8px;padding:16px 18px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--terra);margin-bottom:8px;">🛑 Stop Mucuna and contact your neurologist if you notice:</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.8;color:var(--ink-mid);">
+          <li><strong>Dizziness or fainting when standing up</strong> (orthostatic hypotension) — a real fall risk, more dangerous in PD patients due to already-impaired balance reflexes</li>
+          <li><strong>New or worsening involuntary movements</strong> (dyskinesia) — twitching or writhing not present before</li>
+          <li><strong>Hallucinations or visual disturbances</strong> — seeing things that aren't there</li>
+          <li><strong>Confusion, unusual agitation, or a noticeable change in mental clarity</strong></li>
+          <li><strong>Nausea that doesn't resolve</strong> with proper empty-stomach timing</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- CHAPTER: hope -->
+<div class="chapter" id="ch-hope" data-section="hope">
+  <div id="hope" style="scroll-margin-top:calc(var(--nav-h) + 20px);"></div>
+  <div class="chapter-header" onclick="toggleChapter('ch-hope')">
+    <div class="chapter-header-inner">
+        <div class="chapter-header-left">
+      <span class="chapter-num">08</span>
+      <div class="chapter-meta">
+        <div class="chapter-kicker">The Science of Recovery</div>
+        <div class="chapter-title">The Brain Can Grow. It Can Repair. Here Is the Evidence.</div>
+      </div>
+        <div class="chapter-read-hint">Read more</div>
+    </div>
+    <span class="chapter-arrow">▾</span>
+    </div>
+  </div>
+  <div class="chapter-body">
+    <div class="chapter-body-inner">
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:20px;">For most of the 20th century, science believed adult brains could not generate new neurons. That belief is now known to be wrong. Neurogenesis — the birth of new neurons — occurs in the adult brain, including in regions critical to dopaminergic function. Neuroplasticity — the rewiring of existing circuits — occurs throughout life and accelerates with the right inputs. This is not optimism. It is biology. And it is the scientific foundation of every intervention in this protocol.</p>
+
+    <div class="highlight-box" style="margin-bottom:24px;">
+      <div class="h-title">Lion's Mane, NGF, and BDNF — The Repair Signals</div>
+      <p>Lion's Mane mushroom (Hericium erinaceus) contains two unique compounds — hericenones and erinacines — that cross the blood-brain barrier and stimulate the synthesis of Nerve Growth Factor (NGF) and Brain-Derived Neurotrophic Factor (BDNF). NGF supports the survival and maintenance of cholinergic neurons. BDNF is the primary signal for neuroplasticity and neurogenesis — it tells neurons to survive, grow new connections, and the brain to generate new cells. In Parkinson's disease, both NGF and BDNF are depleted. Lion's Mane directly addresses this depletion. It does not repair dead neurons — but it creates the chemical environment in which surviving neurons grow, branch, and compensate.</p>
+    </div>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:16px;">Exercise is the single most evidence-backed intervention for Parkinson's — not as gentle movement but as a medical necessity. Vigorous aerobic exercise raises BDNF levels, stimulates dopamine synthesis in surviving neurons, triggers neuroplasticity in the motor cortex, and has been shown to slow progression in multiple human studies. Tango dancing specifically has been studied in Parkinson's patients for its unique combination of rhythmic movement, music, social engagement, and cognitive challenge — each of which independently stimulates BDNF production and dopaminergic function.</p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--ink-mid);margin-bottom:24px;">NMN (Nicotinamide Mononucleotide) and NR (Nicotinamide Riboside) restore NAD+ — a coenzyme that declines dramatically with age and Parkinson's progression, and which is required for the sirtuins (longevity proteins) that regulate mitochondrial repair, DNA repair, and neuronal survival. PQQ stimulates mitochondrial biogenesis. Every new mitochondrion built is increased energy capacity for neurons that were starving. These are not supplements in the casual sense. They are targeted molecular interventions at documented failure points in Parkinson's pathology.</p>
+
+    <div class="phase-block" style="background:var(--sage-pale);border:1px solid var(--border);border-radius:10px;padding:22px 24px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;">The Summary of Everything Above</div>
+      <p style="font-size:14px;line-height:1.85;color:var(--ink-mid);margin:0;">Parkinson's is not a dopamine deficiency. It is a decades-long cascade: environmental toxins trigger mitochondrial failure and oxidative stress → alpha-synuclein misfolds and spreads prion-like from gut to brain → the glymphatic system, overwhelmed and sleep-deprived, fails to clear the accumulation → microglia activate and drive neuroinflammation → the ubiquitin-proteasome system collapses under protein load → neurons in the substantia nigra die. By the time the tremor appears, the cascade has been running for a decade or more. The protocol below addresses every stage of that cascade. Not one thing. All of it. At the same time.</p>
+    </div>
+    </div>
+</div>
+</div>
+
+</div><!-- /part-a-chapters -->
+
+<div class="divider"></div>
+
+
+<!-- PARALLEL TREATMENT OVERVIEW -->
+<section class="sec sec-dark">
+  <div class="inner">
+    <div class="kicker kicker-white">The Full Plan</div>
+    <h2 class="sec-title sec-title-white">How This Protocol Works — Two Tracks Running Together</h2>
+    <p class="sec-sub sec-sub-white">The detox and the Parkinson's protocol are not sequential — they are parallel. The detox clears the terrain. The neurological protocol rebuilds it. They run at the same time, starting Week 1.</p>
+
+    <!-- PARALLEL TIMELINE TABLE -->
+    <div class="timeline">
+      <div class="timeline-row" style="margin-bottom:4px;">
+        <div class="tl-header" style="color:rgba(255,255,255,0.4);border-right-color:rgba(255,255,255,0.1);"></div>
+        <div class="tl-col-head detox">🌿 Track 1 — Full Body Detox</div>
+        <div class="tl-col-head pd">🧠 Track 2 — Parkinson's Protocol</div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>1–2</div>
+        <div class="tl-detox">
+          <div class="tl-title">Open the 5 Drainage Doors</div>
+          <div class="tl-body">Filtered water, magnesium citrate, detox baths, dry brushing, castor oil pack, rebounding. Prepare liver, colon, kidneys, lymph, skin.</div>
+          <div class="tl-note">Foundation. Nothing else works without this.</div>
+        </div>
+        <div class="tl-pd">
+          <div class="tl-title">Begin Gently</div>
+          <div class="tl-body">Morning sole water, lemon water, baking soda drink. Silica-rich water 1L daily. Morning sunlight. Daily exercise. No supplements yet — let the drainage open first.</div>
+          <div class="tl-note tl-note-pd">Prepare the terrain before loading supplements.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row" style="margin-top:2px;">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Week<br>3</div>
+        <div class="tl-detox">
+          <div class="tl-title">Biofilm Disruption Begins</div>
+          <div class="tl-body">Serrapeptase + Nattokinase on empty stomach. Raw garlic daily. Berberine with meals. Disrupting the protective shield around pathogens.</div>
+        </div>
+        <div class="tl-pd">
+          <div class="tl-title">Add Core Neurological Stack</div>
+          <div class="tl-body">Start Mucuna Pruriens, Lion's Mane, CoQ10 Ubiquinol, NMN, NAC. With drainage open, these can reach the brain and work properly.</div>
+          <div class="tl-note tl-note-pd">This is the turning point — full protocol begins.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row" style="margin-top:2px;">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>5–6</div>
+        <div class="tl-detox">
+          <div class="tl-title">Antiparasitic Rotation</div>
+          <div class="tl-body">Black walnut + wormwood + cloves (the Clark triad) in rotation. Oregano oil. Mimosa pudica. Pumpkin seeds every morning. Die-off management with binders.</div>
+        </div>
+        <div class="tl-pd">
+          <div class="tl-title">Full Protocol Running</div>
+          <div class="tl-body">All daily supplements, exercise, vagus nerve practice, mannitol, castor oil packs, detox baths. Track symptom changes weekly.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row" style="margin-top:2px;">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>7–10</div>
+        <div class="tl-detox">
+          <div class="tl-title">Heavy Metal Binders</div>
+          <div class="tl-body">Zeolite, chlorella (broken cell wall), modified citrus pectin, humic/fulvic acids. Pulling aluminium, mercury, lead from deep tissue — including brain tissue.</div>
+          <div class="tl-note">Aluminium in the substantia nigra is directly linked to Parkinson's pathology.</div>
+        </div>
+        <div class="tl-pd">
+          <div class="tl-title">Deepen & Adjust</div>
+          <div class="tl-body">Note what has shifted. Adjust Mucuna dose if needed. Add PQQ and Mannitol if not already in. Continue everything. This is where neurological improvement typically begins to show.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row" style="margin-top:2px;">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Weeks<br>11–14</div>
+        <div class="tl-detox">
+          <div class="tl-title">Gut Rebuild</div>
+          <div class="tl-body">L-Glutamine, bone broth, aloe vera, zinc carnosine, SBO probiotics, sauerkraut. Repair the gut lining that the clearing phase exposed. This directly repairs the gut-brain axis.</div>
+          <div class="tl-note">The gut is where the disease begins. This is where healing begins too.</div>
+        </div>
+        <div class="tl-pd">
+          <div class="tl-title">Maintain & Expand</div>
+          <div class="tl-body">Continue full Parkinson's protocol. Consider adding spirulina (neuroprotective, documented in animal studies). Retest blood work — compare to baseline.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row" style="margin-top:2px;">
+        <div class="tl-label" style="color:rgba(255,255,255,0.5);border-right-color:rgba(255,255,255,0.1);">Week 15<br>& beyond</div>
+        <div class="tl-both" style="grid-column:span 2;margin-left:8px;">
+          <div class="tl-title" style="color:var(--sage);">Both tracks merge into one daily life protocol</div>
+          <div class="tl-body" style="color:var(--ink-mid);">Maintenance detox supplements run alongside the full neurological stack permanently. Annual 30-day detox repeat. Track symptoms every week. The body is always speaking — listen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</details>
+
 
 <div class="divider"></div>
 
@@ -1282,21 +1270,6 @@ function mcSubmit_park(){
   document.getElementById('mc-email-park').value='';
   if(window.MailchimpSubscribe){MailchimpSubscribe({EMAIL:email});}
 }
-
-// Toggle Part A / Part B sticky wrapper visibility based on scroll position
-(function(){
-  const partBEl = document.getElementById('food');
-  if(!partBEl) return;
-  let inPartB = document.body.classList.contains('in-part-b');
-  const checkPartBPosition = () => {
-    const top = partBEl.getBoundingClientRect().top;
-    // Hysteresis: different enter/exit thresholds so hovering near one point can't cause rapid flip-flopping
-    if(!inPartB && top <= 60){ inPartB = true; document.body.classList.add('in-part-b'); }
-    else if(inPartB && top >= 140){ inPartB = false; document.body.classList.remove('in-part-b'); }
-  };
-  window.addEventListener('scroll', checkPartBPosition, {passive:true});
-  checkPartBPosition();
-})();
 </script>
 <script>
 function toggleMobileNav(){
