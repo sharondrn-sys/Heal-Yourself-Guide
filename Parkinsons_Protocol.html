@@ -1268,31 +1268,6 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   sections.forEach(function(s){obs.observe(s);});
 })();
 
-// Switch between Part A and Part B sticky chapter-nav bars based on scroll position
-(function(){
-  var sentinel = document.getElementById('part-b-sentinel');
-  if(!sentinel) return;
-  var navH = 56;
-  var wrapA = document.getElementById('sticky-nav-wrap-a');
-  var wrapB = document.getElementById('sticky-nav-wrap-b');
-  var companionBar = document.getElementById('companion-bar');
-  function positionCompanionBar(){
-    if(!companionBar) return;
-    var visibleHeight = (wrapA && wrapA.offsetHeight) + (wrapB && wrapB.offsetHeight) || 0;
-    companionBar.style.top = (navH + visibleHeight) + 'px';
-  }
-  var obs2 = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      document.body.classList.toggle('in-part-b', e.boundingClientRect.top < navH);
-      positionCompanionBar();
-    });
-  },{rootMargin:'-' + navH + 'px 0px 0px 0px', threshold:[0,1]});
-  obs2.observe(sentinel);
-  positionCompanionBar();
-  window.addEventListener('resize', positionCompanionBar);
-})();
-
-
 function toggleChapter(id){
   var el = document.getElementById(id);
   if(!el) return;
@@ -1320,13 +1295,26 @@ const partAEl = document.getElementById('part-a');
 const heroEl = document.querySelector('.hero');
 if(stickyBtn && stickyLink && partAEl){
   const companionLink = document.getElementById('companion-partb-link');
+  const wrapA = document.getElementById('sticky-nav-wrap-a');
+  const wrapB = document.getElementById('sticky-nav-wrap-b');
+  const companionBar = document.getElementById('companion-bar');
+  const navH = 56;
+  function positionCompanionBar(){
+    if(!companionBar) return;
+    const visibleHeight = ((wrapA && wrapA.offsetHeight) || 0) + ((wrapB && wrapB.offsetHeight) || 0);
+    companionBar.style.top = (navH + visibleHeight) + 'px';
+  }
   const setPartB = () => {
+    document.body.classList.remove('in-part-b');
     stickyLink.href='#part-b-sentinel'; stickyLink.textContent='Part B — Do It →'; stickyLink.style.background='var(--terra)'; stickyLink.style.boxShadow='0 4px 20px rgba(140,90,60,0.35)';
     if(companionLink){ companionLink.href='#part-b-sentinel'; companionLink.textContent='Part B — Do It →'; companionLink.style.background='var(--terra)'; }
+    positionCompanionBar();
   };
   const setPartA = () => {
+    document.body.classList.add('in-part-b');
     stickyLink.href='#whoisthisfor'; stickyLink.textContent='← Back to Part A'; stickyLink.style.background='var(--sage)'; stickyLink.style.boxShadow='0 4px 20px rgba(61,107,74,0.35)';
     if(companionLink){ companionLink.href='#whoisthisfor'; companionLink.textContent='← Back to Part A'; companionLink.style.background='var(--sage)'; }
+    positionCompanionBar();
   };
   const partBEl = document.getElementById('food');
   const checkPartBPosition = () => {
@@ -1335,6 +1323,7 @@ if(stickyBtn && stickyLink && partAEl){
     if(rect.top <= 80){ setPartA(); } else { setPartB(); }
   };
   window.addEventListener('scroll', checkPartBPosition, {passive:true});
+  window.addEventListener('resize', checkPartBPosition);
   checkPartBPosition();
   const showAfterHero = () => {
     const heroH = heroEl ? heroEl.offsetHeight + heroEl.offsetTop : 300;
