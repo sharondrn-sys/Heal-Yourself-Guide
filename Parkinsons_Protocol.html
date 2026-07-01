@@ -399,7 +399,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
   <p class="hero-note"><strong>This page contains everything.</strong> The Full Body Detox (summarised) runs first — Weeks 1–14. The Parkinson's-specific protocol begins in Week 3 and runs alongside it. By Week 15, you are running the full protocol. One page. One plan. Start here.</p>
   <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;flex-wrap:wrap;">
     <a href="#part-a-content" style="display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(61,107,74,0.25);">Part A — Do It ↓</a>
-    <a href="#part-b" style="display:inline-flex;align-items:center;gap:8px;background:var(--terra);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(140,90,60,0.25);">Part B — Understand It ↓</a>
+    <a href="#part-b" style="display:inline-flex;align-items:center;gap:8px;background:#2e5240;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:12px 24px;border-radius:7px;box-shadow:0 2px 12px rgba(46,82,64,0.35);">Part B — Understand It ↓</a>
   </div>
 </header>
 
@@ -627,7 +627,7 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
     <span class="part-b-chevron" style="color:#fff;font-size:13px;transition:transform 0.25s;">▾</span>
   </span>
 </summary>
-<div class="phase-nav no-print" id="part-b-nav" style="position:sticky;top:var(--nav-h);z-index:89;height:auto;min-height:var(--nav-h);flex-wrap:wrap;align-content:center;padding:4px 16px;overflow-x:visible;">
+<div class="phase-nav no-print" id="part-b-nav" style="position:sticky;top:calc(var(--nav-h) + var(--part-b-summary-h, 72px));z-index:89;height:auto;min-height:var(--nav-h);flex-wrap:wrap;align-content:center;padding:4px 16px;overflow-x:visible;">
   <div class="phase-nav-inner" style="flex-wrap:wrap;row-gap:2px;justify-content:center;">
     <a href="#part-a-content" style="color:#2e5240;border-bottom-color:transparent;"><span class="pn-dot" style="background:#2e5240;opacity:0.7;"></span>← Back to Part A</a>
     <a href="#whoisthisfor" data-section="whoisthisfor"><span class="pn-dot"></span>Who It's For</a>
@@ -1241,7 +1241,19 @@ footer{background:var(--bg-footer);border-top:1px solid rgba(138,184,154,0.1);pa
 
 <script>
 
-// Phase nav active state
+// Set Part B phase-nav sticky offset to summary height
+(function(){
+  function setPartBNavTop(){
+    var summary = document.querySelector('#part-b > summary');
+    if(!summary) return;
+    document.documentElement.style.setProperty('--part-b-summary-h', summary.offsetHeight + 'px');
+  }
+  setPartBNavTop();
+  window.addEventListener('resize', setPartBNavTop);
+  // Also re-measure when details opens (height may change at narrow widths)
+  var details = document.getElementById('part-b');
+  if(details) details.addEventListener('toggle', setPartBNavTop);
+})();
 (function(){
   var links = document.querySelectorAll('.phase-nav a[href^="#"]');
   var sections = document.querySelectorAll('section[id]');
